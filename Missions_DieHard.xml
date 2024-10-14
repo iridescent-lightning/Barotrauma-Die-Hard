@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Missions>
+  <Override>
+    <generalmissioncompletehint identifier="missioncomplete" name="Mission Complete." tags="missioncomplete" type="OutpostDestroy" reward="0" difficulty="0" commonness="0">
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="256,0,256,256" color="243,146,55" />
+      <LocationType identifier="Abandoned" />
+    </generalmissioncompletehint>
+    <fetchmissionhint identifier="fetchmissionhint" name="Use sharp-edged tool to cut parts of creatures." tags="fetchmissionhint" type="OutpostDestroy" reward="0" difficulty="4" commonness="0">
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="512,256,256,256" color="243,146,55" />
+      <LocationType identifier="Abandoned" />
+    </fetchmissionhint>
+    <fetchmissionhint identifier="fetchmissionhint_hammerhead" name="Use sharp-edged tool to cut parts of creatures." tags="fetchmissionhint" type="OutpostDestroy" reward="0" difficulty="4" commonness="0">
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="256,512,256,256" color="243,146,55" />
+      <LocationType identifier="Abandoned" />
+    </fetchmissionhint>
+    <DHNpcMissionFetchMonster identifier="fetch_hammerhead" textidentifier="fetch_hammerhead" tags="fetchmission" type="Monster" difficulty="2" commonness="100" reward="0" maxsonarmarkerdistance="10000">
+      <monster character="Hammerhead_m" min="2" max="3" />
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="512,768,256,256" color="214,50,48" />
+      <message header="missionheader0.killhammerhead" text="missionmessage0.killhammerhead" />
+      <TriggerEvent state="1" delay="0" eventidentifier="fetchmissionhint" />
+    </DHNpcMissionFetchMonster>
+    <DHNpcMissionFetchMonster identifier="fetch_hammerhead_gold" name="Fetch a Hammerhead's fin" description="Someone wants a Hammerhead's fin." textidentifier="fetch_hammerhead_gold" tags="fetchmission" type="Monster" difficulty="3" commonness="100" reward="0" maxsonarmarkerdistance="10000" monsterfile="Hammerheadgold_m">
+      <monster character="Hammerhead_m" min="2" max="3" />
+      <monster character="Hammerheadgold_m" min="1" max="1" />
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="512,768,256,256" color="214,50,48" />
+      <message header="missionheader0.killhammerhead" text="missionmessage0.killhammerhead" />
+      <TriggerEvent state="1" delay="0" eventidentifier="fetchmissionhint" />
+    </DHNpcMissionFetchMonster>
+    <DHNpcMissionFetchMonster identifier="fetch_broodmother" tags="fetchmission" textidentifier="fetch_broodmother" type="Monster" difficulty="3" commonness="100" reward="0" maxsonarmarkerdistance="10000" sonarlabel="character.crawler" monsterfile="crawlerbroodmother_m">
+      <monster character="crawler" min="6" max="7" />
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="768,768,256,256" color="214,50,48" />
+      <TriggerEvent state="1" delay="0" eventidentifier="fetchmissionhint" />
+    </DHNpcMissionFetchMonster>
+    <TowsubMissionHint identifier="towsub" tags="towsub" type="GoTo" difficulty="3" commonness="0" reward="0" name="DHMissionHeader.towsub" description="DHMissionMessage.towsub" IsSideObjective="true">
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="512,0,256,256" color="243,146,55" />
+      <LocationType from="Any" to="Any" />
+      <message header="DHMissionHeader.towsub" text="DHMissionMessage.towsub" />
+    </TowsubMissionHint>
+    <TowsubMissionHint identifier="towsubcompleted" tags="towsub" type="GoTo" difficulty="3" commonness="0" reward="0" name="DHMissionHeader.towsub" description="DHMissionMessage.towsub" IsSideObjective="true">
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="512,0,256,256" color="243,146,55" />
+      <LocationType from="Any" to="Any" />
+      <message header="DHMissionHeader.towsubcompleted" text="DHMissionHeader.towsubcompleted" />
+    </TowsubMissionHint>
+    <SalvageMission identifier="salvagewreck1" tags="salvage,salvagewreck" type="Salvage" difficulty="3" commonness="100" reward="2800" achievementidentifier="salvagewreckmission" spawntype="wreck" showmessagewhenpickedup="true" itemidentifier="handheldterminal" containertag="locker" requirewreck="true">
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <chooserandom>
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: cbspusbvnbhbnf.dpn/efsfmjdu/[ERR:_INSERT_PASS].htm" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_1]beweht" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_2]108 101 116 109 101 105 110" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_3]LLL SLS SL LS LLS S LSSS LLL LSLL" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_4]zorxv" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_5]s_m_l_t_d_ _i_i_i_u_e" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_6]DSPERiapa" />
+        <StatusEffect target="This" showmessage="Receiving encrypted transmission: [PASS_7]4 5 1 4 13 5 14" />
+      </chooserandom>
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,512,256,256" color="49,93,233" />
+      <LocationType from="City" to="None" />
+      <LocationType from="City" to="City" />
+      <LocationType from="City" to="Outpost" />
+      <LocationType from="City" to="Military" />
+      <LocationType from="City" to="Research" />
+      <LocationType from="City" to="Mine" />
+      <LocationType from="Outpost" to="None" />
+      <LocationType from="Outpost" to="City" />
+      <LocationType from="Outpost" to="Outpost" />
+      <LocationType from="Outpost" to="Military" />
+      <LocationType from="Outpost" to="Research" />
+      <LocationType from="Outpost" to="Mine" />
+      <LocationType from="Research" to="None" />
+      <LocationType from="Research" to="City" />
+      <LocationType from="Research" to="Outpost" />
+      <LocationType from="Research" to="Military" />
+      <LocationType from="Research" to="Research" />
+      <LocationType from="Research" to="Mine" />
+      <LocationType from="Military" to="None" />
+      <LocationType from="Military" to="City" />
+      <LocationType from="Military" to="Outpost" />
+      <LocationType from="Military" to="Military" />
+      <LocationType from="Military" to="Research" />
+      <LocationType from="Military" to="Mine" />
+      <message header="missionheader0.salvagewreck1" text="missionmessage0.salvagewreck1" />
+      <TriggerEvent state="1" delay="0" eventidentifier="towsub" />
+      <TriggerEvent state="0" delay="5" eventidentifier="towsubcompleted" />
+    </SalvageMission>
+    <EscortMission identifier="familytransport" tags="familytransport" type="Escort" difficulty="2" commonness="20" reward="500" achievementidentifier="escortmission" textidentifier="familytransport">
+      <Characters>
+        <Item from="outpostnpcs_DieHard" identifier="husband" />
+        <Item from="outpostnpcs_DieHard" identifier="wife" />
+      </Characters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="768,512,256,256" color="243,146,55" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+      <message header="missionheader0.escort1" text="missionmessage0.escort1" />
+      <TriggerEvent state="0" delay="15" eventidentifier="DHNpcMission.familytransport.ontheway" />
+    </EscortMission>
+    <PirateMission type="Pirate" identifier="pirate1" tags="piratehumpback" difficulty="4" commonness="20" reward="4000" achievementidentifier="piratemission" addedmissiondifficultyperplayer="8">
+      <Reputation identifier="location" amount="30" />
+      <SubmarineTypes>
+        <Submarine path="%ModDir%/Maps/EnemySubmarines/DH_PirateDugon.sub" preferreddifficulty="10" alternatereward="3200" />
+        <Submarine path="%ModDir%/Maps/EnemySubmarines/DH_PirateHumpback.sub" preferreddifficulty="40" alternatereward="4400" />
+        <Submarine path="%ModDir%/Maps/EnemySubmarines/Typhon2PirateDH.sub" preferreddifficulty="70" alternatereward="5600" />
+      </SubmarineTypes>
+      <Characters>
+        <Character typeidentifier="piratecaptain" minamount="1" maxamount="1" />
+        <Character typeidentifier="piratesecurity" minamount="1" maxamount="5" />
+        <Character typeidentifier="piratemechanic" minamount="1" maxamount="1" />
+        <Character typeidentifier="pirateengineer" minamount="1" maxamount="1" />
+      </Characters>
+      <CharacterTypes>
+        <CharacterType typeidentifier="piratecaptain">
+          <Character identifier="piratecaptain" from="piratenpcs1" preferreddifficulty="50" iscommander="true" />
+          <Character identifier="piratecaptainlord" from="piratenpcs1" preferreddifficulty="90" iscommander="true" />
+        </CharacterType>
+        <CharacterType typeidentifier="piratesecurity">
+          <Character identifier="piratesecurityrecruit" from="piratenpcs1" preferreddifficulty="40" />
+          <Character identifier="piratesecuritygunner" from="piratenpcs1" preferreddifficulty="60" />
+          <Character identifier="piratesecuritybrute" from="piratenpcs1" preferreddifficulty="70" />
+          <Character identifier="piratesecurityelite" from="piratenpcs1" preferreddifficulty="100" />
+        </CharacterType>
+        <CharacterType typeidentifier="piratemechanic">
+          <Character identifier="piratemechanicrecruit" from="piratenpcs1" preferreddifficulty="40" />
+          <Character identifier="piratemechanicveteran" from="piratenpcs1" preferreddifficulty="70" />
+        </CharacterType>
+        <CharacterType typeidentifier="pirateengineer">
+          <Character identifier="pirateengineerrecruit" from="piratenpcs1" preferreddifficulty="40" />
+          <Character identifier="pirateengineerveteran" from="piratenpcs1" preferreddifficulty="70" />
+        </CharacterType>
+      </CharacterTypes>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55" />
+      <message header="missionheader0.pirate1" text="missionmessage0.pirate1" />
+      <message header="missionheader1.pirate1" text="missionmessage1.pirate1" />
+    </PirateMission>
+    <OutpostDestroyMission identifier="abandonedoutposthumans" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="30" allowretry="true" targetitem="reactor" unhideentitysubcategories="abandonedhuman">
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48" />
+      <LocationType identifier="Abandoned" />
+      <LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+      <Characters>
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="seccrewmodule" />
+        <Character identifier="banditleader" from="abandonedoutpostnpcs" spawnpointtags="banditleader" />
+      </Characters>
+      <TriggerEvent state="0" delay="5" eventidentifier="heartofgold" campaignonly="true" />
+      <message header="missionheader0.abandonedoutposthumans" text="missionmessage0.abandonedoutposthumans" />
+    </OutpostDestroyMission>
+    <OutpostDestroyMission identifier="abandonedoutpostassassinate" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="30" allowretry="true" sonarlabel="target" unhideentitysubcategories="abandonedhuman">
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,512,256,256" color="214,50,48" />
+      <LocationType identifier="Abandoned" />
+      <LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+      <Characters>
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="seccrewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="seccrewmodule" />
+        <Character identifier="banditleader_heavy" from="abandonedoutpostnpcs" asfaraspossible="true" requirekill="true" />
+      </Characters>
+      <TriggerEvent state="0" delay="5" eventidentifier="heartofgold" campaignonly="true" />
+      <message header="missionheader0.abandonedoutpostassassinate" text="missionmessage0.abandonedoutpostassassinate" />
+    </OutpostDestroyMission>
+    <OutpostCauptureMission identifier="abandonedoutpostcapture" name="Law Enforcement" tags="abandonedoutpost" type="OutpostDestroy" reward="0" difficulty="4" commonness="5" allowretry="true" sonarlabel="target" hostageskilledmessage="One of the suspects is dead. There will be some secrets that never be revealed. Coalition will not tolerate such deed." unhideentitysubcategories="abandonedhuman" description="Coalition demands to bring all of the five suspects to the court alive. Reward will be high for anyone who can do it.">
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="0,512,256,256" color="214,50,48" />
+      <LocationType identifier="Abandoned" />
+      <LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+      <Characters>
+        <Character identifier="banditleader" from="combatmission.requirecapture.npc" asfaraspossible="true" requirerescue="true" />
+        <Character identifier="bandit" from="combatmission.requirecapture.npc" requirerescue="true" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="combatmission.requirecapture.npc" requirerescue="true" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="combatmission.requirecapture.npc" requirerescue="true" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="combatmission.requirecapture.npc" requirerescue="true" moduleflags="researchmodule" />
+      </Characters>
+      <TriggerEvent state="1" delay="0" eventidentifier="event.mission.escortcriminal" campaignonly="true" />
+      <message header="Suspects Onboard" text="Let's head out." />
+    </OutpostCauptureMission>
+    <OutpostDestroyMission identifier="abandonedoutpostrescue" tags="abandonedoutpost" type="OutpostRescue" reward="0" difficulty="4" commonness="30" allowretry="true" hostageskilledmessage="hostageskilled" unhideentitysubcategories="abandonedhuman">
+      <Reputation identifier="location" amount="10" />
+      <Reputation identifier="coalition" amount="5" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48" />
+      <LocationType identifier="Abandoned" />
+      <LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+      <Characters>
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="crewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="researchmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="engineeringmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="securitymodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="seccrewmodule" />
+        <Character identifier="bandit" from="abandonedoutpostnpcs" moduleflags="seccrewmodule" />
+        <Character identifier="banditleader" from="abandonedoutpostnpcs" spawnpointtags="banditleader" />
+        <Character identifier="hostage" from="abandonedoutpostnpcs" asfaraspossible="true" requirerescue="true" />
+        <Character identifier="hostage" from="abandonedoutpostnpcs" asfaraspossible="true" requirerescue="true" />
+        <Character identifier="hostage" from="abandonedoutpostnpcs" asfaraspossible="true" requirerescue="true" />
+      </Characters>
+      <message header="missionheader0.abandonedoutpostrescue" text="missionmessage0.abandonedoutpostrescue" />
+      <TriggerEvent state="1" delay="0" eventidentifier="event.mission.escorthostage" campaignonly="true" />
+    </OutpostDestroyMission>
+    <HostagesEscortMission name="Escort the hostages" identifier="escorthostage" tags="escorthostage" type="Escort" description="Transport the survivors to the nearest station." difficulty="3" commonness="15" reward="3000" achievementidentifier="escortmission" successmessage="You made it. Welcome home.">
+      <message header="Hostages died" text="They still cannot make it." />
+      <Characters>
+        <Character identifier="hostage" from="abandonedoutpostnpcs" />
+        <Character identifier="hostage" from="abandonedoutpostnpcs" />
+        <Character identifier="hostage" from="abandonedoutpostnpcs" />
+      </Characters>
+      <LocationType from="Abandoned" to="City" />
+      <LocationType from="Abandoned" to="Outpost" />
+      <LocationType from="Abandoned" to="Military" />
+      <LocationType from="Abandoned" to="Mine" />
+      <LocationType from="Abandoned" to="Research" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="768,512,256,256" color="243,146,55" />
+    </HostagesEscortMission>
+    <PrisonersEscortMission name="Escort the Prisoners" identifier="escortprisoners" tags="dhescortprisoners" type="Escort" description="Transport the captured suspects to the nearest station." difficulty="3" commonness="15" reward="7000" achievementidentifier="escortmission" successmessage="They will soon face their judgment...">
+      <message header="Suspects died" text="The suspects are failed to meet their judgment." />
+      <Characters>
+        <Character identifier="captured_bandit" from="combatmission.requirecapture.npc" />
+        <Character identifier="captured_bandit" from="combatmission.requirecapture.npc" />
+        <Character identifier="captured_bandit" from="combatmission.requirecapture.npc" />
+        <Character identifier="captured_bandit" from="combatmission.requirecapture.npc" />
+        <Character identifier="captured_bandit_leader" from="combatmission.requirecapture.npc" />
+      </Characters>
+      <LocationType from="Abandoned" to="AnyOutpost" />
+      <Icon texture="%ModDir%/UI/DHMissionIcons.png" sourcerect="0,512,256,256" color="243,146,55" />
+    </PrisonersEscortMission>
+    <!--<LevelOutpostMission
+    type="Pirate"
+    identifier="leveloutpost_capture"
+    tags="leveloutpost"
+    difficulty="4"
+    commonness="10"
+    reward="0"
+    addedmissiondifficultyperplayer="8"
+	textidentifier="leveloutpost_capture">
+    <Reputation identifier="coalition" amount="20" />
+	<Reputation identifier="separatists" amount="-40" />
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Colony.sub" preferreddifficulty="10" />
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="target" minamount="6" maxamount="8" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="target">
+        <Character identifier="suspect" from="outpostnpcs_DieHard" />
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="243,146,55"/>
+    <message header="missionheader0.pirate1" text="missionmessage0.pirate1"/>
+    <message header="missionheader1.pirate1" text="missionmessage1.pirate1"/>
+	<TriggerEvent state="0" delay="2" eventidentifier="leveloutpost.friendlyNpcs.stuff" />
+	<TriggerEvent state="0" delay="4" eventidentifier="leveloutpost.friendlyNpcs.commoner" />
+	<TriggerEvent state="0" delay="10" eventidentifier="leveloutpost.friendlyNpcs.stuff.merchant"/>
+	<TriggerEvent state="0" delay="6" eventidentifier="dockingfeeleveloutpost" />
+	<TriggerEvent state="0" delay="8" eventidentifier="debtcollectorleveloutpost" />
+	<TriggerEvent state="0" delay="10" eventidentifier="checkweaponleveloutpost"/>
+  </LevelOutpostMission>
+  <LevelOutpostMission
+    type="Pirate"
+    identifier="story_leveloutpost_delivermessage"
+    tags="leveloutpost"
+    difficulty="0"
+    commonness="0"
+    reward="0"
+    addedmissiondifficultyperplayer="8"
+	textidentifier="story_leveloutpost_delivermessage"
+	targetitem="reactor">
+    <SubmarineTypes>
+      <Submarine path="%ModDir%/Colony.sub" preferreddifficulty="10" />
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="target" minamount="1" maxamount="1" />
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="target">
+        <Character identifier="dummypirate" from="outpostnpcs_DieHard" />
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="243,146,55"/>
+    <message header="missionheader0.pirate1" text="missionmessage0.pirate1"/>
+    <message header="missionheader1.pirate1" text="missionmessage1.pirate1"/>
+	<TriggerEvent state="0" delay="2" eventidentifier="leveloutpost.friendlyNpcs.stuff" />
+	<TriggerEvent state="0" delay="4" eventidentifier="leveloutpost.friendlyNpcs.commoner" />
+	<TriggerEvent state="0" delay="10" eventidentifier="leveloutpost.friendlyNpcs.stuff.merchant"/>
+	<TriggerEvent state="0" delay="6" eventidentifier="dockingfeeleveloutpost" />
+	<TriggerEvent state="0" delay="8" eventidentifier="debtcollectorleveloutpost" />
+	<TriggerEvent state="0" delay="10" eventidentifier="checkweaponleveloutpost"/>
+	<TriggerEvent state="0" delay="10" eventidentifier="Story.beginning.managertalk.receive"/>
+  </LevelOutpostMission>-->
+    <BeaconMission identifier="story_nocargo_beacon" tags="story_nocargo_beacon" type="Beacon" difficulty="3" commonness="0" reward="0" textidentifier="story_nocargo_beacon" sideobjective="true">
+      <monsters commonness="100">
+        <monster character="Crawler" min="4" max="8" />
+      </monsters>
+      <monsters commonness="50">
+        <monster character="Tigerthresher" min="2" max="2" />
+        <monster character="Bonethresher" min="1" max="1" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message text="missionmessage0.beaconmission" />
+      <TriggerEvent state="1" delay="0" eventidentifier="story.chatper1.beaconfixed" />
+    </BeaconMission>
+  </Override>
+  <DryCaveMission identifier="drycavemudraptor" textidentifier="drycavemudraptor" tags="drycavemission" achievementidentifier="abandonedoutpostdestroymonsters" type="OutpostDestroy" reward="3000" difficulty="4" commonness="10" allowretry="true" sonarlabel="nest" unhideentitysubcategories="abandonedmonster">
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,256,256,256" color="214,50,48" />
+    <LocationType identifier="Cave" />
+    <!--<LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />-->
+    <Characters>
+      <Character identifier="husk" min="-2" max="2" />
+      <Character identifier="mudraptor" min="4" max="6" />
+      <Character identifier="mudraptor" min="2" max="3" multiplayeronly="true" />
+    </Characters>
+    <Items>
+      <Item identifier="largemudraptoregg" spawnpointtags="nest">
+        <StatusEffectOnApproach target="This" Scale="1.0" setvalue="true" />
+      </Item>
+      <Item identifier="largemudraptoregg" spawnpointtags="nest">
+        <StatusEffectOnApproach target="This" Scale="1.0" setvalue="true" delay="9" />
+      </Item>
+      <Item identifier="largemudraptoregg" spawnpointtags="nest" />
+      <Item identifier="largemudraptoregg" spawnpointtags="nest" />
+      <Item identifier="largemudraptoregg" spawnpointtags="nest" />
+      <Item identifier="largemudraptoregg" spawnpointtags="nest" />
+    </Items>
+    <message header="missionheader0.abandonedoutpostmonsters" text="missionmessage0.abandonedoutpostmonsters" />
+  </DryCaveMission>
+</Missions>

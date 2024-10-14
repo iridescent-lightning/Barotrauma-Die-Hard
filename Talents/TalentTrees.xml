@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<override>
+  <TalentTrees>
+    <TalentTree jobidentifier="captain" />
+    <TalentTree jobidentifier="securityofficer" />
+    <TalentTree jobidentifier="assistant" />
+    <TalentTree jobidentifier="engineer" />
+    <TalentTree jobidentifier="mechanic" />
+    <TalentTree jobidentifier="medicaldoctor" />
+  </TalentTrees>
+</override>

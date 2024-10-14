@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Afflictions>
+    <InternalDamage name="Gunshot wound" identifier="gunshotwound" description="The entry site is a small, dark, bruised hole oozing a little blood. The exit wound however is a large ragged mess of exposed tissue and pouring blood." type="gundamage" causeofdeathdescription="Shot to death" selfcauseofdeathdescription="You have died of gunshot wounds." limbspecific="true" maxstrength="200" karmachangeonapplied="-1" damageoverlayalpha="2">
+      <Description textidentifier="afflictiondescription.gunshotwound.low" minstrength="0" maxstrength="40" />
+      <Description textidentifier="afflictiondescription.gunshotwound" minstrength="40" maxstrength="200" />
+      <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true" minvitalitydecrease="0" maxvitalitydecrease="2" dialogflag="GunshotWound"></Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,768,128,128" color="195,60,60,255" origin="0,0" />
+    </InternalDamage>
+    <Affliction name="Armormarker" identifier="Armormarker" type="marker" description="marker" limbspecific="true" indicatorlimb="Torso" activationthreshold="0" maxstrength="10" targets="human">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-10" />
+    </Affliction>
+    <Affliction name="In Pain" identifier="gunshotpain" type="pain" description="pain" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" maxstrength="10" targets="human">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-0.1">
+        <StatusEffect target="Character" comparison="and" disabledeltatime="true" stackable="false" checkconditionalalways="false" delay="1">
+          <Conditional ishuman="true" ismale="true" isdead="False" />
+          <Sound file="%ModDir%/male_agony.ogg" selectionmode="Random" />
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and" disabledeltatime="true" stackable="false" checkconditionalalways="false" delay="1">
+          <Conditional ishuman="true" isfemale="true" isdead="False" />
+          <Sound file="%ModDir%/male_agony.ogg" selectionmode="Random" />
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="896,0,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Pain Resistance" identifier="painresistance" description="Numb the nerve" type="resistance" isbuff="true" limbspecific="false" maxstrength="10" affectmachines="false" MedicalSkillGain="0.01">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-0.01" resistancefor="gunshotpain" minresistance="100" maxresistance="100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!--<InternalDamage    no use because affliction doesn't know where to apply it.
+    name="Brain Shot"
+    identifier="brainshot"
+    description="Shot to the brain. Death is imminent. At least the victim doesn't need to go through agony."
+    type="brainshotdamage"
+    causeofdeathdescription="Shot to death"
+    selfcauseofdeathdescription="You have died of gunshot."
+    limbspecific="false"
+    indicatorlimb="Head"
+    maxstrength="10"
+    karmachangeonapplied="-1"
+    damageoverlayalpha="2">
+    <Description
+      textidentifier="brainshot"
+      minstrength="0"
+      maxstrength="10"/>
+    <Effect minstrength="0" maxstrength="10" multiplybymaxvitality="true"
+      minvitalitydecrease="0"
+      maxvitalitydecrease="2"/>
+    <icon texture="%ModDir%/UI/dhicon.png" sourcerect="0,512,128,128" color="195,60,60,255" origin="0,0"/>
+  </InternalDamage>-->
+    <!--<Affliction name="tinnitus" identifier="tinnitus" type="tinnitus" 
+description="The sound of gunfire deafened the ears.Use tactical headphones to protect your hearing"
+limbspecific="false" 
+indicatorlimb="Head" 
+activationthreshold="2" 
+maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-0.05">
+      <StatusEffect type="OnActive" target="Character" comparison="and" LowPassMultiplier="0" setvalue="true" >
+        <Conditional ishuman="true" />
+        <Conditional IsLocalPlayer="True" />
+        <Sound file="%ModDir%/tinnitus.ogg" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/UI/dhicon.png" sourcerect="128,0,128,128" origin="0,0" />
+  </Affliction>-->
+    <Affliction name="Stunblast" identifier="stunblast" description="" type="invertcontrols" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="100" maxstrength="10">
+      <Effect minstrength="0" maxstrength="10" minscreendistort="0.5" maxscreendistort="0.6" minradialdistort="0.7" maxradialdistort="2" minscreenblur="1" maxscreenblur="1.0" minspeedmultiplier="0.5" maxspeedmultiplier="0.7" strengthchange="-0.05"></Effect>
+    </Affliction>
+    <Affliction name="Husk RegeneratesHP" identifier="huskrevoerhp" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="10">
+      <Effect minstrength="0" maxstrength="10" multiplybymaxvitality="true">
+        <StatusEffect type="Always" target="Character">
+          <ReduceAffliction identifier="gunshotwound" amount="100" />
+          <ReduceAffliction identifier="lacerations" amount="100" />
+          <ReduceAffliction identifier="blunttrauma" amount="100" />
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="afflictionname.coldwater" identifier="coldwater" description="coldwater1" type="debuff" causeofdeathdescription="Died of freezing ocean." selfcauseofdeathdescription="You have died of freezing ocean." limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="101" treatmentthreshold="101" maxstrength="100" affectmachines="false" iconcolors="153,255,255;0,255,255;0,153,153;0,0,153">
+      <Description textidentifier="coldwater" minstrength="0" maxstrength="100" />
+      <!-- no effects at this point -->
+      <Effect minstrength="0" maxstrength="60" strengthchange="-0.5" />
+      <!-- Slow down the character and slightly decrease vitality -->
+      <Effect minstrength="70" maxstrength="90" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-0.5" dialogflag="" minfacetint="0,51,102,0" maxfacetint="0,51,102,50" minspeedmultiplier="0.9" maxspeedmultiplier="0.8"></Effect>
+      <!-- Withdrawal symptoms start to get lethal at this level -->
+      <Effect minstrength="90" maxstrength="100" strengthchange="-0.5" dialogflag="" minfacetint="0,51,102,100" maxfacetint="0,51,102,150" minspeedmultiplier="0.8" maxspeedmultiplier="0.7">
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Affliction identifier="dh_hypothermia" strength="0.11" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="128,128,128,128" color="102,255,255,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Hypothermia" identifier="dh_hypothermia" description="dh_hypothermia" type="pressure" causeofdeathdescription="Died of freezing ocean." selfcauseofdeathdescription="You have died of freezing ocean." limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="0" treatmentthreshold="0" maxstrength="300" affectmachines="false" iconcolors="0,0,153">
+      <Description textidentifier="dh_hypothermia" minstrength="0" maxstrength="300" />
+      <!-- Withdrawal symptoms start to get lethal at this level -->
+      <Effect minstrength="0" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="2" multiplybymaxvitality="True" strengthchange="-0.1" dialogflag="" minfacetint="0,51,102,100" maxfacetint="0,51,102,150" minspeedmultiplier="0.8" maxspeedmultiplier="0.5">
+        <!--<AfflictionOverlay texture="%ModDir%/UI/enterdoor_overlay.png" sourcerect="0,0,1920,1080" origin="0,0" color="255,255,255,255" />-->
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="0,384,128,128" color="0,0,153,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Fatigue" identifier="fatigue" description="Affliction.fatigue.description" type="debuff" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="101" treatmentthreshold="101" maxstrength="100" affectmachines="false" iconcolors="10,193,114,255;255,43,0,255">
+      <Description textidentifier="Affliction.fatigue.description" minstrength="0" maxstrength="100" />
+      <!-- no effects at this point -->
+      <Effect minstrength="0" maxstrength="40" strengthchange="-4" />
+      <Effect minstrength="40" maxstrength="60" strengthchange="-3.5" minfacetint="0,51,102,0" maxfacetint="0,51,102,50" minspeedmultiplier="0.9" maxspeedmultiplier="0.8"></Effect>
+      <Effect minstrength="60" maxstrength="90" strengthchange="-3" minfacetint="0,51,102,0" maxfacetint="0,51,102,50" minspeedmultiplier="0.8" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character">
+          <Sound file="%ModDir%/Sounds/panting.ogg" range="500" volumenum="2" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="90" maxstrength="100" strengthchange="-2" dialogflag="" minfacetint="0,51,102,100" maxfacetint="0,51,102,150" minspeedmultiplier="0.5" maxspeedmultiplier="0.35">
+        <StatusEffect target="Character">
+          <Sound file="%ModDir%/Sounds/panting.ogg" range="500" volumenum="2" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Fatigue Resistance" identifier="fatigueresistance" type="resistance" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="50" affectmachines="false">
+      <Effect minstrength="0" maxstrength="50" strengthchange="-1" resistancefor="fatigue" minresistance="0.5" maxresistance="0.75" />
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="coldwaterresistance" type="resistance" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="200" affectmachines="false" iconcolors="233,78,54">
+      <Effect minstrength="0" maxstrength="40" strengthchange="-1" resistancefor="coldwater" minresistance="0.15" maxresistance="0.25" />
+      <Effect minstrength="40" maxstrength="200" strengthchange="-1" resistancefor="coldwater" minresistance="0.15" maxresistance="0.25" />
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="384,768,128,128" color="233,78,54,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Dancing" identifier="dancing" type="debuff" description="Dance!Dance!" limbspecific="false" indicatorlimb="Torso" activationthreshold="2" maxstrength="100">
+      <Effect minstrength="20" maxstrength="100" strengthchange="-0.05">
+        <StatusEffect type="Always" target="NearbyCharacters" range="150" delay="0.5" stackable="false" disabledeltatime="true">
+          <Conditional InWater="false" />
+          <Affliction identifier="stun" strength="0.2" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="128,0,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Gas" identifier="stungas" type="gas" description="Gas!Gas!" limbspecific="false" indicatorlimb="Torso" activationthreshold="2" maxstrength="10" iconcolors="118,238,0">
+      <Effect minstrength="0" maxstrength="5" strengthchange="-1" />
+      <Effect minstrength="5" maxstrength="20" strengthchange="-1">
+        <StatusEffect type="Always" target="Character" stackable="false" disabledeltatime="false">
+          <Conditional InWater="false" />
+          <Affliction identifier="stun" amount="0.02" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="638,638,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Crouch" identifier="crouch" description="Crouch for better aiming" showiconthreshold="1000" type="crouch" isbuff="true" limbspecific="false" maxstrength="2">
+      <Effect minstrength="0" maxstrength="4" strengthchange="-1.5">
+        <StatValue stattype="RangedSpreadReduction" minvalue="0" maxvalue="2" />
+      </Effect>
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="CrouchLua" identifier="CrouchLua" description="Crouch for better aiming" showiconthreshold="1000" type="crouch" isbuff="true" limbspecific="false" maxstrength="100">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-20">
+        <StatValue stattype="RangedSpreadReduction" minvalue="0" maxvalue="2" />
+      </Effect>
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="recoil" identifier="recoil" showiconthreshold="1000" type="recoil" isbuff="true" limbspecific="false" maxstrength="2">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-1.9">
+        <StatValue stattype="RangedSpreadReduction" minvalue="-1" maxvalue="-2" />
+      </Effect>
+      <!-- Greater than 1.48 and the ragdolls start snapping when turning and characters take damage from colliding with doors & walls -->
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="Entering Door" identifier="enteringdoor" description="Opening a door" showiconthreshold="0" type="crouch" isbuff="true" limbspecific="false" maxstrength="3">
+      <Effect minstrength="0" maxstrength="3" strengthchange="-4.5" minspeedmultiplier="0" maxspeedmultiplier="0"></Effect>
+      <AfflictionOverlay texture="%ModDir%/UI/enterdoor_overlay.png" sourcerect="0,0,1920,1080" origin="0,0" color="255,255,255,255" />
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="Prostitude Power" identifier="Prostitudestun" description="Opening a door" showiconthreshold="0" type="crouch" isbuff="true" limbspecific="false" maxstrength="10">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-2" minspeedmultiplier="0" maxspeedmultiplier="0"></Effect>
+      <AfflictionOverlay texture="%ModDir%/UI/enterdoor_overlay.png" sourcerect="0,0,1920,1080" origin="0,0" color="255,255,255,255" />
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="Binoculars" identifier="Binoculars" description="Opening a door" showiconthreshold="0" type="special" isbuff="true" limbspecific="false" maxstrength="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="-100"></Effect>
+      <AfflictionOverlay texture="%ModDir%/UI/binoculars_overlay.png" sourcerect="0,0,2160,1080" origin="0,0" color="255,255,255,255" />
+    </Affliction>
+    <Affliction name="Fetch evidence" identifier="fetchevidence" description="" showiconthreshold="100000" type="fetch" isbuff="false" limbspecific="false" maxstrength="100">
+      <Effect minstrength="100" maxstrength="100">
+        <StatusEffect type="Always" target="Character" stackable="False">
+          <Affliction identifier="nofetchevidence" amount="5" />
+        </StatusEffect>
+      </Effect>
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <Affliction name="NoFetch evidence" identifier="nofetchevidence" description="" showiconthreshold="100000" type="fetch" isbuff="false" limbspecific="false" maxstrength="100">
+      <!--<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>-->
+    </Affliction>
+    <UnknownAffliction name="Unknown Sickness" identifier="unknownsickness" description="" showiconthreshold="0" type="nocure" isbuff="false" limbspecific="false" maxstrength="100">
+      <Effect minstrength="0" maxstrength="70" minspeedmultiplier="0.8" maxspeedmultiplier="0.6" minvitalitydecrease="0" maxvitalitydecrease="1" multiplybymaxvitality="true" />
+      <Effect minstrength="70" maxstrength="100" minspeedmultiplier="0.8" maxspeedmultiplier="0.6" minvitalitydecrease="0" maxvitalitydecrease="1" multiplybymaxvitality="true">
+        <StatusEffect type="Always" target="Character">
+          <Affliction identifier="stun" amount="100" setvalue="true" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="128,382,128,128" color="255,255,255,255" origin="0,0" />
+    </UnknownAffliction>
+    <Affliction name="naplm" identifier="naplm" description="" type="burn" causeofdeathdescription="Burned to death" selfcauseofdeathdescription="You have burned to death." limbspecific="False" showiconthreshold="111" showinhealthscannerthreshold="111" showicontoothersthreshold="111" maxstrength="90" healcostmultiplier="4">
+      <Effect minstrength="0" maxstrength="15" strengthchange="-1" multiplybymaxvitality="false" minscreendistort="0.0" maxscreendistort="0.5" minspeedmultiplier="0.9" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character" interval="1">
+          <ParticleEmitter particle="DarkSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="10" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="15" maxstrength="90" strengthchange="-1" multiplybymaxvitality="true" minscreendistort="0.5" maxscreendistort="0.5" minspeedmultiplier="0.5" maxspeedmultiplier="0.45">
+        <StatusEffect type="NotInWater" target="Character" interval="2">
+          <ParticleEmitter particle="flame" particleamount="1" scalemin="0.5" scalemax="0.75" velocitymin="0.5" velocitymax="2" anglemin="0" anglemax="360" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="Character">
+          <ReduceAffliction identifier="naplm" amount="900" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Watcher's Gaze" identifier="watchersgaze" description="" type="gaze" limbspecific="false" indicatorlimb="Head" showiconthreshold="50" showicontoothersthreshold="40" showinhealthscannerthreshold="20" karmachangeonapplied="0" maxstrength="100" affectmachines="false">
+      <Description textidentifier="afflictiondescription.watchersgaze.self" target="Self" />
+      <Description textidentifier="afflictiondescription.watchersgaze" target="OtherCharacter" />
+      <Effect minstrength="0" maxstrength="50" minscreendistort="0" maxscreendistort="0.4" minscreenblur="0" maxscreenblur="0.4" minradialdistort="0" maxradialdistort="0" minchromaticaberration="0" maxchromaticaberration="0" strengthchange="-4">
+        <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.1" HealthMultiplier="1.5" setvalue="true">
+          <Conditional speciesname="crawler" />
+          <Conditional speciesname="mudraptor" />
+          <Conditional speciesname="mudraptor_unarmored" />
+          <Conditional speciesname="mudraptor_veteran" />
+          <Conditional speciesname="tigerthresher" />
+          <Conditional speciesname="bonethresher" />
+          <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.3" scalemax="0.4" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="50" maxstrength="60" minscreendistort="0.4" maxscreendistort="0.5" minscreenblur="0.4" maxscreenblur="0.5" minradialdistort="0" maxradialdistort="0" minchromaticaberration="0" maxchromaticaberration="0" strengthchange="-7">
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional ishuman="true" />
+          <Affliction identifier="nausea" strength="20" probability="0.02" />
+          <Affliction identifier="psychosis" strength="20" probability="0.02" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.2" HealthMultiplier="2" setvalue="true">
+          <Conditional speciesname="crawler" />
+          <Conditional speciesname="mudraptor" />
+          <Conditional speciesname="mudraptor_unarmored" />
+          <Conditional speciesname="mudraptor_veteran" />
+          <Conditional speciesname="tigerthresher" />
+          <Conditional speciesname="bonethresher" />
+          <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.4" scalemax="0.6" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="60" maxstrength="100" minscreendistort="0.5" maxscreendistort="1" minscreenblur="0.5" maxscreenblur="1" minradialdistort="0" maxradialdistort="2" minchromaticaberration="0" maxchromaticaberration="50" strengthchange="-19">
+        <StatusEffect target="Character" SpeedMultiplier="0.2" setvalue="true">
+          <Conditional ishuman="true" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <Conditional ishuman="true" />
+          <Affliction identifier="nausea" strength="2" />
+          <Affliction identifier="psychosis" strength="3" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.3" HealthMultiplier="3" setvalue="true">
+          <Conditional speciesname="crawler" />
+          <Conditional speciesname="mudraptor" />
+          <Conditional speciesname="mudraptor_unarmored" />
+          <Conditional speciesname="mudraptor_veteran" />
+          <Conditional speciesname="tigerthresher" />
+          <Conditional speciesname="bonethresher" />
+          <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.6" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,896,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Chlorne Poisioning" identifier="chlorine_poisoning" type="poison" limbspecific="false" indicatorlimb="Torso" showiconthreshold="10" showinhealthscannerthreshold="0" treatmentthreshold="10" karmachangeonapplied="-50" maxstrength="100" affectmachines="false" healcostmultiplier="2.75" MedicalSkillGain="3.0" iconcolors="64,253,20">
+      <Description textidentifier="afflictiondescription.chlorine_poisoning" minstrength="0" maxstrength="50" />
+      <!-- Slow the character down and paralyze in the end-->
+      <Effect minstrength="0" maxstrength="40" strengthchange="-0.35" minscreendistort="0.0" maxscreendistort="0.1" minscreenblur="0.0" maxscreenblur="0.1" minspeedmultiplier="1.0" maxspeedmultiplier="0.4"></Effect>
+      <Effect minstrength="40" maxstrength="100" strengthchange="-0.35" minscreendistort="0.1" maxscreendistort="0.8" minscreenblur="0.1" maxscreenblur="0.8" minspeedmultiplier="0.9" maxspeedmultiplier="0.1" multiplybymaxvitality="true" minvitalitydecrease="0" maxvitalitydecrease="2"></Effect>
+      <PeriodicEffect mininterval="5" maxinterval="45" minstrength="10" maxstrength="100">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+          <Affliction identifier="stun" amount="1.0" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="768,638,128,128" color="64,253,20,255" origin="0,0" />
+    </Affliction>
+    <COPoisioning name="CO/CO2 Poisioning" identifier="co_poisoning" type="poison" limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="0" treatmentthreshold="3" karmachangeonapplied="-50" maxstrength="100" affectmachines="false" healcostmultiplier="2.75" MedicalSkillGain="3.0">
+      <Description textidentifier="afflictiondescription.chlorine_poisoning" minstrength="0" maxstrength="50" />
+      <!-- Slow the character down and paralyze in the end-->
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+          <Affliction identifier="oxygenlow" amount="12" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/UI/dhicon.png" sourcerect="896,768,128,128" origin="0,0" />
+    </COPoisioning>
+  </Afflictions>
+</Override>

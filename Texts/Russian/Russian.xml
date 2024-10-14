@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Russian">
+  <Affliction.fatigue.description>Бег снижает вашу выносливость. Отдохните, если устали.</Affliction.fatigue.description>
+  <coldwater>Холодная вода постепенно вас убивает. Выйдете из воды, чтобы восстановить температуру тела.</coldwater>
+  <coldwater1>Оставатся в воде слишком долго может быть опасно.</coldwater1>
+  <dh_hypothermia>Вы сейчас замерзнете!</dh_hypothermia>
+  <brainshot>Выстрел в мозг. Смерть неминуема. Хотя бы жертва ничего не чувствует.</brainshot>
+  <pain>Используйте морфин чтобы остановить боль</pain>
+  <bodyarmorI>[Множитель скорости пробития: 40%]</bodyarmorI>
+  <eventtext.clownbomb.c>Клоун хихикает над вами.</eventtext.clownbomb.c>
+  <eventtext.clownbomb.c1>"Это очень красивый корабль." Клоун начинает хихикать сильнее</eventtext.clownbomb.c1>
+  <eventtext.clownbomb.c2>"Я сделал небольшой подарок вашему кораблю. Надеюсь вам понравится."</eventtext.clownbomb.c2>
+  <eventtext.clownbomb.c3>"О чем ты?"</eventtext.clownbomb.c3>
+  <eventtext.clownbomb.c4>Прочь! Прочь! Увидь подарок!</eventtext.clownbomb.c4>
+  <eventtext.clownbomb.c5>Клоун хихикает еще громче.</eventtext.clownbomb.c5>
+  <eventtext.clownbomb.c6>"Что-то здесь не так."</eventtext.clownbomb.c6>
+  <EventTest.dhprostitude.c>"Хей, детка. Тебе нравится то, что ты видишь?"</EventTest.dhprostitude.c>
+  <EventTest.dhprostitude.c1>Женщина в сексуальной одежде моргнула. Ты приближаешься к ней.</EventTest.dhprostitude.c1>
+  <EventTest.dhprostitude.c2>"Дай мне 50 кредитов и я покажу тебе все, что ты хочешь" — сказала она.</EventTest.dhprostitude.c2>
+  <EventTest.dhprostitude.c3>"Прямо здесь?".</EventTest.dhprostitude.c3>
+  <EventTest.dhprostitude.c4>"Конечно нет, сладкий" — сказала она, взглядом указывая на дверь.</EventTest.dhprostitude.c4>
+  <EventTest.dhprostitude.c.o1> "Держи."</EventTest.dhprostitude.c.o1>
+  <EventTest.dhprostitude.c.o1.c1>Вы следуете за женщиной в небольшую комнату.</EventTest.dhprostitude.c.o1.c1>
+  <EventTest.dhprostitude.c.o1.c2>"А теперь закрой глаза." Она улыбнулась вам, возясь с ремнями нижнего белья. "Позволь мне..."</EventTest.dhprostitude.c.o1.c2>
+  <EventTest.dhprostitude.c.o1.c3>Внезапно что-то очень сильно ударило вас в голову. Вас вырубили.</EventTest.dhprostitude.c.o1.c3>
+  <EventTest.dhprostitude.c.o1.c4>Проснувшись, вы поняли, что женщина пропала, а в вашем кармане не достает 500 кредитов.</EventTest.dhprostitude.c.o1.c4>
+  <EventTest.dhprostitude.c.o2>"Нет, ничего не нужно."</EventTest.dhprostitude.c.o2>
+  <EventTest.dhprostitude.c.o3>"Эй! Я видел тебя до этого!"</EventTest.dhprostitude.c.o3>
+  <EventTest.dhprostitude.c.o3.c>Поняв, что ее узнали, женщина убежала в неизвестном направлении.</EventTest.dhprostitude.c.o3.c>
+  <EventText.checkweapon.c>"Стоять на месте!"</EventText.checkweapon.c>
+  <EventText.checkweapon.c1>"Слушаю Вас?"</EventText.checkweapon.c1>
+  <EventText.checkweapon.c2>"То, что вы носите длинноствольное оружие, является прямым нарушением правил безопасности аванпостов, установленных Коалицией. Вы должны сдать оружие."</EventText.checkweapon.c2>
+  <EventText.checkweapon.c2.o1>"Извините, я не знал. Могу ли я оставить оружие на своем корабле?"</EventText.checkweapon.c2.o1>
+  <EventText.checkweapon.c2.o1.c>"У вас минута чтобы избавиться от всех нежелательных вещей. И чтоб больше я вас с длинноствольным оружием не видел, в следующий раз я не буду так добр."</EventText.checkweapon.c2.o1.c>
+  <EventText.checkweapon.c2.o2>"Вы не имеете на это права! Я никогда не слышал о таком правиле!"</EventText.checkweapon.c2.o2>
+  <EventText.checkweapon.c2.o2.c1>"Теперь слышали."</EventText.checkweapon.c2.o2.c1>
+  <EventText.checkweapon.c2.o2.c2>"Это ограбление!"</EventText.checkweapon.c2.o2.c2>
+  <EventText.checkweapon.c2.o2.c3>"Подайте документ, если вы не согласны с коалицией. Я просто выполняю приказы. Если еще раз увижу вас с длинноствольным оружием, вам крышка."</EventText.checkweapon.c2.o2.c3>
+  <EventText.checkweapon.c2.o3>"Вот оружие. Умри тварь!"</EventText.checkweapon.c2.o3>
+  <EventText.checkweapon.c3.o1>Показать ордер</EventText.checkweapon.c3.o1>
+  <EventText.checkweapon.c3.o1.c>"Извиняюсь. Вы можете идти.</EventText.checkweapon.c3.o1.c>
+  <EventText.checkweapon.c3.o1.c1>...</EventText.checkweapon.c3.o1.c1>
+  <EventText.checkweapon.c3.o1.c2>Здесь ничего нет</EventText.checkweapon.c3.o1.c2>
+  <EventText.checkweapon.c3.o1.c3>"Это ты со мной? Ваше оружие конфисковано, а вы будете оштрафованы!"</EventText.checkweapon.c3.o1.c3>
+  <EventText.checkweapon2.c>"Я дал вам время, и что я вижу? Вы будете оштрафованы, а ваше оружие будет конфисковано. Я доложу об этом куда надо."</EventText.checkweapon2.c>
+  <EventText.checkweapon2.c.o1>Сдать оружие</EventText.checkweapon2.c.o1>
+  <EventText.checkweapon2.c.o2>Отказаться сотрудничать!</EventText.checkweapon2.c.o2>
+  <EventText.checkweapon3.c>"Подозреваемые носят на станции смертельное оружие. Предупреждение о возможной террористической деятельности. Немедленно приступайте к аресту!"</EventText.checkweapon3.c>
+  <EventText.dhhuskcultambush.c>Вас остановил человек в капюшоне.</EventText.dhhuskcultambush.c>
+  <EventText.dhhuskcultambush.c1>"Я чувствую в вас что-то особенное." — сказал он.</EventText.dhhuskcultambush.c1>
+  <EventText.dhhuskcultambush.c2>Он выглядит бледным и худым. Виден какой-то особый фанатизм в его глазах.</EventText.dhhuskcultambush.c2>
+  <EventText.dhhuskcultambush.c3>Вы взглянули на него. Как только вы собирались уйти, он заговорил.</EventText.dhhuskcultambush.c3>
+  <EventText.dhhuskcultambush.c4>"Жизнь трудна и бессмысленна. На этой планете мы все переживаем о будущем. Почему бы тебе не пойти со мной? Попробуй это и избавься от боли и печали."</EventText.dhhuskcultambush.c4>
+  <EventText.dhhuskcultambush.c.o1>"Иди нахуй."</EventText.dhhuskcultambush.c.o1>
+  <EventText.dhhuskcultambush.c.o1.c>"Сам иди. Я слышал о таких людях, как ты, и я не собираюсь учавствовать в любой херне, которую вы планируете"</EventText.dhhuskcultambush.c.o1.c>
+  <EventText.dhhuskcultambush.c.o1.c2>Вы попытались уйти. Человек в капюшоне пытается вас задержать. "Отстань от меня!". Внезапно, он становится очень агрессивным и вы видете, как из своего кармана он достает нож.</EventText.dhhuskcultambush.c.o1.c2>
+  <EventText.dhhuskcultambush.c.o2>"Да. Моя жизнь невыносима"</EventText.dhhuskcultambush.c.o2>
+  <EventText.dhhuskcultambush.c.o2.c>"Моя жизнь просто ужасна, лучше бы я жил без нужны волноваться о чем либо. Помогите мне."
+Мужчина вытащил шприц и ввел вам что-то в руку. Вы почувствовали очень странное ощущение.</EventText.dhhuskcultambush.c.o2.c>
+  <EventText.dhhuskcultambush.aft>"Не могу понять, как они позволили таким людям попасть на станцию, куда вообще СБ смотрит?"</EventText.dhhuskcultambush.aft>
+  <EventText.checkevidence.c>"Я принимаю добычу с молтоглавов. Я куплю только одну вещь, ибо я не приношу много денег."</EventText.checkevidence.c>
+  <EventText.checkcrawlers.c>"Я принимаю добычу с ползунов. Я куплю только одну вещь, так как я не приношу много денег."</EventText.checkcrawlers.c>
+  <EventText.checkmolochs.c>"Я принимаю добычу с Молохов. Я куплю только одну вещь, так как я не приношу много денег."</EventText.checkmolochs.c>
+  <EventText.checkfish.c>"Я принимаю добычу с акульих тигров и шипостаев. Я куплю только одну вещь, так как я не приношу много денег."</EventText.checkfish.c>
+  <EventText.checkraptor.c>"Я принимаю добычу с рапторов. Я куплю только одну вещь, так как я не приношу много денег."</EventText.checkraptor.c>
+  <EventText.checkabyss.c>"Я принимаю добычу с монстров из бездны. Я куплю только одну вещь, так как я не приношу много денег."</EventText.checkabyss.c>
+  <EventText.checkevidence.c.o1>Показать ему добычу</EventText.checkevidence.c.o1>
+  <EventText.checkevidence.c.o1.c1>"Так с, посмотрим"</EventText.checkevidence.c.o1.c1>
+  <EventText.checkevidence.c.o1.c2>...</EventText.checkevidence.c.o1.c2>
+  <EventText.checkevidence.c.o1.c3>"Это то, что я хотел. Благодарю Вас."</EventText.checkevidence.c.o1.c3>
+  <EventText.checkevidence.c.o1.c4>"Здесь нет ничего, что меня бы заинтересовало."</EventText.checkevidence.c.o1.c4>
+  <EventText.checkevidence.c.o2>Уйти</EventText.checkevidence.c.o2>
+  <EventText.fetchmonstersmission.c>За пределами дороги между аванпостами есть монстры. Некоторая добыча может быть полезной. Заинтересованы?"</EventText.fetchmonstersmission.c>
+  <EventText.fetchmonstersmission.c.o1>"Да"</EventText.fetchmonstersmission.c.o1>
+  <EventText.fetchmonstersmission.c.o2>"Нет</EventText.fetchmonstersmission.c.o2>
+  <EventText.familytransport.c>"Моя жена тяжело больна. Мне нужно отправить ее на другой аванпост, но у нас нет нужно суммы. Я заплачу 500 кредитов. Поможете нам?"</EventText.familytransport.c>
+  <EventText.familytransport.c.o1>"Конечно поможем."</EventText.familytransport.c.o1>
+  <EventText.familytransport.c.o1.c1>"Спасибо. Я буду ждать здесь. Найдете меня, когда решите отправляться."</EventText.familytransport.c.o1.c1>
+  <EventText.familytransport.c.o1.c2>"Вы отправляетесь??"</EventText.familytransport.c.o1.c2>
+  <EventText.familytransport.c.o1.c2.o1.c>"Отлично"</EventText.familytransport.c.o1.c2.o1.c>
+  <EventText.familytransport.c.o2>"Нет, вам нужно найти кого-то другого."</EventText.familytransport.c.o2>
+  <EventText.powerissue.c1>"Опять это говно, надоело уже."</EventText.powerissue.c1>
+  <EventText.powerissue.c2>"Как ты думаешь, это реактор или электросеть?"</EventText.powerissue.c2>
+  <EventText.powerissue.c3>"Не могу точно сказать."</EventText.powerissue.c3>
+  <EventText.powerissue.c4>"Может реактор?"</EventText.powerissue.c4>
+  <EventText.powerissue.c5>"Мне кажется он впорядке."</EventText.powerissue.c5>
+  <EventText.bugseverhwere.c1>"Нахуй этих жуков!"</EventText.bugseverhwere.c1>
+  <EventText.bugseverhwere.c2>"Пристрели их!"</EventText.bugseverhwere.c2>
+  <EventText.comments.c1>"Ты же не читаешь это дерьмо, да?"\n "Хех, я уверен, ты читаешь."</EventText.comments.c1>
+  <EventText.comments.c2>"Просто бредятина, да?"</EventText.comments.c2>
+  <EventText.comments.c3>"Почему?"</EventText.comments.c3>
+  <EventText.comments.c4>"Эти сепаратисты должны были быть здесь раньше. Тогда они были просто очень маленькой и никому не нужной группой.. Неудачники, причем до сих пор. Но они стали сильнее. Они становятся сильнее, потому что Коалиция слишком милосердна. Везде они теперь, прямо как электро-жуки.</EventText.comments.c4>
+  <EventText.comments.c4.o1>"Что за электро-жуки?</EventText.comments.c4.o1>
+  <EventText.comments.c4.o1.c>"Это маленькие паразиты, которые заставляют электрические коробки не работать, причем даже не нанося им урона. Просто нужно подобраться ближе. Живым или мертвым. Это место реальный рай. Даш мне рассказать дальше?!"</EventText.comments.c4.o1.c>
+  <EventText.comments.c4.o1.c1>Окей."</EventText.comments.c4.o1.c1>
+  <EventText.comments.c4.o2>Слушай</EventText.comments.c4.o2>
+  <EventText.comments.c5>"Я был здесь до того, как контакт был потерян, я знаю этих "сепаратистов". Многие из них даже не матросы, они понятия не имеют о том, что происходит в океане. Это место реальный ад, а что они хотят? Заключить Союз, который превратит это место в рай? Многие из них просто бандиты, которые не хотят блага для большинства. Они заслуживают это. Я тебе все это рассказываю чтобы ты не поверил в их лживую идеологию. В один прекрасный день, руководитель Коалиции попросит тебя помочь с ними разобраться. Запомни мои слова."</EventText.comments.c5>
+  <EventText.backgroundstory1.c1>"Я слышал, что это Коалиция специально блокирует радиосигнал с Земли.!"</EventText.backgroundstory1.c1>
+  <EventText.backgroundstory1.c2>"Тихо. Замолкни! Это все хрень!"</EventText.backgroundstory1.c2>
+  <EventText.backgroundstory1.c3>"Что? Здесь рядом нет СБ."</EventText.backgroundstory1.c3>
+  <EventText.backgroundstory1.c4>"Здесь везде жучки, дурак. Они послушивают абсолютно все."</EventText.backgroundstory1.c4>
+  <EventText.backgroundstory1.c5>"Ох, что ж. ТЫ ЖЕ ЗНАЕШЬ ЧТО ВСЕ, ЧТО Я СКАЗАЛ, БЫЛО ВЫДУМАННОЙ ХЕРНЕЙ. ЧТОБЫ НАПОМНИТЬ ТЕБЕ ЧТО...Эээ...ВСЯКАЯ ХРЕНЬ ВСЕГДА РЯДОМ."</EventText.backgroundstory1.c5>
+  <EventText.backgroundstory2.c9.c1>“Чувак, ты пробовал местную еду? Это просто отвратительно!”</EventText.backgroundstory2.c9.c1>
+  <EventText.backgroundstory2.c9.c2>“И не говори. Я даже не могу понять, из чего именно она приготовлена.”</EventText.backgroundstory2.c9.c2>
+  <EventText.backgroundstory2.c9.c3>“Я слышал что еды с Земли тут не осталось. Линия поставок была недавно разорвана.”</EventText.backgroundstory2.c9.c3>
+  <EventText.backgroundstory2.c9.c4>“Что?! Тоесть мы застряли с этими помоями на неопределенный срок?”</EventText.backgroundstory2.c9.c4>
+  <EventText.backgroundstory2.c9.c5>“Похоже на то. А все становится все хуже и хуже, цены только делают что растут.”</EventText.backgroundstory2.c9.c5>
+  <EventText.backgroundstory2.c9.c6>“Достало уже это. Вот бы у нас был нормальный обед хотя бы раз.”</EventText.backgroundstory2.c9.c6>
+  <EventText.backgroundstory2.c9.c7>“Да, меня тоже. Но я думаю, так уж обстоят дела на этой планете..”</EventText.backgroundstory2.c9.c7>
+  <EventText.backgroundstory3.c1>"Ты знаешь, что говорят о клоунах? Говорят, они все кажутся дурачками с игрушами до того момента, как оказывается, что они шпионы сепаратистов.</EventText.backgroundstory3.c1>
+  <EventText.backgroundstory3.c2>"Я сам никогда не доверял этим красочным шутам. Кто знает, что они скрывают за своими масками?"</EventText.backgroundstory3.c2>
+  <EventText.backgroundstory4.c1>"Внимание, граждане Коалиции,\n" Коалиция стала осведомлена о тревожной тенденции на этой планете. - Поклонение смертельному паразиту хаска. Мы настойчиво просим граждан избегать любые контакты с этими "Любителями хасков" и их опаснейшей идеологией."</EventText.backgroundstory4.c1>
+  <EventText.backgroundstory4.c2>"Паразит хаска это опаснейший монстр, охотящийся на своих носителей, беря контроль над их сознанием и, в конечном итоге, вызывая смерть.Те, кто ему поклоняются думают, что он может каким-то образом дополнять и улучшать их организм, делая его более приспособленным к условиям Европы. Но данное опасное заблуждение ведет лишь к трагедиям."</EventText.backgroundstory4.c2>
+  <EventText.backgroundstory4.c3>"Мы своими глазами видели разрушительные последствия поклонения хаску. Эти люди становились безмозглыми зомби, неспособными на рациональное мышление. Они представляют серьезную угрозу себе и всем окружающим."</EventText.backgroundstory4.c3>
+  <EventText.backgroundstory4.c4>"Мы убедительно просим всех граждан быть бдительными и докладывать о любых подозрительных действиях на ближайший аванпост Коалиции. Помните: Хаск не путь к совершенству, а лишь поразит, живущий за счет носителя."</EventText.backgroundstory4.c4>
+  <EventText.backgroundstory4.c5>"Берегите себя и держитесь подальше от хаска."\n"С уважением, Коалиция."
+	</EventText.backgroundstory4.c5>
+  <EventText.backgroundstory5.c1>"Здравствуй,друг. Ты слышал о церкви Хаска?"</EventText.backgroundstory5.c1>
+  <EventText.backgroundstory5.c2>"Да, я слышал, но я не заинтересован в присоединении к вам."</EventText.backgroundstory5.c2>
+  <EventText.backgroundstory5.c3>"Почему? Не хочешь ли ты стать частью чего-то более великого, чего-то более сильного?"</EventText.backgroundstory5.c3>
+  <EventText.backgroundstory5.c4>"Я не верю, что заражение себя паразитом является решением всех наших проблем."</EventText.backgroundstory5.c4>
+  <EventText.backgroundstory5.c5>"Но ты не понимаешь. Хаск - ключ к нашему выживанию на этом спутнике, он может превратить нас в существ, приспособленных для жизни в этих условиях, тяжелых для обычных людей."</EventText.backgroundstory5.c5>
+  <EventText.backgroundstory5.c6>"Я не думаю, что превращение в безмозглых зомби это тот эволюционный скачок, который нам нужен."</EventText.backgroundstory5.c6>
+  <EventText.backgroundstory5.c7>"Зомби? Нет, друг мой, это просто миф, распространненым всеми теми, кто боятся изменений. Мы проводили эксперименты и мы видели реальный потенциал хаска, он может превратить нас во что-то большее, во что-то более значимое, что-то большее чем просто человек."</EventText.backgroundstory5.c7>
+  <EventText.backgroundstory5.c8>"Прости, но я не могу взять на себя этот риск. Я предпочитаю находить решение, не требуещее изменения моей человечности."</EventText.backgroundstory5.c8>
+  <EventText.backgroundstory5.c9>"Как знаешь, но запомни мои слова, друг. Церковь Хаска станет спасением человечеству, а все те, кто отказываются присоединяться, остануться позади."</EventText.backgroundstory5.c9>
+  <EventText.backgroundstory6.c1>"Эй, ты чего такой хмурый, клоун?"</EventText.backgroundstory6.c1>
+  <EventText.backgroundstory6.c2>"Хмурый? Ха! Ты думаешь я хмурый? Я просто констатирую очевидное, друг мой. Неужели ты этого не видишь? Это все безнадежно, мы обречены."</EventText.backgroundstory6.c2>
+  <EventText.backgroundstory6.c3>"Что ты хочешь сказать?"</EventText.backgroundstory6.c3>
+  <EventText.backgroundstory6.c4>"Жизнь, друг мой, жизнь бессмысленна. Мы просто кучка убогих душ, загнанных в этот бесконечный цикл боли и отчаяния."</EventText.backgroundstory6.c4>
+  <EventText.backgroundstory6.c5>"Это не правда. Жизнь может быть замечательной и значимой."</EventText.backgroundstory6.c5>
+  <EventText.backgroundstory6.c6>(Маниакально смеется) "Ох, ты такой наивный. Ты реально думаешь, что во всем этом есть смысл? Что здесь есть цель нашего существования. Ха! Ты просто себя обманываешь."</EventText.backgroundstory6.c6>
+  <EventText.backgroundstory6.c7>"Почему же ты так говоришь?"</EventText.backgroundstory6.c7>
+  <EventText.backgroundstory6.c8>"Потому, мой дорогой друг, что мы все все-равно умрем. Все, чего мы достигаем, что любим... Это все в конце концов просто исчезнет. Так что так."</EventText.backgroundstory6.c8>
+  <EventText.backgroundstory6.c9>"Но... Мы все еще можем сделать что-то, мы все еще можем делать что-то хорошее."</EventText.backgroundstory6.c9>
+  <EventText.backgroundstory6.c10>(Фыркает) "Что-то хорошее? А какой смысл? Это все просто отвлечение, попытка снизить боль и забыть о нашем неминуемом конце. Ты ничего не сможешь поменять, друг мой. Мы все просто пешки в этой жестокой и бессмысленной игре."</EventText.backgroundstory6.c10>
+  <EventText.backgroundstory6.c11>"Я не верю в это, я верю в надежду и любовь."</EventText.backgroundstory6.c11>
+  <EventText.backgroundstory6.c12>(Закатывает глаза) "Надежду и любовь? Это просто пустые слова, друг. Вот увидишь. Однажды ты проснешься и поймешь, насколько все бессмысленно. И тогда ты поймешь, почему я всегда смеюсь."</EventText.backgroundstory6.c12>
+  <EventText.stafffuelrod.c>"Вам нужно предъявить документы на подводную лодку, только так я продам вам топливные стержни."</EventText.stafffuelrod.c>
+  <EventText.stafffuelrod.c.o1>Показать документы</EventText.stafffuelrod.c.o1>
+  <EventText.stafffuelrod.c.o1.c1>"Ладно."</EventText.stafffuelrod.c.o1.c1>
+  <EventText.stafffuelrod.c.o1.c1.o1>1 стандартный топливный стержень -- 1000 Кредитов</EventText.stafffuelrod.c.o1.c1.o1>
+  <EventText.stafffuelrod.c.o1.c1.o2>1 ториевый топливный стержень -- 2000 Кредитов</EventText.stafffuelrod.c.o1.c1.o2>
+  <EventText.stafffuelrod.c.o1.c2>"У вас нет действующих документов для совершения покупки."</EventText.stafffuelrod.c.o1.c2>
+  <EventText.stafffuelrod.c.o2>Уйти</EventText.stafffuelrod.c.o2>
+  <EventText.stafffuelrod.c.o3>Показать документ, сделанный клоуном</EventText.stafffuelrod.c.o3>
+  <EventText.stafffuelrod.c.o3.c1>"Я не знаю откуда вы это достали, но ладно, я дам вам скидку."</EventText.stafffuelrod.c.o3.c1>
+  <EventText.stafffuelrod.c.o3.c2>"Дай ка угадаю, ты купил поддельные документы у клоуна в надежде на скидку? От меня ты ничего не получишь, иди отсюда."</EventText.stafffuelrod.c.o3.c2>
+  <EventText.stafffuelrod.c.o4>Показать ему скидку от Коалиции</EventText.stafffuelrod.c.o4>
+  <EventText.stafffuelrod.c.o4.1>1 стандартный топливный стержень -- 600 Кредитов</EventText.stafffuelrod.c.o4.1>
+  <EventText.stafffuelrod.c.o4.2>1 ториевый топливный стержень -- 1400 Кредитов</EventText.stafffuelrod.c.o4.2>
+  <EventText.stafffuelrod.donthave>У тебя нужного нет.</EventText.stafffuelrod.donthave>
+  <EventText.stafffuelrodsep.c>"Пусть наши взгляды и расходятся с Коалицией в некоторых вопросах, но вам нужно показать документы на подлодку чтобы купить топливные стержни, мы не можем позволить себе тратить наши последние ресурсы."</EventText.stafffuelrodsep.c>
+  <EventText.stafffuelrodsep.c.o1>Показать документы</EventText.stafffuelrodsep.c.o1>
+  <EventText.stafffuelrodsep.c.o1.c1>"Окей."</EventText.stafffuelrodsep.c.o1.c1>
+  <EventText.stafffuelrodsep.c.o1.c1.o1>1 стандартный топливный стержень -- 1000 Кредитов</EventText.stafffuelrodsep.c.o1.c1.o1>
+  <EventText.stafffuelrodsep.c.o1.c1.o2>1 ториевый топливный стержень -- 2000 Кредитов</EventText.stafffuelrodsep.c.o1.c1.o2>
+  <EventText.stafffuelrodsep.c.o1.c2>"У вас нет действующих документов для совершения покупки."</EventText.stafffuelrodsep.c.o1.c2>
+  <EventText.fuelrodclown.c>"Потерял документы? Не беда! 2000 кредитов за любые документы на любую подлодку, а так же по этим документам вы будете покупать припасы по скидке. Почему? Потому что люди Коалиции - тупые бараны, хаха."</EventText.fuelrodclown.c>
+  <EventText.fuelrodclown.c.o1>Купить фальшивые документы</EventText.fuelrodclown.c.o1>
+  <EventText.fuelrodclown.c.o2>Купить поддельное предложение о поставках</EventText.fuelrodclown.c.o2>
+  <EventText.fuelrodclown.c1>"Хах, хахаха."</EventText.fuelrodclown.c1>
+  <EventText.fuelrodclown.c2>"Нееет! Деньги! О боже, мы в дерьме!"</EventText.fuelrodclown.c2>
+  <EventText.stafffuelrodhusk.c>"Эй, нужны топливные стержни? Такие сложно найти в наши дни."</EventText.stafffuelrodhusk.c>
+  <EventText.stafffuelrodhusk.c.o1>1 стандартный топливный стержень -- 1500 кредитов</EventText.stafffuelrodhusk.c.o1>
+  <EventText.stafffuelrodhusk.c.o2>1 ториевый топливный стержень -- 2500 кредитов</EventText.stafffuelrodhusk.c.o2>
+  <EventText.stafffuelrodhusk.c.o3>2 переработанных стержня с радиационной защитой -- 700 кредитов</EventText.stafffuelrodhusk.c.o3>
+  <EventText.merchant.c>"Чем могу быть любезен?"</EventText.merchant.c>
+  <EventText.merchant.c.o1>"4 топливных стержня."</EventText.merchant.c.o1>
+  <EventText.merchant.c.o2>"4 топливных бака от сварки</EventText.merchant.c.o2>
+  <EventText.merchant.c.o3>"4 кисслородных баллона</EventText.merchant.c.o3>
+  <EventText.merchant.c.o4>"1 сварочный аппарат</EventText.merchant.c.o4>
+  <EventText.merchant.c.o5>"1 плазменный резак</EventText.merchant.c.o5>
+  <EventText.merchant.c.o6>"Пояс для инструментов"</EventText.merchant.c.o6>
+  <EventText.merchant.c.o7>"Сканер корпуса"</EventText.merchant.c.o7>
+  <EventText.merchant.c.o8>"Лом"</EventText.merchant.c.o8>
+  <EventText.merchant.c.o9>"4 аккумулятора."</EventText.merchant.c.o9>
+  <EventText.merchant.c.leave>Уйти</EventText.merchant.c.leave>
+  <EventText.merchant.c1>"Извините, но у вас нет достаточного количества денег."</EventText.merchant.c1>
+  <EventText.merchant.c2>"Рад был помочь."</EventText.merchant.c2>
+  <EventText.dockingfee.c>"500 кредитов за пристыковку к станции."</EventText.dockingfee.c>
+  <EventText.dockingfee.c.o1>Принять</EventText.dockingfee.c.o1>
+  <EventText.dockingfee.c.o2>Попросить о бесплатной пристыковке и оплате долга на следующем аванпосте</EventText.dockingfee.c.o2>
+  <EventText.dockingfee.c.o2.c>"Получено бесплатное разрешение на пристыковку. Вам нужно будет заплатить 800 кредитов на следующем аванпосте."</EventText.dockingfee.c.o2.c>
+  <EventText.dockingfee.c.o1.c>"Добро пожаловать на станцию."</EventText.dockingfee.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>"У вас недостаточно денег. Получено бесплатное разрешение на пристыковку. Вам нужно будет заплатить 800 кредитов на следующем аванпосте."</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollector.c>"Я послан Коалицией дабы собрать с вас долг за вашу последнюю стыковку."</EventText.debtcollector.c>
+  <EventText.debtcollector.c.o1>Выплатить долг</EventText.debtcollector.c.o1>
+  <EventText.debtcollector.c.o2>Отказаться и поиздеваться над ним</EventText.debtcollector.c.o2>
+  <EventText.debtcollector.c.o1.c1>"Прибавив к этому, ваша общая плата должна составить 1300 кредитов."</EventText.debtcollector.c.o1.c1>
+  <EventText.debtcollector.c.o1.c2>"Вы можете идти."</EventText.debtcollector.c.o1.c2>
+  <EventText.debtcollector.c.o1.c3>"Что ж, у вас до сих пор нету денег..."</EventText.debtcollector.c.o1.c3>
+  <EventText.debtcollector.c.o1.c3.o>"Нету."</EventText.debtcollector.c.o1.c3.o>
+  <EventText.debtcollector.c.o1.c3.o.c>"Я мало что могу сделать для тебя. Но я сообщу об этом, ну ты знаешь."</EventText.debtcollector.c.o1.c3.o.c>
+  <EventText.debtcollector.c.o2.c1>"Че? Кал-ло-лиция приказала тебе собрать с меня долг? Что ж, ты можешь сказать своему начальству, что ты не смог выполнить приказ."</EventText.debtcollector.c.o2.c1>
+  <EventText.dockingfeese.c>"500 кредитов за пристыковку к аванпосту, товарищи."</EventText.dockingfeese.c>
+  <EventText.dockingfeese.c.o1>Принять</EventText.dockingfeese.c.o1>
+  <EventText.dockingfeese.c.o2>Попросить о бесплатной пристыковке и оплате долга на следующем аванпосте</EventText.dockingfeese.c.o2>
+  <EventText.dockingfeese.c.o2.c>"Хорошо, мы поможем людям в беде. Получено бесплатное разрешение на пристыковку. Вам нужно будет заплатить 500 кредитов на следующем аванпосте."</EventText.dockingfeese.c.o2.c>
+  <EventText.dockingfeese.c.o1.c>"Добро пожаловать на аванпост."</EventText.dockingfeese.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>"У вас недостаточно денег, но мы дадим вам бесплатное разрешение на пристыковку. Вам нужно будет заплатить 500 кредитов на следующем аванпосте."</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollectorse.c>"Я послан Революционным Комитетом, чтобы взыскать ваш долг за вашу последнюю операцию в доках."</EventText.debtcollectorse.c>
+  <EventText.debtcollectorse.c.o1>Выплатить долг</EventText.debtcollectorse.c.o1>
+  <EventText.debtcollectorse.c.o2>Отказаться и поиздеваться над ним</EventText.debtcollectorse.c.o2>
+  <EventText.debtcollectorse.c.o1.c1>Прибавив к этому, ваша общая плата должна составить 1000 кредитов."</EventText.debtcollectorse.c.o1.c1>
+  <EventText.debtcollectorse.c.o1.c2>"Вы можете идти, товарищ."</EventText.debtcollectorse.c.o1.c2>
+  <EventText.debtcollectorse.c.o1.c3>"Что ж, у вас до сих пор нет денег..."</EventText.debtcollectorse.c.o1.c3>
+  <EventText.debtcollectorse.c.o1.c3.o>"Нету."</EventText.debtcollectorse.c.o1.c3.o>
+  <EventText.debtcollectorse.c.o1.c3.o.c>"Я мало что могу сделать для тебя. Но я сообщу об этом, ну ты знаешь."</EventText.debtcollectorse.c.o1.c3.o.c>
+  <EventText.debtcollectorse.c.o2.c1>"Ваш жалкий Комитет не может позволить себе даже вести собственный бизнес, я вам ничего не выплачу, бандиты"</EventText.debtcollectorse.c.o2.c1>
+  <EventText.npcconversation.c1>"Хороший у тебя корабль."</EventText.npcconversation.c1>
+  <EventText.npcconversation.c2>"О, привет!"</EventText.npcconversation.c2>
+  <EventText.npcconversation.c3>"Вот бы побольше отдохнуть, но колонии нужны люди."</EventText.npcconversation.c3>
+  <EventText.npcconversation.c4>"Добрый день. Хотя, тут и дней то нет."</EventText.npcconversation.c4>
+  <EventText.npcconversation.c5>"Иногда я так хочу, чтобы у меня были часы."</EventText.npcconversation.c5>
+  <EventText.npcconversation.c6>"Я потерял свое удостоверение личности, если вы его где то увидите, пожалуйста, передайте его мне."</EventText.npcconversation.c6>
+  <EventText.npcconversation.c6.c>"Конечно"</EventText.npcconversation.c6.c>
+  <EventText.npcconversation.c6.c1>"Спасибо Вам огромное!"</EventText.npcconversation.c6.c1>
+  <EventText.npcconversation.c7>"Налоги слишком высоки"</EventText.npcconversation.c7>
+  <EventText.npcconversation.c8>"Обслуживай людей!"</EventText.npcconversation.c8>
+  <EventText.coalitionmanagerseeyou.c1>"Наш управляющий хочет Вас видеть."</EventText.coalitionmanagerseeyou.c1>
+  <EventText.coalitionmanagerseeyou.c2>"Меня?"</EventText.coalitionmanagerseeyou.c2>
+  <EventText.coalitionmanagerseeyou.c3>"Да, Вас. Найдите его, он не будет долго ждать."</EventText.coalitionmanagerseeyou.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c>"Он нормальный?"</EventText.coalition_manager_leveloutpostcapture.c>
+  <EventText.coalition_manager_leveloutpostcapture.c1>"Увидите."</EventText.coalition_manager_leveloutpostcapture.c1>
+  <EventText.coalition_manager_leveloutpostcapture.c2>"Мы следили за вами длительное время."</EventText.coalition_manager_leveloutpostcapture.c2>
+  <EventText.coalition_manager_leveloutpostcapture.c3>"Ваша верность Коалиции оставляет за собой хорошую репутацию. В общих чертах."</EventText.coalition_manager_leveloutpostcapture.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c4>"Начальство решает дать вам шанс проявить себя. Шанс доказать, что вы один из лучших граждан Коалиции.</EventText.coalition_manager_leveloutpostcapture.c4>
+  <EventText.coalition_manager_leveloutpostcapture.c5>...</EventText.coalition_manager_leveloutpostcapture.c5>
+  <EventText.coalition_manager_leveloutpostcapture.c6>"Возьметесь за это или нет?"</EventText.coalition_manager_leveloutpostcapture.c6>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3>"Вы не сказали мне, что это за миссия."</EventText.coalition_manager_leveloutpostcapture.c6.o3>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3.c>"Вы можете идти."</EventText.coalition_manager_leveloutpostcapture.c6.o3.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c>"Некоторые сепаратисты проникли в соседнюю колонию. Коалиция требует, чтобы мы отправились туда и арестовали их. (кто-то: «Или убить их».) Если Вы рискнете, люди Коалиции будут благодарны. Вы можете идти."</EventText.coalition_manager_leveloutpostcapture.c6.o1.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>"И это ваш ордер. Благодаря этому охранник не будет мешать вам, когда вы пронесете длинноствольное ружье на станцию. Срок его действия истекает. Имейте это в виду."</EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>
+  <!--The Very First Day-->
+  <Storytext.managertalk.c0>"Я должен увидеть своего друга. Он теперь менеджер."</Storytext.managertalk.c0>
+  <Storytext.managertalk.c>"Наконец."</Storytext.managertalk.c>
+  <Storytext.managertalk.c1>"Так ты теперь капитан? Как я вижу, ты через многое прошел."</Storytext.managertalk.c1>
+  <Storytext.managertalk.c2>"Да, это был мой выбор."</Storytext.managertalk.c2>
+  <Storytext.managertalk.c3>"Молодец. Такие люди, как ты, всегда будут в таком чине."\n...\n"В отличие от остальных из нас."</Storytext.managertalk.c3>
+  <Storytext.managertalk.c4>"Просто не сдохни, ладно? Ты можешь сосчитать, сколько друзей ты потерял за прошедший год?</Storytext.managertalk.c4>
+  <Storytext.managertalk.c5>"Окей, обратно к делу. Учитывая, что желающих побывать в океане все больше, у Коалиции есть шанс использовать эту возможность для исследования Европы, чтобы решить надвигающийся кризис. Коалиция не ожидает, что большинство из них даже добируться до Европейского Кряжа. Я откровенен с тобой, мой друг. Я знаю людей выше."</Storytext.managertalk.c5>
+  <Storytext.managertalk.c6>"Как вы уже видели, лучший корабль, который я могу для вас организовать, уже пришвартован. Плата, конечно, на вас. Вы можете купить другие корабли, если заработаете больше кредитов в путешествии. Это все, что Коалиция может сделать для вас."</Storytext.managertalk.c6>
+  <Storytext.managertalk.c7>"Вы мне не можете сказать нашу цель?"</Storytext.managertalk.c7>
+  <Storytext.managertalk.c8>"Ох, нет. Это... засекречено. Так что я ничего не могу вам сказать, ибо я сам знаю немного. Я несу ответственность за свои слова."</Storytext.managertalk.c8>
+  <Storytext.managertalk.c9>"Carry this to the nearby colony. Give it to the local manager and she will know what to do."</Storytext.managertalk.c9>
+  <Storytext.managertalk.c9.o>"Ok."</Storytext.managertalk.c9.o>
+  <Storytext.managertalk.c10>"Следи за собой, будь осторожен."</Storytext.managertalk.c10>
+  <!--The Delivery-->
+  <Storytext.receive.c>"Первый раз в море?"</Storytext.receive.c>
+  <Storytext.receive.c1>*проверяет свои сообщения*</Storytext.receive.c1>
+  <Storytext.receive.c2>"Окей, ладно. Я отправлю запрос в штаб"\n"Ваш груз должен быть готов к следующей стыковке."</Storytext.receive.c2>
+  <Storytext.receive.c3>"Эй, я отправлю деньги на ваш счет. Ваши записи показывают, что вы не получили свои стартовые деньги.</Storytext.receive.c3>
+  <Storytext.receive.c3.o1>"Спасибо."(закончить разговор)</Storytext.receive.c3.o1>
+  <Storytext.receive.c3.o2>"Здесь есть стартовый фонд?"</Storytext.receive.c3.o2>
+  <Storytext.receive.c3.o2.c2>"Да. Очевидно, кто-то не хотел отдавать его вам. Трудно поверить, что Коалиция до этого дошла. Слишком много плохих людей проникает внутрь. Клянусь, мы сделаем все чтоб такого не повторялось."</Storytext.receive.c3.o2.c2>
+  <!--What Cargo?-->
+  <Storytext.nocargo.c1>"Что я могу для вас сделать?"</Storytext.nocargo.c1>
+  <Storytext.nocargo.c2>"Я здесь чтобы забрать груз, который Коалиция требует чтобы я доставил его в «конечную зону».."</Storytext.nocargo.c2>
+  <Storytext.nocargo.c3>"У меня нет такой информации."</Storytext.nocargo.c3>
+  <Storytext.nocargo.c4>"Никто вам не сказал?"</Storytext.nocargo.c4>
+  <Storytext.nocargo.c5>" ...Блин, сейчас вспомнил. Маяк, который используется для связи нашего аванпоста с Коалицией, вышел из строя. Мы отправили запрос на ближайшую заставу, чтобы отправить корабль на помощь, но, похоже, они опаздывают. Здесь можно подождать пару дней."</Storytext.nocargo.c5>
+  <Storytext.nocargo.c6>"Нет, я не могу ждать. Скажи мне место и моя команда отремонтирует его. Вы скажете Коалиции отправить груз в следующее место, где мы пришвартуемся."</Storytext.nocargo.c6>
+  <Storytext.nocargo.c7>"Я не могу приказывать Коалиции. Вам нужно установить связь и получить команду самостоятельно."\n"Маяк здесь." *указывает на карту*</Storytext.nocargo.c7>
+  <Storytext.nocargo.c8>"Канал "co.co.1306.e3"."</Storytext.nocargo.c8>
+  <!--The Comm Hub-->
+  <Storytext.beaconfixed.c>"Связь восстановлена. Выберите канал."</Storytext.beaconfixed.c>
+  <Storytext.beaconfixed.c.o1>co.er.mili.083</Storytext.beaconfixed.c.o1>
+  <Storytext.beaconfixed.c.o2>g019_33</Storytext.beaconfixed.c.o2>
+  <Storytext.beaconfixed.c.o3>co.co.1306.e3</Storytext.beaconfixed.c.o3>
+  <Storytext.beaconfixed.c.o4>----.-.-.---...-----.---.--.---.-----.-.--.--</Storytext.beaconfixed.c.o4>
+  <Storytext.beaconfixed.c.o2.c1>"Связь установлена."\n"Ожидайте."</Storytext.beaconfixed.c.o2.c1>
+  <Storytext.beaconfixed.c.o2.c2>...</Storytext.beaconfixed.c.o2.c2>
+  <Storytext.beaconfixed.c.o2.c3>"Привет?"\n"Есть кто?"</Storytext.beaconfixed.c.o2.c3>
+  <Storytext.beaconfixed.c.o2.c4>"..."</Storytext.beaconfixed.c.o2.c4>
+  <Storytext.beaconfixed.c.o2.c5>"Ало?"</Storytext.beaconfixed.c.o2.c5>
+  <Storytext.beaconfixed.c.o2.c6>"Да, мы Коалиционный сервисный центр. Пожалуйста, отправьте ваш запрос."</Storytext.beaconfixed.c.o2.c6>
+  <Storytext.beaconfixed.c.o2.c7>"Я капитан с боевым приказом 08391. Мне нужно забрать груз миссии.."</Storytext.beaconfixed.c.o2.c7>
+  <Storytext.beaconfixed.c.o2.c8>"Подтверждение. Секундочку пожалуйста."</Storytext.beaconfixed.c.o2.c8>
+  <Storytext.beaconfixed.c.o2.c9>"Ваш груз будет готов на ближайшей шахтерской заставе.."</Storytext.beaconfixed.c.o2.c9>
+  <Storytext.beaconfixed.c.o2.c10>"Ваш груз будет готов на ближайшей военной заставе. Мы сообщим офицерам, чтобы вы могли пройти.."</Storytext.beaconfixed.c.o2.c10>
+  <Storytext.beaconfixed.c.o2.c11>"Во, нормалек."</Storytext.beaconfixed.c.o2.c11>
+  <Storytext.beaconfixed.c.o2.c12>"Благодарим вас за использование Coalition Comm Servce."</Storytext.beaconfixed.c.o2.c12>
+  <Storytext.beaconfixed.c.o2.c13>Сеанс связи завершен</Storytext.beaconfixed.c.o2.c13>
+  <!--Caro at eng-->
+  <Storytext.cargoateng.c1>"Рад вас видеть."</Storytext.cargoateng.c1>
+  <Storytext.cargoateng.c2>"Это тот груз, который нужно доставить??"</Storytext.cargoateng.c2>
+  <Storytext.cargoateng.c3>"Да"\n"Тяжелый он, правда?"</Storytext.cargoateng.c3>
+  <Storytext.cargoateng.c4>"Я думал он будет больше."</Storytext.cargoateng.c4>
+  <Storytext.cargoateng.c5>"О, нет. Это часть гораздо большей машины. Это больше."</Storytext.cargoateng.c5>
+  <Storytext.cargoateng.c6.o1>"Что за машина?"</Storytext.cargoateng.c6.o1>
+  <Storytext.cargoateng.c6.o1.c>"Мы, инженеры, просто работаем над этим. Эти ученые знают. Вы знаете, что он все еще находится на стадии тестирования."\n"Я не должен так много говорить, но я так взволнован тем, что когда-нибудь он заработает. Гигантский комплекс. Это то, ради чего мы работаем в команде инженеров!"</Storytext.cargoateng.c6.o1.c>
+  <Storytext.cargoateng.c6.o2>Выслушать</Storytext.cargoateng.c6.o2>
+  <Storytext.cargoateng.c7>"Так что вы должны переправить его в город. Найдите местного менеджера и скажите, что добрались. Это то, что мой босс сказал мне передать вам.."</Storytext.cargoateng.c7>
+  <Storytext.cargoateng.c8>"Ладно, спасибо."</Storytext.cargoateng.c8>
+  <Storytext.cargoateng.c9>"Стоп, а какой город то?"</Storytext.cargoateng.c9>
+  <Storytext.cargoateng.c10>"Увидишь!"</Storytext.cargoateng.c10>
+  <!--cargo at mili-->
+  <Storytext.cargoatmili.c1>"Авторизуйтесь"</Storytext.cargoatmili.c1>
+  <Storytext.cargoatmili.c2>"Забудь об этом, рядовой. Это команда доставки."</Storytext.cargoatmili.c2>
+  <Storytext.cargoatmili.c3>"Сэр есть сэр!"</Storytext.cargoatmili.c3>
+  <Storytext.cargoatmili.c4>"Идите к лейтенанту. Он в офисе администрации."</Storytext.cargoatmili.c4>
+  <Storytext.cargoatmili.c5>"Груз находится в офисе."</Storytext.cargoatmili.c5>
+  <Storytext.cargoatmili.c6>"Привезите его в следующий город."</Storytext.cargoatmili.c6>
+  <Storytext.cargoatmili.c7>"Никакие предметы в нем не должны пропасть или повреждиться. Вы понимаете?"</Storytext.cargoatmili.c7>
+  <Storytext.cargoatmili.c8>"Так точно."</Storytext.cargoatmili.c8>
+  <Storytext.cargoatmili.c9>"Разойтись."</Storytext.cargoatmili.c9>
+  <Storytext.cargoatmili.c10>"Сэр есть сэр!"</Storytext.cargoatmili.c10>
+  <!--theft in city-->
+  <Storytext.theftincity.c1>"Ловите вора!"</Storytext.theftincity.c1>
+  <Storytext.theftincity.c2>"Сломай ей ногу!"</Storytext.theftincity.c2>
+  <Storytext.theftincity.c3>"Помогите мне!"</Storytext.theftincity.c3>
+  <Storytext.thefincity.c3.o1>"Быстро, залезай в мою подлодку! За мной!"</Storytext.thefincity.c3.o1>
+  <Storytext.thefincity.c3.o1.c>Направьте вора в один из балластов..</Storytext.thefincity.c3.o1.c>
+  <Storytext.thefincity.c3.o1.c1>"Стой пока я не подам сигнала."</Storytext.thefincity.c3.o1.c1>
+  <Storytext.thefincity.c3.o1.c2>"Мне нужно подняться чтобы убедиться, что все нормально."</Storytext.thefincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o2>" Отвали."</Storytext.theftincity.c3.o2>
+  <Storytext.theftincity.c3.o1.c1>"Простите, сэр. Но мне сказали, что здесь пробегал вор. Вы видели бегущую женщину в черной ткани??"</Storytext.theftincity.c3.o1.c1>
+  <Storytext.theftincity.c3.o1.c2>"Мы заплатим вам, если вы предоставите ценную информацию."\n"Достаточно много."</Storytext.theftincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1>"Она ворвалась в мою подлодку, но я смог ее запереть."</Storytext.theftincity.c3.o1.c2.o1>
+  <Storytext.theftincity.c3.o1.c2.o1.c>"Спасибо. Вы хороший гражданин Коалиции. Пожалуйста, откройте двери для нас там снизу."</Storytext.theftincity.c3.o1.c2.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o1.c1>"Попалась! Сука!"</Storytext.theftincity.c3.o1.c2.o1.c1>
+  <Storytext.theftincity.c3.o1.c2.o1.c2>"Неет!"</Storytext.theftincity.c3.o1.c2.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1.c3>"Ты лжец! Я доверилась тебе! Тварь!"</Storytext.theftincity.c3.o1.c2.o1.c3>
+  <Storytext.theftincity.c3.o1.c2.o1.c4>"Что ты сказала этому гражданину?"</Storytext.theftincity.c3.o1.c2.o1.c4>
+  <Storytext.theftincity.c3.o1.c2.o1.c5>"Замолкни! Я тебя научу, сука, родину любить!"</Storytext.theftincity.c3.o1.c2.o1.c5>
+  <Storytext.theftincity.c3.o1.c2.o1.c6>"Давайте не будем беспокоить наших гостей."\n"Вывести её!"</Storytext.theftincity.c3.o1.c2.o1.c6>
+  <Storytext.theftincity.c3.o1.c2.o2>"Нет, я не видел, чтобы кто-то пробегал рядом."</Storytext.theftincity.c3.o1.c2.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c>"Серьезно? Ладно!"</Storytext.theftincity.c3.o1.c2.o2.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1>"Нам доложили, что вы спрятали нарушителя в подлодке. Мы должны осмотреть вашу подводную лодку!"</Storytext.theftincity.c3.o1.c2.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1>"Вы не имеете права заходить на мою подводную лодку!"\n"Я буду протестовать. Ваши действия противоречит закону."</Storytext.theftincity.c3.o1.c2.o2.c1.o1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>"Говоря о законе." *Ищет в кармане*\n"У нас есть ордер."\n"Ведите нас туда. У вас могут быть проблемы."</Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2>"Я не могу гарантировать вашу безопасность в случае, если вы спуститесь на подлодку. Мы перевозим очень опасные химикаты."</Storytext.theftincity.c3.o1.c2.o2.c1.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>"Ха! Ты думаешь кто я? Тупоголовый амбал?"\n"Опасные химикаты, креативненько.\n*Показывает свой ордер.*\n"Достаточно разговоров, ведите нас вниз, а иначе у вас будут большие проблемы."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>"Больше никаких фокусов. Балласт. Открывай его."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>"Черт. Тут ничего нет!"</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>"Я вас засужу, если вы будете доебывать таких граждан как я."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>"Я не могу поверить. И...Извините. Уходим, быстро!"</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>
+  <Storytext.theftincity_saved.c0>"Должно быть, она все еще в моей подлодке. я должен найти ее!"</Storytext.theftincity_saved.c0>
+  <Storytext.theftincity_saved.c1>"Спасибки."</Storytext.theftincity_saved.c1>
+  <Storytext.theftincity_saved.c2>"Тебе нужно уйти."</Storytext.theftincity_saved.c2>
+  <Storytext.theftincity_saved.c3>"Куда?"</Storytext.theftincity_saved.c3>
+  <Storytext.theftincity_saved.c4>"Я не знаю. У меня из-за тебя проблемы."</Storytext.theftincity_saved.c4>
+  <Storytext.theftincity_saved.c5>"Мне некуда идти."</Storytext.theftincity_saved.c5>
+  <Storytext.theftincity_saved.c6>"Я хороша в оружии. Вы можете меня взять?"</Storytext.theftincity_saved.c6>
+  <Storytext.theftincity_saved.c6.o1>"Ну, ладно."</Storytext.theftincity_saved.c6.o1>
+  <Storytext.theftincity_saved.c6.o1.c>"Классно, вы не пожалете."</Storytext.theftincity_saved.c6.o1.c>
+  <Storytext.theftincity_saved.c6.o2>"Я не хочу связываться с ворами."</Storytext.theftincity_saved.c6.o2>
+  <Storytext.theftincity_saved.c6.o2.c1>"Тогда почему ты меня спас?"</Storytext.theftincity_saved.c6.o2.c1>
+  <Storytext.theftincity_saved.c6.o2.c2>"Я не знаю."</Storytext.theftincity_saved.c6.o2.c2>
+  <Storytext.theftincity_saved.c6.o2.c3>"Ну, в любом случае, ты спас мне жизнь, я не забуду о таком."</Storytext.theftincity_saved.c6.o2.c3>
+  <!--the man-->
+  <Storytext.theman.c>"Есть минутка?"</Storytext.theman.c>
+  <Storytext.theman.c1>"Ты кто?"</Storytext.theman.c1>
+  <Storytext.theman.c2>"Спас ту девушку. Должно быть, это принесло тебе неприятности, не так ли?"\n"Члены Коалиции знают об этом. Сейчас они пишут отчет." </Storytext.theman.c2>
+  <Storytext.theman.c3>"Ты меня запугиваешь?"</Storytext.theman.c3>
+  <Storytext.theman.c4>"Встретимся в общежитии, и мы поговорим об этом.."</Storytext.theman.c4>
+  <Storytext.theman.c5>"Помогая этой девушке, вы ничего не заработаете."\n"Коалиция не любит тех, кто выражает хоть малейшее несогласие с ней или ее действиями."</Storytext.theman.c5>
+  <Storytext.theman.c6>"И что вы хотите?"</Storytext.theman.c6>
+  <Storytext.theman.c7>"Это не то, чего я хочу. Речь идет о том, чего вы хотите."\n"Правду?"\n"Мы даем вам."</Storytext.theman.c7>
+  <Storytext.theman.c8>"Цена вопроса?"</Storytext.theman.c8>
+  <Storytext.theman.c9>"Отклоните просьбу начальника этой колонии, которая вскоре будет передана вам.."</Storytext.theman.c9>
+  <Storytext.theman.c10>"Но я должен подчиняться приказу."</Storytext.theman.c10>
+  <Storytext.theman.c11>"Вы решили солгать."</Storytext.theman.c11>
+  <Storytext.theman.c12>"Я не могу."</Storytext.theman.c12>
+  <Storytext.theman.c13>"Посмотрим на этот счет."</Storytext.theman.c13>
+  <Storytext.theman.c14>"Мы встретимся снова, если вы последуете моим словам."</Storytext.theman.c14>
+  <Storytext.theman.c15>"Когда?"</Storytext.theman.c15>
+  <Storytext.theman.c16>"На вашей следующей стыковке."</Storytext.theman.c16>
+  <Storytext.ordertodeny.c>"Я должен увидеть босса. я уже опаздываю."</Storytext.ordertodeny.c>
+  <Storytext.ordertodeny.c1>"Да?"</Storytext.ordertodeny.c1>
+  <Storytext.ordertodeny.c2>"Вы не хотите объяснить, почему вы опоздали?"</Storytext.ordertodeny.c2>
+  <Storytext.ordertodeny.c3>"У моего корабля проблемы. Монстры."</Storytext.ordertodeny.c3>
+  <Storytext.ordertodeny.c4>"Мы узнаем, правда ли то, что вы сказали."</Storytext.ordertodeny.c4>
+  <Storytext.ordertodeny.c5>"Это правда?"</Storytext.ordertodeny.c5>
+  <Storytext.ordertodeny.c5.o1>"Да."</Storytext.ordertodeny.c5.o1>
+  <Storytext.ordertodeny.c5.o2>"Нет."</Storytext.ordertodeny.c5.o2>
+  <Storytext.ordertodeny.c6>"Увидим."</Storytext.ordertodeny.c6>
+  <Storytext.ordertodeny.c7>"Причина, по которой вам было приказано явиться сюда, состоит в том, чтобы помочь Коалиции справиться с серьезной проблемой на море.."</Storytext.ordertodeny.c7>
+  <Storytext.ordertodeny.c8>"Пираты в этом районе очень активны."\n"Вам будет дан приказ уничтожить один из их кораблей."</Storytext.ordertodeny.c8>
+  <Storytext.ordertodeny.c9>"Сделать стандарт."</Storytext.ordertodeny.c9>
+  <Storytext.ordertodeny.c9.o1>Согласиться на выполнение задания</Storytext.ordertodeny.c9.o1>
+  <Storytext.ordertodeny.c9.o1.c>"Это честь для меня, служить Коалиции."</Storytext.ordertodeny.c9.o1.c>
+  <Storytext.ordertodeny.c9.o1.c1>"За людей Европы."</Storytext.ordertodeny.c9.o1.c1>
+  <Storytext.ordertodeny.c9.o1.c2>"За людей Европы."</Storytext.ordertodeny.c9.o1.c2>
+  <Storytext.ordertodeny.c9.o2>Отказать, как вам и сказал тот мужчина</Storytext.ordertodeny.c9.o2>
+  <Storytext.ordertodeny.c9.o2.c1>"Я не могу, сэр."</Storytext.ordertodeny.c9.o2.c1>
+  <Storytext.ordertodeny.c9.o2.c2>"Это приказ."</Storytext.ordertodeny.c9.o2.c2>
+  <Storytext.ordertodeny.c9.o2.c3>"У меня важная транспортная миссия. Я не могу допустить, чтобы груз был поврежден из-за ненужных сражений. Надеюсь вы понимаете."</Storytext.ordertodeny.c9.o2.c3>
+  <Storytext.ordertodeny.c9.o2.c4>"Что ж, вы можете идти."</Storytext.ordertodeny.c9.o2.c4>
+  <Storytext.coalitionsview.c1>"Послушайте, я понимаю, что у сепаратистов есть опасения по поводу устройства, но мы не можем позволить себе ждать, пока они проверят свои теории. Колония быстро истощается, и нам нужно сделать решение прямо сейчас.."</Storytext.coalitionsview.c1>
+  <Storytext.coalitionsview.c2>"Но сепаратисты утверждают, что использование устройства уничтожит большую часть жителей Европы. У них есть доказательства, подтверждающие их теорию.."</Storytext.coalitionsview.c2>
+  <Storytext.coalitionsview.c3>"Их доказательства непроверены и не доказаны. У нас есть опытные ученые и инженеры, которые годами работали над этим проектом. Они заверили нас, что устройство безопасно для использования."</Storytext.coalitionsview.c3>
+  <Storytext.coalitionsview.c4>"Но как насчет людей, которые умрут? Разве нет лучшего способа использовать всю ту энергию, не жертвуя таким количеством жизней??"</Storytext.coalitionsview.c4>
+  <Storytext.coalitionsview.c5>"Хотелось бы, но, к сожалению, нет. Мы тайно построили стартовую площадку, и мы уже построили космический шаттл, который может доставить на Землю лучших представителей человечества. Мы также укрепили некоторые из наших аванпостов тяжелыми материалами, способными выдержать энергию взрыва, вызванную стартом."</Storytext.coalitionsview.c5>
+  <Storytext.coalitionsview.c6>"Но стоит ли жертвовать таким количеством жизней ради спасения нескольких?"</Storytext.coalitionsview.c6>
+  <Storytext.coalitionsview.c7>"Мы спасаем не только несколько жизней. Мы спасаем лучших из человечества. Люди, которые восстановят нашу цивилизацию на Земле. Мы не можем позволить себе упустить эту возможность!"</Storytext.coalitionsview.c7>
+  <DHMissionHeader.towsub>Побочное задание открывает: Отбуксируйте обломки обратно на базу. Коалиция должна проанализировать причины кораблекрушения. Если вы сможете отбуксировать обломки к месту назначения, вы будете вознаграждены.</DHMissionHeader.towsub>
+  <DHMissionMessage.towsub>Коалиция должна проанализировать причины бедствия. Если вы сможете отбуксировать обломки к месту назначения, вы будете вознаграждены.</DHMissionMessage.towsub>
+  <DHMissionHeader.towsubcompleted>Побочная миссия выполнена: вы будете вознаграждены.</DHMissionHeader.towsubcompleted>
+  <missionname.fetch_broodmother>Убить мать роя ползунов</missionname.fetch_broodmother>
+  <missiondescription.fetch_broodmother>Группа ползунов была замечена между [location1] и [location2]. У них можно украть что-то ценное. Отнесите добычу к следующему аванпосту, чтобы продать ее.</missiondescription.fetch_broodmother>
+  <missionsonarlabel.fetch_broodmother>Мать роя полузнов</missionsonarlabel.fetch_broodmother>
+  <missionsuccess.fetch_broodmother>Мать роя ползунов была убита.</missionsuccess.fetch_broodmother>
+  <missionheader0.fetch_broodmother>Цель уничтожена</missionheader0.fetch_broodmother>
+  <missionmessage0.fetch_broodmother>Мать роя ползунов мерта. Добудьте глаз монстра и выведите подводную лодку из пещеры, чтобы получить награду..</missionmessage0.fetch_broodmother>
+  <missiondescription.fetch_hammerhead>Группа молотоглавов была замечена между [location1] и [location2]. У них можно украть что-то ценное. Отнесите добычу к следующему аванпосту, чтобы продать ее.</missiondescription.fetch_hammerhead>
+  <missionsonarlabel.fetch_hammerhead>Молотоглав</missionsonarlabel.fetch_hammerhead>
+  <missionsuccess.fetch_hammerhead>Молотоглав был убит.</missionsuccess.fetch_hammerhead>
+  <missionheader0.fetch_hammerhead>Цель уничтожена</missionheader0.fetch_hammerhead>
+  <missionmessage0.fetch_hammerhead>Молотоглав убит. Добудьте плавник монстра и выведите подводную лодку из пещеры, чтобы получить награду.</missionmessage0.fetch_hammerhead>
+  <missiondescription.fetch_hammerhead_gold>Группа молотоглавов была замечена между [location1] и [location2]. У них можно украть что-то ценное. Отнесите добычу к следующему аванпосту, чтобы продать ее.</missiondescription.fetch_hammerhead_gold>
+  <missionsonarlabel.fetch_hammerhead_gold>Золотой молотоглав</missionsonarlabel.fetch_hammerhead_gold>
+  <missionsuccess.fetch_hammerhead_gold>Золотой молотоглав был убит.</missionsuccess.fetch_hammerhead_gold>
+  <missionheader0.fetch_hammerhead_gold>Цель уничтожена</missionheader0.fetch_hammerhead_gold>
+  <missionmessage0.fetch_hammerhead_gold>Золтой молотоглав убит. Добудьте плавник монстра и выведите подводную лодку из пещеры, чтобы получить награду.</missionmessage0.fetch_hammerhead_gold>
+  <missionname.familytransport>Скорая помощь</missionname.familytransport>
+  <missiondescription.familytransport>Перевезти мужа и его больную жену на ближайшую станцию.</missiondescription.familytransport>
+  <missionheader0.familytransport>Пассажир умер</missionheader0.familytransport>
+  <missionmessage0.familytransport>Гражданский умер на вашем судне.</missionmessage0.familytransport>
+  <missionsuccess.familytransport>Миссия успешно завершена. Пассажиры пойдут к врачу.</missionsuccess.familytransport>
+  <missionfailure.familytransport>Кто-то умер на вашем корабле. Это не хорошо. Вам лучше подготовиться объяснять это Коалиции.</missionfailure.familytransport>
+  <missiontext.familytransport>Жена мужчины начинает плохо себя чувствовать.</missiontext.familytransport>
+  <missionname.abandonedoutpostrescue>Спасение аванпоста</missionname.abandonedoutpostrescue>
+  <missionname.leveloutpost_capture>Исследуйте колонию</missionname.leveloutpost_capture>
+  <missiondescription.leveloutpost_capture>Разведка сообщает, что группа сепаратистов проникла в Колонию между [location1] и [location2]. Коалиция не может мириться с такими поступками. Захватите этих отбросов, чтобы обеспечить безопасность жителей Европы. Вам выдан ордер на применение оружия. Если они будут сопротивляться, вы можете стрелять на поражение. Но Коалиция не будет платить вам за мертвых людей.</missiondescription.leveloutpost_capture>
+  <missionsuccess.leveloutpost_capture>Сепаратисты уничтожены.</missionsuccess.leveloutpost_capture>
+  <missionfailure.leveloutpost_capture>Сепаратисты не уничтожены. Вы подвели Коалицию</missionfailure.leveloutpost_capture>
+  <missionsonarlabel.leveloutpost_capture>Колония</missionsonarlabel.leveloutpost_capture>
+  <missionheader0.leveloutpost_capture>Стыковочный порт готов!</missionheader0.leveloutpost_capture>
+  <missionmessage0.leveloutpost_capture>Лодка №839z35 запрашивает разрешение на пристыковку.</missionmessage0.leveloutpost_capture>
+  <missionheader1.leveloutpost_capture>Сепаратисты уничтожены</missionheader1.leveloutpost_capture>
+  <missionmessage1.leveloutpost_capture>Идем теперь.</missionmessage1.leveloutpost_capture>
+  <missionname.story_leveloutpost_delivermessage>Исследуйте колонию</missionname.story_leveloutpost_delivermessage>
+  <missiondescription.story_leveloutpost_delivermessage>Друзья говорят вам отправить сообщение в ближайшую колонию..</missiondescription.story_leveloutpost_delivermessage>
+  <missionsuccess.story_leveloutpost_delivermessage>Сообщение доставлено.</missionsuccess.story_leveloutpost_delivermessage>
+  <missionfailure.story_leveloutpost_delivermessage>Сообщение доставлено.</missionfailure.story_leveloutpost_delivermessage>
+  <missionsonarlabel.story_leveloutpost_delivermessage>Колония</missionsonarlabel.story_leveloutpost_delivermessage>
+  <missionheader0.story_leveloutpost_delivermessage>Стыковочный порт готов!</missionheader0.story_leveloutpost_delivermessage>
+  <missionmessage0.story_leveloutpost_delivermessage>Лодка №219z35.30.4.23 запрашивает разрешение на пристыковку.</missionmessage0.story_leveloutpost_delivermessage>
+  <missionheader1.story_leveloutpost_delivermessage>Ты что наделал?!</missionheader1.story_leveloutpost_delivermessage>
+  <missionmessage1.story_leveloutpost_delivermessage>Вы нарушаете закон.</missionmessage1.story_leveloutpost_delivermessage>
+  <missionname.story_nocargo_beacon>Восстановите маяк</missionname.story_nocargo_beacon>
+  <missiondescription.story_nocargo_beacon>Маяк между [location1] и [location2] не работает — войдите туда, восстановите его работу и включите активный сонар.</missiondescription.story_nocargo_beacon>
+  <missionsuccess.story_nocargo_beacon>Работа маяка восстановлена.</missionsuccess.story_nocargo_beacon>
+  <missionmessage0.story_nocargo_beacon>Связь между [location1] и Coalition Engineering Company восстановлена. Убедитесь, что сигнал постоянный и не прирывается, после чего направьте подводную лодку к [location2].</missionmessage0.story_nocargo_beacon>
+  <entityname.hullscanner>Сканер корпуса</entityname.hullscanner>
+  <entitydescription.hullscanner>Используется для определения состояния целевого корпуса. \nЭффективный диапазон: 5 метров.</entitydescription.hullscanner>
+  <entityname.fuelrodcase>Чемодан для транспортировки горячих топливных стержней</entityname.fuelrodcase>
+  <entitydescription.fuelrodcase>Используется для защиты от излучения, испускаемого неизрасходованным топливным стержнем..</entitydescription.fuelrodcase>
+  <entityname.recycledfuelrod>Переработанный топливный стержень</entityname.recycledfuelrod>
+  <entitydescription.recycledfuelrod>Переработан из отработавших топливных стержней. Опасный. Работать с осторожностью.</entitydescription.recycledfuelrod>
+  <Terminal.reactormanual>Очень важно ---- Работа реактора: Если реактор поврежден до критического состояния. Выключите реактор, чтобы предотвратить дальнейшую катастрофу. \nКоэффициент деления должен быть ниже 5, чтобы обеспечить безопасность всей подводной лодки. Если реактор неисправен, включить резервную сеть на субмарине!\n Не извлекать из реактора топливный стержень, не отработавший свой ресурс до конца. Радиация может быть смертельной. Если вам это очень надо, используйте подходящий контейнер! \nИнженерное руководство Коалиции 101</Terminal.reactormanual>
+  <entityname.watertank>Резервуар для воды</entityname.watertank>
+  <entitydescription.watertank>Обработанная вода для кислородного генератора.</entitydescription.watertank>
+  <entityname.reactorcooline>Охладитель реактора</entityname.reactorcooline>
+  <entitydescription.reactorcooline>Охладитель, предотвращающий перегрев реактора</entitydescription.reactorcooline>
+  <entityname.lightfuse>Предохранитель</entityname.lightfuse>
+  <entitydescription.lightfuse>Важная часть любой лампы, за счет которой она светит.</entitydescription.lightfuse>
+  <entityname.smallpumpmotor>Мотор маленького насоса</entityname.smallpumpmotor>
+  <entitydescription.smallpumpmotor>Нужен маленькому насосу для работы</entitydescription.smallpumpmotor>
+  <entityname.bigpumpmotor>Мотор насоса</entityname.bigpumpmotor>
+  <entitydescription.bigpumpmotor>Нужен большому насосу для штатной работы.</entitydescription.bigpumpmotor>
+  <entityname.smallpumpII>М-II</entityname.smallpumpII>
+  <entitydescription.smallpumpII>[Макс.поток:150]\n[Потребление энергии:90]\n[Мин.напряжение:0.3]</entitydescription.smallpumpII>
+  <entityname.smallpumpIII>М-III</entityname.smallpumpIII>
+  <entitydescription.smallpumpIII>[Макс.поток:200]\n[Потребление энергии:140]\n[Мин.напряжение:0.3]</entitydescription.smallpumpIII>
+  <entityname.handdynamo>Динамо-машинка</entityname.handdynamo>
+  <entitydescription.handdynamo>Устройство, способное генерировать энергию вручную</entitydescription.handdynamo>
+  <entityname.junctionboxfuse>Предохранитель кабельной коробки</entityname.junctionboxfuse>
+  <entitydescription.junctionboxfuse>Важная часть кабельных коробок</entitydescription.junctionboxfuse>
+  <entityname.revolvernew>Револьвер</entityname.revolvernew>
+  <entitydescription.revolvernew>[Темп стрельбы: Низко]\n[Аккуратность:Низко]</entitydescription.revolvernew>
+  <entityname.revolverroundnew>Патрон револьвера</entityname.revolverroundnew>
+  <entitydescription.revolverroundnew>[Пробитие: 60%]</entitydescription.revolverroundnew>
+  <entityname.57>FN Five Seven</entityname.57>
+  <entitydescription.57>[Темп стрельбы: Средне]\n[Аккуратность:Низко]</entitydescription.57>
+  <entityname.57mag>5.7x28mm Five Seven</entityname.57mag>
+  <entitydescription.57mag>[Вместимость: 20]\n[Пробитие: 30%]</entitydescription.57mag>
+  <entityname.g19>Glock 19</entityname.g19>
+  <entitydescription.g19>[Темп стрельбы: Низко]\n[Аккуратность:Высоко-Низко]</entitydescription.g19>
+  <entityname.g19mag> 9x19 магазин от Glock 19</entityname.g19mag>
+  <entitydescription.g19mag>[Вместимость: 30]\n[Пробитие: 30%]</entitydescription.g19mag>
+  <entityname.MPX>Sig Sauer MPX</entityname.MPX>
+  <entitydescription.MPX>[Темп стрельбы: Высоко]\n[Аккуратность:Средне]</entitydescription.MPX>
+  <entityname.mpx_magazine>9x19 магазин от MPX </entityname.mpx_magazine>
+  <entitydescription.mpx_magazine>[Вместимость: 30]\n[Пробитие: 30%]</entitydescription.mpx_magazine>
+  <entityname.MCX>Sig Sauer MCX</entityname.MCX>
+  <entitydescription.MCX>[Темп стрельбы: Высоко]\n[Аккуратность:High]</entitydescription.MCX>
+  <entityname.mcx_magazine>.300 магазин от AAC</entityname.mcx_magazine>
+  <entitydescription.mcx_magazine>[Вместимость: 30]\n[Пробитие: 60%]</entitydescription.mcx_magazine>
+  <entityname.MP9>MP9 Suppressed</entityname.MP9>
+  <entitydescription.MP9>[Темп стрельбы: Высоко]\n[Аккуратность:Низко]</entitydescription.MP9>
+  <entityname.mp9mag>9x19 магазин от  MP9</entityname.mp9mag>
+  <entitydescription.mp9mag>[Вместимость: 30]\n[Пробитие: 30%]</entitydescription.mp9mag>
+  <entityname.P90>P90</entityname.P90>
+  <entitydescription.P90>[Темп стрельбы: Очень Высоко]\n[Аккуратность:Средне-Низко]</entitydescription.P90>
+  <entityname.p90mag>5.7x28mm магазин от P90</entityname.p90mag>
+  <entitydescription.p90mag>[Вместимость: 50]\n[Пробитие: 30%]</entitydescription.p90mag>
+  <entityname.mk17>FN SCAR-H</entityname.mk17>
+  <entitydescription.mk17>[Темп стрельбы: Средне]\n[Аккуратность:High-Средне]</entitydescription.mk17>
+  <entityname.mk17mag>7.62x51mm магазин от SCAR-H</entityname.mk17mag>
+  <entitydescription.mk17mag>[Вместимость: 20]\n[Пробитие: 70%]</entitydescription.mk17mag>
+  <entityname.ak47>АК-47</entityname.ak47>
+  <entitydescription.ak47>[Темп стрельбы: Средне]\n[Аккуратность:Средне-Низко]</entitydescription.ak47>
+  <entityname.ak47mag>7.62x39mm магазин от АК-47</entityname.ak47mag>
+  <entitydescription.ak47mag>[Вместимость: 30]\n[Пробитие: 50%]</entitydescription.ak47mag>
+  <entityname.pkm>РПК</entityname.pkm>
+  <entitydescription.pkm>[Темп стрельбы: Очень Высоко]\n[Аккуратность:Средне-Очень Низко]</entitydescription.pkm>
+  <entityname.pkmmag>7.62x54mm магазин от РПК </entityname.pkmmag>
+  <entitydescription.pkmmag>[Вместимость: 200]\n[Пробитие: 95%]</entitydescription.pkmmag>
+  <entityname.fal>FN FAL</entityname.fal>
+  <entitydescription.fal>[Темп стрельбы: Очень Низко]\n[Аккуратность:Очень High-High]</entitydescription.fal>
+  <entityname.falmag>7.62x51mm магазин от FN FAL</entityname.falmag>
+  <entitydescription.falmag>[Вместимость: 20]\n[Пробитие: 90%]</entitydescription.falmag>
+  <entityname.underwatergun>Автомат Подводный Специальный</entityname.underwatergun>
+  <entitydescription.underwatergun>[Темп стрельбы: Средне]\n[Аккуратность:Средне]</entitydescription.underwatergun>
+  <entityname.apsmag>Магазин от АПС</entityname.apsmag>
+  <entitydescription.apsmag>[Вместимость: 26]\n[Пробитие: 40%]</entitydescription.apsmag>
+  <entityname.gasgrenade>Газовая граната</entityname.gasgrenade>
+  <entitydescription.gasgrenade>Используется для оглушения противников</entitydescription.gasgrenade>
+  <entityname.reactorslot>Слот под реактор</entityname.reactorslot>
+  <entitydescription.reactorslot>Слот, в который можно установить реактор.</entitydescription.reactorslot>
+  <entityname.reactorrs107>РБМК5000</entityname.reactorrs107>
+  <entitydescription.reactorrs107>[Макс.выход:5000]\n[Задержка до пожара:20]\n[Время плавления:120]\n[Расход топлива:0.2]\n[Защита от ЭМИ: Да]</entitydescription.reactorrs107>
+  <entityname.reactormrmxi>РА-400</entityname.reactormrmxi>
+  <entitydescription.reactormrmxi>[Макс.выход:6550]\n[Задержка до пожара:45]\n[Время плавления:200]\n[Расход топлива:0.2]\n[Защита от ЭМИ: Да]</entitydescription.reactormrmxi>
+  <entityname.reactorccsv>РХУ-Я</entityname.reactorccsv>
+  <entitydescription.reactorccsv>[Макс.выход:7000]\n[Задержка до пожара:30]\n[Время плавления:140]\n[Расход топлива:0.4]\n[Защита от ЭМИ: Нет]</entitydescription.reactorccsv>
+  <entityname.reactorfac900>РАНТ15</entityname.reactorfac900>
+  <entitydescription.reactorfac900>[Макс.выход:8000]\n[Задержка до пожара:60]\n[Время плавления:200]\n[Расход топлива:0.2]\n[Защита от ЭМИ: Нет]</entitydescription.reactorfac900>
+  <entityname.reactorgb099>ААЭС-099</entityname.reactorgb099>
+  <entitydescription.reactorgb099>[Макс.выход:9500]\[Задержка до пожара:30]\n[Время плавления:150]\n[Расход топлива:0.6]\n[Защита от ЭМИ: Да]</entitydescription.reactorgb099>
+  <entityname.reactortype2053>Тип2053</entityname.reactortype2053>
+  <entitydescription.reactortype2053>[Макс.выход:12000]\n[Задержка до пожара:10]\n[Время плавления:50]\n[Расход топлива:0.9]\n[Защита от ЭМИ: Нет]</entitydescription.reactortype2053>
+  <entityname.reactormanual>Примечание к реактору</entityname.reactormanual>
+  <entitydescription.reactormanual>Мануал по основной работе с реактором</entitydescription.reactormanual>
+  <entityname.subdoc>Документ на подлодку</entityname.subdoc>
+  <entitydescription.subdoc>Электронный журнал, регистрирующий владельца подлодки. Необходим для покупки топливных стержней.</entitydescription.subdoc>
+  <entityname.weaponrepairkit>Комплект для ремонта оружия</entityname.weaponrepairkit>
+  <entitydescription.weaponrepairkit>Набор, содержащий инструменты для кустарного ремонта оружия.</entitydescription.weaponrepairkit>
+  <entityname.dhheavywrench>Тяжелый гаечный ключ</entityname.dhheavywrench>
+  <entitydescription.dhheavywrench>Большой и тяжелый титановый гаечный ключ. Используется для починки внешних устройств подлодки.</entitydescription.dhheavywrench>
+  <entityname.weaponparts>Детали оружия</entityname.weaponparts>
+  <entitydescription.weaponparts>Запчасти для ремонта различных видов оружия.</entitydescription.weaponparts>
+  <entityname.containerkey>Ключ</entityname.containerkey>
+  <entitydescription.containerkey>Может открыть или закрыть шкафчик</entitydescription.containerkey>
+  <entityname.keymaster>Омни-ключ</entityname.keymaster>
+  <entitydescription.keymaster>Этот ключ может открыть любую дверь или шкаф</entitydescription.keymaster>
+  <entityname.keyorganzier>Кейс для ключей</entityname.keyorganzier>
+  <entitydescription.keyorganzier>Кейс, в который можно сложить все ключи</entitydescription.keyorganzier>
+  <entityname.flamethrowerfueltank>Топливный бак огнемета</entityname.flamethrowerfueltank>
+  <entitydescription.flamethrowerfueltank>Тяжелый бак, содержащий топливо для огнемета</entitydescription.flamethrowerfueltank>
+  <entityname.flamethrower>Огнемет</entityname.flamethrower>
+  <entitydescription.flamethrower>Смертоносное оружие, способное убить/вывести из строя любого врага на вашем пути</entitydescription.flamethrower>
+  <entityname.bodyarmorI>Бронежилет-I</entityname.bodyarmorI>
+  <entitydescription.bodyarmorI>[Множитель пробития: 40%]</entitydescription.bodyarmorI>
+  <entityname.bodyarmorII>Бронежилет-II</entityname.bodyarmorII>
+  <entitydescription.bodyarmorII>[Множитель пробития:25%]</entitydescription.bodyarmorII>
+  <entityname.bodyarmorIII>Бронежилет-III</entityname.bodyarmorIII>
+  <entitydescription.bodyarmorIII>[Множитель пробития:10%]</entitydescription.bodyarmorIII>
+  <entityname.mechanicalparts>Механические детали</entityname.mechanicalparts>
+  <entitydescription.mechanicalparts>Используются для различных механических ремонтных работ.</entitydescription.mechanicalparts>
+  <entityname.divingwatch>Дайверские часы</entityname.divingwatch>
+  <entitydescription.divingwatch>Используются водолазами для отслеживания времени.</entitydescription.divingwatch>
+  <entityname.hypothalamusstimulator>Таблетка стимулятора гипоталамуса</entityname.hypothalamusstimulator>
+  <entitydescription.hypothalamusstimulator>Таблетка стимулирует гипоталамус и вызывает опасный внутренний перегрев.</entitydescription.hypothalamusstimulator>
+  <entityname.diversbackpack>Рюкзак водолаза</entityname.diversbackpack>
+  <entitydescription.diversbackpack>Прочный рюкзак для переноски вещей. Замедляет при ношении.</entitydescription.diversbackpack>
+  <uilabel.reactorcooline>Охлождение</uilabel.reactorcooline>
+  <uilabel.watertank>Резервуар для воды</uilabel.watertank>
+  <uilabel.lock>Замок</uilabel.lock>
+  <displayname.divingwatch>Дайверские часы</displayname.divingwatch>
+  <cursorhover.repair.heavywrench>[[use]] Починить (Тяжелый гаечный ключ)</cursorhover.repair.heavywrench>
+  <cursorhover.repair.guns>[[use]] Починить (Комплект для ремонта оружия)</cursorhover.repair.guns>
+  <afflictionname.coldwaterresistance>Перегрев тела</afflictionname.coldwaterresistance>
+  <afflictiondescription.coldwaterresistance>Таблетки стимулируют гипоталамус и вызывают опасный внутренний перегрев.</afflictiondescription.coldwaterresistance>
+  <!--location-->
+  <locationname.EuropanRidge_Outpost>Жилой аванпост Европеского Кряжа</locationname.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name] Жилой аванпост</locationnameformat.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name] Колония</locationnameformat.EuropanRidge_Outpost>
+  <locationname.EuropanRidge_Military>Военный аванпост Европейского Кряжа</locationname.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name] База</locationnameformat.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name] База</locationnameformat.EuropanRidge_Military>
+  <locationname.EuropanRidge_Research>Исследовательская станция Европейского Кряжа</locationname.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name] Исследовательский аванпост</locationnameformat.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name] Колония</locationnameformat.EuropanRidge_Research>
+  <locationname.EuropanRidge_Mine>Исследовательская станция Европейского Кряжа</locationname.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name] Горнодобывающий аванпост</locationnameformat.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name] Колония</locationnameformat.EuropanRidge_Mine>
+  <locationname.AphoticPlateau_Outpost>Жилой аванпост Темного плато</locationname.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name] Жилой аванпост</locationnameformat.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name] Колония</locationnameformat.AphoticPlateau_Outpost>
+  <locationname.AphoticPlateau_military>Военный аванпост Темного плато</locationname.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name] База</locationnameformat.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name] База</locationnameformat.AphoticPlateau_military>
+  <locationname.AphoticPlateau_Research>Исследовательская станция Темного плато</locationname.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name] Исследовательский аванпост</locationnameformat.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name] Outpost</locationnameformat.AphoticPlateau_Research>
+  <locationname.AphoticPlateau_Mine>Исследовательская станция Темного плато</locationname.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name] Горнодобывающий аванпост</locationnameformat.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name] Колония</locationnameformat.AphoticPlateau_Mine>
+  <locationname.Greatsea_Outpost>Жилой аванпост Великого Моря</locationname.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name] Жилой аванпост</locationnameformat.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name] Колония</locationnameformat.Greatsea_Outpost>
+  <locationname.Greatsea_military>Военный аванпост Великого Моря</locationname.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name] База</locationnameformat.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name] База</locationnameformat.Greatsea_military>
+  <locationname.Greatsea_Research>Исследовательская станция Великого Моря</locationname.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name] Исследовательский аванпост</locationnameformat.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name] Колония</locationnameformat.Greatsea_Research>
+  <Sildeshow.DHStorybegin1>"В 2035 году люди впервые оставили свой след на поверхности Европы в качестве международной экспедиции в поисках свидетельств сложной жизни на планете. За 10 лет Новый Свет превратился в стабильную колонию, обеспечивающую Землю необходимыми материалами."</Sildeshow.DHStorybegin1>
+  <Sildeshow.DHStorybegin2>"В 2050 году интенсивные гамма-лучи Крабовидной туманности задели этот регион, прервав связь между Европой и Землей. Последняя попытка Земли пополнить запасы Европы потерпела неудачу в 2051 году.“</Sildeshow.DHStorybegin2>
+  <Sildeshow.DHStorybegin3>“С существующими ресурсами колония все еще могла работать на низком уровне. Но из-за отсутствия необходимых ресурсов Европейский союз давно понял, что колонии нежизнеспособны. В 2053 году грузовая подводная лодка улавливает энергетический импульс инопланетного сигнала, и с тех пор новости об инопланетной энергии были повсюду. Человечество возлагало свои надежды на эту новую энергию, но ее использование никогда не предавалось огласке. На самом деле, никогда не подтверждалось, может ли эта энергия использоваться людьми.”</Sildeshow.DHStorybegin3>
+  <Sildeshow.DHStorybegin4>“Прошло 6 лет с момента первого энергетического сигнала.."</Sildeshow.DHStorybegin4>
+  <Botai_getdivingmask>"Вода поступает внутрь!"</Botai_getdivingmask>
+  <Botai_getdivingmask>"Нужно найти кислородную маску!"</Botai_getdivingmask>
+  <Botai_getdivingmask>"Корпус поврежден! Корпус поврежден!"</Botai_getdivingmask>
+</infotexts>

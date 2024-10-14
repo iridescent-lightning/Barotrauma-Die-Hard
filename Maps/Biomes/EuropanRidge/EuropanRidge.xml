@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LevelGenerationParameters>
+  <Override>
+    <RidgeAdvanced identifier="ridgeadvanced" biomes="europanridge" commonness="50" minleveldifficulty="25" Type="LocationConnection" AmbientLightColor="4,16,4,255" BackgroundTextureColor="4,16,4,255" BackgroundColor="0,20,15,255" WallColor="255,255,255,255" StartPosition="0.1,0.1" EndPosition="0.9,0.1" CreateHoleNextToEnd="True" CreateHoleToAbyss="True" LevelObjectAmount="8000" BackgroundCreatureAmount="80" MinWidth="120000" MaxWidth="140000" Height="60000" InitialDepthMin="200000" InitialDepthMax="300000" MinTunnelRadius="6500" SideTunnelCount="2,2" SideTunnelVariance="0.8" MinSideTunnelRadius="2500,3500" VoronoiSiteInterval="1500,1500" VoronoiSiteVariance="700,700" CellSubdivisionLength="1500" CellRoundingAmount="0.5" CellIrregularity="0.1" MainPathNodeIntervalRange="6000,10000" MainPathVariance="0.3" CaveCount="3" ItemCount="400" ResourceIntervalRange="19200,38400" CaveResourceIntervalRange="9600,19200" ResourceClusterSizeRange="3,6" ResourceSpawnChance="0.3" CaveResourceSpawnChance="0.6" FloatingIceChunkCount="3" IslandCount="2" IceSpireCount="0" AbyssIslandCount="5" AbyssIslandSizeMin="4000,7000" AbyssIslandSizeMax="8000,10000" AbyssIslandCaveProbability="0.5" AbyssResourceClustersMin="20" AbyssResourceClustersMax="30" SeaFloorDepth="-120000" SeaFloorVariance="2000" MountainCountMin="5" MountainCountMax="6" MountainHeightMin="80000" MountainHeightMax="100000" RuinCount="0" MinWreckCount="0" MaxWreckCount="1" MinCorpseCount="3" MaxCorpseCount="6" ThalamusProbability="0.2" WreckHullFloodingChance="0.5" WreckFloodingHullMinWaterPercentage="0.1" WreckFloodingHullMaxWaterPercentage="1" BottomHoleProbability="1" WaterParticleScale="1" WallTextureSize="512" WallEdgeTextureWidth="1024" WallEdgeExpandOutwardsAmount="128" WallEdgeExpandInwardsAmount="128">
+      <!--<Background
+      texture="Content/Map/iceBackgroundFade.png" />
+    <BackgroundTop
+      texture="Content/Map/iceBackground.png"
+      premultiplyalpha="false" />-->
+      <WaterParticles texture="Content/Map/Biomes/EuropanRidge/BackgroundParticles.png" />
+      <Wall texture="Content/Map/Biomes/EuropanRidge/LevelWall.png" premultiplyalpha="false" />
+      <WallEdge texture="Content/Map/Biomes/EuropanRidge/LevelWallEdge.png" />
+      <DestructibleWall texture="Content/Map/Biomes/DestructibleWall.png" />
+      <DestructibleWallEdge texture="Content/Map/Biomes/DestructibleWallEdge.png" />
+      <WallDestroyed texture="Content/Map/Biomes/DestroyedWall.png" premultiplyalpha="false" />
+    </RidgeAdvanced>
+  </Override>
+</LevelGenerationParameters>

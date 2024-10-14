@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <prefabs>
+    <!-- Everything is categorized as 'Structure' unless explicitly categorized otherwise 
+    <shellA name="" identifier="shella90deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="72" bodyoffset="12,0" resizevertical="true">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="0,0,96,512" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella16deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="266" bodyheight="60" bodyoffset="0,-10" bodyrotation="-16">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="129,0,256,160" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella34deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="116" bodyheight="60" bodyrotation="-34">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="864,117,98,156" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella0deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" width="512" height="96" bodyheight="72" bodyoffset="0,-12" resizehorizontal="true" >
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="416,0,512,96" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella04deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="514" bodyheight="60" bodyoffset="0,-5" bodyrotation="-4">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1024,0,512,128" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella14adeg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="522" bodyheight="60" bodyrotation="-14.5">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1536,450,512,224" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella52deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="385" bodyheight="60" bodyrotation="-52">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="101,174,285,338" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella16degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="100" bodyheight="60" bodyoffset="0,-10" bodyrotation="-16.5">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="416,160,96,128" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella25deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="141" bodyheight="60" bodyoffset="0,-10" bodyrotation="-25">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="544,128,128,160" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella45deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="180" bodyheight="45" bodyrotation="-45" bodyoffset="-5,-10">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="703,101,129,216" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella45degc" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="100" bodyheight="60" bodyrotation="-45" bodyoffset="-10,10">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1023,1537,98,98" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella45degd" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="140" bodyheight="60" bodyrotation="-45">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1024,1662,131,134" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella32deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="150" bodyheight="60" bodyoffset="13,-20" bodyrotation="-32">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="802,900,159,125" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella14degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="524" bodyheight="60" bodyoffset="0,-12" bodyrotation="-14">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1025,154,512,208" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella43deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="595" bodyheight="60" bodyrotation="-43">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1592,1,457,449" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="Shella51deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="215" bodyheight="60" bodyoffset="12,-16" bodyrotation="-51">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="388,294,188,218" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="Shella47deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="185" bodyheight="60" bodyrotation="-47">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="607,351,165,159" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="Shella60deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="185" bodyheight="60" bodyoffset="16,-16" bodyrotation="-60">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="803,288,160,224" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="Shella18deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="414" bodyheight="60" bodyoffset="0,-12" bodyrotation="20">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1024,380,384,224" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="Shella70deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="60" bodyheight="414" bodyrotation="20" bodyoffset="10,0">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="0,544,224,384" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.1" />
+  </shellA>
+  <shellA name="" identifier="shella90degcurve" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="60" bodyheight="480" bodyrotation="0">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="255,543,128,482" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella45degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="60" bodyheight="360" bodyrotation="55">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="415,544,320,256" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella57deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="360" bodyheight="60" bodyrotation="-57">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="766,517,227,317" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella40deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="540" bodyheight="60" bodyrotation="-40">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1026,637,454,388" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="ShellA61deg" aliases="Shell A 61 deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="480" bodyheight="60" bodyrotation="-61">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1156,1071,285,466" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="ShellA17deg" aliases="Shell A 17 deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="332" bodyheight="60" bodyrotation="-17">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="415,802,321,190" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella34degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="480" bodyheight="60" bodyoffset="0,-18" bodyrotation="-34">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="0,1042,384,336" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella26deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="550" bodyheight="60" bodyrotation="-26">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="416,1056,513,350" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella54deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="601" bodyheight="60" bodyrotation="-54">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="0,1520,416,528" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella38deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="682" bodyheight="60" bodyrotation="-42">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1506,709,544,512" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shella42deg" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="400" bodyheight="60" bodyrotation="-42">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="449,1721,292,329" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shellacombo11" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="520" bodyheight="60" bodyrotation="-62" bodyoffset="7,-17">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1201,1551,288,496" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shellacombo12" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" body="true" castshadow="true" health="600" bodywidth="600" bodyheight="60" bodyrotation="-21.5" bodyoffset="-5,15">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="1488,1312,560,338" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+
+  <shellA name="" identifier="shellacap0dega" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" description="" body="true" castshadow="true" health="600" bodywidth="89" bodyheight="70" bodyoffset="-6,-4" noaitarget="true">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="585,1449,99,93" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shellacap0degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" description="" body="true" castshadow="true" health="600" bodywidth="105" bodyheight="73" bodyoffset="-4,-7" noaitarget="true">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="750,1443,115,103" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shellacap90dega" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" description="" body="true" castshadow="true" health="600" bodywidth="60" noaitarget="true">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="969,1368,93,101" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  <shellA name="" identifier="shellacap90degb" descriptionidentifier="exteriorshell" subcategory="exteriorsubwalls" description="" body="true" castshadow="true" health="600" bodywidth="60" noaitarget="true">
+    <sprite texture="Content/Map/ExteriorWallsA.png" sourcerect="978,1185,93,107" depth="0.1" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/ExteriorWallsABack.png" depth="0.85" />
+  </shellA>
+  
+  
+  
+  
+  
+  <RuinWallHorizontal name="Ruin Wall Horizontal" identifier="RuinWallHorizontal" category="Alien" castshadow="true" width="256" height="80" resizehorizontal="true" body="true" health="375" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="0,384,256,80" depth="0.06" />
+  </RuinWallHorizontal>
+  <RuinWallVertical name="Ruin Wall Vertical" identifier="RuinWallVertical" category="Alien" castshadow="true" width="80" height="256" resizevertical="true" body="true" health="375" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="128,0,80,256" depth="0.061" />
+  </RuinWallVertical>
+  <RuinWallHeavyHorizontal name="Ruin Wall Heavy Horizontal" identifier="RuinWallHeavyHorizontal" category="Alien" castshadow="true" width="128" height="128" resizehorizontal="true" body="true" health="10000" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="0,256,256,128" depth="0.06" />
+  </RuinWallHeavyHorizontal>
+  <RuinWallHeavyVertical name="Ruin Wall Heavy Vertical" identifier="RuinWallHeavyVertical" category="Alien" castshadow="true" width="128" height="128" resizevertical="true" body="true" health="10000" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="0,0,128,256" depth="0.061" />
+  </RuinWallHeavyVertical>
+  <RuinWallHorizontalSmall name="Ruin Wall Small Horizontal" identifier="RuinWallHorizontalSmall" category="Alien" castshadow="true" width="256" height="48" resizehorizontal="true" body="true" health="100" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="0,464,256,48" depth="0.062" />
+  </RuinWallHorizontalSmall>
+  <RuinWallVerticalSmall name="Ruin Wall Small Vertical" identifier="RuinWallVerticalSmall" category="Alien" castshadow="true" width="48" height="256" resizevertical="true" body="true" health="100" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienWallSet1.png" sourcerect="202,0,54,256" depth="0.063" />
+  </RuinWallVerticalSmall>
+  <RuinBack1 name="Ruin BackWall 1" identifier="RuinBack1" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground1.png" sourcerect="0,0,512,512" depth="0.98" premultiplyalpha="false" />
+  </RuinBack1>
+  <RuinBack2 name="Ruin BackWall 2" identifier="RuinBack2" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground1.png" sourcerect="512,0,512,512" depth="0.981" premultiplyalpha="false" />
+  </RuinBack2>
+  <RuinBack3 name="Ruin BackWall 3" identifier="RuinBack3" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground1.png" sourcerect="0,512,512,512" depth="0.98" premultiplyalpha="false" />
+  </RuinBack3>
+  <RuinBack4 name="Ruin BackWall 4" identifier="RuinBack4" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground1.png" sourcerect="512,512,512,512" depth="0.98" premultiplyalpha="false" />
+  </RuinBack4>
+  <RuinBack5 name="Ruin BackWall 5" identifier="RuinBack5" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground2.png" sourcerect="0,0,512,512" depth="0.98" premultiplyalpha="false" />
+  </RuinBack5>
+  <RuinBack6 name="Ruin BackWall 6" identifier="RuinBack6" category="Alien" allowattachitems="true" width="64" height="64" resizehorizontal="true" resizevertical="true" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienBackground2.png" sourcerect="512,0,512,512" depth="0.98" premultiplyalpha="false" />
+  </RuinBack6>
+  <RuinBlock name="Ruin Prop Block" identifier="RuinBlock" category="Alien" allowattachitems="true" width="514" height="296">
+    <sprite texture="%ModDir%/Maps/ruins.png" sourcerect="0,513,514,296" depth="0.98" />
+  </RuinBlock>
+  <RuinClaw name="Ruin Prop Claw" identifier="RuinClaw" category="Alien" allowattachitems="true" width="126" height="270" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/ruins.png" sourcerect="512,517,126,270" depth="0.97" />
+  </RuinClaw>
+  <RuinDecal1 name="Ruin Decal 1" identifier="RuinDecal1" category="Alien" allowattachitems="true" width="256" height="256" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienDecals1.png" sourcerect="0,0,256,256" depth="0.97" />
+  </RuinDecal1>
+  <RuinDecal2 name="Ruin Decal 2" identifier="RuinDecal2" category="Alien" allowattachitems="true" width="256" height="256" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienDecals1.png" sourcerect="256,0,256,256" depth="0.97" />
+  </RuinDecal2>
+  <RuinDecal3 name="Ruin Decal 3" identifier="RuinDecal3" category="Alien" allowattachitems="true" width="256" height="256" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienDecals1.png" sourcerect="0,256,256,256" depth="0.97" />
+  </RuinDecal3>
+  <RuinDecal4 name="Ruin Decal 4" identifier="RuinDecal4" category="Alien" allowattachitems="true" width="256" height="256" noaitarget="true">
+    <sprite texture="%ModDir%/Maps/AlienDecals1.png" sourcerect="256,256,256,256" depth="0.97" />
+  </RuinDecal4>
+  
+  
+  
+  
+
+  <blockstair name="airwall0" identifier="airwall0"  width="300" height="10" platform="true" resizehorizontal="true" body="true" resizevertical="true" >
+    <sprite texture="Content/Map/MiscStructures.png" sourcerect="1673,1228,256,319" depth="0.1" origin="0.5,0.5" />
+  </blockstair>-->
+  </prefabs>
+</Override>

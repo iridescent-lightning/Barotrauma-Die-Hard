@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Legacycrawler" speciesname="Electrical_bug" speciestranslationoverride="Electrical Bug" usebosshealthbar="false">
+  <health vitality="10" poisonvulnerability="1" />
+  <StatusEffect type="Always" target="NearbyItems" targettags="junctionbox,supercapacitor" range="300.0" setvalue="true" stackable="false" extraload="8000" interval="3" />
+  <StatusEffect type="OnDeath" target="This" delay="4">
+    <RemoveCharacter />
+  </StatusEffect>
+  <Inventory slots="Any, Any" accessiblewhenalive="false">
+    <clear />
+  </Inventory>
+  <ai combatstrength="10" avoidgunfire="False">
+    <!--Disables latching-->
+    <chooserandom>
+      <clear />
+    </chooserandom>
+  </ai>
+  <ai combatstrength="10" sight="0.5" hearing="1.0" aggressiveboarding="true" attackcooldown="0.1">
+    <targetpriority tag="human" state="Attack" priority="55" />
+    <targetpriority tag="dead" state="Eat" priority="100" />
+  </ai>
+  <ragdoll scalemultiplier="0.3" />
+  <attack damagemultiplier="0.3" rangemultiplier="0.3" impactmultiplier="0.3" />
+</Charactervariant>

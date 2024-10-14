@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HumanhuskSwimFast footrotatestrength="15" type="Humanhusk" LegMoveAmount="1.7241129" LegCycleLength="5.1599464" HandMoveAmount="0.7753595,0.08980845" HandCycleSpeed="3.101438" HandMoveOffset="0,0" FootAngle="65" ArmMoveStrength="0.6" HandMoveStrength="0.8000001" FixedHeadAngle="True" SteerTorque="1" LegTorque="12" MovementSpeed="2.5" CycleSpeed="3.640148" HeadAngle="30" TorsoAngle="0" HeadTorque="40" TorsoTorque="30" FootTorque="5" AnimationType="SwimFast" ArmIKStrength="2.50" HandIKStrength="2.5" />

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <npcsets>
+    <npcset identifier="outpostnpcs_DieHard">
+      <npc identifier="huskcultist" commonness="0" moduleflags="none" job="assistant" behavior="Passive" healthmultiplier="1" preferredoutpostmoduletypes="crewmodule,seccrewmodule" aimspeed="6">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" />
+          </Item>
+          <Item identifier="divingknife" />
+        </ItemSet>
+      </npc>
+      <npc identifier="prostitute" commonness="0" moduleflags="none" job="assistant" behavior="Passive" healthmultiplier="1" preferredoutpostmoduletypes="crewmodule,seccrewmodule" gender="female">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+        </ItemSet>
+      </npc>
+      <npc identifier="husband" commonness="0" moduleflags="none" job="assistant" behavior="Passive" healthmultiplier="1" preferredoutpostmoduletypes="crewmodule,seccrewmodule">
+        <Character speciesname="human" gender="male" headspriteid="3" hairindex="2" beardindex="0" moustacheindex="0" faceattachmentindex="0" skincolor="255,255,255,255" haircolor="255,255,255,255" facialhaircolor="255,255,255,255">
+          <job name="Assistant" identifier="assistant">
+            <skill identifier="electrical" level="5" />
+            <skill identifier="mechanical" level="5" />
+            <skill identifier="weapons" level="5" />
+            <skill identifier="medical" level="5" />
+            <skill identifier="helm" level="5" />
+          </job>
+        </Character>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+        </ItemSet>
+      </npc>
+      <npc identifier="wife" commonness="0" moduleflags="none" job="assistant" behavior="Passive" healthmultiplier="1" preferredoutpostmoduletypes="crewmodule,seccrewmodule">
+        <Character speciesname="human" gender="female" haircolor="222,215,204,255" salary="0" hairindex="1" beardindex="0" moustacheindex="0" faceattachmentindex="0">
+          <job name="Assistant" identifier="assistant">
+            <skill identifier="electrical" level="5" />
+            <skill identifier="mechanical" level="5" />
+            <skill identifier="weapons" level="5" />
+            <skill identifier="medical" level="5" />
+            <skill identifier="helm" level="5" />
+          </job>
+        </Character>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="sickcloth" equip="true" />
+        </ItemSet>
+      </npc>
+      <npc identifier="dummypirate" commonness="0" moduleflags="none" job="killer" behavior="Passive" healthmultiplier="1" preferredoutpostmoduletypes="crewmodule,seccrewmodule" gender="male">
+        <ItemSet commonness="1">
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+        </ItemSet>
+      </npc>
+      <npc identifier="commonengineer" job="engineer" commonness="1" healthmultiplier="1" behavior="Passive">
+        <ItemSet commonness="1">
+          <Item identifier="orangejumpsuit2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" equip="true" />
+          <Item identifier="screwdriver" equip="true" />
+          <Item identifier="crowbar" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="theftwoman" job="assistant" commonness="0" healthmultiplier="1" behavior="Active">
+        <Character speciesname="human" gender="female" haircolor="222,215,204,255" salary="1000" headspriteid="10" hairindex="10" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Tough">
+          <job name="Assistant" identifier="assistant">
+            <skill identifier="electrical" level="5" />
+            <skill identifier="mechanical" level="5" />
+            <skill identifier="weapons" level="55" />
+            <skill identifier="medical" level="5" />
+            <skill identifier="helm" level="5" />
+          </job>
+        </Character>
+        <ItemSet commonness="1">
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="theman" job="assistant" commonness="0" healthmultiplier="1" behavior="Active">
+        <Character speciesname="human" name="Bryce Bergman" gender="male" haircolor="222,215,204,255" salary="1000" headspriteid="10" hairindex="10" beardindex="1" moustacheindex="2" faceattachmentindex="9" personality="Tough">
+          <job name="Captain" identifier="captain">
+            <skill identifier="electrical" level="5" />
+            <skill identifier="mechanical" level="5" />
+            <skill identifier="weapons" level="45" />
+            <skill identifier="medical" level="5" />
+            <skill identifier="helm" level="55" />
+          </job>
+        </Character>
+        <ItemSet commonness="1">
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="suspect" commonness="0" moduleflags="crewmodule,engineeringmodule" job="securityofficer" behavior="Passive" healthmultiplier="1" healthmultiplierinmultiplayer="1.5" aimspeed="3" aimaccuracy="1" reportrange="500">
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="57">
+            <Item identifier="57mag" />
+          </Item>
+          <Item identifier="57mag" />
+        </ItemSet>
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="MP9">
+            <Item identifier="mp9mag" />
+          </Item>
+          <Item identifier="mp9mag" />
+        </ItemSet>
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="bluejumpsuit1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="revolver">
+            <Item identifier="revolverround" amount="6" />
+          </Item>
+          <Item identifier="revolverround" amount="12" />
+        </ItemSet>
+        <ItemSet commonness="5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="bluejumpsuit2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="crowbar" equip="false" />
+        </ItemSet>
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="g19">
+            <Item identifier="g19mag" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="2">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="medicalofficerclothes" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+    </npcset>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--                          Abandoned Outpost NPCs                           -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <npcset identifier="abandonedoutpostnpcs">
+      <npc identifier="bandit" commonness="0" moduleflags="crewmodule,engineeringmodule" job="securityofficer" behavior="Passive" healthmultiplier="1" healthmultiplierinmultiplayer="1.5" aimspeed="3" aimaccuracy="1" reportrange="500">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="57">
+            <Item identifier="57mag" />
+          </Item>
+          <Item identifier="57mag" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="revolver">
+            <Item identifier="revolverround" amount="6" />
+          </Item>
+          <Item identifier="revolverround" amount="12" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="crowbar" equip="false" />
+          <Item identifier="p90" equip="true">
+            <Item identifier="p90mag" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="crowbar" equip="true" />
+          <Item identifier="MPX" equip="true">
+            <Item identifier="mpx_magazine" amount="1" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="banditleader" commonness="0" moduleflags="crewmodule,engineeringmodule" job="securityofficer" behavior="Passive" healthmultiplierinmultiplayer="1.5" reportrange="750" aimspeed="3">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="captainsuniform2" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="shotgun">
+            <Item identifier="shotgunshell" amount="6" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="wrench" equip="true" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="captainsuniform2" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="mcx" equip="true">
+            <Item identifier="mcx_magazine" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="banditleader_heavy" commonness="0" moduleflags="crewmodule,engineeringmodule" job="securityofficer" behavior="Passive" healthmultiplierinmultiplayer="1.5" reportrange="750" aimspeed="3">
+        <ItemSet commonness="0.8">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="pkm" equip="true">
+            <Item identifier="pkmmag" amount="1" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="wrench" equip="true" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="p90">
+            <Item identifier="p90mag" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="mk17">
+            <Item identifier="mk17mag" />
+          </Item>
+          <Item identifier="shotgunshell" amount="4" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="ak47">
+            <Item identifier="ak47mag" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="0.4">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="flamer">
+            <Item identifier="weldingfueltank" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="hostage" job="assistant" moduleflags="none" behavior="Passive">
+        <ItemSet>
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="psychoclown" commonness="0" moduleflags="none" job="killer" behavior="Passive" healthmultiplier="1.5" healthmultiplierinmultiplayer="3" aimspeed="1" aimaccuracy="1" reportrange="500">
+        <ItemSet commonness="99">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="clowndivingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="oxygentank" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="divingknife" equip="true" />
+          <Item identifier="bikehorn" equip="true" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownsuitunique" equip="true" />
+          <Item identifier="clownmaskunique" equip="true" />
+          <Item identifier="clowndivingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="oxygentank" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="divingknifeunique" equip="true" />
+          <Item identifier="bikehorn" equip="true" />
+        </ItemSet>
+      </npc>
+    </npcset>
+  </npcsets>
+</Override>

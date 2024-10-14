@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <Affliction.fatigue.description>Running reduces your stamina. Use rest if you're tired.</Affliction.fatigue.description>
+  <coldwater>Cold will slowly eats you away. Find hulls to restore body temperature.</coldwater>
+  <coldwater1>Staying in the cold too long can be dangerous.</coldwater1>
+  <dh_hypothermia>You are about to be frozen!</dh_hypothermia>
+  <brainshot>Shot to the brain. Death is imminent. At least the victim doesn't need to go through agony.</brainshot>
+  <pain>Use morphine to stop the pain</pain>
+  <eventtext.clownbomb.c>A clown giggles towards you.</eventtext.clownbomb.c>
+  <eventtext.clownbomb.c1>"It's such a beautiful ship." the clown giggles harder</eventtext.clownbomb.c1>
+  <eventtext.clownbomb.c2>"So I gave a little gift to your ship. Hope you like it."</eventtext.clownbomb.c2>
+  <eventtext.clownbomb.c3>"What do you mean by that?"</eventtext.clownbomb.c3>
+  <eventtext.clownbomb.c4>"Off! Off! See the present!"</eventtext.clownbomb.c4>
+  <eventtext.clownbomb.c5>Clown giggles even harder.</eventtext.clownbomb.c5>
+  <eventtext.clownbomb.c6>"Something isn't right."</eventtext.clownbomb.c6>
+  <EventTest.dhprostitude.c>"Hey, baby. You like what you see?"</EventTest.dhprostitude.c>
+  <EventTest.dhprostitude.c1>A woman who wore sexy cloth blinked at you. You come close to her.</EventTest.dhprostitude.c1>
+  <EventTest.dhprostitude.c2>"Give me 50 marks I will let you see what you want." She said.</EventTest.dhprostitude.c2>
+  <EventTest.dhprostitude.c3>"Here?" You ask.</EventTest.dhprostitude.c3>
+  <EventTest.dhprostitude.c4>"Of course not my sweet heart." She said, glancing at a door.</EventTest.dhprostitude.c4>
+  <EventTest.dhprostitude.c.o1> "Here's yours."</EventTest.dhprostitude.c.o1>
+  <EventTest.dhprostitude.c.o1.c1>You follow the woman into a small room.</EventTest.dhprostitude.c.o1.c1>
+  <EventTest.dhprostitude.c.o1.c2>"Now close your eyes." She smiled at you, fiddling with underwear straps. "Let me..."</EventTest.dhprostitude.c.o1.c2>
+  <EventTest.dhprostitude.c.o1.c3>Suddenly you felt something hit hard on your head. You were knocked out.</EventTest.dhprostitude.c.o1.c3>
+  <EventTest.dhprostitude.c.o1.c4>When you woke up, the woman had disappeared and as you reached out your pocket, you found that you lost 500 marks.</EventTest.dhprostitude.c.o1.c4>
+  <EventTest.dhprostitude.c.o2>"No not interested."</EventTest.dhprostitude.c.o2>
+  <EventTest.dhprostitude.c.o3>"Hey! I have seen you before!"</EventTest.dhprostitude.c.o3>
+  <EventTest.dhprostitude.c.o3.c>After being recognized. The woman starts to run away.</EventTest.dhprostitude.c.o3.c>
+  <EventText.checkweapon.c>"You hold there!"</EventText.checkweapon.c>
+  <EventText.checkweapon.c1>"Yes sir?"</EventText.checkweapon.c1>
+  <EventText.checkweapon.c2>"You carrying long-firearm weapon is a straight violation to the coalition regulation of outpost safety. You must hand in your weapon."</EventText.checkweapon.c2>
+  <EventText.checkweapon.c2.o1>"Sorry sir. I didn't know it. Can I put my weapon back to my ship?"</EventText.checkweapon.c2.o1>
+  <EventText.checkweapon.c2.o1.c>"I give you 1 minute to put back your stuff. And I don't want to see any more long guns you are carrying. Or I won't ask nicely next time."</EventText.checkweapon.c2.o1.c>
+  <EventText.checkweapon.c2.o2>"You can't do that to me! I never heard such regulation!"</EventText.checkweapon.c2.o2>
+  <EventText.checkweapon.c2.o2.c1>"Now you've heard. "</EventText.checkweapon.c2.o2.c1>
+  <EventText.checkweapon.c2.o2.c2>"This is robbery! "</EventText.checkweapon.c2.o2.c2>
+  <EventText.checkweapon.c2.o2.c3>"File a report if you disagree with the coalition. I'm just doing my work. If I see you carry any long weapon again, you are screwed. "</EventText.checkweapon.c2.o2.c3>
+  <EventText.checkweapon.c2.o3>"The weapon's for you. Die scum!"</EventText.checkweapon.c2.o3>
+  <EventText.checkweapon.c3.o1>Show him your warrant</EventText.checkweapon.c3.o1>
+  <EventText.checkweapon.c3.o1.c>"Sorry sir. You are clear to go in now.</EventText.checkweapon.c3.o1.c>
+  <EventText.checkweapon.c3.o1.c1>...</EventText.checkweapon.c3.o1.c1>
+  <EventText.checkweapon.c3.o1.c2>There is nothing</EventText.checkweapon.c3.o1.c2>
+  <EventText.checkweapon.c3.o1.c3>"Are you fucking with me? Your weapon is removed! And you are fined!"</EventText.checkweapon.c3.o1.c3>
+  <EventText.checkweapon2.c>"I have given your time. Now what? You will be fined, and your weapon will be removed. I will report this one."</EventText.checkweapon2.c>
+  <EventText.checkweapon2.c.o1>Hand in your weapon</EventText.checkweapon2.c.o1>
+  <EventText.checkweapon2.c.o2>Refuse to collaborate!</EventText.checkweapon2.c.o2>
+  <EventText.checkweapon3.c>"Suspects carry lethal weapons in station. Possible terrorism activity alert. Proceed to arrest immediately!"</EventText.checkweapon3.c>
+  <EventText.dhhuskcultambush.c>A man in a hood stopped you.</EventText.dhhuskcultambush.c>
+  <EventText.dhhuskcultambush.c1>"I feel something special of you."He said.</EventText.dhhuskcultambush.c1>
+  <EventText.dhhuskcultambush.c2>He looks pale and thin. There is a special fanaticism in his sunken eyes.</EventText.dhhuskcultambush.c2>
+  <EventText.dhhuskcultambush.c3>You looked at him. When you are about to go away, he speaks.</EventText.dhhuskcultambush.c3>
+  <EventText.dhhuskcultambush.c4>"Life is hard and meaningless. On this planet, we are all weathering. Why not come with me? Try this and relieve from pain and sorrow."</EventText.dhhuskcultambush.c4>
+  <EventText.dhhuskcultambush.c.o1>"Fuck yourself."</EventText.dhhuskcultambush.c.o1>
+  <EventText.dhhuskcultambush.c.o1.c>"No. Fuck yourself." You said."I heard you people before. I'm not going to participate in whatever craziness you are going for."</EventText.dhhuskcultambush.c.o1.c>
+  <EventText.dhhuskcultambush.c.o1.c2>You tried to get away. The man in the hood doesn't let you go. "Let go off me!" He suddenly becomes angry. You see he reaches his pocket and pull out a knife.</EventText.dhhuskcultambush.c.o1.c2>
+  <EventText.dhhuskcultambush.c.o2>"Yes. My life is miserable"</EventText.dhhuskcultambush.c.o2>
+  <EventText.dhhuskcultambush.c.o2.c>"My life is so miserable." You said. "Better living a life wihtout need to worry anything. Help me please."
+The man pulled out a syringe and injected something into your arm. You felt something strange.</EventText.dhhuskcultambush.c.o2.c>
+  <EventText.dhhuskcultambush.aft>"Can't imagine they let this people in. What are those security guards doing?"</EventText.dhhuskcultambush.aft>
+  <EventText.checkevidence.c>"I accept Hammerhead loot. I can only buy one each time because I don't bring much money."</EventText.checkevidence.c>
+  <EventText.checkcrawlers.c>"I accept Crawler loot. I can only buy one each time because I don't bring much money."</EventText.checkcrawlers.c>
+  <EventText.checkmolochs.c>"I accept Moloch loot. I can only buy one each time because I don't bring much money."</EventText.checkmolochs.c>
+  <EventText.checkfish.c>"I accept threshers and spinelings. I can only buy one each time because I don't bring much money."</EventText.checkfish.c>
+  <EventText.checkraptor.c>"I accept raptors loot. I can only buy one each time because I don't bring much money."</EventText.checkraptor.c>
+  <EventText.checkabyss.c>"I accept monsters from the abyss. I can only buy one each time because I don't bring much money."</EventText.checkabyss.c>
+  <EventText.checkevidence.c.o1>Show him the loot</EventText.checkevidence.c.o1>
+  <EventText.checkevidence.c.o1.c1>"Let's see"</EventText.checkevidence.c.o1.c1>
+  <EventText.checkevidence.c.o1.c2>...</EventText.checkevidence.c.o1.c2>
+  <EventText.checkevidence.c.o1.c3>"This is what I want. Thank you."</EventText.checkevidence.c.o1.c3>
+  <EventText.checkevidence.c.o1.c4>"There is nothing I wanted."</EventText.checkevidence.c.o1.c4>
+  <EventText.checkevidence.c.o2>Walk away</EventText.checkevidence.c.o2>
+  <EventText.fetchmonstersmission.c>There are monsters outside the passageway between outposts. Some loot maybe valuable. Interested?"</EventText.fetchmonstersmission.c>
+  <EventText.fetchmonstersmission.c.o1>"Yes"</EventText.fetchmonstersmission.c.o1>
+  <EventText.fetchmonstersmission.c.o2>"No</EventText.fetchmonstersmission.c.o2>
+  <EventText.familytransport.c>"My wife is urgently sick. I need to send her to the next outpost. But we don't have much money. I will give you 500 marks. Can you help us?"</EventText.familytransport.c>
+  <EventText.familytransport.c.o1>"Yes. I'd like to help."</EventText.familytransport.c.o1>
+  <EventText.familytransport.c.o1.c1>"Thanks. I'll wait here. Find me if you decide to leave."</EventText.familytransport.c.o1.c1>
+  <EventText.familytransport.c.o1.c2>"Are you leaving?"</EventText.familytransport.c.o1.c2>
+  <EventText.familytransport.c.o1.c2.o1.c>"Great"</EventText.familytransport.c.o1.c2.o1.c>
+  <EventText.familytransport.c.o2>"No you have to find others."</EventText.familytransport.c.o2>
+  <EventText.powerissue.c1>"Oh here we go again."</EventText.powerissue.c1>
+  <EventText.powerissue.c2>"You think it's reactor or the power grid?"</EventText.powerissue.c2>
+  <EventText.powerissue.c3>"Can't tell."</EventText.powerissue.c3>
+  <EventText.powerissue.c4>"Reactor maybe?"</EventText.powerissue.c4>
+  <EventText.powerissue.c5>"I think it looks fine."</EventText.powerissue.c5>
+  <EventText.bugseverhwere.c1>"Fuck these bugs!"</EventText.bugseverhwere.c1>
+  <EventText.bugseverhwere.c2>"Shoot it!"</EventText.bugseverhwere.c2>
+  <EventText.comments.c1>"You don't read that shit, do ya?"\n "Yeah I bet you read."</EventText.comments.c1>
+  <EventText.comments.c2>"Really just nonsense isn't it?"</EventText.comments.c2>
+  <EventText.comments.c3>"Why?"</EventText.comments.c3>
+  <EventText.comments.c4>"Those separatists must had been here before. Damn. Back then they were just a very small unpopular group. Losers. They are still the same. But they get stronger. They get stronger because the Coalition is too merciful. Everywhere now. Like electrical bugs.</EventText.comments.c4>
+  <EventText.comments.c4.o1>"What is electrical bug?</EventText.comments.c4.o1>
+  <EventText.comments.c4.o1.c>"They are little vermins that cause your junction box not function. Not damaging it. Just need to get closer. Dead or alive. This place is truly a for-God sake. And will you not cut my topic?!"</EventText.comments.c4.o1.c>
+  <EventText.comments.c4.o1.c1>"Ok."</EventText.comments.c4.o1.c1>
+  <EventText.comments.c4.o2>Listen</EventText.comments.c4.o2>
+  <EventText.comments.c5>"I told you because I live long enough. I was around before the contact was lost. I know those "separatists". Most of them aren't even sailors. They don't have a clue what's going on in the ocean. This place is hell. What do they expect? A perfect Union that makes it a Heaven? Many were criminals who now want to make everybody suffer. They deserve it. I tell you these because I don't want to see more people get deceived by their ideology."\n"One day maybe Coalition manager will ask your help on this matter. Remember my words."</EventText.comments.c5>
+  <EventText.backgroundstory1.c1>"I heard that it's the Coaltition that blocks the radio signal from the Earth on purpose!"</EventText.backgroundstory1.c1>
+  <EventText.backgroundstory1.c2>"Shh. Shut! It's all bullshit!"</EventText.backgroundstory1.c2>
+  <EventText.backgroundstory1.c3>"What? There isn't any guards around."</EventText.backgroundstory1.c3>
+  <EventText.backgroundstory1.c4>"There are bugs you fool. They are listening to everything."</EventText.backgroundstory1.c4>
+  <EventText.backgroundstory1.c5>"Oh well. YOU KNOW THAT WHAT I WAS TELLING YOU IS JUST A RANDOM BULLSHIT. TO ALERT YOU THAT, ERR, BULLSHITS AROUND."</EventText.backgroundstory1.c5>
+  <EventText.backgroundstory2.c9.c1>“Man, have you tasted the food here? It’s terrible!”</EventText.backgroundstory2.c9.c1>
+  <EventText.backgroundstory2.c9.c2>“Tell me about it. I can’t even recognize half of the stuff they serve.”</EventText.backgroundstory2.c9.c2>
+  <EventText.backgroundstory2.c9.c3>“I heard that there’s no real Earth food left on this planet. The supply line’s been down for a while now.”</EventText.backgroundstory2.c9.c3>
+  <EventText.backgroundstory2.c9.c4>“What?! So we’re stuck with this slop indefinitely?”</EventText.backgroundstory2.c9.c4>
+  <EventText.backgroundstory2.c9.c5>“Seems that way. And to make things worse, the prices keep going up too.”</EventText.backgroundstory2.c9.c5>
+  <EventText.backgroundstory2.c9.c6>“Ugh, I’m sick of it. I wish we could just get a decent meal for once.”</EventText.backgroundstory2.c9.c6>
+  <EventText.backgroundstory2.c9.c7>“Yeah, me too. But I guess that’s just the way things are on this planet.”</EventText.backgroundstory2.c9.c7>
+  <EventText.backgroundstory3.c1>"Well, you know what they say about clowns. They are all fun and games until they turn out to be separatist spies."</EventText.backgroundstory3.c1>
+  <EventText.backgroundstory3.c2>"I've never trusted those colorful buffoons myself. Who knows what they're up to behind those painted faces?"</EventText.backgroundstory3.c2>
+  <EventText.backgroundstory4.c1>"Attention all citizens of Europa,\n"The Coalition has become aware of a concerning trend on this planet - the worship of the deadly husk parasite. We strongly urge all citizens to avoid any involvement with these "husk lovers" and their dangerous ideology."</EventText.backgroundstory4.c1>
+  <EventText.backgroundstory4.c2>"The husk parasite is a lethal organism that preys on human hosts, taking control of their minds and ultimately causing their deaths. Those who worship the husk believe that it can somehow enhance their own evolution, but this is a dangerous and misguided belief that can only lead to tragedy."</EventText.backgroundstory4.c2>
+  <EventText.backgroundstory4.c3>"We have seen the devastating effects of husk worship firsthand. These individuals become mindless zombies, incapable of rational thought or decision-making. They pose a serious threat to themselves and to others around them."</EventText.backgroundstory4.c3>
+  <EventText.backgroundstory4.c4>"We urge all citizens to stay vigilant and report any suspicious activity related to husk worship to the nearest Coalition outpost. Remember, the husk is not a path to enlightenment or evolution - it is a deadly parasite that must be eradicated."</EventText.backgroundstory4.c4>
+  <EventText.backgroundstory4.c5>"Stay safe, and stay away from the husk."\n"Sincerely, The Coalition."
+	</EventText.backgroundstory4.c5>
+  <EventText.backgroundstory5.c1>"Hello there, my friend. Have you heard of the church of husk?"</EventText.backgroundstory5.c1>
+  <EventText.backgroundstory5.c2>"Yes, I have. But I'm not interested in joining."</EventText.backgroundstory5.c2>
+  <EventText.backgroundstory5.c3>"Why not? Don't you want to evolve into something greater, something more powerful?"</EventText.backgroundstory5.c3>
+  <EventText.backgroundstory5.c4>"I don't believe that infesting myself with a parasite is the solution to our problems."</EventText.backgroundstory5.c4>
+  <EventText.backgroundstory5.c5>"But you don't understand. The husk is the key to our survival on this planet. It can turn us into beings that can thrive in even the harshest environments."</EventText.backgroundstory5.c5>
+  <EventText.backgroundstory5.c6>"I don't think turning into a mindless zombie is the kind of evolution we need."</EventText.backgroundstory5.c6>
+  <EventText.backgroundstory5.c7>"Mindless zombie? No, my friend. That's just a myth spread by those who fear change. We have conducted experiments and we have seen the true potential of the husk. It can turn us into something greater, something more than human."</EventText.backgroundstory5.c7>
+  <EventText.backgroundstory5.c8>"I'm sorry, but I can't take that risk. I prefer to find a solution that doesn't involve sacrificing my humanity."</EventText.backgroundstory5.c8>
+  <EventText.backgroundstory5.c9>"Suit yourself. But mark my words, my friend. The church of husk will be the salvation of humanity. And those who refuse to join will be left behind."</EventText.backgroundstory5.c9>
+  <EventText.backgroundstory6.c1>"Hey there, why so glum, clown?"</EventText.backgroundstory6.c1>
+  <EventText.backgroundstory6.c2>"Glum? Ha! You think I'm glum? I'm just stating the obvious, my dear friend. Don't you see? It's all pointless. We're all doomed."</EventText.backgroundstory6.c2>
+  <EventText.backgroundstory6.c3>"What do you mean?"</EventText.backgroundstory6.c3>
+  <EventText.backgroundstory6.c4>"Life, my friend. Life is pointless. We're all just a bunch of miserable souls, trapped in this endless cycle of suffering and despair."</EventText.backgroundstory6.c4>
+  <EventText.backgroundstory6.c5>"That's not true. Life can be beautiful and meaningful."</EventText.backgroundstory6.c5>
+  <EventText.backgroundstory6.c6>(Laughs maniacally) "Oh, how naive you are! You think there's meaning to all of this? That there's a purpose to our existence? Ha! You're just fooling yourself."</EventText.backgroundstory6.c6>
+  <EventText.backgroundstory6.c7>"Why do you say that?"</EventText.backgroundstory6.c7>
+  <EventText.backgroundstory6.c8>"Because, my dear friend, we're all going to die anyway. Everything we do, everything we achieve, everything we love...it's all going to crumble and fade away eventually. So why bother?"</EventText.backgroundstory6.c8>
+  <EventText.backgroundstory6.c9>"But...we can still make a difference in the world. We can still do good things."</EventText.backgroundstory6.c9>
+  <EventText.backgroundstory6.c10>(Snorts) "Good things? What's the point? It's all just a distraction, a way to numb the pain and forget about our inevitable doom. You can't change anything, my friend. We're all just pawns in this cruel, pointless game."</EventText.backgroundstory6.c10>
+  <EventText.backgroundstory6.c11>"I don't believe that. I believe in hope and love."</EventText.backgroundstory6.c11>
+  <EventText.backgroundstory6.c12>(Rolls his eyes) "Hope and love? Those are just empty words, my friend. You'll see. One day, you'll wake up and realize that everything is meaningless. And then you'll understand why I'm always laughing."</EventText.backgroundstory6.c12>
+  <EventText.stafffuelrod.c>"You need to show your submarine document in order to purchase a fuel rod."</EventText.stafffuelrod.c>
+  <EventText.stafffuelrod.c.o1>Show your documentation</EventText.stafffuelrod.c.o1>
+  <EventText.stafffuelrod.c.o1.c1>"Ok good."</EventText.stafffuelrod.c.o1.c1>
+  <EventText.stafffuelrod.c.o1.c1.o1>One Ordinary fuel rod -- 1000 Marks</EventText.stafffuelrod.c.o1.c1.o1>
+  <EventText.stafffuelrod.c.o1.c1.o2>One Thorium fuel rod -- 2000 Marks</EventText.stafffuelrod.c.o1.c1.o2>
+  <EventText.stafffuelrod.c.o1.c2>"You don't have a valid documentation for the purchase."</EventText.stafffuelrod.c.o1.c2>
+  <EventText.stafffuelrod.c.o2>Leave</EventText.stafffuelrod.c.o2>
+  <EventText.stafffuelrod.c.o3>Show him the clown-made document</EventText.stafffuelrod.c.o3>
+  <EventText.stafffuelrod.c.o3.c1>"I don't know where did you get this but, okay you can buy at a discount."</EventText.stafffuelrod.c.o3.c1>
+  <EventText.stafffuelrod.c.o3.c2>"Let me guess, you bought a fake documentation from a clown to get a discount? Not from me sucker. Fuck off."</EventText.stafffuelrod.c.o3.c2>
+  <EventText.stafffuelrod.c.o4>Show him the Coalition Discount</EventText.stafffuelrod.c.o4>
+  <EventText.stafffuelrod.c.o4.1>One Ordinary fuel rod -- 600 Marks</EventText.stafffuelrod.c.o4.1>
+  <EventText.stafffuelrod.c.o4.2>One Thorium fuel rod -- 1400 Marks</EventText.stafffuelrod.c.o4.2>
+  <EventText.stafffuelrod.donthave>You don't have one.</EventText.stafffuelrod.donthave>
+  <EventText.stafffuelrodsep.c>"There are things we disagree with the Coalition. But you need to show your submarine document in order to purchase a fuel rod. We cannot afford to wast our remaining resources."</EventText.stafffuelrodsep.c>
+  <EventText.stafffuelrodsep.c.o1>Show your documentation</EventText.stafffuelrodsep.c.o1>
+  <EventText.stafffuelrodsep.c.o1.c1>"Ok good."</EventText.stafffuelrodsep.c.o1.c1>
+  <EventText.stafffuelrodsep.c.o1.c1.o1>One Ordinary fuel rod -- 1000 Marks</EventText.stafffuelrodsep.c.o1.c1.o1>
+  <EventText.stafffuelrodsep.c.o1.c1.o2>One Thorium fuel rod -- 2000 Marks</EventText.stafffuelrodsep.c.o1.c1.o2>
+  <EventText.stafffuelrodsep.c.o1.c2>"You don't have a valid documentation for the purchase."</EventText.stafffuelrodsep.c.o1.c2>
+  <EventText.fuelrodclown.c>"Lost your document? No worry! 2000 Marks for any document for any sub! And also supplies of these documents that get you discounted goodies. Why? Because Coalition people are dumb. Haha!"</EventText.fuelrodclown.c>
+  <EventText.fuelrodclown.c.o1>Buy one document</EventText.fuelrodclown.c.o1>
+  <EventText.fuelrodclown.c.o2>Buy a fake supply offer</EventText.fuelrodclown.c.o2>
+  <EventText.fuelrodclown.c1>"Hah, hahaha."</EventText.fuelrodclown.c1>
+  <EventText.fuelrodclown.c2>"Nooooo! Money! Oh my God you are screwed!"</EventText.fuelrodclown.c2>
+  <EventText.stafffuelrodhusk.c>"Hey need a fuel rod? These are hard to come by these days."</EventText.stafffuelrodhusk.c>
+  <EventText.stafffuelrodhusk.c.o1>One Ordinary fuel rod -- 1500 Marks</EventText.stafffuelrodhusk.c.o1>
+  <EventText.stafffuelrodhusk.c.o2>One Thorium fuel rod -- 2500 Marks</EventText.stafffuelrodhusk.c.o2>
+  <EventText.stafffuelrodhusk.c.o3>Two Recycled fuel rod with the radiation case -- 700 Marks</EventText.stafffuelrodhusk.c.o3>
+  <EventText.merchant.c>"What can I do for you?"</EventText.merchant.c>
+  <EventText.merchant.c.o1>"Four fuel rods."</EventText.merchant.c.o1>
+  <EventText.merchant.c.o2>"Four welding fuel tanks</EventText.merchant.c.o2>
+  <EventText.merchant.c.o3>"Four oxygen tanks</EventText.merchant.c.o3>
+  <EventText.merchant.c.o4>"One welding tool</EventText.merchant.c.o4>
+  <EventText.merchant.c.o5>"One plasma cutter</EventText.merchant.c.o5>
+  <EventText.merchant.c.o6>"A set of tool belt"</EventText.merchant.c.o6>
+  <EventText.merchant.c.o7>"A Hull Scanner"</EventText.merchant.c.o7>
+  <EventText.merchant.c.o8>"A Crowbar"</EventText.merchant.c.o8>
+  <EventText.merchant.c.o9>"Four batterycells."</EventText.merchant.c.o9>
+  <EventText.merchant.c.leave>Leave</EventText.merchant.c.leave>
+  <EventText.merchant.c1>"Sorry but you don't have enough money."</EventText.merchant.c1>
+  <EventText.merchant.c2>"Glad to be your servce."</EventText.merchant.c2>
+  <EventText.dockingfee.c>"500 Marks to dock in the station."</EventText.dockingfee.c>
+  <EventText.dockingfee.c.o1>Accept</EventText.dockingfee.c.o1>
+  <EventText.dockingfee.c.o2>Ask for a free dock and pay money in the next oupost</EventText.dockingfee.c.o2>
+  <EventText.dockingfee.c.o2.c>" A free dock has been arranged for your submarine. 800 Marks will be collected in your next docking."</EventText.dockingfee.c.o2.c>
+  <EventText.dockingfee.c.o1.c>"Welcome to the station."</EventText.dockingfee.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>"You don't have enough money. A free dock has been arranged for your submarine. 800 Marks will be collected in your next docking."</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollector.c>"I'm send by Coalition to collect your debt in your last docking activity."</EventText.debtcollector.c>
+  <EventText.debtcollector.c.o1>Pay him the debt</EventText.debtcollector.c.o1>
+  <EventText.debtcollector.c.o2>Refuse and mock him</EventText.debtcollector.c.o2>
+  <EventText.debtcollector.c.o1.c1>Adding for this one your totall fee should be 1300 Marks."</EventText.debtcollector.c.o1.c1>
+  <EventText.debtcollector.c.o1.c2>"You are good to go."</EventText.debtcollector.c.o1.c2>
+  <EventText.debtcollector.c.o1.c3>"Well you still don't have the money"</EventText.debtcollector.c.o1.c3>
+  <EventText.debtcollector.c.o1.c3.o>"I don't."</EventText.debtcollector.c.o1.c3.o>
+  <EventText.debtcollector.c.o1.c3.o.c>"I can't do much to you. But I will report this you know."</EventText.debtcollector.c.o1.c3.o.c>
+  <EventText.debtcollector.c.o2.c1>"What? The Coal-lit-en tells you to collect my debt? Well you can tell your boss that you have failed your mission."</EventText.debtcollector.c.o2.c1>
+  <EventText.dockingfeese.c>"500 Marks to dock in the station comrades."</EventText.dockingfeese.c>
+  <EventText.dockingfeese.c.o1>Accept</EventText.dockingfeese.c.o1>
+  <EventText.dockingfeese.c.o2>Ask for a free dock and pay money in the next oupost</EventText.dockingfeese.c.o2>
+  <EventText.dockingfeese.c.o2.c>"We'd like to help people in poor. A free dock has been arranged for your submarine. 500 Marks will be collected in your next docking."</EventText.dockingfeese.c.o2.c>
+  <EventText.dockingfeese.c.o1.c>"Welcome to the station."</EventText.dockingfeese.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>"You don't have enough money. But we will still arrange a free dock for your submarine. 500 Marks will be collected in your next docking to our controlled stations."</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollectorse.c>"I'm send by The Revolution Committee to collect your debt in your last docking activity."</EventText.debtcollectorse.c>
+  <EventText.debtcollectorse.c.o1>Pay him the debt</EventText.debtcollectorse.c.o1>
+  <EventText.debtcollectorse.c.o2>Refuse and mock him</EventText.debtcollectorse.c.o2>
+  <EventText.debtcollectorse.c.o1.c1>Adding for this one your totall fee should be 1000 Marks."</EventText.debtcollectorse.c.o1.c1>
+  <EventText.debtcollectorse.c.o1.c2>"You are good to go comrade."</EventText.debtcollectorse.c.o1.c2>
+  <EventText.debtcollectorse.c.o1.c3>"Well you still don't have the money"</EventText.debtcollectorse.c.o1.c3>
+  <EventText.debtcollectorse.c.o1.c3.o>"I don't."</EventText.debtcollectorse.c.o1.c3.o>
+  <EventText.debtcollectorse.c.o1.c3.o.c>"I can't do much to you. But I will report this you know."</EventText.debtcollectorse.c.o1.c3.o.c>
+  <EventText.debtcollectorse.c.o2.c1>"Your pathetic Committee can't even afford to run their own business can they? I won't pay anything to you gangsters."</EventText.debtcollectorse.c.o2.c1>
+  <EventText.npcconversation.c1>"That's a nice ship you got there."</EventText.npcconversation.c1>
+  <EventText.npcconversation.c2>"Oh hello."</EventText.npcconversation.c2>
+  <EventText.npcconversation.c3>"I wish I can rest more. But the station needs people."</EventText.npcconversation.c3>
+  <EventText.npcconversation.c4>"Good day. Well, there isn't a day is it."</EventText.npcconversation.c4>
+  <EventText.npcconversation.c5>"Sometimes I wish I have a watch."</EventText.npcconversation.c5>
+  <EventText.npcconversation.c6>"I lost my ID card. If you see it somewhere, please help me find it."</EventText.npcconversation.c6>
+  <EventText.npcconversation.c6.c>"Sure"</EventText.npcconversation.c6.c>
+  <EventText.npcconversation.c6.c1>"Thank you very much!"</EventText.npcconversation.c6.c1>
+  <EventText.npcconversation.c7>"Tax is too high"</EventText.npcconversation.c7>
+  <EventText.npcconversation.c8>"Serve the people!"</EventText.npcconversation.c8>
+  <EventText.coalitionmanagerseeyou.c1>"Our manager wants to see you."</EventText.coalitionmanagerseeyou.c1>
+  <EventText.coalitionmanagerseeyou.c2>"Me?"</EventText.coalitionmanagerseeyou.c2>
+  <EventText.coalitionmanagerseeyou.c3>"Yes you. Go to find him. He won't wait for long."</EventText.coalitionmanagerseeyou.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c>"He good?"</EventText.coalition_manager_leveloutpostcapture.c>
+  <EventText.coalition_manager_leveloutpostcapture.c1>"We'll see."</EventText.coalition_manager_leveloutpostcapture.c1>
+  <EventText.coalition_manager_leveloutpostcapture.c2>"We have been observing you for long."</EventText.coalition_manager_leveloutpostcapture.c2>
+  <EventText.coalition_manager_leveloutpostcapture.c3>"Your loyalty to the Coalition leaves you a good record. General speaking."</EventText.coalition_manager_leveloutpostcapture.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c4>"The high-up decides to give you a chance to show yourself. A chance to prove that you are one of the finest citizens of Coalition.</EventText.coalition_manager_leveloutpostcapture.c4>
+  <EventText.coalition_manager_leveloutpostcapture.c5>...</EventText.coalition_manager_leveloutpostcapture.c5>
+  <EventText.coalition_manager_leveloutpostcapture.c6>"Take it or not?"</EventText.coalition_manager_leveloutpostcapture.c6>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3>"You haven't told me what mission is it."</EventText.coalition_manager_leveloutpostcapture.c6.o3>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3.c>"You can leave."</EventText.coalition_manager_leveloutpostcapture.c6.o3.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c>"Some separatists have infiltrated a colony nearby. Coalition demands us to go there and arrest them. (soneone: "Or kill them."). You take the chance, the people of Coalition will be gratful. More information will be on your mission board. You can leave now."</EventText.coalition_manager_leveloutpostcapture.c6.o1.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>"And this is your warrant. With this the guard won't interfer you when you carry a long gun into the station. It will expire. Do mind that."</EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>
+  <!--The Very First Day-->
+  <Storytext.managertalk.c0>"I should see my friend. He is a manager now."</Storytext.managertalk.c0>
+  <Storytext.managertalk.c>"Finally."</Storytext.managertalk.c>
+  <Storytext.managertalk.c1>"So, you are a capatin now? Had enough of the fussy things in the capsule I see."</Storytext.managertalk.c1>
+  <Storytext.managertalk.c2>"I have made my choice."</Storytext.managertalk.c2>
+  <Storytext.managertalk.c3>"Good. People like you will always end up in a position like this."\n...\n"Unlike the rest of us."</Storytext.managertalk.c3>
+  <Storytext.managertalk.c4>"Just don't die ok? Can you count how many friends we have lost in the year pass?</Storytext.managertalk.c4>
+  <Storytext.managertalk.c5>"Ok back to business. Given that there are more people wants to be out in the ocean, the Coalition has a chance to utilize this opportunity to explore the Europa. To solve the oncoming crisis. The Coalition doesn't expect most of them even made it out to the Europa Ridge. I'm being frank to you my firend. I know people above."</Storytext.managertalk.c5>
+  <Storytext.managertalk.c6>"As you have already seen, the best ship I can arrange for you is already docked. Fee is on yours of course. You may buy other ships if you earn more marks on your journey. Coalition can only do this much for you."</Storytext.managertalk.c6>
+  <Storytext.managertalk.c7>"Can't you tell me the mission?"</Storytext.managertalk.c7>
+  <Storytext.managertalk.c8>"Oh no. It's, well, classified. A well-known classify. But I still can't tell you because I don't know better. I hold responsibility to my words."</Storytext.managertalk.c8>
+  <Storytext.managertalk.c9>"Carry this to the nearby colony. Give it to the local manager and she will know what to do."</Storytext.managertalk.c9>
+  <Storytext.managertalk.c9.o>"Ok."</Storytext.managertalk.c9.o>
+  <Storytext.managertalk.c10>"Take care of yourself."</Storytext.managertalk.c10>
+  <!--The Delivery-->
+  <Storytext.receive.c>"First time in the ocean?"</Storytext.receive.c>
+  <Storytext.receive.c1>*checking your message*</Storytext.receive.c1>
+  <Storytext.receive.c2>"Ok good. I will send a request to the HQ"\n"Your cargo should be ready in your next docking location."</Storytext.receive.c2>
+  <Storytext.receive.c3>"Hey, I draw some money to your bank. Your recods shows that you didn't recieved your starup money.</Storytext.receive.c3>
+  <Storytext.receive.c3.o1>"Thanks."(end conversation)</Storytext.receive.c3.o1>
+  <Storytext.receive.c3.o2>"Is there a starting fund?"</Storytext.receive.c3.o2>
+  <Storytext.receive.c3.o2.c2>"Yes. Appreantly someone did not want to give it to you. Hard to believe the Coalition has come to this. Too many bad people sneak in. We oath to it to make the Europa better remember.?"</Storytext.receive.c3.o2.c2>
+  <!--What Cargo?-->
+  <Storytext.nocargo.c1>"Any business I can do for you?"</Storytext.nocargo.c1>
+  <Storytext.nocargo.c2>"I'm here to collect the cargo that Coalition demands me to carry it to the 'end zone'."</Storytext.nocargo.c2>
+  <Storytext.nocargo.c3>"I'm not informed."</Storytext.nocargo.c3>
+  <Storytext.nocargo.c4>"Nobody told you this?"</Storytext.nocargo.c4>
+  <Storytext.nocargo.c5>" ...Damn I recall that now. The beacon station which is used for our outpost to communicate with the Coalition has gone down. We have sent a request for nearby outpost to send a ship to help but it seems they are late. You can wait for couple days here."</Storytext.nocargo.c5>
+  <Storytext.nocargo.c6>"No, I can't wait. Tell me the location and me and my crew will repair it. You tell the Coalition to send the cargo to the next location we dock."</Storytext.nocargo.c6>
+  <Storytext.nocargo.c7>"I can't tell what Coalition should do. You need to stablish the link and get the command yourself."\n"The beacon station is here." *pointing on the map*</Storytext.nocargo.c7>
+  <Storytext.nocargo.c8>"The channel is 'co.co.1306.e3'."</Storytext.nocargo.c8>
+  <!--The Comm Hub-->
+  <Storytext.beaconfixed.c>"Communication function online. Select your channel."</Storytext.beaconfixed.c>
+  <Storytext.beaconfixed.c.o1>co.er.mili.083</Storytext.beaconfixed.c.o1>
+  <Storytext.beaconfixed.c.o2>g019_33</Storytext.beaconfixed.c.o2>
+  <Storytext.beaconfixed.c.o3>co.co.1306.e3</Storytext.beaconfixed.c.o3>
+  <Storytext.beaconfixed.c.o4>----.-.-.---...-----.---.--.---.-----.-.--.--</Storytext.beaconfixed.c.o4>
+  <Storytext.beaconfixed.c.o2.c1>"Comm Established."\n"Please standby."</Storytext.beaconfixed.c.o2.c1>
+  <Storytext.beaconfixed.c.o2.c2>...</Storytext.beaconfixed.c.o2.c2>
+  <Storytext.beaconfixed.c.o2.c3>"Hello?"\n"Anyone there?"</Storytext.beaconfixed.c.o2.c3>
+  <Storytext.beaconfixed.c.o2.c4>"..."</Storytext.beaconfixed.c.o2.c4>
+  <Storytext.beaconfixed.c.o2.c5>"Hello?"</Storytext.beaconfixed.c.o2.c5>
+  <Storytext.beaconfixed.c.o2.c6>"Yes, we are the Coalition Service Center. Please refer your request."</Storytext.beaconfixed.c.o2.c6>
+  <Storytext.beaconfixed.c.o2.c7>"I'm captain carrying mission order.08391. I need to collect my mission cargo."</Storytext.beaconfixed.c.o2.c7>
+  <Storytext.beaconfixed.c.o2.c8>"Confirming. Moment please."</Storytext.beaconfixed.c.o2.c8>
+  <Storytext.beaconfixed.c.o2.c9>"Your cargo will be ready at the closest Mining Outpost."</Storytext.beaconfixed.c.o2.c9>
+  <Storytext.beaconfixed.c.o2.c10>"Your cargo will be ready at the closest Military Outpost. We will inform the officers there so you can pass."</Storytext.beaconfixed.c.o2.c10>
+  <Storytext.beaconfixed.c.o2.c11>"That will do."</Storytext.beaconfixed.c.o2.c11>
+  <Storytext.beaconfixed.c.o2.c12>"Thank you for using Coalition Comm Servce."</Storytext.beaconfixed.c.o2.c12>
+  <Storytext.beaconfixed.c.o2.c13>Comm offline</Storytext.beaconfixed.c.o2.c13>
+  <!--Caro at eng-->
+  <Storytext.cargoateng.c1>"Good to see you."</Storytext.cargoateng.c1>
+  <Storytext.cargoateng.c2>"Is this the cargo that request me to deliver?"</Storytext.cargoateng.c2>
+  <Storytext.cargoateng.c3>"Yes"\n"Heavy isn't it.?"</Storytext.cargoateng.c3>
+  <Storytext.cargoateng.c4>"I expected it to be bigger."</Storytext.cargoateng.c4>
+  <Storytext.cargoateng.c5>"Ohh no. It's a part of a much bigger machine. That's bigger."</Storytext.cargoateng.c5>
+  <Storytext.cargoateng.c6.o1>"What machine."</Storytext.cargoateng.c6.o1>
+  <Storytext.cargoateng.c6.o1.c>"We engineer just work on it. Those scientists know. It's still in the testing phase you know."\n"I'm not supposed to say this much but I'm so excited to see it working someday. The Giant complex. That's what we engineer team work for!"</Storytext.cargoateng.c6.o1.c>
+  <Storytext.cargoateng.c6.o2>Listen</Storytext.cargoateng.c6.o2>
+  <Storytext.cargoateng.c7>"So you must carry it to the city. Find the local manager and say you have reached. That's what my boss told me to tell you."</Storytext.cargoateng.c7>
+  <Storytext.cargoateng.c8>"Ok thanks."</Storytext.cargoateng.c8>
+  <Storytext.cargoateng.c9>"Wait which city?"</Storytext.cargoateng.c9>
+  <Storytext.cargoateng.c10>"See you!"</Storytext.cargoateng.c10>
+  <!--cargo at mili-->
+  <Storytext.cargoatmili.c1>"Identification?"</Storytext.cargoatmili.c1>
+  <Storytext.cargoatmili.c2>"Forget it private. They are the delivery team."</Storytext.cargoatmili.c2>
+  <Storytext.cargoatmili.c3>"Yes sir!"</Storytext.cargoatmili.c3>
+  <Storytext.cargoatmili.c4>"Go to see the Lieutenant. He is in the admin office."</Storytext.cargoatmili.c4>
+  <Storytext.cargoatmili.c5>"Cargo is in the office."</Storytext.cargoatmili.c5>
+  <Storytext.cargoatmili.c6>"Bring it to the next City."</Storytext.cargoatmili.c6>
+  <Storytext.cargoatmili.c7>"Shall no items in it go missing or damaged. You understand?"</Storytext.cargoatmili.c7>
+  <Storytext.cargoatmili.c8>"Yes sir."</Storytext.cargoatmili.c8>
+  <Storytext.cargoatmili.c9>"Dismiss."</Storytext.cargoatmili.c9>
+  <Storytext.cargoatmili.c10>"Yes sir!"</Storytext.cargoatmili.c10>
+  <!--theft in city-->
+  <Storytext.theftincity.c1>"Catch the theft!"</Storytext.theftincity.c1>
+  <Storytext.theftincity.c2>"Break her leg!"</Storytext.theftincity.c2>
+  <Storytext.theftincity.c3>"Please help me!"</Storytext.theftincity.c3>
+  <Storytext.thefincity.c3.o1>"Quick, get into my sub! Follow me!"</Storytext.thefincity.c3.o1>
+  <Storytext.thefincity.c3.o1.c>Guide the theft to the room of one of your largepumps.</Storytext.thefincity.c3.o1.c>
+  <Storytext.thefincity.c3.o1.c1>"Stay until my signal."</Storytext.thefincity.c3.o1.c1>
+  <Storytext.thefincity.c3.o1.c2>"I need to go up to see the condition."</Storytext.thefincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o2>"Get lost."</Storytext.theftincity.c3.o2>
+  <Storytext.theftincity.c3.o1.c1>"Sorry sir. But someone told me that there was a theft aroun here. Did you see a woman with a black cloth running?"</Storytext.theftincity.c3.o1.c1>
+  <Storytext.theftincity.c3.o1.c2>"We will pay you if you can provide valuable information."\n"Very high reward."</Storytext.theftincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1>"She broke into my sub. But I have traped her in."</Storytext.theftincity.c3.o1.c2.o1>
+  <Storytext.theftincity.c3.o1.c2.o1.c>"Thank you. You are good citizen of Coalition. Please openup the doors for us down there."</Storytext.theftincity.c3.o1.c2.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o1.c1>"Got you! You little bitch!"</Storytext.theftincity.c3.o1.c2.o1.c1>
+  <Storytext.theftincity.c3.o1.c2.o1.c2>"No!"</Storytext.theftincity.c3.o1.c2.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1.c3>"You laier! I trusted you! Son of bitch! Pig!"</Storytext.theftincity.c3.o1.c2.o1.c3>
+  <Storytext.theftincity.c3.o1.c2.o1.c4>"What did you say to this citizen?"</Storytext.theftincity.c3.o1.c2.o1.c4>
+  <Storytext.theftincity.c3.o1.c2.o1.c5>"Shut your face! I will teach you some manner in Europa!"</Storytext.theftincity.c3.o1.c2.o1.c5>
+  <Storytext.theftincity.c3.o1.c2.o1.c6>"Let us not bother our visitor in sub."\n"Remove her!"</Storytext.theftincity.c3.o1.c2.o1.c6>
+  <Storytext.theftincity.c3.o1.c2.o2>"No I don't see anyone running around."</Storytext.theftincity.c3.o1.c2.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c>"Really? Ok!"</Storytext.theftincity.c3.o1.c2.o2.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1>"We got somebody tell that you took the theft inside your sub. We must inspect your submarine! So if you please!"</Storytext.theftincity.c3.o1.c2.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1>"You have no right to enter my submarine!"\n"I must protest. Your deed is against the law."</Storytext.theftincity.c3.o1.c2.o2.c1.o1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>"Talking about the law." *Searching his pocket*\n"We got a warrant."\n"Lead us down there. You are in big trouble."</Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2>"We are on the husk shipment. I can't garantee your saftness if you go down."</Storytext.theftincity.c3.o1.c2.o2.c1.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>"Ha! You think I'm a what? A shrinking brain?"\n"Husk shipment. Creative isn't it. You add some jokes for my dayoff time."\n*Show his warrant.*\n"Enough talking. Lead us down there! You are in big trouble."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>"No more tricks mister. The ballast room. Open it."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>"Bloody hell. There is nothing!"</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>"I will sue you two if you trade a citizen I am like this."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>"I can't belive it. S...sorry. Let's go, quick."</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>
+  <Storytext.theftincity_saved.c0>"She must be still in my sub. I must find her!"</Storytext.theftincity_saved.c0>
+  <Storytext.theftincity_saved.c1>"Thanks."</Storytext.theftincity_saved.c1>
+  <Storytext.theftincity_saved.c2>"You need to leave."</Storytext.theftincity_saved.c2>
+  <Storytext.theftincity_saved.c3>"Where?"</Storytext.theftincity_saved.c3>
+  <Storytext.theftincity_saved.c4>"I don't know. I'm in trouble because of you."</Storytext.theftincity_saved.c4>
+  <Storytext.theftincity_saved.c5>"I got nowhere to leave."</Storytext.theftincity_saved.c5>
+  <Storytext.theftincity_saved.c6>"I'm good at weapons and stalking. Can you take me?"</Storytext.theftincity_saved.c6>
+  <Storytext.theftincity_saved.c6.o1>"Ok."</Storytext.theftincity_saved.c6.o1>
+  <Storytext.theftincity_saved.c6.o1.c>"You won't regret this."</Storytext.theftincity_saved.c6.o1.c>
+  <Storytext.theftincity_saved.c6.o2>"I don't get into with thefts."</Storytext.theftincity_saved.c6.o2>
+  <Storytext.theftincity_saved.c6.o2.c1>"Then why did you save me?"</Storytext.theftincity_saved.c6.o2.c1>
+  <Storytext.theftincity_saved.c6.o2.c2>"I don't know."</Storytext.theftincity_saved.c6.o2.c2>
+  <Storytext.theftincity_saved.c6.o2.c3>"You still save my life. I won't forget this."</Storytext.theftincity_saved.c6.o2.c3>
+  <!--the man-->
+  <Storytext.theman.c>"Have a word?"</Storytext.theman.c>
+  <Storytext.theman.c1>"Who are you?"</Storytext.theman.c1>
+  <Storytext.theman.c2>"Saved that girl. Must bring you trouble didn't it?"\n"Member of Coalition will know this. Right now they are now filing a report." </Storytext.theman.c2>
+  <Storytext.theman.c3>"Are you threngthing me?"</Storytext.theman.c3>
+  <Storytext.theman.c4>"Meet me in the dormroom and we will talk about it."</Storytext.theman.c4>
+  <Storytext.theman.c5>"Helping that girl won't earn you a thing."\n"Coalition doesn't like anyone who put a slightest disagreement with it, or its representive."</Storytext.theman.c5>
+  <Storytext.theman.c6>"What do you want?"</Storytext.theman.c6>
+  <Storytext.theman.c7>"It's not what do I want. It's about what do you want."\n"The truth?"\n"We give you."</Storytext.theman.c7>
+  <Storytext.theman.c8>"The price?"</Storytext.theman.c8>
+  <Storytext.theman.c9>"Deny the request that the manager of this colony that will be soon given to you."</Storytext.theman.c9>
+  <Storytext.theman.c10>"I must obey order."</Storytext.theman.c10>
+  <Storytext.theman.c11>"You choosed to lie."</Storytext.theman.c11>
+  <Storytext.theman.c12>"I can't."</Storytext.theman.c12>
+  <Storytext.theman.c13>"We will see about that."</Storytext.theman.c13>
+  <Storytext.theman.c14>"We shall meet again if you follow my words."</Storytext.theman.c14>
+  <Storytext.theman.c15>"When?"</Storytext.theman.c15>
+  <Storytext.theman.c16>"Your next docking."</Storytext.theman.c16>
+  <Storytext.ordertodeny.c>"I gotta see the boss. I'm already late."</Storytext.ordertodeny.c>
+  <Storytext.ordertodeny.c1>"Yes?"</Storytext.ordertodeny.c1>
+  <Storytext.ordertodeny.c2>"You want to explain why you are late?"</Storytext.ordertodeny.c2>
+  <Storytext.ordertodeny.c3>"My ship has some problem. Monsters."</Storytext.ordertodeny.c3>
+  <Storytext.ordertodeny.c4>"We will know if what you said is true."</Storytext.ordertodeny.c4>
+  <Storytext.ordertodeny.c5>"Is it the truth?"</Storytext.ordertodeny.c5>
+  <Storytext.ordertodeny.c5.o1>"Yes."</Storytext.ordertodeny.c5.o1>
+  <Storytext.ordertodeny.c5.o2>"No."</Storytext.ordertodeny.c5.o2>
+  <Storytext.ordertodeny.c6>"We will see."</Storytext.ordertodeny.c6>
+  <Storytext.ordertodeny.c7>"The reason for you to be ordered to come here is to help the Coalition handle some tough sea problem."</Storytext.ordertodeny.c7>
+  <Storytext.ordertodeny.c8>"Pirates in this ares are very active."\n"You will be given the order to destroy one of their ships."</Storytext.ordertodeny.c8>
+  <Storytext.ordertodeny.c9>"To make standard."</Storytext.ordertodeny.c9>
+  <Storytext.ordertodeny.c9.o1>Accept the order</Storytext.ordertodeny.c9.o1>
+  <Storytext.ordertodeny.c9.o1.c>"It's an honor to serve the Coalition."</Storytext.ordertodeny.c9.o1.c>
+  <Storytext.ordertodeny.c9.o1.c1>"For the people of Europa."</Storytext.ordertodeny.c9.o1.c1>
+  <Storytext.ordertodeny.c9.o1.c2>"For the people of Europa."</Storytext.ordertodeny.c9.o1.c2>
+  <Storytext.ordertodeny.c9.o2>Deny as told to</Storytext.ordertodeny.c9.o2>
+  <Storytext.ordertodeny.c9.o2.c1>"I can't sir."</Storytext.ordertodeny.c9.o2.c1>
+  <Storytext.ordertodeny.c9.o2.c2>"This is the order."</Storytext.ordertodeny.c9.o2.c2>
+  <Storytext.ordertodeny.c9.o2.c3>"I'm on an important shipping mission. I can't risk to let the cargo to be damaged by uncessary battles. I hope you understand."</Storytext.ordertodeny.c9.o2.c3>
+  <Storytext.ordertodeny.c9.o2.c4>"Well. You may leave."</Storytext.ordertodeny.c9.o2.c4>
+  <Storytext.coalitionsview.c1>"Listen, I understand that the separatists have their concerns about the device, but we cannot afford to wait for them to test their theories. The energy of the entire colony is depleting rapidly, and we need a solution now."</Storytext.coalitionsview.c1>
+  <Storytext.coalitionsview.c2>"But the separatists claim that using the device will destroy most of the inhabitants of Europa. They have evidence to support their theory."</Storytext.coalitionsview.c2>
+  <Storytext.coalitionsview.c3>"Their evidence is untested and unproven. We have experienced scientists and engineers who have been working on this project for years. They have assured us that the device is safe to use."</Storytext.coalitionsview.c3>
+  <Storytext.coalitionsview.c4>"But what about the people who will die? Isn't there a better way to utilize the energy without sacrificing so many lives?"</Storytext.coalitionsview.c4>
+  <Storytext.coalitionsview.c5>"I wish there was, but unfortunately, there isn't. We have built a launching site in secret, and we have already built a space shuttle that can take the finest of humanity back to Earth. We have also reinforced some of our outposts with heavy materials that can withstand the blast energy produced by the ignition."</Storytext.coalitionsview.c5>
+  <Storytext.coalitionsview.c6>"But is sacrificing so many lives worth it just to save a few?"</Storytext.coalitionsview.c6>
+  <Storytext.coalitionsview.c7>"It's not just a few lives we are saving. We are saving the finest of humanity. The people who will rebuild our civilization on Earth. We cannot afford to let this opportunity slip away!"</Storytext.coalitionsview.c7>
+  <DHMissionHeader.towsub>Side Mission unlocks: Tow the wreck back to base. The Coalition needs to analyze the causes of the shipwreck. If you can tow the wreckage to the destination, you'll be rewarded.</DHMissionHeader.towsub>
+  <DHMissionMessage.towsub>The Coalition needs to analyze the causes of the distress. If you can tow the wreckage to the destination, you'll be rewarded.</DHMissionMessage.towsub>
+  <DHMissionHeader.towsubcompleted>Side Mission Completed: You'll be rewarded.</DHMissionHeader.towsubcompleted>
+  <missionname.fetch_broodmother>Fetch BroodMother</missionname.fetch_broodmother>
+  <missiondescription.fetch_broodmother>A group of crawlers has been spotted between [location1] and [location2]. Something valuable may be looted from them. Carry the loot to next outpost to sell it.</missiondescription.fetch_broodmother>
+  <missionsonarlabel.fetch_broodmother>Crawler Broodmother</missionsonarlabel.fetch_broodmother>
+  <missionsuccess.fetch_broodmother>The Crawler Broodmother has been killed.</missionsuccess.fetch_broodmother>
+  <missionheader0.fetch_broodmother>Target terminated</missionheader0.fetch_broodmother>
+  <missionmessage0.fetch_broodmother>The Crawler Broodmother is dead. Fetch the eye of the monster and navigate the submarine out of the cavern to claim the reward.</missionmessage0.fetch_broodmother>
+  <missiondescription.fetch_hammerhead>A group of Hammerheads has been spotted between [location1] and [location2]. Something valuable may be looted from them. Carry the loot to next outpost to sell it.</missiondescription.fetch_hammerhead>
+  <missionsonarlabel.fetch_hammerhead>Hammerhead</missionsonarlabel.fetch_hammerhead>
+  <missionsuccess.fetch_hammerhead>The Hammerhead has been killed.</missionsuccess.fetch_hammerhead>
+  <missionheader0.fetch_hammerhead>Target terminated</missionheader0.fetch_hammerhead>
+  <missionmessage0.fetch_hammerhead>The Hammerhead is dead. Fetch the fin of the monster and navigate the submarine out of the cavern to claim the reward.</missionmessage0.fetch_hammerhead>
+  <missiondescription.fetch_hammerhead_gold>A group of Hammerheads has been spotted between [location1] and [location2]. There is a golden one among them. Something valuable may be looted from them. Carry the loot to next outpost to sell it.</missiondescription.fetch_hammerhead_gold>
+  <missionsonarlabel.fetch_hammerhead_gold>Hammerhead</missionsonarlabel.fetch_hammerhead_gold>
+  <missionsuccess.fetch_hammerhead_gold>The Hammerhead has been killed.</missionsuccess.fetch_hammerhead_gold>
+  <missionheader0.fetch_hammerhead_gold>Target terminated</missionheader0.fetch_hammerhead_gold>
+  <missionmessage0.fetch_hammerhead_gold>The Hammerhead is dead. Fetch the fin of the monster and navigate the submarine out of the cavern to claim the reward.</missionmessage0.fetch_hammerhead_gold>
+  <missionname.drycavemudraptor>Abandoned Mine Cave</missionname.drycavemudraptor>
+  <missiondescription.drycavemudraptor>An abandoned mine cave. Some valuables may still left in it.</missiondescription.drycavemudraptor>
+  <missionsuccess.drycavemudraptor>The monsters are eliminated.</missionsuccess.drycavemudraptor>
+  <missionfailure.drycavemudraptor>You retrive without harming the creatures living inside.</missionfailure.drycavemudraptor>
+  <missionheader0.drycavemudraptor>Nest destroyed</missionheader0.drycavemudraptor>
+  <missionmessage0.drycavemudraptor>The threat has be eliminated, for now.</missionmessage0.drycavemudraptor>
+  <missionname.familytransport>Urgent Transport</missionname.familytransport>
+  <missiondescription.familytransport>Transport husband and his sicked wife to a nearby station.</missiondescription.familytransport>
+  <missionheader0.familytransport>Passenger died</missionheader0.familytransport>
+  <missionmessage0.familytransport>Civilian dies on your ship.</missionmessage0.familytransport>
+  <missionsuccess.familytransport>Transport successful. The passengers will go to the doctor's.</missionsuccess.familytransport>
+  <missionfailure.familytransport>Someone died on your ship. This is not good. You'd better prepare to explain this to the coalition for this.</missionfailure.familytransport>
+  <missiontext.familytransport>The man's wife starts to feel not well.</missiontext.familytransport>
+  <missionname.abandonedoutpostrescue>Outpost rescue</missionname.abandonedoutpostrescue>
+  <missionname.leveloutpost_capture>Investiage the Colony</missionname.leveloutpost_capture>
+  <missiondescription.leveloutpost_capture>Intel indicates that a group of separatists have infiltrate the Colony between [location1] and [location2]. Coalition cannot tolerate such deeds. Capture those scum to ensure the safety for the Europa people. You have been given a warrant to allow you to use full violence. If they resist, you are clear to use lethal force. But Coalition will not pay you marks for a closed mouth.</missiondescription.leveloutpost_capture>
+  <missionsuccess.leveloutpost_capture>The separatists are destroyed.</missionsuccess.leveloutpost_capture>
+  <missionfailure.leveloutpost_capture>The separatists aren't cleared. You let Coaltion down</missionfailure.leveloutpost_capture>
+  <missionsonarlabel.leveloutpost_capture>Colony</missionsonarlabel.leveloutpost_capture>
+  <missionheader0.leveloutpost_capture>Docking port ready!</missionheader0.leveloutpost_capture>
+  <missionmessage0.leveloutpost_capture>Sub No.839z35 requests to dock.</missionmessage0.leveloutpost_capture>
+  <missionheader1.leveloutpost_capture>separatists eliminated</missionheader1.leveloutpost_capture>
+  <missionmessage1.leveloutpost_capture>Let's go now.</missionmessage1.leveloutpost_capture>
+  <missionname.story_leveloutpost_delivermessage>Investiage the Colony</missionname.story_leveloutpost_delivermessage>
+  <missiondescription.story_leveloutpost_delivermessage>A firend tell you to send a message to a nearny colony.</missiondescription.story_leveloutpost_delivermessage>
+  <missionsuccess.story_leveloutpost_delivermessage>Message delivered.</missionsuccess.story_leveloutpost_delivermessage>
+  <missionfailure.story_leveloutpost_delivermessage>Message delivered.</missionfailure.story_leveloutpost_delivermessage>
+  <missionsonarlabel.story_leveloutpost_delivermessage>Colony</missionsonarlabel.story_leveloutpost_delivermessage>
+  <missionheader0.story_leveloutpost_delivermessage>Docking port ready!</missionheader0.story_leveloutpost_delivermessage>
+  <missionmessage0.story_leveloutpost_delivermessage>Sub No.219z35.30.4.23 requests to dock.</missionmessage0.story_leveloutpost_delivermessage>
+  <missionheader1.story_leveloutpost_delivermessage>What you have done?!</missionheader1.story_leveloutpost_delivermessage>
+  <missionmessage1.story_leveloutpost_delivermessage>You voilate the law.</missionmessage1.story_leveloutpost_delivermessage>
+  <missionname.story_nocargo_beacon>Repair the Beacon Station</missionname.story_nocargo_beacon>
+  <missiondescription.story_nocargo_beacon>The beacon station between [location1] and [location2] is down—get in there, and get it back online and transmitting an active sonar signal.</missiondescription.story_nocargo_beacon>
+  <missionsuccess.story_nocargo_beacon>Beacon reactivated.</missionsuccess.story_nocargo_beacon>
+  <missionmessage0.story_nocargo_beacon>The communication between [location1] and Coalition Engineering Company is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to meet your contact.</missionmessage0.story_nocargo_beacon>
+  <entityname.hullscanner>Hull Scanner</entityname.hullscanner>
+  <entitydescription.hullscanner>Used to determine the condition of the targeted hull. \nEffective range: 5 meters.</entitydescription.hullscanner>
+  <entityname.fuelrodcase>Hot Fuel Rod Transport Case</entityname.fuelrodcase>
+  <entitydescription.fuelrodcase>Used to shield the radiation emitted from an undepleted fuel rod.</entitydescription.fuelrodcase>
+  <entityname.recycledfuelrod>Recycled Fuel Rod</entityname.recycledfuelrod>
+  <entitydescription.recycledfuelrod>Recycled from depleted fuel rods. Hazarous. Better take care with caution.</entitydescription.recycledfuelrod>
+  <entityname.watertank>Water Tank</entityname.watertank>
+  <entitydescription.watertank>Contained post-processed water for oxygen generator.</entitydescription.watertank>
+  <entityname.reactorcooline>Reactor Coolant</entityname.reactorcooline>
+  <entitydescription.reactorcooline>Coolant to prevent the reactor from going overheat</entitydescription.reactorcooline>
+  <entityname.lightfuse>Light Fuse</entityname.lightfuse>
+  <entitydescription.lightfuse>An important part for any lamp to light on.</entitydescription.lightfuse>
+  <entityname.smallpumpmotor>Small Pump Motor</entityname.smallpumpmotor>
+  <entitydescription.smallpumpmotor>A motor for small pump to work</entitydescription.smallpumpmotor>
+  <entityname.bigpumpmotor>Big Pump Motor</entityname.bigpumpmotor>
+  <entitydescription.bigpumpmotor>A big motor for big pump to work</entitydescription.bigpumpmotor>
+  <entityname.smallpumpII>M-II</entityname.smallpumpII>
+  <entitydescription.smallpumpII>[Max Flow:150]\n[Power Consumption:90]\n[Min Voltage:0.3]</entitydescription.smallpumpII>
+  <entityname.smallpumpIII>M-III</entityname.smallpumpIII>
+  <entitydescription.smallpumpIII>[Max Flow:200]\n[Power Consumption:140]\n[Min Voltage:0.3]</entitydescription.smallpumpIII>
+  <entityname.handdynamo>Hand Dynamo</entityname.handdynamo>
+  <entitydescription.handdynamo>A device that can generate power mannually</entitydescription.handdynamo>
+  <entityname.junctionboxfuse>JunctionBox Fuse</entityname.junctionboxfuse>
+  <entitydescription.junctionboxfuse>Important part of junctionboxes</entitydescription.junctionboxfuse>
+  <entityname.revolvernew>Revolver</entityname.revolvernew>
+  <entitydescription.revolvernew>[ROF: Low]\n[ACC:Low]</entitydescription.revolvernew>
+  <entityname.revolverroundnew>Revolver Round</entityname.revolverroundnew>
+  <entitydescription.revolverroundnew>[Penetration: 60%]</entitydescription.revolverroundnew>
+  <entityname.57>FN Five Seven</entityname.57>
+  <entitydescription.57>[ROF: Medium]\n[ACC:Low]</entitydescription.57>
+  <entityname.57mag>5.7x28mm Five Seven Magazine</entityname.57mag>
+  <entitydescription.57mag>[Capacity: 20]\n[Penetration: 30%]</entitydescription.57mag>
+  <entityname.g19>Glock 19</entityname.g19>
+  <entitydescription.g19>[ROF: Low]\n[ACC:High-Low]</entitydescription.g19>
+  <entityname.g19mag>9x19 Glock 19 Magazine</entityname.g19mag>
+  <entitydescription.g19mag>[Capacity: 30]\n[Penetration: 30%]</entitydescription.g19mag>
+  <entityname.MPX>Sig Sauer MPX</entityname.MPX>
+  <entitydescription.MPX>[ROF: Fast]\n[ACC:Medium]</entitydescription.MPX>
+  <entityname.mpx_magazine>9x19 MPX Magazine</entityname.mpx_magazine>
+  <entitydescription.mpx_magazine>[Capacity: 30]\n[Penetration: 30%]</entitydescription.mpx_magazine>
+  <entityname.MCX>Sig Sauer MCX</entityname.MCX>
+  <entitydescription.MCX>[ROF: Fast]\n[ACC:High]</entitydescription.MCX>
+  <entityname.mcx_magazine>.300 AAC Magazine</entityname.mcx_magazine>
+  <entitydescription.mcx_magazine>[Capacity: 30]\n[Penetration: 60%]</entitydescription.mcx_magazine>
+  <entityname.MP9>MP9 Suppressed</entityname.MP9>
+  <entitydescription.MP9>[ROF: Fast]\n[ACC:Low]</entitydescription.MP9>
+  <entityname.mp9mag>9x19 MP9 Magazine</entityname.mp9mag>
+  <entitydescription.mp9mag>[Capacity: 30]\n[Penetration: 30%]</entitydescription.mp9mag>
+  <entityname.P90>P90</entityname.P90>
+  <entitydescription.P90>[ROF: Very Fast]\n[ACC:Medium-Low]</entitydescription.P90>
+  <entityname.p90mag>5.7x28mm P90 Magazine</entityname.p90mag>
+  <entitydescription.p90mag>[Capacity: 50]\n[Penetration: 30%]</entitydescription.p90mag>
+  <entityname.mk17>FN SCAR-H</entityname.mk17>
+  <entitydescription.mk17>[ROF: Medium]\n[ACC:High-Medium]</entitydescription.mk17>
+  <entityname.mk17mag>7.62x51mm SCAR-H Magazine</entityname.mk17mag>
+  <entitydescription.mk17mag>[Capacity: 20]\n[Penetration: 70%]</entitydescription.mk17mag>
+  <entityname.ak47>AK-47</entityname.ak47>
+  <entitydescription.ak47>[ROF: Medium]\n[ACC:Medium-Low]</entitydescription.ak47>
+  <entityname.ak47mag>7.62x39mm AK-47 Magazine</entityname.ak47mag>
+  <entitydescription.ak47mag>[Capacity: 30]\n[Penetration: 50%]</entitydescription.ak47mag>
+  <entityname.pkm>PKM</entityname.pkm>
+  <entitydescription.pkm>[ROF: Very Fast]\n[ACC:Medium-Very Low]</entitydescription.pkm>
+  <entityname.pkmmag>7.62x54mm PKM Magazine</entityname.pkmmag>
+  <entitydescription.pkmmag>[Capacity: 200]\n[Penetration: 95%]</entitydescription.pkmmag>
+  <entityname.fal>FN FAL</entityname.fal>
+  <entitydescription.fal>[ROF: Very Low]\n[ACC:Very High-High]</entitydescription.fal>
+  <entityname.falmag>7.62x51mm FN FAL Magazine</entityname.falmag>
+  <entitydescription.falmag>[Capacity: 20]\n[Penetration: 90%]</entitydescription.falmag>
+  <entityname.underwatergun>APS Underwater Rifle</entityname.underwatergun>
+  <entitydescription.underwatergun>[ROF: Medium]\n[ACC:Medium]</entitydescription.underwatergun>
+  <entityname.apsmag>APS Mag</entityname.apsmag>
+  <entitydescription.apsmag>[Capacity: 26]\n[Penetration: 40%]</entitydescription.apsmag>
+  <entityname.gasgrenade>Gas Grenade</entityname.gasgrenade>
+  <entitydescription.gasgrenade>Use it to gas-stun the enemies in line.</entitydescription.gasgrenade>
+  <entityname.reactorslot>Reactor Slot</entityname.reactorslot>
+  <entitydescription.reactorslot>A slot for the reactor installation.</entitydescription.reactorslot>
+  <entityname.reactorrs107>RS107</entityname.reactorrs107>
+  <entitydescription.reactorrs107>[Max Output:5000]\n[Fire Delay:20]\n[Meltdown Delay:120]\n[Fuel Consumption Rate:0.2]\n[EMP Protect: Yes]</entitydescription.reactorrs107>
+  <entityname.reactormrmxi>MR-MXI</entityname.reactormrmxi>
+  <entitydescription.reactormrmxi>[Max Output:6550]\n[Fire Delay:45]\n[Meltdown Delay:200]\n[Fuel Consumption Rate:0.2]\n[EMP Protect: Yes]</entitydescription.reactormrmxi>
+  <entityname.reactorccsv>CCS-V</entityname.reactorccsv>
+  <entitydescription.reactorccsv>[Max Output:7000]\n[Fire Delay:30]\n[Meltdown Delay:140]\n[Fuel Consumption Rate:0.4]\n[EMP Protect: No]</entitydescription.reactorccsv>
+  <entityname.reactorfac900>FAC900</entityname.reactorfac900>
+  <entitydescription.reactorfac900>[Max Output:8000]\n[Fire Delay:60]\n[Meltdown Delay:200]\n[Fuel Consumption Rate:0.2]\n[EMP Protect: Yes]</entitydescription.reactorfac900>
+  <entityname.reactorgb099>GB-099</entityname.reactorgb099>
+  <entitydescription.reactorgb099>[Max Output:9500]\[Fire Delay:30]\n[Meltdown Delay:150]\n[Fuel Consumption Rate:0.6]\n[EMP Protect: Yes]</entitydescription.reactorgb099>
+  <entityname.reactortype2053>Type2053</entityname.reactortype2053>
+  <entitydescription.reactortype2053>[Max Output:12000]\n[Fire Delay:10]\n[Meltdown Delay:50]\n[Fuel Consumption Rate:0.9]\n[EMP Protect: No]</entitydescription.reactortype2053>
+  <entityname.helperlogbook>Helper Logbook</entityname.helperlogbook>
+  <entitydescription.helperlogbook>A mannual of general game information</entitydescription.helperlogbook>
+  <entityname.subdoc>Submarine Documentation</entityname.subdoc>
+  <entitydescription.subdoc>An electric log book that registers the submarine owner. Important identification for fuel rod purchase.</entitydescription.subdoc>
+  <entityname.weaponrepairkit>Weapon Repair Kit</entityname.weaponrepairkit>
+  <entitydescription.weaponrepairkit>A kit that contains tools for field weapon repair.</entitydescription.weaponrepairkit>
+  <entityname.dhheavywrench>Heavy Wrench</entityname.dhheavywrench>
+  <entitydescription.dhheavywrench>A large and heavy titanium wrench. Used to repair exterior submarine devices.</entitydescription.dhheavywrench>
+  <entityname.weaponparts>Weapon Parts</entityname.weaponparts>
+  <entitydescription.weaponparts>Parts for the repairs of various weapons.</entitydescription.weaponparts>
+  <entityname.containerkey>Key</entityname.containerkey>
+  <entitydescription.containerkey>Can lock or unlock cabinet</entitydescription.containerkey>
+  <entityname.keymaster>Master Key</entityname.keymaster>
+  <entitydescription.keymaster>Master key can unlock all cabinets</entitydescription.keymaster>
+  <entityname.keyorganzier>Key Organizer</entityname.keyorganzier>
+  <entitydescription.keyorganzier>A case to collect all keys</entitydescription.keyorganzier>
+  <entityname.flamethrowerfueltank>Flamethrower Fuel Tank</entityname.flamethrowerfueltank>
+  <entitydescription.flamethrowerfueltank>A heavy tank contains fuel for flamethrower</entitydescription.flamethrowerfueltank>
+  <entityname.flamethrower>Flamethrower</entityname.flamethrower>
+  <entitydescription.flamethrower>A deadly weapon that can incapacity any foe you encounter</entitydescription.flamethrower>
+  <entityname.bodyarmorI>Bodyarmor-I</entityname.bodyarmorI>
+  <entitydescription.bodyarmorI>[Penetration Rate Multiplier: 40%]</entitydescription.bodyarmorI>
+  <entityname.bodyarmorII>Bodyarmor-II</entityname.bodyarmorII>
+  <entitydescription.bodyarmorII>[Pentration Rate Multiplier:25%]</entitydescription.bodyarmorII>
+  <entityname.bodyarmorIII>Bodyarmor-III</entityname.bodyarmorIII>
+  <entitydescription.bodyarmorIII>[Pentration Rate Multiplier:10%]</entitydescription.bodyarmorIII>
+  <entityname.mechanicalparts>Mechanical Parts</entityname.mechanicalparts>
+  <entitydescription.mechanicalparts>Parts to be used in various mechanical repair.</entitydescription.mechanicalparts>
+  <entityname.divingwatch>Diver Watch</entityname.divingwatch>
+  <entitydescription.divingwatch>Used by diviers to count time.</entitydescription.divingwatch>
+  <entityname.hypothalamusstimulator>Hypothalamus Stimulator Pill</entityname.hypothalamusstimulator>
+  <entitydescription.hypothalamusstimulator>The pill stimulates the hypothalamus and cause a dangerous internal overheat.</entitydescription.hypothalamusstimulator>
+  <entityname.diversbackpack>Diver Back pack</entityname.diversbackpack>
+  <entitydescription.diversbackpack>A sturdy backpack for material transfer. Slow down the wearer.</entitydescription.diversbackpack>
+  <entityname.rebreather>Rebreather</entityname.rebreather>
+  <entitydescription.rebreather>A rebreather can recycle the air and remove the CO2 of the user, making the oxygen tank twice as efficient as the original. Auto start when a diving suit is equip detected. It can also refill the oxygen tank in the connected diving suit</entitydescription.rebreather>
+  <entityname.rebreathertank>Rebreather Tank</entityname.rebreathertank>
+  <entitydescription.rebreathertank>A heavy oxygen tank allows the rebreather to refill oxygen tank in the connected diving suit.</entitydescription.rebreathertank>
+  <entityname.grapplegun>Grapple Gun</entityname.grapplegun>
+  <entitydescription.grapplegun>Used to go over difficult terrain.\nAfter the cable is connected\nPress[LShift]to set Pulling mode\nPress [LCtrl] to set lowering mode.</entitydescription.grapplegun>
+  <entityname.grapplesmall>Grapple Hook</entityname.grapplesmall>
+  <entitydescription.grapplesmall>Grapple gun ammo</entitydescription.grapplesmall>
+  <entityname.gastank>Gas Tank</entityname.gastank>
+  <entitydescription.gastank>Gas tank for grapple gun</entitydescription.gastank>
+  <entityname.CaveLamp1>Cave Lamp</entityname.CaveLamp1>
+  <entityname.CaveLamp2>Cave Lamp</entityname.CaveLamp2>
+  <entityname.bloodlantern>Blood Lantern</entityname.bloodlantern>
+  <entitydescription.bloodlantern>Burns alien blood, emitting a dark red light</entitydescription.bloodlantern>
+  <entityname.reinforceddoor>Reinforced Door</entityname.reinforceddoor>
+  <entityname.lifttopstop>Lift Top Stoper</entityname.lifttopstop>
+  <entityname.liftbottomstop>Lift Bottom Stoper</entityname.liftbottomstop>
+  <entityname.lift>Lift</entityname.lift>
+  <entityname.buttonchangedirection>Change Direction</entityname.buttonchangedirection>
+  <entitydescription.buttonchangedirection>Push it to initialize the submarine change direction sequence.</entitydescription.buttonchangedirection>
+  <entityname.airmonitor>Air Monitor</entityname.airmonitor>
+  <entitydescription.airmonitor>A hand held device to monitor air condition</entitydescription.airmonitor>
+  <entityname.APIshell>Armour-piercing Incendiary Shell</entityname.APIshell>
+  <entitydescription.APIshell>A shell that penetrate multiple hulls. A short delay after impact, will violently ignite.</entitydescription.APIshell>
+  <entityname.torpedo>torpedo</entityname.torpedo>
+  <entitydescription.torpedo>A torpedo that can be launched from torpedo tube</entitydescription.torpedo>
+  <entityname.firecontrolsonar>Fire Control Sonar</entityname.firecontrolsonar>
+  <entitydescription.firecontrolsonar>Guiding torpedo direction</entitydescription.firecontrolsonar>
+  <entityname.lubricationoil>Lubrication Oil</entityname.lubricationoil>
+  <entitydescription.lubricationoil>Used to lubricate the engine. Right click to use directly on the engine.</entitydescription.lubricationoil>
+  <connection.moveup>Move Up</connection.moveup>
+  <connection.movedown>Move Down</connection.movedown>
+  <connection.Dock_State>Dock State</connection.Dock_State>
+  <connection.vertical_engine_power_out>vertical_engine_power_out</connection.vertical_engine_power_out>
+  <connection.powerconsumptionout>Power Consumption Out</connection.powerconsumptionout>
+  <uilabel.reactorcooline>Cooline</uilabel.reactorcooline>
+  <uilabel.watertank>Water Tank</uilabel.watertank>
+  <uilabel.lock>Lock</uilabel.lock>
+  <displayname.divingwatch>Diving Watch</displayname.divingwatch>
+  <cursorhover.changedirection>[[select]] Push it to initialize the submarine change direction sequence.</cursorhover.changedirection>
+  <cursorhover.repair.heavywrench>[[use]] Repair (Heavy Wrench)</cursorhover.repair.heavywrench>
+  <cursorhover.repair.guns>[[use]] Repair (weapon repair kit)</cursorhover.repair.guns>
+  <Terminal.reactormanual>Very important----Reactor Operation: The reactor needs cooline to prevent from being damaged during working condition. If the reactor is damaged to critical state. Turn off the reactor to prevent further catastrophe. \nThe FissionRate should below 5 to ensure safetyness for the whole sub. If reactor is down, turn on the backup power grid on the sub!\n Do not remove an undepleted fuel rod from the reactor. The radiation can be fatal. If you insist on removing it, find a suitable container! \nCoalition Engineering Guideline 101</Terminal.reactormanual>
+  <Terminal.helermanualstart>Welcome to the helper. Select corresponding number to view contents.\n1 Reactor\n2 Pump\n3 Turrets and Submarine Warfare\n4 Indoor Combat\nhome</Terminal.helermanualstart>
+  <Terminal.subdocstart>Submarine Info\n Select corresponding number to view information.\n1 Vessel Payload Condition\n2 Ship design and efficiency\n3 Register Number\n4 Basic Assets\nhome</Terminal.subdocstart>
+  <afflictionname.coldwater>Low Temperature</afflictionname.coldwater>
+  <afflictionname.coldwaterresistance>Body OverHeat</afflictionname.coldwaterresistance>
+  <afflictiondescription.coldwaterresistance>The pill stimulates the hypothalamus and cause a dangerous internal overheat.</afflictiondescription.coldwaterresistance>
+  <afflictiondename.chlorine_poisoning>Chlorine Poisioning</afflictiondename.chlorine_poisoning>
+  <afflictiondescription.chlorine_poisoning>Broken battery releases toxic chemical</afflictiondescription.chlorine_poisoning>
+  <!--location-->
+  <locationname.EuropanRidge_Outpost>Habitation Outpost of Europan Ridge</locationname.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name] Habitation Outpost</locationnameformat.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name] Outpost</locationnameformat.EuropanRidge_Outpost>
+  <locationname.EuropanRidge_Military>Military Base of Europan Ridge</locationname.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name] Base</locationnameformat.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name] Base</locationnameformat.EuropanRidge_Military>
+  <locationname.EuropanRidge_Research>Research Outpost of Europan Ridge</locationname.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name] Research Outpost</locationnameformat.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name] Outpost</locationnameformat.EuropanRidge_Research>
+  <locationname.EuropanRidge_Mine>Mining Outpost of Europan Ridge</locationname.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name] Mining Outpost</locationnameformat.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name] Outpost</locationnameformat.EuropanRidge_Mine>
+  <locationname.AphoticPlateau_Outpost>Habitation Outpost of Aphotic Plateau</locationname.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name] Habitation Outpost</locationnameformat.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name] Outpost</locationnameformat.AphoticPlateau_Outpost>
+  <locationname.AphoticPlateau_military>Military Base of Aphotic Plateau</locationname.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name] Base</locationnameformat.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name] Base</locationnameformat.AphoticPlateau_military>
+  <locationname.AphoticPlateau_Research>Research Outpost of Aphotic Plateau</locationname.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name] Research Outpost</locationnameformat.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name] Outpost</locationnameformat.AphoticPlateau_Research>
+  <locationname.AphoticPlateau_Mine>Mining Outpost of Aphotic Plateau</locationname.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name] Mining Outpost of Aphotic Plateau</locationnameformat.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name] Outpost</locationnameformat.AphoticPlateau_Mine>
+  <locationname.Greatsea_Outpost>Habitation Outpost of The Great Sea</locationname.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name] Habitation Outpost</locationnameformat.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name] Outpost</locationnameformat.Greatsea_Outpost>
+  <locationname.Greatsea_military>Military Base of The Great Sea</locationname.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name] Base</locationnameformat.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name] Base</locationnameformat.Greatsea_military>
+  <locationname.Greatsea_Research>Research Outpost of The Great Sea</locationname.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name] Research Outpost</locationnameformat.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name] Outpost</locationnameformat.Greatsea_Research>
+  <locationname.Cave>Mine Cave</locationname.Cave>
+  <locationnameformat.Cave>[name] Mine</locationnameformat.Cave>
+  <locationnameformat.Cave>[name] Mine</locationnameformat.Cave>
+  <Sildeshow.DHStorybegin1>"In 2035, humans left their mark on Europa's surface for the first time as an international expedition, searching for evidence of complex life on the planet. Within 10 years, the New World had become a stable colony, providing the Earth with the necessary materials."</Sildeshow.DHStorybegin1>
+  <Sildeshow.DHStorybegin2>"In 2050, intense gamma rays from the Crab Nebula grazed this region, cutting off communication between Europa and Earth. The last attempt by Earth to resupply Europa failed in 2051.“</Sildeshow.DHStorybegin2>
+  <Sildeshow.DHStorybegin3>“With existing resources, the colony could still operate at a low level. But due to the lack of necessary resources, the Europa Union had long realized that colonies were unsustainable. In 2053, an energy pulse from an alien signal is captured by a cargo submarine, and since then, news of alien energy has been everywhere. Humanity has pinned its hopes on this new energy, but its use has never been made public. In fact, whether this energy can actually be harnessed by humans has never been confirmed.”</Sildeshow.DHStorybegin3>
+  <Sildeshow.DHStorybegin4>“It's been 6 years since the first energy signal was captured."</Sildeshow.DHStorybegin4>
+  <Botai_getdivingmask>"Water gets inside!"</Botai_getdivingmask>
+  <Botai_getdivingmask>"Find a diving mask!"</Botai_getdivingmask>
+  <Botai_getdivingmask>"Hull breached! Hull breached!"</Botai_getdivingmask>
+  <LockDirectionalSonar>Lock Sonar Direction</LockDirectionalSonar>
+  <Arm>Arm</Arm><!--the lable of the switch-->
+  <TorpedoDisarm>Disarm</TorpedoDisarm><!--signal output-->
+  <TorpedoArm>Arm</TorpedoArm>
+  <TorpedoTubeEmpty>Tube Empty</TorpedoTubeEmpty>
+  <LaunchTorpedo>Launch Torpedo</LaunchTorpedo>
+  <hertz>kHz</hertz>
+  <EngineStatus>Engine Status</EngineStatus>
+  <EnginePowerConsumption>Power Consumption</EnginePowerConsumption>
+  <KW>KW</KW>
+  <O2>oxygen</O2>
+  <prograssbar.Lubricating>Lubercating</prograssbar.Lubricating>
+  <turbineoutput>turbineoutput</turbineoutput>
+  <TurbineRateSliderText>Turbine Rate</TurbineRateSliderText>
+  <dialogcheckfirearms>"Weapon like this is not allowed here!"</dialogcheckfirearms>
+  <dialogcheckfirearms.Drop>"Drop your Weapon!"</dialogcheckfirearms.Drop>
+</infotexts>

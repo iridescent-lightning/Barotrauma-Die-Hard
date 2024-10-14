@@ -1,0 +1,1732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="spear" category="Weapon" maxstacksize="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,harpoonammo" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="harpoongun" amount="6" spawnprobability="1" />
+      <PreferredContainer primary="armcab" minamount="3" maxamount="6" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer primary="secarmcab" />
+      <Price baseprice="7">
+        <Price storeidentifier="merchantoutpost" minavailable="12" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" minavailable="12" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" minavailable="6" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" minavailable="24" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" minavailable="6" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" minavailable="24" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="6">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,968,55,55" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="85,368,168,11" depth="0.55" origin="0.5,0.5" />
+      <Body width="160" height="10" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Rope sourcepullforce="300" targetpullforce="2000" projectilepullforce="5" maxlength="1500" snaponcollision="false" spritewidth="3" tile="true" origin="0.05,0.5" targetminmass="30" lerpforces="true" snapanimduration="0.5">
+        <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
+        <!-- Snap after 1 seconds if not stuck to anything -->
+        <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">
+          <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        </StatusEffect>
+      </Rope>
+      <Projectile characterusable="false" launchimpulse="5" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="false">
+        <Attack structuredamage="15" itemdamage="30" targetforce="20" severlimbsprobability="0.1" stun="1.5">
+          <Affliction identifier="lacerations" strength="35" />
+          <Affliction identifier="bleeding" strength="35" />
+          <Affliction identifier="stun" strength="0.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+          <Conditional Snapped="false" />
+          <Conditional mass="lt 30" />
+          <Affliction identifier="drag" strength="1" />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="alienspear" category="Weapon,Alien" maxstacksize="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,harpoonammo" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="harpoongun" />
+      <PreferredContainer primary="armcab" amount="6" spawnprobability="0.05" notcampaign="true" />
+      <PreferredContainer secondary="ruinstoragesmall" minamount="1" maxamount="2" spawnprobability="0.05" />
+      <PreferredContainer secondary="ruinstorage" minamount="2" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer secondary="ruinstoragelarge" minamount="3" maxamount="6" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" />
+      <Price baseprice="50" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="6">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="physicorium" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="449,968,55,55" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="85,398,170,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="160" height="10" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Rope sourcepullforce="300" targetpullforce="100" projectilepullforce="5" maxlength="1500" snaponcollision="false" spritewidth="3" tile="true" origin="0.05,0.5" targetminmass="30" lerpforces="true" snapanimduration="0.5">
+        <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
+        <!-- Snap after 1 seconds if not stuck to anything -->
+        <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">
+          <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        </StatusEffect>
+      </Rope>
+      <Projectile characterusable="false" launchimpulse="5.0" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="false" stun="1.5">
+        <Attack structuredamage="25" itemdamage="50" targetforce="20" severlimbsprobability="0.2">
+          <Affliction identifier="lacerations" strength="60" />
+          <Affliction identifier="bleeding" strength="60" />
+          <Affliction identifier="stun" strength="0.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+          <Conditional Snapped="false" />
+          <Conditional mass="lt 30" />
+          <Affliction identifier="drag" strength="1" />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="explosivespear" category="Weapon" maxstacksize="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,harpoonammo,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="harpoongun" />
+      <PreferredContainer primary="armcab" amount="6" spawnprobability="0.1" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="6" spawnprobability="0.1" />
+      <PreferredContainer primary="secarmcab" />
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="3" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+      </Price>
+      <Deconstruct time="5"></Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="2">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="spear" amount="2" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="385,968,55,55" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="85,381,168,15" depth="0.55" origin="0.5,0.5" />
+      <Body width="160" height="10" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="10.0" severlimbsprobability="0.1">
+        <Attack structuredamage="20" targetforce="10" penetration="0.5" stun="1.5">
+          <Affliction identifier="explosiondamage" strength="25" />
+        </Attack>
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" type="OnUse" range="2000" selectionmode="All" />
+        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" type="OnUse" range="2000" />
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+          <Explosion range="200.0" ballastfloradamage="50" structuredamage="10" levelwalldamage="50" itemdamage="250" force="5" severlimbsprobability="0.25">
+            <Affliction identifier="burn" strength="50" />
+            <Affliction identifier="stun" strength="1.5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="harpoongun" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="wreckweaponholder" spawnprobability="0.05" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+      <Price baseprice="170" minavailable="1">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+        <Item identifier="tin" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="tin" amount="2" />
+      </Fabricate>
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,203,181,39" depth="0.55" origin="0.5,0.5" />
+      <Body width="180" height="30" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-10" handle1="-20,-6" handle2="30,10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="1.75" launchimpulse="20.0" barrelpos="85,14" spread="1" unskilledspread="10" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" type="OnUse" />
+        <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" type="OnUse" />
+        <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" type="OnUse" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <RequiredItems items="harpoonammo" type="Contained" msg="ItemMsgSpearRequired" />
+        <RequiredSkill identifier="weapons" level="30" />
+      </RangedWeapon>
+      <ItemContainer itempos="27,10" iteminterval="0,-4" hideitems="false" capacity="1" maxstacksize="1" containedstateindicatorslot="0" containedstateindicatorstyle="spear" containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+        <Containable items="harpoonammo" />
+        <SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,123,120,29" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="18,12" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="stungundart" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,stungunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="armcab" minamount="1" maxamount="10" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer primary="stungun" amount="2" spawnprobability="1" />
+      <PreferredContainer secondary="secarmcab" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="3" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
+        <RequiredSkill identifier="weapons" level="30" />
+        <Item identifier="steel" />
+        <Item tag="wire" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="766,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="183,221,72,18" depth="0.55" origin="0.5,0.5" />
+      <Body width="70" height="15" density="11" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <!--Non-lethal projectile sticks to characters and stuns them for 5 seconds.-->
+      <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true">
+        <Attack structuredamage="0" targetforce="2">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="stun" strength="0.1" />
+          <!--<Affliction identifier="progressivestun" strength="50" />-->
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" targetitemcomponent="Rope" disabledeltatime="true" duration="10">
+          <Affliction identifier="stun" strength="0.1" />
+          <Sound file="Content/Items/Weapons/TaserHit1.ogg" type="OnUse" range="3000" selectionmode="Random" Loop="true" />
+          <Sound file="Content/Items/Weapons/TaserHit2.ogg" type="OnUse" range="3000" Loop="true" />
+        </StatusEffect>
+      </Projectile>
+      <Rope sourcepullforce="0" targetpullforce="0" projectilepullforce="5" maxlength="600" snaponcollision="true" spritewidth="1" tile="true" origin="0.05,0.5" targetminmass="20" lerpforces="true" snapanimduration="0.5">
+        <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
+        <!-- Snap after 1 seconds if not stuck to anything -->
+        <StatusEffect type="OnUse" target="This" Snapped="true" delay="2" checkconditionalalways="true">
+          <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        </StatusEffect>
+      </Rope>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="stungundartfulgurium" category="Weapon" maxstacksize="8" interactthroughwalls="true" allowasextracargo="true" cargocontaineridentifier="metalcrate" tags="smallitem,stungunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="120" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="25" amount="2">
+        <RequiredSkill identifier="weapons" level="40" />
+        <Item identifier="fulgurium" />
+        <Item tag="wire" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="215,67,61,61" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="200,189,72,18" depth="0.55" origin="0.5,0.5" />
+      <Body width="70" height="15" density="11" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true">
+        <Attack structuredamage="0" targetforce="2">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="stun" strength="6" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget" targetitemcomponent="Rope" disabledeltatime="true" duration="10">
+          <Affliction identifier="stun" strength="0.4" />
+          <Sound file="Content/Items/Weapons/TaserHit1.ogg" type="OnUse" range="3000" selectionmode="Random" Loop="true" />
+          <Sound file="Content/Items/Weapons/TaserHit2.ogg" type="OnUse" range="3000" Loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+      <Rope sourcepullforce="0" targetpullforce="0" projectilepullforce="5" maxlength="600" snaponcollision="true" spritewidth="1" tile="true" origin="0.05,0.5" targetminmass="20" lerpforces="true" snapanimduration="0.5">
+        <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
+        <!-- Snap after 1 seconds if not stuck to anything -->
+        <StatusEffect type="OnUse" target="This" Snapped="true" delay="2" checkconditionalalways="true">
+          <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        </StatusEffect>
+      </Rope>
+    </Item>
+    
+    <Item name="" identifier="stungrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="3" spawnprobability="0.5" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer secondary="armcab" />
+      <Upgrade gameversion="0.9.2.0" scale="0.5" />
+      <Price baseprice="125">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="3" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="phosphorus" mincondition="0.9" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="phosphorus" />
+        <RequiredItem identifier="flashpowder" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="130,312,27,54" depth="0.55" origin="0.5,0.5" />
+      <Body width="26" height="50" density="30" />
+      <ItemComponent characterusable="false">
+        <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+          <Explosion range="500" force="0.1" smoke="false">
+            <Affliction identifier="explosiondamage" strength="5" />
+            <Affliction identifier="stunblast" strength="5" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" targettype="This" Condition="-100.0" delay="0.9" disabledeltatime="true"></StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" range="800.0" />
+        </StatusEffect>
+      </Throwable>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="empgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="armcab" />
+      <Price baseprice="175">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantengineering" multiplier="1.2" minavailable="2" />
+      </Price>
+      <Upgrade gameversion="0.9.3.0" scale="0.5" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="copper" mincondition="0.9" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="450,450,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="159,311,27,54" depth="0.55" origin="0.5,0.5185185" />
+      <Body width="26" height="50" density="30" />
+      <ItemComponent characterusable="false">
+        <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="1000" selectionmode="All" />
+          <sound file="Content/Items/Weapons/Emp.ogg" range="1000" />
+          <Explosion range="500" force="0.1" smoke="false" sparks="true" empstrength="10" applyfireeffects="false">
+            <Affliction identifier="explosiondamage" strength="5" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" targettype="This" Condition="-100.0" delay="0.9" disabledeltatime="true"></StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" range="800.0" />
+        </StatusEffect>
+      </Throwable>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="fraggrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.5" impactsoundtag="impact_metal_heavy" isshootable="true">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="armcab" />
+      <Upgrade gameversion="0.9.3.0" scale="0.5" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="sodium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="580,770,54,63" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="217,305,40,61" depth="0.55" origin="0.5,0.5" />
+      <Body radius="20" height="10" density="30" />
+      <ItemComponent characterusable="false">
+        <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" type="OnUse" range="10000" selectionmode="All" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" type="OnUse" range="10000" />
+          <Explosion range="600.0" structuredamage="20" ballastfloradamage="120" itemdamage="500" force="10" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+            <Affliction identifier="bleeding" strength="80" />
+            <Affliction identifier="explosiondamage" strength="180" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" targettype="This" Condition="-100.0" delay="0.9" disabledeltatime="true"></StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" range="800.0" />
+        </StatusEffect>
+      </Throwable>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="incendiumgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_heavy" isshootable="true">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+      <PreferredContainer primary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+      <PreferredContainer secondary="armcab" />
+      <Upgrade gameversion="0.9.3.0" scale="0.5" />
+      <Price baseprice="175" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="incendium" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="68,320,56,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="188,312,26,54" depth="0.55" origin="0.5,0.5" />
+      <Body width="24" height="52" density="30" />
+      <ItemComponent characterusable="false">
+        <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/IncendiumGrenade.ogg" />
+          <Explosion range="500" ballastfloradamage="50" itemdamage="200" force="0.1" smoke="false">
+            <Affliction identifier="explosiondamage" strength="5" />
+            <Affliction identifier="burn" strength="100" />
+            <Affliction identifier="stun" strength="8" />
+          </Explosion>
+          <Remove />
+          <Fire size="300.0" />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" targettype="This" Condition="-100.0" delay="3" disabledeltatime="true"></StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" range="800.0" />
+        </StatusEffect>
+      </Throwable>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="gasgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" notcampaign="true" />
+      <PreferredContainer primary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+      <PreferredContainer secondary="armcab" />
+      <Price baseprice="250" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="sulphuricacid" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="753,31,26,54" depth="0.55" origin="0.5,0.5" />
+      <Body width="26" height="54" density="30" />
+      <ItemComponent characterusable="false">
+        <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" count="3" spread="25" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" type="OnUse" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true">
+          <Sound file="Content/Items/Tools/Sprayer.ogg" range="1000" volume="0.1" loop="true" />
+          <!--<ParticleEmitter particle="gasgrenade" particlespersecond="20" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" scalemin="0.8" scalemax="1.2" />-->
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="6">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.1" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.2" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.3" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.4" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.5" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.6" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.7" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.8" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="0.9" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="1" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" delay="2" target="This">
+          <SpawnItem identifiers="gasemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/grenade_pin.ogg" range="800.0" />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="" identifier="shotgun" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,collidable" Scale="0.25" impactsoundtag="impact_metal_light" subcategory="small arms">
+      <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
+      <PreferredContainer secondary="armcab" />
+      <Price baseprice="500">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="5,577,336,100" depth="0.55" origin="0.5,0.25" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="448,896,64,64" />
+      <Body width="130" height="30" density="25" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="65,-15" aimpos="50,-20" handle1="-150,-20" handle2="50,-5" holdangle="-50" msg="ItemMsgPickUpSelect" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Shotgun Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="5,577,336,100" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.25" origin="0.5,0" />
+      </Wearable>
+      <RangedWeapon barrelpos="120,5" spread="0.1" unskilledspread="3" combatPriority="80" reload="1" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot4.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="150.0" force="2.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <!-- Cocking sound, delayed by 1.0 seconds. -->
+        <StatusEffect type="OnUse" delay="1.0" target="This">
+          <Sound file="Content/Items/Weapons/ShotgunLoad1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+          <Sound file="Content/Items/Weapons/ShotgunLoad2.ogg" type="OnUse" range="3000" />
+          <Sound file="Content/Items/Weapons/ShotgunLoad3.ogg" type="OnUse" range="3000" />
+        </StatusEffect>
+        <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="50" />
+        <!--The case effect-->
+        <StatusEffect type="OnUse" target="This">
+          <SpawnItem identifiers="shotgunshellcase" spawnposition="This" />
+        </StatusEffect>
+        <!---->
+        <StatusEffect type="Always" target="This" Condition="0" SetValue="True">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="100" SetValue="True">
+          <Conditional InWater="False" />
+        </StatusEffect>
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="12" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+        <Containable items="shotgunammo" hide="true" />
+        <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="26,-3" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Item>
+    <Item name="" identifier="shotgunshell" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light" subcategory="small arms">
+      <PreferredContainer primary="shotgun" amount="12" spawnprobability="1" />
+      <PreferredContainer primary="autoshotgun" amount="15" spawnprobability="1" />
+      <PreferredContainer primary="shotgununique" amount="2" spawnprobability="1" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
+      <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer secondary="secarmcab" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true" amount="12">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="magnesium" amount="2" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="10" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <!--When fired, spawns 8 projectiles simultaneously.-->
+      <Projectile characterusable="false" hitscan="true" hitscancount="12" removeonhit="true" spread="15">
+        <StatusEffect type="OnActive" target="NearbyItems" targettags="junctionbox,vendingmachine,bed,vent" range="100" condition="-200">
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit.ogg" type="OnImpact" volumenum="2" Range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit1.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit2.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit3.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="NearbyItems" targettags="junctionbox,vendingmachine,junctionbox" range="100" condition="-800">
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit.ogg" type="OnImpact" volumenum="2" Range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit1.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit2.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit3.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
+        </StatusEffect>
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
+        <Attack structuredamage="1" targetforce="4" itemdamage="15" severlimbsprobability="0.5">
+          <Affliction identifier="gunshotwound" strength="4" />
+          <Affliction identifier="bleeding" strength="6" />
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="armormarker" strength="0.3" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit.ogg" type="OnImpact" volumenum="2" Range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit1.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit2.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit3.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="shotgunshellcase" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="10" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="false" removeonhit="false" launchimpulse="1.0">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
+        <!--This gives bubble effect when bullet travels though water-->
+        <StatusEffect type="OnNotContained" target="This" stackable="false" lifetime="1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="1" particleamount="1" velocitymin="0" velocitymax="5" scalemin="0.01" scalemax="0.01" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" delay="5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="flamethrower" category="Weapon" Tags="smallitem,weapon,gun,mountableweapon,flamethrower" cargocontaineridentifier="metalcrate" Scale="0.35" impactsoundtag="impact_metal_light" fireproof="true">
+      <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="armcab,weaponholder" />
+      <Price baseprice="280" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+      </Price>
+      <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" />-->
+      <InventoryIcon texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="742,852,275,133" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="742,852,275,133" depth="0.55" origin="0.5,0.5" />
+      <!-- the item takes 10 seconds to break down in a deconstructor and turns into steel and plastic -->
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="rubber" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+      </Fabricate>
+      <!-- physics body -->
+      <Body width="275" height="133" density="25" />
+      <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
+      <Holdable slots="RightHand+LeftHand,Any" controlpose="true" aimpos="30,-30" handle1="22,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" holdangle="0" holdpos="30,-30" />
+      <RepairTool firedamage="20.0" structurefixamount="0.0" UsableIn="None" range="800" barrelpos="40,-5" fireprobability="0.2" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatpriority="90" spread="25" unskilledspread="25">
+        <StatusEffect type="OnUse" target="NearbyItems" targettags="flamethrowerfueltank" range="50" condition="-2.5">
+          <LuaHook name="Flamethrower" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" UsableIn="None" interval="0.1" />
+        <RequiredSkill identifier="weapons" level="80" />
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <ParticleEmitter particle="flamethrower" particlespersecond="90" anglemin="0" anglemax="0" velocitymin="1400" velocitymax="1800" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="flamethrowersmoke" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="500" velocitymax="1000" />
+        <StatusEffect type="OnUse" target="This" stackable="false">
+          <Conditional IsActive="eq false" targetitemcomponent="RepairTool" />
+          <sound file="%ModDir%/Items/Weapons/flamethrower_init.ogg" range="750.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false">
+          <Conditional IsActive="eq true" targetitemcomponent="RepairTool" />
+          <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="750.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="This">
+          <ParticleEmitter particle="bubbles" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="100" copyentityangle="true" />
+          <ParticleEmitter particle="fleshsmoke" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="1" scalemax="1.5" velocitymin="5" velocitymax="200" copyentityangle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Hull,This">
+          <Conditional OxygenPercentage="lt 10" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Hull,This">
+          <Conditional OxygenPercentage="gt 10" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <Affliction identifier="burn" amount="15" />
+          <Affliction identifier="naplm" amount="30" />
+          <Affliction identifier="armormarker" strength="0.3" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" interval="1">
+          <Conditional ishuman="true" />
+          <LuaHook name="FlamethrowerForceDrop" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Hull" Oxygen="-10000" />
+      </RepairTool>
+      <aitarget sightrange="5000" soundrange="500" fadeouttime="5" />
+    </Item>
+    <Item name="" identifier="flamethrowerfueltank" category="Weapon" tags="mediumitem,flamethrowerfueltank" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.35" fireproof="true" description="" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="engcab,secarmcab" secondary="storagcab" />
+      <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.001" />
+      <Deconstruct time="10">
+        <Item identifier="titaniumaluminiumalloy" amount="2" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <Item identifier="flamethrowerfueltank" amount="1" mincondition="0.0" maxcondition="5" usecondition="false" />
+        <RequiredItem identifier="weldingfueltank" amount="3" />
+      </Fabricate>
+      <Price baseprice="1100">
+        <Price storeidentifier="merchantoutpost" minavailable="4" />
+        <Price storeidentifier="merchantcity" minavailable="6" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="8" />
+        <Price storeidentifier="merchantengineering" minavailable="4" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" depth="0.6" />
+      <Body width="156" height="225" density="100" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" limb="Torso" inherittexturescale="true" origin="0.9,0.5" scale="0.7" CanBeHiddenByOtherWearables="false" />
+        <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+      </Wearable>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+    </Item>
+    <Item name="" identifier="smgmagazine" maxstacksize="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,960,64,64" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" depth="0.54" sourcerect="146,157,17,44" origin="0.5,0.5" />
+      <Body width="14" height="40" density="20" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="smground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="smground" />
+        <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="smground" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <!--Magazines can be combined to raise condition.-->
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="smg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,830,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,121,144,80" depth="0.55" origin="0.5,0.5" />
+      <Body width="140" height="60" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="0.19" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,9" spread="10" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot6.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+        </StatusEffect>
+        <!--"Use" contained magazine to spawn projectiles.-->
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="50" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+        <Containable items="smgammo" hide="false" itempos="4,-10" rotation="-30" />
+        <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="22,-1" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="riflebullet" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="rifle" amount="6" spawnprobability="1" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
+      <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer secondary="secarmcab" />
+      <Price baseprice="30" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true" amount="12">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="magnesium" amount="2" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,832,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="233,163,23,9" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="9" density="40" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+        <Attack structuredamage="10" targetforce="12" itemdamage="20" severlimbsprobability="0.5" penetration="0.45">
+          <Affliction identifier="gunshotwound" strength="55" />
+          <Affliction identifier="bleeding" strength="33" />
+          <Affliction identifier="stun" strength="0.1" />
+          <Affliction identifier="armormarker" strength="0.3" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="riotshield" category="Equipment" tags="mediumitem,shield" health="600" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate" damagedbyprojectiles="true" scale="1" allowasextracargo="true" deflectprojectiles="True">
+      <PreferredContainer primary="armcab" secondary="secarmcab" minamount="1" maxamount="1" notcampaign="True" />
+      <Price baseprice="360" sold="true" minleveldifficulty="50">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" amount="2" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="3" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,320,64,64" />
+      <Sprite texture="riotgear.png" sourcerect="31,54,27,147" origin="0.5,0.5" depth="0.55" />
+      <Body width="110" height="145" density="50" />
+      <Holdable slots="LeftHand" aimpos="60,-30" holdpos="45,-30" handle1="-15,-10" handle2="-15,10" controlpose="true" blocksplayers="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="weldspark" drawontop="true" particleamount="50" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="30" scalemin="0.1" scalemax="0.35" />
+          <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="weldspark" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+          <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+          <!-- an invisible explosion to make the user "flinch" -->
+          <Explosion range="100.0" force="1" showeffects="false" camerashake="1.0" />
+        </StatusEffect>
+      </Holdable>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Riot Shield Worn" texture="Content/Items/Jobgear/Security/riotgear.png" canbehiddenbyotherwearables="false" sourcerect="31,54,27,147" rotation="180" inheritlimbdepth="true" depth="0.6" limb="Torso" ignorelimbscale="true" scale="1" origin="-0.2,0.5" />
+      </Wearable>
+    </Item>
+    <Item name="" identifier="stungun" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,stunner,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" subcategory="small arms">
+      <PreferredContainer primary="secarmcab" minamount="1" maxamount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="armcab" />
+      <Price baseprice="180">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="512,832,64,64" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,368,83,47" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,10" handle1="-5,-7" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon barrelpos="14,6" spread="0" unskilledspread="2" combatPriority="100" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <Sound file="Content/Items/Weapons/TaserShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/TaserShot2.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" target="Contained">
+          <Explosion range="100.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="2.0" />
+        </StatusEffect>
+        <RequiredItems items="stungunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="20" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" hideitems="true" maxstacksize="2" containedstateindicatorstyle="bullet">
+        <Containable items="stungunammo" />
+      </ItemContainer>
+      <aitarget sightrange="0" soundrange="0" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="20" />
+    </Item>
+    <Item name="" identifier="stunbaton" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" Scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Upgrade gameversion="0.9.2.0" scale="0.5" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="770,0,58,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,191,63" depth="0.55" origin="0.4954025,0.7936202" />
+      <Body width="170" height="30" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,20" handle1="-30,15" holdangle="20" aimangle="30" reload="0.95" range="100" combatPriority="49" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery">
+        <Attack targetimpulse="5" itemdamage="1">
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <Affliction identifier="blunttrauma" strength="4" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <!-- changed to use incremental stun: normal batteries cause 40 points of incremental stun -> full stun in three consecutive hits -->
+        <!-- keep weight check in place for now (affect targets with mass < 60) -->
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="incrementalstun" strength="80" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="batterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.1" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="6.0" />
+          <Conditional mass="lt 60" />
+        </StatusEffect>
+        <!-- changed to use incremental stun: fulgurium batteries cause 55 points of incremental stun -> full stun in two consecutive hits -->
+        <!-- keep weight check in place for now (affect targets with mass < 150) -->
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="incrementalstun" strength="100" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.5" shockwave="false" flames="false" smoke="true" underwaterbubble="false" camerashake="6.0" />
+          <Conditional mass="lt 150" />
+        </StatusEffect>
+        <!-- 4 usages with normal battery -->
+        <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-25.0" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Conditional entitytype="eq Character" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="mobilebattery" />
+      </ItemContainer>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.25" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="machinepistol" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" subcategory="small arms">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer secondary="armcab,weaponholder" />
+      <Price baseprice="200" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="270,295,107,49" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="44" density="20" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="0.175" weapondamagemodifier="0.8" holdtrigger="true" barrelpos="54,9" spread="15" unskilledspread="35" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot6.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse">
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <!--"Use" contained magazine to spawn projectiles.-->
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="60" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+        <Containable items="smgammo" hide="false" itempos="3,-5" rotation="-5" />
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="divingknife" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_knife" RequireAimToUse="True">
+      <PreferredContainer secondary="secarmcab" amount="1" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer secondary="abandonedstoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="29">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="6" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="8" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="15" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="15" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="835,385,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="183,203,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-10,0" holdangle="30" reload="0.2" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" Swing="true" SwingForce="1,0" SwingPos="1,0">
+        <Attack targetimpulse="2" severlimbsprobability="0.1" itemdamage="2" structuredamage="2" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="10" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional IsDead="true" />
+          <Affliction identifier="fetchevidence" strength="15" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawler" />
+          <SpawnItem identifier="crawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--large crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawler_large" />
+          <SpawnItem identifier="lcrawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--husk crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerhusk" />
+          <SpawnItem identifier="hcrawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--broodmother m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerbroodmother_m" />
+          <SpawnItem identifier="broodmothereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--broodmother-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerbroodmother" />
+          <SpawnItem identifier="broodmothereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--matriarch-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadmatriarch" />
+          <SpawnItem identifier="matriarchfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerhead_m" />
+          <SpawnItem identifier="hammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer mnamed-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerhead_mNamed" />
+          <SpawnItem identifier="hammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer gold m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadgold_m" />
+          <SpawnItem identifier="ghammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer gold-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadgold" />
+          <SpawnItem identifier="ghammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--spineling big-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Spineling_giant" />
+          <SpawnItem identifier="spineling_giant_spike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--spineling small-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Spineling" />
+          <SpawnItem identifier="smallspinelingspike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--thresher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Tigerthresher" />
+          <SpawnItem identifier="tigerthresherteeth" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--bone thresher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Bonethresher" />
+          <SpawnItem identifier="bonethresherhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--charybdis-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Charybdis" />
+          <SpawnItem identifier="Charybdistooth" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--raptor-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Mudraptor" />
+          <SpawnItem identifier="mudraptorshell" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--raptor vet-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Mudraptor_veteran" />
+          <SpawnItem identifier="vmudraptorshell" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--latcher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Latcher" />
+          <SpawnItem identifier="latchereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--moloch m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Moloch_m" />
+          <SpawnItem identifier="molochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--moloch -->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Moloch" />
+          <SpawnItem identifier="molochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--black moloch m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Molochblack_m" />
+          <SpawnItem identifier="blackmolochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--black moloch -->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Molochblack" />
+          <SpawnItem identifier="blackmolochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--doomworm-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Doomworm" />
+          <SpawnItem identifier="wormfang" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--endworm-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Endworm" />
+          <SpawnItem identifier="wormfang" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--watcher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Watcher" />
+          <SpawnItem identifier="watcherspike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="boardingaxe" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_axe">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="150" sold="true">
+        <Price storeidentifier="merchantoutpost" minamount="1" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" minamount="1" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" minamount="1" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="165,366,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="1,425,164,53" depth="0.55" origin="0.5,0.2" />
+      <Body width="161" height="20" density="25" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="749,463,173,59" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.6,1.36" />
+      </Wearable>
+      <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="1.2" range="155" combatPriority="40" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="5" severlimbsprobability="7.5" itemdamage="50" structuredamage="25">
+          <Affliction identifier="lacerations" strength="36" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="blunttrauma" strength="10" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional IsDead="true" />
+          <Affliction identifier="fetchevidence" strength="130" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawler" />
+          <SpawnItem identifier="crawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--large crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawler_large" />
+          <SpawnItem identifier="lcrawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--husk crawler-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerhusk" />
+          <SpawnItem identifier="hcrawlerhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--broodmother m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerbroodmother_m" />
+          <SpawnItem identifier="broodmothereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--broodmother-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Crawlerbroodmother" />
+          <SpawnItem identifier="broodmothereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--matriarch-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadmatriarch" />
+          <SpawnItem identifier="matriarchfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerhead_m" />
+          <SpawnItem identifier="hammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer mnamed-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerhead_mNamed" />
+          <SpawnItem identifier="hammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer gold m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadgold_m" />
+          <SpawnItem identifier="ghammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--hammer gold-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Hammerheadgold" />
+          <SpawnItem identifier="ghammerheadfin" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--spineling big-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Spineling_giant" />
+          <SpawnItem identifier="spineling_giant_spike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--spineling small-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Spineling" />
+          <SpawnItem identifier="smallspinelingspike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--thresher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Tigerthresher" />
+          <SpawnItem identifier="tigerthresherteeth" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--bone thresher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Bonethresher" />
+          <SpawnItem identifier="bonethresherhead" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--charybdis-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Charybdis" />
+          <SpawnItem identifier="Charybdistooth" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--raptor-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Mudraptor" />
+          <SpawnItem identifier="mudraptorshell" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--raptor vet-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Mudraptor_veteran" />
+          <SpawnItem identifier="vmudraptorshell" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--latcher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Latcher" />
+          <SpawnItem identifier="latchereye" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--moloch m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Moloch_m" />
+          <SpawnItem identifier="molochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--moloch -->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Moloch" />
+          <SpawnItem identifier="molochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--black moloch m-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Molochblack_m" />
+          <SpawnItem identifier="blackmolochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--black moloch -->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Molochblack" />
+          <SpawnItem identifier="blackmolochfragment" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--doomworm-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Doomworm" />
+          <SpawnItem identifier="wormfang" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--endworm-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Endworm" />
+          <SpawnItem identifier="wormfang" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" stackable="false" comparison="and" checkconditionalalways="false" interval="50">
+          <!--watcher-->
+          <Conditional fetchevidence="eq 100" />
+          <Conditional nofetchevidence="lt 100" />
+          <Conditional SpeciesName="Watcher" />
+          <SpawnItem identifier="watcherspike" spawnposition="This" />
+          <ParticleEmitter particle="organeruption" particleamount="50" scalemin="0.5" scalemax="1" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" colormultiplier="255,0,0,255" />
+          <ParticleEmitter particle="heavygib" drawontop="true" particleamount="1" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" />
+          <Explosion range="10" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="1" flash="false" shockwave="false" sparks="false" flames="false" smoke="false" underwaterbubble="false" decal="blood" decalsize="2.25" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="handcuffs" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,handlocker" scale="0.5" impactsoundtag="impact_metal_light" equipconfirmationtext="handcuffequipconfirmation">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="5" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/Mechanic/safetyharness.png" sourcerect="405,0,56,49" depth="0.6" />
+      <Body width="50" height="34" density="30" />
+      <Wearable slots="Any,RightHand+LeftHand" msg="ItemMsgPickUpSelect" autoequipwhenfull="false">
+        <sprite texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="RightHand" sourcerect="462,1,25,16" origin="0.5,0.8" depth="0.09" inheritlimbdepth="false" inherittexturescale="true" />
+        <sprite texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="LeftHand" sourcerect="487,1,25,16" origin="0.5,0.8" depth="0.09" inheritlimbdepth="true" inherittexturescale="true" />
+        <StatusEffect type="OnWearing" target="Character" lockhands="true" setvalue="true" />
+        <StatusEffect type="OnWearing" target="Character">
+          <Conditional lockhands="true" />
+          <LuaHook name="goToPrision" />
+        </StatusEffect>
+      </Wearable>
+    </Item>
+  </Items>
+</Override>

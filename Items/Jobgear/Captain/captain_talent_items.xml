@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="cigar" category="Misc" Tags="smallitem" scale="0.5" cargocontaineridentifier="metalcrate" allowasextracargo="true" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="130" sold="false" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="5">
+        <RequiredItem identifier="pipetobacco" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="174,234,42,50" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,60,50,12" depth="0.55" origin="0.5,0.5" />
+      <Body width="45" height="10" density="9.9" />
+      <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="30,14" handle1="0,-10" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-4.0">
+          <ParticleEmitter particle="swirlysmoke" particlespersecond="2" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnUse" target="Character">
+          <Affliction identifier="psychosisresistance" amount="20" />
+          <ReduceAffliction identifier="psychosis" amount="6" />
+          <ReduceAffliction identifier="hallucinating" amount="10" />
+          <ReduceAffliction identifier="reaperstax" amount="1" />
+          <ReduceAffliction identifier="watchersgaze" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Rum name="" identifier="rum" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="medfabcab" secondary="medcab" />
+      <Price baseprice="130" sold="false">
+        <Price storeidentifier="merchantclown" minavailable="0" maxavailable="3">
+          <Reputation faction="clowns" min="30" />
+        </Price>
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25">
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="raptorbane" />
+      </Fabricate>
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="486,212,27,66" depth="0.6" origin="0.5,0.5" />
+      <Body width="27" height="66" density="20" />
+      <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+          <Conditional Condition="lte 1" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <Affliction identifier="psychosisresistance" amount="600" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" duration="30">
+          <Conditional huskinfection="lt 50.0" />
+          <ReduceAffliction identifier="huskinfection" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" duration="30">
+          <ReduceAffliction identifier="psychosis" amount="3" />
+          <ReduceAffliction identifier="hallucinating" amount="3" />
+          <Affliction identifier="drunk" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Rum>
+  </Items>
+</Override>

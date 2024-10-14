@@ -1,0 +1,158 @@
+//private method patch!	If you encounter null method patch, check if the target method is non-public. Use --instance ! This cannot be used on public method or will get the same null method error
+		
+		var originalDrawSonar = typeof(Sonar).GetMethod("DrawSonar", BindingFlags.NonPublic | BindingFlags.Instance);
+		var prefixDrawSonar = typeof(SonarMod).GetMethod("DrawSonarPrefix", BindingFlags.Public | BindingFlags.Static);
+
+		harmony.Patch(originalDrawSonar, new HarmonyMethod(prefixDrawSonar), null);
+		
+		
+		
+		
+		
+		
+		
+		
+		private static FieldInfo GetPrivateField(Type type, string fieldName)
+{
+    return type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+}
+//get private field
+
+
+var originalSelect = typeof(ItemContainer).GetMethod("Select", BindingFlags.Public | BindingFlags.Instance, null, new[] { typeof(Character) }, null);//use this to get partial class
+
+
+
+/*In your SelectPrefix method, it looks like you want to execute the original Select method of the ItemContainer class unless certain conditions are met. With Harmony, the return value of the prefix method determines whether the original method is called. If the prefix method returns true, Harmony proceeds to call the original method. If it returns false, the original method is skipped.*/
+				return true;
+               // return base.Select(character);
+
+
+
+
+var originalSelect = typeof(ItemContainer).GetMethod("Select", BindingFlags.Public | BindingFlags.Instance, null, new[] { typeof(Character) }, null);
+    	var prefixSelect = typeof(ItemContainerMod).GetMethod("SelectPrefix", BindingFlags.Public | BindingFlags.Static);
+harmony.Patch(originalSelect, new HarmonyMethod(prefixSelect), null);
+
+private static DateTime lastUpdateTime = DateTime.MinValue;
+    private static readonly TimeSpan updateInterval = TimeSpan.FromSeconds(1); // 1-second interval
+		//use the system time if you have no access to deltaTime
+			if (DateTime.UtcNow - lastUpdateTime < updateInterval)
+            {
+                //do nothing
+            }
+			else
+
+
+
+
+
+
+
+
+
+// the null method issule solution!!!
+The issue you're encountering is likely due to the incorrect ordering of parameters in your Harmony patch method. When creating a Harmony patch, the method signature must follow specific rules, especially for instance methods (non-static methods).
+
+For a Harmony prefix or postfix method, the first parameter should be the instance of the class (denoted as `__instance`) on which the original method is called. This is followed by the parameters of the original method, in the same order as they are defined. If you're modifying the return value, the `ref` parameter for the result (`__result`) comes after the original method's parameters.
+
+Based on your description, the original `MouseInDirectionalPingRing` method in the `Sonar` class has the following signature:
+
+```csharp
+private bool MouseInDirectionalPingRing(Rectangle rect, bool onButton)
+```
+
+To create a Harmony patch for this method, your prefix method should look like this:
+
+```csharp
+public static bool MouseInDirectionalPingRing(Sonar __instance, Rectangle rect, bool onButton, ref bool __result)
+```
+
+Here's what each parameter represents:
+- `Sonar __instance`: The instance of the `Sonar` class on which the original method is called.
+- `Rectangle rect`: The first parameter of the original method.
+- `bool onButton`: The second parameter of the original method.
+- `ref bool __result`: A reference to the return value of the original method (if you want to modify or use it).
+
+In your attempt, the order was incorrect, which likely caused Harmony to fail to find and patch the method correctly. By adjusting the order of the parameters to match the rules outlined above, your patch method should work as intended.
+
+
+public static bool MouseInDirectionalPingRing(Sonar __instance, Rectangle rect, bool onButton)
+        {
+           
+        }
+
+
+
+
+
+
+
+
+//crazy hack to change the value of a static readonly field
+    [HarmonyPatch(typeof(Sonar), ".cctor")]
+    public static class SonarPatch
+    {
+        public static void Postfix()
+        {
+            // Set the DirectionalPingSector to a new value
+            var newDirectionalPingSector = 90; // Example: 90 degrees
+
+            // Use reflection to change the value of a static readonly field
+            var field = typeof(Sonar).GetField("DirectionalPingDotProduct", BindingFlags.Static | BindingFlags.NonPublic);
+            if (field != null)
+            {
+                field.SetValue(null, (float)Math.Cos(MathHelper.ToRadians(newDirectionalPingSector) * 0.5f));
+            }
+            else
+            {
+                // Handle the case where the field is not found
+                // This might indicate a change in the code base or an incorrect field name
+            }
+        }
+    }
+
+
+
+
+
+public class MyClass
+{
+    public static event Action<Item> OnRevolverFound;
+
+    public static void OnItemLoaded()
+    {
+        foreach (Item item in Item.ItemList)
+        {
+            if (item.Prefab.Identifier == "revolver")
+            {
+                OnRevolverFound?.Invoke(item);
+                DebugConsole.NewMessage("revolver found", Color.White);
+            }
+        }
+    }
+}
+
+
+
+constructor patch
+
+var originalConstructor = typeof(Reactor).GetConstructor(new[] { typeof(Item), typeof(ContentXElement) });
+var postfix = new HarmonyMethod(typeof(ReactorMod).GetMethod(nameof(ReactorConstructorPostfix)));
+harmony.Patch(originalConstructor, null, postfix);
+
+
+property patch
+// Access the getter method of the LaunchImpulse property
+            var original = AccessTools.PropertyGetter(typeof(Projectile), nameof(Projectile.LaunchImpulse));
+
+            // Define the prefix method
+            var prefix = new HarmonyMethod(typeof(RangedWeaponMod).GetMethod(nameof(LaunchImpulsePrefix)));
+
+            // Apply the patch
+            harmony.Patch(original, prefix: prefix);
+
+
+
+
+checkout the bindinflag, patching method and original method has to be the same (instance, static etc)

@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="railgun" description="" Tags="turret" category="Machine,Weapon" interactthroughwalls="true" Scale="0.5" interactdistance="10" focusonselected="true" offsetonselected="900" linkable="true" allowedlinks="railgunammosource" damagedbyexplosions="true" explosiondamagemultiplier="0.2" damagedbymonsters="true" damagedbyprojectiles="true">
+      <Sprite texture="Turrets.png" depth="0.01" sourcerect="0,0,512,512" canflipy="false" />
+      <MinimapIcon name="Command_Weapons_Railgun" texture="Content/UI/CommandUIAtlas.png" sourcerect="640,0,128,128" />
+      <SwappableItem price="7500" replacementonuninstall="largeturrethardpoint" origin="256,438" swapidentifier="largeturret">
+        <SchematicSprite texture="Content/UI/WeaponUI.png" sourcerect="0,0,256,389" />
+        <SwapConnectedItem tag="periscope" swapto="periscope" />
+        <SwapConnectedItem tag="turretammosource" swapto="railgunloadersmall" />
+      </SwappableItem>
+      <UpgradePreviewSprite scale="3.5" texture="Content/UI/WeaponUI.png" sourcerect="140,805,102,70" origin="0.5,0.5" />
+      <!--<Body width="80" radius="80" / need to be removed for monster to attack-->
+      <Turret launchimpulse="80.0" canbeselected="false" characterusable="false" linkable="true" barrelpos="252, 178" firingoffset="0,-150" rotationlimits="180,360" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="100" springstiffnesslowskill="2" springstiffnesshighskill="50" springdampinglowskill="0.5" springdampinghighskill="10" rotationspeedlowskill="1" rotationspeedhighskill="8">
+        <StatusEffect type="OnUse" target="This">
+          <sound file="Content/Items/Weapons/Railgun1.ogg" range="10000" type="OnUse" volume="3" />
+          <sound file="Content/Items/Weapons/Railgun2.ogg" range="10000" type="OnUse" volume="3" />
+          <sound file="Content/Items/Weapons/Railgun3.ogg" range="10000" type="OnUse" volume="3" />
+          <Explosion range="1000.0" structuredamage="0" force="0.01" camerashake="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+        </StatusEffect>
+        <WeaponIndicator texture="Content/UI/WeaponUI.png" sourcerect="343,913,66,36" origin="0.227, 0.5" />
+        <RailSprite texture="Content/Items/Weapons/Turrets.png" origin="0.52, 0.59" sourcerect="0,512,328,512" depth="0.011" />
+        <BarrelSprite texture="Content/Items/Weapons/Turrets.png" origin="0.5, 0.85" sourcerect="512,0,250,672" depth="0.012" />
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+        <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+        <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+        <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+        <RequiredSkill identifier="weapons" level="50" />
+        <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2048" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+        </LightComponent>
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="15" velocitymin="50" velocitymax="100" scalemin="5" scalemax="10" distancemin="-100" distancemax="50" />
+        <!--<ParticleEmitter particle="muzzleflashrailgun" particleamount="1" velocitymin="50" velocitymax="100" />-->
+        <Upgrade gameversion="0.15.9.0" powerconsumption="16000.0" />
+      </Turret>
+      <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="position_in" displayname="connection.turretaimingin" />
+        <input name="trigger_in" displayname="connection.turrettriggerin" />
+        <input name="toggle_light" displayname="connection.togglelight" />
+        <input name="set_light" displayname="connection.setlight" />
+      </ConnectionPanel>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="cursorhover.repair.heavywrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.35,0.35" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="heavywrench" type="Equipped" />
+        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+        <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+      <SkillRequirementHint identifier="weapons" level="50" />
+      <Upgrade gameversion="0.10.0.0" scale="*0.5" barrelpos="256,178" />
+    </Item>
+    <Item name="" description="" identifier="periscope" tags="periscope" category="Machine,Weapon" type="Controller" disableitemusagewhenselected="true" scale="0.5" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
+      <SwappableItem canbebought="false" origin="67,0" />
+      <Sprite texture="TurretsAndDepthCharges.png" depth="0.1" sourcerect="2,210,134,203" origin="0.5,0.5" />
+      <DecorativeSprite texture="TurretsAndDepthCharges.png" depth="0.15 " sourcerect="534,129,58,53" origin="0.5,0.5" rotationspeed="60" offset="0,-67">
+        <AnimationConditional IsActive="True" targetitemcomponent="Controller" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="TurretsAndDepthCharges.png" depth="0.2 " sourcerect="876,4,147,213" origin="0.5,0.5" offset="100,-7"></DecorativeSprite>
+      <Controller allowingameediting="false" UserPos="-35.0, -50.0" direction="Right" canbeselected="true" AllowSelectingWhenSelectedByBot="true" AllowSelectingWhenSelectedByOther="false" msg="ItemMsgInteractSelect">
+        <limbposition limb="Head" position="-10,-135" />
+        <limbposition limb="Torso" position="-10,-200" />
+        <limbposition limb="LeftHand" position="67,-170" />
+        <limbposition limb="RightHand" position="67,-170" />
+        <StatusEffect type="OnActive" target="Character">
+          <!--<Affliction identifier="Binoculars" strength="101"/>-->
+        </StatusEffect>
+      </Controller>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
+        <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
+      </ConnectionPanel>
+      <Upgrade gameversion="1.1.4.0" allowingameediting="false" />
+    </Item>
+    <Item name="" identifier="railgunloadersmall" nameidentifier="railgunloader" tags="railgunequipment,railgunammosource,turretammosource,railgunammoloader" category="Machine,Weapon" linkable="true" allowedlinks="railgun" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+      <SwappableItem canbebought="false" origin="110,353" spawnwithid="railgunshell,railgunshell,railgunshell,railgunshell,railgunshell" />
+      <Sprite name="Railgun Loader Front" texture="Loaders.png" depth="0.78" sourcerect="709,370,220,353" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Items/Subweapons/Loaders_shadows.png" depth="0.9" sourcerect="761,596,226,402" canflipy="false" scale="1" offset="60,-15" />
+      <BrokenSprite texture="Content/Items/Weapons/Loaders.png" sourcerect="163,563,153,351" origin="0.5,0.5" offset="35,4" depth="0.77" fadein="true" maxcondition="99" />
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="208,968,32,46" origin="0.5,0.5" />
+      <DecorativeSprite name="Railgun Loader Frame Front" texture="Loaders.png" depth="0.8" sourcerect="31,569,117,200" origin="0.5,0.5" offset="0,-30" />
+      <ItemContainer hideitems="false" drawinventory="true" capacity="6" slotsperrow="6" itempos="58,-200" iteminterval="20,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepths="0.79,0.791,0.792,0.793,0.794,0.795">
+        <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
+        <Containable items="railgunammo" />
+      </ItemContainer>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="20" mindeteriorationdelay="5" maxdeteriorationdelay="15" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <StatusEffect type="InWater" target="This" condition="-0.25" />
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="Equipped" />
+        <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+        <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="2.5" anglemax="360" distancemax="60" mincondition="0.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+      <LightComponent lightcolor="219,0,36,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="1.685,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 0" />
+      </LightComponent>
+      <LightComponent lightcolor="255,170,1,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="1.135,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 1" />
+      </LightComponent>
+      <LightComponent lightcolor="246,210,2,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="0.585,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 2" />
+      </LightComponent>
+      <LightComponent lightcolor="252,230,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="0.035,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 3" />
+      </LightComponent>
+      <LightComponent lightcolor="185,214,0,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="-0.515,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 4" />
+      </LightComponent>
+      <LightComponent lightcolor="79,184,0,150" castshadows="false" range="0.0" IsOn="true" powerconsumption="0" alphablend="true" allowingameediting="false">
+        <sprite texture="Content/Items/Weapons/Loaders.png" sourcerect="348,921,25,27" origin="-1.065,-4.83" alpha="1.0" />
+        <IsActiveConditional targetitemcomponent="ItemContainer" ContainedNonBrokenItemCount="gt 5" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="railgunshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
+      <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
+      <!--Ensure that Thalamus always has some railgun shells to use-->
+      <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5" />
+      <Price baseprice="75">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="10" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="iron" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,128,64,64" origin="0.5,0.5" />
+      <Sprite texture="TurretsAndDepthCharges.png" sourcerect="2,91,215,33" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.5" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Trigger explosions on contained items 
+      <StatusEffect type="OnBroken" target="Contained" >
+        <Use />
+      </StatusEffect>-->
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+      <Price baseprice="1400" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" minleveldifficulty="35" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="1" minleveldifficulty="35" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="uranium" />
+        <Item identifier="incendium" />
+      </Deconstruct>
+      <!--<Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="uranium" />
+        <RequiredItem identifier="ic4block" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>-->
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,128,64,64" origin="0.5,0.5" />
+      <Sprite texture="TurretsAndDepthCharges.png" sourcerect="1,131,217,33" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="35" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="50" severlimbsprobability="5" penetration="0.5" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" setvalue="true" allowwhenbroken="true">
+          <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="1000" />
+            <Affliction identifier="burn" strength="1000" />
+            <Affliction identifier="radiationsickness" strength="100" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="30" />
+          </Explosion>
+          <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
+          <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="Contained" allowwhenbroken="true">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="smallitem" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="alienshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="300" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="physicorium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="titanium" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,959,61,65" origin="0.5,0.5" />
+      <Sprite texture="TurretsAndDepthCharges.png" sourcerect="1,170,216,34" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="35" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" damagedoors="true">
+        <Attack structuredamage="200" itemdamage="200" severlimbsprobability="5" penetration="0.8" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="500" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true">
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+          <Explosion range="350.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="railguncanistershellpellet" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true">
+      <Sprite texture="TurretsAndDepthCharges.png" sourcerect="140,486,21,21" depth="0.55" />
+      <Body width="160" height="10" density="20" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+      <Projectile characterusable="false" launchimpulse="-15.0" impulsespread="0.3" spread="30" damagedoors="true">
+        <Attack structuredamage="30" itemdamage="15" severlimbsprobability="3.0" penetration="0.3">
+          <Affliction identifier="lacerations" strength="50" />
+          <Affliction identifier="bleeding" strength="20" />
+          <Affliction identifier="stun" strength="2" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This" lifetime="2">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="0.33" scalemax="1" />
+        </StatusEffect>
+        <!-- a 5 second lifetime after being fired -->
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="5">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="*0.5" />
+    </Item>
+    <Item name="" identifier="railguncanistershell" tags="railgunequipment,railgunammo,containershell" category="Weapon" linkable="true" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <Price baseprice="95">
+        <Price storeidentifier="merchantoutpost" minavailable="1" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="5" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="5" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="lead" mincondition="0.95" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="lead" />
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="8">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="lead" />
+        <RequiredItem identifier="railguncanistershell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      </Fabricate>
+      <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
+      <Sprite texture="Content/Items/Containers/containers2.png" sourcerect="799,708,216,34" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/Containers/containers2.png" sourcerect="799,744,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,447,64,64" origin="0.5,0.5" />
+      <Body width="215" height="30" density="35" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <ItemContainer hideitems="true" capacity="11" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet">
+        <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+          <RequiredItem items="railguncanistershellpellet,grapple" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="100" setvalue="true">
+          <RequiredItem items="railguncanistershellpellet,grapple" type="Contained" />
+        </StatusEffect>
+        <Containable items="railguncanistershellpellet,grapple" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="APIshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" description="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="1000" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="physicorium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="90" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="ic4block" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="189,1,65,65" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Subweapons/TurretsAndDepthCharges.png" sourcerect="658,19,213,31" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="35" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <CustomInterface drawhudwhenequipped="true" canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.2,0.3" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ConnectionPanel" />
+        <Button text="Penetration Level: II">
+          <StatusEffect type="OnUse" targettype="This">
+            <LuaHook name="layerII" />
+          </StatusEffect>
+        </Button>
+        <Button text="Penetration Level: III">
+          <StatusEffect type="OnUse" targettype="This">
+            <LuaHook name="layerIII" />
+          </StatusEffect>
+        </Button>
+        <Button text="Penetration Level: VI">
+          <StatusEffect type="OnUse" targettype="This">
+            <LuaHook name="layerVI" />
+          </StatusEffect>
+        </Button>
+        <Button text="Penetration Level: V">
+          <StatusEffect type="OnUse" targettype="This">
+            <LuaHook name="layerV" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <Projectile characterusable="false" launchimpulse="0" damagedoors="true" maxtargetstohit="2">
+        <Attack structuredamage="10" itemdamage="200" severlimbsprobability="5" penetration="0.8" targetforce="1000">
+          <Affliction identifier="lacerations" strength="250" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true">
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true" delay="3.5">
+          <Explosion range="350.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+          <Fire size="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Acid Shell" identifier="acidshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" impacttolerance="3" description="A sehll that goes through hull. Will burn down multiple layers of wall.">
+      <Price baseprice="380" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="adrenalinegland" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="203,128,73,67" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Subweapons/TurretsAndDepthCharges.png" sourcerect="659,154,215,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="220" height="53" density="35" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" throwforce="0.5">
+        <StatusEffect type="OnImpact" target="This">
+          <Explosion range="28" structuredamage="0" itemdamage="0" force="10" smoke="false" underwaterbubble="false" flash="false" flames="false" sparks="false" shockwave="false" playtinnitus="false">
+            <Affliction identifier="lacerations" strength="5" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.4" SetValue="true" disabledeltatime="true" />
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="80.0" maxtargetstohit="2">
+        <Attack structuredamage="10" itemdamage="100" severlimbsprobability="2.0" penetration="0.6">
+          <Affliction identifier="lacerations" strength="200" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" disabledeltatime="false" condition="-1">
+          <Sound file="Content/Items/Tools/Sprayer.ogg" range="300" volume="0.1" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="2" lifetime="1">
+          <ParticleEmitter particle="acidmistgrenade" particlespersecond="3" scalemin="0.3" scalemax="0.4" anglemin="0" anglemax="360" copyentityangle="false" />
+          <Explosion range="100" structuredamage="90" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="4" lifetime="1">
+          <ParticleEmitter particle="acidmist" particlespersecond="6" scalemin="0.9" scalemax="1" velocitymin="50" velocitymax="150" anglemin="0" anglemax="360" copyentityangle="false" />
+          <Explosion range="100" structuredamage="100" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="6" lifetime="1">
+          <ParticleEmitter particle="acidmist" particlespersecond="6" scalemin="0.9" scalemax="1" velocitymin="50" velocitymax="150" anglemin="0" anglemax="360" copyentityangle="false" />
+          <Explosion range="100" structuredamage="50" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="8">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="EMP Shell" identifier="emprailgunshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="railgunammoloader" />
+      <PreferredContainer primary="railgunammocontainer" />
+      <!--Ensure that Thalamus always has some railgun shells to use-->
+      <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="10" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="electrical" level="55" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="278,128,77,82" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Subweapons/TurretsAndDepthCharges.png" sourcerect="659,113,215,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.5" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="550.0" ballastfloradamage="10" structuredamage="5" itemdamage="10" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5" empstrength="20">
+            <Affliction identifier="explosiondamage" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Trigger explosions on contained items 
+      <StatusEffect type="OnBroken" target="Contained" >
+        <Use />
+      </StatusEffect>-->
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Grapple" identifier="grapple" category="Equipment" maxstacksize="2" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="largeitem,grapple" Scale="0.5" impactsoundtag="impact_metal_heavy" description="Load the grapple into a canister shell to fire it. Used for towing submarine back to outposts." interactdistance="100">
+      <PreferredContainer secondary="armcab" minamount="0" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="abandonedarmcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+      <Price baseprice="225" soldeverywhere="false">
+        <Price locationtype="outpost" multiplier="1.5" minavailable="1" />
+        <Price locationtype="city" multiplier="1.25" minavailable="1" />
+        <Price locationtype="research" multiplier="1.25" sold="false" />
+        <Price locationtype="military" multiplier="0.9" minavailable="1" />
+        <Price locationtype="mine" multiplier="1.25" minavailable="2" />
+      </Price>
+      <Deconstruct time="25">
+        <Item identifier="steel" />
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Subweapons/weapons_new.png" sourcerect="395,3,95,181" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Subweapons/weapons_new.png" sourcerect="395,3,95,181" origin="0.5,0.5" />
+      <Body width="80" height="80" density="20" />
+      <Holdable slots="RightHand+LeftHand" holdpos="15,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.6" SetValue="true" disabledeltatime="true" />
+      </Holdable>
+      <Rope targetpullforce="60000" projectilepullforce="0" sourcepullforce="70000" maxlength="10000" snaponcollision="true" spritewidth="30" tile="true" origin="0.05,0.5" targetminmass="0" lerpforces="true">
+        <Sprite texture="%ModDir%/Items/Subweapons/weapons_new.png" sourcerect="32,40,108,19" depth="0.57" origin="0.5,0.5" />
+        <!-- Snap after 3 seconds if not stuck to anything -->
+        <StatusEffect type="OnUse" target="This" Snapped="true" delay="3" checkconditionalalways="true">
+          <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        </StatusEffect>
+		<StatusEffect type="Always" target="This"><LuaHook name="PullSourceSub"/></StatusEffect>
+      </Rope>
+      <Projectile characterusable="false" launchimpulse="40.0" sticktostructures="true" sticktocharacters="true" doesstick="true" stickpermanently="true" maxtargetstohit="1" spread="10">
+        <Attack structuredamage="50" itemdamage="40" targetforce="50" severlimbsprobability="0.1">
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="lacerations" strength="100" />
+        </Attack>
+        <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+          <Conditional Snapped="false" />
+          <Conditional mass="lt 500" />
+          <Affliction identifier="drag" strength="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Sound file="Content/Map/Thalamus/Sounds/CARRIER_harpoonHit1.ogg" range="10000" volume="3" selectionmode="Random" />
+          <Sound file="Content/Map/Thalamus/Sounds/CARRIER_harpoonHit2.ogg" range="10000" volume="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-20"></StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+  <Item name="torpedotube" identifier="torpedotube" tags="torpedotube" category="Machine,Weapon" linkable="false" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" displaysidebysidewhenlinked="true">
+    
+    <Sprite texture="Torpedos.png" depth="0.8" sourcerect="1,400,364,68" origin="0.5,0.5" />
+    <TorpedoTube hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="175,-35" iteminterval="0,0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.25,0.5" anchor="Center" minsize="140,400" maxsize="280,450" style="ItemUI" />
+      <Containable items="torpedo" />
+    </TorpedoTube>
+    <TorpedoTurret launchimpulse="5.0" canbeselected="true" characterusable="true" linkable="true" barrelpos="1200, 0" firingoffset="0,0" rotationlimits="0,0" >
+    <GuiFrame relativesize="0.2,0.2"  anchor="Center" style="ItemUI" />
+    </TorpedoTurret>
+    <!--<Turret launchimpulse="5.0" canbeselected="true" characterusable="true" linkable="true" barrelpos="1200, 0" firingoffset="0,0" rotationlimits="0,0" >
+    </Turret>
+      <CustomInterface canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.15,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.1125,0.001" style="ItemUI" />
+        <Button text="Launch">
+          <StatusEffect type="OnUse" targettype="This">
+            <Use/>
+          </StatusEffect>
+        </Button>
+        
+      </CustomInterface>-->
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <output name="status_out" displayname="connection.status_out" fallbackdisplayname="connection.signalout" />
+      </ConnectionPanel>
+  </Item>
+  <Item name="" description="" identifier="torpedo" tags="torpedo,sonar" showcontentsintooltip="true" category="Weapon" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="torpedotube" amount="1" mincondition="1" />
+      <Price baseprice="1000">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="0" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="10" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="100">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="steel" amount="2"/>
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="copper" amount="2"/>
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <AiTarget soundrange="50000" sonarlabel="entityname.torpedo" sight="500" staticsight="true"/>
+    <LightComponent LightColor="0.0,1.0,0.0,1.0" range="50" powerconsumption="0" blinkfrequency="2" IsOn="false" canbeselected="false">
+      <StatusEffect type="InWater" target="This" IsOn="true" SoundRange="50000" setvalue="true" OnlyOutside="True"/>
+    </LightComponent>
+      <InventoryIcon texture="Torpedos.png" sourcerect="1,333,365,56" origin="0.5,0.5" />
+      <Sprite texture="Torpedos.png" sourcerect="1,333,365,56" depth="0.55" origin="0.5,0.5" />
+      <Body width="365" height="56" density="10" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="500" severlimbsprobability="90" penetration="0.5" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="500" />
+          <Affliction identifier="bleeding" strength="200" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="500.0" ballastfloradamage="100" structuredamage="1000" itemdamage="500" force="100.0" severlimbsprobability="0.95" decal="explosion" decalsize="0.3" penetration="0.5" camerashake="100">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+          <Explosion range="1500.0" ballastfloradamage="0" structuredamage="0" itemdamage="0" force="100.0" decal="explosion" decalsize="0.3" camerashake="100"/>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+  </Items>
+</Override>

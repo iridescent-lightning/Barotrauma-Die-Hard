@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<style>
+<!--pushable button with red indicator-->
+  <SwitchDieHardButton color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="220,220,220,255" disabledcolor="180,180,180,255" colorfadetime="0.75" spritefadetime="0" colortransition="easein" fallbackstate="toggle">
+      <Sprite name="SwitchVertical_None" texture="%ModDir%/Items/Engines/engine_ui_meter.png" state="None" maintainaspectratio="true" sourcerect="640,426,58,91" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_Hover" texture="%ModDir%/Items/Engines/engine_ui_meter.png" state="Hover" maintainaspectratio="true" sourcerect="640,426,58,91" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_Selected" texture="%ModDir%/Items/Engines/engine_ui_meter.png" state="Selected" maintainaspectratio="true" sourcerect="708,426,58,91" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_HoverSelected" texture="%ModDir%/Items/Engines/engine_ui_meter.png" state="HoverSelected" maintainaspectratio="true" sourcerect="708,426,58,91" tile="false" origin="0.5,0.5" />
+  </SwitchDieHardButton>
+  <!--junction box switch-->
+  <SwitchDieHardJBButton color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="220,220,220,255" disabledcolor="180,180,180,255" colorfadetime="0.75" spritefadetime="0" colortransition="easein" fallbackstate="toggle">
+      <Sprite name="SwitchVertical_None" texture="%ModDir%/Items/Buttons/button2.png" state="None" maintainaspectratio="true" sourcerect="64,2,63,60" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_Hover" texture="%ModDir%/Items/Buttons/button2.png" state="Hover" maintainaspectratio="true" sourcerect="64,2,63,60" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_Selected" texture="%ModDir%/Items/Buttons/button2.png" state="Selected" maintainaspectratio="true" sourcerect="64,64,63,61" tile="false" origin="0.5,0.5" />
+      <Sprite name="SwitchVertical_HoverSelected" texture="%ModDir%/Items/Buttons/button2.png" state="HoverSelected" maintainaspectratio="true" sourcerect="64,64,63,61" tile="false" origin="0.5,0.5" />
+    </SwitchDieHardJBButton>
+</style>

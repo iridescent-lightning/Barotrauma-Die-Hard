@@ -1,0 +1,112 @@
+This mod aims to make the game more difficult and unforgivable with better immersion and realism combat.
+
+
+defualt zoom changed to 1.5x. Secondary mouse button can enable "far look" mode.
+Client-side Lua is a hard requirement for both singleplayer and multiplayer to avoid desync.
+Recommend mod to play with:
+This mod enables you to swap item from your bag slot, which makes it very convenient for many equipments in this mod can only be put into the bag slot.
+https://steamcommunity.com/sharedfiles/filedetails/?id=2886340492
+
+[h1]Main Features[/h1]
+
+[h1]Basic Game Play[/h1]
+[img]https://i.vgy.me/cnYxw9.png[/img]
+Within hulls, humans can be protected from the water pressure. There isn't a need to find diving suit if it's not too deep. But the cold water won't spare anyone who doesn't belong to this planet.
+Talents and genes are removed. The only talent for the survival here is you.
+
+
+[h1] Dynamic Campaign: Barotrauma Story Mode [/h1]
+[img]https://i.vgy.me/3474yb.png[/img]
+Outposts are not empty anymore. They are full of minds. More unique missions and events. [u]The story mode is under construction. It's not necessary to follow the story missions because they are unfinished.[/u] 
+Update: story events are disabled. The outcome of storytelling method is pending.
+
+[h1] Monster Hunter [/h1]
+[img]https://i.vgy.me/hHLeqJ.png[/img]
+Monster mission overhaul. Coalition does not give you marks for monster kill. Rather, you need to do the dirty work yourself. Chop down the monster and sell it to the merchants.
+
+[h1] Dynamic Collision [/h1]
+[img]https://i.vgy.me/3XKKSD.png[/img]
+Ragdolled bodies will collide with items that were once just background images. Making the battlefield more immersive.
+
+[h1] Location Overhaul [/h1]
+Every biomes has its unique module sets. They are completely distinguished from each other.
+
+[h1] Pressure Sensitive Door [/h1]
+High water pressure in room will damage doors. You can't hide behind forever.
+
+[h1] Ship towing and wreckage towing [/h1]
+[img]https://i.vgy.me/RR7FdT.png[/img]
+[img]https://i.vgy.me/DLx55U.png[/img]
+
+Originally created by pannman. Temporarily incorporated a script to increase the dection range to count in the cable length.(with approval)
+Original mod also include 60+ new wrecks. See it here:
+https://steamcommunity.com/sharedfiles/filedetails/?id=2772926011
+
+You can use railgun to fire cable to tether target ship. Beware that many ships require multiple caples to be able to pull. Wreckage will be sold when you are close to the destination.
+[h1]In Door Combat[/h1]
+[img]https://i.vgy.me/sqZ90H.png[/img]
+In Die Hard, one second is enough to determine the difference between life and death. Small arm rounds are equally lethal as they are back on the Earth. It is enough to kill a human being with just one shot in the head. Shot to the torso can also put the victim into a dire situation. Always shoot before your enemy does. Always wear protection gear before going into a gunfight.
+
+Melee combat becomes more dynamic. Hitting your enemy's hands can knock off the weapons they're holding. Facing an enemy with firearms doesn't always mean doomsday. A crowbar can make miracle and beat your foe to death. Knife is swift and fast, can leave multiple cuts in a very short time. Your clothes will get damaged during combat. So watch out the diving suit's condition!
+
+There are many different guns that you can acquire. They have different attribute. Armor vest can fully stop a bullet if the bullet doesn't penetrate it. [u]Note that most bullets won't travel far in the water. Use specialized weapon when submerged.[/u]
+
+[h1]Naval Combat[/h1]
+[img]https://i.vgy.me/XFim3p.png[/img]
+In many cases, once the submarine drops, it drops into the abyss. There won't be a platform to catch. No encounter-hull breach-sitting on the sea floor-kill everything-getting up loop. Fix the sub before the water pressure crushes it. Or better, don't let the water flood in in the first place.
+
+[img]https://i.vgy.me/yaBCPR.png[/img]
+There are more devices that can go broken on your sub: lamps, vents, even turrets. Hammerheads will knock down turret first. Others may also have a interest into them.
+
+
+While coil guns and chain guns are very effective against organic targets. They are less effective against personnel in hulls in submarine warfare, unless some fools try to board the ship openly. But you can still wash the deck by blind shooting the possible areas. EMP shells can black out sturdy targets that are normally hard to break. Armour Piecing Incendiary Shell can go through one layer of hull and violently burns inside. Acid Shell is good for burning through multiple layers of hull given time.
+
+[h1]Submarine Maintenance[/h1]
+[img]https://i.vgy.me/77NWXB.png[/img]
+All submarines are modded to suit this mod. They are tougher and equipped with upgrade slots. You can now fully custom your submarine as you wish in the upgrade store. You can buy new engine and replace the old one. You can change supply cabinet into a weapon holder. But be noted that each submarine has a modifying limits. The navigation Terminal needs a transducer to work.
+
+The reactor can explode if it reaches a critical condition. The common cause is it works in the water too long. Water may squeeze into it and damage the control device, causing it to go over heat. Turn off the reactor before everything is too late. A logbook in the reactor room should guide you better.
+
+[h1]Vertical Thrusters[/h1]
+
+Die Hard introduces you the vertical force on submarine. Buying vertical thrusters will allow your submarine to move vertically in a situation that demands urgent buoyancy. These thrusters are heavy-power consumers. It's recommended not to use your main engine and thrusters in the same time, unless you have a very powerful reactor or backup battery grid.
+
+[h1]Destroyable Items[/h1]
+
+[img]https://i.vgy.me/e2ibNt.png[/img]
+[img]https://i.vgy.me/HWUe72.png[/img]
+Don't like the face of the outpost manager? Beside than killing him, you can totally trash his outpost. Many things in the outposts now react with bullets. Lamps, monitors, chair, vent, fire extinguisher holders, you name it.
+
+
+[h1] Enterable doors [/h1]
+[img]https://i.vgy.me/jH6Gq1.png[/img]
+[img]https://i.vgy.me/BPjgwj.png[/img]
+Thanks to the evilfactory's code. The outposts now can have real enterable doors. This unlocks many new outpost building methods. You can enjoy a fully functioned outpost with individual dorm room and reactor complex...
+
+
+
+Features that need lua to work
+
+1. Press "F" to instantly drop anything you are currently holding.
+2. Enterable doors.
+3. Dynamic collision. 
+
+
+Special Thanks to evil factory for helping in Lua
+The following list displays assets that this mod modified or straight out merged. The usage of these assets has been approved by the original authors.
+1. Many example lua that is used for learning purpose written by Evil Factory.
+2. Item Collision mod. Modification: instead of all-out collision. Die Hard makes only certain items have collision and most items only collide with ragdolled characters.
+3. More abandoned module. Modification: Removing monster scum and bandit items to make them normal looking.
+4. Init.lua from Mechtrauma. A file from Mechtrauma for better lua organization.
+5. Keypad. Used in the module elevator.
+6. Ship yard module (not used)
+
+The following assets are used without notice of the original authors due to variety of reasons.
+1. Zoom mod. Modification: Camera is set to be 1.5x instead of being able to toggle.
+2. Heavy ballast door.
+3. Six gun sprites from Old Earth Armory. The game code behind is completely different from the original mod.
+4. Some plants sprites from sofa deco.
+5. Item drop key mod. Modification: hotkey set to "F" instead of "U".
+6. A script from movable wreckage that makes wreckage movable.
+
+If any author above disagrees the usage. I would  shutdown it without problem.

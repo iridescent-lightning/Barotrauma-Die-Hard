@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+  <Item name="" identifier="wire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="210,215,218,255" InventoryIconColor="210,215,218,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" >
+    <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="redwire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="255,0,0,255" InventoryIconColor="210,215,218,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="bluewire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="33,133,233,255" InventoryIconColor="51,121,173,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab" amount="10" notcampaign="true"/>
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="orangewire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="255,140,13,255" InventoryIconColor="255,140,13,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab"/>
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="greenwire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="56,143,111,255" InventoryIconColor="56,143,111,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab"/>
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="blackwire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="50,50,50,255" InventoryIconColor="50,50,50,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab"/>
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="brownwire" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="123,77,62,255" InventoryIconColor="123,77,62,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" variantof="wire">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab"/>
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.855" sourcerect="968,118,16,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="pipe" identifier="pipe" category="Electrical" Tags="smallitem,wire" maxstacksize="32" maxstacksizecharacterinventory="8" spritecolor="255,255,255,255" InventoryIconColor="210,215,218,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="10">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Deconstruct time="1"/>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+    <Sprite texture="signalcomp.png" depth="0.8" sourcerect="169,224,84,32" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Wire >
+      <WireSprite texture="%ModDir%/Items/Engines/matte.png" sourcerect="0,54,1344,48" depth="0.855" origin="0.5,0.5"/>
+    </Wire>
+  </Item>
+    <Item name="Keypad" identifier="dhkeypad" category="Electrical" Tags="smallitem,logic" maxstacksize="1" linkable="false" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_light" isshootable="true">
+      <InventoryIcon texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="235,373,68,91" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="235,373,68,91" origin="0.5,0.5" />
+      <Body width="31" height="25" density="30" />
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+        <requireditem items="wrench" type="Equipped" />
+      </Holdable>
+      <CustomInterface drawhudwhenequipped="false" canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.08,0.4" anchor="CenterLeft" pivot="CenterLeft" relativeoffset="0.0,0.0" style="ConnectionPanel" />
+        <Button text="1" connection="signal_out1" signal="1">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="4" connection="signal_out1" signal="4">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="7" connection="signal_out1" signal="7">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="CLEAR" connection="signal_out1" signal="1">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <CustomInterface drawhudwhenequipped="false" canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.08,0.4" anchor="CenterLeft" pivot="CenterLeft" relativeoffset="0.07,0.0" style="ConnectionPanel" />
+        <Button text="2" connection="signal_out1" signal="2">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="5" connection="signal_out1" signal="5">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="8" connection="signal_out1" signal="8">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="0" connection="signal_out1" signal="0">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <CustomInterface drawhudwhenequipped="false" canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.08,0.4" Width="20" anchor="CenterLeft" pivot="CenterLeft" relativeoffset="0.14,0.0" style="ConnectionPanel" />
+        <Button text="3" connection="signal_out1" signal="3">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="6" connection="signal_out1" signal="6">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="9" connection="signal_out1" signal="9">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+        <Button text="OK" connection="signal_out1" signal="1">
+          <StatusEffect target="This" type="OnUse">
+            <Sound file="%ModDir%/Items/Electricity/beep-06.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <requireditem items="screwdriver" type="Equipped" />
+        <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="" identifier="terminal" category="Electrical" Tags="smallitem,logic,playinteractsound" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+      <Upgrade gameversion="0.10.0" scale="*0.5" />
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="0,368,144,128" origin="0.5,0.3" canflipx="false" />
+      <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="7,373,153,117" origin="0.4,0.3" />
+      <Price baseprice="200" minleveldifficulty="10">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <PreferredContainer primary="reactorcab" secondary="engcab" />
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+        <Item identifier="copper" />
+        <Item identifier="tin" />
+        <Item identifier="silicon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="silicon" />
+      </Fabricate>
+      <Body width="120" height="75" density="20" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+      </Terminal>
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true" attachedbydefault="true">
+        <RequiredItem items="wrench" type="Equipped" />
+        <StatusEffect type="OnUse" target="This">
+          <LuaHook name="Terminal.OnUse" />
+        </StatusEffect>
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem identifier="screwdriver" type="Equipped" />
+        <input name="signal_in" displayname="connection.signalin" />
+        <output name="signal_out" displayname="connection.signalout" />
+        <input name="set_text_color" displayname="connection.settextcolor" />
+        <input name="clear_text" displayname="connection.cleartext" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="DangerAlert" identifier="DangerAlert" category="Electrical" Tags="smallitem,sound" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="reactorcab,storagecab" />
+      <PreferredContainer primary="wreckreactorcab,wreckstoragecab" minamount="0" maxamount="1" spawnprobability="0.06" />
+      <Price locationtype="Research" buyprice="2" />
+      <Price locationtype="City" buyprice="2" />
+      <Price locationtype="Outpost" buyprice="2" />
+      <Price locationtype="Military" buyprice="2" />
+      <Deconstruct time="10">
+        <Item identifier="fpgacircuit" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+      <Sprite texture="signalcomp.png" depth="0.8" sourcerect="75,64,42,63" origin="0.5,0.5" />
+      <Body radius="20" height="20" density="30" />
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+        <RequiredItem items="wrench" type="Equipped" />
+      </Holdable>
+      <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="5.0" range="20">
+        <Sprite texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="2,191,42,63" origin="0.5,0.5" alpha="1.0" />
+        <sound file="%ModDir%/Items/Electricity/DangerAlert.ogg" type="OnActive" range="500.0" loop="true" volume="0.8" />
+      </LightComponent>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_state" displayname="connection.setstate" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="" identifier="fpgacircuit" category="Electrical" Tags="smallitem,signal" maxstacksize="8" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_metal_light">
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <PreferredContainer primary="engcab" />
+      <PreferredContainer primary="sonartransducer" amount="1" />
+      <PreferredContainer primary="engcab" secondary="storagecab" amount="3" notcampaign="true" />
+      <PreferredContainer secondary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.05" />
+      <Deconstruct time="5">
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="5">
+        <RequiredSkill identifier="electrical" level="15" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="copper" amount="2" />
+        <RequiredItem identifier="tin" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true" amount="2">
+        <RequiredSkill identifier="electrical" level="15" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="copper" amount="2" />
+        <RequiredItem identifier="tin" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="signalcomp.png" depth="0.8" sourcerect="225,33,36,36" origin="0.5,0.5" />
+      <Body width="36" height="36" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

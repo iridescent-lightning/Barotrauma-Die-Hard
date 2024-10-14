@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <decal name="Plant1 Decal 1" identifier="Plant1Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="34,643,462,369" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant1 Decal 2" identifier="Plant1Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="502,526,531,491" depth="0.98" origin="0.54748684,0.63627476" />
+  </decal>
+  <decal name="Plant1 Decal 3" identifier="Plant1Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="518,51,513,463" depth="0.98" origin="0.5083982,0.62790924" />
+  </decal>
+  <decal name="Plant1 Decal 4" identifier="Plant1Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1591,228,399,262" depth="0.98" origin="0.49891448,0.6539615" />
+  </decal>
+  <decal name="Plant1 Decal 5" identifier="Plant1Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1539,1672,515,378" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant1 Decal 6" identifier="Plant1Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1541,701,515,314" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant1 Decal 7" identifier="Plant1Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1012,1047,546,478" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant1 Decal 8" identifier="Plant1Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="506,1044,513,474" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant1 Decal 9" identifier="Plant1Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="-9,1040,517,483" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant1 Decal 10" identifier="Plant1Decal10" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="508,1537,529,511" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant1 Decal 11" identifier="Plant1Decal11" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="-16,1534,529,511" depth="0.98" origin="0.50205183,0.722858" />
+  </decal>
+  <decal name="Plant1 Decal 12" identifier="Plant1Decal12" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1033,1539,511,504" depth="0.98" origin="0.51189554,0.797027" />
+  </decal>
+  <decal name="Plant1 Decal 13" identifier="Plant1Decal13" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1539,1044,529,511" depth="0.98" origin="0.49479616,0.7049112" />
+  </decal>
+  <decal name="Plant1 Decal 14" identifier="Plant1Decal14" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1024,515,529,511" depth="0.98" origin="0.48503432,0.7724146" />
+  </decal>
+  <decal name="Plant1 Decal 15" identifier="Plant1Decal15" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="1030,23,529,511" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant1 Decal 16" identifier="Plant1Decal16" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants1.png" sourcerect="-4,51,517,487" depth="0.98" origin="0.4950058,0.7430506" />
+  </decal>
+  <!--PLANT2-->
+  <decal name="Plant2 Decal 1" identifier="Plant2Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="13,83,317,277" depth="0.98" origin="0.47994563,0.71076715" />
+  </decal>
+  <decal name="Plant2 Decal 2" identifier="Plant2Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="338,84,342,277" depth="0.98" origin="0.50512415,0.7119452" />
+  </decal>
+  <decal name="Plant2 Decal 3" identifier="Plant2Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="686,91,331,274" depth="0.98" origin="0.51016617,0.6946722" />
+  </decal>
+  <decal name="Plant2 Decal 4" identifier="Plant2Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="-4,452,346,251" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Plant2 Decal 5" identifier="Plant2Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="341,451,339,255" depth="0.98" origin="0.48675793,0.6485588" />
+  </decal>
+  <decal name="Plant2 Decal 6" identifier="Plant2Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="677,483,345,219" depth="0.98" origin="0.49391004,0.664736" />
+  </decal>
+  <decal name="Plant2 Decal 7" identifier="Plant2Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="6,815,338,220" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant2 Decal 8" identifier="Plant2Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="349,816,330,216" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant2 Decal 9" identifier="Plant2Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants2.png" sourcerect="687,818,342,222" depth="0.98" origin="0.5269657,0.59834856" />
+  </decal>
+  <!--PLANT3-->
+  <decal name="Plant3 Decal 1" identifier="Plant3Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="18,643,479,414" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant3 Decal 2" identifier="Plant3Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="562,643,460,396" depth="0.98" origin="0.54748684,0.63627476" />
+  </decal>
+  <decal name="Plant3 Decal 3" identifier="Plant3Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="518,51,504,461" depth="0.98" origin="0.5083982,0.62790924" />
+  </decal>
+  <decal name="Plant3 Decal 4" identifier="Plant3Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1535,33,516,457" depth="0.98" origin="0.49891448,0.6539615" />
+  </decal>
+  <decal name="Plant3 Decal 5" identifier="Plant3Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1569,1791,374,248" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant3 Decal 6" identifier="Plant3Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1544,543,505,472" depth="0.98" origin="0.49763304,0.6748506" />
+  </decal>
+  <decal name="Plant3 Decal 7" identifier="Plant3Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1078,1116,395,334" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant3 Decal 8" identifier="Plant3Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="574,1186,433,369" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant3 Decal 9" identifier="Plant3Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="57,1168,399,388" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant3 Decal 10" identifier="Plant3Decal10" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="610,1695,358,342" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant3 Decal 11" identifier="Plant3Decal11" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="101,1755,334,275" depth="0.98" origin="0.50205183,0.722858" />
+  </decal>
+  <decal name="Plant3 Decal 12" identifier="Plant3Decal12" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1085,1714,419,335" depth="0.98" origin="0.51189554,0.797027" />
+  </decal>
+  <decal name="Plant3 Decal 13" identifier="Plant3Decal13" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1587,1110,435,333" depth="0.98" origin="0.49479616,0.7049112" />
+  </decal>
+  <decal name="Plant3 Decal 14" identifier="Plant3Decal14" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1031,604,496,420" depth="0.98" origin="0.48503432,0.7724146" />
+  </decal>
+  <decal name="Plant3 Decal 15" identifier="Plant3Decal15" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="1063,68,461,433" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant3 Decal 16" identifier="Plant3Decal16" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants3.png" sourcerect="-4,51,497,464" depth="0.98" origin="0.4950058,0.7430506" />
+  </decal>
+  <!--PLANT4-->
+  <decal name="Plant4 Decal 1" identifier="Plant4Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="-21,-14,481,845" depth="0.98" origin="0.49342218,0.8125084" />
+  </decal>
+  <decal name="Plant4 Decal 2" identifier="Plant4Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="490,-14,431,881" depth="0.98" origin="0.50512415,0.7119452" />
+  </decal>
+  <decal name="Plant4 Decal 3" identifier="Plant4Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="923,-25,460,819" depth="0.98" origin="0.51016617,0.6946722" />
+  </decal>
+  <decal name="Plant4 Decal 4" identifier="Plant4Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="-19,858,503,639" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Plant4 Decal 5" identifier="Plant4Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="1381,-17,493,593" depth="0.98" origin="0.43993545,0.7113438" />
+  </decal>
+  <decal name="Plant4 Decal 6" identifier="Plant4Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="1375,586,306,587" depth="0.98" origin="0.49391004,0.664736" />
+  </decal>
+  <decal name="Plant4 Decal 7" identifier="Plant4Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="492,873,354,272" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant4 Decal 8" identifier="Plant4Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="873,843,427,335" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant4 Decal 9" identifier="Plant4Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants4.png" sourcerect="479,1167,349,233" depth="0.98" origin="0.5269657,0.59834856" />
+  </decal>
+  <!--PLANT5-->
+  <decal name="Plant5 Decal 1" identifier="Plant5Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="6,15,341,311" depth="0.98" origin="0.47994563,0.71076715" />
+  </decal>
+  <decal name="Plant5 Decal 2" identifier="Plant5Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="343,-5,343,339" depth="0.98" origin="0.50512415,0.7119452" />
+  </decal>
+  <decal name="Plant5 Decal 3" identifier="Plant5Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="691,20,330,300" depth="0.98" origin="0.51016617,0.6946722" />
+  </decal>
+  <decal name="Plant5 Decal 4" identifier="Plant5Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="13,355,317,307" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Plant5 Decal 5" identifier="Plant5Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="357,410,313,264" depth="0.98" origin="0.48675793,0.6485588" />
+  </decal>
+  <decal name="Plant5 Decal 6" identifier="Plant5Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="710,405,312,244" depth="0.98" origin="0.49391004,0.664736" />
+  </decal>
+  <decal name="Plant5 Decal 7" identifier="Plant5Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="0,672,341,355" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant5 Decal 8" identifier="Plant5Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="347,764,333,238" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant5 Decal 9" identifier="Plant5Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants5.png" sourcerect="693,730,319,274" depth="0.98" origin="0.5269657,0.59834856" />
+  </decal>
+  <!--PLANT6-->
+  <decal name="Plant6 Decal 1" identifier="Plant6Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="6,15,329,334" depth="0.98" origin="0.47994563,0.71076715" />
+  </decal>
+  <decal name="Plant6 Decal 2" identifier="Plant6Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="343,-5,334,358" depth="0.98" origin="0.50512415,0.7119452" />
+  </decal>
+  <decal name="Plant6 Decal 3" identifier="Plant6Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="691,20,334,330" depth="0.98" origin="0.51016617,0.6946722" />
+  </decal>
+  <decal name="Plant6 Decal 4" identifier="Plant6Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="4,364,341,323" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Plant6 Decal 5" identifier="Plant6Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="350,373,329,319" depth="0.98" origin="0.48675793,0.6485588" />
+  </decal>
+  <decal name="Plant6 Decal 6" identifier="Plant6Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="695,374,325,311" depth="0.98" origin="0.49391004,0.664736" />
+  </decal>
+  <decal name="Plant6 Decal 7" identifier="Plant6Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="8,714,327,312" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant6 Decal 8" identifier="Plant6Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="347,764,339,266" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant6 Decal 9" identifier="Plant6Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants6.png" sourcerect="693,730,339,300" depth="0.98" origin="0.5269657,0.59834856" />
+  </decal>
+  <!--PLANT7-->
+  <decal name="Plant7 Decal 1" identifier="Plant7Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1,545,509,452" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant7 Decal 2" identifier="Plant7Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="515,525,504,493" depth="0.98" origin="0.54748684,0.63627476" />
+  </decal>
+  <decal name="Plant7 Decal 3" identifier="Plant7Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="516,5,512,491" depth="0.98" origin="0.5083982,0.62790924" />
+  </decal>
+  <decal name="Plant7 Decal 4" identifier="Plant7Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1538,7,496,480" depth="0.98" origin="0.49891448,0.6539615" />
+  </decal>
+  <decal name="Plant7 Decal 5" identifier="Plant7Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1540,1564,502,474" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant7 Decal 6" identifier="Plant7Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1540,538,511,480" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant7 Decal 7" identifier="Plant7Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1012,1047,526,481" depth="0.98" origin="0.5047269,0.6643427" />
+  </decal>
+  <decal name="Plant7 Decal 8" identifier="Plant7Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="506,1044,513,474" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <decal name="Plant7 Decal 9" identifier="Plant7Decal9" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="-9,1040,517,483" depth="0.98" origin="0.5,0.5" />
+  </decal>
+  <decal name="Plant7 Decal 10" identifier="Plant7Decal10" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="508,1537,529,511" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant7 Decal 11" identifier="Plant7Decal11" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="-16,1534,529,511" depth="0.98" origin="0.50205183,0.722858" />
+  </decal>
+  <decal name="Plant7 Decal 12" identifier="Plant7Decal12" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1033,1539,511,504" depth="0.98" origin="0.51189554,0.797027" />
+  </decal>
+  <decal name="Plant7 Decal 13" identifier="Plant7Decal13" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1539,1044,510,479" depth="0.98" origin="0.49479616,0.7049112" />
+  </decal>
+  <decal name="Plant7 Decal 14" identifier="Plant7Decal14" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1024,515,507,485" depth="0.98" origin="0.48503432,0.7724146" />
+  </decal>
+  <decal name="Plant7 Decal 15" identifier="Plant7Decal15" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="1029,5,501,495" depth="0.98" origin="0.48157227,0.6622104" />
+  </decal>
+  <decal name="Plant7 Decal 16" identifier="Plant7Decal16" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Plants7.png" sourcerect="-4,51,517,487" depth="0.98" origin="0.4950058,0.7430506" />
+  </decal>
+  <!--PLANT8-->
+  <decal name="Plant8 Decal 1" identifier="Plant8Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="-4,-4,416,477" depth="0.98" origin="0.47994563,0.71076715" />
+  </decal>
+  <decal name="Plant8 Decal 2" identifier="Plant8Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="421,10,355,470" depth="0.98" origin="0.50092524,0.7409101" />
+  </decal>
+  <decal name="Plant8 Decal 3" identifier="Plant8Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="23,512,382,327" depth="0.98" origin="0.51016617,0.6946722" />
+  </decal>
+  <decal name="Plant8 Decal 4" identifier="Plant8Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="460,475,564,390" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Plant8 Decal 5" identifier="Plant8Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="1019,352,406,259" depth="0.98" origin="0.48675793,0.6485588" />
+  </decal>
+  <decal name="Plant8 Decal 6" identifier="Plant8Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="1032,-1,424,324" depth="0.98" origin="0.5144017,0.7344388" />
+  </decal>
+  <decal name="Plant8 Decal 7" identifier="Plant8Decal7" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="1477,12,467,334" depth="0.98" origin="0.47691476,0.70536196" />
+  </decal>
+  <decal name="Plant8 Decal 8" identifier="Plant8Decal8" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/FractalPlants1.png" sourcerect="1458,375,474,232" depth="0.98" origin="0.50049067,0.6467518" />
+  </decal>
+  <!--Walls-->
+  <decal name="Aphotic floor" identifier="Aphoticgrass_wrecked" resizehorizontal="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,839,1024,91" origin="0.5,0.5" />
+  </decal>
+  <decal name="Aphotic wall" identifier="Aphoticgrass2_wrecked" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Walls.png" depth="0.06" sourcerect="827,0,93,1024" origin="0.5,0.5" />
+  </decal>
+  <decal name="Mushroom floor" identifier="Mushroomgrass_wrecked" resizehorizontal="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,951,1024,67" origin="0.5,0.5" />
+  </decal>
+  <decal name="Mushroom wall" identifier="Mushroomgrass2_wrecked" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Walls.png" depth="0.06" sourcerect="929,0,76,1024" origin="0.5,0.5" />
+  </decal>
+  <decal name="Forest floor" identifier="Forestgrass_wrecked" resizehorizontal="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,709,1024,128" origin="0.5,0.5" />
+  </decal>
+  <decal name="Forest wall" identifier="Forestgrass2_wrecked" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Walls.png" depth="0.06" sourcerect="686,0,133,1024" origin="0.5,0.5" />
+  </decal>
+  <decal name="Bio floor" identifier="Biograss" resizehorizontal="true" category="Misc" body="true" bodyheight="45" castshadow="true" health="999999">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,605,1024,68" origin="0.5,0.5" />
+  </decal>
+  <decal name="Bio floor No Body" identifier="Biograssonbody" resizehorizontal="true" category="Misc" castshadow="true" health="999999">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,605,1024,68" origin="0.5,0.5" />
+  </decal>
+  <decal name="Bio wall" identifier="Biograss2_wrecked" resizevertical="true" category="Misc" body="true" health="999999">
+    <sprite texture="%ModDir%/Maps/Outposts/Walls.png" depth="0.06" sourcerect="587,0,67,1024" origin="0.5,0.5" />
+  </decal>
+  <decal name="Stone floor" identifier="Stone_wrecked" resizehorizontal="true" category="Misc" body="true">
+    <sprite texture="%ModDir%/Maps/Outposts/Floors.png" depth="0.06" sourcerect="0,474,1024,104" origin="0.5,0.5" />
+  </decal>
+  <decal name="Stone wall" identifier="Stone2_wrecked" resizevertical="true" category="Misc" body="true">
+    <sprite texture="%ModDir%/Maps/Outposts/Walls.png" depth="0.06" sourcerect="459,0,93,1024" origin="0.5,0.5" />
+  </decal>
+  <!--BGWalls-->
+  <BGWall name="MushroomWall" identifier="Mushroom_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="0,0,332,223" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="AphoticWall" identifier="Aphotic_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="334,0,687,229" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="ForestWall" identifier="Forest_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="334,229,684,210" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="RustyWall" identifier="Rusty_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="336,439,685,247" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="RustyWall2" identifier="Rusty2_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="0,223,333,222" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="RustyWall3" identifier="Rusty3_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="0,445,334,237" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="RustyWall4" identifier="Rusty4_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="0,701,512,238" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <BGWall name="RustyWall5" identifier="Rusty5_Wall_Wrecked" description="" allowattachitems="true" width="16" height="16" resizehorizontal="true" resizevertical="true" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundWalls.png" sourcerect="512,688,511,255" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+  </BGWall>
+  <!--CAVE STUFF-->
+  <decal name="Stalactite1 Decal 1" identifier="Stalactite1Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="-4,1,220,397" depth="0.98" origin="0.46612546,0.4274065" />
+  </decal>
+  <decal name="Stalactite1 Decal 2" identifier="Stalactite1Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="216,-1,304,455" depth="0.98" origin="0.5203122,0.40616533" />
+  </decal>
+  <decal name="Stalactite1 Decal 3" identifier="Stalactite1Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="518,-7,233,454" depth="0.98" origin="0.5080646,0.3718496" />
+  </decal>
+  <decal name="Stalactite1 Decal 4" identifier="Stalactite1Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="751,0,269,290" depth="0.98" origin="0.48214006,0.65913635" />
+  </decal>
+  <decal name="Stalactite1 Decal 5" identifier="Stalactite1Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="-2,453,292,284" depth="0.98" origin="0.48675793,0.6485588" />
+  </decal>
+  <decal name="Stalactite1 Decal 6" identifier="Stalactite1Decal6" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/Stonespires.png" sourcerect="294,454,299,249" depth="0.98" origin="0.49391004,0.664736" />
+  </decal>
+  <decal name="Chunk3 Decal 1" identifier="Chunk3Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks1.png" sourcerect="0,1,342,514" depth="0.98" origin="0.48021978,0.51273626" />
+  </decal>
+  <decal name="Chunk3 Decal 2" identifier="Chunk3Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks1.png" sourcerect="342,2,346,511" depth="0.98" origin="0.53448486,0.4784111" />
+  </decal>
+  <decal name="Chunk3 Decal 3" identifier="Chunk3Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks1.png" sourcerect="686,23,339,458" depth="0.98" origin="0.58023524,0.49524164" />
+  </decal>
+  <decal name="Chunk3 Decal 4" identifier="Chunk3Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks1.png" sourcerect="3,514,509,490" depth="0.98" origin="0.47836885,0.49413043" />
+  </decal>
+  <decal name="Chunk3 Decal 5" identifier="Chunk3Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks1.png" sourcerect="521,521,498,439" depth="0.98" origin="0.47213644,0.48247686" />
+  </decal>
+  <!--CHUNKS-->
+  <decal name="Chunk4 Decal 1" identifier="Chunk4Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks2.png" sourcerect="0,1,342,514" depth="0.98" origin="0.48021978,0.51273626" />
+  </decal>
+  <decal name="Chunk4 Decal 2" identifier="Chunk4Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks2.png" sourcerect="342,2,346,511" depth="0.98" origin="0.53448486,0.4784111" />
+  </decal>
+  <decal name="Chunk4 Decal 3" identifier="Chunk4Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks2.png" sourcerect="686,23,339,458" depth="0.98" origin="0.58023524,0.49524164" />
+  </decal>
+  <decal name="Chunk4 Decal 4" identifier="Chunk4Decal4" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks2.png" sourcerect="3,514,509,490" depth="0.98" origin="0.47836885,0.49413043" />
+  </decal>
+  <decal name="Chunk4 Decal 5" identifier="Chunk4Decal5" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks2.png" sourcerect="521,521,498,439" depth="0.98" origin="0.47213644,0.48247686" />
+  </decal>
+  <decal name="Chunk5 Decal 1" identifier="Chunk5Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks3.png" sourcerect="0,1,1410,2051" depth="0.98" origin="0.49430472,0.44141203" />
+  </decal>
+  <decal name="Chunk5 Decal 2" identifier="Chunk5Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks3.png" sourcerect="1407,2,1207,2050" depth="0.98" origin="0.53448486,0.4784111" />
+  </decal>
+  <decal name="Chunk5 Decal 3" identifier="Chunk5Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks3.png" sourcerect="2608,2,1493,2053" depth="0.98" origin="0.58023524,0.49524164" />
+  </decal>
+  <decal name="Chunk6 Decal 1" identifier="Chunk6Decal1" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks5.png" sourcerect="0,1,1410,2051" depth="0.98" origin="0.49430472,0.44141203" />
+  </decal>
+  <decal name="Chunk6 Decal 2" identifier="Chunk6Decal2" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks5.png" sourcerect="1407,2,1207,2050" depth="0.98" origin="0.53448486,0.4784111" />
+  </decal>
+  <decal name="Chunk6 Decal 3" identifier="Chunk6Decal3" category="Misc">
+    <sprite texture="%ModDir%/Maps/Outposts/BackgroundChunks5.png" sourcerect="2608,2,1493,2053" depth="0.98" origin="0.58023524,0.49524164" />
+  </decal>
+</prefabs>

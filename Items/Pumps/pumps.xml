@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Large Pump Slot" description="" identifier="lpumpslot" tags="pump" showinstatusmonitor="false" category="Machine,Weapon" interactthroughwalls="true" Scale="0.5" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
+      <Sprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="337,652,146,149" depth="0.86" />
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="141,968,38,28" origin="0.5,0.45" />
+      <SwappableItem price="0" origin="78,79" swapidentifier="lpump"></SwappableItem>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_active" displayname="connection.setstate" />
+        <input name="set_speed" displayname="connection.setpumpingspeed" />
+        <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="" identifier="pump" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" GrabWhenSelected="true" description="P-I [Max Flow:600] [Power Consumption:300] [Min Voltage:0.3]">
+      <UpgradePreviewSprite scale="2.0" texture="Content/UI/WeaponUI.png" sourcerect="448,960,64,64" origin="0.5,0.45" />
+      <SwappableItem price="1000" origin="200,96" swapidentifier="lpump" replacementonuninstall="lpumpslot" />
+      <Upgrade gameversion="0.10.0.0" scale="*0.5" />
+      <Sprite texture="Pumps.png" depth="0.8" sourcerect="0,0,400,192" origin="0.5,0.5" />
+      <InfectedSprite texture="Pumps.png" sourcerect="601,409,417,224" origin="0.5,0.5" />
+      <DamagedInfectedSprite texture="Pumps.png" sourcerect="175,409,417,224" origin="0.5,0.5" />
+      <BrokenSprite texture="Pumps.png" sourcerect="416,0,400,192" depth="0.8" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="Pumps.png" sourcerect="416,208,400,192" depth="0.8" maxcondition="0" />
+      <DecorativeSprite texture="Content/Items/Pump/Pumps.png" depth="0.79" offset="-130,70" sourcerect="52,456,43,43" origin="0.5,0.5" rotationspeed="-360">
+        <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
+        <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
+        <IsActiveConditional Condition="gt 0.0" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="Content/Items/Pump/Pumps.png" depth="0.78" offset="-130,70" sourcerect="109,456,43,43" />
+      <LightComponent range="40.0" lightcolor="199,96,64,88" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" />
+      <Pump canbeselected="true" maxflow="600" PowerConsumption="300.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="800.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
+        <PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-26" anglemin="180" anglemax="180" velocitymin="400" velocitymax="500" />
+        <PumpInEmitter particle="bubbles" particlespersecond="10" position="0,-26" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="157,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="260,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+      </Pump>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_active" displayname="connection.setstate" />
+        <input name="set_speed" displayname="connection.setpumpingspeed" />
+        <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="60" maxdeteriorationdelay="270" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="Equipped" />
+        <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+        <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="1.5" distancemax="20" mincondition="0.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+      <ItemContainer capacity="1" hideitems="true" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <LuaHook name="junctionboxfusedamage" />
+        </StatusEffect>
+        <Containable items="bigpumpmotor" />
+      </ItemContainer>
+    </Item>
+    <Item name="P-II" identifier="pumpII" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" description="P-II [Max Flow:700] [Power Consumption:450] [Min Voltage:0.3]" variantof="pump">
+      <SwappableItem price="2250" origin="200,96" swapidentifier="lpump" replacementonuninstall="lpumpslot"></SwappableItem>
+      <Pump canbeselected="true" maxflow="700" PowerConsumption="450.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="%ModDir%/Items/Pumps/Entities_OceanBottom#296_pump_contraption_01.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
+        <sound file="%ModDir%/Items/Pumps/Entities_OceanBottom#297_pump_contraption_02.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
+        <PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-26" anglemin="180" anglemax="180" velocitymin="400" velocitymax="500" />
+        <PumpInEmitter particle="bubbles" particlespersecond="10" position="0,-26" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="157,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="260,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+        <IsActive targetcontaineditem="true" condition="gt 0" />
+      </Pump>
+    </Item>
+    <Item name="P-III" identifier="pumpIII" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" description="P-III [Max Flow:800] [Power Consumption:560] [Min Voltage:0.3]" variantof="pump">
+      <SwappableItem price="3500" origin="200,96" swapidentifier="lpump" replacementonuninstall="lpumpslot"></SwappableItem>
+      <Pump canbeselected="true" maxflow="800" PowerConsumption="560.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="%ModDir%/Items/Pumps/Entities_OceanBottom#296_pump_contraption_01.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
+        <sound file="%ModDir%/Items/Pumps/Entities_OceanBottom#297_pump_contraption_02.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
+        <PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-26" anglemin="180" anglemax="180" velocitymin="400" velocitymax="500" />
+        <PumpInEmitter particle="bubbles" particlespersecond="10" position="0,-26" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="157,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="260,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
+        <IsActive targetcontaineditem="true" condition="gt 0" />
+      </Pump>
+    </Item>
+    <Item name="Small Pump Slot" description="" identifier="spumpslot" tags="pump" showinstatusmonitor="false" category="Machine,Weapon" interactthroughwalls="true" Scale="0.35" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
+      <Sprite texture="%ModDir%/Items/Electricity/signalcomp_broken.png" sourcerect="618,724,70,81" depth="0.8" />
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="141,968,38,28" origin="0.5,0.45" />
+      <SwappableItem price="0" origin="35,40" swapidentifier="spump"></SwappableItem>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_active" displayname="connection.setstate" />
+        <input name="set_speed" displayname="connection.setpumpingspeed" />
+        <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="" identifier="smallpump" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" GrabWhenSelected="true" description="M-I [Max Flow:100] [Power Consumption:60] [Min Voltage:0.3]">
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="448,960,64,64" origin="0.5,0.45" />
+      <SwappableItem price="600" origin="66,49" swapidentifier="spump" replacementonuninstall="spumpslot" />
+      <Sprite texture="Pumps.png" depth="0.8" sourcerect="1,264,133,89" origin="0.5,0.5" />
+      <InfectedSprite texture="Pumps.png" sourcerect="815,0,208,143" origin="0.5,0.5" />
+      <DamagedInfectedSprite texture="Pumps.png" sourcerect="815,143,208,143" origin="0.5,0.5" />
+      <BrokenSprite texture="Pumps.png" sourcerect="134,264,133,89" depth="0.8" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="Pumps.png" sourcerect="267,264,133,89" depth="0.8" maxcondition="0" />
+      <Pump canbeselected="true" maxflow="100" PowerConsumption="60.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+        <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
+        <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+      </Pump>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_active" displayname="connection.setstate" />
+        <input name="set_speed" displayname="connection.setpumpingspeed" />
+        <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.2" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="Equipped" />
+        <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+        <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="1.5" distancemax="20" mincondition="0.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+      <ItemContainer capacity="1" hideitems="true" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
+        <SlotIcon slotindex="0" texture="%ModDir%/Items/Pumps/Pumps_parts.png" sourcerect="244,6,114,62" origin="0.5,0.5" />
+        <StatusEffect type="OnBroken" target="This">
+          <LuaHook name="junctionboxfusedamage" />
+        </StatusEffect>
+        <Containable items="smallpumpmotor" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="smallpumpII" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" description="" variantof="smallpump">
+      <SwappableItem price="1000" origin="66,49" swapidentifier="spump" replacementonuninstall="spumpslot" />
+      <Pump canbeselected="true" maxflow="150" PowerConsumption="90.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+        <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
+        <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+        <IsActive targetcontaineditem="true" condition="gt 0" />
+      </Pump>
+    </Item>
+    <Item name="M-III" identifier="smallpumpIII" tags="pump,playinteractsound,cspump" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowrotatingineditor="true" description="" variantof="smallpump">
+      <SwappableItem price="2300" origin="66,49" swapidentifier="spump" replacementonuninstall="spumpslot"></SwappableItem>
+      <Pump canbeselected="true" maxflow="200" PowerConsumption="140.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
+        <!-- TODO: define max size-->
+        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
+        <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+        <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
+        <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
+        <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+        <IsActive targetcontaineditem="true" condition="gt 0" />
+      </Pump>
+    </Item>
+    <Item name="" identifier="smallpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="2">
+      <PreferredContainer primary="smallpump,smallpumpII,smallpumpIII" amount="1" />
+      <PreferredContainer secondary="storagecab" />
+      <PreferredContainer primary="storagecab" amount="5" notcampaign="true" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <Price baseprice="135" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="3" />
+        <Price storeidentifier="merchantresearch" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="3" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/Pumps/Pumps_parts.png" sourcerect="244,6,114,62" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Pumps/Pumps_parts.png" depth="0.6" sourcerect="244,6,114,62" origin="0.5,0.5" />
+      <Body width="92" height="60" density="100" />
+      <Deconstruct time="30">
+        <Item identifier="iron" amount="2" />
+      </Deconstruct>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,0" handle1="0,0">
+        <StatusEffect type="OnPicked" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+      </Holdable>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="15" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem items="mechanicalparts" type="Picked"/>
+        <RequiredItem items="wrench" type="Equipped" />
+        <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="50.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="500" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="0.1" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+    <Item name="" identifier="bigpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="1">
+      <PreferredContainer primary="pump,pumpII,pumpIII" amount="1" />
+      <PreferredContainer secondary="storagecab" />
+      <PreferredContainer primary="storagecab" amount="5" notcampaign="true" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <Price baseprice="200" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="3" />
+        <Price storeidentifier="merchantresearch" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="3" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/Pumps/Pumps_parts.png" sourcerect="2,1,120,71" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Pumps/Pumps_parts.png" depth="0.6" sourcerect="2,1,120,71" origin="0.5,0.5" />
+      <Body width="120" height="71" density="15" />
+      <Deconstruct time="30">
+        <Item identifier="iron" amount="4" />
+      </Deconstruct>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,0" handle1="0,0">
+        <StatusEffect type="OnPicked" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+      </Holdable>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="15" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="mechanicalparts" type="Picked" optional="true" />
+        <RequiredItem items="wrench" type="Equipped" />
+        <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="50.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="500" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="0.1" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+
+
+
+    <Item
+    name="Pump"
+    nameidentifier="pump"
+    aliases="Pump"
+    category="Legacy"
+    tags="pump"
+    linkable="true"
+    allowedupgrades="pumps"
+    >
+
+    <Sprite texture="legacy_pump.png" depth="0.8" sourcerect="0,0,128,128"/>
+    <UpgradePreviewSprite scale="2.0" texture="Content/UI/WeaponUI.png" sourcerect="448,960,64,64" origin="0.5,0.45" />
+
+    <Pump canbeselected="true" maxflow="500" PowerConsumption="300.0" MinVoltage="0.3">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="800.0" volumeproperty="CurrFlow" volume="0.01" loop="true"/>
+      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
+    </Pump>
+
+    <ConnectionPanel selectkey="Action" canbeselected = "true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel"/>
+      <RequiredSkill identifier="electrical" level="70" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem identifier="screwdriver" type="Equipped"/>
+      <input name="power_in" displayname="connection.powerin"/>
+      <input name="toggle" displayname="connection.togglestate"/>
+      <input name="set_active" displayname="connection.setstate"/>
+      <input name="set_speed" displayname="connection.setpumpingspeed"/>
+      <input name="set_targetlevel" displayname="connection.settargetwaterlevel"/>
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.20" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="smoke" particlespersecond="1" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="0.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="1" hideitems="true" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <LuaHook name="junctionboxfusedamage" />
+        </StatusEffect>
+        <Containable items="bigpumpmotor" />
+      </ItemContainer>
+  </Item>
+  
+  <Item
+    name="Small Pump"
+    nameidentifier="smallpump"
+    aliases="Small Pump"
+    category="Legacy"
+    tags="pump"
+    allowedupgrades="pumps"
+    linkable="true"
+    variantof="pump">
+
+    <Sprite texture="legacy_smallpump.png" depth="0.8" sourcerect="0,0,64,48"/>
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="448,960,64,64" origin="0.5,0.45" />
+
+    <Pump canbeselected = "true" maxflow="100" PowerConsumption="60.0" MinVoltage="0.3">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true"/>
+      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+    </Pump>
+
+    <ConnectionPanel selectkey="Action" canbeselected = "true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel"/>
+      <RequiredSkill identifier="electrical" level="70" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem identifier="screwdriver" type="Equipped"/>
+      <input name="power_in" displayname="connection.powerin"/>
+      <input name="toggle" displayname="connection.togglestate"/>
+      <input name="set_active" displayname="connection.setstate"/>
+      <input name="set_speed" displayname="connection.setpumpingspeed"/>
+      <input name="set_targetlevel" displayname="connection.settargetwaterlevel"/>
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.20" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="smoke" particlespersecond="1" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="0.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="1" hideitems="true" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <LuaHook name="junctionboxfusedamage" />
+        </StatusEffect>
+        <Containable items="smallpumpmotor" />
+      </ItemContainer>
+  </Item>
+  </Items>
+</Override>

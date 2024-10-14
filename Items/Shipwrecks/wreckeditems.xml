@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="railgunloaderwrecked" nameidentifier="railgunloader" variantof="railgunloader" category="Wrecked" condition="0">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" />
+      <Sprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="719,231,298,276" />
+      <DecorativeSprite texture="%ModDir%/Items/Subweapons/Loaders_shadows.png" depth="0.9" sourcerect="761,596,226,402" canflipy="false" scale="1" offset="60,-15" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="coilgunloaderwrecked" nameidentifier="coilgunloader" variantof="coilgunloader" category="Wrecked" condition="0">
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" sourcerect="778,1676,149,368" />
+      <DecorativeSprite texture="%ModDir%/Items/Subweapons/Loaders_shadows.png" depth="0.9" sourcerect="755,13,205,389" canflipy="false" scale="1" offset="60,-15" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <!--<DecorativeSprite texture="%ModDir%/Items/Reator/reactor_shadows.png" sourcerect="33,8,549,353" depth="0.9" origin="0.45,0.47" />-->
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="mediumsteelcabinetwrecked" variantof="mediumsteelcabinet" nameidentifier="mediumsteelcabinet" tags="locker,container" category="Wrecked">
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.84" sourcerect="1569,1026,175,374" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="12,11,171,372" depth="0.9" origin="0.43,0.47" />
+    </Item>
+    <Item name="" identifier="mediumwindowedsteelcabinetwrecked" variantof="mediumwindowedsteelcabinet" nameidentifier="mediumwindowedsteelcabinet" tags="locker,container" category="Wrecked">
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.84" sourcerect="1399,1024,168,377" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="12,11,171,372" depth="0.9" origin="0.43,0.47" />
+    </Item>
+    <Item name="" identifier="steelcabinetwrecked" variantof="steelcabinet" nameidentifier="steelcabinet" tags="locker,container" category="Wrecked">
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.84" sourcerect="1022,1025,364,373" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="350,11,386,365" depth="0.9" origin="0.41,0.47" />
+    </Item>
+    <Item name="" identifier="medcabinetwrecked" nameidentifier="medcabinet" variantof="medcabinet" category="Wrecked" scale="0.5" condition="0">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" spritecolor="200,150,100,255" />
+      <Sprite name="Medical Cabinet (Wrecked)" texture="Content/Items/Shipwrecks/MiscWrecked.png" sourcerect="1691,10,208,346" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="752,662,228,333" depth="0.9" origin="0.43,0.47" />
+    </Item>
+    <Item name="" identifier="toxcabinetwrecked" nameidentifier="toxcabinet" tags="container,wrecktoxcontainer" pickdistance="150" waterproof="true" scale="0.4" category="Wrecked">
+      <Sprite texture="MiscWrecked.png" depth="0.84" sourcerect="1682,1654,157,185" canflipx="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="497,607,122,152" depth="0.9" origin="0.45,0.5" />
+      <ItemContainer capacity="20" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,chem,medical" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="coilgunammoshelfwrecked" nameidentifier="coilgunammoshelf" variantof="coilgunammoshelf" tags="container,wreckammoboxcontainer" category="Wrecked" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" sourcerect="1028,1407,140,306" />
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="251,719,159,305" depth="0.9" origin="0.45,0.47" />
+    </Item>
+    <Item name="" identifier="railgunshellrackwrecked" nameidentifier="railgunshellrack" variantof="railgunshellrack" tags="container,wreckrailgunammocontainer" category="Wrecked">
+      <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="480,809,212,210" depth="0.9" origin="0.42,0.47" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" />
+      <Sprite texture="Content/Items/Shipwrecks/MiscWrecked.png" sourcerect="936,1869,182,176" />
+      <ItemContainer capacity="4" slotsperrow="4" itempos="42,-60" iteminterval="32,0" />
+    </Item>
+    <Item name="" identifier="shuttlenavterminalwrecked" nameidentifier="shuttlenavterminal" variantof="shuttlenavterminal" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="652,386,332,280" origin="0.4,0.4" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="statusmonitorwrecked" nameidentifier="statusmonitor" variantof="statusmonitor" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="655,90,165,117" origin="0.4,0.4" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="navterminalwrecked" nameidentifier="navterminal" variantof="navterminal" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="40,339,414,340" origin="0.4,0.4" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="ventwrecked" nameidentifier="vent" variantof="vent" category="Wrecked" condition="0" spritecolor="100,75,50,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="100,75,50,255" />
+      <Sprite name="Vent (Wrecked)" texture="%ModDir%/Items/Shipwrecks/MiscWrecked.png" sourcerect="1902,363,143,143" />
+    </Item>
+    <Item name="" identifier="divingsuitlockerwrecked" nameidentifier="divingsuitlocker" tags="divingsuitcontainerwindow,wreckdivingsuitcontainer" pickdistance="50" scale="0.5" category="Wrecked">
+      <Sprite texture="MiscWrecked.png" depth="0.84" sourcerect="1126,1710,99,254" origin="0.5,0.5" />
+      <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="0,0" iteminterval="0,0" canbeselected="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="divingsuit,abyssdivingsuit,combatdivingsuit,wreckdivingsuit" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="batterywrecked" nameidentifier="battery" variantof="battery" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="railgunwrecked" nameidentifier="railgun" variantof="railgun" category="Wrecked" condition="0" scale="1.0">
+      <Upgrade gameversion="0.20.6.0" scale="1.0" condition="0" refreshrect="true" barrelpos="126,89" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <!-- remove SwappableItem element (can't be swapped with normal turrets) -->
+      <SwappableItem />
+      <Sprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="0,256,256,256" />
+      <Turret barrelpos="126,89">
+        <RailSprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="716,0,167,228" />
+        <BarrelSprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="578,8,129,284" />
+      </Turret>
+    </Item>
+    <Item name="" identifier="enginewrecked" nameidentifier="engine" category="Wrecked" variantof="engine" condition="0" spritecolor="250,200,150,256">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="largeenginewrecked" nameidentifier="largeengine" category="Wrecked" variantof="largeengine" condition="0" spritecolor="250,200,150,256">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="shuttleenginewrecked" nameidentifier="shuttleengine" category="Wrecked" variantof="shuttleengine" condition="0" spritecolor="250,200,150,256">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="suppliescabinetwrecked" nameidentifier="suppliescabinet" tags="container,suppliescontainer,wrecksupplycab" pickdistance="150" scale="0.5" category="Wrecked">
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Sprite texture="MiscWrecked.png" depth="0.84" sourcerect="1601,1519,120,132" origin="0.5,0.5" />
+      <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.25" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weaponholderwrecked" nameidentifier="weaponholder" variantof="weaponholder" tags="wreckweaponholder" scale="0.5" category="Wrecked" spritecolor="200,150,100,255">
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" spritecolor="200,150,100,255" />
+    </Item>
+    <Item name="" identifier="toxcabinetwrecked" nameidentifier="toxcabinet" tags="container,wrecktoxcontainer" pickdistance="150" waterproof="true" scale="0.4" category="Wrecked">
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Sprite texture="MiscWrecked.png" depth="0.84" sourcerect="1682,1654,157,185" canflipx="false" origin="0.5,0.5" />
+      <ItemContainer capacity="20" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,chem,medical" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="navterminalwrecked" nameidentifier="navterminal" variantof="navterminal" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="junctionboxwrecked" nameidentifier="junctionbox" variantof="junctionbox" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <SwappableItem canbebought="false" origin="28,0" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+    <Item name="" identifier="shuttlebatterywrecked" nameidentifier="shuttlebattery" variantof="shuttlebattery" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="609,202,137,146" origin="0.46,0.52" />
+    </Item>
+    <Item name="" identifier="supercapacitorwrecked" nameidentifier="supercapacitor" variantof="supercapacitor" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+      <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="614,443,172,162" origin="0.46,0.52" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Repairable>
+        <!-- don't emit particles unless repaired above 0 condition -->
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+        <ParticleEmitter mincondition="1.0" />
+      </Repairable>
+    </Item>
+  </Items>
+</Override>

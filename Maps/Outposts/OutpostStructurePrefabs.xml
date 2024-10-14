@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <OpDeco name="Bullet Hole" identifier="bullethole" width="177" height="168" scale="0.3" noninteractable="true" category="Decorative">
+    <sprite texture="%ModDir%/Maps/Outposts/MedBayAssets.png " sourcerect="737,502,177,168" depth="0.899" premultiplyalpha="false" origin="0.5,0.5" />
+  </OpDeco>
+  <OpDeco name="Blood Stain" identifier="bloodstain" width="497" height="363" scale="0.3" noninteractable="true" category="Decorative">
+    <sprite texture="%ModDir%/Maps/Outposts/DHDeco.png " sourcerect="0,0,497,363" depth="0.899" premultiplyalpha="false" origin="0.5,0.5" />
+  </OpDeco>
+  <OpDeco name="Blood Stain" identifier="bloodstain1" width="581" height="394" scale="0.3" noninteractable="true" category="Decorative">
+    <sprite texture="%ModDir%/Maps/Outposts/DHDeco.png " sourcerect="0,378,581,394" depth="0.899" premultiplyalpha="false" origin="0.5,0.5" />
+  </OpDeco>
+  <OpDeco name="Blood Hand" identifier="bloodstain2" width="164" height="174" scale="0.3" noninteractable="true" category="Decorative">
+    <sprite texture="%ModDir%/Maps/Outposts/DHDeco.png " sourcerect="543,0,164,174" depth="0.899" premultiplyalpha="false" origin="0.5,0.5" />
+  </OpDeco>
+</prefabs>

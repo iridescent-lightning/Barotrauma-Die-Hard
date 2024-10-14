@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <sounds>
+    <!--<startupsound file="Content/Sounds/StartDrone.ogg"/>-->
+    <!--
+  <music file="Content/Sounds/Music/Simplex.ogg" type="default"/>
+  <music file="Content/Sounds/Music/Tenebrous Brothers Carnival - Prelude.ogg" type="default"/>
+  -->
+    <!--<music file="%ModDir%/Sounds/Music/Menu_Master LOOP.ogg" type="menu" continuefromprevioustime="true"/>
+	<music file="%ModDir%/Sounds/Music/Menu_Master LOOP.ogg" type="menu" continuefromprevioustime="true"/>
+	<music file="%ModDir%/Sounds/Music/Intro_1_Master.ogg" type="start"/>
+	<music file="%ModDir%/Sounds/Music/Intro_2_Master.ogg" type="start"/>
+	<music file="%ModDir%/Sounds/Music/Intro_3_Master.ogg" type="start"/>Too big
+	<music file="%ModDir%/Sounds/Music/Soma_Theme.ogg" type="menu" continuefromprevioustime="true"/>
+	<music file="%ModDir%/Sounds/Music/Soma_Theme.ogg" type="menu" continuefromprevioustime="true"/>
+	<music file="%ModDir%/Sounds/Music/Soma_Theme.ogg" type="menu" continuefromprevioustime="true"/>-->
+    <music file="%ModDir%/Sounds/Music/Main Menu Music.ogg" type="menu" continuefromprevioustime="true" />
+    <music file="%ModDir%/Sounds/Music/Soma_Theme.ogg" type="default" intensityrange="0,15" />
+    <music file="%ModDir%/Sounds/Music/Main Menu Music.ogg" type="default" intensityrange="15,30" />
+    <!--<music file="Content/Sounds/Music/Wartrauma.ogg" type="editor" continuefromprevioustime="true"/>-->
+    <music file="Content/Sounds/Music/The Eerie And The Unknown.ogg" type="editor" continuefromprevioustime="true" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_01.ogg" range="500" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_02.ogg" range="500" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_03.ogg" range="500" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_04.ogg" range="500" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_05.ogg" range="500" />
+    <impact_screwdriver file="%ModDir%/Sounds/Impact/physics#2154_physic_screwdriver_imp_large_06.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_01.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_02.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_03.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_04.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_05.ogg" range="500" />
+    <impact_extinguisher file="%ModDir%/Sounds/Impact/physics#625_phys_fire_extinguisher_imp_small_06.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#633_physic_food_knife_imp_medium_01.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#638_physic_food_knife_imp_medium_02.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#638_physic_food_knife_imp_medium_03.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#638_physic_food_knife_imp_medium_04.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#638_physic_food_knife_imp_medium_05.ogg" range="500" />
+    <impact_knife file="%ModDir%/Sounds/Impact/physics#638_physic_food_knife_imp_medium_06.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#742_phys_knife_imp_medium_01.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#747_phys_knife_imp_medium_02.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#747_phys_knife_imp_medium_03.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#747_phys_knife_imp_medium_04.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#747_phys_knife_imp_medium_05.ogg" range="500" />
+    <impact_crowbar file="%ModDir%/Sounds/Impact/physics#747_phys_knife_imp_medium_06.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_01.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_02.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_03.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_04.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_05.ogg" range="500" />
+    <impact_metalcrate file="%ModDir%/Sounds/Impact/physics#761_physic_large_metal_crate_imp_large_06.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_01.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_02.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_03.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_04.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_05.ogg" range="500" />
+    <impact_flashlight file="%ModDir%/Sounds/Impact/physics#1581_physic_flashlight_imp_medium_06.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_01.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_02.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_03.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_04.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_05.ogg" range="500" />
+    <impact_wrench_large file="%ModDir%/Sounds/Impact/physics#1734_physic_metal_wrench_imp_large_06.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_01.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_02.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_03.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_04.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_05.ogg" range="500" />
+    <impact_wrench_medium file="%ModDir%/Sounds/Impact/physics#1740_physic_metal_wrench_imp_medium_06.ogg" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_01.ogg" volume="0.6" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_02.ogg" volume="0.6" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_03.ogg" volume="0.6" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_04.ogg" volume="0.6" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_05.ogg" volume="0.6" range="500" />
+    <impact_handguns file="%ModDir%/Sounds/Impact/physics#2299_phys_tool_drill_metal_imp_medium_06.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_01.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_02.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_03.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_04.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_05.ogg" volume="0.6" range="500" />
+    <impact_largeguns file="%ModDir%/Sounds/Impact/physics#2293_phys_tool_drill_metal_imp_big_06.ogg" volume="0.6" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_01.ogg" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_02.ogg" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_03.ogg" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_04.ogg" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_05.ogg" range="500" />
+    <impact_axe file="%ModDir%/Sounds/Impact/physics#2351_physic_wooden_trophy_imp_large_06.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_01.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_02.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_03.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_04.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_05.ogg" range="500" />
+    <impact_leather_belt file="%ModDir%/Sounds/Impact/physics#146_phys_boots_imp_medium_06.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_01.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_02.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_03.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_04.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_05.ogg" range="500" />
+    <impact_glasscontainer file="%ModDir%/Sounds/Impact/physics#355_physic_glass_container_imp_small_06.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_01.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_02.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_03.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_04.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_05.ogg" range="500" />
+    <impact_metalcrate_light file="%ModDir%/Sounds/Impact/physics#519_imp_metal_box_light_06.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_01.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_02.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_03.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_04.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_05.ogg" range="500" />
+    <impact_tincan_small file="%ModDir%/Sounds/Impact/physics#1045_physic_tin_can_imp_small_06.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_01.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_02.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_03.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_04.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_05.ogg" range="500" />
+    <impact_cloth file="%ModDir%/Sounds/Impact/physics#1161_physic_bread_bag_imp_large_06.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_01.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_02.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_03.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_04.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_05.ogg" range="500" />
+    <impact_porcelain_statue_large file="%ModDir%/Sounds/Impact/physics#80_physic_porcelain_statue_imp_large_06.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_01.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_02.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_03.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_04.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_05.ogg" range="500" />
+    <impact_porcelain_statue_mediuem file="%ModDir%/Sounds/Impact/physics#86_physic_porcelain_statue_imp_medium_06.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_01.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_02.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_03.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_04.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_05.ogg" range="500" />
+    <impact_porcelain_statue_small file="%ModDir%/Sounds/Impact/physics#92_physic_porcelain_statue_imp_small_06.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_01.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_02.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_03.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_04.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_05.ogg" range="500" />
+    <impact_hat_large file="%ModDir%/Sounds/Impact/physics#100_physic_beanie_hat_imp_large_06.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_01.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_02.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_03.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_04.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_05.ogg" range="500" />
+    <impact_hat_medium file="%ModDir%/Sounds/Impact/physics#106_physic_beanie_hat_imp_medium_06.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_01.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_02.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_03.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_04.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_05.ogg" range="500" />
+    <impact_hat_small file="%ModDir%/Sounds/Impact/physics#112_physic_beanie_hat_imp_small_06.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase1.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase2.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase3.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase4.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase5.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase6.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase7.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase8.ogg" range="500" />
+    <case_impact file="%ModDir%/Sounds/Impact/bulletcase9.ogg" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal1.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal2.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal3.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal4.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal5.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal6.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal7.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal8.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal9.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal10.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal11.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal12.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal13.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal14.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal15.ogg" volume="1" range="500" />
+    <footstep_metal file="%ModDir%/Sounds/Footsteps/Metal/FootstepMetal16.ogg" volume="1" range="500" />
+    <ambient file="%ModDir%/Sounds/Ambient/Creaks_Level1.ogg" />
+    <waterambiencein file="%ModDir%/Sounds/Ambient/WaterAmbienceIn.ogg" />
+    <waterambiencemoving file="Content/Sounds/Water/WaterAmbienceMoving.ogg" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm1.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm2.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm3.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm4.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm5.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm6.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm7.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm8.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm9.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm10.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm11.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm12.ogg" guisoundtype="Select" />
+    <guisound file="%ModDir%/Sounds/UI/mnu_Confirm13.ogg" guisoundtype="Select" />
+    <!--<guisound file="%ModDir%/Sounds/UI/mnu_OutLine.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine1.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine2.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine3.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine4.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine5.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine6.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine7.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine8.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine9.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine10.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine11.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine12.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine13.ogg"              guisoundtype="PickItem"/>sounds bad
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine14.ogg"              guisoundtype="PickItem"/>
+  <guisound file="%ModDir%/Sounds/UI/mnu_OutLine15.ogg"              guisoundtype="PickItem"/>-->
+    <interactive_large_container file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#129_suit_locker_open_02.ogg" volume="0.7" range="500" />
+    <interactive_medium_container file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#130_suit_locker_open_03.ogg" volume="0.7" range="500" />
+    <interactive_fireextinguisher_holder file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#607_plug_in_01.ogg" volume="0.7" range="500" />
+    <interactive_emergencycab file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#415_theta_metal_drawer_full_open_01.ogg" volume="0.7" range="500" />
+    <interactive_securitycab_open file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#647_omnitool_door_detect_01.ogg" volume="0.7" range="500" />
+    <interactive_med_container_open file="%ModDir%/Sounds/InteractiveSounds/Entities_Station#279_bin_close_med_03.ogg" volume="0.7" range="500" />
+    <interactive_cloth_equip file="%ModDir%/Sounds/InteractiveSounds/wearcloth.ogg" volume="0.7" range="500" />
+    <interactive_rifle_equip file="%ModDir%/Sounds/InteractiveSounds/ak12_draw.ogg" volume="0.7" range="500" />
+    <use_lubricate file="%ModDir%/Items/Tools/LubricatingOil.ogg" range="500" />
+  </sounds>
+</Override>

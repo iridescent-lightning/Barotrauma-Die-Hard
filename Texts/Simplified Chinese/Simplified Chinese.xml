@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
+  <Affliction.fatigue.description>奔跑会消耗你的体力。如果累了就停下来休息一下。</Affliction.fatigue.description>
+  <coldwater>寒冷在慢慢地吞噬你。找到温暖的地方来回复你的体温。</coldwater>
+  <coldwater1>长时间呆在寒冷中是很危险的。</coldwater1>
+  <dh_hypothermia>你快要被冻僵了！</dh_hypothermia>
+  <brainshot>人被杀，就会死。但是至少对于被枪击者来说不必再遭受痛苦了。</brainshot>
+  <pain>使用吗啡来止疼</pain>
+  <bodyarmorI>[防弹乘数：40%]</bodyarmorI>
+  <eventtext.clownbomb.c>一个小丑的笑声飘入了你的耳中。</eventtext.clownbomb.c>
+  <eventtext.clownbomb.c1>“多么漂亮的一艘潜艇啊。”小丑笑得更大声了。</eventtext.clownbomb.c1>
+  <eventtext.clownbomb.c2>“所以我放了一点小礼物在你的船上。希望你会喜欢它。”</eventtext.clownbomb.c2>
+  <eventtext.clownbomb.c3>“你什么意思？</eventtext.clownbomb.c3>
+  <eventtext.clownbomb.c4>“快！快！去看一下礼物吧！”</eventtext.clownbomb.c4>
+  <eventtext.clownbomb.c5>小丑笑得更加开心了。</eventtext.clownbomb.c5>
+  <eventtext.clownbomb.c6>“肯定有不好的事情发生了。”</eventtext.clownbomb.c6>
+  <EventTest.dhprostitude.c>“嘿，宝贝~你喜欢我这样么？</EventTest.dhprostitude.c>
+  <EventTest.dhprostitude.c1>一个穿着性感的女人促狭地看着你。你靠向她</EventTest.dhprostitude.c1>
+  <EventTest.dhprostitude.c2>“给我五十马克，我会让你看到你想要的。”她说。</EventTest.dhprostitude.c2>
+  <EventTest.dhprostitude.c3>“这儿？”你问道。</EventTest.dhprostitude.c3>
+  <EventTest.dhprostitude.c4>“当然不是，我的甜心。”她边说边瞥了一眼旁边的门。</EventTest.dhprostitude.c4>
+  <EventTest.dhprostitude.c.o1> “这归你了。”</EventTest.dhprostitude.c.o1>
+  <EventTest.dhprostitude.c.o1.c1>你跟着女人进了一间小屋。</EventTest.dhprostitude.c.o1.c1>
+  <EventTest.dhprostitude.c.o1.c2>“现在，闭上你的眼睛。”她对你微笑着，手搭上了贴身内衣的系带。“让我来……”</EventTest.dhprostitude.c.o1.c2>
+  <EventTest.dhprostitude.c.o1.c3>突然，你感觉有东西重重地砸中了你的后脑。你失去了意识。</EventTest.dhprostitude.c.o1.c3>
+  <EventTest.dhprostitude.c.o1.c4>等你醒来，女人早已不见踪影。你检查了一下自己的口袋，发现丢失了五百马克。</EventTest.dhprostitude.c.o1.c4>
+  <EventTest.dhprostitude.c.o2>“不感兴趣。”</EventTest.dhprostitude.c.o2>
+  <EventTest.dhprostitude.c.o3>“嘿！我之前见过你！”</EventTest.dhprostitude.c.o3>
+  <EventTest.dhprostitude.c.o3.c>在意识到被认出后，女人转身开始逃跑。</EventTest.dhprostitude.c.o3.c>
+  <EventText.checkweapon.c>“站住！”</EventText.checkweapon.c>
+  <EventText.checkweapon.c1>“长官，怎么了？”</EventText.checkweapon.c1>
+  <EventText.checkweapon.c2>“你所携带的长距离交火武器违反了联合政府的殖民地安全守则。你必须上交你的武器。”"</EventText.checkweapon.c2>
+  <EventText.checkweapon.c2.o1>“抱歉，长官。我不知道这个规定。我可以把我的武器放回船里吗？”</EventText.checkweapon.c2.o1>
+  <EventText.checkweapon.c2.o1.c>“我给你一分钟去放好你的东西。我不希望再看见你携带长距离交火武器，如果有下次，我可不会这么好说话了。”</EventText.checkweapon.c2.o1.c>
+  <EventText.checkweapon.c2.o2>“你不能这么做！我从来没听说过这种规矩！”</EventText.checkweapon.c2.o2>
+  <EventText.checkweapon.c2.o2.c1>“现在你听到了。”</EventText.checkweapon.c2.o2.c1>
+  <EventText.checkweapon.c2.o2.c2>“这是命令！”</EventText.checkweapon.c2.o2.c2>
+  <EventText.checkweapon.c2.o2.c3>“如果不服气你和联盟打报告去。我只是在履行我的职责。如果再让我看见你携带长距离交火武器，你就被捕了。”</EventText.checkweapon.c2.o2.c3>
+  <EventText.checkweapon.c2.o3>“给你枪。联盟渣滓！”</EventText.checkweapon.c2.o3>
+  <EventText.checkweapon.c3.o1>出示你的许可证</EventText.checkweapon.c3.o1>
+  <EventText.checkweapon.c3.o1.c>“抱歉，长官。你现在可以进去了。”</EventText.checkweapon.c3.o1.c>
+  <EventText.checkweapon.c3.o1.c1>...</EventText.checkweapon.c3.o1.c1>
+  <EventText.checkweapon.c3.o1.c2>你的口袋里空空如也。</EventText.checkweapon.c3.o1.c2>
+  <EventText.checkweapon.c3.o1.c3>“你在跟我开玩笑吗？你的武器被没收了，而且还得被罚款！”</EventText.checkweapon.c3.o1.c3>
+  <EventText.checkweapon2.c>“我已经给过你机会了。但是现在呢？你会被罚款，你的武器也将被扣留。我会把这件事儿上报上去的。”</EventText.checkweapon2.c>
+  <EventText.checkweapon2.c.o1>上交你的武器</EventText.checkweapon2.c.o1>
+  <EventText.checkweapon2.c.o2>拒绝配合！</EventText.checkweapon2.c.o2>
+  <EventText.checkweapon3.c>“聚居地有嫌犯携带大威力武器，警惕潜在的恐怖主义活动！立刻开始抓捕行动！”</EventText.checkweapon3.c>
+  <EventText.dhhuskcultambush.c>一个穿兜帽的男人拦住了你。</EventText.dhhuskcultambush.c>
+  <EventText.dhhuskcultambush.c1>“我能感觉到你很特别。”他说。</EventText.dhhuskcultambush.c1>
+  <EventText.dhhuskcultambush.c2>他看起来苍白阴瘦。深陷的眼窝之下，流露出狂热的光芒。</EventText.dhhuskcultambush.c2>
+  <EventText.dhhuskcultambush.c3>你看向他。等你快要离开的时候，他开口道。</EventText.dhhuskcultambush.c3>
+  <EventText.dhhuskcultambush.c4>“生命既痛苦又毫无意义。在这颗星球上，我们所有人都在饱受磨难。你为什么不跟我一起呢？试试这个吧，能让你摆脱伤痛与哀愁。”</EventText.dhhuskcultambush.c4>
+  <EventText.dhhuskcultambush.c.o1>“去你妈的。”"</EventText.dhhuskcultambush.c.o1>
+  <EventText.dhhuskcultambush.c.o1.c>“滚，去你妈的吧。”你说，“我听说过你们这些人。我可不打算参与到你们的那些疯狂的事情中去。”</EventText.dhhuskcultambush.c.o1.c>
+  <EventText.dhhuskcultambush.c.o1.c2>你试图离开他。但这个穿着兜帽的男人并不想让你走。“放开我。”他突然变得愤怒。你看见他把手伸进衣兜里并拿出了一把小刀。</EventText.dhhuskcultambush.c.o1.c2>
+  <EventText.dhhuskcultambush.c.o2>“是的，我的生活充满了痛苦。”</EventText.dhhuskcultambush.c.o2>
+  <EventText.dhhuskcultambush.c.o2.c>“我的生活如此痛苦。”你说，“不如过一种什么都不用担心的生活。请帮帮我。”你看到他伸手掏出一个注射器并往你的胳膊里注射了什么。你感觉有些奇怪。</EventText.dhhuskcultambush.c.o2.c>
+  <EventText.dhhuskcultambush.aft>“真没法想象他们是怎么让这些东西进来的。站点安全官们都在做什么？！”</EventText.dhhuskcultambush.aft>
+  <EventText.checkevidence.c>“我收购锤头煞战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkevidence.c>
+  <EventText.checkcrawlers.c>“我收购藻鬃爬行者战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkcrawlers.c>
+  <EventText.checkmolochs.c>“我收购摩洛克战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkmolochs.c>
+  <EventText.checkfish.c>“我收购虎尾煞和棘刺战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkfish.c>
+  <EventText.checkraptor.c>“我收购来迅猛龙战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkraptor.c>
+  <EventText.checkabyss.c>“我收购来自深渊的怪物战利品。我每次只能收购一个因为我没有随身带着很多钱。”</EventText.checkabyss.c>
+  <EventText.checkevidence.c.o1>给他看看战利品</EventText.checkevidence.c.o1>
+  <EventText.checkevidence.c.o1.c1>“让我看看……”</EventText.checkevidence.c.o1.c1>
+  <EventText.checkevidence.c.o1.c2>...</EventText.checkevidence.c.o1.c2>
+  <EventText.checkevidence.c.o1.c3>“这正是我想要的。谢谢！”</EventText.checkevidence.c.o1.c3>
+  <EventText.checkevidence.c.o1.c4>“这不是我需要的。”</EventText.checkevidence.c.o1.c4>
+  <EventText.checkevidence.c.o2>走开</EventText.checkevidence.c.o2>
+  <EventText.fetchmonstersmission.c>“在这两个站点之间的航道里有怪物盘踞。杀掉他们能获得一些宝贵的战利品。有兴趣么？”</EventText.fetchmonstersmission.c>
+  <EventText.fetchmonstersmission.c.o1>“当然”</EventText.fetchmonstersmission.c.o1>
+  <EventText.fetchmonstersmission.c.o2>“不感兴趣”</EventText.fetchmonstersmission.c.o2>
+  <EventText.familytransport.c>“我的妻子得了重病。我需要把她送到邻近的聚居地去治疗。但是我们没有足够的钱。我只能给你五百马克。你能帮帮我们吗？”</EventText.familytransport.c>
+  <EventText.familytransport.c.o1>“好的，我会帮你们的。”</EventText.familytransport.c.o1>
+  <EventText.familytransport.c.o1.c1>“实在是太感谢了！我会等在这儿。等你们要离开的时候就来找我。”</EventText.familytransport.c.o1.c1>
+  <EventText.familytransport.c.o1.c2>“你们要走了吗？”</EventText.familytransport.c.o1.c2>
+  <EventText.familytransport.c.o1.c2.o1.c>“是的。”</EventText.familytransport.c.o1.c2.o1.c>
+  <EventText.familytransport.c.o2>“不，这你得找别人去。”</EventText.familytransport.c.o2>
+  <EventText.powerissue.c1>“噢——看来我们又得干活儿了。”</EventText.powerissue.c1>
+  <EventText.powerissue.c2>“你觉得哪儿出问题了，反应堆还是电网？”</EventText.powerissue.c2>
+  <EventText.powerissue.c3>“不好说。”</EventText.powerissue.c3>
+  <EventText.powerissue.c4>“可能是反应堆？”</EventText.powerissue.c4>
+  <EventText.powerissue.c5>“但我觉得它看起来运行正常。”</EventText.powerissue.c5>
+  <EventText.bugseverhwere.c1>“操!全是虫子！”</EventText.bugseverhwere.c1>
+  <EventText.bugseverhwere.c2>“开火！开火！”</EventText.bugseverhwere.c2>
+  <EventText.comments.c1>“你没读那团狗屎，对吧？”\n “嗯……我赌你读了那玩意儿。”</EventText.comments.c1>
+  <EventText.comments.c2>“这东西完全毫无意义，对么？”</EventText.comments.c2>
+  <EventText.comments.c3>“你问我为什么这么说？”</EventText.comments.c3>
+  <EventText.comments.c4>“那些分离主义分子之前就已经来过了。该死。他们以前的时候就是一个非常小众、不受欢迎的组织。一群失败者的集会罢了。时境过迁，他们还是那个老样子，但是他们的规模更大了。他们的壮大全都依赖于联盟的仁慈，他们现在就像电虫一样哪儿都能看到。”</EventText.comments.c4>
+  <EventText.comments.c4.o1>“什么是电虫？”</EventText.comments.c4.o1>
+  <EventText.comments.c4.o1.c>“它们是导致接线盒无法正常工作的小害虫。不需要损坏它。只需要靠近就行。不管是是死的还是活的。这个地方真的是上帝都不管的地儿。你能不打断我的话题吗？！”</EventText.comments.c4.o1.c>
+  <EventText.comments.c4.o1.c1>“嗯。”</EventText.comments.c4.o1.c1>
+  <EventText.comments.c4.o2>倾听</EventText.comments.c4.o2>
+  <EventText.comments.c5>“我能告诉你这些是因为我已经活了足够久了。我在跟地球失联前就已经来到了这里。我知道那些所谓的‘木星分离主义分子’的底细，他们之中的绝大部分甚至都没有做过海员。他们对于在海里正在发生或者即将发生的事情毫无头绪，或者说，一无所知。这儿就是地狱，地狱就是这儿！我真的无法理解他们到底在期盼些什么，一个完美的联合组织来把这儿变成一处新伊甸园吗？！他们之中还有很多人曾经都是重刑犯，如今只不过是打算让其他人和他们一起受罪而已。要我说，被困在这儿、在这儿受苦都是他们应得的！我和你说这些是因为我不想再看到更多的人被他们虚假的口号所欺骗。“\n ”也许将来有一天，联盟的管理者们会在这件事儿上寻求你的帮助。小子，记住我今天说的话！”</EventText.comments.c5>
+  <EventText.backgroundstory1.c1>“我听说联盟刻意封锁了来自地球的无线电联络信号。”</EventText.backgroundstory1.c1>
+  <EventText.backgroundstory1.c2>“嘘！闭嘴！这是胡说八道。”</EventText.backgroundstory1.c2>
+  <EventText.backgroundstory1.c3>“啊？这儿附近又没有站点安全官。”</EventText.backgroundstory1.c3>
+  <EventText.backgroundstory1.c4>“你这白痴！有窃听器呢。他们什么都听。”</EventText.backgroundstory1.c4>
+  <EventText.backgroundstory1.c5>“哦，好吧。你知道我告诉你的只是胡说八道。为了提醒你，呃呃呃，提防胡说八道。”</EventText.backgroundstory1.c5>
+  <EventText.backgroundstory2.c9.c1>“朋友，你吃过这儿的食物了么？那味道简直太可怕了。”</EventText.backgroundstory2.c9.c1>
+  <EventText.backgroundstory2.c9.c2>“跟我说说怎么了。他们提供的食品用什么做的？我现在还起码有一半没认出来。”</EventText.backgroundstory2.c9.c2>
+  <EventText.backgroundstory2.c9.c3>“我听说咱们这颗星球上已经没有真正的地球食物了。星际补给线早就断了。”</EventText.backgroundstory2.c9.c3>
+  <EventText.backgroundstory2.c9.c4>“什么？！那我们以后就得一直吃那种泔水一样的食物了？”</EventText.backgroundstory2.c9.c4>
+  <EventText.backgroundstory2.c9.c5>“看起来是这样的。而且更糟糕的，这样的食品的价格也在飞涨。”</EventText.backgroundstory2.c9.c5>
+  <EventText.backgroundstory2.c9.c6>“啊……我真的厌倦这样的日子。我只希望我能吃上一顿像样的饭。”</EventText.backgroundstory2.c9.c6>
+  <EventText.backgroundstory2.c9.c7>“是的，我也是这样希望的。但我想咱们这儿大概是只剩下这样的食物了。”</EventText.backgroundstory2.c9.c7>
+  <EventText.backgroundstory3.c1>“你知道他们是怎么评价小丑的吗？有趣且富有幽默感，直到被查出来是分离主义分子的眼线。”</EventText.backgroundstory3.c1>
+  <EventText.backgroundstory3.c2>“我本人是从来不信任那些五颜六色的滑稽剧演员的，谁知道在他们涂满颜料的面孔下潜藏着什么呢。”</EventText.backgroundstory3.c2>
+  <EventText.backgroundstory4.c1>“欧罗巴的居民们请注意，\n“联盟已经开始注意到这颗星球上一股令人不安的潮流——对致命的画皮寄生虫的崇拜。我们郑重建议居民们与这些所谓的‘画皮敬奉者’以及他们的教派信仰保持距离，千万不要参与其中。”</EventText.backgroundstory4.c1>
+  <EventText.backgroundstory4.c2>“画皮寄生虫是一种对人类宿主具有致命性威胁的寄生生物，会逐渐控制宿主的思想、行为并最终导致死亡。崇拜画皮的邪教徒们坚信寄生虫会以某种方式促进他们自身的进化，但实际上这种危险至极且毫无依据的信仰只会将他们引向悲惨的结局。”</EventText.backgroundstory4.c2>
+  <EventText.backgroundstory4.c3>“我们已经直观地见识过那些画皮信徒们的下场，他们变成一具具行尸走肉，失去对事物做出决策的思维能力。他们对他们自己和身边人们的人身安全造成了严重威胁。”</EventText.backgroundstory4.c3>
+  <EventText.backgroundstory4.c4>“我们再次强调，请居民们保持警惕并向最近的联盟办事处报告任何可能的、有关于画皮教派的嫌疑活动。请记住，画皮的存在并不是一种有关生存方式的启迪，更不是一种进化的途径————画皮寄生虫只是一种应当被从源头上消灭的致命性寄生虫。”</EventText.backgroundstory4.c4>
+  <EventText.backgroundstory4.c5>“敬畏生命，远离画皮。”\n“你永远的朋友，木卫二联盟”
+	</EventText.backgroundstory4.c5>
+  <EventText.backgroundstory5.c1>“嘿，这儿！朋友，你听说过画皮圣餐吗？”</EventText.backgroundstory5.c1>
+  <EventText.backgroundstory5.c2>“是的，我听说过。但是我没什么参与进去的兴趣。”</EventText.backgroundstory5.c2>
+  <EventText.backgroundstory5.c3>“为什么不呢？难道你不想进化得更强壮、更完美吗？”</EventText.backgroundstory5.c3>
+  <EventText.backgroundstory5.c4>“我不认为把自己押注于寄生虫上是一种能解决咱们目前困境的法子。”</EventText.backgroundstory5.c4>
+  <EventText.backgroundstory5.c5>“这就是你不理解的地方了。画皮这种生命形式是我们能在这颗星球上幸存下去的关键。它能把我们变成即使在最严酷的环境中也能茁壮成长的生物。”</EventText.backgroundstory5.c5>
+  <EventText.backgroundstory5.c6>“我不认为变成一具毫无思想的行尸走肉是我们所需要的那种进化方式。”</EventText.backgroundstory5.c6>
+  <EventText.backgroundstory5.c7>“毫无思想的行尸走肉？不，我的朋友，那只是害怕改变的守旧派的谣言罢了。我们已经积累了足够的经验，并且了解了画皮的真正潜力。它能让我们变成比人类更强壮、更完美的存在。”</EventText.backgroundstory5.c7>
+  <EventText.backgroundstory5.c8>“我很抱歉，我不能冒这个险。我想我还是找到一条能够不舍弃我人类之身的路子更好些。”</EventText.backgroundstory5.c8>
+  <EventText.backgroundstory5.c9>“随你的便吧。但记住我的话，朋友。画皮圣餐会成为人类最后的救赎，那些拒绝参与进来的人只将会被时代所抛弃在后面。”</EventText.backgroundstory5.c9>
+  <EventText.backgroundstory6.c1>“嘿——这儿！为什么这么忧郁呢，小丑？”</EventText.backgroundstory6.c1>
+  <EventText.backgroundstory6.c2>“忧郁？哈——你觉得我很忧郁？我只是在陈述显而易见的事情，我亲爱的朋友。你没有看到吗？这一切都是毫无意义的。我们都是被命中注定的。”</EventText.backgroundstory6.c2>
+  <EventText.backgroundstory6.c3>“你这是什么意思？”</EventText.backgroundstory6.c3>
+  <EventText.backgroundstory6.c4>“生命，我的朋友。生命是毫无意义的。我们都只是一个个痛苦的灵魂，被困在这个无尽的轮回之中饱受痛苦与绝望。”</EventText.backgroundstory6.c4>
+  <EventText.backgroundstory6.c5>“这是不对的，生命是能够多姿多彩、充满意义的。”</EventText.backgroundstory6.c5>
+  <EventText.backgroundstory6.c6>(疯狂地大笑) “噢——你是多么的天真幼稚啊——你觉得这儿的一切都是有意义的么？你认为这儿就是我们所存在的意义么？啊哈！你只是在欺骗你自己罢了！”</EventText.backgroundstory6.c6>
+  <EventText.backgroundstory6.c7>“你为什么要那么说？”</EventText.backgroundstory6.c7>
+  <EventText.backgroundstory6.c8>“因为……我亲爱的朋友，无论如何我们都会走向死亡。我们所做的事情，我们所达成的成就，我们所爱的事物……一切的一切都在分崩离析，一切都终将湮灭。所以……为什么还要烦恼呢？”</EventText.backgroundstory6.c8>
+  <EventText.backgroundstory6.c9>“但是……我们仍然在这个世界上能发挥一些作用。我们仍然能够做一些我们所认为的好事。”</EventText.backgroundstory6.c9>
+  <EventText.backgroundstory6.c10>(轻蔑地) “好事儿？指的是什么？那只不过是一种让人分心的方式罢了，一种麻木痛苦和让我们忘记命中注定的劫难的方式。你不能改变任何事情，我的朋友。我们只是命运这场苦痛棋局中的一枚枚棋子，这场毫无意义的游戏的……牺牲品。”</EventText.backgroundstory6.c10>
+  <EventText.backgroundstory6.c11>“我并不这么想。我更相信爱与希望。”</EventText.backgroundstory6.c11>
+  <EventText.backgroundstory6.c12>(瞥动眼睛) “爱与希望？那不过都是些空洞的词汇而已，我的朋友。你会懂的。总有那么一天，你会醒悟，意识到这一切、所有的所有，都是虚无的、毫无意义的。然后，你就会明白我为什么总是在笑了。”</EventText.backgroundstory6.c12>
+  <EventText.stafffuelrod.c>“你需要出示你的潜艇资料证件来购买燃料棒。“</EventText.stafffuelrod.c>
+  <EventText.stafffuelrod.c.o1>出示你的证件</EventText.stafffuelrod.c.o1>
+  <EventText.stafffuelrod.c.o1.c1>“很好。”</EventText.stafffuelrod.c.o1.c1>
+  <EventText.stafffuelrod.c.o1.c1.o1>一根铀燃料棒——1000马克</EventText.stafffuelrod.c.o1.c1.o1>
+  <EventText.stafffuelrod.c.o1.c1.o2>一根钍燃料棒——2000马克</EventText.stafffuelrod.c.o1.c1.o2>
+  <EventText.stafffuelrod.c.o1.c2>”你没有可供采购的有效证件。“</EventText.stafffuelrod.c.o1.c2>
+  <EventText.stafffuelrod.c.o2>离开</EventText.stafffuelrod.c.o2>
+  <EventText.stafffuelrod.c.o3>向他出示小丑们伪造的凭证</EventText.stafffuelrod.c.o3>
+  <EventText.stafffuelrod.c.o3.c1>“我不知道你是从哪里得到这东西的，但是……好吧，你可以特价购买一次。”</EventText.stafffuelrod.c.o3.c1>
+  <EventText.stafffuelrod.c.o3.c2>“让我猜猜，你是从一个小丑手里购买了这份伪造的凭证来获取一次特价购买的机会，是吧？但不是从我这里。滚出这儿！”</EventText.stafffuelrod.c.o3.c2>
+  <EventText.stafffuelrod.c.o4>向他出示联盟特价购买凭证</EventText.stafffuelrod.c.o4>
+  <EventText.stafffuelrod.c.o4.1>一根铀燃料棒——600马克</EventText.stafffuelrod.c.o4.1>
+  <EventText.stafffuelrod.c.o4.2>一根钍燃料棒——1400马克</EventText.stafffuelrod.c.o4.2>
+  <EventText.stafffuelrod.donthave>你没有特价凭证。</EventText.stafffuelrod.donthave>
+  <EventText.stafffuelrodsep.c>这就是我们和联盟有所分歧的地方了。但你仍需要出示你的潜艇资料证件来购买燃料棒。我们无法再任性浪费我们为数不多的资源了。“</EventText.stafffuelrodsep.c>
+  <EventText.stafffuelrodsep.c.o1>出示你的资料</EventText.stafffuelrodsep.c.o1>
+  <EventText.stafffuelrodsep.c.o1.c1>“很好。”</EventText.stafffuelrodsep.c.o1.c1>
+  <EventText.stafffuelrodsep.c.o1.c1.o1>一根铀燃料棒——1000马克</EventText.stafffuelrodsep.c.o1.c1.o1>
+  <EventText.stafffuelrodsep.c.o1.c1.o2>一根钍燃料棒——2000马克</EventText.stafffuelrodsep.c.o1.c1.o2>
+  <EventText.stafffuelrodsep.c.o1.c2>”你没有可供采购的有效证件。“</EventText.stafffuelrodsep.c.o1.c2>
+  <EventText.fuelrodclown.c>“遗失了你的证件？不用担心。只要2000马克，我们就能为你的任意型号的潜艇仿制一张有效的证件！当然，那些特别供应的特价购买凭证我们也能做到。为什么？因为联盟人都是蠢蛋！哈哈哈哈————”</EventText.fuelrodclown.c>
+  <EventText.fuelrodclown.c.o1>购买一份证件</EventText.fuelrodclown.c.o1>
+  <EventText.fuelrodclown.c.o2>购买一份伪造的特价凭证</EventText.fuelrodclown.c.o2>
+  <EventText.fuelrodclown.c1>“哈哈，哈哈哈哈——”</EventText.fuelrodclown.c1>
+  <EventText.fuelrodclown.c2>“哦天啊，你没钱了！”</EventText.fuelrodclown.c2>
+  <EventText.stafffuelrodhusk.c>“嘿，需要买燃料棒吗？最近的日子真是越来越难过了。”</EventText.stafffuelrodhusk.c>
+  <EventText.stafffuelrodhusk.c.o1>一根铀燃料棒——1500马克</EventText.stafffuelrodhusk.c.o1>
+  <EventText.stafffuelrodhusk.c.o2>一根钍燃料棒——2500马克</EventText.stafffuelrodhusk.c.o2>
+  <EventText.stafffuelrodhusk.c.o3>两根即将回收利用的空燃料棒和放射性原料————700马克</EventText.stafffuelrodhusk.c.o3>
+  <EventText.merchant.c>“我能为你做什么？”</EventText.merchant.c>
+  <EventText.merchant.c.o1>“四根燃料棒”</EventText.merchant.c.o1>
+  <EventText.merchant.c.o2>“四个焊接油箱”</EventText.merchant.c.o2>
+  <EventText.merchant.c.o3>“四个氧气罐”</EventText.merchant.c.o3>
+  <EventText.merchant.c.o4>“一把焊接工具”</EventText.merchant.c.o4>
+  <EventText.merchant.c.o5>“一把等离子切割器”</EventText.merchant.c.o5>
+  <EventText.merchant.c.o6>“一个工具带”</EventText.merchant.c.o6>
+  <EventText.merchant.c.o7>“一个船体扫描器”                  </EventText.merchant.c.o7>
+  <EventText.merchant.c.o8>“一根撬棍”</EventText.merchant.c.o8>
+  <EventText.merchant.c.o9>“四块电池”</EventText.merchant.c.o9>
+  <EventText.merchant.c.leave>离开</EventText.merchant.c.leave>
+  <EventText.merchant.c1>“抱歉，但是你没有足够的钱。”</EventText.merchant.c1>
+  <EventText.merchant.c2>“很高兴为你服务。”</EventText.merchant.c2>
+  <EventText.dockingfee.c>“在聚居地停靠需要五百马克。”</EventText.dockingfee.c>
+  <EventText.dockingfee.c.o1>接受</EventText.dockingfee.c.o1>
+  <EventText.dockingfee.c.o2>请求免费停靠一次并在下一个站点付钱</EventText.dockingfee.c.o2>
+  <EventText.dockingfee.c.o2.c>“你的船被允许免费停靠了。对应的，你要在下次停靠时支付八百马克。”</EventText.dockingfee.c.o2.c>
+  <EventText.dockingfee.c.o1.c>“欢迎来到我们的栖身之所。”</EventText.dockingfee.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>“你没有足够的钱。但是运气不错，你的船被允许免费停靠了。相对应的，你要在下次停靠时支付八百马克。”</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollector.c>“我收到联盟的命令来收取你上次未支付的停靠费用。”</EventText.debtcollector.c>
+  <EventText.debtcollector.c.o1>付钱</EventText.debtcollector.c.o1>
+  <EventText.debtcollector.c.o2>拒绝并嘲笑他</EventText.debtcollector.c.o2>
+  <EventText.debtcollector.c.o1.c1>“算上这次，你总计需要支付1300马克。”</EventText.debtcollector.c.o1.c1>
+  <EventText.debtcollector.c.o1.c2>“好的，你可以走了。”</EventText.debtcollector.c.o1.c2>
+  <EventText.debtcollector.c.o1.c3>“好吧，你还是没有足够的钱。”</EventText.debtcollector.c.o1.c3>
+  <EventText.debtcollector.c.o1.c3.o>“抱歉，我不是故意的。”</EventText.debtcollector.c.o1.c3.o>
+  <EventText.debtcollector.c.o1.c3.o.c>“安心，我不会对你做什么的。但你知道的，我需要把这事儿回复上去，职责所在。”</EventText.debtcollector.c.o1.c3.o.c>
+  <EventText.debtcollector.c.o2.c1>“什么？联盟让你来收我的账？行吧伙计，你可以回去告诉你的头儿，就说，你的任务失败了。”</EventText.debtcollector.c.o2.c1>
+  <EventText.dockingfeese.c>“同志们，在聚居地停靠需要五百马克。”</EventText.dockingfeese.c>
+  <EventText.dockingfeese.c.o1>接受</EventText.dockingfeese.c.o1>
+  <EventText.dockingfeese.c.o2>请求免费停靠一次并在下一个站点付钱</EventText.dockingfeese.c.o2>
+  <EventText.dockingfeese.c.o2.c>“我们很乐意帮助贫困的人们，你的船被允许免费停靠了。对应的，你要在下次停靠时支付五百马克。”</EventText.dockingfeese.c.o2.c>
+  <EventText.dockingfeese.c.o1.c>“欢迎来到我们的栖身之所。”</EventText.dockingfeese.c.o1.c>
+  <EventText.dockingfee.c.o1.c1>“你没有足够的钱。但我们仍旧会允许你的船免费停靠。相对应的，你要在下次停靠时支付五百马克。”</EventText.dockingfee.c.o1.c1>
+  <EventText.debtcollectorse.c>“我收到分离主义委员会的命令来收取你上次未支付的停靠费用。”</EventText.debtcollectorse.c>
+  <EventText.debtcollectorse.c.o1>付钱</EventText.debtcollectorse.c.o1>
+  <EventText.debtcollectorse.c.o2>拒绝并嘲笑他</EventText.debtcollectorse.c.o2>
+  <EventText.debtcollectorse.c.o1.c1>“算上这次，你总计需要支付1000马克。</EventText.debtcollectorse.c.o1.c1>
+  <EventText.debtcollectorse.c.o1.c2>“好咧，你可以走了，同志。”</EventText.debtcollectorse.c.o1.c2>
+  <EventText.debtcollectorse.c.o1.c3>“好吧，你还是没有足够的钱。”</EventText.debtcollectorse.c.o1.c3>
+  <EventText.debtcollectorse.c.o1.c3.o>“抱歉，我不是故意的。”</EventText.debtcollectorse.c.o1.c3.o>
+  <EventText.debtcollectorse.c.o1.c3.o.c>“安心，我不会对你做什么的。但你知道的，我需要把这事儿回复上去，职责所在。”</EventText.debtcollectorse.c.o1.c3.o.c>
+  <EventText.debtcollectorse.c.o2.c1>“你那个差劲儿的委员会是不是都要无法运转下去了？我是不会向你们这帮土匪支付任何费用的。”</EventText.debtcollectorse.c.o2.c1>
+  <EventText.npcconversation.c1>“你们的船看起来可真漂亮。”</EventText.npcconversation.c1>
+  <EventText.npcconversation.c2>“噢——你好啊！”</EventText.npcconversation.c2>
+  <EventText.npcconversation.c3>"“我真希望我能好好休息一下。但是我们这儿还是需要更多的人来完成工作。”</EventText.npcconversation.c3>
+  <EventText.npcconversation.c4>“今天可真是个好日子！行吧，其实也就那样。”</EventText.npcconversation.c4>
+  <EventText.npcconversation.c5>“有时候我真的希望我能有好好休息一下。”</EventText.npcconversation.c5>
+  <EventText.npcconversation.c6>“我遗失了我的ID卡。如果你在哪里见过它，请帮我一下。”</EventText.npcconversation.c6>
+  <EventText.npcconversation.c6.c>“当然。”</EventText.npcconversation.c6.c>
+  <EventText.npcconversation.c6.c1>“非常感谢！”</EventText.npcconversation.c6.c1>
+  <EventText.npcconversation.c7>“赋税实在是太重了。”</EventText.npcconversation.c7>
+  <EventText.npcconversation.c8>“为人民服务！”</EventText.npcconversation.c8>
+  <EventText.coalitionmanagerseeyou.c1>“我们的管理人员想要见见你。”</EventText.coalitionmanagerseeyou.c1>
+  <EventText.coalitionmanagerseeyou.c2>“我？”</EventText.coalitionmanagerseeyou.c2>
+  <EventText.coalitionmanagerseeyou.c3>“是的，就是你。赶紧去找他吧。他不会等你太久。”</EventText.coalitionmanagerseeyou.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c>“他没问题么？”</EventText.coalition_manager_leveloutpostcapture.c>
+  <EventText.coalition_manager_leveloutpostcapture.c1>“时间会证明一切。”</EventText.coalition_manager_leveloutpostcapture.c1>
+  <EventText.coalition_manager_leveloutpostcapture.c2>“你好，我们已经注意到你很久了。”</EventText.coalition_manager_leveloutpostcapture.c2>
+  <EventText.coalition_manager_leveloutpostcapture.c3>“嗯……总的来说，你在联盟这边的履历很不错。”</EventText.coalition_manager_leveloutpostcapture.c3>
+  <EventText.coalition_manager_leveloutpostcapture.c4>“因此，上头决定给你个展示自己的机会，一个证明你是联盟内最可靠最值得信任的那批人之一的机会。”</EventText.coalition_manager_leveloutpostcapture.c4>
+  <EventText.coalition_manager_leveloutpostcapture.c5>……</EventText.coalition_manager_leveloutpostcapture.c5>
+  <EventText.coalition_manager_leveloutpostcapture.c6>“怎么样，要接受么？”</EventText.coalition_manager_leveloutpostcapture.c6>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3>“你还没告诉我是什么任务。”</EventText.coalition_manager_leveloutpostcapture.c6.o3>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o3.c>“你可以走了。”</EventText.coalition_manager_leveloutpostcapture.c6.o3.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c>“据可靠消息，有分离主义分子秘密渗透了附近的一个殖民地。联盟高层命令我们前往逮捕他们(旁边有人补充：或者杀了他们)。你要是能很好地完成，上头就会很看好你。好了，更多的信息会在你去的路上传输给你，你可以走了。”</EventText.coalition_manager_leveloutpostcapture.c6.o1.c>
+  <EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>“对了，这是你的特别调查许可证。有了这个你就能携带重火力武器进入前哨站了。但是这玩意儿是会过期的，你得注意点儿。”</EventText.coalition_manager_leveloutpostcapture.c6.o1.c1>
+  <!--The Very First Day-->
+  <Storytext.managertalk.c0>“我想我应该去见一见我的老朋友。他现在已经是一名站点管理员了。”</Storytext.managertalk.c0>
+  <Storytext.managertalk.c>“好久不见啊。”</Storytext.managertalk.c>
+  <Storytext.managertalk.c1>“所以……你现在是名船长了？我已经见过太多志得意满的新人船长们在幽闭的船舱内手足无措的样子了。”</Storytext.managertalk.c1>
+  <Storytext.managertalk.c2>“我想我已经准备好了。”</Storytext.managertalk.c2>
+  <Storytext.managertalk.c3>“很好，就像以前那帮家伙一样。你们这些人呐，都喜欢这么说。”\n..\n“这可跟我们这些人有够不一样的，嗯？”</Storytext.managertalk.c3>
+  <Storytext.managertalk.c4>“但不管如何，千万别死了，好吗？天知道在过去的那段日子里我们已经失去了多少老朋友。”</Storytext.managertalk.c4>
+  <Storytext.managertalk.c5>“话归正题，鉴于越来越多的人打算出海谋生，联盟终于有机会来借此进一步开拓欧罗巴以应对即将到来的危机了。但是老实说，我知道上头那帮家伙是怎么想的，他们认为你们中的绝大多数人都没有能力独自航行到欧罗巴海脊。”</Storytext.managertalk.c5>
+  <Storytext.managertalk.c6>“正如你先前所看到的那样，外面停靠着我在能力内尽量能为你搞到的最好的船。其他日常开支得由你自己去在路上挣。当然，你要是搞到了更多的钱，你也可以买另外的、更好的新船。我能为你做的就这么多了。”</Storytext.managertalk.c6>
+  <Storytext.managertalk.c7>“行吧，那你能告诉我，我们接下来要执行的任务的详细内容么？”</Storytext.managertalk.c7>
+  <Storytext.managertalk.c8>“噢——不行，抱歉，这是秘密。嗯……好吧，一个传的沸沸扬扬的秘密。但我还是不能跟你说，因为我也不知道更多的内幕。啧——我得为自己的话负责，你懂的。”</Storytext.managertalk.c8>
+  <Storytext.managertalk.c9>“把这个带到最近的那个前哨站，然后去找当地的殖民管理员，她会知道该怎么做的。”</Storytext.managertalk.c9>
+  <Storytext.managertalk.c9.o>“行吧。”</Storytext.managertalk.c9.o>
+  <Storytext.managertalk.c10>“一路保重。”</Storytext.managertalk.c10>
+  <!--The Delivery-->
+  <Storytext.receive.c>“第一次出海？”</Storytext.receive.c>
+  <Storytext.receive.c1>*检查你的信息*</Storytext.receive.c1>
+  <Storytext.receive.c2>“好，完成了，我会跟总部请示一下的。”\n“你的货物会送到你去的下一个殖民地。”</Storytext.receive.c2>
+  <Storytext.receive.c3>“嘿，我划了一些钱到你的账上。你的银行记录显示你还没收到启动资金。”</Storytext.receive.c3>
+  <Storytext.receive.c3.o1>“谢谢！”(结束对话)</Storytext.receive.c3.o1>
+  <Storytext.receive.c3.o2>“这儿还有启动资金？”</Storytext.receive.c3.o2>
+  <Storytext.receive.c3.o2.c2>“是的。很明显有人不想给你这笔钱。很难想象联盟如今都已经变成这样了。太多的蛀虫藏匿在这棵大树上了，记不记得当初大家一起宣誓要让欧罗巴变得好？”</Storytext.receive.c3.o2.c2>
+  <!--What Cargo?-->
+  <Storytext.nocargo.c1>“你有什么需要的吗？”</Storytext.nocargo.c1>
+  <Storytext.nocargo.c2>“我是来这儿拿取机密货物的，联盟要求我把一批东西带到‘欧罗巴之眼’去。”</Storytext.nocargo.c2>
+  <Storytext.nocargo.c3>“抱歉，我没有收到这方面的通知。”</Storytext.nocargo.c3>
+  <Storytext.nocargo.c4>“没人告诉你这件事吗？”</Storytext.nocargo.c4>
+  <Storytext.nocargo.c5>“请稍等一下，我这就去上溯确认……该死，咱们这儿用来和联盟联系的信标站离线了。我们已经向最近的前哨站申请了运输支援，但是貌似他们也赶不上了。你可能得在这儿等上一段日子。”</Storytext.nocargo.c5>
+  <Storytext.nocargo.c6>“不，等不及了。告诉我信标站的位置，我和我的船员会去修好它。你继续保持联络，告诉联盟，把货物运输到我们下一个停靠的地方去。”</Storytext.nocargo.c6>
+  <Storytext.nocargo.c7>“我可不好说联盟那边会怎么反应。你最好自己去建立连线并获取进一步的指令。”\n“信标站在这儿。” *在海图上指出位置*</Storytext.nocargo.c7>
+  <Storytext.nocargo.c8>“连线频道是'co.co.1306.e3'。”</Storytext.nocargo.c8>
+  <!--The Comm Hub-->
+  <Storytext.beaconfixed.c>“连线已链接。请选择频道。”</Storytext.beaconfixed.c>
+  <Storytext.beaconfixed.c.o1>co.er.mili.083</Storytext.beaconfixed.c.o1>
+  <Storytext.beaconfixed.c.o2>g019_33</Storytext.beaconfixed.c.o2>
+  <Storytext.beaconfixed.c.o3>co.co.1306.e3</Storytext.beaconfixed.c.o3>
+  <Storytext.beaconfixed.c.o4>----.-.-.---...-----.---.--.---.-----.-.--.--</Storytext.beaconfixed.c.o4>
+  <Storytext.beaconfixed.c.o2.c1>“正在建立联络。”\n“请稍候。”</Storytext.beaconfixed.c.o2.c1>
+  <Storytext.beaconfixed.c.o2.c2>……</Storytext.beaconfixed.c.o2.c2>
+  <Storytext.beaconfixed.c.o2.c3>“喂？”\n“有人听得到吗？”</Storytext.beaconfixed.c.o2.c3>
+  <Storytext.beaconfixed.c.o2.c4>“……”</Storytext.beaconfixed.c.o2.c4>
+  <Storytext.beaconfixed.c.o2.c5>“喂？”</Storytext.beaconfixed.c.o2.c5>
+  <Storytext.beaconfixed.c.o2.c6>“听得到，这里是联盟服务中心。有什么事情吗？”</Storytext.beaconfixed.c.o2.c6>
+  <Storytext.beaconfixed.c.o2.c7>“我是正在执行联盟第08391号任务的船长。我需要拿到我的任务物资。”</Storytext.beaconfixed.c.o2.c7>
+  <Storytext.beaconfixed.c.o2.c8>“正在确认，请稍候。”</Storytext.beaconfixed.c.o2.c8>
+  <Storytext.beaconfixed.c.o2.c9>“你的任务物资会在最近的矿业站点待命。”</Storytext.beaconfixed.c.o2.c9>
+  <Storytext.beaconfixed.c.o2.c10>“更正，你的任务物资会在最近的军事站点待命。我们会通知那儿的管理者这儿你就能顺利拿到了。”</Storytext.beaconfixed.c.o2.c10>
+  <Storytext.beaconfixed.c.o2.c11>“了解。”</Storytext.beaconfixed.c.o2.c11>
+  <Storytext.beaconfixed.c.o2.c12>“感谢致联联盟服务中心。”</Storytext.beaconfixed.c.o2.c12>
+  <Storytext.beaconfixed.c.o2.c13>连线已中断</Storytext.beaconfixed.c.o2.c13>
+  <!--Caro at eng-->
+  <Storytext.cargoateng.c1>“很高兴见到你。”</Storytext.cargoateng.c1>
+  <Storytext.cargoateng.c2>“这就是我要运送的机密货物？”</Storytext.cargoateng.c2>
+  <Storytext.cargoateng.c3>“对。”\n“这玩意儿是不是很重？”</Storytext.cargoateng.c3>
+  <Storytext.cargoateng.c4>“我本来以为它会更大的。”</Storytext.cargoateng.c4>
+  <Storytext.cargoateng.c5>“噢，不是的，它只是一个机器的一部分。那玩意儿可比这个大多了。”</Storytext.cargoateng.c5>
+  <Storytext.cargoateng.c6.o1>“那是什么？”</Storytext.cargoateng.c6.o1>
+  <Storytext.cargoateng.c6.o1.c>“我们的工程师才刚刚把它赶出来，具体的只有那些科学家们知道。你知道的，这东西还处在测试阶段呢。”\n“我本来不该跟你说这么多的，但我实在是太希望有能看到整个机器运作起来的那一天了。毕竟咱们为这玩意儿可投入了太多心血了。”</Storytext.cargoateng.c6.o1.c>
+  <Storytext.cargoateng.c6.o2>继续听</Storytext.cargoateng.c6.o2>
+  <Storytext.cargoateng.c7>“所以你一定要把它带到‘那儿’去。一定要找到当地的管理员，告诉他你把东西安全带到了。这就是我的上头要我跟你交代清楚的事情。”</Storytext.cargoateng.c7>
+  <Storytext.cargoateng.c8>“好的，知道了。”</Storytext.cargoateng.c8>
+  <Storytext.cargoateng.c9>“等等，是哪儿？”</Storytext.cargoateng.c9>
+  <Storytext.cargoateng.c10>“快走吧！”</Storytext.cargoateng.c10>
+  <!--cargo at mili-->
+  <Storytext.cargoatmili.c1>“请出示你们的身份证明。”</Storytext.cargoatmili.c1>
+  <Storytext.cargoatmili.c2>“算了吧列兵！他们是运输队的。”</Storytext.cargoatmili.c2>
+  <Storytext.cargoatmili.c3>“是，长官！”</Storytext.cargoatmili.c3>
+  <Storytext.cargoatmili.c4>“去见一下中尉吧。他应该在管理员办公室。”</Storytext.cargoatmili.c4>
+  <Storytext.cargoatmili.c5>“物资也在那儿。”</Storytext.cargoatmili.c5>
+  <Storytext.cargoatmili.c6>“把这东西带到‘那儿’去。”</Storytext.cargoatmili.c6>
+  <Storytext.cargoatmili.c7>“绝对不能遗失或者损坏一点儿，明白了吗？！”</Storytext.cargoatmili.c7>
+  <Storytext.cargoatmili.c8>“明白。”</Storytext.cargoatmili.c8>
+  <Storytext.cargoatmili.c9>“走吧。”</Storytext.cargoatmili.c9>
+  <Storytext.cargoatmili.c10>“了解。”</Storytext.cargoatmili.c10>
+  <!--theft in city-->
+  <Storytext.theftincity.c1>“捉住那个小偷！”</Storytext.theftincity.c1>
+  <Storytext.theftincity.c2>“打断她的腿！”</Storytext.theftincity.c2>
+  <Storytext.theftincity.c3>“请帮帮我！”</Storytext.theftincity.c3>
+  <Storytext.thefincity.c3.o1>“快，到我的潜艇里去！”</Storytext.thefincity.c3.o1>
+  <Storytext.thefincity.c3.o1.c>带着小偷躲到你船里的一个压载舱里</Storytext.thefincity.c3.o1.c>
+  <Storytext.thefincity.c3.o1.c1>“在这儿呆着，直到我让你上来为止。”</Storytext.thefincity.c3.o1.c1>
+  <Storytext.thefincity.c3.o1.c2>“我得上去看一下是什么情况。”</Storytext.thefincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o2>“滚吧。”</Storytext.theftincity.c3.o2>
+  <Storytext.theftincity.c3.o1.c1>“抱歉，长官。有人告诉我这儿附近有嫌疑人出现过。你有没有见过一个穿着黑衣服的女人在跑？”</Storytext.theftincity.c3.o1.c1>
+  <Storytext.theftincity.c3.o1.c2>“如果你能提供线索的话我们会向你支付报酬的。”\n“非常高额的劳酬。”</Storytext.theftincity.c3.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1>“她闯入了我的潜艇，不过我已经困住她了。”</Storytext.theftincity.c3.o1.c2.o1>
+  <Storytext.theftincity.c3.o1.c2.o1.c>“谢谢！您真是联盟的左膀右臂！请打开门这样我们就去抓她了。”</Storytext.theftincity.c3.o1.c2.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o1.c1>“捉到你了！你这个小婊子！”</Storytext.theftincity.c3.o1.c2.o1.c1>
+  <Storytext.theftincity.c3.o1.c2.o1.c2>“不！”</Storytext.theftincity.c3.o1.c2.o1.c2>
+  <Storytext.theftincity.c3.o1.c2.o1.c3>“你个骗子！我信任你！死全家的混蛋！联盟猪！”</Storytext.theftincity.c3.o1.c2.o1.c3>
+  <Storytext.theftincity.c3.o1.c2.o1.c4>“你对这位公民说什么？”</Storytext.theftincity.c3.o1.c2.o1.c4>
+  <Storytext.theftincity.c3.o1.c2.o1.c5>“闭上你的狗嘴！看来我回头得教教你怎么在这儿说话了！”</Storytext.theftincity.c3.o1.c2.o1.c5>
+  <Storytext.theftincity.c3.o1.c2.o1.c6>“我们还是不要多操心这个意外来客了。”\n“带她走吧。”</Storytext.theftincity.c3.o1.c2.o1.c6>
+  <Storytext.theftincity.c3.o1.c2.o2>“我没在这儿看见有人路过。”</Storytext.theftincity.c3.o1.c2.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c>“真的吗？好吧。”</Storytext.theftincity.c3.o1.c2.o2.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1>“但是我们听说有人看见你把小偷藏进你的潜艇里去了。我们必须搜查你的潜艇！还请你配合。”</Storytext.theftincity.c3.o1.c2.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1>“你无权进入我的潜艇。”\n“容我反对，你们的所作所为毫无疑问违背了联盟的律法。”</Storytext.theftincity.c3.o1.c2.o2.c1.o1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>“说起这个。” *开始摸索口袋*\n“我们这儿有一份搜查许可证。”\n“带我们下去吧。你现在有重大嫌疑。”</Storytext.theftincity.c3.o1.c2.o2.c1.o1.c>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2>“我们正在进行一次画皮卵运输任务。如果你们执意下去，我们无法保证你们的安全。”</Storytext.theftincity.c3.o1.c2.o2.c1.o2>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>“哈哈哈哈——你以为我是谁？脑缩水吗？”\n“画皮卵运输任务，真是有够创意的。你让我下班的时候多了点笑料。”\n*展示搜查许可证*\n“已经说得够多了。老老实实带我们下去吧，你现在麻烦大了。”</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c1>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>“别耍花样，先生。没其他地方了，打开压载舱！”</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c3>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>“见了鬼了！啥都没得。”</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c4>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>“我要投诉你如果你这样对待联盟公民。”</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c5>
+  <Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>“简直不敢相信……抱、抱歉，我们走。快点。”</Storytext.theftincity.c3.o1.c2.o2.c1.o2.c6>
+  <Storytext.theftincity_saved.c0>“她一定还在这里。我得找到她。”</Storytext.theftincity_saved.c0>
+  <Storytext.theftincity_saved.c1>“谢谢。”</Storytext.theftincity_saved.c1>
+  <Storytext.theftincity_saved.c2>“你该走了。”</Storytext.theftincity_saved.c2>
+  <Storytext.theftincity_saved.c3>“去哪儿？”</Storytext.theftincity_saved.c3>
+  <Storytext.theftincity_saved.c4>“我不知道，但我现在可因为你被盯上了。”</Storytext.theftincity_saved.c4>
+  <Storytext.theftincity_saved.c5>“我没地方可去了。”</Storytext.theftincity_saved.c5>
+  <Storytext.theftincity_saved.c6>“我很擅长射击和跟踪，你能带我走吗？”</Storytext.theftincity_saved.c6>
+  <Storytext.theftincity_saved.c6.o1>“……可以。”</Storytext.theftincity_saved.c6.o1>
+  <Storytext.theftincity_saved.c6.o1.c>“你不会后悔的。”</Storytext.theftincity_saved.c6.o1.c>
+  <Storytext.theftincity_saved.c6.o2>“我不能带着小偷上路。”</Storytext.theftincity_saved.c6.o2>
+  <Storytext.theftincity_saved.c6.o2.c1>“那你为什么要救我呢？”</Storytext.theftincity_saved.c6.o2.c1>
+  <Storytext.theftincity_saved.c6.o2.c2>“我不知道。”</Storytext.theftincity_saved.c6.o2.c2>
+  <Storytext.theftincity_saved.c6.o2.c3>“但你还是救了我，我不会忘记这份恩情的。”</Storytext.theftincity_saved.c6.o2.c3>
+  <!--the man-->
+  <Storytext.theman.c>“有什么要说的？”</Storytext.theman.c>
+  <Storytext.theman.c1>“……你是谁？”</Storytext.theman.c1>
+  <Storytext.theman.c2>“救下那个女孩儿，肯定给你带来了不少麻烦吧。”\n“联盟上层不久就会调查清楚的，他们马上就会发通缉令来的。” </Storytext.theman.c2>
+  <Storytext.theman.c3>“你是在恐吓我吗？”</Storytext.theman.c3>
+  <Storytext.theman.c4>“到船员宿舍去找我，咱们在那儿谈谈吧。”</Storytext.theman.c4>
+  <Storytext.theman.c5>“帮助那个女孩儿不能为你带来任何好处。”\n“联盟不准许任何人忤逆他们的决策或者对他们的统治提出异议，一点儿都不行。”</Storytext.theman.c5>
+  <Storytext.theman.c6>“你想要什么？”</Storytext.theman.c6>
+  <Storytext.theman.c7>“不是我想要什么，而是你想要什么。”\n“真相么？”\n“可以，我们给你。”</Storytext.theman.c7>
+  <Storytext.theman.c8>“那么对应的条件是什么？”</Storytext.theman.c8>
+  <Storytext.theman.c9>“拒绝这个殖民地的管理者即将下达给你的指令。”</Storytext.theman.c9>
+  <Storytext.theman.c10>“我必须遵守命令。”</Storytext.theman.c10>
+  <Storytext.theman.c11>“但你已经选择过撒谎了。”</Storytext.theman.c11>
+  <Storytext.theman.c12>“我不会那么做的。”</Storytext.theman.c12>
+  <Storytext.theman.c13>“没关系，我们会持续关注你的。”</Storytext.theman.c13>
+  <Storytext.theman.c14>“如果你按照我说的做了，那我们自然会再见面的。”</Storytext.theman.c14>
+  <Storytext.theman.c15>“什么时候？”</Storytext.theman.c15>
+  <Storytext.theman.c16>“你下次对接的时候。”</Storytext.theman.c16>
+  <Storytext.ordertodeny.c>“我得去见老大，我已经晚了。”</Storytext.ordertodeny.c>
+  <Storytext.ordertodeny.c1>“嗯？”</Storytext.ordertodeny.c1>
+  <Storytext.ordertodeny.c2>“你不想要解释一下你为什么来的这么晚吗？”</Storytext.ordertodeny.c2>
+  <Storytext.ordertodeny.c3>“我的船遭受了怪物袭击。”</Storytext.ordertodeny.c3>
+  <Storytext.ordertodeny.c4>“我们会知道你说的到底是不是真的。”</Storytext.ordertodeny.c4>
+  <Storytext.ordertodeny.c5>“再问一次，是实话吗？”</Storytext.ordertodeny.c5>
+  <Storytext.ordertodeny.c5.o1>“是的。”</Storytext.ordertodeny.c5.o1>
+  <Storytext.ordertodeny.c5.o2>“不是。”</Storytext.ordertodeny.c5.o2>
+  <Storytext.ordertodeny.c6>“没事儿，我们会清楚的。”</Storytext.ordertodeny.c6>
+  <Storytext.ordertodeny.c7>“这次喊你来，是为了让你帮联盟解决一些海域治安问题。”</Storytext.ordertodeny.c7>
+  <Storytext.ordertodeny.c8>“海盗在这片区域非常活跃。”\n“高层要你去击沉一艘海盗船。”</Storytext.ordertodeny.c8>
+  <Storytext.ordertodeny.c9>“能完成么？”</Storytext.ordertodeny.c9>
+  <Storytext.ordertodeny.c9.o1>接受命令</Storytext.ordertodeny.c9.o1>
+  <Storytext.ordertodeny.c9.o1.c>“为联盟服役！”</Storytext.ordertodeny.c9.o1.c>
+  <Storytext.ordertodeny.c9.o1.c1>“为了欧罗巴！”</Storytext.ordertodeny.c9.o1.c1>
+  <Storytext.ordertodeny.c9.o1.c2>“为了欧罗巴！”</Storytext.ordertodeny.c9.o1.c2>
+  <Storytext.ordertodeny.c9.o2>按照要求拒绝执行</Storytext.ordertodeny.c9.o2>
+  <Storytext.ordertodeny.c9.o2.c1>“我做不到。”</Storytext.ordertodeny.c9.o2.c1>
+  <Storytext.ordertodeny.c9.o2.c2>“这是命令。”</Storytext.ordertodeny.c9.o2.c2>
+  <Storytext.ordertodeny.c9.o2.c3>“我正在执行一项重要运输任务，我需要尽可能避免非必要的战斗来保全货物，还请您理解。”</Storytext.ordertodeny.c9.o2.c3>
+  <Storytext.ordertodeny.c9.o2.c4>“好吧……你可以走了。”</Storytext.ordertodeny.c9.o2.c4>
+  <Storytext.coalitionsview.c1>“听着，我理解分离主义分子对那个所谓的‘仪器’很感兴趣，但是我们可没法等他们去实现他们的‘理念’。现在所有殖民地可用的能源储量正在飞速消耗殆尽，我们现在急需一个解决办法。”</Storytext.coalitionsview.c1>
+  <Storytext.coalitionsview.c2>“但是分离主义分子声称使用那个‘仪器’会对木卫二的居民产生毁灭性的影响。他们甚至有了证据来证明他们的说辞。”</Storytext.coalitionsview.c2>
+  <Storytext.coalitionsview.c3>“他们所谓的的‘证据’既没有经过实践测试也经不起推敲。我们之中早有经验丰富的科学家和工程师在这个问题上钻研了数以年计的时间，他们跟我们确认过这个‘仪器’是足够安全、能够正常使用的。”</Storytext.coalitionsview.c3>
+  <Storytext.coalitionsview.c4>“那那些被抛弃的人们呢？难道就没有一种更好地利用这批资源，不需要牺牲这么多人的办法么？”</Storytext.coalitionsview.c4>
+  <Storytext.coalitionsview.c5>“我也希望有，但很不幸的是，没有更好的出路了。我们已经秘密建造了一处水下发射基地，也制造了一条航天飞船来把最优秀的那一批人安全地带回地球去。我们还用高强度材料加固了一批前哨站，让它们能够顺利抵御飞船发射时外泄的狂暴能量冲击。”</Storytext.coalitionsview.c5>
+  <Storytext.coalitionsview.c6>“但是……牺牲这么多人仅仅为了拯救那么一小撮人，值得么？”</Storytext.coalitionsview.c6>
+  <Storytext.coalitionsview.c7>“我们不只是在拯救少数人，我们是在挽救人类最优秀的那一部分存在。他们会替我们在地球上重建文明，我们承担不起、更不能让这个机会白白溜走。”</Storytext.coalitionsview.c7>
+  <DHMissionHeader.towsub>可选任务解锁：牵引沉船至居住地。联盟需要详细分析沉船失事的原因。如果你能把残骸拖至目的地，就能得到奖励。</DHMissionHeader.towsub>
+  <DHMissionMessage.towsub>联盟需要详细分析沉船遇险的原因。如果你能把残骸拖至目的地，就能得到奖励。</DHMissionMessage.towsub>
+  <DHMissionHeader.towsubcompleted>可选任务完成：奖励随后到账。</DHMissionHeader.towsubcompleted>
+  <missionname.fetch_broodmother>猎杀爬行者巢母</missionname.fetch_broodmother>
+  <missiondescription.fetch_broodmother>[location1]和[location2]之间的航道上发现了一群藻鬃爬行者。也许能从它们身上拿到一些宝贵的战利品。带着战利品去下一个站点售卖掉以获取资金。</missiondescription.fetch_broodmother>
+  <missionsonarlabel.fetch_broodmother>爬行者巢母</missionsonarlabel.fetch_broodmother>
+  <missionsuccess.fetch_broodmother>爬行者巢母已被击杀。</missionsuccess.fetch_broodmother>
+  <missionheader0.fetch_broodmother>任务完成</missionheader0.fetch_broodmother>
+  <missionmessage0.fetch_broodmother>爬行者巢母死了。挖下它的眼睛并驾驶潜艇离开溶穴，前往殖民点以获取奖励。</missionmessage0.fetch_broodmother>
+  <missiondescription.fetch_hammerhead>[location1]和[location2]之间的航道上发现了一群锤头煞。也许能从它们身上拿到一些宝贵的战利品。带着战利品去下一个站点售卖掉以获取资金。</missiondescription.fetch_hammerhead>
+  <missionsonarlabel.fetch_hammerhead>锤头煞</missionsonarlabel.fetch_hammerhead>
+  <missionsuccess.fetch_hammerhead>锤头煞已被击杀。</missionsuccess.fetch_hammerhead>
+  <missionheader0.fetch_hammerhead>任务完成</missionheader0.fetch_hammerhead>
+  <missionmessage0.fetch_hammerhead>锤头煞死了。割下它的鳍并驾驶潜艇离开溶穴，前往殖民点以获取奖励。</missionmessage0.fetch_hammerhead>
+  <missiondescription.fetch_hammerhead_gold>[location1]和[location2]之间的航道上发现了一群锤头煞。在它们之中有一头黄金锤头煞。也许能从它们身上拿到一些宝贵的战利品。带着战利品去下一个站点售卖掉以获取资金。</missiondescription.fetch_hammerhead_gold>
+  <missionsonarlabel.fetch_hammerhead_gold>锤头煞</missionsonarlabel.fetch_hammerhead_gold>
+  <missionsuccess.fetch_hammerhead_gold>锤头煞已被击杀。</missionsuccess.fetch_hammerhead_gold>
+  <missionheader0.fetch_hammerhead_gold>任务完成</missionheader0.fetch_hammerhead_gold>
+  <missionmessage0.fetch_hammerhead_gold>锤头煞死了。割下它的鳍并驾驶潜艇离开溶穴，前往殖民点以获取奖励。</missionmessage0.fetch_hammerhead_gold>
+  <missionname.familytransport>紧急载客任务</missionname.familytransport>
+  <missiondescription.familytransport>运载男人和他重病的妻子到下一个居住地。</missiondescription.familytransport>
+  <missionheader0.familytransport>乘客死亡</missionheader0.familytransport>
+  <missionmessage0.familytransport>客人们在你的船上不幸遇难</missionmessage0.familytransport>
+  <missionsuccess.familytransport>任务完成。现在，他们可以去看医生了。</missionsuccess.familytransport>
+  <missionfailure.familytransport>有人死在了你的船上。你最好想好怎么去跟联盟政府解释这一切。</missionfailure.familytransport>
+  <missiontext.familytransport>男人的妻子开始感觉不怎么舒服。</missiontext.familytransport>
+  <missionname.abandonedoutpostrescue>前哨站营救</missionname.abandonedoutpostrescue>
+  <missionname.leveloutpost_capture>调查殖民地</missionname.leveloutpost_capture>
+  <missiondescription.leveloutpost_capture>线报表明有一队分离主义分子秘密渗透入了[location1]和[location2]之间。联盟无法容忍这样的事情发生。逮捕这群渣滓以确保公民的安全。你被特别准许使用各种暴力行为和枪械。如果他们拒捕，你可以使用致命性手段。但联盟不会单单为了一具不会讲话的尸体而付给你报酬。</missiondescription.leveloutpost_capture>
+  <missionsuccess.leveloutpost_capture>已成功清剿分离主义分子</missionsuccess.leveloutpost_capture>
+  <missionfailure.leveloutpost_capture>没有清剿完全部的分离主义分子。你让联盟失望了</missionfailure.leveloutpost_capture>
+  <missionsonarlabel.leveloutpost_capture>殖民地</missionsonarlabel.leveloutpost_capture>
+  <missionheader0.leveloutpost_capture>准备对接！</missionheader0.leveloutpost_capture>
+  <missionmessage0.leveloutpost_capture>第839z35号潜艇请求对接。</missionmessage0.leveloutpost_capture>
+  <missionheader1.leveloutpost_capture>分离主义分子要被消灭。</missionheader1.leveloutpost_capture>
+  <missionmessage1.leveloutpost_capture>让我们出发吧。</missionmessage1.leveloutpost_capture>
+  <missionname.story_leveloutpost_delivermessage>调查殖民地</missionname.story_leveloutpost_delivermessage>
+  <missiondescription.story_leveloutpost_delivermessage>一位朋友要你把一则消息传递到最近的殖民地去。</missiondescription.story_leveloutpost_delivermessage>
+  <missionsuccess.story_leveloutpost_delivermessage>信息已发送。</missionsuccess.story_leveloutpost_delivermessage>
+  <missionfailure.story_leveloutpost_delivermessage>信息已送达。</missionfailure.story_leveloutpost_delivermessage>
+  <missionsonarlabel.story_leveloutpost_delivermessage>殖民地</missionsonarlabel.story_leveloutpost_delivermessage>
+  <missionheader0.story_leveloutpost_delivermessage>准备对接！</missionheader0.story_leveloutpost_delivermessage>
+  <missionmessage0.story_leveloutpost_delivermessage>第219z35.30.4.23号潜艇请求对接。</missionmessage0.story_leveloutpost_delivermessage>
+  <missionheader1.story_leveloutpost_delivermessage>你做了什么？！</missionheader1.story_leveloutpost_delivermessage>
+  <missionmessage1.story_leveloutpost_delivermessage>你违反了律法。</missionmessage1.story_leveloutpost_delivermessage>
+  <missionname.story_nocargo_beacon>维修信标站</missionname.story_nocargo_beacon>
+  <missiondescription.story_nocargo_beacon>位于[location1]和[location2]两地之间的信标站因故障离线，维修使其重新上线并发射主动声纳。</missiondescription.story_nocargo_beacon>
+  <missionsuccess.story_nocargo_beacon>信标站已重新上线。</missionsuccess.story_nocargo_beacon>
+  <missionmessage0.story_nocargo_beacon>[location1]与联盟的链接已因故障下线。确保它能够正常发信，并驾驶潜艇前往[location2]去会见你的联系人。</missionmessage0.story_nocargo_beacon>
+  <entityname.hullscanner>船体扫描器</entityname.hullscanner>
+  <entitydescription.hullscanner>用于探明目标船体的具体情况。\n作用范围：5米。</entitydescription.hullscanner>
+  <entityname.fuelrodcase>燃料棒储运箱</entityname.fuelrodcase>
+  <entitydescription.fuelrodcase>可储存燃料棒，也用于隔绝未用尽的燃料棒的辐射。</entitydescription.fuelrodcase>
+  <entityname.recycledfuelrod>再生燃料棒</entityname.recycledfuelrod>
+  <entitydescription.recycledfuelrod>由未用尽的燃料棒经特殊处理后获得。具有危害性，务必小心对待。</entitydescription.recycledfuelrod>
+  <entityname.watertank>水箱</entityname.watertank>
+  <entitydescription.watertank>装着经过特殊处理的制氧机专用液</entitydescription.watertank>
+  <entityname.reactorcooline>反应堆冷却剂</entityname.reactorcooline>
+  <entitydescription.reactorcooline>用于反应堆降温，以防过热</entitydescription.reactorcooline>
+  <entityname.lightfuse>灯泡保险丝</entityname.lightfuse>
+  <entitydescription.lightfuse>一个使灯泡能够正常使用的重要部件</entitydescription.lightfuse>
+  <entityname.smallpumpmotor>小型水泵电机</entityname.smallpumpmotor>
+  <entitydescription.smallpumpmotor>一个适配小型水泵的电机</entitydescription.smallpumpmotor>
+  <entityname.bigpumpmotor>大型水泵电机</entityname.bigpumpmotor>
+  <entitydescription.bigpumpmotor>一个适配大型水泵的电机</entitydescription.bigpumpmotor>
+  <entityname.smallpumpII>II级小型水泵</entityname.smallpumpII>
+  <entitydescription.smallpumpII>[最大泵力：150]\n[电力消耗：90]\n[最小电压：0.3]</entitydescription.smallpumpII>
+  <entityname.smallpumpIII>III小型水泵</entityname.smallpumpIII>
+  <entitydescription.smallpumpIII>[最大泵力：200]\n[电力消耗：140]\n[最小电压：0.3]</entitydescription.smallpumpIII>
+  <entityname.handdynamo>手摇发电机</entityname.handdynamo>
+  <entitydescription.handdynamo>一种能够手动产生电力的装置</entitydescription.handdynamo>
+  <entityname.junctionboxfuse>接线盒保险丝</entityname.junctionboxfuse>
+  <entitydescription.junctionboxfuse>接线盒的重要组件</entitydescription.junctionboxfuse>
+  <entityname.revolvernew>左轮手枪</entityname.revolvernew>
+  <entitydescription.revolvernew>[射速：低]\n[准确性：低]</entitydescription.revolvernew>
+  <entityname.revolverroundnew>左轮子弹</entityname.revolverroundnew>
+  <entitydescription.revolverroundnew>[穿甲系数: 60%]</entitydescription.revolverroundnew>
+  <entityname.57>57式FN手枪</entityname.57>
+  <entitydescription.57>[射速: 中]\n[准确性:低]</entitydescription.57>
+  <entityname.57mag>5.7x28mm 57式FN手枪弹匣</entityname.57mag>
+  <entitydescription.57mag>[容量: 20]\n[穿甲系数: 30%]</entitydescription.57mag>
+  <entityname.g19>格洛克19</entityname.g19>
+  <entitydescription.g19>[射速: Low]\n[准确性:高-低]</entitydescription.g19>
+  <entityname.g19mag>9x19 格洛克19弹匣</entityname.g19mag>
+  <entitydescription.g19mag>[容量: 30]\n[穿甲系数: 30%]</entitydescription.g19mag>
+  <entityname.MPX>Sig MPX冲锋枪</entityname.MPX>
+  <entitydescription.MPX>[射速: 快]\n[准确性:中]</entitydescription.MPX>
+  <entityname.mpx_magazine>9x19 MPX冲锋枪弹匣</entityname.mpx_magazine>
+  <entitydescription.mpx_magazine>[容量: 30]\n[穿甲系数: 30%]</entitydescription.mpx_magazine>
+  <entityname.MCX>Sig MCX卡宾枪</entityname.MCX>
+  <entitydescription.MCX>[射速: 快]\n[准确性:高]</entitydescription.MCX>
+  <entityname.mcx_magazine>.300 AAC弹匣</entityname.mcx_magazine>
+  <entitydescription.mcx_magazine>[容量: 30]\n[穿甲系数: 60%]</entitydescription.mcx_magazine>
+  <entityname.MP9>MP9冲锋枪</entityname.MP9>
+  <entitydescription.MP9>[射速: 快]\n[准确性:低]</entitydescription.MP9>
+  <entityname.mp9mag>9x19 MP9冲锋枪弹匣</entityname.mp9mag>
+  <entitydescription.mp9mag>[容量: 30]\n[穿甲系数: 30%]</entitydescription.mp9mag>
+  <entityname.P90>P90冲锋枪</entityname.P90>
+  <entitydescription.P90>[射速: 非常快]\n[准确性:中-低]</entitydescription.P90>
+  <entityname.p90mag>5.7x28mm P90冲锋枪弹匣</entityname.p90mag>
+  <entitydescription.p90mag>[容量: 50]\n[穿甲系数: 30%]</entitydescription.p90mag>
+  <entityname.mk17>SCAR突击步枪</entityname.mk17>
+  <entitydescription.mk17>[射速: 中]\n[准确性:高-中]</entitydescription.mk17>
+  <entityname.mk17mag>7.62x51mm SCAR突击步枪弹匣</entityname.mk17mag>
+  <entitydescription.mk17mag>[容量: 20]\n[穿甲系数: 70%]</entitydescription.mk17mag>
+  <entityname.ak47>AK-47步枪</entityname.ak47>
+  <entitydescription.ak47>[射速: 中]\n[准确性:中-低]</entitydescription.ak47>
+  <entityname.ak47mag>7.62x39mm AK-47步枪弹匣</entityname.ak47mag>
+  <entitydescription.ak47mag>[容量: 30]\n[穿甲系数: 50%]</entitydescription.ak47mag>
+  <entityname.pkm>PKM机枪</entityname.pkm>
+  <entitydescription.pkm>[射速: 非常快]\n[准确性:中-非常低]</entitydescription.pkm>
+  <entityname.pkmmag>7.62x54mm PKM机枪弹夹</entityname.pkmmag>
+  <entitydescription.pkmmag>[容量: 200]\n[穿甲系数: 95%]</entitydescription.pkmmag>
+  <entityname.fal>FAL自动步枪</entityname.fal>
+  <entitydescription.fal>[射速:非常慢]\n[准确性:非常快-快]</entitydescription.fal>
+  <entityname.falmag>7.62x51mm FAL自动步枪弹匣</entityname.falmag>
+  <entitydescription.falmag>[容量: 20]\n[穿甲系数: 90%]</entitydescription.falmag>
+  <entityname.underwatergun>APS水下步枪</entityname.underwatergun>
+  <entitydescription.underwatergun>[射速: 中]\n[准确性:中]</entitydescription.underwatergun>
+  <entityname.apsmag>APS水下步枪弹匣</entityname.apsmag>
+  <entitydescription.apsmag>[容量: 26]\n[穿甲系数: 40%]</entitydescription.apsmag>
+  <entityname.gasgrenade>毒气手榴弹</entityname.gasgrenade>
+  <entitydescription.gasgrenade>使用它来毒晕一条线上的敌人</entitydescription.gasgrenade>
+  <entityname.reactorrs107>S107级反应堆</entityname.reactorrs107>
+  <entitydescription.reactorrs107>[最大输出:5000]\n[火灾延迟:20]\n[熔毁延迟:120]\n[燃料消耗速率:0.2]\n[EMP免疫:是]</entitydescription.reactorrs107>
+  <entityname.reactormrmxi>MR-MXI级反应堆</entityname.reactormrmxi>
+  <entitydescription.reactormrmxi>[最大输出:6550]\n[火灾延迟:45]\n[熔毁延迟:200]\n[燃料消耗速率:0.2]\n[EMP免疫:是]</entitydescription.reactormrmxi>
+  <entityname.reactorccsv>CCS-V级反应堆</entityname.reactorccsv>
+  <entitydescription.reactorccsv>[最大输出7000]\n[火灾延迟:30]\n[熔毁延迟:140]\n[燃料消耗速率:0.4]\n[EMP免疫:否]</entitydescription.reactorccsv>
+  <entityname.reactorfac900>FAC900级反应堆</entityname.reactorfac900>
+  <entitydescription.reactorfac900>[最大输出:8000]\n[火灾延迟:60]\n[熔毁延迟:200]\n[燃料消耗速率:0.2]\n[EMP免疫:是]</entitydescription.reactorfac900>
+  <entityname.reactorgb099>GB-099级反应堆</entityname.reactorgb099>
+  <entitydescription.reactorgb099>[最大输出:9500]\[火灾延迟:30]\n[熔毁延迟:150]\n[燃料消耗速率:0.6]\n[EMP免疫:是]</entitydescription.reactorgb099>
+  <entityname.reactortype2053>Type2053级反应堆</entityname.reactortype2053>
+  <entitydescription.reactortype2053>[最大输出:12000]\n[火灾延迟:10]\n[熔毁延迟:50]\n[燃料消耗速率:0.9]\n[EMP免疫:否]</entitydescription.reactortype2053>
+  <entityname.reactormanual>反应堆操作书</entityname.reactormanual>
+  <entitydescription.reactormanual>一本有关于如何操作反应堆的指南</entitydescription.reactormanual>
+  <entityname.subdoc>潜艇资料</entityname.subdoc>
+  <entitydescription.subdoc>一种经特殊加密处理的电子数据存储密匙，登记了船只的归属与各项性能。是一种用于采购燃料棒的重要凭证。</entitydescription.subdoc>
+  <entityname.weaponrepairkit>枪械维修工具</entityname.weaponrepairkit>
+  <entitydescription.weaponrepairkit>一套专门用于维修枪械的工具</entitydescription.weaponrepairkit>
+  <cursorhover.repair.heavywrench>[[use]] 维修 (大扳手)</cursorhover.repair.heavywrench>
+  <cursorhover.repair.guns>[[use]] 维修 (枪械维修工具)</cursorhover.repair.guns>
+  <Terminal.reactormanual>特别注意事项——反应堆守则：反应堆必须使用冷却剂以防止过热。\n如果反应堆的耐久跌落到一定程度，关闭反应堆以防止发生更大的事故。\n反应堆的裂变速率应当低于5，以确保船只的安全。当反应堆离线时，启用备用电源来维持潜艇的正常运行。\n严禁把未用完的燃料棒从反应堆中拿出，未充分反应完毕的燃料棒会持续释放出致命性的辐射。如果你坚持这么做，一定要准备好相对应的收容器。\n联盟第101号电路工程指导手册</Terminal.reactormanual>
+  <!--location-->
+  <locationname.EuropanRidge_Outpost>欧罗巴海脊的居住前哨站</locationname.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name]居住前哨站</locationnameformat.EuropanRidge_Outpost>
+  <locationnameformat.EuropanRidge_Outpost>[name]前哨站</locationnameformat.EuropanRidge_Outpost>
+  <locationname.EuropanRidge_Military>欧罗巴海脊的军事基地</locationname.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name]军事基地</locationnameformat.EuropanRidge_Military>
+  <locationnameformat.EuropanRidge_Military>[name]军事基地</locationnameformat.EuropanRidge_Military>
+  <locationname.EuropanRidge_Research>欧罗巴海脊的研究前哨站</locationname.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name]研究前哨站</locationnameformat.EuropanRidge_Research>
+  <locationnameformat.EuropanRidge_Research>[name]前哨站</locationnameformat.EuropanRidge_Research>
+  <locationname.EuropanRidge_Mine>欧罗巴海脊的矿业前哨站</locationname.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name]矿业前哨站</locationnameformat.EuropanRidge_Mine>
+  <locationnameformat.EuropanRidge_Mine>[name]前哨站</locationnameformat.EuropanRidge_Mine>
+  <locationname.AphoticPlateau_Outpost>无光海原的居住前哨站</locationname.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name]居住前哨站</locationnameformat.AphoticPlateau_Outpost>
+  <locationnameformat.AphoticPlateau_Outpost>[name]前哨站</locationnameformat.AphoticPlateau_Outpost>
+  <locationname.AphoticPlateau_military>无光海原的军事基地</locationname.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name]军事基地</locationnameformat.AphoticPlateau_military>
+  <locationnameformat.AphoticPlateau_military>[name]军事基地</locationnameformat.AphoticPlateau_military>
+  <locationname.AphoticPlateau_Research>无光海原的研究前哨站</locationname.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name]研究前哨站</locationnameformat.AphoticPlateau_Research>
+  <locationnameformat.AphoticPlateau_Research>[name]前哨站</locationnameformat.AphoticPlateau_Research>
+  <locationname.AphoticPlateau_Mine>无光海原的矿业前哨站</locationname.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name]矿业前哨站</locationnameformat.AphoticPlateau_Mine>
+  <locationnameformat.AphoticPlateau_Mine>[name]前哨站</locationnameformat.AphoticPlateau_Mine>
+  <locationname.Greatsea_Outpost>渊洋的居住前哨站</locationname.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name]居住前哨站</locationnameformat.Greatsea_Outpost>
+  <locationnameformat.Greatsea_Outpost>[name]前哨站</locationnameformat.Greatsea_Outpost>
+  <locationname.Greatsea_military>渊洋的矿业前哨站</locationname.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name]矿业前哨站</locationnameformat.Greatsea_military>
+  <locationnameformat.Greatsea_military>[name]前哨站</locationnameformat.Greatsea_military>
+  <locationname.Greatsea_Research>渊洋的研究前哨站</locationname.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name]研究前哨站</locationnameformat.Greatsea_Research>
+  <locationnameformat.Greatsea_Research>[name]前哨站</locationnameformat.Greatsea_Research>
+  <Sildeshow.DHStorybegin1>“2035年，人类于一次星际探索中首次造访欧罗巴，搜寻这颗星球存在高等生命的证据。在随后的十年中，当地逐步发展出了稳定的殖民体系，并开始为地球提供稀有矿物。”</Sildeshow.DHStorybegin1>
+  <Sildeshow.DHStorybegin2>“2050年，来自巨蟹星云的强伽马射线风暴掠过这片区域，切断了欧罗巴与地球的联络。2051年，地球方面不再对欧罗巴提供星际补给。”</Sildeshow.DHStorybegin2>
+  <Sildeshow.DHStorybegin3>“依凭现存的资源，殖民地仍旧能以低生活标准运转下去。鉴于关键性的资源储备不足，木卫二联盟深刻意识到，欧罗巴殖民体系终将崩溃。2053年，异星能量脉冲被一艘货运潜艇捕获、带回，自此，有关全新的外星能源的消息广泛传播开来。人类将这种能源视为重返过去生活的希望，但它的实际应用却从未被大众所知晓。实际上，连这种能源能否被人类安全无害地利用都不曾被证实过。”</Sildeshow.DHStorybegin3>
+  <Sildeshow.DHStorybegin4>“现今，距第一次异星信号被捕捉，已过去了6年。”</Sildeshow.DHStorybegin4>
+  <Botai_getdivingmask>“水进来了！”</Botai_getdivingmask>
+  <Botai_getdivingmask>“寻找潜水面罩！”</Botai_getdivingmask>
+  <Botai_getdivingmask>“船体损坏！船体缺失！”</Botai_getdivingmask>
+</infotexts>

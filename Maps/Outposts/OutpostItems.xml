@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,radiationshield" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
+      <trigger />
+      <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="38,336,575,849" depth="0.8" origin="0.5,0.5" />
+      <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
+      <BrokenSprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="473,1197,502,655" depth="0.79" maxcondition="50" offset="0,0" fadein="true" />
+      <BrokenSprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="975,1197,502,690" depth="0.79" maxcondition="10" offset="0,0" fadein="true" />
+      <aitarget sightrange="500" soundrange="7500" />
+      <Reactor canbeselected="true" firedelay="20" meltdowndelay="120" maxpoweroutput="20000" fuelconsumptionrate="0.2" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
+        <StatusEffect type="InWater" target="This" condition="-0.5">
+          <Conditional condition="gt 10" />
+        </StatusEffect>
+        <GuiFrame relativesize="0.5,0.45" minsize="700,350" maxsize="2688,1166" anchor="Center" relativeoffset="0.1,0" style="ItemUI" />
+        <GraphLine texture="Content/Items/Reactor/graphLine.png">
+          <Sprite name="ReactorGraphLine" texture="Content/Items/Reactor/graphLine.png" sourcerect="0,0,32,32" />
+        </GraphLine>
+        <FissionRateMeter>
+          <Sprite name="FissionRateMeter" texture="Content/Items/Reactor/reactor.png" sourcerect="544,770,441,240" origin="0.5,1" />
+        </FissionRateMeter>
+        <TurbineOutputMeter>
+          <Sprite name="TurbineOutputMeter" texture="Content/Items/Reactor/reactor.png" sourcerect="544,770,441,240" origin="0.5,1" />
+        </TurbineOutputMeter>
+        <MeterPointer>
+          <Sprite name="MeterPointer" texture="Content/UI/UIAtlasDevices.png" sourcerect="938,846,31,167 " origin="0.5,0.9" />
+        </MeterPointer>
+        <SectorSprite>
+          <Sprite name="SectorSprite" texture="Content/UI/UIAtlasDevices.png" sourcerect="769,326,238,455" origin="0.95,0.5" />
+        </SectorSprite>
+        <TempMeterFrame>
+          <Sprite name="TempMeterFrame" texture="Content/UI/UIAtlasDevices.png" sourcerect="92,517,59,265" origin="0,0" size="0.5,1" />
+        </TempMeterFrame>
+        <TempMeterBar>
+          <Sprite name="TempMeterBar" texture="Content/UI/UIAtlasDevices.png" sourcerect="270,414,106,47" origin="0.5,0" />
+        </TempMeterBar>
+        <TempRangeIndicator>
+          <Sprite name="TempRangeIndicator" texture="Content/UI/UIAtlasDevices.png" sourcerect="31,614,52,25" origin="0.5,0.5" size="0.6,0.6" />
+        </TempRangeIndicator>
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+        <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="2000.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
+        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
+          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
+          <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="8000" />
+          <Explosion range="750" ballastfloradamage="1000" structuredamage="300" itemdamage="500" force="25.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
+            <Affliction identifier="explosiondamage" strength="500" />
+            <Affliction identifier="burn" strength="500" />
+            <Affliction identifier="stun" strength="15" />
+          </Explosion>
+          <Explosion range="2000" force="0.0" camerashake="200" camerashakerange="50000" showEffects="false" empstrength="1.25" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="radiationsickness" strength="75" />
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" setvalue="true" />
+      </Reactor>
+      <LightComponent range="300.0" lightcolor="255,186,152,119" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false">
+        <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
+        <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" depth="0.025" sourcerect="649,336,575,849" alphablend="false" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="400" lightcolor="255,0,0,250" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1">
+        <IsActive targetitemcomponent="Reactor" temperaturecritical="eq true" />
+      </LightComponent>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.3,0.35" minsize="400,350" maxsize="480,460" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="70" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="power_out" displayname="connection.powerout" maxwires="1" />
+        <output name="temperature_out" displayname="connection.temperatureout" />
+        <input name="shutdown" displayname="connection.shutdown" />
+        <input name="set_fissionrate" displayname="connection.setfissionrate" />
+        <input name="set_turbineoutput" displayname="connection.setturbineoutput" />
+        <output name="meltdown_warning" displayname="connection.meltdownwarning">
+          <StatusEffect type="OnUse" target="This">
+            <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+            <ParticleEmitter particle="swirlysmoke" particlespersecond="3" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+            <sound file="Content/Items/Reactor/ReactorOverheatAlarm.ogg" type="OnUse" range="10000.0" loop="true" volume="1.0" />
+          </StatusEffect>
+        </output>
+        <output name="power_value_out" displayname="connection.powervalueout" />
+        <output name="load_value_out" displayname="connection.loadvalueout" />
+        <output name="fuel_out" displayname="connection.availablefuelout" />
+        <output name="condition_out" displayname="connection.conditionout" />
+        <output name="fuel_percentage_left" displayname="connection.fuelpercentageout" />
+      </ConnectionPanel>
+      <ItemContainer capacity="4" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
+        <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+        <Containable items="fuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="80.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="fulguriumfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="thoriumfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="fulguriumfuelrodvolatile">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+        </Containable>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" itemsperrow="1" canbeselected="true" hideitems="true" uilabel="reactorcooline">
+        <!--<SlotIcon slotindex="" texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="255,255,64,64" origin="0.5,0.5" />-->
+        <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.35,-0.1" />
+        <Containable items="reactorcooline" excludebroken="false" />
+      </ItemContainer>
+      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="10" minsabotagecondition="10" AIRepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <RequiredItem items="wrench" type="equipped" />
+        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+        <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+      </Repairable>
+      <SkillRequirementHint identifier="electrical" level="50" />
+    </Item>
+    <!--blue screen-->
+    <Item name="" identifier="opdeco_screen01" nameidentifier="opdeco_screen" width="96" height="64" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" noninteractable="true" damagedbyexplosions="true" Tags="outpostscreen">
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,352,96,64" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" mincondition="61" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="916,148,84,53" depth="0.94" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="10.0" lightcolor="111,199,255,111" IsOn="true" castshadows="false" allowingameediting="false" flicker="0.3">
+        <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,352,96,64" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+    </Item>
+    <!--green screen-->
+    <Item name="" identifier="opdeco_screen02" nameidentifier="opdeco_screen" Tags="outpostscreen,light" width="96" height="64" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" noninteractable="true" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,416,96,64" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" mincondition="61" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="916,148,84,53" depth="0.94" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="10.0" lightcolor="60,110,66,111" IsOn="true" castshadows="false" allowingameediting="false" flicker="0.2">
+        <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,416,96,64" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="opdeco_screen03" nameidentifier="opdeco_screen" width="96" height="64" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" noninteractable="true" damagedbyexplosions="true" Tags="outpostscreen">
+      <!--white-->
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,480,96,64" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" mincondition="61" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="916,148,84,53" depth="0.94" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="10.0" lightcolor="200,180,60,111" IsOn="true" castshadows="false" allowingameediting="false" flicker="0.1">
+        <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="752,480,96,64" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+    </Item>
+    <!--deep blue-->
+    <Item name="" identifier="opdeco_screen04" nameidentifier="opdeco_screen" width="96" height="64" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" noninteractable="true" damagedbyexplosions="true" Tags="outpostscreen">
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="304,672,96,64" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" mincondition="61" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="916,148,84,53" depth="0.94" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="10.0" lightcolor="220,95,60,111" IsOn="true" castshadows="false" allowingameediting="false" flicker="0.25">
+        <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="304,672,96,64" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" dontmuffle="true" volume="0.5" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+    </Item>
+    <!--Captain Man-->
+    <Item name="" identifier="op_lightbox1" width="163" height="209" texturescale="1.0,1.0" scale="0.5" category="Decorative" noninteractable="true" damagedbyexplosions="true" Tags="outpostscreen">
+      <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="1337,590,163,209" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" mincondition="60" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/GenericAssets2.png" sourcerect="1337,590,163,209" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="60.0" lightcolor="255,234,181,200" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActive condition="gt 20.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnFire" target="This" Condition="-20" />
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="op_lightbox2" nameidentifier="op_lightbox1" width="159" height="206" texturescale="1.0,1.0" scale="0.5" category="Decorative" noninteractable="true" damagedbyexplosions="true" Tags="outpostscreen">
+      <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="1526,586,159,206" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" mincondition="60" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/GenericAssets2.png" sourcerect="1526,586,159,206" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" maxcondition="60" />
+      <LightComponent range="60.0" lightcolor="255,234,181,200" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActive condition="gt 20.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnFire" target="This" Condition="-20" />
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="op_metalchair" width="269" height="162" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="472,357,269,162" depth="0.97" premultiplyalpha="false" origin="0.5,0.7" />
+      <Body width="144" height="86" density="50" friction="300" />
+    </Item>
+    <Item name="" identifier="opdeco_chair1" nameidentifier="opdeco_officechair" tags="chair,collidable" allowattachitems="true" texturescale="1.0,1.0" scale="0.5" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.1">
+      <Body width="144" height="120" density="30" friction="30" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1233,31,144,240" depth="0.1" premultiplyalpha="false" origin="0.5,0.75" />
+      <Controller UserPos="-10,30" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="false">
+        <limbposition limb="Head" position="80,76" />
+        <limbposition limb="Torso" position="80,16" />
+        <limbposition limb="Waist" position="80,-0.25" />
+        <limbposition limb="RightFoot" position="22,-150" />
+        <!--the x distance between waist hand feet is -->
+        <limbposition limb="LeftFoot" position="22,-150" />
+        <limbposition limb="RightHand" position="60,-80" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="60,-95" allowusinglimb="true" />
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="enteringdoor" amount="10" />
+        </StatusEffect>
+      </Controller>
+    </Item>
+    <Item name="Office Chair" identifier="opdeco_chair1_right" nameidentifier="opdeco_officechair" tags="chair,collidable" allowattachitems="true" texturescale="1.0,1.0" scale="0.5" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.1">
+      <Body width="144" height="240" density="50" friction="10" />
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="672,1,175,244" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="10,30" direction="Right" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="90,18" />
+        <limbposition limb="Torso" position="85,-52" />
+        <limbposition limb="Waist" position="90,-105" />
+        <limbposition limb="RightFoot" position="140,-230" />
+        <limbposition limb="LeftFoot" position="140,-230" />
+        <limbposition limb="RightHand" position="140,-120" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="140,-120" allowusinglimb="true" />
+      </Controller>
+    </Item>
+    <Item name="" identifier="opdeco_officechair" tags="chair,collidable" allowattachitems="false" texturescale="1.0,1.0" scale="0.45" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.3">
+      <Body width="180" height="267" density="50" friction="10" />
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="570,341,180,267" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="10,30" direction="Right" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="90,15" />
+        <limbposition limb="Torso" position="85,-60" />
+        <limbposition limb="Waist" position="90,-130" />
+        <limbposition limb="RightFoot" position="140,-250" />
+        <limbposition limb="LeftFoot" position="140,-250" />
+        <limbposition limb="RightHand" position="140,-105" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="140,-105" allowusinglimb="true" />
+      </Controller>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="brown_officechair_frame" spawnposition="This" />
+          <SpawnItem identifier="brown_officechair_frame1" spawnposition="This" rotationtype="Random" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="Chair Frame" identifier="brown_officechair_frame" tags="chair,collidable" allowattachitems="false" texturescale="1.0,1.0" scale="0.45" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.3" damagedbyprojectiles="true" hideinmenus="true" isshootable="true">
+      <Body width="172" height="140" density="30" friction="100" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="0,0,172,194" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <Item name="Chair back" identifier="brown_officechair_frame1" tags="chair,collidable" allowattachitems="false" texturescale="1.0,1.0" scale="0.45" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.3" hideinmenus="true">
+      <Body width="30" height="140" />
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="188,0,50,149" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <Item name="Officer Chair" identifier="opdeco_officechair_left" tags="chair,collidable" allowattachitems="false" texturescale="1.0,1.0" scale="0.45" category="Decorative" canflipy="false" damagedbyexplosions="true" explosiondamagemultiplier="0.3">
+      <Body width="180" height="267" density="50" friction="10" />
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="425,0,213,268" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="-10,30" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="82,15" />
+        <limbposition limb="Torso" position="80,-60" />
+        <limbposition limb="Waist" position="73,-130" />
+        <limbposition limb="RightFoot" position="-10,-250" />
+        <limbposition limb="LeftFoot" position="-10,-250" />
+        <limbposition limb="RightHand" position="40,-105" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="40,-105" allowusinglimb="true" />
+      </Controller>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="brown_officechair_frame" spawnposition="This" rotationtype="Random" />
+          <SpawnItem identifier="brown_officechair_frame1" spawnposition="This" rotationtype="Random" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="op_cafeteriachair" scale="0.5" noninteractable="false" category="Decorative" canflipy="false" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/CafeteriaGardenAssets.png" sourcerect="197,778,152,240" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="10,50" direction="Right" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="45,40" />
+        <limbposition limb="Torso" position="50,-30" />
+        <limbposition limb="Waist" position="50,-80" />
+        <limbposition limb="RightLeg" position="165,-140" />
+        <limbposition limb="LeftLeg" position="165,-140" />
+        <limbposition limb="RightHand" position="120,-80" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="120,-80" allowusinglimb="true" />
+      </Controller>
+      <Body width="152" height="240" density="100" friction="50" />
+    </Item>
+    <Item name="Cafeteria Chair Left" identifier="op_cafeteriachair_left" scale="0.5" noninteractable="false" category="Decorative" canflipy="false" Tags="collidable">
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="246,0,180,247" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="-10,50" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="82,18" />
+        <limbposition limb="Torso" position="80,-52" />
+        <limbposition limb="Waist" position="73,-105" />
+        <limbposition limb="RightFoot" position="-10,-230" />
+        <limbposition limb="LeftFoot" position="-10,-230" />
+        <limbposition limb="RightHand" position="40,-120" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="40,-120" allowusinglimb="true" />
+      </Controller>
+      <Body width="152" height="240" density="100" friction="50" />
+    </Item>
+    <Item name="" identifier="op_cafeteriatable" scale="0.5" noninteractable="true" category="Decorative,collidable">
+      <Body width="252" height="172" density="200" />
+      <sprite texture="Content/Map/Outposts/Art/CafeteriaGardenAssets.png" sourcerect="338,223,252,172" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <Item name="" identifier="op_vendingmachine1" tags="vendingmachine" width="238" height="396" texturescale="1.0,1.0" scale="0.5" category="Decorative" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="1,497,238,396" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/MedBayAssets.png" sourcerect="1,497,238,396" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" maxcondition="0" />
+      <Fabricator canbeselected="true" powerconsumption="0.0" msg="ItemMsgInteractSelect" createbuttontext="campaignstoretab.buy">
+        <GuiFrame relativesize="0.4,0.5" style="ItemUI" anchor="Center" />
+        <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="200.0" loop="true" />
+      </Fabricator>
+      <ItemContainer capacity="0" canbeselected="false" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+      <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+      <LightComponent range="0.0" lightcolor="255,255,255,111" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
+        <IsActive condition="gt 10.0" />
+        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="241,497,238,396" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This" checkconditonalalways="false">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" volume="1" selectmode="Random" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" volume="1" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This" delay="0.2">
+          <SpawnItem identifier="energydrink" spawnposition="This" spread="50" count="1" rotationtype="Random" />
+          <!--<Sound file="%ModDir%/Maps/Outposts/canfalls.ogg" range="1000" selectmode="Random"/>
+	<Sound file="%ModDir%/Maps/Outposts/canfalls1.ogg" range="1000"/>-->
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" delay="1">
+          <SpawnItem identifier="energydrink" spawnposition="This" spread="50" count="0.4" rotationtype="Random" />
+          <Sound file="%ModDir%/Maps/Outposts/canfalls.ogg" range="1000" selectmode="Random" />
+          <Sound file="%ModDir%/Maps/Outposts/canfalls1.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" delay="1">
+          <SpawnItem identifier="energydrink" spawnposition="This" spread="50" count="0.6" rotationtype="Random" />
+          <Sound file="%ModDir%/Maps/Outposts/canfalls.ogg" range="1000" selectmode="Random" />
+          <Sound file="%ModDir%/Maps/Outposts/canfalls1.ogg" range="1000" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="op_vendingmachine2" nameidentifier="op_vendingmachine1" tags="vendingmachine" width="238" height="396" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="481,497,238,396" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/MedBayAssets.png" sourcerect="481,497,238,396" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" maxcondition="0" />
+      <Fabricator canbeselected="true" powerconsumption="0.0" msg="ItemMsgInteractSelect" createbuttontext="campaignstoretab.buy">
+        <GuiFrame relativesize="0.4,0.5" style="ItemUI" anchor="Center" />
+        <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="200.0" loop="true" />
+      </Fabricator>
+      <ItemContainer capacity="0" canbeselected="false" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+      <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+      <LightComponent range="0.0" lightcolor="255,255,255,111" IsOn="true" castshadows="false" allowingameediting="false" alphablend="false">
+        <IsActive condition="gt 10.0" />
+        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="721,497,238,396" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <StatusEffect type="OnBroken" target="This" checkconditonalalways="false">
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" volume="1" selectmode="Random" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" volume="1" />
+          <particleemitter particle="iceshards" particleamount="12" velocitymin="50" velocitymax="50" distancemin="300" distancemax="350" anglemin="0" anglemax="360" scalemin="0.3" scalemax="0.4" />
+        </StatusEffect>
+      </LightComponent>
+    </Item>
+    <!--military bunkbed-->
+    <Item name="" identifier="opdeco_bunkbeds" width="356" height="264" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" Tags="bed,collidable">
+      <Upgrade gameversion="0.12.0.0" noninteractable="false" />
+      <Body width="384" height="100" bodytype="static" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1600,1760,384,264" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="-26,-170" />
+        <limbposition limb="Torso" position="84,-140" />
+        <limbposition limb="Waist" position="224,-160" />
+        <limbposition limb="RightFoot" position="444,-160" />
+        <limbposition limb="LeftFoot" position="444,-160" />
+        <limbposition limb="RightHand" position="224,-160" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="224,-160" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Fire />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-1" />
+      </ItemComponent>
+    </Item>
+    <!--double bunk-->
+    <Item name="" identifier="opdeco_bunks1" nameidentifier="opdeco_bunks1" allowattachitems="false" width="463" height="398" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="bed,collidable">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1296,1289,463,387" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="463" height="398" density="1000" friction="1000" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,-95" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,105" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="14,-300" />
+        <limbposition limb="Torso" position="124,-270" />
+        <limbposition limb="Waist" position="264,-290" />
+        <limbposition limb="RightFoot" position="484,-290" />
+        <limbposition limb="LeftFoot" position="484,-290" />
+        <limbposition limb="RightHand" position="264,-290" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="264,-290" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+      <ItemComponent>
+        <StatusEffect type="OnFire" target="This" Condition="-1" />
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="opdeco_trashcan" texturescale="1.0,1.0" scale="0.5" category="Decorative" damagedbyexplosions="true" Tags="trashcan,collidable">
+      <Body width="122" height="201" density="40" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1662,914,125,205" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <ItemContainer capacity="3" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" />
+      </ItemContainer>
+      <ItemComponent>
+        <StatusEffect type="OnFire" target="This" Condition="-20" />
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="op_janitorcart" width="140" height="242" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="472,519,140,242" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="140" height="242" density="40" />
+    </Item>
+    <Item name="" identifier="opdeco_hospitalbed" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="bed,collidable">
+      <Upgrade gameversion="0.12.0.0" noninteractable="false" />
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="416" height="192" density="1000" friction="1000" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="-6,-10" />
+        <limbposition limb="Torso" position="104,0" />
+        <limbposition limb="Waist" position="244,-80" />
+        <limbposition limb="RightFoot" position="380,-20" />
+        <limbposition limb="LeftFoot" position="380,-20" />
+        <limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="op_workbenchlamp" width="127" height="119" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="lamp">
+      <sprite texture="Content/Map/Outposts/Art/Shop.png" sourcerect="96,481,127,119" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="96,481,127,119" depth="0.5" origin="0.5,0.5" maxcondition="30" />
+      <LightComponent range="0.0" lightcolor="255,117,0,111" IsOn="true" castshadows="false" allowingameediting="false" alphablend="false">
+        <sprite texture="Content/Map/Outposts/Art/Shop.png" sourcerect="96,597,127,134" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="op_workbenchlamp_activebody" spawnposition="This" rotationtype="Random" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="op_workbenchlamp_activebody" identifier="op_workbenchlamp_activebody" width="127" height="119" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="lamp" damagedbyexplosions="true" damagedbyprojectiles="true" noninteractable="true" hideinmenus="true">
+      <sprite texture="%ModDir%/Maps/Outposts/ManagerOfficeAssets.png" sourcerect="96,481,127,119" depth="0.55" premultiplyalpha="false" origin="0.5,0.5" />
+      <LightComponent range="0.0" lightcolor="255,117,0,111" IsOn="true" castshadows="false" allowingameediting="false" Flicker="4">
+        <sprite texture="Content/Map/Outposts/Art/Shop.png" sourcerect="96,597,127,134" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <Body width="127" height="119" density="50" />
+    </Item>
+    <Item name="" identifier="opdeco_xrayscreen" width="208" height="144" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="lamp" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="304,160,208,144" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" allowingameediting="false" flicker="1.0" alphablend="false">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,160,208,144" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="opdeco_xrayscreen_activebody" spawnposition="This" rotationtype="Random" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="opdeco_xrayscreen_activebody" identifier="opdeco_xrayscreen_activebody" width="208" height="144" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="lamp" damagedbyexplosions="true" hideinmenus="true">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="304,160,208,144" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="208" height="114" density="5" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="false" castshadows="false" allowingameediting="false" flicker="1.0">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,160,208,144" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="opdeco_xrayscreen2" nameidentifier="opdeco_xrayscreen" width="369" height="133" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" damagedbyexplosions="true" Tags="lamp">
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,0,369,133" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" allowingameediting="false" flicker="1.0" alphablend="false">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,133,369,133" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="opdeco_xrayscreen2_activebody" spawnposition="This" rotationtype="Random" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="opdeco_xrayscreen2_activebody" identifier="opdeco_xrayscreen2_activebody" nameidentifier="opdeco_xrayscreen" width="369" height="133" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" hideinmenus="true" damagedbyprojectiles="true" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,0,369,133" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="369" height="133" density="50" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="false" castshadows="false" allowingameediting="false" flicker="1.0">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,133,369,133" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="opdeco_xrayscreen3" nameidentifier="opdeco_xrayscreen" width="192" height="208" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" damagedbyexplosions="true" Tags="lamp">
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="199,266,192,208" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" allowingameediting="false" flicker="1.0" alphablend="false">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,267,192,208" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="opdeco_xrayscreen3_avtivebody" spawnposition="This" rotationtype="Random" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="opdeco_xrayscreen3_avtivebody" identifier="opdeco_xrayscreen3_avtivebody" nameidentifier="opdeco_xrayscreen" width="192" height="208" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" damagedbyexplosions="true" damagedbyprojectiles="true" hideinmenus="true">
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="199,266,192,208" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="192" height="208" density="50" />
+      <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="false" castshadows="false" allowingameediting="false" flicker="1.0">
+        <Upgrade gameversion="0.17.15.0" range="0" />
+        <Upgrade gameversion="0.18.12.0" lightcolor="255,255,255,0" />
+        <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="0,267,192,208" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="opdeco_mountedmonitor1" nameidentifier="medicalmonitor" width="96" height="128" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" damagedbyexplosions="true" Tags="lamp">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="0,0,96,128" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <LightComponent range="0.0" lightcolor="255,255,255,255" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,0,96,128" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="opdeco_mountedmonitor1_activebody" spawnposition="This" rotationtype="Random" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="opdeco_mountedmonitor1_activebody" identifier="opdeco_mountedmonitor1_activebody" nameidentifier="medicalmonitor" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" damagedbyprojectiles="true" hideinmenus="true" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="0,0,96,128" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="96" height="128" density="50" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <OpDeco name="Box 1" identifier="opdeco_box1" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="chair,collidable" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1106,272,142,192" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="142" height="192" density="50" friction="500" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </OpDeco>
+    <OpDeco name="Box 2" identifier="opdeco_box2" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="chair,collidable" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1247,272,224,128" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="224" height="128" density="50" friction="500" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </OpDeco>
+    <OpDeco name="Box 3" identifier="opdeco_box3" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="chair,collidable" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1471,336,176,112" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="176" height="112" density="50" friction="500" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </OpDeco>
+    <OpDeco name="Box 4" identifier="opdeco_box4" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="chair,collidable" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1647,336,128,144" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="128" height="144" density="50" friction="500" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </OpDeco>
+    <OpDeco name="Box 5" identifier="opdeco_box5" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="chair,collidable" damagedbyexplosions="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1775,336,144,80" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="144" height="80" density="50" friction="500" />
+      <Throwable slots="RightHand+LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" msg="ItemMsgPickUpSelect" />
+    </OpDeco>
+    <OpDeco name="Diningtable Small" identifier="opdeco_diningtablesmall" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1744,656,144,160" depth="0.87" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="144" height="160" density="50" friction="500" />
+    </OpDeco>
+    <OpDeco name="HR Bench" identifier="opdeco_hrbench" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable" allowattachitems="true">
+      <sprite texture="Content/Map/Outposts/Art/HumanResourcesAssets.png" sourcerect="0,576,480,96" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="480" height="96" density="1000" friction="1000" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_medbench" nameidentifier="opdeco_hrbench" allowattachitems="true" width="609" height="175" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="398,369,609,175" depth="0.66" premultiplyalpha="false" origin="0.5,0.8" />
+      <Body width="609" height="60" density="1000" friction="1000" />
+    </OpDeco>
+    <Item name="" identifier="op_cafeteriabench" width="332" height="30" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/CafeteriaGardenAssets.png" sourcerect="2,223,332,209" depth="0.97" premultiplyalpha="false" origin="0.5,0.7" />
+      <Body width="332" height="40" bodytype="static" />
+    </Item>
+    <OpDeco name="Office bench" identifier="opdeco_officebench" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="349,0,551,176" depth="0.95" premultiplyalpha="false" origin="0.5,0.73" />
+      <Body width="551" height="88" density="100" bodytype="static" />
+    </OpDeco>
+    <OpDeco name="Cashier Desk" identifier="opdeco_Cashier_Desk" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable,hardsurface" hideinmenus="false">
+      <sprite texture="Content/Map/Outposts/Art/Shop.png" sourcerect="400,480,176,192" depth="0.87" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="176" height="190" density="100" friction="1000" />
+      <!--density here is for the blunt strength-->
+    </OpDeco>
+    <OpDeco name="Cashier Desk" identifier="opdeco_Cashier_Desk_left" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable,hardsurface">
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="3,248,173,202" depth="0.87" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="176" height="190" density="100" friction="1000" />
+      <!--density here is for the blunt strength-->
+    </OpDeco>
+    <OpDeco name="Officedesk" identifier="opdeco_officedesk1" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="collidable" hideinmenus="false">
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="352,177,159,207" depth="0.75" premultiplyalpha="false" origin="0.5,0.7" />
+      <Body width="159" height="160" bodytype="static" />
+    </OpDeco>
+    <OpDeco name="Office Desk" identifier="opdeco_officedesk1_right" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="Decorative" Tags="collidable" hideinmenus="false">
+      <sprite texture="%ModDir%/Maps/Outposts/DHManagerOfficeAssets.png" sourcerect="859,6,159,207" depth="0.75" premultiplyalpha="false" origin="0.5,0.7" />
+      <Body width="159" height="160" bodytype="static" />
+    </OpDeco>
+    <OpDeco name="Office Desk" identifier="opdeco_officedesk2" nameidentifier="opdeco_officedesk1" allowattachitems="false" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="collidable">
+      <Body width="416" height="155" bodytype="static" />
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="512,181,416,155" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_officedesk3" nameidentifier="opdeco_officedesk1" allowattachitems="false" texturescale="1.0,1.0" scale="0.5" category="Decorative" Tags="collidable">
+      <Body width="336" height="80" bodytype="static" />
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="512,608,336,80" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_LargeTable" nameidentifier="Table" width="337" height="138" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/ArmoryColonyModule.png" sourcerect="322,2,337,138" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="337" height="138" bodytype="static" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_LargeTable2" nameidentifier="Table" width="599" height="174" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/EngineerColonyModule3.png" sourcerect="285,768,599,174" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="599" height="174" density="100" friction="30" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_diningtable" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1529,654,210,238" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="208" height="236" density="100" friction="30" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_boxes1" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1788,912,237,124" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="237" height="124" bodytype="static" />
+    </OpDeco>
+    <OpDeco name="" identifier="opdeco_boxes2" nameidentifier="opdeco_boxes1" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1789,1042,208,61" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="205" height="61" bodytype="static" />
+    </OpDeco>
+    <Item name="" identifier="op_washingmachine" width="199" height="262" scale="0.5" noninteractable="true" category="Decorative" Tags="collidable">
+      <sprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="273,357,199,262" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="848,627,99,99" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" rotationspeed="-715" />
+      <Body width="99" height="99" density="100" friction="100" />
+    </Item>
+  </Items>
+</Override>

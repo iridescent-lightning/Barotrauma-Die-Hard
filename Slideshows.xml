@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Slideshows>
+    <Slideshow identifier="campaignstart">
+      <Slide text="Sildeshow.DHStorybegin1">
+        <Portrait texture="%ModDir%/Maps/LocationPortraits/dst_europa_base.png" sourcerect="0,0,1260,710" premultiplyalpha="false" />
+      </Slide>
+      <Slide text="Sildeshow.DHStorybegin2">
+        <Portrait texture="%ModDir%/Maps/LocationPortraits/gamma.png" sourcerect="0,0,3840,2160" premultiplyalpha="false" />
+      </Slide>
+      <Slide text="Sildeshow.DHStorybegin3">
+        <Portrait texture="%ModDir%/Maps/LocationPortraits/dst_fortress.png" sourcerect="0,0,2520,1560" premultiplyalpha="false" />
+      </Slide>
+      <Slide text="Sildeshow.DHStorybegin4">
+        <Portrait texture="%ModDir%/Maps/LocationPortraits/science.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+      </Slide>
+    </Slideshow>
+    <Slideshow identifier="campaignending">
+      <Slide text="campaignending1" fadeindelay="3" fadeinduration="5" textfadeindelay="7">
+        <Portrait texture="Content/Map/LocationPortraits/EndPortrait1.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+      </Slide>
+      <Slide text="campaignending2">
+        <Portrait texture="Content/Map/LocationPortraits/EndPortrait2.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+      </Slide>
+      <Slide text="campaignending3">
+        <Portrait texture="Content/Map/LocationPortraits/EndPortrait3.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+      </Slide>
+    </Slideshow>
+  </Slideshows>
+</Override>

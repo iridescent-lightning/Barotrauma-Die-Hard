@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npcsets>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--            Abandoned Outpost NPCs who needs to be captured               -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <npcset identifier="combatmission.requirecapture.npc">
+    <npc identifier="bandit" commonness="0" moduleflags="crewmodule,engineeringmodule" job="prisoner" behavior="Passive" healthmultiplier="1" healthmultiplierinmultiplayer="1.5" aimspeed="3" aimaccuracy="1" reportrange="500">
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="banditclothes1" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="57">
+          <Item identifier="57mag" />
+        </Item>
+        <Item identifier="57mag" />
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="banditclothes1" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="revolver">
+          <Item identifier="revolverround" amount="6" />
+        </Item>
+        <Item identifier="revolverround" amount="12" />
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="banditclothes2" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="crowbar" equip="false" />
+        <Item identifier="p90" equip="true">
+          <Item identifier="p90mag" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="banditclothes2" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="crowbar" equip="true" />
+        <Item identifier="MPX" equip="true">
+          <Item identifier="mpx_magazine" amount="1" />
+        </Item>
+      </ItemSet>
+    </npc>
+    <npc identifier="banditleader" commonness="0" moduleflags="crewmodule,engineeringmodule" job="prisoner" behavior="Passive" healthmultiplierinmultiplayer="1.5" reportrange="750" aimspeed="3">
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="captainscap2" equip="true" />
+        <Item identifier="captainsuniform2" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="shotgun">
+          <Item identifier="shotgunshell" amount="6" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="wrench" equip="true" />
+        <Item identifier="captainscap2" equip="true" />
+        <Item identifier="captainsuniform2" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="mcx" equip="true">
+          <Item identifier="mcx_magazine" />
+        </Item>
+      </ItemSet>
+    </npc>
+    <npc identifier="banditleader_heavy" commonness="0" moduleflags="crewmodule,engineeringmodule" job="prisoner" behavior="Passive" healthmultiplierinmultiplayer="1.5" reportrange="750" aimspeed="3">
+      <ItemSet commonness="0.8">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="pkm" equip="true">
+          <Item identifier="pkmmag" amount="1" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="wrench" equip="true" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="p90">
+          <Item identifier="p90mag" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="mk17">
+          <Item identifier="mk17mag" />
+        </Item>
+        <Item identifier="shotgunshell" amount="4" />
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="ak47">
+          <Item identifier="ak47mag" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.4">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="divingmask">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="flamer">
+          <Item identifier="weldingfueltank" />
+        </Item>
+      </ItemSet>
+    </npc>
+    <!--            Escort prisoner npcs               -->
+    <npc identifier="captured_bandit" job="prisoner" moduleflags="none" healthmultiplier="0.8" behavior="StayInHull">
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="banditclothes1" equip="true" />
+        <Item identifier="handcuffs" equip="true" />
+      </ItemSet>
+    </npc>
+    <npc identifier="captured_bandit_leader" job="prisoner" moduleflags="none" healthmultiplier="0.8" behavior="StayInHull">
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="captainsuniform2" equip="true" />
+        <Item identifier="handcuffs" equip="true" />
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="handcuffs" equip="true" />
+      </ItemSet>
+    </npc>
+  </npcset>
+</npcsets>

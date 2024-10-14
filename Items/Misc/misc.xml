@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Tactical headset" identifier="tacticalheadset" scale="0.5" category="Equipment" tags="smallitem,mobileradio" description="A tactical headset protects your ears from noise, giving the wearer 25 bonus of weapon skill." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="secarmcab" amount="2" notcampaign="true" />
+      <PreferredContainer primary="searmcab" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <Price baseprice="350" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Sprite name="tactical headset" texture="%ModDir%/Items/Jobgear/dhjobgear.png" depth="0.6" sourcerect="130,208,71,67" origin="0.5,0.5" />
+      <Body radius="20" height="20" density="30" />
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+        <Item identifier="fpgacircuit" />
+      </Deconstruct>
+      <WifiComponent range="35000.0" LinkToChat="true" MinChatMessageInterval="0.0">
+        <RequiredItems items="mobilebattery" type="Contained" />
+      </WifiComponent>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="mobilebattery" />
+      </ItemContainer>
+      <Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+        <sprite name="Headset Wearable" texture="%ModDir%/Items/Jobgear/dhjobgear.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inherittexturescale="true" hideotherwearables="false" sourcerect="130,208,71,67" origin="0.5,0.6" />
+        <StatusEffect type="OnWearing" targettype="Contained" Condition="-0.1">
+          <RequiredItem items="batterycell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" targettype="Contained" Condition="-0.05">
+          <RequiredItem items="fulguriumbatterycell" type="Contained" />
+        </StatusEffect>
+        <SkillModifier skillidentifier="weapons" skillvalue="25" />
+      </Wearable>
+    </Item>
+    <Item name="molochdischarger" identifier="molochdischarger" category="Material" Tags="" canbepicked="false" description="" scale="0.5" sonarsize="30" health="100" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" hideinmenus="true">
+      <Sprite texture="Content/Items/Materials/Crystal.png" depth="1.0" sourcerect="0,4,1,1" origin="0.5,0.6" />
+      <Body width="1" height="1" density="50" bodytype="Static" />
+      <ElectricalDischarger duration="0.2" outdoorsonly="false" powerconsumption="0" range="1500" rangemultiplierinwalls="1">
+        <StatusEffect type="OnUse">
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="6000" selectionmode="random" />
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="6000" />
+          <Explosion range="7000.0" camerashake="3" stun="0" force="0.0" flames="false" shockwave="false" sparks="false" underwaterbubble="false" />
+        </StatusEffect>
+        <StatusEffect type="OnUse">
+          <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="6000" selectionmode="Random" />
+          <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="6000" />
+          <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="6000" />
+        </StatusEffect>
+        <Attack targetimpulse="10">
+          <Affliction identifier="stun" strength="1" />
+          <Affliction identifier="burn" strength="2" />
+        </Attack>
+      </ElectricalDischarger>
+      <ItemComponent>
+        <!-- when the component activates, apply extra load to nearby items and deactive the component -->
+        <StatusEffect type="OnActive" target="NearbyItems" targettags="junctionbox,supercapacitor" range="3000.0" setvalue="true" stackable="false" extraload="800" />
+        <StatusEffect type="OnActive" target="This" IsActive="false" />
+        <!-- reactivate after one second -->
+        <StatusEffect type="Always" target="This" stackable="false" delay="0.2" IsActive="true" />
+        <StatusEffect type="Always" target="This" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <ParticleEmitter particle="ElectricShock" distancemin="100" distancemax="120" particlespersecond="5.0" particleamount="5" emitinterval="2.1" anglemin="0" anglemax="360" scalemin="1.0" scalemax="1.2" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" delay="1">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="Gas Emitter" identifier="gasemitter" Scale="1" tags="gas" sonarsize="0" hideinmenus="true" health="3" depth="0.1" isdangerous="true" noninteractable="true">
+      <!--Use this for debugging: sourcerect="185,159,41,17"-->
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <!--Needs a body or doesn't stay inside the sub.-->
+      <Body width="38" height="15" bodytype="static" />
+      <ItemComponent>
+        <StatusEffect type="OnSpawn" target="This" duration="6">
+          <ParticleEmitter particle="acidmistgrenade" particlespersecond="3" scalemin="0.3" scalemax="0.4" anglemin="0" anglemax="360" copyentityangle="false" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" disabledeltatime="false" delay="6">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" delay="0.5" duration="1" stackable="false" disabledeltatime="true" targetlimb="Head">
+          <Explosion range="100.0" force="0" shockwave="false" smoke="false" flash="false" sparks="false" flames="false" underwaterbubble="false" camerashake="0">
+            <Affliction identifier="stungas" strength="800" />
+          </Explosion>
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="acidemittermudraptor" identifier="acidemittermudraptor" Scale="1" tags="" sonarsize="0" hideinmenus="true" impacttolerance="0.001" health="30">
+      <Body radius="200" density="10" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" lifetime="8">
+          <ParticleEmitter particle="acidmist_both" particlespersecond="6" scalemin="0.9" scalemax="1" velocitymin="50" velocitymax="150" anglemin="0" anglemax="360" copyentityangle="false" />
+        </StatusEffect>
+        <!-- reduce condition to remove the emitter after 30 seconds -->
+        <StatusEffect type="Always" target="This" condition="-1" />
+        <StatusEffect type="OnImpact" target="This" delay="4">
+          <Explosion range="300" structuredamage="40" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false">
+            <Affliction identifier="acidburn" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="4.2">
+          <Explosion range="300" structuredamage="50" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false">
+            <Affliction identifier="acidburn" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="4.3">
+          <Explosion range="300" structuredamage="60" itemdamage="30" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false">
+            <Affliction identifier="acidburn" strength="10" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="piratebgm1" identifier="piratebgm1" category="misc" Tags="smallitem,disc" scale="0.5" impactsoundtag="impact_bullet" noninteractable="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <InventoryIcon texture="%ModDir%/Items/Misc/misc.png" sourcerect="118,1,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Jobgear/dhjobgear.png" depth="0.6" sourcerect="106,6,77,66" origin="0.5,0.5" />
+      <Body radius="45" density="10" />
+      <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <ItemComponent characterusable="false">
+        <StatusEffect type="Always">
+          <sound file="%ModDir%/Items/Misc/Battle_1_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="piratebgm2" identifier="piratebgm2" category="misc" Tags="smallitem,disc" scale="0.5" impactsoundtag="impact_bullet" noninteractable="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <InventoryIcon texture="%ModDir%/Items/Misc/misc.png" sourcerect="118,1,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Jobgear/dhjobgear.png" depth="0.6" sourcerect="106,6,77,66" origin="0.5,0.5" />
+      <Body radius="45" density="10" />
+      <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemComponent characterusable="false">
+        <StatusEffect type="Always">
+          <sound file="%ModDir%/Items/Misc/Battle_2_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="piratebgm4" identifier="piratebgm4" category="misc" Tags="smallitem,disc" scale="0.5" impactsoundtag="impact_bullet" noninteractable="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <InventoryIcon texture="%ModDir%/Items/Misc/misc.png" sourcerect="118,1,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Jobgear/dhjobgear.png" depth="0.6" sourcerect="106,6,77,66" origin="0.5,0.5" />
+      <Body radius="45" density="10" />
+      <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <ItemComponent characterusable="false">
+        <StatusEffect type="Always">
+          <sound file="%ModDir%/Items/Misc/Battle_4_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="lightfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="5">
+      <PreferredContainer primary="lamp,lightfluorescentm01,lightfluorescentm02,lightfluorescentm03,lightfluorescentm04,lightfluorescentl01,lightfluorescentl02,lighthalogenmm01,lighthalogenmm02,lighthalogenmm03,lighthalogenmm04,lightleds01" amount="1" />
+      <PreferredContainer primary="reactorcab" amount="5" notcampaign="true" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <Price baseprice="45" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="3" />
+        <Price storeidentifier="merchantresearch" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="3" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="565,60,67,58" origin="0.5,0.5" />
+      <Sprite name="fuse" texture="%ModDir%/Items/Electricity/signalcomp.png" depth="0.6" sourcerect="219,326,47,14" origin="0.5,0.5" />
+      <Body width="67" height="20" density="15" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="2">
+        <RequiredSkill identifier="electrical" level="20" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="silicon" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0">
+        <!--<StatusEffect type="InWater" target="This" interval="4" condition="-4">
+		<Conditional hastag="eq lamp" targetcontainer="true" />
+	</StatusEffect>-->
+      </Holdable>
+    </Item>
+    <Item name="" identifier="mechanicalparts" scale="0.5" category="Electricity" tags="smallitem, mechanicalparts" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="10">
+      <PreferredContainer primary="storagecab" />
+      <PreferredContainer primary="storagecab" amount="4" notcampaign="true" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <Price baseprice="100" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="3" />
+        <Price storeidentifier="merchantresearch" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="3" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/Misc/DHMisc2.png" sourcerect="0,0,97,88" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Misc/DHMisc2.png" depth="0.6" sourcerect="0,0,97,88" origin="0.5,0.5" />
+      <Body width="97" height="88" density="88" />
+      <ItemComponent><StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      </ItemComponent>
+      <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="1">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Pickable slots="Any" canBeCombined="true" />
+    </Item>
+    <Item name="Bottle" identifier="bottle" scale="0.5" category="Decorative" tags="lamp,collidable,midair_collide" description="A bottle." cargocontaineridentifier="metalcrate" impactsoundtag="impact_glasscontainer" health="500">
+      <Body width="33" height="81" density="15" />
+      <Sprite name="bottle" texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.6" sourcerect="0,0,33,81" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" volume="1" selectmode="Random" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" volume="1" />
+          <particleemitter particle="shrapnel" anglemin="0" anglemax="360" particleamount="100" velocitymin="100" velocitymax="500" scalemin="0.1" scalemax="0.3" />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="Bottle" identifier="bottle1" scale="0.5" category="Decorative" tags="lamp,collidable,midair_collide" description="A bottle." cargocontaineridentifier="metalcrate" impactsoundtag="impact_glasscontainer" health="1500">
+      <Body width="32" height="83" density="15" />
+      <Sprite name="bottle" texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.6" sourcerect="35,1,32,86" origin="0.5,0.5" />
+      <ContainedSprite name="bottle" texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.6" sourcerect="73,3,35,88" origin="0.5,0.5" usewhenattached="true" decorativespritebehavior="HideWhenNotVisible" randomgroupid="3" />
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" volume="1" selectmode="Random" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" volume="1" />
+          <particleemitter particle="shrapnel" anglemin="0" anglemax="360" particleamount="100" velocitymin="100" velocitymax="500" scalemin="0.1" scalemax="0.3" />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="Bottle" identifier="bottle2" scale="0.5" category="Decorative" tags="lamp,collidable,,midair_collide" description="A bottle." cargocontaineridentifier="metalcrate" impactsoundtag="impact_glasscontainer" health="1000">
+      <Body width="35" height="85" density="15" />
+      <Sprite name="bottle" texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.6" sourcerect="73,3,35,88" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <Sound file="Content/Sounds/Damage/GlassBreak1.ogg" range="1000" volume="1" selectmode="Random" />
+          <Sound file="Content/Sounds/Damage/GlassBreak2.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak3.ogg" range="1000" volume="1" />
+          <Sound file="Content/Sounds/Damage/GlassBreak4.ogg" range="1000" volume="1" />
+          <particleemitter particle="shrapnel" anglemin="0" anglemax="360" particleamount="100" velocitymin="100" velocitymax="500" scalemin="0.1" scalemax="0.3" />
+        </StatusEffect>
+      </ItemComponent>
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="Time Bomb" identifier="dhtimebomb_clown" description="" category="Equipment" Tags="smallitem,detonator" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_glasscontainer" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="1" health="100">
+      <Sprite texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.5" sourcerect="116,2,84,32" origin="0.5,0.5" />
+      <Body width="40" height="22" density="20" bodytype="Static" />
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" aimpos="35,-10" handle1="0,0" aimable="true" PickingTime="15.0">
+        <RequiredItem items="wrench" type="Equipped" />
+        <StatusEffect target="This" type="OnPicked">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect target="This" type="Always" delay="44.5">
+          <sound file="%ModDir%/Items/Misc/time's up.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect target="This" type="Always" delay="45" condition="0" setvalue="true"></StatusEffect>
+        <StatusEffect target="This" type="Always">
+          <sound file="%ModDir%/Items/Misc/icraloop.ogg" range="1000" type="Always" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <Explosion range="500.0" ballastfloradamage="110" structuredamage="800" levelwalldamage="500" itemdamage="1200" stun="5" force="20.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+            <Affliction identifier="burn" strength="50" />
+            <Affliction identifier="explosiondamage" strength="75" />
+          </Explosion>
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="key1" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
+      <PreferredContainer primary="mediumwindowedsteelcabinet,mediumsteelcabinet" amount="1" />
+      <Body width="21" height="33" density="15" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="448,256,64,64" />
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="273,9,21,33" origin="0.5,0.5" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="" identifier="key2" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
+      <PreferredContainer primary="steelcabinet" amount="1" />
+      <Body width="20" height="30" density="15" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="320,256,64,64" />
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="201,9,20,30" origin="0.5,0.5" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="" identifier="key3" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
+      <PreferredContainer primary="divingsuitlocker" amount="1" />
+      <Body width="33" height="81" density="15" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="382,256,64,64" />
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="234,10,33,32" origin="0.5,0.5" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="" identifier="keymaster" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light">
+      <Body width="25" height="39" density="15" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="576,194,64,64" />
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="311,5,25,39" origin="0.5,0.5" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
+    </Item>
+    <Item name="" identifier="keyorganzier" scale="0.5" category="Equipment" tags="smallitem,midair_collide" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light">
+      <Price baseprice="40" minavailable="10">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" minavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" minavailable="1" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <RequiredItem identifier="organicfiber" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="organicfiber" />
+      </Fabricate>
+      <Body width="218" height="87" density="15" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="126,256,64,64" />
+      <Sprite texture="%ModDir%/Items/Misc/DHMisc.png" depth="0.6" sourcerect="62,100,128,87" origin="0.5,0.5" />
+      <Wearable slots="Any,Bag" handle1="-2,0" handle2="5,0" canbepicked="True" />
+      <ItemContainer capacity="15" canbeselected="true" hideitems="true">
+        <Containable items="containerkey" />
+      </ItemContainer>
+    </Item>
+    <Item name="Sub Freezer" identifier="mb_inertiainhibitor" category="Machine" tags="engine" pickdistance="150" scale="0.5">
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.84" sourcerect="0,1022,464,340" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1040,1022,464,340" depth="0.799" origin="0.5,0.5" scale="true" />
+      <!--<Powered minvoltage="0.5" powerconsumption="2000.0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.18" minsize="450,200" anchor="Center" style="ItemUI" />
+      <sound file="Content/Items/Engine/Engine.ogg" type="OnActive" range="5000.0" volumeproperty="CurrentVolume" loop="true" />
+    </Powered>-->
+      <LightComponent range="0.0" lightcolor="255,255,255,111" IsOn="false" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1040,1022,464,340" depth="0.799" origin="0.5,0.5" scale="true" alpha="1.0" />
+      </LightComponent>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="set_state" displayname="connection.set_state" />
+      </ConnectionPanel>
+      <MemoryComponent canbeselected="false" AllowInGameEditing="false" />
+      <MemoryComponent canbeselected="false" AllowInGameEditing="false" />
+    </Item>
+    <Item name="Warrant" identifier="warrant_of_violence" Scale="0.5" tags="warrant" hideinmenus="true" depth="0.4">
+      <Sprite texture="%ModDir%/Items/Misc/DHMisc.png" sourcerect="125,51,61,43" depth="0.55" origin="0.5,0.5" />
+      <Body width="61" height="43" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-2,0" canbepicked="True" />
+      <ItemComponent>
+        <StatusEffect type="OnContained" target="Character">
+          <GiveTalentInfo talentidentifiers="bythebook" giverandom="false" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="Message" identifier="firstmessage" category="Electrical" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+      <Upgrade gameversion="0.9.9000.0" scale="0.25" />
+      <Price baseprice="100" sold="false" />
+      <PreferredContainer primary="reactorcab" secondary="engcab" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.8" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+      </Terminal>
+    </Item>
+    <Item name="thecargo" identifier="thecargo" tags="thecargo,crate" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_metal_heavy">
+      <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,128,64,64" />-->
+      <Sprite texture="%ModDir%/Items/Containers/DH_containers.png" depth="0.54" sourcerect="2,936,155,88" origin="0.5,0.5" />
+      <Body width="150" height="80" density="300" friction="100" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+    </Item>
+    <Item name="" identifier="subdoc" category="Electrical" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+      <Price baseprice="100" sold="false" />
+      <PreferredContainer primary="reactorcab" secondary="engcab" />
+      <InventoryIcon texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" depth="0.8" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true" welcomeMessage="Terminal.subdocstart">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+        <StatusEffect type="Always" interval="0.1" target="This">
+          <LuaHook name="subdocmessage" />
+        </StatusEffect>
+      </Terminal>
+    </Item>
+    <Item name="Coalition Sepcail Offer" identifier="coalitiondiscount" category="Electrical" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+      <Price baseprice="100" sold="false" />
+      <PreferredContainer primary="reactorcab" secondary="engcab" />
+      <InventoryIcon texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" depth="0.8" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+      </Terminal>
+    </Item>
+    <Item name="Clown-made Offer" identifier="clownmadediscount" category="Electrical" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+      <Price baseprice="100" sold="false" />
+      <PreferredContainer primary="reactorcab" secondary="engcab" />
+      <InventoryIcon texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Electricity/signalcomp.png" sourcerect="538,207,56,41" depth="0.8" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+      </Terminal>
+    </Item>
+    <Item name="sfx_naviterminal" identifier="sfx_naviterminal" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Commands/Entities_Station#655_pathOS_error_01.ogg" range="500" volume="0.5" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--<Item name="sfx_largesteelcab" identifier="sfx_largesteelcab" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#129_suit_locker_open_02.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <Item name="sfx_largesteelcab_close" identifier="sfx_largesteelcab_close" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#117_suit_locked_closed_01.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--<Item name="sfx_mediumsteelcab" identifier="sfx_mediumsteelcab" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#130_suit_locker_open_03.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <Item name="sfx_mediumsteelcab_close" identifier="sfx_mediumsteelcab_close" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#118_suit_locked_closed_02.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--<Item name="sfx_emgercab" identifier="sfx_emgercab" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#415_theta_metal_drawer_full_open_01.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <!--<Item name="sfx_fireextinguisher" identifier="sfx_fireextinguisher" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#607_plug_in_01.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <Item name="sfx_crate" identifier="sfx_crate" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#178_locker_close_gentle_01.ogg" range="500" volume="0.7" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--<Item name="sfx_sec_idcardopen" identifier="sfx_sec_idcardopen" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#647_omnitool_door_detect_01.ogg" range="500" volume="0.35" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <Item name="sfx_sec_idcardclose" identifier="sfx_sec_idcardclose" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#648_omnitool_door_hack_01.ogg" range="500" volume="0.4" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--<Item name="sfx_medcontainer" identifier="sfx_medcontainer" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#279_bin_close_med_03.ogg" range="500" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>-->
+    <Item name="sfx_medcontainer_close" identifier="sfx_medcontainer_close" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#282_bin_close_med_06.ogg" range="500" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_doorinteract" identifier="sfx_doorinteract" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Doors/Entities_Station#643_lightswitch_theta_off_01.ogg" range="500" volume="0.6" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_pumpinteract" identifier="sfx_pumpinteract" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Pumps/Entities_Station#137_elevator_panel_close_hard_01.ogg" range="500" volume="0.6" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_divinglockerinteract" identifier="sfx_divinglockerinteract" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Containers/Entities_Station#605_diving_suit_power_on_01.ogg" range="500" volume="0.6" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_terminalinteract" identifier="sfx_terminalinteract" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Electricity/Entities_Station#680_terminal_forward.ogg" range="500" volume="0.6" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_keyinsert" identifier="sfx_keyinsert" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Misc/keyinsert.ogg" range="500" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_rifle_loaded" identifier="sfx_rifle_loaded" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Misc/riflereload.ogg" range="500" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_helmet_equipped" identifier="sfx_helmet_equipped" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false" interval="99">
+          <Sound file="%ModDir%/Items/Misc/hemetequipped.ogg" range="300" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_draw_knife" identifier="sfx_draw_knife" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="NotInWater" target="This" disabledeltatime="true" duration="1" stackable="false" interval="50">
+          <Sound file="%ModDir%/Items/Misc/pullingoutknife.ogg" range="300" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_cloth_equip" identifier="sfx_cloth_equip" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="NotInWater" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Misc/wearcloth.ogg" range="300" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="sfx_gun_equip" identifier="sfx_gun_equip" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Sound file="%ModDir%/Items/Misc/holstergun.ogg" range="300" volume="1" />
+        </StatusEffect>
+        <StatusEffect type="always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="wallshrapnel" identifier="wallshrapnel" category="hidden" description="" hideinmenus="true" health="1">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent>
+        <!--<StatusEffect type="always" target="NearbyItems" targettags="weldingequipment" range="300.0" disabledeltatime="true" stackable="false">
+          <LuaHook name="noexplosionwhenrepair"/>this is to make sure that the wall wont explode when being repaired
+        </StatusEffect>-->
+        <StatusEffect type="always" target="This" disabledeltatime="true" stackable="false" interval="50">
+          <ParticleEmitter particle="shrapnel" AngleMax="360" DistanceMin="10" DistanceMax="10" VelocityMin="999" VelocityMax="999" ScaleMax="1.2" ScaleMultiplier="1,1" ParticleAmount="10" ParticlesPerSecond="30" ColorMultiplier="255,255,255,255" Distance="75" Velocity="999" />
+          <!--Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=7054">Pixabay</a>
+	  Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=88601">Pixabay</a>
+	  -->
+          <Explosion range="400.0" stun="0" force="75.0" flames="false" shockwave="true" sparks="true" underwaterbubble="false" camerashake="100" camerashakerange="400" itemdamage="1" onlyhumans="true" ignorecover="true" structuredamage="0">
+            <Affliction identifier="bleeding" strength="2" />
+            <Affliction identifier="lacerations" strength="3" />
+            <Affliction identifier="explosiondamage" strength="3" />
+          </Explosion>
+          <Sound file="%ModDir%/Sounds/underwater_hull_impact.ogg" selectionmode="Random" range="10000" />
+          <Sound file="%ModDir%/Sounds/underwater_hull_impact2.ogg" range="10000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="wallshrapnel" identifier="wallshrapnel04" category="hidden" description="" hideinmenus="true" health="1">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent>
+        <!--<StatusEffect type="always" target="NearbyItems" targettags="weldingequipment" range="300.0" disabledeltatime="true" stackable="false">
+          <LuaHook name="noexplosionwhenrepair"/>
+        </StatusEffect>-->
+        <StatusEffect type="always" target="This" disabledeltatime="true" stackable="false" interval="50">
+          <ParticleEmitter particle="shrapnel" AngleMax="360" DistanceMin="10" DistanceMax="10" VelocityMin="999" VelocityMax="999" ScaleMax="1.2" ScaleMultiplier="1,1" ParticleAmount="10" ParticlesPerSecond="30" ColorMultiplier="255,255,255,255" Distance="75" Velocity="999" />
+          <!--Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=7054">Pixabay</a>
+	  Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=88601">Pixabay</a>
+	  -->
+          <Explosion range="400.0" stun="0" force="75.0" flames="false" shockwave="true" sparks="true" underwaterbubble="false" camerashake="100" camerashakerange="400" itemdamage="1" onlyhumans="true" ignorecover="true" structuredamage="0">
+            <Affliction identifier="bleeding" strength="1" />
+            <Affliction identifier="lacerations" strength="1.5" />
+            <Affliction identifier="explosiondamage" strength="1.5" />
+          </Explosion>
+          <Sound file="%ModDir%/Sounds/underwater_hull_impact.ogg" selectionmode="Random" range="10000" />
+          <Sound file="%ModDir%/Sounds/underwater_hull_impact2.ogg" range="10000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="helperlogbook" category="Misc" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+      <Upgrade gameversion="0.9.9000.0" scale="0.25" />
+      <Price baseprice="100" sold="false" />
+      <PreferredContainer primary="reactorcab" secondary="engcab" minamount="1" maxamount="1" spawnprobability="1" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.8" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <ItemComponent>
+        <StatusEffect type="Always" interval="0.1" target="This">
+          <LuaHook name="helpermessage" />
+        </StatusEffect>
+      </ItemComponent>
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true" welcomeMessage="Terminal.helermanualstart">
+        <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+      </Terminal>
+    </Item>
+    <Item name="dhcalendar" identifier="dhcalendar" allowattachitems="true" width="64" height="96" texturescale="1.0,1.0" scale="0.5" category="Misc" hideconditionbar="false" health="1" isshootable="true">
+      <sprite texture="Content/Map/Outposts/Art/HumanResourcesAssets.png" sourcerect="864,208,64,96" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="60" height="90" density="8" />
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true" attachedbydefault="true"></Holdable>
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="false" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true" welcomemessage="" textcolor="50,50,50,255">
+        <GuiFrame relativesize="0.3,0.5" anchor="Center" style="Paper" hidedragicons="true" />
+      </Terminal>
+    </Item>
+    <Item name="reactorcsexplosionhelper" identifier="reactorcsexplosionhelper" category="hidden" description="" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+      <ItemComponent hideitems="true">
+        <StatusEffect type="Always" target="This" disabledeltatime="true" duration="1" stackable="false">
+          <Explosion range="100.0" structuredamage="20" ballastfloradamage="120" itemdamage="500" force="10" severlimbsprobability="0.5" decal="explosion" decalsize="0.5"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" disabledeltatime="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item identifier="CaveLamp1" category="Electrical" Tags="smallitem,light" scale="0.5" width="48" height="95">
+    <Sprite texture="%ModDir%/Maps/DryCaves/CaveLamps.png" sourcerect="57,0,39,514" depth="0.8" origin="0.5,0.12" width="40" radius="40" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" powerconsumption="5">
+      <LightTexture texture="Content/Lights/light.png" origin="0.5,0.5" />
+      <!-- additive "top light" -->
+      <sprite texture="%ModDir%/Maps/DryCaves/CaveLampsEmission.png" sourcerect="57,0,39,514" alpha="2.0" origin="0.5,0.12" depth="0.6" />
+    </LightComponent>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.1" mindeteriorationdelay="660" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="3" fixDurationLowSkill="10" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item identifier="CaveLamp2" category="Electrical" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Maps/DryCaves/CaveLamps.png" sourcerect="242,0,48,512" depth="0.8" origin="0.5,0.12" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" powerconsumption="5">
+      <LightTexture texture="Content/Lights/light.png" origin="0.5,0.5" />
+      <!-- additive "top light" -->
+      <sprite texture="%ModDir%/Maps/DryCaves/CaveLampsEmission.png" sourcerect="242,0,48,512" alpha="2.0" origin="0.5,0.12" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.1" mindeteriorationdelay="660" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="3" fixDurationLowSkill="10" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  <Item identifier="reinforceddoor" tags="door,reinforceddoor" scale="0.5" health="1000" damagedbyrepairtools="false" damagedbymonsters="false" damagedbyexplosions="false" explosiondamagemultiplier="0.1" allowrotatingineditor="false" allowedlinks="structure,item" linkable="true">
+    <Sprite texture="Content/Items/Door/door.png" sourcerect="0,0,49,416" depth="0.51" origin="0.5,0.5" />
+    <DecorativeSprite texture="Content/Items/Door/door.png" sourcerect="49,0,49,416" depth="0.89" origin="0.5,0.5" />
+    <Door canbeselected="true" canbepicked="true" pickkey="Action" msg="ItemMsgForceOpenCrowbar" PickingTime="10.0" shadowscale="0.7,1">
+      <RequiredItem items="crowbar" type="Equipped" />
+      <Sprite texture="%ModDir%/Maps/DryCaves/ita_door.png" sourcerect="0,0,79,413" depth="0.05" origin="0.5,0.0" />
+      <WeldedSprite texture="Content/Items/Door/door.png" sourcerect="203,0,65,377" depth="0.0" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/Door/door.png" sourcerect="271,0,121,416" depth="0.051" origin="0.5,0.0" scale="true" />
+      <sound file="Content/Items/Door/Door1.ogg" type="OnUse" range="500.0" />
+      <sound file="Content/Items/Door/Door2.ogg" type="OnUse" range="500.0" />
+      <sound file="Content/Items/Door/Door3.ogg" type="OnUse" range="500.0" />
+      <sound file="Content/Items/Door/Door4.ogg" type="OnUse" range="500.0" />
+      <sound file="Content/Items/Tools/Crowbar.ogg" type="OnPicked" range="4000.0" />
+      <sound file="Content/Items/Door/Duct1.ogg" type="OnFailure" selectionmode="Random" range="300" />
+      <sound file="Content/Items/Door/Duct2.ogg" type="OnFailure" range="300" />
+      <sound file="Content/Items/Door/DoorBreak1.ogg" type="OnBroken" selectionmode="Random" range="3000" />
+      <sound file="Content/Items/Door/DoorBreak2.ogg" type="OnBroken" range="3000" />
+    </Door>
+    <AiTarget sightrange="3000.0" static="True" />
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" fixDurationHighSkill="10" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem items="wrench" type="equipped" />
+    </Repairable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Decorative Rope" identifier="ita_decorope1" category="Misc" Tags="wire" canbepicked="false">
+    <InventoryIcon texture="%ModDir%/Maps/DryCaves/CaveItems.png" sourcerect="0,157,106,94" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Maps/DryCaves/CaveItems.png" sourcerect="0,143,250,12" depth="0.57" origin="0.5,0.5" />
+    <Body radius="7" width="50" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Wire width="0.75" hiddeningame="false">
+      <WireSprite texture="%ModDir%/Maps/DryCaves/CaveItems.png" sourcerect="0,143,250,12" depth="0.57" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="Hazard1" identifier="spawner_hazard1" category="Electrical" Tags="smallitem,signal,logic,explosive" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,388,63,57" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="96,35,31,26" origin="0.5,0.5" />
+    <Body width="31" height="25" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="Affliction" displayname="Trigger">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion ignorecover="true" range="140.0" structuredamage="30" force="1" smoke="false" flames="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyFireEffects="false">
+            <Affliction identifier="burn" strength="10" probability="1" />
+          </Explosion>
+          <ParticleEmitter particle="toxins" anglemin="0" anglemax="360" velocitymin="10" velocitymax="100" particlespersecond="5" colormultiplier="255,255,0,255" />
+          <RequiredItem items="radiotoxin" type="Contained" />
+        </StatusEffect>
+      </input>
+      <input name="Emitter" displayname="Trigger">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <ParticleEmitter particle="toxins" anglemin="0" anglemax="360" velocitymin="10" velocitymax="100" particlespersecond="5" colormultiplier="255,255,0,255" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+    <ItemContainer canbeselected="true" capacity="1" itempos="0,0" hideitems="false" />
+  </Item>
+  <Item name="Waterfall" identifier="waterfall" tags="dh_waterfall1" scale="0.5" health="100" allowrotatingineditor="false" allowedlinks="structure,item" linkable="true" noninteractable="true">
+    <Sprite texture="%ModDir%/UI/dhicon.png" sourcerect="640,0,128,128" depth="0.51" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" stackable="false" disabledeltatime="true">
+        <sound file="Content/Sounds/Water/FlowMedium.ogg" range="1100" loop="true" />
+        <ParticleEmitter particle="waterfall1" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" particlespersecond="30" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="diehardspawner" identifier="diehardspawner" category="Electrical" Tags="CharacterSpawner" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,388,63,57" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="96,35,31,26" origin="0.5,0.5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate">
+        <StatusEffect type="OnUse" target="This">
+          <LuaHook name="SpawnEntity" />
+        </StatusEffect>
+      </input>
+      <input name="set_state" displayname="connection.setstate">
+        <Remove />
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="mineralspawner" identifier="mineralspawner" category="Electrical" Tags="CharacterSpawner" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,388,63,57" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="96,35,31,26" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" interval="5">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <LuaHook name="SpawnMineral" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate">
+        <StatusEffect type="OnUse" target="This">
+          <LuaHook name="SpawnMineral" />
+        </StatusEffect>
+      </input>
+      <input name="set_state" displayname="connection.setstate">
+        <Remove />
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="mineralspawnerparent" identifier="mineralspawnerparent" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Alien" tags="">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <EntitySpawnerComponent itemidentifier="mineralspawner" speciesname="" onlyspawnwhencrewinrange="False" crewareashape="Circle" crewareabounds="500,500" crewarearadius="500" crewareaoffset="0,0" spawnareashape="Rectangle" spawnareabounds="500,40" spawnarearadius="480" spawnareaoffset="0,0" spawntimerrange="0,2" spawnamountrange="1,8" maximumamount="8" maximumamountrangepadding="500" allowingameediting="True" msg="">
+      <StatusEffect type="Always" target="This" delay="3">
+        <Remove />
+      </StatusEffect>
+    </EntitySpawnerComponent>
+  </Item>
+  <Item name="diehardspawner25%" identifier="diehardspawner25" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Alien" tags="diehardspawner25%">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <EntitySpawnerComponent />
+  </Item>
+  <Item name="diehardspawner50%" identifier="diehardspawner50" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Alien" tags="diehardspawner50%">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <EntitySpawnerComponent />
+  </Item>
+  <Item name="diehardspawner75%" identifier="diehardspawner75" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Alien" tags="diehardspawner75%">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <EntitySpawnerComponent />
+  </Item>
+  <Item name="stonecracker" identifier="stonecracker" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Misc" hiddeningame="false">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" duration="0.2" interval="100">
+        <ParticleEmitter particle="explosionsmoke" AngleMax="360" ScaleMax="2" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <Sound file="%Moddir%/Sounds/stoneinit.ogg" range="2000" />
+        <Explosion range="1000.0" force="0.6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="30.0" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" delay="2" interval="100">
+        <SpawnItem identifiers="rollingstone" spawnposition="This" rotationtype="Random" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="stonecracker1" identifier="stonecracker1" description="" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Misc" hiddeningame="true">
+    <sprite texture="Content/Map/AlienWallSet1.png" sourcerect="896,0,128,192" depth="0.975" premultiplyalpha="false" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" duration="0.2" interval="100">
+        <ParticleEmitter particle="explosionsmoke" AngleMax="360" ScaleMax="2" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <Sound file="%Moddir%/Sounds/stoneinit.ogg" range="2000" />
+        <Explosion range="1000.0" force="0.6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="30.0" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" delay="2" interval="100">
+        <SpawnItem identifiers="rollingstone1" spawnposition="This" rotationtype="Random" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!--Sound Effect by <a href="https://pixabay.com/users/gregorquendel-19912121/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=117382">GregorQuendel</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=117382">Pixabay</a>-->
+  <Item name="rollingstone" identifier="rollingstone" description="" scale="0.35" category="Misc" tags="collidable_always,rollingstone" damagedbyexplosions="true" damagedbyrepairtools="true" impactsoundtag="impact_rollingstone" health="25">
+    <sprite texture="%ModDir%/Maps/DryCaves/CaveDecorative.png" sourcerect="1538,526,490,433" depth="0.3" />
+    <Body radius="200" density="5000" friction="100" angulardamping="0.1" restitution="0.25" />
+    <ItemComponent>
+      <StatusEffect type="OnDeath" target="This" duration="2">
+        <ParticleEmitter particle="rollingstonecrack" AngleMax="360" ScaleMultiplier="0.5,0.5" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <ParticleEmitter particle="rollingstonecrack2" AngleMax="360" ScaleMultiplier="0.5,0.5" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <ParticleEmitter particle="explosionsmoke" AngleMax="360" ScaleMax="2" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="rollingstone1" identifier="rollingstone1" description="" scale="0.35" category="Misc" tags="collidable_always,rollingstone" damagedbyexplosions="true" damagedbyrepairtools="true" impactsoundtag="impact_rollingstone" health="25">
+    <sprite texture="%ModDir%/Maps/DryCaves/CaveDecorative.png" sourcerect="1018,520,496,477" depth="0.3" />
+    <Body radius="200" density="5000" friction="100" angulardamping="0.1" restitution="0.25" />
+    <ItemComponent>
+      <StatusEffect type="OnDeath" target="This" duration="2">
+        <ParticleEmitter particle="rollingstonecrack" AngleMax="360" ScaleMultiplier="0.5,0.5" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <ParticleEmitter particle="rollingstonecrack2" AngleMax="360" ScaleMultiplier="0.5,0.5" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <ParticleEmitter particle="explosionsmoke" AngleMax="360" ScaleMax="2" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>
