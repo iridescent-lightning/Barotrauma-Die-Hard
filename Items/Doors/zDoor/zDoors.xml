@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="Enterable Door" identifier="enterable_doora" category="Electrical" tags="smallitem,button,mediumdelay" linkable="true" cargocontaineridentifier="metalcrate" scale="0.6" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8" allowedlinks="structure,item,teleportladder">
+  <Item name="Enterable Door" identifier="enterable_doora" category="Electrical" tags="smallitem,button,mediumdelay" linkable="true" scale="0.6" allowedlinks="structure,item,teleportladder" >
     <Sprite texture="%ModDir%/Items/Doors/zDoor/Doors.png" sourcerect="0,0,159,319" depth="0.8" origin="0.5,0.5" />
+    <Upgrade gameversion="100.0.0.0" allowingameediting="false" />
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true">
       <RequiredItem identifier="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" />
-      <sound file="%ModDir%/Items/Doors/zDoor/doorenter1.ogg" type="OnUse" range="500.0" volume="2" />
-      <limbposition limb="Head" position="-26,-170" />
-      <limbposition limb="Torso" position="84,-140" />
-      <limbposition limb="Waist" position="224,-160" />
-      <limbposition limb="RightFoot" position="444,-160" />
-      <limbposition limb="LeftFoot" position="444,-160" />
-      <limbposition limb="RightHand" position="224,-160" allowusinglimb="false" />
-      <limbposition limb="LeftHand" position="224,-160" allowusinglimb="false" />
       <StatusEffect type="OnPicked" target="Character">
+        <Sound file="%ModDir%/Items/Doors/zDoor/doorenter1.ogg" range="1000" volume="5" />
         <Affliction identifier="enteringdoor" amount="10" />
       </StatusEffect>
     </Controller>
+    <!--<Door canbeselected="true" canbepicked="true" pickkey="Action" msg="ItemMsgForceOpenCrowbar" PickingTime="7.5" shadowscale="0.7,1" hasintegratedbuttons="true"  OpeningSpeed="999" ClosingSpeed="999" ToggleCoolDown="1">
+        
+        <Sprite texture="door.png" sourcerect="158,0,42,416" depth="0.05" origin="0.5,0.0" />
+        <WeldedSprite texture="door.png" sourcerect="203,0,65,377" depth="0.0" origin="0.5,0.5" />
+        <BrokenSprite texture="door.png" sourcerect="271,0,121,416" depth="0.509" origin="0.5,0.0" scale="true" />
+        
+      </Door>-->
     <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10" canbepicked="false">
       <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
       <RequiredItem identifier="screwdriver" type="Equipped" />
@@ -28,6 +29,9 @@
     <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
       <RequiredItem identifier="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" />
       <sound file="%ModDir%/Items/Doors/zDoor/doorenter2.ogg" type="OnUse" range="1000.0" volume="5" />
+      <StatusEffect type="OnPicked" target="Character">
+        <Affliction identifier="enteringdoor" amount="10" />
+      </StatusEffect>
     </Controller>
     <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10" canbepicked="false">
       <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />

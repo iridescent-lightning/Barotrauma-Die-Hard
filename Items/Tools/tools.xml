@@ -300,10 +300,10 @@
       <!-- physics body -->
       <Body width="150" height="60" density="25" friction="30" />
       <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
-      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-62,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" />
-      <!--<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <Holdable slots="RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-62,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite texture="Content/Items/Tools/tools.png" sourcerect="0,3,152,88" depth="0.55" origin="0.5,-0.2" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" limb="Torso" scale="0.5"/>
-      </Wearable>-->
+      </Wearable>
       <RepairTool firedamage="10.0" structurefixamount="1.0" range="150" barrelpos="35,12" particles="weld" repairmultiple="true" repairthroughwalls="false" combatpriority="10" levelwallfixamount="-0.425" targetforce="10">
         <!-- the item must contain a welding fuel tank for it to work -->
         <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
@@ -403,7 +403,7 @@
         <StatusEffect type="OnUse" targettype="Contained" targets="oxygensource" Condition="-1.0" />
         <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="-20.0" />
         <StatusEffect type="OnSuccess" targettype="UseTarget" Condition="-15.0" />
-        <StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.005">
+        <StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.0001">
           <Affliction identifier="burn" amount="4.0" />
         </StatusEffect>
         <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">

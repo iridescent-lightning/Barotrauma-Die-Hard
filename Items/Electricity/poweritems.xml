@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="JunctionBox Slot" description="" identifier="jbslot" Tags="junctionbox" showinstatusmonitor="false" category="Electrical" interactthroughwalls="true" Scale="0.35" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
+    <Item name="" description="" identifier="jbslot" Tags="junctionbox" showinstatusmonitor="false" category="Electrical" interactthroughwalls="true" Scale="0.35" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
       <Sprite texture="%ModDir%/Items/Electricity/signalcomp_broken.png" sourcerect="618,724,70,81" depth="0.8" />
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="141,968,38,28" origin="0.5,0.45" />
       <SwappableItem price="0" origin="35,40" swapidentifier="junctionboxes"></SwappableItem>
@@ -25,7 +25,7 @@
         <output name="load_value_out" displayname="connection.loadvalueout" />
       </ConnectionPanel>
     </Item>
-    <Item name="" identifier="junctionbox" tags="junctionbox, RequireWireToFix" category="Electrical,Machine" description="" scale="0.5" allowedlinks="gap,door" linkable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Item name="" identifier="junctionbox" tags="junctionbox, RequireWireToFix, damage_by_passing_bullet" category="Electrical,Machine" description="" scale="0.5" allowedlinks="gap,door" linkable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
       <Upgrade gameversion="0.10.0.0" scale="*0.667" />
       <Sprite texture="signalcomp.png" sourcerect="264,1,110,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" sourcerect="259,2,140,183" depth="0.9" origin="0.4,0.4" />
@@ -103,6 +103,65 @@
         <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
       </Repairable>
     </Item>
+    <Item name="" identifier="battery" tags="battery,batterycellrecharger" category="Electrical,Machine" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
+    <Sprite texture="signalcomp.png" sourcerect="604,0,118,159" depth="0.8" />
+    <BrokenSprite texture="signalcomp.png" sourcerect="722,0,118,159" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="signalcomp.png" sourcerect="840,0,118,159" depth="0.8" maxcondition="0" />
+    <PowerContainer capacity="2000.0" maxrechargespeed="500.0" maxoutput="1000.0" canbeselected="true" indicatorposition="65,33" indicatorsize="34,46" ishorizontal="false" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" /> <!--minsize="350,250" maxsize="420,300"-->
+      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0" comparison="and">
+        <!-- the statuseffect targets the contained item (a battery cell that's being charged), but the conditional targets the container (this battery) -->
+        <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer"/>
+        <Conditional OutputDisabled="false" targetcontainer="true" targetitemcomponent="PowerContainer"/>
+      </StatusEffect>
+    </PowerContainer>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <requireditem items="Screwdriver" type="Equipped" />
+      <output name="power_out" displayname="connection.powerout" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_rate" displayname="connection.batterysetrechargespeed" />
+      <output name="charge" displayname="connection.batterychargestatusout" />
+      <output name="charge_%" displayname="connection.batterychargepercentage" />
+      <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
+      <output name="condition_out" displayname="connection.conditionout" />
+      <output name="load_value_out" displayname="connection.loadvalueout" />
+      <output name="power_value_out" displayname="connection.powervalueout" />
+      <input name="disable_output" displayname="connection.disableoutput" />
+    </ConnectionPanel>
+    <ItemContainer capacity="3" maxstacksize="1" canbeselected="true" hideitems="true" hudpos="0.5,0.6" uilabel="ChargingDock">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="loadable" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleamount="5" emitinterval="2" particlespersecond="5" anglemax="360" distancemax="30" velocitymin="100" velocitymax="500" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <BrokenBattery/>
+  </Item>
     <Item name="Battery-3000" identifier="battery3000" tags="battery,batterycellrecharger" category="Electrical,Machine" Scale="0.5" description="[Cpacity:3000] [Output:1000] [Recharge Speed:700]" damagedbyexplosions="true" explosiondamagemultiplier="0.2" variantof="battery">
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
       <Sprite texture="signalcomp.png" sourcerect="604,0,118,159" depth="0.86" />

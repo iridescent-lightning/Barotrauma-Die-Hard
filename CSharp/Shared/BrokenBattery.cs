@@ -35,11 +35,11 @@ namespace BrokenBatteryMod//todo make a structural namespace DieHard.Item.Compon
                 if (brokenbatteryUpdateTimer < 0.0f)
                 {
                     
-                    if(item.Condition < 10f)
+                    if(item.Condition < 20f)
                     {
                         
-                        HullMod.AddGas(item.CurrentHull, "Chlorine", 10f, deltaTime);
-                        DebugConsole.NewMessage("Chlorine added");
+                        HullMod.AddGas(item.CurrentHull, "Chlorine", 30f, deltaTime);
+                        //DebugConsole.NewMessage("Chlorine added");
                     }
                     brokenbatteryUpdateTimer = BrokenbatteryUpdateInterval;
                 }

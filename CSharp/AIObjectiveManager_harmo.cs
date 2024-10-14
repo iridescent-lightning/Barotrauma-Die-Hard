@@ -28,7 +28,7 @@ namespace AIObjectiveManagerMod
 
             harmony.Patch(
                 original: typeof(AIObjectiveManager).GetMethod("CreateObjective"),
-                postfix: new HarmonyMethod(typeof(AIObjectiveManager).GetMethod(nameof(CreateObjective)))
+                postfix: new HarmonyMethod(typeof(AIObjectiveManagerMod).GetMethod(nameof(CreateObjective)))
             );
             
         }

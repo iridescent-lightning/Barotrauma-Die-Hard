@@ -601,6 +601,10 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.firecontrolsonar>Guiding torpedo direction</entitydescription.firecontrolsonar>
   <entityname.lubricationoil>Lubrication Oil</entityname.lubricationoil>
   <entitydescription.lubricationoil>Used to lubricate the engine. Right click to use directly on the engine.</entitydescription.lubricationoil>
+  <entityname.jbslot>JunctionBox Slot</entityname.jbslot>
+  
+  
+  
   <connection.moveup>Move Up</connection.moveup>
   <connection.movedown>Move Down</connection.movedown>
   <connection.Dock_State>Dock State</connection.Dock_State>
@@ -681,4 +685,24 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <TurbineRateSliderText>Turbine Rate</TurbineRateSliderText>
   <dialogcheckfirearms>"Weapon like this is not allowed here!"</dialogcheckfirearms>
   <dialogcheckfirearms.Drop>"Drop your Weapon!"</dialogcheckfirearms.Drop>
+  <MiniMapCO2>CO2 Level</MiniMapCO2>
+  <MiniMapCO>CO Level</MiniMapCO>
+  <MiniMapChlorine>Chlorine Level</MiniMapChlorine>
+  <MiniMapLockRoomHit>Click to lock room. Ctrl + click to unclock room.</MiniMapLockRoomHit>
+
+  <!--Jobs-->
+  <jobname.navigator>Navigator</jobname.navigator>
+  <jobdescription.navigator>On board seafarer. Navigating through the toughest terrain.</jobdescription.navigator>
+
+  <!--I add duplicated dialog to make game choose to speak these more. Because bots now no longer find diving suit inside. And I don't want to patch Act method for just fixing one dialog.-->
+  <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
+  <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
+  <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
+  <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
+  <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
+
+  <dialogclimbladderwithfullhanditem>I need to clear my head for the climbing.</dialogclimbladderwithfullhanditem>
+
+
+  <skillname.ondeckweapon>On Deck Weapon</skillname.ondeckweapon>
 </infotexts>

@@ -186,8 +186,24 @@ namespace CharacterHealthMod
 	public static void Update(CharacterHealth __instance, float deltaTime)
         {
 			CharacterHealth _ = __instance;
-            //DebugConsole.NewMessage("s");
+
+
+            // Severed legs cause the player to fall down
+			foreach (Limb limb in _.Character.AnimController.Limbs)
+			{
+				if (limb.IsSevered && (limb.type == LimbType.LeftLeg || limb.type == LimbType.RightLeg))
+				{
+					_.Character.IsForceRagdolled = true;  
+					break; // Exit the loop once a severed leg is found
+				}
+				else
+				{
+					_.Character.IsForceRagdolled = false; 
+				}
+			}
 			
+
+			// Defualt Character Status Effect Attributes
 			if (_.Character.IsHuman && _.Character.InWater)
 			{
 				_.ApplyAffliction(_.Character.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(0.65f * deltaTime));
@@ -204,7 +220,7 @@ namespace CharacterHealthMod
 			if (_.Character.IsHuman && !_.Character.IsDead && _.Character.CurrentHull != null)
 			{
 				_.Character.PressureProtection= 4500.0f;
-				//DebugConsole.NewMessage("s");
+				
 			}
 
 			/*if (_.Character.CurrentHull !=null && _.Character.InWater)
@@ -214,6 +230,5 @@ namespace CharacterHealthMod
 		
 		}
 
-	
-  }
+  	}
 }

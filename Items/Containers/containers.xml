@@ -70,7 +70,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-2" />
       </Repairable>
     </Item>
-    <Item name="" identifier="mediumsteelcabinet" tags="locker,container,mediumsteelcabinetsfx,playinteractsound" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
+    <Item name="" identifier="mediumsteelcabinet" tags="locker,container,mediumsteelcabinetsfx,playinteractsound,damage_by_passing_bullet" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
       <Sprite texture="containers.png" depth="0.84" sourcerect="1,1,175,374" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="12,11,171,372" depth="0.9" origin="0.43,0.47" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="1,1,175,374" depth="0.84" origin="0.5,0.5" maxcondition="30" />
@@ -105,7 +105,7 @@
 		</StatusEffect>-->
       </Repairable>
     </Item>
-    <Item name="" aliases="Diving Gear Cabinet" identifier="mediumwindowedsteelcabinet" category="Diving" tags="locker,container,mediumwindowedsteelcabinet,playinteractsound" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
+    <Item name="" aliases="Diving Gear Cabinet" identifier="mediumwindowedsteelcabinet" category="Diving" tags="locker,container,mediumwindowedsteelcabinet,playinteractsound, damage_by_passing_bullet" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
       <Sprite texture="containers.png" depth="0.84" sourcerect="178,1,168,377" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="183,11,178,371" depth="0.9" origin="0.43,0.47" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="178,1,168,377" depth="0.84" origin="0.5,0.5" maxcondition="30" />
@@ -137,7 +137,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-2" />
       </Repairable>
     </Item>
-    <Item name="" identifier="steelcabinet" tags="locker,container,steelcabinetsfx,playinteractsound" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
+    <Item name="" identifier="steelcabinet" tags="locker,container,steelcabinetsfx,playinteractsound, damage_by_passing_bullet" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
       <Sprite texture="containers.png" depth="0.84" sourcerect="348,2,364,373" origin="0.5,0.5" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="348,2,364,373" depth="0.84" origin="0.5,0.5" maxcondition="30" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="350,11,386,365" depth="0.9" origin="0.41,0.47" />

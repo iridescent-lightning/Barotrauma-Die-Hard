@@ -89,8 +89,7 @@ namespace HullModNamespace
         
         public static void HullConstructorPostfix(Hull __instance)
     {
-        // Your code here. __instance is the newly created Hull object.
-        // For example, you might log a message or modify properties of __instance.
+        
         DebugConsole.Log("Hull constructor has been patched.");
         float volume = __instance.Volume;
 
@@ -116,8 +115,8 @@ namespace HullModNamespace
             if (hull.FireSources.Count > 0)
             {
                 AddGas(hull, "Temperature", 1f, deltaTime);
-                AddGas(hull, "CO2", 110f, deltaTime);
-                AddGas(hull, "CO", 510f, deltaTime);
+                AddGas(hull, "CO2", 20f, deltaTime);
+                AddGas(hull, "CO", 10f, deltaTime);
             }
 
             // Temperature

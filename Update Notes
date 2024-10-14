@@ -1,0 +1,32 @@
+53. 
+    1. Add a check in Character Health to check if the character legs are severed. If true, force ragdoll.
+    2. Fixed the tempreature exchange. Works in multiplayer.
+    3. Readjusting the gas exchange speed. Readjusting airmonitor read out. Air system now works 
+    4. Adding delta time for divingsuit conditions
+    5. Restored 'Broken Battery' feature. Broken batteries that go below 20 in condition weill release CL gas.
+    6. Fix the Chlorine gas cannot be filtered out bug. Should use 'Chlorine' instead of 'CL'
+    7. Adding air quality for custom gas. Require oxygen detector (currently as long as one detector is connected, it can detect all hulls)
+54. 
+    1. Updating Orders.xml to lasted patch.
+    2. Update human animation to the lated patch.
+    3. Removing divingsuit pressure from lua to xml. Fix bots cannot detect divingsuit pressure out side hull. divingsuit and abyssal diving suit pressure set to 6650. COmbat divingsuit set to 5750
+    4. Adding a new job 'navigator'. Adding 'navigator' to crew hiring options.
+    5. Adding 'Allowbiomegate' to keep updated with lasted patch.
+    6. I think grapple gun in multiplayer was fixed by devs. well no. It works better.
+    7. Adding target="This" for piratebgm and machinepistol.
+    8. Fixed bots can't properly report the room name of the broken device's location.
+    9. Outpost bandit mission commonness change from 30 to 100. Same as vanilla monster commoness.
+    10. Add a discription of using the status monitor lock room function.
+55.
+    1. Further reduce plasmacutter severlimbprobablity from 0.005 to 0.001
+    2. Patching HumanAIController_harmo to make bots no longer find diving suits when inside hulls. Also adding dialog to make bots prefer to say need diving gear instead of diving suit. 
+    3. Writing an upgrade tag to change bug appears from the vent chance from 0.2 to 0.1
+    4. Patching AIObjectiveFixLeak to allow bots to swap weldingequipments mounted on bag.
+    5. Patching AIObjectiveGo to make bots switch to scooter underwater when carring a gun.
+    6. Abolishing old wire teleporting method. Adopting new link teleporting method. Using SE to create entering sfx. Updating all modules.(Abolished, unstable, still in the backup files)
+56. 
+    1. Collecting bullet damage tag as one damage_by_passing_bullet. Attaching tag to previous damagable items. Adding different damage values.
+    2. Fixing bugs of diivng suit and mask use very little oxygen source. Adding delta time for diving mask.
+    3. Laying down the functioning working for skill and weapon reload feature.
+    4. Adding new skill 'ondeckweapon'. 
+    5. Changing all four turrets weapon skill requirement to ondeckskill 60.

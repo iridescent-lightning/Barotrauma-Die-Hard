@@ -198,7 +198,7 @@
         </StatusEffect>
       </Repairable>
     </Item>
-    <Item name="" identifier="vent" tags="vent" category="Machine" linkable="true" allowedlinks="oxygenerator" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" interactdistance="100">
+    <Item name="" identifier="vent" tags="vent, damage_by_passing_bullet" category="Machine" linkable="true" allowedlinks="oxygenerator" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" interactdistance="100">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Sprite texture="%ModDir%/Items/OxygenGenerator/oxygengenerator.png" depth="0.91" sourcerect="848,16,143,143" />
       <BrokenSprite texture="%ModDir%/Items/OxygenGenerator/oxygengenerator.png" sourcerect="869,513,105,106" depth="0.91" maxcondition="30" fadein="false" />
@@ -210,6 +210,7 @@
         <sound file="%ModDir%/Items/OxygenGenerator/Entities_Station#434_oxymixer_ventilator_idle_01.ogg" type="OnActive" range="400.0" volumeproperty="OxygenFlow" volume="0.0005f" loop="true" />
       </Vent>
       <BugVent BugAppearChance="0.01" OnlyPlayerSub="true" UpdateInterval="360" />
+      <Upgrade gameversion = "100.0.0.0" BugAppearChance="0.05" />
       <Repairable selectkey="Action" header="mechanicalrepairsheader" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="9" />

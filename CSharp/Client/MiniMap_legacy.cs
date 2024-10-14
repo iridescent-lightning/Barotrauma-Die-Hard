@@ -3,6 +3,7 @@ using Barotrauma;
 using Barotrauma.Items.Components;
 using Barotrauma.Networking;
 using Networking;
+using HullModNamespace;
 
 using FarseerPhysics;
 using Microsoft.Xna.Framework;
@@ -20,7 +21,7 @@ namespace BarotraumaDieHard
 
         private GUIFrame hullInfoFrame;
 
-        private GUITextBlock hullNameText, hullBreachText, hullAirQualityText, hullWaterText;
+        private GUITextBlock hullNameText, hullBreachText, hullAirQualityText, hullWaterText, hullCO2Text, hullCOText, hullChlorineText, lockRoomHitText;
 
         private string noPowerTip = "";
 
@@ -63,6 +64,12 @@ namespace BarotraumaDieHard
             hullBreachText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
             hullAirQualityText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
             hullWaterText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
+
+            //moded part
+            hullCO2Text = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
+            hullCOText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
+            hullChlorineText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
+            lockRoomHitText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.6f), hullInfoContainer.RectTransform), "") { Wrap = true };
 
             hullInfoFrame.Children.ForEach(c =>
             {
@@ -178,7 +185,7 @@ namespace BarotraumaDieHard
 
             foreach (Character character in Character.CharacterList)
             {
-                if (character.CurrentHull != hull) { continue; }
+                if (character.CurrentHull != hull || character.CurrentHull.Submarine !=Submarine.MainSub) { continue; }
 
                 // Calculate the character's position relative to the hull dimensions
                 Vector2 relativePos = (character.WorldPosition - hull.WorldPosition) / hullWorldSize;
@@ -196,23 +203,7 @@ namespace BarotraumaDieHard
             
         }
 
-        //Draw a red sqaure so player knows when the room is locked via status monitor.
-        private void DrawRoomLockState (SpriteBatch spriteBatch, Hull hull)
-        {
-             var hullFrame = submarineContainer.Children.FirstOrDefault()?.FindChild(hull);
-            if (hullFrame == null) { return; }
-
-            // Draw a red square at the top left corner of the hullFrame to indicate locked state
-            Rectangle lockedIndicatorRect = new Rectangle(
-                hullFrame.Rect.X,
-                hullFrame.Rect.Y,
-                10, // Width of the indicator
-                10  // Height of the indicator
-            );
-
-            
-            spriteBatch.Draw(GUI.WhiteTexture, lockedIndicatorRect, Color.Red);
-        }
+        
 
     
         // Function triggered on click
@@ -283,54 +274,55 @@ namespace BarotraumaDieHard
 
                 bool allDoorsLocked = true; // Assume all doors are locked
 
-
-            foreach (Gap gap in hull.ConnectedGaps)
-            {
-                if (gap.IsRoomToRoom)
+                // Lock room feature starts
+                foreach (Gap gap in hull.ConnectedGaps)
                 {
-                    var door = gap.ConnectedDoor;
-                    if (door != null && door.Item.InPlayerSubmarine && !door.IsJammed)
+                    if (gap.IsRoomToRoom)
                     {
-                        allDoorsLocked = false; // Found an unlocked door
-                        break; // Exit loop
-                    }
-                    // No need to check for a gap without a door,
-                    // just ensure that if any doors are jammed, they count as locked.
-                }
-            }
-
-            // Draw the red square if all doors are locked
-            if (allDoorsLocked)
-            {
-                Rectangle lockedIndicatorRect = new Rectangle(
-                    hullFrame.Rect.X,
-                    hullFrame.Rect.Y,
-                    10, // Width of the indicator
-                    10  // Height of the indicator
-                );
-                spriteBatch.Draw(GUI.WhiteTexture, lockedIndicatorRect, Color.Red);
-            }
-
-
-                if (GUI.MouseOn == hullFrame || hullFrame.IsParentOf(GUI.MouseOn))
-                {
-                    mouseOnHull = hull;
-                    hullFrame.Color = Color.White; // Highlight hull when hovering
-                    
-                    // Detect Mouse Click (Left Button)
-                    if (PlayerInput.PrimaryMouseButtonClicked())
-                    {
-                        if (PlayerInput.KeyDown(Microsoft.Xna.Framework.Input.Keys.LeftControl)) // Check if Ctrl key is held down
+                        var door = gap.ConnectedDoor;
+                        if (door != null && door.Item.InPlayerSubmarine && !door.IsJammed)
                         {
-                            
-                            UnlockAllDoors(mouseOnHull); // Call the method to unlock all doors
+                            allDoorsLocked = false; // Found an unlocked door
+                            break; // Exit loop
                         }
-                        else
-                        {
-                            OnHullClick(mouseOnHull); // Call the regular function when clicked
-                        }
+                        // No need to check for a gap without a door,
+                        // just ensure that if any doors are jammed, they count as locked.
                     }
                 }
+
+                // Draw the red square if all doors are locked
+                if (allDoorsLocked && hull.Submarine == Submarine.MainSub)
+                {
+                    Rectangle lockedIndicatorRect = new Rectangle(
+                        hullFrame.Rect.X,
+                        hullFrame.Rect.Y,
+                        10, // Width of the indicator
+                        10  // Height of the indicator
+                    );
+                    spriteBatch.Draw(GUI.WhiteTexture, lockedIndicatorRect, Color.Red);
+                }
+
+
+                    if (GUI.MouseOn == hullFrame || hullFrame.IsParentOf(GUI.MouseOn))
+                    {
+                        mouseOnHull = hull;
+                        hullFrame.Color = Color.White; // Highlight hull when hovering
+                        
+                        // Detect Mouse Click (Left Button)
+                        if (PlayerInput.PrimaryMouseButtonClicked())
+                        {
+                            if (PlayerInput.KeyDown(Microsoft.Xna.Framework.Input.Keys.LeftControl)) // Check if Ctrl key is held down
+                            {
+                                
+                                UnlockAllDoors(mouseOnHull); // Call the method to unlock all doors
+                            }
+                            else
+                            {
+                                OnHullClick(mouseOnHull); // Call the regular function when clicked
+                            }
+                        }
+                    }
+                // Lock room feature ends.
 
                 if (item.Submarine == null || !hasPower)
                 {
@@ -459,11 +451,21 @@ namespace BarotraumaDieHard
                     hullInfoFrame.Visible = true;
                     hullNameText.Text = hull.DisplayName;
 
+
+                    //modded part
+                    float? co2Amount = null;
+                    float? coAmount = null;
+                    float? chlorineAmount = null;
+                    
+                    
+                    //
+
                     foreach (Hull linkedHull in hullData.LinkedHulls)
                     {
                         gapOpenSum += linkedHull.ConnectedGaps.Where(g => !g.IsRoomToRoom).Sum(g => g.Open);
                         oxygenAmount += linkedHull.OxygenPercentage;
                         waterAmount += Math.Min(linkedHull.WaterVolume / linkedHull.Volume, 1.0f);
+
                     }
                     oxygenAmount /= (hullData.LinkedHulls.Count + 1);
                     waterAmount /= (hullData.LinkedHulls.Count + 1);
@@ -478,6 +480,31 @@ namespace BarotraumaDieHard
                     hullWaterText.Text = waterAmount == null ? TextManager.Get("MiniMapWaterLevelUnavailable") : 
                         TextManager.AddPunctuation(':', TextManager.Get("MiniMapWaterLevel"), (int)(waterAmount * 100.0f) + " %");
                     hullWaterText.TextColor = waterAmount == null ? GUIStyle.Red : Color.Lerp(Color.LightGreen, GUIStyle.Red, (float)waterAmount);
+                    
+                    //modded part
+                    if (this.Item.GetConnectedComponents<OxygenDetector>() != null)
+                        {
+                            
+                            co2Amount = HullMod.GetGas(hull, "CO2");
+                            coAmount = HullMod.GetGas(hull, "CO");
+                            chlorineAmount = HullMod.GetGas(hull, "Chlorine");
+                        }
+
+
+                    hullCO2Text.Text = co2Amount == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
+                    TextManager.AddPunctuation(':', TextManager.Get("MiniMapCO2"), (int)co2Amount + " ppm");
+                    hullCO2Text.TextColor = co2Amount == null ? GUIStyle.Red : Color.Lerp(GUIStyle.Green, Color.Red, (float)co2Amount / 100.0f);
+
+                    hullCOText.Text = coAmount == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
+                        TextManager.AddPunctuation(':', TextManager.Get("MiniMapCO"), (int)coAmount + " ppm");
+                    hullCOText.TextColor = coAmount == null ? GUIStyle.Red : Color.Lerp(GUIStyle.Green, Color.Red, (float)coAmount / 100.0f);
+
+                    hullChlorineText.Text = chlorineAmount == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
+                        TextManager.AddPunctuation(':', TextManager.Get("MiniMapChlorine"), (int)chlorineAmount + " ppm");
+                    hullChlorineText.TextColor = chlorineAmount == null ? GUIStyle.Red : Color.Lerp(GUIStyle.Green, Color.Red, (float)chlorineAmount / 100.0f);
+
+                    lockRoomHitText.Text = TextManager.Get("MiniMapLockRoomHit");
+                    
                 }
                 
                 hullFrame.Color = borderColor;
@@ -533,7 +560,7 @@ namespace BarotraumaDieHard
             msg.WriteUInt16(item.ID); // ID of the door item
             msg.WriteBoolean(isJammed); // Write the jammed state
             NetUtil.SendServer(msg, DeliveryMethod.Reliable);
-            DebugConsole.NewMessage("1212");
+            
         }
 
     }

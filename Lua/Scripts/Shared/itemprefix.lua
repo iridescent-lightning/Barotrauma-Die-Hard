@@ -8,7 +8,7 @@ subWidth = 0
 subHeight = 0
 shapeFactor = 0
 
-
+LuaUserData.MakeMethodAccessible(Descriptors["Barotrauma.Items.Components.Door"], "DisableBody")
 
 Hook.Add("roundStart", "startconfig", function()
 Timer.Wait(function()
@@ -74,7 +74,17 @@ Timer.Wait(function()
 			theComponent.set_OpeningSpeed(0.8)
 			theComponent.set_ClosingSpeed(0.8)
 			end
+
+		elseif item.Prefab.Identifier == 'enterable_doora' then
+		
+			local fakeDoor = item:GetComponentString('Door')
+			if fakeDoor then
+				fakeDoor.DisableBody()
+				print("body siabled")
+			end
         end
+		
+		
     end
 	end,2000)
 end);
@@ -85,6 +95,8 @@ platformState = {}
 --ballastPump = {}
 mainsubHulls = {}
 rebreatherStart = {}
+
+
 end)
 --[[LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.ItemPrefab"], "ReuiredItems")
 Hook.Add("think", "ChangeRapair", function()

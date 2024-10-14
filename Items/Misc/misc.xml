@@ -128,7 +128,7 @@
       <Body radius="45" density="10" />
       <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect"></Holdable>
       <ItemComponent characterusable="false">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Misc/Battle_1_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
         </StatusEffect>
       </ItemComponent>
@@ -140,7 +140,7 @@
       <Body radius="45" density="10" />
       <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
       <ItemComponent characterusable="false">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Misc/Battle_2_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
         </StatusEffect>
       </ItemComponent>
@@ -152,7 +152,7 @@
       <Body radius="45" density="10" />
       <Holdable slots="RightHand,LeftHand,Any" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect"></Holdable>
       <ItemComponent characterusable="false">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Misc/Battle_4_Mix.ogg" range="5000.0" loop="true" dontmuffle="true" />
         </StatusEffect>
       </ItemComponent>

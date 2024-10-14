@@ -188,7 +188,7 @@ Hook.Add("PullSourceUser", "PullSourceUser", function(effect, deltaTime, item, t
         if pullModeItem == 1 then -- if the pull mode for this item is ‘1’
 			--value.AnimController.Collider.FarseerBody.IgnoreGravity = true;
             value.AnimController.MainLimb.body.ApplyTorque(50)
-            value.AnimController.MainLimb.body.ApplyLinearImpulse(direction * 1.5,5)
+            value.AnimController.MainLimb.body.ApplyLinearImpulse(direction * 3,2)
 			
             --print('l')
         else -- otherwise, the pull mode is ‘0’

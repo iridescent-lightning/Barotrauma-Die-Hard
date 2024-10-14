@@ -333,15 +333,15 @@ Hook.Add("DivingSuit","DivingSuit",function(effect, deltaTime, item, targets, wo
 	
 		if oxygenTank and oxygenTank.Prefab.Identifier == "oxygentank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = 1000
-			oxygenTank.Condition = oxygenTank.Condition - 0.01
+			oxygenTank.Condition = oxygenTank.Condition - 0.1 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "oxygenitetank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = 1500
-			oxygenTank.Condition = oxygenTank.Condition - 0.01
+			oxygenTank.Condition = oxygenTank.Condition - 0.1 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "weldingfueltank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = -100
-			oxygenTank.Condition = oxygenTank.Condition - 0.5
+			oxygenTank.Condition = oxygenTank.Condition - 0.5 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "incendiumfueltank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = -100
@@ -354,7 +354,7 @@ Hook.Add("DivingSuit","DivingSuit",function(effect, deltaTime, item, targets, wo
 
 		if battery and battery.HasTag('mobilebattery') and battery.Condition ~= 0 then
 			divingLight.IsOn = true
-			battery.Condition = battery.Condition - 0.01
+			battery.Condition = battery.Condition - 0.01 * deltaTime
 			if (oxygenTank and not hasShowTankBar) then
 				hasShowTankBar = true
 				hasHideTankBar = false
@@ -393,15 +393,15 @@ local oxygenTank = item.OwnInventory.GetItemAt(0)
 	
 		if oxygenTank and oxygenTank.Prefab.Identifier == "oxygentank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = 1000
-			oxygenTank.Condition = oxygenTank.Condition - 0.01
+			oxygenTank.Condition = oxygenTank.Condition - 0.1 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "oxygenitetank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = 1500
-			oxygenTank.Condition = oxygenTank.Condition - 0.01
+			oxygenTank.Condition = oxygenTank.Condition - 0.1 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "weldingfueltank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = -100
-			oxygenTank.Condition = oxygenTank.Condition - 0.5
+			oxygenTank.Condition = oxygenTank.Condition - 0.5 * deltaTime
 			target.UseHullOxygen = false
 		elseif oxygenTank and oxygenTank.Prefab.Identifier == "incendiumfueltank" and oxygenTank.Condition ~= 0 then
 			target.OxygenAvailable = -100

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="lamp" identifier="lamp" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="lamp" identifier="lamp" category="Electrical" Tags="smallitem,light,lamp, damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="64" height="96" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="304,528,64,96" depth="0.8" />
@@ -55,7 +55,7 @@
       </Repairable>
     </Item>
     <!-- TODO: add names for fluorescent lights -->
-    <Item name="Lamp_white_box" nameidentifier="lamp" identifier="lightfluorescentm01" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_white_box" nameidentifier="lamp" identifier="lightfluorescentm01" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="80" height="112" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="0,528,80,112" depth="0.8" origin="0.5,0.5" />
@@ -107,7 +107,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_BrownBox" nameidentifier="lamp" identifier="lightfluorescentm02" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_BrownBox" nameidentifier="lamp" identifier="lightfluorescentm02" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Sprite texture="signalcomp.png" sourcerect="80,528,80,103" depth="0.8" origin="0.5,0.5" />
       <StaticBody width="80" height="112" bodytype="static" />
@@ -159,7 +159,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_classic" nameidentifier="lamp" identifier="lightfluorescentm03" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_classic" nameidentifier="lamp" identifier="lightfluorescentm03" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="64" height="112" bodytype="static" />
       <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="163,537,59,100" origin="0.4,0.4" />
@@ -211,7 +211,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_grey_box" nameidentifier="lamp" identifier="lightfluorescentm04" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_grey_box" nameidentifier="lamp" identifier="lightfluorescentm04" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Sprite texture="signalcomp.png" sourcerect="224,528,80,112" depth="0.8" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="93,539,64,104" origin="0.4,0.4" />
@@ -263,7 +263,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_Rod" nameidentifier="lamp" identifier="lightfluorescentl01" category="Electrical" Tags="largeitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_Rod" nameidentifier="lamp" identifier="lightfluorescentl01" category="Electrical" Tags="largeitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Sprite texture="signalcomp.png" sourcerect="0,816,240,64" depth="0.8" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="5,817,233,67" origin="0.4,0.4" />
@@ -315,7 +315,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_Rod_Thin" nameidentifier="lamp" identifier="lightfluorescentl02" category="Electrical" Tags="largeitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_Rod_Thin" nameidentifier="lamp" identifier="lightfluorescentl02" category="Electrical" Tags="largeitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Sprite texture="signalcomp.png" sourcerect="0,896,288,48" depth="0.8" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Electricity/signalcomp_shadows.png" depth="0.9" sourcerect="7,895,279,50" origin="0.4,0.4" />
@@ -367,7 +367,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_reinfoced" nameidentifier="lamp" identifier="lighthalogenmm01" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_reinfoced" nameidentifier="lamp" identifier="lighthalogenmm01" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="80" height="128" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="0,672,80,128" depth="0.8" origin="0.5,0.5" />
@@ -418,7 +418,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_reinfoced_horizon" nameidentifier="lamp" identifier="lighthalogenmm02" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_reinfoced_horizon" nameidentifier="lamp" identifier="lighthalogenmm02" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="128" height="80" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="80,672,128,80" depth="0.8" origin="0.5,0.5" />
@@ -469,7 +469,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_reinfoced01" nameidentifier="lamp" identifier="lighthalogenmm03" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_reinfoced01" nameidentifier="lamp" identifier="lighthalogenmm03" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="112" height="128" bodytype="static" />
       <BrokenSprite texture="%ModDir%/Items/Electricity/signalcomp_broken.png" sourcerect="208,672,112,128" origin="0.5,0.5" depth="0.8" maxcondition="0" />
@@ -520,7 +520,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_reinfoced01_horizon" nameidentifier="lamp" identifier="lighthalogenm04" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_reinfoced01_horizon" nameidentifier="lamp" identifier="lighthalogenm04" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="128" height="96" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="320,672,128,96" depth="0.8" origin="0.5,0.5" />
@@ -571,7 +571,7 @@
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
-    <Item name="Lamp_round" nameidentifier="lamp" identifier="lightleds01" category="Electrical" Tags="smallitem,light,lamp" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
+    <Item name="Lamp_round" nameidentifier="lamp" identifier="lightleds01" category="Electrical" Tags="smallitem,light,lamp,damage_by_passing_bullet" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="1" damagedbymonsters="true" damagedbyprojectiles="true">
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <StaticBody width="80" height="80" bodytype="static" />
       <Sprite texture="signalcomp.png" sourcerect="352,784,80,80" depth="0.8" origin="0.5,0.5" />

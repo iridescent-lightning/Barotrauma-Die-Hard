@@ -1080,7 +1080,7 @@
         <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot4.ogg" type="OnUse" range="3000" />
         <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot5.ogg" type="OnUse" range="3000" />
         <Sound file="Content/Items/Weapons/WEAPON_machinePistolShot6.ogg" type="OnUse" range="3000" />
-        <StatusEffect type="OnUse">
+        <StatusEffect type="OnUse" target="This">
           <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
         </StatusEffect>
         <!--"Use" contained magazine to spawn projectiles.-->

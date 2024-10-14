@@ -45,17 +45,28 @@ Hook.Add("signalReceived.enterable_doorb", "ZDoors", HandleReceive)
 Hook.Add("signalReceived.enterable_doorc", "ZDoors", HandleReceive)
 
 
---now a c# feature
---[[Hook.Add("ElectricalBugVent","ElectricalBugVent",function(effect, deltaTime, item, targets, worldPosition)
-	local bugChance = math.random(1000)
-	if item.Submarine == Submarine.MainSub then
-		if bugChance > 990 then
-			Entity.Spawner.AddCharacterToSpawnQueue('Electrical_bug',item.WorldPosition,onSpawn)
-		elseif bugChance > 995 then
-			Entity.Spawner.AddCharacterToSpawnQueue('Electrical_bug',item.WorldPosition,onSpawn)
-			Entity.Spawner.AddCharacterToSpawnQueue('Electrical_bug',item.WorldPosition,onSpawn)
-		end
-	end
-end)--]]
+-- Now use a better link method to teleport
+Hook.Add("zdoor", "zdoor", function(effect, deltaTime, item, targets, worldPosition)
+
+    -- Check if targets exist
+    if targets == nil or #targets == 0 then return end
+
+    -- Get the first target, which should be the user
+    local user = targets[1]
+
+    -- Ensure there are linked items to teleport to
+    if item.linkedTo == nil then return end
+
+    -- Loop through linked items
+    for _, linkedItem in pairs(item.linkedTo) do
+        -- Check if the linked item has a valid WorldPosition
+        if linkedItem.WorldPosition then
+            -- Teleport the user (target) to the linked item's position
+            
+            user.TeleportTo(linkedItem.WorldPosition)
+            break -- Teleport to the first linked item and stop (optional)
+        end
+    end
+end)
 
 

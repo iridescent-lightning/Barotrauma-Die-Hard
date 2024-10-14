@@ -57,28 +57,25 @@ namespace CharacterModNamespace
 		
 		public static void UpdateOxygenPostfix(Character __instance, float deltaTime)
 		{
-			escapedTime += deltaTime;
-			if (escapedTime > updateTimer){
-				
-				
 			
+				
 			if (__instance == null) { return; }
 
 			if (__instance.CurrentHull == null) { return; }
 			
 			if (!__instance.IsDead && __instance.UseHullOxygen)
 			{
-				HullMod.AddGas(__instance.CurrentHull, "CO2", 10f / ((__instance.CurrentHull.Volume) / 100000f), deltaTime);
+				HullMod.AddGas(__instance.CurrentHull, "CO2", 1f, deltaTime);
 			
-				if ((HullMod.GetGas(__instance.CurrentHull, "CO2") / __instance.CurrentHull.Volume) > 4f)
+				if (HullMod.GetGas(__instance.CurrentHull, "CO2")  > 600f)
 				{
 					__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["co_poisoning"].Instantiate(1f * deltaTime));
 				}
-				if (HullMod.GetGas(__instance.CurrentHull, "CO") > 800f)
+				if (HullMod.GetGas(__instance.CurrentHull, "CO") > 400f)
 				{
 					__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["co_poisoning"].Instantiate(5f * deltaTime));
 				}
-				if (HullMod.GetGas(__instance.CurrentHull, "CL") > 400f)
+				if (HullMod.GetGas(__instance.CurrentHull, "CL") > 200f)
 				{
 					__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["chlorine_poisoning"].Instantiate(0.1f * deltaTime));
 				}
@@ -91,16 +88,18 @@ namespace CharacterModNamespace
 			}
 			else if (HullMod.GetGas(__instance.CurrentHull, "Temperature") > 323.15f)
 			{
-				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["burn"].Instantiate((HullMod.GetGas(__instance.CurrentHull, "Temperature") - 318.15f) * deltaTime));
+				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["burn"].Instantiate((HullMod.GetGas(__instance.CurrentHull, "Temperature") - 318.15f) * deltaTime * 2f));
 			}
 			else if (HullMod.GetGas(__instance.CurrentHull, "Temperature") > 293.15f)
 			{
 				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(-0.5f * deltaTime));
 			}
-			escapedTime = 0;}
-
-
+			escapedTime = 0;
+			
 		}
+
+
+		
         
 
 		

@@ -33,11 +33,11 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
         private bool turnedOn = true;
         private float recycledAmount;
 
-        [Editable, Serialize(2500.0f, IsPropertySaveable.Yes, description: "How much CO2 gas it can reduced.", alwaysUseInstanceValues: true)]
+        [Editable, Serialize(9.0f, IsPropertySaveable.Yes, description: "How much CO2 gas it can reduced.", alwaysUseInstanceValues: true)]
         public float RecycledAmount
         {
             get { return recycledAmount; }
-            set { recycledAmount = MathHelper.Clamp(value, -10000.0f, 10000.0f); }
+            set { recycledAmount = MathHelper.Clamp(value, -100.0f, 100.0f); }
         }
 
         public float CurrRecycleFlow
@@ -47,11 +47,11 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
         }
 
         private float purifyingAmount;
-        [Editable, Serialize(2000.0f, IsPropertySaveable.Yes, description: "How much toxic gas it can reduced.", alwaysUseInstanceValues: true)]
+        [Editable, Serialize(10.0f, IsPropertySaveable.Yes, description: "How much toxic gas it can reduced.", alwaysUseInstanceValues: true)]
         public float PurifyingAmount
         {
             get { return purifyingAmount; }
-            set { purifyingAmount = MathHelper.Clamp(value, -10000.0f, 10000.0f); }
+            set { purifyingAmount = MathHelper.Clamp(value, -100.0f, 100.0f); }
         }
         public float CurrPurifyingFlow
         {
@@ -271,17 +271,17 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     //DebugConsole.NewMessage(CurrFlow.ToString());
                     
 
-                    CurrRecycleFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount * 10.0f;
+                    CurrRecycleFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount * 0.01f;
                     CurrRecycleFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
                     
-                    CurrPurifyingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * purifyingAmount * 10.0f;
+                    CurrPurifyingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * purifyingAmount * 0.01f;
                     CurrPurifyingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
 
                     CurrHeatingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * heatingAmount;
                     CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
 
 
-                    UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow,   deltaTime);
+                    UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow, deltaTime);
 
 
                     if (item.InPlayerSubmarine)

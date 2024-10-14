@@ -51,6 +51,10 @@ namespace BarotraumaDieHard
 
         public static bool CheckPreviousConditionPrefix(float deltaTime, AIObjectiveRepairItem __instance)
         {
+            // Use this to get the localization name of the hull.
+            string localizedRoomName = TextManager.Get(__instance.Item.CurrentHull.RoomName).Value;
+
+
             if (__instance.Item == null || __instance.Item.Removed) { return false; }
             __instance.conditionCheckTimer -= deltaTime;
             if (__instance.previousCondition > -1 && __instance.Item.Condition < __instance.previousCondition)
@@ -65,11 +69,16 @@ namespace BarotraumaDieHard
                 //DebugConsole.NewMessage("Avoid repaire powered reactor");
                 
             }
-            else if ((__instance.Item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f) && (__instance.Item.Condition > 0f)) //same as the 'fix' in repairable. this makes sure that the bot can fix the broken device to 1% of its health before abandon the task.
+            else if ((__instance.Item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f) && (__instance.Item.Condition > 0f) && !__instance.Item.HasTag("battery")) //same as the 'fix' in repairable. this makes sure that the bot can fix the broken device to 1% of its health before abandon the task. Also exclude the batteies because they can be fixed.
             {
-                __instance.character.Speak("A " + __instance.Item.Name + " in " + __instance.Item.CurrentHull.Name + " is broken." + " But it's too dangerous to repair this while it's powered!", identifier: "bot_repair_fail", minDurationBetweenSimilar: 20.0f);
+                __instance.character.Speak("A " + __instance.Item.Name + " in " + localizedRoomName + " is broken." + " But it's too dangerous to repair this while it's powered!", identifier: "bot_repair_fail", minDurationBetweenSimilar: 20.0f);
                 __instance.Abandon = true;
                 //DebugConsole.NewMessage("Avoid repaire powered devices");
+            }
+            else if (__instance.Item.HasTag("batterycellrecharger") && (__instance.Item.Condition < 20f)) // Additional logic for broken batteries.
+            {
+                __instance.character.Speak("A " + __instance.Item.Name + " in " + localizedRoomName + " is broken and releasing CL gas!", identifier: "toxic_battery_report", minDurationBetweenSimilar: 20.0f);
+                __instance.previousCondition = __instance.Item.Condition;
             }
             else
             {

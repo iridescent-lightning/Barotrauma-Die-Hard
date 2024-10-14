@@ -29,7 +29,13 @@
     initialbalance            = Initial balance of the store. Defaults to 5000.
     pricemodifierrange        = The range of randomized price modifier. Randomized for each store individually. Defaults to 5. Note: value is direct percentage, i.e. 5 = 5%. 
   -->
-    <None identifier="None" namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" commonnessperzone="1: 1.5, 2: 0, 3: 0, 4: 0, 5: 5.0, 6: 0" hasoutpost="false" beaconstationchance="0.5">
+    <None identifier="None" 
+    namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+    commonnessperzone="1: 1.5, 2: 0, 3: 0, 4: 0, 5: 5.0, 6: 0" 
+    hasoutpost="false" 
+    beaconstationchance="0.5"
+    AllowAsBiomeGate="false"
+    >
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="384,640,128,128" color="128,206,175,255" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/NaturalFormations.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
       <ChangeTo type="Outpost" disallowedadjacentlocations="Lair" messagetag="locationchange.none.changeto.outpost">
@@ -41,7 +47,13 @@
         <Requirement function="Multiply" requirehuntinggrounds="true" probability="0.0" requiredproximity="0" />
       </ChangeTo>
     </None>
-    <NoneER identifier="NoneER" namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" commonnessperzone="1: 0, 2: 3.0, 3: 0, 4: 0, 5: 0, 6: 0" hasoutpost="false" beaconstationchance="0.5">
+
+    <NoneER identifier="NoneER" 
+    namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+    commonnessperzone="1: 0, 2: 3.0, 3: 0, 4: 0, 5: 0, 6: 0" 
+    hasoutpost="false" 
+    beaconstationchance="0.5"
+    AllowAsBiomeGate="false">
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="640,384,128,128" color="127,255,212,255" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/NaturalFormations.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
       <ChangeTo type="EuropanRidge_Outpost" disallowedadjacentlocations="Lair" messagetag="locationchange.none.changeto.outpost">
@@ -53,7 +65,13 @@
         <Requirement function="Multiply" requirehuntinggrounds="true" probability="0.0" requiredproximity="0" />
       </ChangeTo>
     </NoneER>
-    <NoneAP identifier="NoneAP" namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" commonnessperzone="1: 0, 2: 0, 3: 1.0, 4: 0, 5: 5.0, 6: 0" hasoutpost="false" beaconstationchance="0.5">
+
+    <NoneAP identifier="NoneAP" 
+    namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+    commonnessperzone="1: 0, 2: 0, 3: 1.0, 4: 0, 5: 5.0, 6: 0" 
+    hasoutpost="false" 
+    beaconstationchance="0.5"
+    AllowAsBiomeGate="false">
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="384,384,128,128" color="255,106,106,255" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/NaturalFormations.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
       <ChangeTo type="AphoticPlateau_Outpost" disallowedadjacentlocations="Lair" messagetag="locationchange.none.changeto.outpost">
@@ -65,7 +83,13 @@
         <Requirement function="Multiply" requirehuntinggrounds="true" probability="0.0" requiredproximity="0" />
       </ChangeTo>
     </NoneAP>
-    <NoneGS identifier="NoneGS" namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" commonnessperzone="1: 0, 2: 0, 3: 0, 4: 3.0, 5: 0, 6: 0" hasoutpost="false" beaconstationchance="0.5">
+
+    <NoneGS identifier="NoneGS" 
+    namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+    commonnessperzone="1: 0, 2: 0, 3: 0, 4: 3.0, 5: 0, 6: 0" 
+    hasoutpost="false" 
+    beaconstationchance="0.5"
+    AllowAsBiomeGate="false">
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="384,640,128,128" color="128,206,175,255" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/NaturalFormations.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
       <ChangeTo type="Greatsea_Outpost" disallowedadjacentlocations="Lair" messagetag="locationchange.none.changeto.outpost">
@@ -75,58 +99,144 @@
         <Requirement function="Multiply" requirehuntinggrounds="true" probability="0.0" requiredproximity="0" />
       </ChangeTo>
     </NoneGS>
-    <City identifier="City" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.1, 2: 0, 3:0,4:0,5:0,6:0" mincountperzone="1: 1">
-      <Symbol texture="Content/Map/MapAtlas.png" sourcerect="384,512,128,128" color="0,139,139,255" />
-      <RadiationSymbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
-      <Portrait texture="%ModDir%/Maps/LocationPortraits/reactorbay.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
-      <Portrait texture="%ModDir%/Maps/LocationPortraits/HabitationOutpost.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
-      <Hireable identifier="assistant" commonness="10" />
-      <Hireable identifier="engineer" commonness="3" />
-      <Hireable identifier="mechanic" commonness="3" />
-      <Hireable identifier="medicaldoctor" commonness="1" />
-      <Hireable identifier="securityofficer" commonness="1" />
-      <Hireable identifier="captain" commonness="1" />
-      <Store maxreputationmodifier="0.1" sellpricemodifier="0.3" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="6000" pricemodifierrange="5" dailyspecialscount="3" requestedgoodscount="3" />
+
+    <City identifier="City" 
+          replaceinradiation="Abandoned" 
+          namefile="Content/Map/cityNames.txt" 
+          commonnessperzone="1: 0.1, 2: 0, 3:0,4:0,5:0,6:0" 
+          mincountperzone="1: 1"
+          AllowAsBiomeGate = "true">
+
+          <Symbol texture="Content/Map/MapAtlas.png" sourcerect="384,512,128,128" color="0,139,139,255" />
+          <RadiationSymbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
+          <Portrait texture="%ModDir%/Maps/LocationPortraits/reactorbay.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+          <Portrait texture="%ModDir%/Maps/LocationPortraits/HabitationOutpost.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+
+          <Hireable identifier="assistant" commonness="10" />
+          <Hireable identifier="engineer" commonness="3" />
+          <Hireable identifier="mechanic" commonness="3" />
+          <Hireable identifier="medicaldoctor" commonness="1" />
+          <Hireable identifier="securityofficer" commonness="1" />
+          <Hireable identifier="captain" commonness="1" />
+          <Hireable identifier="navigator" commonness="1" />
+
+          <Store 
+            maxreputationmodifier="0.1" 
+            sellpricemodifier="0.3" 
+            dailyspecialpricemodifier="0.5" 
+            requestgoodpricemodifier="2" 
+            initialbalance="6000" 
+            pricemodifierrange="5" 
+            dailyspecialscount="3" 
+            requestedgoodscount="3" 
+          />
+
     </City>
-    <Outpost identifier="Outpost" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt,Content/Map/cityNames.txt" commonnessperzone="1: 1.5, 2: 0, 3: 0, 4: 0">
+
+    <Outpost identifier="Outpost" 
+    replaceinradiation="Abandoned" 
+    namefile="Content/Map/locationNames.txt,Content/Map/cityNames.txt" 
+    commonnessperzone="1: 1.5, 2: 0, 3: 0, 4: 0"
+    AllowAsBiomeGate = "true">
+
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="640,768,128,128" color="0,139,139,255" />
       <RadiationSymbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/reactorbay.png" premultiplyalpha="false" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/divingsuit.png" premultiplyalpha="false" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/coldcavebio.png" premultiplyalpha="false" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/science.png" premultiplyalpha="false" />
+
       <Hireable identifier="assistant" commonness="10" />
       <Hireable identifier="engineer" commonness="3" />
       <Hireable identifier="mechanic" commonness="3" />
       <Hireable identifier="medicaldoctor" commonness="1" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
+
       <!-- can become a specialized outpost if there are no adjacent lairs -->
-      <ChangeTo type="Military" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.military" />
-      <ChangeTo type="Research" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.research" />
-      <ChangeTo type="Mine" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.mine" />
-      <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
-        <Requirement requirehuntinggrounds="true" probability="0.5" requiredproximity="0" />
+      <ChangeTo type="Military" probability="0.2" 
+                requireddurationrange="2,5" 
+                disallowedadjacentlocations="Lair" 
+                disallowedproximity="2" 
+                messagetag="locationchange.outpost.changeto.military" />
+
+      <ChangeTo type="Research" probability="0.2" 
+                requireddurationrange="2,5" 
+                disallowedadjacentlocations="Lair" 
+                disallowedproximity="2" 
+                messagetag="locationchange.outpost.changeto.research" />
+      
+      <ChangeTo type="Mine" probability="0.2" 
+                requireddurationrange="2,5" 
+                disallowedadjacentlocations="Lair" 
+                disallowedproximity="2" 
+                messagetag="locationchange.outpost.changeto.mine" />
+
+      <ChangeTo type="Abandoned" 
+                requireddurationrange="1,1" 
+                messagetag="locationchange.outpost.changeto.abandoned">
+                <Requirement 
+                  requirehuntinggrounds="true" 
+                  probability="0.5" 
+                  requiredproximity="0" 
+                />
       </ChangeTo>
-      <Store maxreputationmodifier="0.1" sellpricemodifier="0.3" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="5000" pricemodifierrange="5" />
+
+      <Store maxreputationmodifier="0.1" 
+            sellpricemodifier="0.3" 
+            dailyspecialpricemodifier="0.5" 
+            requestgoodpricemodifier="2" 
+            initialbalance="5000" 
+            pricemodifierrange="5" />
     </Outpost>
-    <Military identifier="Military" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.6, 2: 0, 3: 0, 4: 0" UsePortraitInMainMenu="true">
+
+    <Military identifier="Military" 
+    replaceinradiation="Abandoned" 
+    namefile="Content/Map/cityNames.txt" 
+    commonnessperzone="1: 0.6, 2: 0, 3: 0, 4: 0" 
+    UsePortraitInMainMenu="true"
+    AllowAsBiomeGate="true">
+
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="512,256,128,128" color="0,139,139,255" />
       <RadiationSymbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/AlienRuins.png" premultiplyalpha="false" />
+
       <Hireable identifier="securityofficer" commonness="10" />
       <Hireable identifier="captain" commonness="3" />
       <Hireable identifier="assistant" commonness="2" />
       <Hireable identifier="engineer" commonness="2" />
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
+      <Hireable identifier="navigator" commonness="1" />
+
       <!-- can become a city if there are no adjacent lairs -->
-      <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
-      <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
-        <Requirement requirehuntinggrounds="true" probability="0.5" requiredproximity="0" />
+      <ChangeTo type="City" 
+                requireddurationrange="3,5" 
+                probability="0.2" 
+                requiredlocations="City" 
+                requiredproximity="3" 
+                disallowedadjacentlocations="Lair,City" 
+                disallowedproximity="2" 
+                messagetag="locationchange.military.changeto.city" />
+
+      <ChangeTo type="Abandoned" 
+                requireddurationrange="1,1" 
+                messagetag="locationchange.outpost.changeto.abandoned">
+                <Requirement requirehuntinggrounds="true" 
+                            probability="0.5" 
+                            requiredproximity="0" />
       </ChangeTo>
-      <Store maxreputationmodifier="0.1" sellpricemodifier="0.3" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="5000" pricemodifierrange="5" />
+
+      <Store maxreputationmodifier="0.1" 
+            sellpricemodifier="0.3" 
+            dailyspecialpricemodifier="0.5" 
+            requestgoodpricemodifier="2" 
+            initialbalance="5000" 
+            pricemodifierrange="5" />
+
     </Military>
+
     <Research identifier="Research" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt,Content/Map/cityNames.txt" commonnessperzone="1: 0.3, 2: 0, 3: 0, 4: 0">
       <Symbol texture="%ModDir%/Maps/MapAtlas.png" sourcerect="254,382,128,128" color="0,139,139,255" />
       <RadiationSymbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
@@ -139,6 +249,7 @@
       <Hireable identifier="assistant" commonness="3" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="2,4" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.research.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -174,6 +285,7 @@
       <Hireable identifier="medicaldoctor" commonness="1" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a specialized outpost if there are no adjacent lairs -->
       <ChangeTo type="EuropanRidge_Military" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.military" />
       <ChangeTo type="EuropanRidge_Research" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.research" />
@@ -197,6 +309,7 @@
       <Hireable identifier="assistant" commonness="3" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="2,4" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.research.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -235,6 +348,7 @@
       <Hireable identifier="engineer" commonness="2" />
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -289,6 +403,7 @@
       <Hireable identifier="medicaldoctor" commonness="1" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a specialized outpost if there are no adjacent lairs -->
       <ChangeTo type="Greatsea_Military" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.military" />
       <ChangeTo type="Greatsea_Research" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.research" />
@@ -310,6 +425,7 @@
       <Hireable identifier="engineer" commonness="2" />
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -331,6 +447,7 @@
       <Hireable identifier="assistant" commonness="3" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="2,4" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.research.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -350,6 +467,7 @@
       <Hireable identifier="medicaldoctor" commonness="1" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a specialized outpost if there are no adjacent lairs -->
       <ChangeTo type="AphoticPlateau_Military" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.military" />
       <ChangeTo type="AphoticPlateau_Research" probability="0.2" requireddurationrange="2,5" disallowedadjacentlocations="Lair" disallowedproximity="2" messagetag="locationchange.outpost.changeto.research" />
@@ -371,6 +489,7 @@
       <Hireable identifier="engineer" commonness="2" />
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -391,6 +510,7 @@
       <Hireable identifier="assistant" commonness="3" />
       <Hireable identifier="securityofficer" commonness="1" />
       <Hireable identifier="captain" commonness="1" />
+      <Hireable identifier="navigator" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="2,4" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.research.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -414,12 +534,22 @@
       </ChangeTo>
       <Store maxreputationmodifier="0.1" sellpricemodifier="0.3" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="5000" pricemodifierrange="5" />
     </APMine>
-    <Abandoned identifier="Abandoned" namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" commonnessperzone="1: 0, 2: 0, 3: 0.3, 4: 0.5, 5: 0.5, 6: 0" missiontags="abandonedoutpost" hideentitysubcategories="abandonedhuman,abandonedmonster" outpostteam="None">
+
+    <Abandoned identifier="Abandoned" 
+    namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+    commonnessperzone="1: 0, 2: 0, 3: 0.3, 4: 0.5, 5: 0.5, 6: 0" 
+    missiontags="abandonedoutpost" 
+    hideentitysubcategories="abandonedhuman,abandonedmonster" 
+    outpostteam="None"
+    AllowAsBiomeGate="false">
+
       <Symbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/reactorbay.png" premultiplyalpha="false" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/divingsuit.png" premultiplyalpha="false" />
       <Portrait texture="%ModDir%/Maps/LocationPortraits/coldcavebio.png" premultiplyalpha="false" />
+
     </Abandoned>
+    
     <Cave identifier="Cave" namefile="%ModDir%/Maps/DryCaves/CaveNames.txt" commonnessperzone="1: 0.6, 2: 0.6, 3:0.6, 5:0.6" missiontags="drycavemission">
       <Symbol texture="%ModDir%/Maps/DryCaves/MapAtlas.png" sourcerect="497,916,123,108" color="176,133,113,255" />
       <Portrait texture="Content/Map/LocationPortraits/WorkCampMining1.png" premultiplyalpha="false" />

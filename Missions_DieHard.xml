@@ -132,7 +132,7 @@
       <message header="missionheader0.pirate1" text="missionmessage0.pirate1" />
       <message header="missionheader1.pirate1" text="missionmessage1.pirate1" />
     </PirateMission>
-    <OutpostDestroyMission identifier="abandonedoutposthumans" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="30" allowretry="true" targetitem="reactor" unhideentitysubcategories="abandonedhuman">
+    <OutpostDestroyMission identifier="abandonedoutposthumans" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="100" allowretry="true" targetitem="reactor" unhideentitysubcategories="abandonedhuman">
       <Reputation identifier="location" amount="10" />
       <Reputation identifier="coalition" amount="5" />
       <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48" />
@@ -153,7 +153,7 @@
       <TriggerEvent state="0" delay="5" eventidentifier="heartofgold" campaignonly="true" />
       <message header="missionheader0.abandonedoutposthumans" text="missionmessage0.abandonedoutposthumans" />
     </OutpostDestroyMission>
-    <OutpostDestroyMission identifier="abandonedoutpostassassinate" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="30" allowretry="true" sonarlabel="target" unhideentitysubcategories="abandonedhuman">
+    <OutpostDestroyMission identifier="abandonedoutpostassassinate" tags="abandonedoutpost" type="OutpostDestroy" reward="3000" difficulty="4" commonness="100" allowretry="true" sonarlabel="target" unhideentitysubcategories="abandonedhuman">
       <Reputation identifier="location" amount="10" />
       <Reputation identifier="coalition" amount="5" />
       <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,512,256,256" color="214,50,48" />
@@ -192,7 +192,7 @@
       <TriggerEvent state="1" delay="0" eventidentifier="event.mission.escortcriminal" campaignonly="true" />
       <message header="Suspects Onboard" text="Let's head out." />
     </OutpostCauptureMission>
-    <OutpostDestroyMission identifier="abandonedoutpostrescue" tags="abandonedoutpost" type="OutpostRescue" reward="0" difficulty="4" commonness="30" allowretry="true" hostageskilledmessage="hostageskilled" unhideentitysubcategories="abandonedhuman">
+    <OutpostDestroyMission identifier="abandonedoutpostrescue" tags="abandonedoutpost" type="OutpostRescue" reward="0" difficulty="4" commonness="100" allowretry="true" hostageskilledmessage="hostageskilled" unhideentitysubcategories="abandonedhuman">
       <Reputation identifier="location" amount="10" />
       <Reputation identifier="coalition" amount="5" />
       <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48" />

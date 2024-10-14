@@ -27,7 +27,7 @@
         <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
         <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
         <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
-        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredSkill identifier="ondeckweapon" level="60" />
         <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2500" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true">
           <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
         </LightComponent>

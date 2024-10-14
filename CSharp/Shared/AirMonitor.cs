@@ -41,6 +41,7 @@ namespace AirMonitor//todo make a structural namespace DieHard.Item.Components. 
             {
                 mainFrame = new GUIFrame(new RectTransform(new Vector2(0.95f, 0.95f), GuiFrame.RectTransform, Anchor.Center), null);
             }
+            
 
             // Create the temperature text block if it doesn't exist
             if (temperatureTextBlock == null)
@@ -81,12 +82,23 @@ namespace AirMonitor//todo make a structural namespace DieHard.Item.Components. 
             if (!item.InPlayerSubmarine || item == null || item.CurrentHull == null) {return;}
             
                 float currentTemperature = HullMod.GetGas(item.CurrentHull, "Temperature");
-                temperatureTextBlock.Text = $"Temperature: {currentTemperature.ToString("F1")} K";
+                float temperatureInCelsius = currentTemperature - 273.15f; // Convert Kelvin to Celsius
+                temperatureTextBlock.Text = $"Temperature: {temperatureInCelsius.ToString("F1")} °C";
+
             
             
                 float currentCO2 = HullMod.GetGas(item.CurrentHull, "CO2");
-                float cO2Percentage = currentCO2 / item.CurrentHull.Volume;
-                co2TextBlock.Text = $"CO2: {cO2Percentage.ToString("F4")}" + "%";
+                float cO2PPM = currentCO2; /// item.CurrentHull.Volume
+
+                // Prevent the display having jumping numbers.
+                if (cO2PPM < 0.5)
+                {
+                    co2TextBlock.Text = "0 PPM";
+                }
+                else
+                {
+                    co2TextBlock.Text = $"CO2: {cO2PPM.ToString("F1")}" + "PPM";
+                }
             
                 float currentCO = HullMod.GetGas(item.CurrentHull, "CO");
                 float cOPercentage = currentCO;

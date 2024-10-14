@@ -77,7 +77,7 @@ namespace BarotraumaDieHard
                 character.SetStun(3f);
                 return false; // Powered reactor will shock
             }
-            else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f) 
+            else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f && !__instance.item.HasTag("battery")) // Exclude the battery since completely broken device will set voltage as 1. Battery cannot be unpowered. Need this for it be able to be fixed.
             {
                 DebugConsole.NewMessage(poweredDevice.Voltage.ToString());
                 character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(LimbType.LeftHand), AfflictionPrefab.Prefabs["burn"].Instantiate(10f));

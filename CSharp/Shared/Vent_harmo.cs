@@ -76,9 +76,9 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
             _.item.CurrentHull.Oxygen += _.oxygenFlow * deltaTime;
             _.OxygenFlow -= deltaTime * 1000.0f;
 
-            HullMod.AddGas(_.item.CurrentHull, "CO2", -CO2Flow * 20f, deltaTime);
-            HullMod.AddGas(_.item.CurrentHull, "CO", -PurifyingFlow * 20f, deltaTime);
-            HullMod.AddGas(_.item.CurrentHull, "CL", -PurifyingFlow * 20f, deltaTime);
+            HullMod.AddGas(_.item.CurrentHull, "CO2", -CO2Flow * 80f, deltaTime); //higher co to make sure the vent can clear the room
+            HullMod.AddGas(_.item.CurrentHull, "CO", -PurifyingFlow * 30f, deltaTime);
+            HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow * 10f, deltaTime); //There is no CL
             if (HullMod.GetGas(_.item.CurrentHull, "Temperature") < 300f)
             {
                 HullMod.AddGas(_.item.CurrentHull, "Temperature", HeatFlow  * 10f, deltaTime);

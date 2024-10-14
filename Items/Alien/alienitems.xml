@@ -44,7 +44,7 @@
       <Body radius="45" density="50" friction="0.95" />
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="Hull" oxygen="-50000.0" />
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
       </Holdable>
@@ -94,7 +94,7 @@
           <sound file="%ModDir%/Items/Alien/AlienTurret1.ogg" range="500.0" loop="false" />
           <Fire />
         </StatusEffect>
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
       </Holdable>
@@ -142,7 +142,7 @@
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
         <!-- EMP explosion every 15 seconds -->
         <StatusEffect type="Always" target="This" Condition="0" delay="15" stackable="false" setvalue="true" />
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
         <StatusEffect type="OnBroken" target="This" Condition="100" delay="0.5">
@@ -193,7 +193,7 @@
       <AiTarget sightrange="10000.0" soundrange="10000" static="True" />
       <Body radius="45" density="50" friction="0.95" />
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
       </Holdable>
@@ -239,7 +239,7 @@
       </Deconstruct>
       <Body radius="45" density="50" friction="0.95" />
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="Character">
@@ -295,7 +295,7 @@
       </Deconstruct>
       <Body width="80" height="75" density="20" />
       <Holdable slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
       </Holdable>
@@ -759,7 +759,7 @@
       </Deconstruct>
       <Body radius="45" density="50" friction="0.95" />
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="Always">
+        <StatusEffect type="Always" target="This">
           <sound file="%ModDir%/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="Character">

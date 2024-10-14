@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Barotrauma Die Hard" modversion="4.6.268" corepackage="False" steamworkshopid="2679111898" gameversion="1.5.9.2">
+<contentpackage name="Barotrauma Die Hard" modversion="4.6.287" corepackage="False" steamworkshopid="2679111898" gameversion="1.5.9.2">
   <Item file="%ModDir%/Items/Diving/divinggear.xml" />
   <Item file="%ModDir%/Items/Weapons/weapons.xml" />
   <Item file="%ModDir%/Items/Weapons/small_arms.xml" />
@@ -23,6 +23,7 @@
   <Item file="%ModDir%/Items/Ladder/ladder.xml" />
   <BallastFlora file="%ModDir%/Maps/BallastFlora/DH_ballastflora.xml" />
   <Jobs file="%ModDir%/Jobs.xml" />
+  <Jobs file="%ModDir%/Jobs_DieHard.xml" />
   <Character file="%ModDir%/Characters/Human/Human.xml" />
   <Character file="%ModDir%/Characters/Watcher/Watcher.xml" />
   <NPCSets file="%ModDir%/NPCPrefabs/OutpostNpcs.xml" />
@@ -83,30 +84,20 @@
   <Text file="%ModDir%/Texts/Russian/Russian.xml" />
   <UpgradeModules file="%ModDir%/Upgrades/DH_UpgradeModules.xml" />
   <Sounds file="%ModDir%/Sounds/sounds.xml" />
-  <OutpostModule file="%ModDir%/EngineeringModule_02DH.sub" />
-  <OutpostModule file="%ModDir%/AdminModule_04DH.sub" />
   <RandomEvents file="%ModDir%/Maps/Outposts/DHOutpostEvents.xml" />
   <OutpostModule file="%ModDir%/Maps/RuinModules/Dh_RuinChambers1.sub" />
   <OutpostModule file="%ModDir%/AdminModule_01LDH.sub" />
   <OutpostModule file="%ModDir%/AdminModule_01RDH.sub" />
   <OutpostModule file="%ModDir%/AdminModule_01_AbandonedDH.sub" />
-  <OutpostModule file="%ModDir%/DH_Outpost_Camp.sub" />
   <OutpostModule file="%ModDir%/DH_Outpost3_Camp.sub" />
   <EnemySubmarine file="%ModDir%/Maps/EnemySubmarines/DH_PirateDugon.sub" />
   <EnemySubmarine file="%ModDir%/Maps/EnemySubmarines/DH_PirateHumpback.sub" />
   <EnemySubmarine file="%ModDir%/Maps/EnemySubmarines/Typhon2PirateDH.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_01DH.sub" />
-  <OutpostModule file="%ModDir%/MedicalModule_01DH.sub" />
   <OutpostModule file="%ModDir%/Greatsea_AdminModule.sub" />
   <Submarine file="%ModDir%/elevator.sub" />
   <Submarine file="%ModDir%/DockingMobile_ER.sub" />
   <Submarine file="%ModDir%/Colony.sub" />
-  <EnemySubmarine file="%ModDir%/Colony.sub" />
-  <OutpostModule file="%ModDir%/EngineeringModule_01DH.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_02DH.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_03DH.sub" />
   <OutpostModule file="%ModDir%/ER_SecurityModule_01.sub" />
-  <OutpostModule file="%ModDir%/AdminModule_01L_Airlock_ER.sub" />
   <OutpostModule file="%ModDir%/CrewModule_ER.sub" />
   <OutpostModule file="%ModDir%/EngineerModule_01_ER.sub" />
   <OutpostModule file="%ModDir%/Greatsea_EngineeringModule_01.sub" />
@@ -142,7 +133,6 @@
   <UIStyle file="%ModDir%/UI/style.xml" />
   <UIStyle file="%ModDir%/UI/style_DieHard.xml" />
   <Slideshows file="%ModDir%/Slideshows.xml" />
-  <OutpostModule file="%ModDir%/AdminModule_02LDH.sub" />
   <OutpostModule file="%ModDir%/SecurityModule_01_DH_all.sub" />
   <OutpostModule file="%ModDir%/SecurityModule_02DH_all.sub" />
   <Item file="%ModDir%/Maps/DryCaves/Cave_items.xml" />
@@ -151,7 +141,6 @@
   <OutpostModule file="%ModDir%/Cave_Junction7.sub" />
   <OutpostModule file="%ModDir%/Cave_HallwayV.sub" />
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Junction3.sub" />
-  <OutpostModule file="%ModDir%/AdminModule_05DH.sub" />
   <OutpostModule file="%ModDir%/Cave_Junction_6.sub" />
   <OutpostModule file="%ModDir%/Cave_Junction_Type2_1.sub" />
   <OutpostModule file="%ModDir%/Cave_Junction_Type2_2.sub" />
@@ -163,7 +152,6 @@
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_HallwayH.sub" />
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Junction2.sub" />
   <OutpostModule file="%ModDir%/Cave_Room_1.sub" />
-  <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Dock.sub" />
   <Submarine file="%ModDir%/Azimuth_DieHard.sub" />
   <Submarine file="%ModDir%/Berilia_DieHard.sub" />
   <Submarine file="%ModDir%/Camel_DieHard.sub" />
@@ -179,5 +167,18 @@
   <Submarine file="%ModDir%/Winterhalter_DieHard.sub" />
   <Submarine file="%ModDir%/Humpback_DieHard.sub" />
   <Submarine file="%ModDir%/Barsuk_DieHard.sub" />
+  <OutpostModule file="%ModDir%/AdminModule_04DH.sub" />
+  <OutpostModule file="%ModDir%/AdminModule_05DH.sub" />
+  <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Dock.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_01DH.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_02DH.sub" />
+  <OutpostModule file="%ModDir%/DH_Outpost_Camp.sub" />
+  <OutpostModule file="%ModDir%/EngineeringModule_01DH.sub" />
+  <OutpostModule file="%ModDir%/EngineeringModule_02DH.sub" />
+  <OutpostModule file="%ModDir%/MedicalModule_01DH.sub" />
+  <EnemySubmarine file="%ModDir%/Colony.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_03DH.sub" />
   <Submarine file="%ModDir%/0test.sub" />
+  <OutpostModule file="%ModDir%/AdminModule_02LDH.sub" />
+  <OutpostModule file="%ModDir%/AdminModule_01L_Airlock_ER.sub" />
 </contentpackage>

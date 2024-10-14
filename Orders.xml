@@ -197,6 +197,7 @@
          options="batterycells,oxygentanks,turretammo" optionnames="Battery cells, Oxygen tanks, Turret ammo"
          targetitems="batterycellrecharger;oxygentankrefiller;turretammosource,depthchargeammosource"
          category="maintenance"
+         appropriatejobs="assistant"
          ignoreatoutpost="true">
     <Sprite name="Command_LoadItems" texture="Content/UI/CommandUIBackground.png" sheetindex="4,7" sheetelementsize="128,128"/>
     <OptionSprites>
@@ -213,11 +214,30 @@
          ignoreatoutpost="true">
     <Sprite name="Command_PumpWater" texture="Content/UI/CommandUIAtlas.png" sourcerect="896,512,128,128"/>
   </Order>
+  
+  
+    <Order name="Deconstruct" identifier="deconstructitems"
+      category="maintenance"
+      appropriatejobs="assistant">
+    <Sprite name="Command_DeconstructItems" texture="Content/UI/CommandUIAtlas.png" sourcerect="640,258,128,128"/>
+  </Order>
+
+  <Order name="Deconstruct" identifier="deconstructthis"
+         mustsettarget="true" targetallcharacters="true">
+    <Sprite name="Command_DeconstructThis" texture="Content/UI/CommandUIAtlas.png" sourcerect="640,258,128,128"/>
+  </Order>
+  <Order name="Don't deconstruct" identifier="dontdeconstructthis"
+         mustsettarget="true" targetallcharacters="true">
+    <Sprite name="Command_DontDeconstruct" texture="Content/UI/CommandUIAtlas.png" sourcerect="640,258,128,128"/>
+  </Order>
 
   <Order name="Find Thieves" identifier="findthieves" color="190,136,195,200" hidden="true" >
     <Sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="640,512,128,128"/>
   </Order>
-
+  
+    <Order name="Inspect Noises" identifier="inspectnoises" hidden="true">
+    <Sprite name="Command_FightIntruders" texture="Content/UI/TalentsIcons3.png" sourcerect="128,128,128,128"/>
+  </Order>
   
   <Order name="Set Charge %" identifier="setchargepct"
          targetitemtype="PowerContainer"

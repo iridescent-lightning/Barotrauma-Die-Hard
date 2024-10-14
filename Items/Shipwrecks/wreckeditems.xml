@@ -83,14 +83,21 @@
       </Repairable>
     </Item>
     <Item name="" identifier="statusmonitorwrecked" nameidentifier="statusmonitor" variantof="statusmonitor" category="Wrecked" condition="0" spritecolor="200,150,100,255">
-      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5"  spritecolor="200,150,100,255" />
+      <Upgrade gameversion="100.0.0.0" condition="1" /><!--Doesn't work so condition 0 item still cannot be cut-->
       <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="655,90,165,117" origin="0.4,0.4" />
+      <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="720,288,160,128" depth="0.8" maxcondition="10" origin="0.5,0.5" />
       <Repairable>
         <!-- don't emit particles unless repaired above 0 condition -->
         <ParticleEmitter mincondition="1.0" />
         <ParticleEmitter mincondition="1.0" />
         <ParticleEmitter mincondition="1.0" />
       </Repairable>
+      <Body radius="20" height="10" density="20" />
+      <Holdable slots="RightHand+LeftHand" handle1="0,0" characterusable="false" msg="ItemMsgPickUpSelect" attachable="true" reattachable="false" attachedbydefault="true" />
+      <LevelResource deattachduration="4">
+        <RequiredItem items="cuttingequipment" type="Equipped" />
+      </LevelResource>
     </Item>
     <Item name="" identifier="navterminalwrecked" nameidentifier="navterminal" variantof="navterminal" category="Wrecked" condition="0" spritecolor="200,150,100,255">
       <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="40,339,414,340" origin="0.4,0.4" />
