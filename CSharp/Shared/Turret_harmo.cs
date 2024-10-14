@@ -135,7 +135,7 @@ namespace BarotraumaDieHard
 			float lerpFactor = Math.Clamp(skillDiff / averageRequiredSkillLevel, -1f, 1f); // Normalized to a 0-1 range
 
 			// Lerp between the lower and upper bounds for reload speed
-			float adjustedReloadSpeed = MathHelper.Lerp(baseReloadSpeed * 2.5f, baseReloadSpeed * 0.6f, lerpFactor);
+			float adjustedReloadSpeed = MathHelper.Lerp(baseReloadSpeed * 2.3f, baseReloadSpeed * 0.5f, lerpFactor);
 
 			// Apply the new reload speed
 			_.Reload = adjustedReloadSpeed;
@@ -162,7 +162,7 @@ namespace BarotraumaDieHard
 		{
 			
 			turretReloadValues.Clear();
-    		DebugConsole.NewMessage("Turret reload values cleared.", Color.Red);
+    		//DebugConsole.NewMessage("Turret reload values cleared.", Color.Red);
 		}
 
 		public static void ResetOriginalReloadValue()
@@ -185,7 +185,7 @@ namespace BarotraumaDieHard
 					{
 						// Reassign the original reload value to the turret
 						turretComponent.Reload = originalReload;
-						DebugConsole.NewMessage($"Reset turret {itemID}'s reload speed to {originalReload}", Color.Green);
+						//DebugConsole.NewMessage($"Reset turret {itemID}'s reload speed to {originalReload}", Color.Green);
 					}
 				}
 			}

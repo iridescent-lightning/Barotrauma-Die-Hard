@@ -72,17 +72,13 @@ namespace BarotraumaDieHard
             // powered device will surely shock the repairer
             if (__instance.item.GetComponent<Reactor>() is Reactor reactorPowered && !MathUtils.NearlyEqual(reactorPowered.CurrPowerConsumption, 0.0f, 0.1f)) 
             {
-                character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(LimbType.LeftHand), AfflictionPrefab.Prefabs["burn"].Instantiate(10f));
-                character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(LimbType.RightHand), AfflictionPrefab.Prefabs["burn"].Instantiate(10f));
-                character.SetStun(3f);
+                __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
                 return false; // Powered reactor will shock
             }
             else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f && !__instance.item.HasTag("battery")) // Exclude the battery since completely broken device will set voltage as 1. Battery cannot be unpowered. Need this for it be able to be fixed.
             {
-                DebugConsole.NewMessage(poweredDevice.Voltage.ToString());
-                character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(LimbType.LeftHand), AfflictionPrefab.Prefabs["burn"].Instantiate(10f));
-                character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(LimbType.RightHand), AfflictionPrefab.Prefabs["burn"].Instantiate(10f));
-                character.SetStun(3f);
+                //DebugConsole.NewMessage(poweredDevice.Voltage.ToString());
+                __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
                 return false; // Powered device will shock
             }
             //DebugConsole.NewMessage(__instance.item.GetComponent<Powered>().Voltage.ToString());

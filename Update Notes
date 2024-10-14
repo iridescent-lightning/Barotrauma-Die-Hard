@@ -30,3 +30,6 @@
     3. Laying down the functioning working for skill and weapon reload feature.
     4. Adding new skill 'ondeckweapon'. 
     5. Changing all four turrets weapon skill requirement to ondeckskill 60.
+    6. Adding new job as gunner. Adding hirable to all military outpost.
+    7. Lowering down security officer health multiplayer from 10 to 2.
+    8. Adding a repair tip for junctionbox.

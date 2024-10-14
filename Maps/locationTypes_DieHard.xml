@@ -119,7 +119,6 @@
           <Hireable identifier="securityofficer" commonness="1" />
           <Hireable identifier="captain" commonness="1" />
           <Hireable identifier="navigator" commonness="1" />
-
           <Store 
             maxreputationmodifier="0.1" 
             sellpricemodifier="0.3" 
@@ -209,7 +208,7 @@
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
       <Hireable identifier="navigator" commonness="1" />
-
+      <Hireable identifier="gunner" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" 
                 requireddurationrange="3,5" 
@@ -349,6 +348,7 @@
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
       <Hireable identifier="navigator" commonness="1" />
+      <Hireable identifier="gunner" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -426,6 +426,7 @@
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
       <Hireable identifier="navigator" commonness="1" />
+      <Hireable identifier="gunner" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">
@@ -490,6 +491,7 @@
       <Hireable identifier="mechanic" commonness="2" />
       <Hireable identifier="medicaldoctor" commonness="2" />
       <Hireable identifier="navigator" commonness="1" />
+      <Hireable identifier="gunner" commonness="1" />
       <!-- can become a city if there are no adjacent lairs -->
       <ChangeTo type="City" requireddurationrange="3,5" probability="0.2" requiredlocations="City" requiredproximity="3" disallowedadjacentlocations="Lair,City" disallowedproximity="2" messagetag="locationchange.military.changeto.city" />
       <ChangeTo type="Abandoned" requireddurationrange="1,1" messagetag="locationchange.outpost.changeto.abandoned">

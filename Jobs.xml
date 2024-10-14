@@ -224,7 +224,7 @@
     <Job identifier="securityofficer"
        maxnumber="2" minkarma="0"
        uicolor="0.57,0.48,0.43"
-       vitalitymodifier="10"
+       vitalitymodifier="2"
        pricemultiplier="1.15"
        idlebehavior="Patrol">
     <Jobicon>

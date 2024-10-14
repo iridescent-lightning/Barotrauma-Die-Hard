@@ -693,6 +693,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <!--Jobs-->
   <jobname.navigator>Navigator</jobname.navigator>
   <jobdescription.navigator>On board seafarer. Navigating through the toughest terrain.</jobdescription.navigator>
+  <jobname.gunner>Gunner</jobname.gunner>
+  <jobdescription.gunner>Excel at heavy weaponry on deck.</jobdescription.gunner>
 
   <!--I add duplicated dialog to make game choose to speak these more. Because bots now no longer find diving suit inside. And I don't want to patch Act method for just fixing one dialog.-->
   <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
@@ -703,6 +705,9 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
   <dialogclimbladderwithfullhanditem>I need to clear my head for the climbing.</dialogclimbladderwithfullhanditem>
 
-
+  <!--Skills-->
   <skillname.ondeckweapon>On Deck Weapon</skillname.ondeckweapon>
+
+  <!--item message-->
+  <itemmsg.repair.screwdriver_mechanicalparts>[[use]] Repair (Screwdriver + Mechanical parts)</itemmsg.repair.screwdriver_mechanicalparts>
 </infotexts>
