@@ -164,6 +164,31 @@ namespace CharacterHealthMod
         }
 		
       }
+
+
+		// Sever legs or waist effect
+	  if (_.Character.AnimController is HumanoidAnimController humanAnimController) // cast type
+		{
+			// Severed legs cause the player to crouch or fall down
+			foreach (Limb limb in humanAnimController.Limbs)
+			{
+				if (limb.IsSevered && (limb.type == LimbType.LeftLeg || limb.type == LimbType.RightLeg || limb.type == LimbType.LeftThigh || limb.type == LimbType.RightThigh || limb.type == LimbType.Waist))
+				{
+					// Force the crouching state. This only works controlled character
+					/*humanAnimController.ForceSelectAnimationType = AnimationType.Crouch; 
+					humanAnimController.Crouching = true;
+					_.Character.SetInput(InputType.Crouch, hit: false, held: true);*/
+
+					// Load the crouch animation
+					AnimationParams animParams;
+
+					humanAnimController.TryLoadAnimation(AnimationType.Run, "HumanRunCrawl_LegSevered", out animParams, true);
+					humanAnimController.TryLoadAnimation(AnimationType.Walk, "HumanWalkCrawl_LegSevered", out animParams, true);
+					
+					break; // Exit the loop once a severed limb is found
+				}
+			}
+		}
 	  
       return false;
     }
@@ -188,21 +213,7 @@ namespace CharacterHealthMod
 			CharacterHealth _ = __instance;
 
 
-            // Severed legs cause the player to fall down
-			foreach (Limb limb in _.Character.AnimController.Limbs)
-			{
-				if (limb.IsSevered && (limb.type == LimbType.LeftLeg || limb.type == LimbType.RightLeg))
-				{
-					_.Character.IsForceRagdolled = true;  
-					break; // Exit the loop once a severed leg is found
-				}
-				else
-				{
-					_.Character.IsForceRagdolled = false; 
-				}
-			}
-			
-
+        
 			// Defualt Character Status Effect Attributes
 			if (_.Character.IsHuman && _.Character.InWater)
 			{

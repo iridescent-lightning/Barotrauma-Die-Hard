@@ -72,6 +72,7 @@
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
     <StatusEffect type="OnSevered" target="This,Character" disabledeltatime="true" >
       <Affliction identifier="bleedingnonstop" strength="10" />
+      
     </StatusEffect>
   </limb>
   <limb Name="LeftLeg (7)" ID="7" Type="LeftLeg" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Radius="15" Height="50" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="4" Friction="0.3" Restitution="0.05">
@@ -103,6 +104,8 @@
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
     <StatusEffect type="OnSevered" target="This,Character" disabledeltatime="true" >
       <Affliction identifier="bleedingnonstop" strength="10" />
+      
+      
     </StatusEffect>
   </limb>
   <limb Name="RightLeg (10)" ID="10" Type="RightLeg" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Radius="15" Height="50" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="5" Friction="0.3" Restitution="0.05">
@@ -113,6 +116,7 @@
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
     <StatusEffect type="OnSevered" target="This,Character" disabledeltatime="true" >
       <Affliction identifier="bleedingnonstop" strength="10" />
+      
     </StatusEffect>
   </limb>
   <limb Name="RightFoot (11)" ID="11" Type="RightFoot" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="12" Height="0" Width="32" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="-7.0750213,-11.173927" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="5" Friction="0.3" Restitution="0.05">
@@ -124,6 +128,8 @@
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
     <StatusEffect type="OnSevered" target="This,Character" disabledeltatime="true" >
       <Affliction identifier="bleedingnonstop" strength="5" />
+      
+      
     </StatusEffect>
   </limb>
   <limb Name="Waist (12)" ID="12" Type="Waist" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Radius="25" Height="0" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="1000" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="1" Friction="0.3" Restitution="0.05">
@@ -134,6 +140,8 @@
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
     <StatusEffect type="OnSevered" target="This,Character" disabledeltatime="true" >
       <Affliction identifier="bleedingnonstop" strength="50" />
+      
+      
     </StatusEffect>
   </limb>
   <limb Name="LeftForearm (13)" ID="13" Type="LeftForearm" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="180" InheritLimbDepth="None" SteerForce="0" Radius="13" Height="35" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="50" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="2" Friction="0.3" Restitution="0.05">
