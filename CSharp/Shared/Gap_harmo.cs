@@ -18,7 +18,7 @@ using HullModNamespace;
 namespace GapMod
 {
 
-    class GapMod : IAssemblyPlugin
+    partial class GapMod : IAssemblyPlugin
     {
         private Harmony harmony;
 
@@ -33,6 +33,12 @@ namespace GapMod
             var prefixUpdateOxygen = new HarmonyMethod(typeof(GapMod).GetMethod(nameof(UpdateOxygenPrefix), BindingFlags.Public | BindingFlags.Static));
             harmony.Patch(originalUpdateOxygen, prefixUpdateOxygen, null);
 
+            // For client graphic effect patch always remember to only allow patch in client side. Or desynic in multiplayer.
+#if CLIENT
+            var originalEmitParticles = typeof(Gap).GetMethod("EmitParticles", BindingFlags.NonPublic | BindingFlags.Instance);
+            var prefixEmitParticles = new HarmonyMethod(typeof(GapMod).GetMethod(nameof(EmitParticlesPrefix), BindingFlags.Public | BindingFlags.Static));
+            harmony.Patch(originalEmitParticles, prefixEmitParticles, null);
+#endif
             
         }
 

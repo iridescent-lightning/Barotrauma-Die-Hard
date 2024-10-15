@@ -15,7 +15,7 @@
         </StatusEffect>
       </ItemComponent>
     </Item>
-    <Item name="" identifier="revolver" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,pistolitem,gunsmith,mountableweapon,collidable,zoom" Scale="0.35" impactsoundtag="impact_handguns" description="" subcategory="small arms" nameidentifier="revolvernew">
+    <Revolver name="" identifier="revolver" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,pistolitem,gunsmith,mountableweapon,collidable,zoom" Scale="0.35" impactsoundtag="impact_handguns" description="" subcategory="small arms" nameidentifier="revolvernew">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
@@ -35,7 +35,7 @@
       <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="512,86,111,62" depth="0.55" origin="0.5,0.5" />
       <Body width="72" height="40" density="25" />
       <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-50,-18" msg="ItemMsgPickUpSelect" />
-      <RangedWeapon barrelpos="40,11" spread="10" unskilledspread="30" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.5">
+      <RangedWeapon barrelpos="40,11" spread="10" unskilledspread="30" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.5" reloadskillrequirement="40">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <Sound file="%ModDir%/Items/Weapons/Revolver1.ogg" type="OnUse" range="3000" volume="2" selectionmode="Random" />
@@ -61,16 +61,16 @@
           <ReduceAffliction identifier="crouch" amount="100" />
         </StatusEffect>
         <RequiredItems items="revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="80" />
+        <RequiredSkill identifier="weapons" level="40" />
       </RangedWeapon>
       <ItemContainer capacity="1" maxstacksize="6" hideitems="true" containedstateindicatorstyle="bullet">
         <Containable items="revolverammo" />
       </ItemContainer>
       <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
-      <SkillRequirementHint identifier="weapons" level="80" />
-    </Item>
-    <Item name="" identifier="revolverround" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,revolverammo,pistolammoitem,slowinwater" impactsoundtag="impact_metal_light" description="" nameidentifier="revolverroundnew">
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Revolver>
+    <Revolverround name="" identifier="revolverround" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,revolverammo,pistolammoitem,slowinwater" impactsoundtag="impact_metal_light" description="" nameidentifier="revolverroundnew">
       <PreferredContainer primary="revolver" amount="6" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="0.2" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
@@ -129,8 +129,8 @@
         </StatusEffect>
         </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
-    </Item>
-    <Item name="" identifier="57" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,collidable" Scale="0.35" impactsoundtag="impact_handguns" subcategory="small arms">
+    </Revolverround>
+    <Item name="" identifier="FNFive-seven" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,collidable" Scale="0.35" impactsoundtag="impact_handguns" subcategory="small arms">
       <PreferredContainer primary="secarmcab" minamount="1" notcampaign="true" />
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
@@ -160,7 +160,7 @@
       <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="64,16,86,59" depth="0.83" />
       <Body width="90" height="60" density="50" />
       <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,10" handle1="-40,-5" msg="ItemMsgPickUpSelect" />
-      <RangedWeapon barrelpos="50,15" spread="10" unskilledspread="20" reload="0.25" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="50,15" spread="10" unskilledspread="20" reload="0.25" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="60">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -186,7 +186,7 @@
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
         </StatusEffect>
-        <RequiredSkill identifier="weapons" level="80" />
+        <RequiredSkill identifier="weapons" level="60" />
       </RangedWeapon>
       <ItemContainer autofill="True" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-25,-5">
         <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
@@ -259,7 +259,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="MPX Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="0,0,205,88" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="100,5" spread="10" unskilledspread="60" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="100,5" spread="10" unskilledspread="60" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="90">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -296,7 +296,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="mpx_magazine" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredSkill identifier="weapons" level="65" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -327,7 +327,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="35" />
+      <SkillRequirementHint identifier="weapons" level="65" />
     </Item>
     <Item name="" identifier="mpx_magazine" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="MPX" amount="1" notcampaign="true" />
@@ -430,7 +430,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="MCX Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="0,91,320,83" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="165,5" spread="5" unskilledspread="15" reload="0.08" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.16">
+      <RangedWeapon barrelpos="165,5" spread="5" unskilledspread="15" reload="0.08" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.16" reloadskillrequirement="80">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="dhmuzzleflash3" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -468,7 +468,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="mcx_magazine" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredSkill identifier="weapons" level="75" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -499,7 +499,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="60" />
+      <SkillRequirementHint identifier="weapons" level="75" />
     </Item>
     <Item name="" identifier="mcx_magazine" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,mcxammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="MCX" amount="1" spawnprobability="1" notcampaign="true" />
@@ -603,7 +603,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="MP9 Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="0,285,214,61" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="110,0" spread="14" unskilledspread="26" reload="0.065" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="110,0" spread="14" unskilledspread="26" reload="0.065" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="70">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="dhmuzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -636,7 +636,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="mp9mag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredSkill identifier="weapons" level="65" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -667,7 +667,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="35" />
+      <SkillRequirementHint identifier="weapons" level="65" />
     </Item>
     <Item name="" identifier="mp9mag" description="" maxstacksize="3" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="MP9" amount="1" spawnprobability="1" notcampaign="true" />
@@ -731,7 +731,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="P90 Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="2,194,183,76" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="77,6" spread="10" unskilledspread="30" reload="0.065" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="77,6" spread="10" unskilledspread="30" reload="0.065" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="100">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -772,7 +772,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="p90mag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="70" />
+        <RequiredSkill identifier="weapons" level="80" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -803,7 +803,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="70" />
+      <SkillRequirementHint identifier="weapons" level="80" />
     </Item>
     <Item name="" identifier="p90mag" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
@@ -908,7 +908,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="SCAR Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="2,354,293,94" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.45,-0.1" />
       </Wearable>
-      <RangedWeapon barrelpos="170,6" spread="7" unskilledspread="28" reload="0.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="170,6" spread="7" unskilledspread="28" reload="0.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="40">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="dhmuzzleflash3" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -946,7 +946,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="mk17mag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredSkill identifier="weapons" level="55" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -977,7 +977,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="50" />
+      <SkillRequirementHint identifier="weapons" level="55" />
     </Item>
     <Item name="" identifier="mk17mag" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="mk17" minamount="1" notcampaign="true" />
@@ -1081,7 +1081,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="AK Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="198,187,302,74" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="140,6" spread="12" unskilledspread="30" reload="0.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="140,6" spread="12" unskilledspread="30" reload="0.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="70">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1119,7 +1119,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="ak47mag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredSkill identifier="weapons" level="65" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -1138,7 +1138,7 @@
           <Use />
         </StatusEffect>
       </ItemContainer>
-      <SkillRequirementHint identifier="weapons" level="60" />
+      <SkillRequirementHint identifier="weapons" level="65" />
       <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="90" fixDurationHighSkill="5" fixDurationLowSkill="40" msg="cursorhover.repair.guns" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
         <RequiredSkill identifier="weapons" level="55" />
@@ -1256,7 +1256,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="PKM Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="19,730,460,172" canbehiddenbyotherwearables="false" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="250,50" spread="12" unskilledspread="50" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="250,50" spread="12" unskilledspread="50" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="100">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="dhmuzzleflash3" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1321,7 +1321,8 @@
       </Repairable>
       <SkillRequirementHint identifier="weapons" level="90" />
     </Item>
-    <Item name="" identifier="pkmmag" aliases="pkmmag" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo" impactsoundtag="impact_metal_light" health="200" subcategory="small arms">
+    <Item name="" identifier="pkmmag" aliases="pkmmag" description="" maxstacksize="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo" impactsoundtag="impact_metal_light" health="200" subcategory="small arms">
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="703,0,64,64" origin="0.5,0.5"/>
       <PreferredContainer primary="PKM" amount="1" notcampaign="True" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
@@ -1343,7 +1344,7 @@
         <RequiredItem identifier="lead" />
         <RequiredItem identifier="steel" />
       </Fabricate>
-      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" depth="0.56" sourcerect="73,959,52,43" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="703,0,64,64" origin="0.5,0.5"/>
       <ContainedSprite name="7.62x39mm PKM Magazine" allowedcontainertags="weapon" texture="%ModDir%/Items/Weapons/weapons.png" depth="0.54" sourcerect="14,924,53,98" />
       <Body width="53" height="64" density="50" />
       <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="-5" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
@@ -1421,7 +1422,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="FAL Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="2,461,419,75" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.35,0" />
       </Wearable>
-      <RangedWeapon barrelpos="170,6" spread="4" unskilledspread="12" reload="0.8" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="170,6" spread="4" unskilledspread="12" reload="0.8" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="40">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1452,7 +1453,7 @@
           <LuaHook name="Ak47Malfunction" />
         </StatusEffect>
         <RequiredItems identifier="falmag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="weapons" level="60" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -1483,7 +1484,7 @@
           <Affliction identifier="stun" strength="0.1" />
         </StatusEffect>
       </Repairable>
-      <SkillRequirementHint identifier="weapons" level="30" />
+      <SkillRequirementHint identifier="weapons" level="60" />
     </Item>
     <Item name="" identifier="falmag" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="fal" minamount="1" notcampaign="true" />
@@ -1590,7 +1591,7 @@
       <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="64,16,86,59" depth="0.83" />
       <Body width="90" height="60" density="50" />
       <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,10" handle1="-40,-5" msg="ItemMsgPickUpSelect" />
-      <RangedWeapon barrelpos="50,25" spread="6" unskilledspread="30" reload="0.25" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon barrelpos="50,25" spread="6" unskilledspread="30" reload="0.25" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="55">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1620,7 +1621,7 @@
           <Use />
         </StatusEffect>
         <RequiredItems identifier="g19mag" type="Contained" msg="ItemMsgAmmoRequired" />
-        <RequiredSkill identifier="weapons" level="80" />
+        <RequiredSkill identifier="weapons" level="55" />
         <!--The case effect-->
         <StatusEffect type="OnUse" target="This">
           <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
@@ -1635,7 +1636,7 @@
           <Use />
         </StatusEffect>
       </ItemContainer>
-      <SkillRequirementHint identifier="weapons" level="80" />
+      <SkillRequirementHint identifier="weapons" level="55" />
     </Item>
     <Item name="" identifier="g19mag" description="17 round 9x19 magazine for Glock 19" maxstacksize="4" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer primary="G19" amount="1" notcampaign="true" />
@@ -1707,7 +1708,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="APS Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="336,281,294,71" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon reload="0.1" barrelpos="125,20" spread="12" unskilledspread="20" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <RangedWeapon reload="0.1" barrelpos="125,20" spread="12" unskilledspread="20" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="30">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />

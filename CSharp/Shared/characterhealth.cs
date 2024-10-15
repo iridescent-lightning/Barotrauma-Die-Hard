@@ -180,6 +180,7 @@ namespace CharacterHealthMod
 					_.Character.SetInput(InputType.Crouch, hit: false, held: true);*/
 
 					// Load the crouch animation
+					_.Character.SetStun(1);
 					AnimationParams animParams;
 
 					humanAnimController.TryLoadAnimation(AnimationType.Run, "HumanRunCrawl_LegSevered", out animParams, true);
@@ -223,11 +224,7 @@ namespace CharacterHealthMod
 			{
 				_.ApplyAffliction(_.Character.AnimController.MainLimb, AfflictionPrefab.Prefabs["fatigue"].Instantiate(10f * deltaTime));
 			}
-			else if (_.Character.IsHuman && !_.Character.IsDead)
-			{
-				_.Character.obstructVisionAmount  = 0.5f;
-				
-			}
+			
 			if (_.Character.IsHuman && !_.Character.IsDead && _.Character.CurrentHull != null)
 			{
 				_.Character.PressureProtection= 4500.0f;

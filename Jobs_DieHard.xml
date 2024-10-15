@@ -55,7 +55,7 @@
         <Item identifier="idcard" equip="true" showpreview="false" />
         <Item identifier="assistantclothes" equip="true" outfit="true"/>
         <Item identifier="headset" equip="true" showpreview="false" />
-        <Item identifier="ballistichelmet1" equip="true" showpreview="true" outfit="true" />
+        <Item identifier="ballistichelmet2" equip="true" showpreview="true" outfit="true" />
         <PreviewSprites dims="120,109">
         <sprite texture="Content/Items/Jobgear/Assistant/assistant_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
         <sprite texture="Content/Items/Jobgear/Assistant/assistant_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />

@@ -36,3 +36,9 @@
 57.
     1. Adding various missing human animation from the lasted update.
     2. Adding new sever limb effect animation for human in humanhealth.adddamage
+58. 
+    1. Adding reload skill requirements for small arms. 
+    2. Fixing some subs have high generatedamrount in oxygengenerator (5000). Value changed to 400
+    3. Adding a 1 stun when the lower body is severed to make the fall more natural and prepare for the ragdoll.
+    4. Moved ObstructVision feature from cs to statuseffect for better consistancy.
+    5. Adjusting leak particles, making it 10x stronger to match the water pressure.

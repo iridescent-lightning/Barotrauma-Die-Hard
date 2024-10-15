@@ -477,8 +477,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.revolvernew>[ROF: Low]\n[ACC:Low]</entitydescription.revolvernew>
   <entityname.revolverroundnew>Revolver Round</entityname.revolverroundnew>
   <entitydescription.revolverroundnew>[Penetration: 60%]</entitydescription.revolverroundnew>
-  <entityname.57>FN Five Seven</entityname.57>
-  <entitydescription.57>[ROF: Medium]\n[ACC:Low]</entitydescription.57>
+  <entityname.FNFive-seven>FN Five-seven</entityname.FNFive-seven>
+  <entitydescription.FNFive-seven>[ROF: Medium]\n[ACC:Low]</entitydescription.FNFive-seven>
   <entityname.57mag>5.7x28mm Five Seven Magazine</entityname.57mag>
   <entitydescription.57mag>[Capacity: 20]\n[Penetration: 30%]</entitydescription.57mag>
   <entityname.g19>Glock 19</entityname.g19>

@@ -892,6 +892,7 @@
       </Projectile>
     </Item>
     <Item name="" identifier="riotshield" category="Equipment" tags="mediumitem,shield" health="600" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate" damagedbyprojectiles="true" scale="1" allowasextracargo="true" deflectprojectiles="True">
+    <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="703,318,66,68" origin="0.5,0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" minamount="1" maxamount="1" notcampaign="True" />
       <Price baseprice="360" sold="true" minleveldifficulty="50">
         <Price storeidentifier="merchantoutpost" multiplier="1.4" />
