@@ -1134,3 +1134,24 @@ Hook.Add("think", "tseet", function()
 
 end)--]]
 
+
+--This is a nice way adding items to dangerousItem list but we don't need it anymore. Radiation danger needs to be handled separatly.
+--[[
+LuaUserData.RegisterType('System.Collections.Generic.HashSet`1')
+LuaUserData.MakeFieldAccessible(Descriptors['Barotrauma.Item'], 'dangerousItems')
+
+Hook.Add("fuelrod","fuelrod",function(effect, deltaTime, item, targets, worldPosition)
+
+	if (item.Condition < item.MaxCondition and (item.RootContainer == nil or (item ~= nil and not item.RootContainer.HasTag('radiationshield')))) then
+		if not(item.dangerousItems.Contains(item)) then
+			
+			item.dangerousItems.Add(item);
+		end
+	else
+		if (item.dangerousItems.Contains(item)) then
+			item.dangerousItems.Remove(item);
+		end
+	end
+end)--]]
+
+

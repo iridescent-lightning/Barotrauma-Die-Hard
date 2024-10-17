@@ -157,9 +157,9 @@
         </StatusEffect>
       </ItemComponent>
     </Item>
-    <Item name="" identifier="lightfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="5">
+    <Item name="" identifier="lightfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="25">
       <PreferredContainer primary="lamp,lightfluorescentm01,lightfluorescentm02,lightfluorescentm03,lightfluorescentm04,lightfluorescentl01,lightfluorescentl02,lighthalogenmm01,lighthalogenmm02,lighthalogenmm03,lighthalogenmm04,lightleds01" amount="1" />
-      <PreferredContainer primary="reactorcab" amount="5" notcampaign="true" />
+      <PreferredContainer primary="storagecab" amount="15" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
       <Price baseprice="45" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="3" />

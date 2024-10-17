@@ -221,10 +221,10 @@
         <IsActive targetcontaineditem="true" condition="gt 0" />
       </Pump>
     </Item>
-    <Item name="" identifier="smallpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="2">
+    <Item name="" identifier="smallpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="4">
       <PreferredContainer primary="smallpump,smallpumpII,smallpumpIII" amount="1" />
       <PreferredContainer secondary="storagecab" />
-      <PreferredContainer primary="storagecab" amount="5" notcampaign="true" />
+      <PreferredContainer primary="storagecab" amount="2" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
       <Price baseprice="135" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="3" />
@@ -256,10 +256,10 @@
         </StatusEffect>
       </Repairable>
     </Item>
-    <Item name="" identifier="bigpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Item name="" identifier="bigpumpmotor" scale="0.5" category="Electricity" tags="mediumitem,pumpmotor" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="2">
       <PreferredContainer primary="pump,pumpII,pumpIII" amount="1" />
       <PreferredContainer secondary="storagecab" />
-      <PreferredContainer primary="storagecab" amount="5" notcampaign="true" />
+      <PreferredContainer primary="storagecab" amount="2" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
       <Price baseprice="200" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="3" />

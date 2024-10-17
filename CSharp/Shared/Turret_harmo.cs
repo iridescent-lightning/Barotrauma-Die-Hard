@@ -1,4 +1,5 @@
-﻿﻿using Barotrauma.Networking;
+﻿﻿// This patch makes turret firing rate associated with character skill levels
+using Barotrauma.Networking;
 using FarseerPhysics;
 using Microsoft.Xna.Framework;
 using System;
@@ -40,6 +41,10 @@ namespace BarotraumaDieHard
             var originalUpdate = typeof(Turret).GetMethod("Update", BindingFlags.Public | BindingFlags.Instance);
             var postfixUpdate = new HarmonyMethod(typeof(TurretDieHard).GetMethod(nameof(UpdatePostfix), BindingFlags.Public | BindingFlags.Static));
             harmony.Patch(originalUpdate, postfixUpdate, null);
+
+            var originalLaunch = typeof(Turret).GetMethod("Launch", BindingFlags.NonPublic | BindingFlags.Instance);
+            var postfixLaunch = new HarmonyMethod(typeof(TurretDieHard).GetMethod(nameof(LaunchPostfix), BindingFlags.Public | BindingFlags.Static));
+            harmony.Patch(originalLaunch, postfixLaunch, null);
         }
 
 		public void OnLoadCompleted() { }
@@ -155,6 +160,10 @@ namespace BarotraumaDieHard
             }
         }
 
+        
+            
+        
+
     }
 }
 
@@ -190,6 +199,13 @@ namespace BarotraumaDieHard
 				}
 			}
 		}
+
+        // Not useful
+        public static void LaunchPostfix(Item projectile, Character user, float? launchRotation, float tinkeringStrength, Turret __instance)
+        {
+            //DebugConsole.NewMessage("Launch!");
+           
+        }
 
 		
         

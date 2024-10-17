@@ -449,6 +449,13 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <missiondescription.story_nocargo_beacon>The beacon station between [location1] and [location2] is down—get in there, and get it back online and transmitting an active sonar signal.</missiondescription.story_nocargo_beacon>
   <missionsuccess.story_nocargo_beacon>Beacon reactivated.</missionsuccess.story_nocargo_beacon>
   <missionmessage0.story_nocargo_beacon>The communication between [location1] and Coalition Engineering Company is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to meet your contact.</missionmessage0.story_nocargo_beacon>
+
+
+  
+  <entityname.radiationsuit>Radiation Suit</entityname.radiationsuit>
+  <entitydescription.radiationsuit>Lead Suit can resist radiation or other hazards.</entitydescription.radiationsuit>
+  <entityname.fuelrodholder>Fuelrod Holder</entityname.fuelrodholder>
+  <entitydescription.fuelrodholder>Used to holding a hot fuelrod in needed.</entitydescription.fuelrodholder>
   <entityname.hullscanner>Hull Scanner</entityname.hullscanner>
   <entitydescription.hullscanner>Used to determine the condition of the targeted hull. \nEffective range: 5 meters.</entitydescription.hullscanner>
   <entityname.fuelrodcase>Hot Fuel Rod Transport Case</entityname.fuelrodcase>
@@ -704,6 +711,11 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <dialoggetdivinggear>Need to find a diving gear!</dialoggetdivinggear>
 
   <dialogclimbladderwithfullhanditem>I need to clear my head for the climbing.</dialogclimbladderwithfullhanditem>
+
+  <dialog.bots.dangerousfuelrod>Holy shit! There is a burning fuel rod!</dialog.bots.dangerousfuelrod>
+  <dialog.bots.dangerousfuelrod>Fuel rod unshielded!</dialog.bots.dangerousfuelrod>
+  <dialog.bots.dangerousfuelrod>We got a hot fuel rod over here!</dialog.bots.dangerousfuelrod>
+  <dialog.bots.dangerousfuelrod>What the fuck! A radioactive fuel rod!</dialog.bots.dangerousfuelrod>
 
   <!--Skills-->
   <skillname.ondeckweapon>On Deck Weapon</skillname.ondeckweapon>

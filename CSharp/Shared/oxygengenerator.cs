@@ -286,7 +286,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
 
                     if (item.InPlayerSubmarine)
                     {
-                        waterTank.Condition = waterTank.Condition - 0.001f * newGeneratedAmountFactor * deltaTime;
+                        waterTank.Condition = waterTank.Condition - 0.01f * newGeneratedAmountFactor * deltaTime;
                     }
                 }
             

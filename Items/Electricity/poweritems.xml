@@ -506,9 +506,9 @@
         <Containable items="loadable" />
       </ItemContainer>
     </Item>
-    <Item name="" identifier="handdynamo" tags="battery,mediumitem" category="Electrical,Machine" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.7" isshootable="true" maxstacksize="1">
+    <Item name="" identifier="handdynamo" tags="battery,mediumitem" category="Electrical,Machine" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.7" isshootable="true" maxstacksize="2">
       <PreferredContainer secondary="storagecab" />
-      <PreferredContainer primary="storagecab" amount="2" notcampaign="true" />
+      <PreferredContainer primary="storagecab" amount="1" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
       <Price baseprice="275" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="3" />
@@ -572,7 +572,7 @@
         <output name="power_value_out" displayname="connection.powervalueout" />
       </ConnectionPanel>
     </Item>
-    <Item name="" identifier="junctionboxfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="3">
+    <Item name="" identifier="junctionboxfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="20">
       <PreferredContainer primary="junctionbox" amount="1" />
       <PreferredContainer primary="storagecab" secondary="storagecab" amount="10" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />

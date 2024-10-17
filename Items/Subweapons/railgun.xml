@@ -32,6 +32,9 @@
         </LightComponent>
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="15" velocitymin="50" velocitymax="100" scalemin="5" scalemax="10" distancemin="-100" distancemax="50" />
         <!--<ParticleEmitter particle="muzzleflashrailgun" particleamount="1" velocitymin="50" velocitymax="100" />-->
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="2000.0" structuredamage="0" force="0.0" camerashake="200.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+        </StatusEffect>
         <Upgrade gameversion="0.15.9.0" powerconsumption="16000.0" />
       </Turret>
       <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />

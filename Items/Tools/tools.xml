@@ -719,7 +719,7 @@
         <Price storeidentifier="merchantmilitary" />
         <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="1" />
       </Price>
-      <PreferredContainer primary="storagecab" amount="1" notcampaign="true" />
+      <PreferredContainer primary="storagecab" />
       <PreferredContainer secondary="outpostsupplycab" spawnprobability="0.15" />
       <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" spawnprobability="0.01" />
       <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0.2" />
@@ -1178,7 +1178,7 @@
       <QualityStat stattype="Condition" value="0.1"/>
     </Quality>
   </Item>-->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" health="300" impactsoundtag="impact_porcelain_statue_small">
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" health="300" impactsoundtag="impact_porcelain_statue_small" >
       <PreferredContainer primary="fuelrodcase" secondary="reactorcab" />
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" minamount="1" maxamount="1" spawnprobability="0.01" />
@@ -1199,11 +1199,8 @@
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
       <Body radius="6" height="55" density="20" />
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="360" comparison="and" interval="1">
-          <Conditional condition="lt 300" />
-          <Conditional condition="gt 0" />
-          <Conditional hastag="neq radiationshield" targetcontainer="true" />
-          <Affliction identifier="radiationsickness" strength="4" />
+        <StatusEffect type="Always" target="This">
+          <LuaHook name="fuelrod" />
         </StatusEffect>
       </Holdable>
       <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="nucleargunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
@@ -1212,9 +1209,7 @@
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-      <Quality>
-        <QualityStat stattype="Condition" value="0.1" />
-      </Quality>
+      <RadioactiveFuelRod/>
     </Item>
     <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" health="150" scale="0.5" impactsoundtag="impact_porcelain_statue_small">
       <PreferredContainer primary="reactorcab" />
@@ -1236,9 +1231,7 @@
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-      <Quality>
-        <QualityStat stattype="Condition" value="0.1" />
-      </Quality>
+      <RadioactiveFuelRod/>
     </Item>
     <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="1" cargocontaineridentifier="metalcrate" health="600" scale="0.5" impactsoundtag="impact_porcelain_statue_small">
       <PreferredContainer primary="fuelrodcase" secondary="reactorcab" />
@@ -1285,9 +1278,92 @@
           <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
         </StatusEffect>
       </ItemContainer>
-      <Quality>
-        <QualityStat stattype="Condition" value="0.1" />
-      </Quality>
+      <RadioactiveFuelRod/>
+    </Item>
+    <Item name="" identifier="radiationsuit" category="Equipment" tags="mediumitem,radiationsuit" allowasextracargo="true" scale="0.5" fireproof="true" description="" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="5" cargocontaineridentifier="">
+    <PreferredContainer primary="engcab" amount="1" />    
+    <Price baseprice="450" sold="false">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" minavailable="0" maxavailable="3" sold="true">
+        <Reputation faction="coalition" min="70"/>
+      </Price>
+      <Price storeidentifier="merchantresearch" multiplier="1.2" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" />
+    </Price>
+    <Deconstruct time="45">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <Item identifier="lead" />
+      <Item identifier="physicorium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="80">
+      <RequiredSkill identifier="mechanical" level="80" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="physicorium" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,704,128,128" origin="0.5,0.5" />
+    <Sprite name="PUCS Item" texture="%ModDir%/Items/Jobgear/Engineer/PUCS_Items.png" sourcerect="0,0,154,134" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="PUCS In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="%ModDir%/Items/Jobgear/Engineer/PUCS_Items.png" sourcerect="164,0,87,190" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="PUCS Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" sourcerect="430,0,80,207" depth="0.55" origin="-0.12,-0.14" />
+    <ContainedSprite name="PUCS In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="%ModDir%/Items/Jobgear/Engineer/PUCS_Items.png" sourcerect="0,191,225,66" depth="0.55" origin="0.6,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="PUCS Helmet Wearable" texture="%ModDir%/Items/Jobgear/headgears.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidelimb="false" alphaclipotherwearables="true" sourcerect="103,409,95,97" origin="0.57,0.38">
+      </sprite>
+      <sprite name="pucs Torso" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Hand" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Hand" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Upper Arm" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightArm" depthlimb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Upper Arm" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Lower Arm" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightForearm" depthlimb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Lower Arm" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Waist" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Thigh" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Thigh" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Leg" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Leg" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Left Shoe" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="pucs Right Shoe" texture="%ModDir%\Items\Jobgear\Engineer\pucs.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" SpeedMultiplier="0.6" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+        <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true"/>
+        <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true"/>
+      </StatusEffect>
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,bitewounds,lacerations,bleeding,explosiondamage" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.1" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.1" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+    <aitarget maxsightrange="1500" />
+  </Item>
+    <Item name="" identifier="fuelrodholder" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="engcab"  amount="1"/>
+      <Deconstruct time="30">
+        <Item identifier="iron" />
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <Item identifier="iron" amount="2" />
+        <Item identifier="titaniumaluminiumalloy" amount="1" />
+      </Fabricate>
+      <Price baseprice="260" minleveldifficulty="0">
+        <Price storeidentifier="merchantoutpost" multiplier="1" />
+        <Price storeidentifier="merchantcity" minavailable="1.3" />
+        <Price storeidentifier="merchantresearch" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="0.8" />
+      </Price>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="448,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Tools/DHtools.png" sourcerect="5,261,127,48" depth="0.6" />
+      <Body width="124" height="48" density="90" />
+      <Holdable slots="RightHand,LeftHand" holdpos="30,-20" handle1="-15,0" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" allowswappingwhenpicked="false"/>
+      <ItemContainer capacity="1" hideitems="false" itempos="55,0" maxstacksize="1">
+        <Containable items="reactorfuel" />
+      </ItemContainer>
     </Item>
     <Item name="" identifier="fuelrodcase" category="Equipment" tags="mediumitem,mobilecontainer,radiationshield" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metalcrate_light">
       <PreferredContainer primary="engcab" />

@@ -34,7 +34,7 @@
       <ParticleEmitter particle="swirlysmoke" particleamount="10" velocitymin="0" velocitymax="0" scalemin="10" scalemax="15" distancemin="-100" distancemax="50" />-->
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="15" velocitymin="50" velocitymax="100" scalemin="5" scalemax="10" distancemin="-100" distancemax="50" />
         <StatusEffect type="OnUse" target="This">
-          <Explosion range="1000.0" structuredamage="0" force="0.0" camerashake="50.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+          <Explosion range="2000.0" structuredamage="0" force="0.0" camerashake="200.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="NearByItems" targettags="junctionbox" range="2500.0" setvalue="true" stackable="false" extraload="500" />
       </Turret>
@@ -62,6 +62,7 @@
         </StatusEffect>
       </Repairable>
       <SkillRequirementHint identifier="weapons" level="50" />
+      <Upgrade gameversion="100.0.0.0" powerconsumption="0" />
     </Item>
     <Item name="" identifier="flakcannonloader" tags="flakcannonequipment,flakcannonammosource,turretammosource,flakcannonammoloader" category="Machine,Weapon" linkable="true" allowedlinks="flakcannon" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
       <SwappableItem canbebought="false" origin="82,352" spawnwithid="flakcannonammobox" />

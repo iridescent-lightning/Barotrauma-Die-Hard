@@ -42,3 +42,7 @@
     3. Adding a 1 stun when the lower body is severed to make the fall more natural and prepare for the ragdoll.
     4. Moved ObstructVision feature from cs to statuseffect for better consistancy.
     5. Adjusting leak particles, making it 10x stronger to match the water pressure.
+59.
+    1. watertank reduction changed from 0.001 to 0.01
+    2. Adding upgrade tag to make flakcannon powerconsumption is 0. It doesn't use electirc.
+    3. Adding camera shake for railgun and flakcannon, set to 200.
