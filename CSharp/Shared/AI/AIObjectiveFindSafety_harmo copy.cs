@@ -99,6 +99,10 @@ namespace BarotraumaDieHard.AI
                 {
                     _.Priority = 0;
                 }
+                else if (_.objectiveManager.Objectives.Any(o => o is AIObjectiveFindAndEquipRadiationSuit && o.Priority > 0))
+                {
+                    _.Priority = 0;
+                }
                 _.Priority = MathHelper.Clamp(_.Priority, 0, AIObjectiveManager.MaxObjectivePriority);
                 if (_.divingGearObjective != null && !_.divingGearObjective.IsCompleted && _.divingGearObjective.CanBeCompleted)
                 {
@@ -131,11 +135,9 @@ namespace BarotraumaDieHard.AI
                     needsRadiationSuit = true;
                     break; // Exit the loop after triggering the objective
                 }
-                else
-                {
-                    needsRadiationSuit = false;
-                }
+                
             }
+            
 
             if (!_.character.LockHands && (!dangerousPressure || shouldActOnSuffocation || _.cannotFindSafeHull))
             {

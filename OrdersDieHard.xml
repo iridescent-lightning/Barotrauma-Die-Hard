@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Orders>
+  <Order name="Find and Equip Radiation Suit" identifier="findandequipradiationsuit"
+         assignmentpriority="90"
+         category="operate"
+         ignoreatoutpost="true">
+    <Sprite texture="%ModDir%/UI/CommandUIAtlas.png" sourcerect="512,512,128,128"/>
+  </Order>
+</Orders>

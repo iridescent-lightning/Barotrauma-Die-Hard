@@ -31,6 +31,7 @@
   <NPCSets file="%ModDir%/NPCPrefabs/CombatMissionNpcs.xml" />
   <Corpses file="%ModDir%/NPCPrefabs/Corpses.xml" />
   <Orders file="%ModDir%/Orders.xml" />
+  <Orders file="%ModDir%/OrdersDieHard.xml" />
   <Afflictions file="%ModDir%/Afflictions.xml" />
   <Item file="%ModDir%/Items/Electricity/lights.xml" />
   <Item file="%ModDir%/Items/Subweapons/coilgun.xml" />

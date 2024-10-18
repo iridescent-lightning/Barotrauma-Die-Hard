@@ -656,8 +656,10 @@
       </ConnectionPanel>
   </Item>
   <Item name="" description="" identifier="torpedo" tags="torpedo,sonar" showcontentsintooltip="true" category="Weapon" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <InventoryIcon texture="Torpedos.png" sourcerect="1,333,365,56" origin="0.5,0.5" />
+      <Sprite texture="Torpedos.png" sourcerect="4,21,613,96" depth="0.55" origin="0.5,0.5" />
       <PreferredContainer primary="torpedotube" amount="1" mincondition="1" />
-      <Price baseprice="1000">
+      <Price baseprice="500">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="1" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" />
         <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="0" />
@@ -680,10 +682,10 @@
     <LightComponent LightColor="0.0,1.0,0.0,1.0" range="50" powerconsumption="0" blinkfrequency="2" IsOn="false" canbeselected="false">
       <StatusEffect type="InWater" target="This" IsOn="true" SoundRange="50000" setvalue="true" OnlyOutside="True"/>
     </LightComponent>
-      <InventoryIcon texture="Torpedos.png" sourcerect="1,333,365,56" origin="0.5,0.5" />
-      <Sprite texture="Torpedos.png" sourcerect="1,333,365,56" depth="0.55" origin="0.5,0.5" />
-      <Body width="365" height="56" density="10" />
-      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Body width="613" height="96" density="10" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="OnPicked" target="Character" SpeedMultiplier="0.2" setvalue="true"/>
+      </Holdable>
       <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
         <Attack structuredamage="100" itemdamage="500" severlimbsprobability="90" penetration="0.5" targetforce="1000">
           <Affliction identifier="explosiondamage" strength="500" />

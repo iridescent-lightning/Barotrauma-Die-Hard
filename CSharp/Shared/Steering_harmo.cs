@@ -66,6 +66,14 @@ namespace SteeringMod//todo make a structural namespace DieHard.Item.Components.
             //DebugConsole.NewMessage("lerpedVerticalEnginePower: " + lerpedVerticalEnginePower);
             __instance.item.SendSignal(lerpedVerticalEnginePower.ToString("F1"), "vertical_engine_power_out");
 
+            if (__instance.AutoPilot && !__instance.MaintainPos)
+            {
+                
+                __instance.sonar.useDirectionalPing = true;
+                __instance.sonar.CurrentMode = Sonar.Mode.Active;
+
+            }
+
         }
 
 

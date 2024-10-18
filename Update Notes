@@ -58,4 +58,10 @@
     9. Hiding pucs in game.
 61. 
     1. Set heat generation from oxygengenerator from 500 to 25. This is a severe bug.
+    2. Refactored CharacterHealth.cs applydamage. Removed the universial drop item damage to hands. Now only blunt damage to arm can froce drop. Moving variables to be declared earilier.
+    3. Forcing the sonar to turn on if using autopilot mode except maintianing position.
+    4. Adding temperature to status monitor.
+    5. Tune down the sonar damage. It's killing everything. Now it only affects human.
+    6. Adding new icon and describtion for sonar damage. Changing the networking damage type.
+
     

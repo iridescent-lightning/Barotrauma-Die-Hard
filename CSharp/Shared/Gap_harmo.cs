@@ -62,7 +62,7 @@ namespace GapMod
                 Gap _ = __instance;
 
                 if (hull1 == null || hull2 == null) { return false; }
-
+                
                 // Oxygen Exchange
 
                 if (_.IsHorizontal)

@@ -31,7 +31,7 @@ namespace BarotraumaDieHard.Items//todo make a structural namespace DieHard.Item
         {
             if (this.item.Condition >= item.MaxCondition) return;
 
-            
+            this.item.AddTag("ignorethis");
 
 
             // Check if the item is deteriorating and there is no radiation shield

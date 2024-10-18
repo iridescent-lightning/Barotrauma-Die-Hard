@@ -21,7 +21,7 @@ namespace BarotraumaDieHard
 
         private GUIFrame hullInfoFrame;
 
-        private GUITextBlock hullNameText, hullBreachText, hullAirQualityText, hullWaterText, hullCO2Text, hullCOText, hullChlorineText, lockRoomHitText;
+        private GUITextBlock hullNameText, hullBreachText, hullAirQualityText, hullWaterText, hullCO2Text, hullCOText, hullChlorineText, lockRoomHitText, temperatureText;
 
         private string noPowerTip = "";
 
@@ -69,7 +69,10 @@ namespace BarotraumaDieHard
             hullCO2Text = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
             hullCOText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
             hullChlorineText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.3f), hullInfoContainer.RectTransform), "") { Wrap = true };
-            lockRoomHitText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.6f), hullInfoContainer.RectTransform), "") { Wrap = true };
+            
+            temperatureText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.6f), hullInfoContainer.RectTransform), "") { Wrap = true };
+            lockRoomHitText = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.9f), hullInfoContainer.RectTransform), "") { Wrap = true };
+
 
             hullInfoFrame.Children.ForEach(c =>
             {
@@ -452,14 +455,6 @@ namespace BarotraumaDieHard
                     hullNameText.Text = hull.DisplayName;
 
 
-                    //modded part
-                    float? co2Amount = null;
-                    float? coAmount = null;
-                    float? chlorineAmount = null;
-                    
-                    
-                    //
-
                     foreach (Hull linkedHull in hullData.LinkedHulls)
                     {
                         gapOpenSum += linkedHull.ConnectedGaps.Where(g => !g.IsRoomToRoom).Sum(g => g.Open);
@@ -481,14 +476,20 @@ namespace BarotraumaDieHard
                         TextManager.AddPunctuation(':', TextManager.Get("MiniMapWaterLevel"), (int)(waterAmount * 100.0f) + " %");
                     hullWaterText.TextColor = waterAmount == null ? GUIStyle.Red : Color.Lerp(Color.LightGreen, GUIStyle.Red, (float)waterAmount);
                     
-                    //modded part
-                    if (this.Item.GetConnectedComponents<OxygenDetector>() != null)
-                        {
+                    
                             
-                            co2Amount = HullMod.GetGas(hull, "CO2");
-                            coAmount = HullMod.GetGas(hull, "CO");
-                            chlorineAmount = HullMod.GetGas(hull, "Chlorine");
-                        }
+                            float co2Amount = HullMod.GetGas(hull, "CO2");
+                            float coAmount = HullMod.GetGas(hull, "CO");
+                            float chlorineAmount = HullMod.GetGas(hull, "Chlorine");
+                            float temperature = HullMod.GetGas(hull, "Temperature");
+
+                            float celsiusTemperature = (float)temperature - 273.15f;
+                            string formattedTemperature = celsiusTemperature.ToString("0.0") + " °C";
+                        
+
+                    temperatureText.Text = temperature == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
+                    TextManager.AddPunctuation(':', TextManager.Get("MiniMapTemperature"), formattedTemperature);
+                    
 
 
                     hullCO2Text.Text = co2Amount == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
@@ -502,6 +503,7 @@ namespace BarotraumaDieHard
                     hullChlorineText.Text = chlorineAmount == null ? TextManager.Get("MiniMapAirQualityUnavailable") :
                         TextManager.AddPunctuation(':', TextManager.Get("MiniMapChlorine"), (int)chlorineAmount + " ppm");
                     hullChlorineText.TextColor = chlorineAmount == null ? GUIStyle.Red : Color.Lerp(GUIStyle.Green, Color.Red, (float)chlorineAmount / 100.0f);
+
 
                     lockRoomHitText.Text = TextManager.Get("MiniMapLockRoomHit");
                     

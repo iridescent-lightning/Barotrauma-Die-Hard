@@ -243,14 +243,15 @@ namespace SonarMod
                             {
                                 float currentHertz = SonarMod.hertz; // Make sure this reflects the slider value
                                 float afflictionStrength = MathHelper.Lerp(SonarMod.minAfflictionStrength, SonarMod.maxAfflictionStrength, (currentHertz - SonarMod.minHertzValue) / (maxHertzValue - SonarMod.minHertzValue));
-    
-                                target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["explosiondamage"].Instantiate(afflictionStrength));
+
+                                if (target.IsHuman)
+                                {target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(afflictionStrength * 0.1f));}
                                 //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: " + $"{afflictionStrength}", Color.White);
                                 if (GameMain.Client != null)
                                 {
                                     _.unsentChanges = true;
                                     _.correctionTimer = Sonar.CorrectionDelay;
-                                    SendApplyDamageMessage(target.ID, "explosiondamage", afflictionStrength);
+                                    SendApplyDamageMessage(target.ID, "sonardamage", afflictionStrength * 0.1f);
                                 }
                                 
                             }

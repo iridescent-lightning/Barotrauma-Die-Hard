@@ -42,7 +42,7 @@
       <Affliction identifier="fatigue" strength="15" />
       without interval should be 10
     </StatusEffect>-->
-    <StatusEffect type="Always" target="Character" ObstructVision="true" ObstructVisionAmount="0.5" />
+    <StatusEffect type="Always" target="Character" ObstructVision="true" ObstructVisionAmount="0.25" />
     <StatusEffect type="OnImpact" target="Character">
       <Conditional currentspeed="gt 5" />
       <Conditional IsPlayer="true" />

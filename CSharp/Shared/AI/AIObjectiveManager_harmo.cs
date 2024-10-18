@@ -232,9 +232,10 @@ namespace BarotraumaDieHard.AI
 
 
                 //Modded part: adding more orders.
-                case "testorder":
-                    newObjective = new AIObjectiveFindAndEquipRadiationSuit(__instance.character, __instance, 100f);
+                case "findandequipradiationsuit":
+                    newObjective = new AIObjectiveFindAndEquipRadiationSuit(__instance.character, __instance, priorityModifier);
                     break;
+                    
                 default:
                     if (order.TargetItemComponent == null) { __result = null; return false;}
                     if (!order.TargetItemComponent.Item.IsInteractable(_.character)) { __result = null; return false;}

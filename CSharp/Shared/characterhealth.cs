@@ -54,114 +54,104 @@ namespace CharacterHealthMod
     public static bool ApplyDamage(Limb hitLimb, AttackResult attackResult, bool allowStacking, CharacterHealth __instance)
     {
 
-      CharacterHealth _ = __instance;
+		CharacterHealth _ = __instance;
 
 		
-      if (_.Unkillable || _.Character.GodMode) { return false; }
-      if (hitLimb.HealthIndex < 0 || hitLimb.HealthIndex >= _.limbHealths.Count)
-      {
-        DebugConsole.ThrowError("Limb health index out of bounds. Character\"" + _.Character.Name +
-            "\" only has health configured for" + _.limbHealths.Count + " limbs but the limb " + hitLimb.type + " is targeting index " + hitLimb.HealthIndex);
-        return false;
-      }
+		if (_.Unkillable || _.Character.GodMode) { return false; }
+		if (hitLimb.HealthIndex < 0 || hitLimb.HealthIndex >= _.limbHealths.Count)
+		{
+		DebugConsole.ThrowError("Limb health index out of bounds. Character\"" + _.Character.Name +
+			"\" only has health configured for" + _.limbHealths.Count + " limbs but the limb " + hitLimb.type + " is targeting index " + hitLimb.HealthIndex);
+		return false;
+		}
 
-      var should = GameMain.LuaCs.Hook.Call<bool?>("character.applyDamage", _ /*<- kek*/, attackResult, hitLimb, allowStacking);
+		var should = GameMain.LuaCs.Hook.Call<bool?>("character.applyDamage", _ /*<- kek*/, attackResult, hitLimb, allowStacking);
 
-      if (should != null && should.Value)
-        return false;
+		if (should != null && should.Value)
+			return false;
 
-      foreach (Affliction newAffliction in attackResult.Afflictions)
-      {
-		  if(_.Character.IsHuman && _.Character.IsUnconscious && hitLimb.type != null)
-		  {	var leftHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand);
-			var RightHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.RightHand);
-                    if (leftHand != null)
-                    {
-                        leftHand.Drop(_.Character);
-                    }
+
+		var leftHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand);
+		var RightHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.RightHand);
+		var armor = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes);
+		var innerCloth = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes);
+		var headWear = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.Head);
+
+		foreach (Affliction newAffliction in attackResult.Afflictions)
+		{
+
+			if (!_.Character.IsHuman || hitLimb.type == null) {return false;}
+			
+			
+			if (newAffliction.Prefab.LimbSpecific)
+			{
+				_.AddLimbAffliction(hitLimb, newAffliction, allowStacking);
+				
+				if (newAffliction.Identifier == "blunttrauma" && hitLimb.type == LimbType.LeftArm)
+				{
+					if (leftHand != null)
+					{
+						leftHand.Drop(_.Character);
+					}
+				}
+				else if (newAffliction.Identifier == "blunttrauma" && hitLimb.type == LimbType.RightArm)//type is lowercase
+				{
 					if (RightHand != null)
-                    {
-                        RightHand.Drop(_.Character);
-                    } 
-		  }
-		  
-        if (newAffliction.Prefab.LimbSpecific)
-        {
-			_.AddLimbAffliction(hitLimb, newAffliction, allowStacking);
-			var armor = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes);
-			var innerCloth = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes);
-			var headWear = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.Head);
-			
-			
-			
-			if (newAffliction.Identifier == "blunttrauma" && hitLimb.type == LimbType.LeftArm)
-			{
-						//DebugConsole.NewMessage("s");
-						var leftHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand);
-						if (leftHand != null)
+					{
+						RightHand.Drop(_.Character);
+					}
+				}
+				
+				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && armor != null)
+				{
+					if (armor.Prefab.Identifier == "bodyarmorI")
+					{
+						armor.Condition = armor.Condition - 10f;
+						if (armor.Condition == 0f)
 						{
-							leftHand.Drop(_.Character);
+							Entity.Spawner.AddEntityToRemoveQueue(armor);
 						}
-			}
-			else if (newAffliction.Identifier == "blunttrauma" && hitLimb.type == LimbType.RightArm)//type is lowercase
-			{
-				var RightHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.RightHand);
-				if (RightHand != null)
+					}
+					else if (armor.Prefab.Identifier == "bodyarmorII")
+					{
+						armor.Condition = armor.Condition - 15f;
+						if (armor.Condition == 0f)
+						{
+							Entity.Spawner.AddEntityToRemoveQueue(armor);
+						}
+					}
+					else if (armor.Prefab.Identifier == "bodyarmorIII")
+					{
+						armor.Condition = armor.Condition - 20f;
+						if (armor.Condition == 0f)
+						{
+							Entity.Spawner.AddEntityToRemoveQueue(armor);
+						}
+					}
+				}
+				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && innerCloth != null &&
+				armor == null && innerCloth.HasTag("clothing"))
 				{
-					RightHand.Drop(_.Character);
+					innerCloth.Condition = innerCloth.Condition - 10f;
+					if (innerCloth.Condition == 0f)
+					{
+						Entity.Spawner.AddEntityToRemoveQueue(innerCloth);
+					}
+				}
+				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Head && headWear != null)
+				{
+					headWear.Condition = headWear.Condition - 40f;
+					if (headWear.Condition == 0f)
+					{
+						Entity.Spawner.AddEntityToRemoveQueue(headWear);
+					}
 				}
 			}
 			
-			else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && armor != null)
+			else
 			{
-				if (armor.Prefab.Identifier == "bodyarmorI")
-				{
-					armor.Condition = armor.Condition - 10f;
-					if (armor.Condition == 0f)
-					{
-						Entity.Spawner.AddEntityToRemoveQueue(armor);
-					}
-				}
-				else if (armor.Prefab.Identifier == "bodyarmorII")
-				{
-					armor.Condition = armor.Condition - 15f;
-					if (armor.Condition == 0f)
-					{
-						Entity.Spawner.AddEntityToRemoveQueue(armor);
-					}
-				}
-				else if (armor.Prefab.Identifier == "bodyarmorIII")
-				{
-					armor.Condition = armor.Condition - 20f;
-					if (armor.Condition == 0f)
-					{
-						Entity.Spawner.AddEntityToRemoveQueue(armor);
-					}
-				}
+			_.AddAffliction(newAffliction, allowStacking);
 			}
-			else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && innerCloth != null &&
-			armor == null && innerCloth.HasTag("clothing"))
-			{
-				innerCloth.Condition = innerCloth.Condition - 10f;
-				if (innerCloth.Condition == 0f)
-				{
-					Entity.Spawner.AddEntityToRemoveQueue(innerCloth);
-				}
-			}
-			else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Head && headWear != null)
-			{
-				headWear.Condition = headWear.Condition - 40f;
-				if (headWear.Condition == 0f)
-				{
-					Entity.Spawner.AddEntityToRemoveQueue(headWear);
-				}
-			}
-        }
-		 
-        else
-        {
-          _.AddAffliction(newAffliction, allowStacking);
-        }
 		
       }
 

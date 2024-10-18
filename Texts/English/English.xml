@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <Affliction.fatigue.description>Running reduces your stamina. Use rest if you're tired.</Affliction.fatigue.description>
+  <afflictiondescription.sonardamage>Sonar can cause serious internal damage</afflictiondescription.sonardamage>
+  <afflictionname.sonardamage>Sonar damage</afflictionname.sonardamage>
   <coldwater>Cold will slowly eats you away. Find hulls to restore body temperature.</coldwater>
   <coldwater1>Staying in the cold too long can be dangerous.</coldwater1>
   <dh_hypothermia>You are about to be frozen!</dh_hypothermia>
@@ -696,6 +698,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <MiniMapCO>CO Level</MiniMapCO>
   <MiniMapChlorine>Chlorine Level</MiniMapChlorine>
   <MiniMapLockRoomHit>Click to lock room. Ctrl + click to unclock room.</MiniMapLockRoomHit>
+  <MiniMapTemperature>Temperature</MiniMapTemperature>
 
   <!--Jobs-->
   <jobname.navigator>Navigator</jobname.navigator>
@@ -717,9 +720,19 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <dialog.bots.dangerousfuelrod>We got a hot fuel rod over here!</dialog.bots.dangerousfuelrod>
   <dialog.bots.dangerousfuelrod>What the fuck! A radioactive fuel rod!</dialog.bots.dangerousfuelrod>
 
+
+  <dialog.bots.findradiationsuit>I need find a radiadition suit!</dialog.bots.findradiationsuit>
+  <dialog.bots.findradiationsuit.failure>I can't find radiation suit.</dialog.bots.findradiationsuit.failure>
+
   <!--Skills-->
   <skillname.ondeckweapon>On Deck Weapon</skillname.ondeckweapon>
 
   <!--item message-->
   <itemmsg.repair.screwdriver_mechanicalparts>[[use]] Repair (Screwdriver + Mechanical parts)</itemmsg.repair.screwdriver_mechanicalparts>
+
+
+
+  <ordername.findandequipradiationsuit>Find and Equip Radiation Suit</ordername.findandequipradiationsuit>
+  <orderdialog.findandequipradiationsuit>[name], Find and equip a radiation suit!</orderdialog.findandequipradiationsuit> 
+  <orderdialogself.findandequipradiationsuit>I need a radiation protective suit.</orderdialogself.findandequipradiationsuit>
 </infotexts>
