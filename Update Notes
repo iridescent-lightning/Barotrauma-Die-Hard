@@ -46,3 +46,16 @@
     1. watertank reduction changed from 0.001 to 0.01
     2. Adding upgrade tag to make flakcannon powerconsumption is 0. It doesn't use electirc.
     3. Adding camera shake for railgun and flakcannon, set to 200.
+60. 
+    1. Fixing some oxygengenerators have 5000 output in some submarines.
+    2. Adding new class RadioactiveFuelRod
+    3. Adding new class TagsDieHard
+    4. Adding new class FindRadiationSuit
+    5. Patching FindSafety, AIController, 
+    6. Adjusting some stacking to make room for more items in cabs.
+    7. Adding fuel rod holder
+    8. Adding radiation suit from pucs.
+    9. Hiding pucs in game.
+61. 
+    1. Set heat generation from oxygengenerator from 500 to 25. This is a severe bug.
+    

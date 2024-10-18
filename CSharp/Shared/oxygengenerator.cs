@@ -60,7 +60,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
         }
 
         private float heatingAmount;
-        [Editable, Serialize(200.0f, IsPropertySaveable.Yes, description: "How much heat it can generate.", alwaysUseInstanceValues: true)]
+        [Editable, Serialize(25.0f, IsPropertySaveable.Yes, description: "How much heat it can generate. Setting too high will cause unexpected consequence.", alwaysUseInstanceValues: true)]
         public float HeatingAmount
         {
             get { return heatingAmount; }

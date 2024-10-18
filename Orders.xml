@@ -25,7 +25,7 @@
     <Sprite name="Command_Follow" texture="Content/UI/CommandUIAtlas.png" sourcerect="128,256,128,128"/>
   </Order>
 
-  <Order name="Wait" identifier="wait"
+  <Order name="testorder1" identifier="testorder"
 		 assignmentpriority="90"
          category="movement"
          mustmanuallyassign="true"
