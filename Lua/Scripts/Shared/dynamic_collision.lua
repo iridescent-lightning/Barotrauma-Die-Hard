@@ -73,7 +73,7 @@ local function MakeItemCollideGrenadeMidAir(item, notCollideCharacter)--sepcial 
         collision = bit32.bor(collision, Physics.CollisionProjectile)
 		collision = bit32.bor(collision, Physics.CollisionPlatform)
         item.body.CollidesWith = collision
-        item.body.CollisionCategories = Physics.CollisionRepair
+        item.body.CollisionCategories = Physics.CollisionPlatform
 		
 end
 

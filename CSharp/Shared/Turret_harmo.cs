@@ -16,7 +16,7 @@ using Barotrauma.Items.Components;
 using HarmonyLib;
 using System.Globalization;
 using System.Reflection;
-using HullModNamespace;
+
 
 
 namespace BarotraumaDieHard
@@ -203,11 +203,12 @@ namespace BarotraumaDieHard
         // Not useful
         public static void LaunchPostfix(Item projectile, Character user, float? launchRotation, float tinkeringStrength, Turret __instance)
         {
-            //DebugConsole.NewMessage("Launch!");
-           
+            
         }
 
-		
+        
+        
+
         
 	}
     

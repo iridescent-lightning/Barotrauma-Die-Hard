@@ -90,7 +90,7 @@
       </Deconstruct>
       <Body radius="45" density="50" friction="0.95" />
       <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="NotInWater" stackable="false" delay="30">
+        <StatusEffect type="NotInWater" stackable="false" delay="30" target="This">
           <sound file="%ModDir%/Items/Alien/AlienTurret1.ogg" range="500.0" loop="false" />
           <Fire />
         </StatusEffect>
@@ -662,7 +662,7 @@
           <Affliction identifier="stun" strength="1" />
           <Affliction identifier="burn" strength="10" />
         </Attack>
-        <StatusEffect type="OnUse">
+        <StatusEffect type="OnUse" target="This">
           <sound file="%ModDir%/Items/Alien/AlienCoil1.ogg" range="8000" />
           <sound file="%ModDir%/Items/Alien/AlienCoil2.ogg" range="8000" />
           <sound file="%ModDir%/Items/Alien/AlienCoil3.ogg" range="8000" />

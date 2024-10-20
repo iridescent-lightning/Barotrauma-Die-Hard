@@ -40,7 +40,7 @@ namespace SonarMod
 
         
 
-
+        // Contents 'scanned' out by sonar.
 		public static bool PingPrefix(Vector2 pingSource,  Vector2 transducerPos,  float pingRadius,  float prevPingRadius,  float displayScale,  float range,  bool passive,
              float pingStrength,  AITarget needsToBeInSector, Sonar __instance)
 		{
@@ -210,12 +210,8 @@ namespace SonarMod
                         HintManager.OnSonarSpottedCharacter(_.item, c);
                     }
                 }
-
-                
 				
             }
-
-            
 
             bool IsVisible(SonarBlip blip)
             {
@@ -230,13 +226,10 @@ namespace SonarMod
                 return true;
             }
 			return false;
-
-
-           
-            
-            
         }
 	
+
+    // Visual effects and markers.
 	public static bool DrawSonar(SpriteBatch spriteBatch, Rectangle rect, Sonar __instance)
 		{
 			
@@ -249,9 +242,7 @@ namespace SonarMod
             _.screenBackground?.Draw(spriteBatch, _.center, 0.0f, rect.Width / _.screenBackground.size.X);
 
              
-
-            if (_.useDirectionalPing)
-            {
+            // Removed use directional check, since the sonar will always be directional. Sometimes multiplayer mode sonar was onmi. Hope this can fix it.
                 _.directionalPingBackground?.Draw(spriteBatch, _.center, 0.0f, rect.Width / _.directionalPingBackground.size.X);//the directional ping background image (green circle)
                 if (_.directionalPingButton != null)
                 {
@@ -268,22 +259,27 @@ namespace SonarMod
                     _.directionalPingButton[buttonSprIndex]?.Draw(spriteBatch, _.center, MathUtils.VectorToAngle(_.pingDirection), rect.Width / _.directionalPingBackground.size.X);//the directional ping direction control image
 
                 }
-            }
-
+            
+            // Swapping vanilla sprite with code-draw line. So we can adjust the visual effect's width based on sonar width.
+            // Also deleting original full circule. We don't have omni sonar.
             if (_.currentPingIndex != -1)
             {
                 var activePing = _.activePings[_.currentPingIndex];
-                if (activePing.IsDirectional && _.directionalPingCircle != null)
-                {
-                    _.directionalPingCircle.Draw(spriteBatch, _.center, Color.White * (1.0f - activePing.State),
-                        rotate: MathUtils.VectorToAngle(activePing.Direction),
-                        scale: _.DisplayRadius / _.directionalPingCircle.size.X * activePing.State);//directional ping circle, pure visual effect
-                }
-                else
-                {
-                    _.pingCircle.Draw(spriteBatch, _.center, Color.White * (1.0f - activePing.State), 0.0f, (_.DisplayRadius * 2 / _.pingCircle.size.X) * activePing.State);//full circle, pure visual effect
-                }
+                
+                DrawDirectionalPingCurve(
+                    spriteBatch,
+                    _.center, 
+                    _.DisplayRadius, 
+                    MathUtils.VectorToAngle(activePing.Direction), // direction of the ping
+                    MathHelper.ToRadians(SonarMod.NewSectorAngle), // use NewSectorAngle set by the player
+                    activePing.State, 
+                    Color.White,
+                    thickness: 2f);
             }
+
+            // Adding a hertzFactor to make use of signal strength.
+           //float hertzFactor = (hertz - minHertzValue) / (maxHertzValue - minHertzValue);
+                    //hertzFactor = Math.Clamp(hertzFactor, 0.4f, 1.0f);
 
             float signalStrength = 1.0f;
             if (_.UseTransducers)
@@ -292,9 +288,11 @@ namespace SonarMod
                 foreach (Sonar.ConnectedTransducer connectedTransducer in _.connectedTransducers)
                 {
                     signalStrength = Math.Max(signalStrength, connectedTransducer.SignalStrength);
+                    //signalStrength *= hertzFactor;
                 }
             }
 
+            
             Vector2 transducerCenter = _.GetTransducerPos();// + DisplayOffset;
 
             if (_.sonarBlips.Count > 0)
@@ -324,7 +322,7 @@ namespace SonarMod
                 _.DrawDockingPorts(spriteBatch, transducerCenter, signalStrength);
                 _.DrawOwnSubmarineBorders(spriteBatch, transducerCenter, signalStrength);
             }
-            //the directional ping sector indicator
+            //the directional ping section indicator
             float directionalPingVisibility = _.useDirectionalPing && _.currentMode == Sonar.Mode.Active ? 1.0f : _.showDirectionalIndicatorTimer;
             if (directionalPingVisibility > 0.0f)
             {
@@ -755,5 +753,42 @@ namespace SonarMod
             }
             return false;
         }
+
+
+        private static void DrawArc(SpriteBatch spriteBatch, Vector2 center, float radius, float startAngle, float endAngle, Color color, int segments, float thickness)
+        {
+            float angleStep = (endAngle - startAngle) / segments;
+            Vector2 previousPoint = center + radius * new Vector2((float)Math.Cos(startAngle), (float)Math.Sin(startAngle));
+
+            for (int i = 1; i <= segments; i++)
+            {
+                float currentAngle = startAngle + i * angleStep;
+                Vector2 currentPoint = center + radius * new Vector2((float)Math.Cos(currentAngle), (float)Math.Sin(currentAngle));
+
+                // Draw a line between the previous point and the current point with the specified thickness
+                spriteBatch.DrawLine(previousPoint, currentPoint, color, thickness);
+
+                previousPoint = currentPoint; // Update the previous point for the next segment
+            }
+        }
+
+
+        public static void DrawDirectionalPingCurve(SpriteBatch spriteBatch, Vector2 center, float radius, float directionAngle, float arcWidth, float state, Color color, float thickness = 2f, int segments = 50)
+        {
+            // Calculate the start and end angles for the arc based on the direction and width
+            float startAngle = directionAngle - arcWidth / 2.0f;
+            float endAngle = directionAngle + arcWidth / 2.0f;
+
+            // Adjust the radius based on the ping state (to simulate fade-out)
+            float adjustedRadius = radius * state;
+
+            // Draw the arc with the specified thickness
+            DrawArc(spriteBatch, center, adjustedRadius, startAngle, endAngle, color * (1.0f - state), segments, thickness);
+        }
+
+
+
+
+
     }
 }

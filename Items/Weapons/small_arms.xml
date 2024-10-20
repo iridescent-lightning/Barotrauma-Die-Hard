@@ -199,7 +199,7 @@
       <SkillRequirementHint identifier="weapons" level="80" />
     </Item>
     <Item name="" identifier="57mag" description="" maxstacksize="4" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo" impactsoundtag="impact_metal_light" subcategory="small arms">
-      <PreferredContainer primary="57" minamount="1" notcampaign="true" />
+      <PreferredContainer primary="FNFive-seven" minamount="1" notcampaign="true" />
       <PreferredContainer primary="secarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
