@@ -704,7 +704,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item name="FN P90" identifier="P90" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,mountableweapon,collidable" Scale="0.35" impactsoundtag="impact_largeguns" subcategory="small arms">
+    <Item name="" identifier="P90" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,mountableweapon,collidable" Scale="0.3" impactsoundtag="impact_largeguns" subcategory="small arms">
       <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" />
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
@@ -724,7 +724,7 @@
         <Item identifier="ballisticfiber" />
       </Deconstruct>
       <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="832,960,64,64" />
-      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="2,194,183,76" depth="0.55" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" sourcerect="0,345,253,107" depth="0.55" />
       <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="2,194,183,76" depth="0.83" />
       <Body width="220" height="80" density="50" />
       <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="30,-15" aimpos="30,0" handle1="15,-15" handle2="50,-20" holdangle="-40" msg="ItemMsgPickUpSelect" />
@@ -781,7 +781,7 @@
       </RangedWeapon>
       <ItemContainer autofill="True" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="12,8" containedstateindicatorslot="0">
         <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
-        <Containable identifier="p90mag" />
+        <Containable identifier="p90mag" itempos="8,6"/>
         <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
         <SubContainer capacity="1" maxstacksize="1">
           <Containable items="flashlight" hide="false" itempos="22,-1" setactive="true" />
@@ -805,7 +805,7 @@
       </Repairable>
       <SkillRequirementHint identifier="weapons" level="80" />
     </Item>
-    <Item name="" identifier="p90mag" description="" maxstacksize="2" scale="0.35" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
+    <Item name="" identifier="p90mag" description="" maxstacksize="2" scale="0.3" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,smgammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer secondary="armcab,weaponholder" />
@@ -831,7 +831,7 @@
       </Fabricate>
       <InventoryIcon texture="%ModDir%/Items/Weapons/InventoryWeaponsIcon.png" sourcerect="128,64,64,64" />
       <Sprite texture="%ModDir%/Items/Weapons/weapons.png" depth="0.56" sourcerect="334,2,99,13" origin="0.5,0.5" />
-      <ContainedSprite name="5.7x28mm P90 Magazine" allowedcontainertags="weapon" texture="%ModDir%/Items/Weapons/weapons.png" depth="0.56" sourcerect="334,2,99,13" />
+      <ContainedSprite name="5.7x28mm P90 Magazine" allowedcontainertags="weapon" texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" depth="0.56" sourcerect="89,314,139,21" />
       <Body width="32" height="64" density="50" />
       <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="-5" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
       <ItemContainer hideitems="true" capacity="1" maxstacksize="1" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" canbecombined="true" SpawnWithID="57round">
