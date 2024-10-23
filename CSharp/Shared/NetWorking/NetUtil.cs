@@ -37,6 +37,7 @@ namespace Networking
         VERTICAL_ENGINE_POWER_CHANGE,
         SWITCH_JUNCTIONBOX,
         DOOR_JAMMED_STATE_CHANGE,
-        MISSION_START
+        MISSION_START,
+        SONAR_CHANGERANGE
     }
 }

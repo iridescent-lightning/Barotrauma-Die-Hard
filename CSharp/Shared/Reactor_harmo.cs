@@ -38,8 +38,7 @@ namespace ReactorMod
 
         public static void UpdatePostfix(float deltaTime, Camera cam, Reactor __instance)
         {
-            escapedTime += deltaTime;
-                if (escapedTime > updateTimer){
+
                 // Retrieve all ItemContainer components attached to the item
                 itemContainers = __instance.item.GetComponents<ItemContainer>()
                                     .OfType<ItemContainer>()
@@ -59,15 +58,16 @@ namespace ReactorMod
                 // Check the condition of the coolant and the temperature of the reactor
                 if (coolant != null && coolant.Condition <= 0 && __instance.Temperature > 10f)
                 {
-                    __instance.Item.Condition -= 3f * deltaTime;
+                    __instance.Item.Condition -= 1.5f * deltaTime;
                 }
                 else if (coolant == null && __instance.Temperature > 10f)
                 {
-                    __instance.Item.Condition -= 3f * deltaTime;
+                    DebugConsole.NewMessage(__instance.item.Condition.ToString());
+                    __instance.Item.Condition -= 1.5f * deltaTime;
                 }
                 else if (__instance.item.InPlayerSubmarine && __instance.Temperature > 10f)
                 {
-                    coolant.Condition -= 0.05f * deltaTime;
+                    coolant.Condition -= 0.1f * deltaTime;
                 }
 
                 // Trigger an action if the reactor's condition is critical
@@ -75,10 +75,9 @@ namespace ReactorMod
                 {
                     Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("reactorcsexplosionhelper"), __instance.Item.WorldPosition);
                 }
-                escapedTime = 0f;
 
                 __instance.item.SendSignal("1", "steam_out");
             }
-        }
+        
     }
 }

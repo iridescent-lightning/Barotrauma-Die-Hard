@@ -1,4 +1,5 @@
 ﻿﻿using Barotrauma.Networking;
+using Networking;
 
 using Barotrauma.Items.Components;
 using Barotrauma.Extensions;
@@ -20,7 +21,7 @@ using System.Globalization;
 
 
 
-namespace SonarMod
+namespace BarotraumaDieHard
 {
     partial class SonarMod : IAssemblyPlugin
     {
@@ -61,7 +62,7 @@ namespace SonarMod
                 {
                     if (_.connectedSubs.Contains(submarine)) { continue; }                    
                 }*/
-                
+                if (submarine == Submarine.MainSub) { continue; } // Don't detect self.
                 if ((_.CurrentMode == Sonar.Mode.Passive && submarine == Submarine.MainSub) || _.activePingsCount < 1) { continue; }//change: don't blip the main sub in passive mode. update: use ping to count the active ping. can only blip if there is an active ping
                 
                 
@@ -655,6 +656,40 @@ namespace SonarMod
             {
                 OnMoved = (scrollbar, scroll) =>
                 {
+                    Steering steering = _.item.GetComponent<Steering>();
+                    float defaultRange = 1000f; // Define your default range
+
+                    // Set the initial range based on the item's ID or fallback to default
+                    if (SonarMod.SonarRange.TryGetValue(_.item.ID, out float itemRange))
+                    {
+                        _.Range = itemRange;
+                    }
+                    else
+                    {
+                        DebugConsole.NewMessage("Range cannot be found.");
+                        _.Range = defaultRange; // Fallback to default range if not found
+                    }
+
+                    // Calculate the maximum range (three times the item range or default range)
+                    float maxRange = _.Range * 3f;
+
+                    // Ensure the slider's value is clamped between 0 and 1
+                    scroll = MathHelper.Clamp(scroll, 0f, 1f);
+
+                    // Adjust the range based on the slider value
+                    if (steering != null && !steering.DockingModeEnabled && _.CurrentMode == Sonar.Mode.Active)
+                    {
+                        // Interpolate between the default range and max range based on the slider value
+                        _.Range = MathHelper.Lerp(defaultRange, maxRange, scroll);
+
+                        SendChangeRangeMessage(_.item);
+                    }
+                    DebugConsole.NewMessage(_.Range.ToString());
+                    
+
+
+
+
                     SonarMod.NewSectorAngle = MathHelper.Lerp(120f, 15f, scroll);
                     SonarMod.hertz = MathHelper.Lerp(SonarMod.minHertzValue, SonarMod.maxHertzValue, _.zoomSlider.BarScroll);
                     if (GameMain.Client != null)
@@ -788,7 +823,41 @@ namespace SonarMod
 
 
 
+        public static void DrawDockingIndicatorPostfix(SpriteBatch spriteBatch, Steering steering, ref Vector2 transducerCenter, Sonar __instance)
+        {
+             // Calculate the difference between the docking target and the active docking source
+    Vector2 diff = steering.DockingTarget.Item.WorldPosition - steering.ActiveDockingSource.Item.WorldPosition;
+
+    // Check if the submarine is ready to dock
+    bool readyToDock = 
+        Math.Abs(diff.X) < steering.DockingTarget.DistanceTolerance.X * 4.2f &&
+        Math.Abs(diff.Y) < steering.DockingTarget.DistanceTolerance.Y * 4.2f;
+
+    // Adjust zoom based on the docking status
+    if (readyToDock)
+    {
+        __instance.zoom = 1.5f; // Zoom in when ready to dock (adjust as needed)
+    }
+    else
+    {
+        __instance.zoom = 1f; // Reset zoom to default value when not ready to dock
+    }
+        }
 
 
+
+    private static void SendChangeRangeMessage(Item item)
+    {
+        IWriteMessage msg = NetUtil.CreateNetMsg(NetEvent.SONAR_CHANGERANGE);
+
+        msg.WriteUInt16(item.ID); // ID of the sonar item
+        Sonar sonar = item.GetComponent<Sonar>();
+        msg.WriteSingle(sonar.Range);  // Send the new range value
+        NetUtil.SendServer(msg, DeliveryMethod.Reliable);
+    }
+
+
+
+        
     }
 }

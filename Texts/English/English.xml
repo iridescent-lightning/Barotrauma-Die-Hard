@@ -464,8 +464,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.fuelrodcase>Used to shield the radiation emitted from an undepleted fuel rod.</entitydescription.fuelrodcase>
   <entityname.recycledfuelrod>Recycled Fuel Rod</entityname.recycledfuelrod>
   <entitydescription.recycledfuelrod>Recycled from depleted fuel rods. Hazarous. Better take care with caution.</entitydescription.recycledfuelrod>
-  <entityname.watertank>Water Tank</entityname.watertank>
-  <entitydescription.watertank>Contained post-processed water for oxygen generator.</entitydescription.watertank>
+  <entityname.oxygencandle>Oxygen Candle</entityname.oxygencandle>
+  <entitydescription.oxygencandle>High-tech oxygen candle that allows the oxygen generation to preform various air duties.</entitydescription.oxygencandle>
   <entityname.reactorcooline>Reactor Coolant</entityname.reactorcooline>
   <entitydescription.reactorcooline>Coolant to prevent the reactor from going overheat</entitydescription.reactorcooline>
   <entityname.lightfuse>Light Fuse</entityname.lightfuse>
@@ -500,6 +500,10 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.mpx_magazine>[Capacity: 30]\n[Penetration: 30%]</entitydescription.mpx_magazine>
   <entityname.MCX>Sig Sauer MCX</entityname.MCX>
   <entitydescription.MCX>[ROF: Fast]\n[ACC:High]</entitydescription.MCX>
+  <entityname.M16>M16</entityname.M16>
+  <entitydescription.MCX>[ROF: Fast]\n[ACC:High]</entitydescription.MCX>
+  <entityname.M16Mag>M16 Magazine</entityname.M16Mag>
+  <entitydescription.M16Mag>5.56x45mm magazine</entitydescription.M16Mag>
   <entityname.mcx_magazine>.300 AAC Magazine</entityname.mcx_magazine>
   <entitydescription.mcx_magazine>[Capacity: 30]\n[Penetration: 60%]</entitydescription.mcx_magazine>
   <entityname.MP9>MP9 Suppressed</entityname.MP9>
@@ -620,7 +624,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <connection.vertical_engine_power_out>vertical_engine_power_out</connection.vertical_engine_power_out>
   <connection.powerconsumptionout>Power Consumption Out</connection.powerconsumptionout>
   <uilabel.reactorcooline>Cooline</uilabel.reactorcooline>
-  <uilabel.watertank>Water Tank</uilabel.watertank>
+  <uilabel.oxygencandle>Oxygen Candle Slot</uilabel.oxygencandle>
   <uilabel.lock>Lock</uilabel.lock>
   <displayname.divingwatch>Diving Watch</displayname.divingwatch>
   <cursorhover.changedirection>[[select]] Push it to initialize the submarine change direction sequence.</cursorhover.changedirection>

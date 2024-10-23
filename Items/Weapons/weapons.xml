@@ -23,7 +23,7 @@
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="85,368,168,11" depth="0.55" origin="0.5,0.5" />
       <Body width="160" height="10" density="30" />
       <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-      <Rope sourcepullforce="300" targetpullforce="2000" projectilepullforce="5" maxlength="1500" snaponcollision="false" spritewidth="3" tile="true" origin="0.05,0.5" targetminmass="30" lerpforces="true" snapanimduration="0.5">
+      <Rope sourcepullforce="300" targetpullforce="2000" projectilepullforce="5" maxlength="5" snaponcollision="false" spritewidth="3" tile="true" origin="0.05,0.5" targetminmass="30" lerpforces="true" snapanimduration="0.5">
         <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
         <!-- Snap after 1 seconds if not stuck to anything -->
         <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">

@@ -405,6 +405,183 @@
         </StatusEffect>
       </Projectile>
     </Item>
+    <M16 name="" identifier="M16" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,mountableweapon,collidable" Scale="0.28" impactsoundtag="impact_largeguns" subcategory="small arms">
+      <PreferredContainer primary="secarmcab" minamount="1" notcampaign="true" />
+      <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+      <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
+      <Price baseprice="450">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="384,894,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" sourcerect="0,0,466,106" depth="0.55" />
+      <Body width="320" height="64" density="50" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-10" aimpos="60,0" handle1="-60,-16" handle2="50,-4" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="M16 Worn" texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" 
+          sourcerect="0,0,466,106" 
+          canbehiddenbyotherwearables="false" rotation="-90" 
+          inheritlimbdepth="false" depth="0.6" 
+          limb="Torso" scale="0.28" 
+          origin="0.5,-0.2" />
+      </Wearable>
+      <RangedWeapon barrelpos="165,5" spread="5" unskilledspread="15" reload="0.08" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.16" reloadskillrequirement="80">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="dhmuzzleflash3" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="%ModDir%/Items/Weapons/mcx.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="%ModDir%/Items/Weapons/mcx1.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx2.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx3.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx4.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx5.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx6.ogg" type="OnUse" range="3000" />
+        <Sound file="%ModDir%/Items/Weapons/mcx7.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="crouch" amount="2" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Conditional CanRun="False" />
+          <Affliction identifier="crouch" amount="15" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Conditional currentspeed="gt 1.8" />
+          <ReduceAffliction identifier="crouch" amount="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <ReduceAffliction identifier="crouch" amount="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="150.0" force="0.6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <RequiredItem identifier="M16Mag" type="Contained" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <LuaHook name="Ak47Malfunction" />
+        </StatusEffect>
+        <RequiredItems identifier="M16Mag" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="55" />
+        <!--The case effect-->
+        <StatusEffect type="OnUse" target="This">
+          <SpawnItem identifiers="bulletcase" spawnposition="This" aimspread="500" rotationtype="Collider" />
+        </StatusEffect>
+        <!---->
+      </RangedWeapon>
+      <ItemContainer autofill="True" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-4,-20" containedstateindicatorslot="0">
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+        <Containable identifier="M16Mag" itempos="-11,-11"/>
+        <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="21,-1" setactive="true" />
+        </SubContainer>
+        <StatusEffect type="OnUse" target="Contained">
+          <RequiredItem identifiers="M16Mag" type="Contained" />
+          <Use />
+        </StatusEffect>
+      </ItemContainer>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="90" fixDurationHighSkill="5" fixDurationLowSkill="40" msg="cursorhover.repair.guns" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+        <RequiredSkill identifier="weapons" level="55" />
+        <RequiredItem items="weaponparts" type="Picked" />
+        <RequiredItem items="weaponrepairkit" type="Equipped" />
+        <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="50.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="500" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="0.1" />
+        </StatusEffect>
+      </Repairable>
+      <SkillRequirementHint identifier="weapons" level="55" />
+    </M16>
+    <Item name="" identifier="M16Mag" description="" maxstacksize="2" scale="0.28" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,mcxammo,refilereloadsfx" impactsoundtag="impact_metal_light" subcategory="small arms">
+      <PreferredContainer primary="M16" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+      <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="secarmcab" />
+      <Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="lead" mincondition="0.8" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="lead" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="320,894,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" depth="0.56" sourcerect="7,123,40,52" origin="0.5,0.5" />
+      <ContainedSprite name=".300 AAC Magazine" allowedcontainertags="M16" texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" depth="0.56" sourcerect="7,123,40,52" />
+      <Body width="32" height="64" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="-5" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" canbecombined="true" SpawnWithID="300acc">
+        <Containable identifiers="556x45mm" />
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+        <StatusEffect type="OnUse" target="This" condition="-3.3333" disabledeltatime="true">
+          <SpawnItem identifiers="556x45mm" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="556x45mm" identifier="556x45mm" category="Equipment" interactthroughwalls="true" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true">
+      <InventoryIcon texture="%ModDir%/Items/Weapons/InventoryWeaponsIcon.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="1,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="2" density="40" />
+      <Projectile characterusable="false" hitscan="false" removeonhit="true" launchimpulse="30.0">
+        <StatusEffect type="OnActive" target="NearByItems" targettags="damage_by_passing_bullet" range="50" condition="-200">
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit.ogg" type="OnImpact" volumenum="2" Range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit1.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit2.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit3.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
+        </StatusEffect>
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
+        <Attack structuredamage="0.5" itemdamage="25" targetforce="6" penetration="0.4" severlimbsprobability="0.35" stun="0.1">
+          <Affliction identifier="bleeding" strength="3" />
+          <Affliction identifier="gunshotwound" strength="37" />
+          <Affliction identifier="armormarker" strength="0.3" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit.ogg" type="OnImpact" volumenum="2" Range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit1.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit2.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit3.ogg" type="OnImpact" volumenum="2" Range="1000" />
+          <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
+        </StatusEffect>
+        <!--This makes bullet disappear after traveling though water outside the hull for a short time-->
+        <!--This makes bullet has bubble effect in water-->
+        <StatusEffect type="OnActive" target="This">
+          <Conditional InWater="true" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
     <Item name="" identifier="MCX" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,mountableweapon,collidable" Scale="0.35" impactsoundtag="impact_largeguns" subcategory="small arms">
       <PreferredContainer primary="secarmcab" minamount="1" notcampaign="true" />
       <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -704,7 +881,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item name="" identifier="P90" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,mountableweapon,collidable" Scale="0.3" impactsoundtag="impact_largeguns" subcategory="small arms">
+    <Item name="" identifier="P90" description="" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,mountableweapon,collidable" Scale="0.28" impactsoundtag="impact_largeguns" subcategory="small arms">
       <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" />
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />

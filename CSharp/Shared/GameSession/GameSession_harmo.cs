@@ -54,7 +54,9 @@ namespace BarotraumaDieHard
 
            TurretDieHard.ResetOriginalReloadValue();
            TurretDieHard.ClearReloadDictionary();
-    	
+
+            SonarMod.ResetOriginalSonarRange();
+            SonarMod.ClearSonarRangeDictionary();
         } 
     }
 }

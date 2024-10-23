@@ -71,5 +71,15 @@
     5. Changing bandit weapon "57" to "Five-seven" for better readability.
     6. Fixing lua bug using repair collision which was deleted in the source code.
     7. Adding a force mission happen feature. To be implemented.
+63.
+    1. Adding a rope harmo for test.
+    2. Replacing watertank to oxygencandle.
+    3. Adding new gun M16
+    4. Refactored pump motor sprites.
+    5. Updating localizations.
+    6. Updating statusmonitor sprites
+    7. Updating finddivingsuit method due to new patch.
+    8. Adding a post fix for auto cancel zoom during undocking.
+    9. Associating sonar range with hertz. need to make network.
 
     

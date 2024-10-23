@@ -58,7 +58,7 @@
         </LightComponent>
       </Steering>
       <aitarget sightrange="200" soundrange="8000" staticsight="true" fadeouttime="5" />
-      <Sonar canbeselected="true" powerconsumption="100" displaybordersize="-0.1" allowuioverlap="true" hudlayer="-2" UseTransducers="True" detectsubmarinewalls="false">
+      <Sonar canbeselected="true" powerconsumption="100" displaybordersize="-0.1" allowuioverlap="true" hudlayer="-2" UseTransducers="True" detectsubmarinewalls="false" >
         <GuiFrame relativesize="0.55,0.59" anchor="Center" relativeoffset="0.1,-0.05" draggable="false" />
         <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
         <sound file="Content/Items/Command/SonarPing2.ogg" type="OnUse" range="1000.0" />
@@ -391,10 +391,10 @@
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,987,28,20" origin="0.5,0.45" />
       <Upgrade gameversion="0.10.0.0" scale="*0.5" />
       <Upgrade gameversion="0.14.4.0" positiony="+38" />
-      <Sprite texture="Content/Items/Command/CommandDevices.png" sourcerect="720,0,160,128" depth="0.8" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Command/CommandDevices.png" sourcerect="700,0,160,128" depth="0.8" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Commands/CommandDevices_shadows.png" depth="0.9" sourcerect="655,90,165,117" origin="0.4,0.4" />
-      <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="720,144,160,128" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
-      <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="720,288,160,128" depth="0.8" maxcondition="0" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="700,124,160,128" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="856,0,160,128" depth="0.8" maxcondition="0" origin="0.5,0.5" />
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
         <SwappableItem price="1000" origin="80,64" swapidentifier="statusmonitors" replacementonuninstall="smslot"></SwappableItem>
         <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
@@ -437,11 +437,6 @@
     </Item>
     <Item name="S-2" identifier="statusmonitor2" tags="command,statusmonitor" aliases="MiniMap" category="Machine,Electrical" linkable="true" scale="0.5" allowedlinks="navterminal" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="S-2 [Power Consumption:50] [Min Voltage:0.5]" variantof="statusmonitor">
       <SwappableItem price="1500" origin="80,64" swapidentifier="statusmonitors" replacementonuninstall="smslot"></SwappableItem>
-      <MiniMap MinVoltage="0.5" PowerConsumption="50" canbeselected="true" msg="ItemMsgInteractSelect" allowuioverlap="true" RequireWaterDetectors="true" RequireOxygenDetectors="true" EnableItemFinder="False">
-        <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
-        <AlternativeLayout relativesize="0.2725,0.3" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.05,-0.001" />
-        <poweronsound file="Content/Items/PowerOnLight3.ogg" range="1000" loop="false" />
-      </MiniMap>
       <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.15" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="electrical" level="55" />
@@ -458,11 +453,6 @@
     </Item>
     <Item name="S-3" identifier="statusmonitor3" tags="command,statusmonitor" aliases="MiniMap" category="Machine,Electrical" linkable="true" scale="0.5" allowedlinks="navterminal" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="S-3 [Power Consumption:25] [Min Voltage:0.5]" variantof="statusmonitor">
       <SwappableItem price="2000" origin="80,64" swapidentifier="statusmonitors" replacementonuninstall="smslot"></SwappableItem>
-      <MiniMap MinVoltage="0.5" PowerConsumption="50" canbeselected="true" msg="ItemMsgInteractSelect" allowuioverlap="true" RequireWaterDetectors="true" RequireOxygenDetectors="true" EnableItemFinder="False">
-        <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
-        <AlternativeLayout relativesize="0.2725,0.3" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.05,-0.001" />
-        <poweronsound file="Content/Items/PowerOnLight3.ogg" range="1000" loop="false" />
-      </MiniMap>
       <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.15" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="electrical" level="55" />

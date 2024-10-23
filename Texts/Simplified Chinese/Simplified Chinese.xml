@@ -449,8 +449,8 @@
   <entitydescription.fuelrodcase>可储存燃料棒，也用于隔绝未用尽的燃料棒的辐射。</entitydescription.fuelrodcase>
   <entityname.recycledfuelrod>再生燃料棒</entityname.recycledfuelrod>
   <entitydescription.recycledfuelrod>由未用尽的燃料棒经特殊处理后获得。具有危害性，务必小心对待。</entitydescription.recycledfuelrod>
-  <entityname.watertank>水箱</entityname.watertank>
-  <entitydescription.watertank>装着经过特殊处理的制氧机专用液</entitydescription.watertank>
+  <entityname.oxygencandle>氧烛</entityname.oxygencandle>
+  <entitydescription.oxygencandle>高科技氧烛，制氧机执行多种空气净化工作的不可或缺的材料。</entitydescription.oxygencandle>
   <entityname.reactorcooline>反应堆冷却剂</entityname.reactorcooline>
   <entitydescription.reactorcooline>用于反应堆降温，以防过热</entitydescription.reactorcooline>
   <entityname.lightfuse>灯泡保险丝</entityname.lightfuse>

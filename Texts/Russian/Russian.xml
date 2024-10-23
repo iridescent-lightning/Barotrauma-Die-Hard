@@ -451,8 +451,8 @@
   <entityname.recycledfuelrod>Переработанный топливный стержень</entityname.recycledfuelrod>
   <entitydescription.recycledfuelrod>Переработан из отработавших топливных стержней. Опасный. Работать с осторожностью.</entitydescription.recycledfuelrod>
   <Terminal.reactormanual>Очень важно ---- Работа реактора: Если реактор поврежден до критического состояния. Выключите реактор, чтобы предотвратить дальнейшую катастрофу. \nКоэффициент деления должен быть ниже 5, чтобы обеспечить безопасность всей подводной лодки. Если реактор неисправен, включить резервную сеть на субмарине!\n Не извлекать из реактора топливный стержень, не отработавший свой ресурс до конца. Радиация может быть смертельной. Если вам это очень надо, используйте подходящий контейнер! \nИнженерное руководство Коалиции 101</Terminal.reactormanual>
-  <entityname.watertank>Резервуар для воды</entityname.watertank>
-  <entitydescription.watertank>Обработанная вода для кислородного генератора.</entitydescription.watertank>
+  <entityname.oxygencandle>oxygencandle</entityname.oxygencandle>
+  <entitydescription.oxygencandle>Обработанная вода для кислородного генератора.</entitydescription.oxygencandle>
   <entityname.reactorcooline>Охладитель реактора</entityname.reactorcooline>
   <entitydescription.reactorcooline>Охладитель, предотвращающий перегрев реактора</entitydescription.reactorcooline>
   <entityname.lightfuse>Предохранитель</entityname.lightfuse>
@@ -568,7 +568,7 @@
   <entityname.diversbackpack>Рюкзак водолаза</entityname.diversbackpack>
   <entitydescription.diversbackpack>Прочный рюкзак для переноски вещей. Замедляет при ношении.</entitydescription.diversbackpack>
   <uilabel.reactorcooline>Охлождение</uilabel.reactorcooline>
-  <uilabel.watertank>Резервуар для воды</uilabel.watertank>
+  <uilabel.oxygencandle>oxygencandle</uilabel.oxygencandle>
   <uilabel.lock>Замок</uilabel.lock>
   <displayname.divingwatch>Дайверские часы</displayname.divingwatch>
   <cursorhover.repair.heavywrench>[[use]] Починить (Тяжелый гаечный ключ)</cursorhover.repair.heavywrench>

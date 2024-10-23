@@ -25,7 +25,7 @@ namespace BarotraumaDieHard.AI
             gearTag = TagsDieHard.RadiationGear;
         }
 
-        public override bool CheckObjectiveSpecific() =>
+        public override bool CheckObjectiveState() =>
             targetItem != null && character.HasEquippedItem(targetItem, slotType: InvSlotType.OuterClothes | InvSlotType.InnerClothes | InvSlotType.Head);
 
         public override void Act(float deltaTime)

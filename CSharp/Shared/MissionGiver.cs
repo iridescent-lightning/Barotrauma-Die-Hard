@@ -34,7 +34,7 @@ namespace BarotraumaDieHard
 
             // Assuming you have an identifier for the specific mission you want to load
             
-            Identifier specificMissionId = "escort1".ToIdentifier(); 
+            Identifier specificMissionId = "BeaconMissionDieHard".ToIdentifier(); 
 
             // Find the specific mission prefab by identifier
             var missionPrefabToLoad = MissionPrefab.Prefabs[specificMissionId];

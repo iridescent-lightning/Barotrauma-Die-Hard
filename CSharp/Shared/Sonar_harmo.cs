@@ -16,11 +16,13 @@ using System.Globalization;
 
 using Networking;
 
-namespace SonarMod
+namespace BarotraumaDieHard
 {
     partial class SonarMod : IAssemblyPlugin
     {
         public Harmony harmony;
+
+        private static Dictionary<int, float>SonarRange = new Dictionary<int, float>();
 		
 		private static float PingFrequency = 0.5f;//how fast a ping spreads
 		private static float timeSinceLastPing = 5.1f;
@@ -35,6 +37,10 @@ namespace SonarMod
 		    harmony = new Harmony("SonarMod");
 
             
+            var originalConstructor = typeof(Sonar).GetConstructor(new[] { typeof(Item), typeof(ContentXElement) });
+            var postfix = new HarmonyMethod(typeof(SonarMod).GetMethod(nameof(SonarConstructorPostfix)));
+            harmony.Patch(originalConstructor, null, postfix);
+
 
 		    harmony.Patch(
 					original: typeof(Sonar).GetMethod("Update"),
@@ -69,6 +75,11 @@ namespace SonarMod
 		var originalCheckDirectVisibili = typeof(Sonar).GetMethod("CheckBlipVisibility", BindingFlags.NonPublic | BindingFlags.Instance);
         var prefixCheckDirectVisibili = typeof(SonarMod).GetMethod("CheckBlipVisibility", BindingFlags.Public | BindingFlags.Static);
         harmony.Patch(originalCheckDirectVisibili, new HarmonyMethod(prefixCheckDirectVisibili), null);
+
+
+        var originalDrawDockingIndicator = typeof(Sonar).GetMethod("DrawDockingIndicator", BindingFlags.NonPublic | BindingFlags.Instance);
+        var postfixDrawDockingIndicator = typeof(SonarMod).GetMethod("DrawDockingIndicatorPostfix", BindingFlags.Public | BindingFlags.Static);
+        harmony.Patch(originalDrawDockingIndicator, new HarmonyMethod(postfixDrawDockingIndicator), null);
 #endif
 		
 		}
@@ -87,14 +98,24 @@ namespace SonarMod
 		  harmony = null;
 		}
 		
-
+        public static void SonarConstructorPostfix(Item item, ContentXElement element, Sonar __instance)
+        {
+            
+                
+                // Store the reload value using the item ID as the key
+                
+                SonarRange[item.ID] = __instance.Range; // Store original reload value
+#if SERVER
+            NetUtil.Register(NetEvent.SONAR_CHANGERANGE, OnReceiveChangeRangeMessage);
+#endif
+        }
 
          public static bool Update(float deltaTime, Camera cam, Sonar __instance)
         {
-
+            
 			Sonar _ = __instance;
             _.UpdateOnActiveEffects(deltaTime);
-
+            
             if (_.UseTransducers)
             {
                 foreach (Sonar.ConnectedTransducer transducer in _.connectedTransducers)//directly use Sonar. to get the field that is not in the context if __instance doesn't work.
@@ -290,6 +311,70 @@ namespace SonarMod
                 }
             }
         }
+    
+        public static void ResetOriginalSonarRange()
+		{
+			// Iterate through each stored reload value in the dictionary
+			foreach (var sonarEntry in SonarRange)
+			{
+				// Get the turret's item ID and its original reload value
+				int itemID = sonarEntry.Key;
+				float originalRange = sonarEntry.Value;
+
+				// Find the turret by item ID
+				var navItem = Item.ItemList.FirstOrDefault(item => item.ID == itemID);
+
+				// Check if the turret item exists and has a Turret component
+				if (navItem != null)
+				{
+					var sonarComponent = navItem.GetComponent<Sonar>();
+					if (sonarComponent != null)
+					{
+						// Reassign the original reload value to the turret
+						sonarComponent.Range = originalRange;
+						DebugConsole.NewMessage($"Reset sonar {itemID}'s range to {originalRange}", Color.Green);
+					}
+				}
+			}
+		}
+
+
+        public static void ClearSonarRangeDictionary()
+		{
+			
+			SonarRange.Clear();
+    		//DebugConsole.NewMessage("Turret reload values cleared.", Color.Red);
+		}
+
+
+        private static void OnReceiveChangeRangeMessage(object[] args)
+{
+    IReadMessage msg = (IReadMessage)args[0];
+    ushort itemId = msg.ReadUInt16(); // Read the item ID
+
+    // Find the sonar item by ID
+    Item sonarItem = Entity.FindEntityByID(itemId) as Item;
+    if (sonarItem != null)
+    {
+        // Get the Sonar component from the item
+        var sonar = sonarItem.GetComponent<Sonar>();
+        if (sonar != null)
+        {
+            // Read the new range value from the message
+            float newRange = msg.ReadSingle(); // Read the new range from the message
+            
+            // Update the sonar's range
+            sonar.Range = newRange;
+
+            // Optionally, log the new range value for debugging
+            DebugConsole.NewMessage($"Sonar range updated to: {newRange}");
+        }
+    }
+}
+
+    
+    
+    
     }
 }    
     

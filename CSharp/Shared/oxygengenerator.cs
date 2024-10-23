@@ -225,7 +225,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 return;
             }
                 // Get the items at slot 0 from the second container
-            Item waterTank = secondItemContainer.Inventory.GetItemAt(0) as Item;
+            Item oxygenCandle = secondItemContainer.Inventory.GetItemAt(0) as Item;
             
             if (!turnedOn)
             {   
@@ -243,7 +243,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
             {
                 //DebugConsole.NewMessage("Oxygen Generator is turned on");
             }
-                if (waterTank != null && waterTank.Condition <= 0)
+                if (oxygenCandle != null && oxygenCandle.Condition <= 0)
                 {
                     // Water tank is empty, set CurrFlow to 0
                     CurrFlow = 0.0f;
@@ -251,7 +251,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     VentMod.PurifyingFlow = 0.0f;
                     VentMod.HeatFlow = 0.0f;
                 }
-                else if (waterTank == null)
+                else if (oxygenCandle == null)
                 {
                     CurrFlow = 0.0f;
                     VentMod.CO2Flow = 0.0f;
@@ -286,7 +286,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
 
                     if (item.InPlayerSubmarine)
                     {
-                        waterTank.Condition = waterTank.Condition - 0.01f * newGeneratedAmountFactor * deltaTime;
+                        oxygenCandle.Condition = oxygenCandle.Condition - 0.01f * newGeneratedAmountFactor * deltaTime;
                     }
                 }
             
