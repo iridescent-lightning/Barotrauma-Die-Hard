@@ -115,7 +115,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <EventText.backgroundstory4.c3>"We have seen the devastating effects of husk worship firsthand. These individuals become mindless zombies, incapable of rational thought or decision-making. They pose a serious threat to themselves and to others around them."</EventText.backgroundstory4.c3>
   <EventText.backgroundstory4.c4>"We urge all citizens to stay vigilant and report any suspicious activity related to husk worship to the nearest Coalition outpost. Remember, the husk is not a path to enlightenment or evolution - it is a deadly parasite that must be eradicated."</EventText.backgroundstory4.c4>
   <EventText.backgroundstory4.c5>"Stay safe, and stay away from the husk."\n"Sincerely, The Coalition."
-	</EventText.backgroundstory4.c5>
+  </EventText.backgroundstory4.c5>
   <EventText.backgroundstory5.c1>"Hello there, my friend. Have you heard of the church of husk?"</EventText.backgroundstory5.c1>
   <EventText.backgroundstory5.c2>"Yes, I have. But I'm not interested in joining."</EventText.backgroundstory5.c2>
   <EventText.backgroundstory5.c3>"Why not? Don't you want to evolve into something greater, something more powerful?"</EventText.backgroundstory5.c3>
@@ -453,7 +453,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <missionmessage0.story_nocargo_beacon>The communication between [location1] and Coalition Engineering Company is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to meet your contact.</missionmessage0.story_nocargo_beacon>
 
 
-  
+
   <entityname.radiationsuit>Radiation Suit</entityname.radiationsuit>
   <entitydescription.radiationsuit>Lead Suit can resist radiation or other hazards.</entitydescription.radiationsuit>
   <entityname.fuelrodholder>Fuelrod Holder</entityname.fuelrodholder>
@@ -501,9 +501,15 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entityname.MCX>Sig Sauer MCX</entityname.MCX>
   <entitydescription.MCX>[ROF: Fast]\n[ACC:High]</entitydescription.MCX>
   <entityname.M16>M16</entityname.M16>
-  <entitydescription.MCX>[ROF: Fast]\n[ACC:High]</entitydescription.MCX>
+  <entitydescription.M16>[ROF: Fast]\n[ACC:High]</entitydescription.M16>
   <entityname.M16Mag>M16 Magazine</entityname.M16Mag>
   <entitydescription.M16Mag>5.56x45mm magazine</entitydescription.M16Mag>
+  <entityname.M16Receiver>M16 Receiver</entityname.M16Receiver>
+  <entitydescription.M16Receiver>Receiver part of M16</entitydescription.M16Receiver>
+  <entityname.M16Barrel>M16 Barrel</entityname.M16Barrel>
+  <entitydescription.M16Barrel>Barrel part of M16</entitydescription.M16Barrel>
+  <entityname.M16Stock>M16 Stock</entityname.M16Stock>
+  <entitydescription.M16Stock>Stock part of M16</entitydescription.M16Stock>
   <entityname.mcx_magazine>.300 AAC Magazine</entityname.mcx_magazine>
   <entitydescription.mcx_magazine>[Capacity: 30]\n[Penetration: 60%]</entitydescription.mcx_magazine>
   <entityname.MP9>MP9 Suppressed</entityname.MP9>
@@ -516,6 +522,12 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.p90mag>[Capacity: 50]\n[Penetration: 30%]</entitydescription.p90mag>
   <entityname.mk17>FN SCAR-H</entityname.mk17>
   <entitydescription.mk17>[ROF: Medium]\n[ACC:High-Medium]</entitydescription.mk17>
+  <entityname.MK17Barrel>Scar Barrel</entityname.MK17Barrel>
+  <entitydescription.MK17Barrel>Barrel of Scar</entitydescription.MK17Barrel>
+  <entityname.MK17Receiver>Scar receiver</entityname.MK17Receiver>
+  <entityname.MK17Stock>Scar stock</entityname.MK17Stock>
+  <entityname.MK17Scope>Scar Scope</entityname.MK17Scope>
+  <entitydescription.MK17Scope>Increasing weapon accuracy.</entitydescription.MK17Scope>
   <entityname.mk17mag>7.62x51mm SCAR-H Magazine</entityname.mk17mag>
   <entitydescription.mk17mag>[Capacity: 20]\n[Penetration: 70%]</entitydescription.mk17mag>
   <entityname.ak47>AK-47</entityname.ak47>
@@ -615,9 +627,9 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entityname.lubricationoil>Lubrication Oil</entityname.lubricationoil>
   <entitydescription.lubricationoil>Used to lubricate the engine. Right click to use directly on the engine.</entitydescription.lubricationoil>
   <entityname.jbslot>JunctionBox Slot</entityname.jbslot>
-  
-  
-  
+
+
+
   <connection.moveup>Move Up</connection.moveup>
   <connection.movedown>Move Down</connection.movedown>
   <connection.Dock_State>Dock State</connection.Dock_State>
@@ -683,8 +695,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <Botai_getdivingmask>"Find a diving mask!"</Botai_getdivingmask>
   <Botai_getdivingmask>"Hull breached! Hull breached!"</Botai_getdivingmask>
   <LockDirectionalSonar>Lock Sonar Direction</LockDirectionalSonar>
-  <Arm>Arm</Arm><!--the lable of the switch-->
-  <TorpedoDisarm>Disarm</TorpedoDisarm><!--signal output-->
+  <Arm>Arm</Arm>  <!--the lable of the switch-->
+  <TorpedoDisarm>Disarm</TorpedoDisarm>  <!--signal output-->
   <TorpedoArm>Arm</TorpedoArm>
   <TorpedoTubeEmpty>Tube Empty</TorpedoTubeEmpty>
   <LaunchTorpedo>Launch Torpedo</LaunchTorpedo>
@@ -737,6 +749,6 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
 
   <ordername.findandequipradiationsuit>Find and Equip Radiation Suit</ordername.findandequipradiationsuit>
-  <orderdialog.findandequipradiationsuit>[name], Find and equip a radiation suit!</orderdialog.findandequipradiationsuit> 
+  <orderdialog.findandequipradiationsuit>[name], Find and equip a radiation suit!</orderdialog.findandequipradiationsuit>
   <orderdialogself.findandequipradiationsuit>I need a radiation protective suit.</orderdialogself.findandequipradiationsuit>
 </infotexts>
