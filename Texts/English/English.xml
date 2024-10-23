@@ -510,6 +510,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entitydescription.M16Barrel>Barrel part of M16</entitydescription.M16Barrel>
   <entityname.M16Stock>M16 Stock</entityname.M16Stock>
   <entitydescription.M16Stock>Stock part of M16</entitydescription.M16Stock>
+  <entityname.AK47Barrel>AK 47 Barrel</entityname.AK47Barrel>
+  <entityname.AK47Receiver>AK 47 Receiver</entityname.AK47Receiver>
   <entityname.mcx_magazine>.300 AAC Magazine</entityname.mcx_magazine>
   <entitydescription.mcx_magazine>[Capacity: 30]\n[Penetration: 60%]</entitydescription.mcx_magazine>
   <entityname.MP9>MP9 Suppressed</entityname.MP9>

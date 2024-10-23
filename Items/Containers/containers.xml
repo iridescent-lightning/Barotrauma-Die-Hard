@@ -230,8 +230,8 @@
         <Containable items="key3,keymaster" excludebroken="true" />
       </ItemContainer>
     </Item>
-    <Item name="" identifier="oxygentankshelf2" nameidentifier="oxygentankshelf" category="Diving" tags="container,oxygentankcontainer,oxygentankrefiller" pickdistance="50" scale="0.5">
-      <Sprite name="Diving Suit Locker Small" texture="Content/Items/Containers/containers.png" sourcerect="714,259,99,82" depth="0.84" origin="0.5,0.5" />
+    <Item name="" identifier="oxygentankshelf2" nameidentifier="oxygentankshelf" category="Diving" tags="container,oxygentankcontainer,oxygentankrefiller,oxygentankshelf_2capacity" pickdistance="50" scale="0.5">
+      <Sprite name="Diving Suit Locker Small" texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="714,259,99,82" depth="0.84" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="800,296,115,96" depth="0.9" origin="0.43,0.47" />
       <!--TODO: add light textures for powered-on state?-->
       <Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
@@ -251,15 +251,10 @@
         <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
         <input name="power_in" displayname="connection.powerin" />
       </ConnectionPanel>
-      <ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
+      <ItemContainer hideitems="false" drawinventory="true" capacity="2" maxstacksize="1" slotsperrow="2" itempos="48,-24" iteminterval="0,-30" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
         <GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
         <StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
         <Containable items="oxygensource,weldingfuel" excludebroken="false" excludefullcondition="true">
-          <StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And">
-            <Conditional Voltage="gt 0.1" targetcontainer="true" targetitemcomponent="Powered" />
-            <Conditional HasTag="refillableoxygensource" />
-            <Conditional targetcontainer="true" HasStatusTag="!eq onfire" />
-          </StatusEffect>
         </Containable>
       </ItemContainer>
     </Item>

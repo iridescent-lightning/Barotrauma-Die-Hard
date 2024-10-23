@@ -373,7 +373,7 @@
         <QualityStat stattype="ExplosionDamage" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="fraggrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.5" impactsoundtag="impact_metal_heavy" isshootable="true">
+    <Item name="" identifier="fraggrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.255" impactsoundtag="impact_metal_heavy" isshootable="true">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="armcab" />
@@ -395,9 +395,9 @@
         <RequiredItem identifier="iron" />
         <RequiredItem identifier="uex" />
       </Fabricate>
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="580,770,54,63" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="217,305,40,61" depth="0.55" origin="0.5,0.5" />
-      <Body radius="20" height="10" density="30" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="768,896,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_high_resolution.png" sourcerect="975,942,47,82" depth="0.55" origin="0.5,0.5" />
+      <Body radius="66" height="10" density="30" />
       <ItemComponent characterusable="false">
         <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
         <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
@@ -710,10 +710,9 @@
         <Price storeidentifier="merchantmine" />
         <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
       </Price>
-      <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" />-->
-      <InventoryIcon texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="742,852,275,133" />
-      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="742,852,275,133" depth="0.55" origin="0.5,0.5" />
-      <!-- the item takes 10 seconds to break down in a deconstructor and turns into steel and plastic -->
+
+      <Sprite texture="%ModDir%/Items/Weapons/weapons2.png" sourcerect="377,3,277,125" depth="0.55" origin="0.5,0.5" />
+      <Body width="277" height="125" density="55" />
       <Deconstruct time="10">
         <Item identifier="steel" />
         <Item identifier="rubber" />
@@ -725,10 +724,9 @@
         <RequiredItem identifier="rubber" amount="1" />
         <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
       </Fabricate>
-      <!-- physics body -->
-      <Body width="275" height="133" density="25" />
+      
       <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
-      <Holdable slots="RightHand+LeftHand,Any" controlpose="true" aimpos="30,-30" handle1="22,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" holdangle="0" holdpos="30,-30" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" aimpos="30,-30" handle1="22,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" holdangle="0" holdpos="30,-30" />
       <RepairTool firedamage="20.0" structurefixamount="0.0" UsableIn="None" range="800" barrelpos="40,-5" fireprobability="0.2" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatpriority="90" spread="25" unskilledspread="25">
         <StatusEffect type="OnUse" target="NearbyItems" targettags="flamethrowerfueltank" range="50" condition="-2.5">
           <LuaHook name="Flamethrower" />
@@ -789,13 +787,15 @@
         <Price storeidentifier="merchantengineering" minavailable="4" multiplier="0.9" />
       </Price>
       <InventoryIcon texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" depth="0.6" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons2.png" sourcerect="2,0,155,273" depth="0.55" origin="0.5,0.5" />
       <Body width="156" height="225" density="100" />
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-        <sprite texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="819,11,156,329" limb="Torso" inherittexturescale="true" origin="0.9,0.5" scale="0.7" CanBeHiddenByOtherWearables="false" />
-        <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+        <sprite texture="%ModDir%/Items/Weapons/weapons2.png" sourcerect="190,3,157,318" limb="Torso" inherittexturescale="true" origin="0.9,0.5" scale="0.7" CanBeHiddenByOtherWearables="false" />
+        <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.6" setvalue="true" />
       </Wearable>
-      <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" >
+        <StatusEffect type="OnPicked" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
     </Item>
     <Item name="" identifier="smgmagazine" maxstacksize="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo" impactsoundtag="impact_metal_light">
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,960,64,64" />

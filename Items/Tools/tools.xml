@@ -752,7 +752,7 @@
         </Containable>
       </ItemContainer>
     </Item>
-    <Item name="" identifier="oxygentank" category="Diving,Equipment" maxstacksize="2" Tags="smallitem,oxygensource,refillableoxygensource" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" allowdroppingonswap="true" health="300">
+    <OxygenTank name="" identifier="oxygentank" category="Diving,Equipment" maxstacksize="2" Tags="smallitem,oxygensource,refillableoxygensource" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" allowdroppingonswap="true" health="300">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
       <Price baseprice="75">
         <Price storeidentifier="merchantoutpost" minavailable="10" />
@@ -780,9 +780,13 @@
         <RequiredItem identifier="aluminium" amount="2" />
       </Fabricate>
       <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="120" fabricationlimitmin="0" fabricationlimitmax="4" quality="0" />
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
-      <Body width="22" height="64" density="9.7" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="576,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Tools/DHtools2.png" sourcerect="762,12,39,112" depth="0.55" origin="0.5,0.5" />
+      <ContainedSprite name="OxygenTank in outpostoxygen" allowedcontainertags="outpostoxygengenerator" texture="%ModDir%/Items/Tools/DHtools2.png" sourcerect="709,134,34,69" depth="0.55" origin="0.5,0.55" scale="0.5" />
+      <ContainedSprite name="OxygenTank in oxygen" allowedcontainertags="oxygengenerator_submarine" texture="%ModDir%/Items/Tools/DHtools2.png" sourcerect="707,45,37,75" depth="0.55" origin="0.5,0.5" scale="0.5"/>
+      <ContainedSprite name="OxygenTank in shelf" allowedcontainertags="oxygentankshelf_2capacity" texture="%ModDir%/Items/Tools/DHtools2.png" sourcerect="764,141,66,29" depth="0.55" origin="0.5,0.5" scale="0.5"/>
+
+      <Body width="39" height="112" density="9.7" />
       <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnFire" target="This" Condition="-50.0" tags="onfire" duration="1" stackable="false" />
         <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
@@ -795,10 +799,7 @@
           </Explosion>
         </StatusEffect>
       </Holdable>
-      <Quality>
-        <QualityStat stattype="Condition" value="0.1" />
-      </Quality>
-    </Item>
+    </OxygenTank>
     <Item name="" identifier="oxygenitetank" category="Diving,Equipment" maxstacksize="2" health="600" Tags="smallitem,oxygensource" description="" scale="0.5" impactsoundtag="impact_metal_light" hideconditionbar="false">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
       <Price baseprice="175" displaynonempty="true">

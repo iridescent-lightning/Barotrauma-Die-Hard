@@ -284,25 +284,25 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name="" identifier="key1" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
+    <Item name="" identifier="key1" scale="0.25" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
       <PreferredContainer primary="mediumwindowedsteelcabinet,mediumsteelcabinet" amount="1" />
       <Body width="21" height="33" density="15" />
-      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="448,256,64,64" />
-      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="273,9,21,33" origin="0.5,0.5" />
+      
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.5" sourcerect="0,101,50,58" origin="0.5,0.5" />
       <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
     </Item>
     <Item name="" identifier="key2" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
       <PreferredContainer primary="steelcabinet" amount="1" />
       <Body width="20" height="30" density="15" />
-      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="320,256,64,64" />
-      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="201,9,20,30" origin="0.5,0.5" />
+      
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.25" sourcerect="113,104,53,60" origin="0.5,0.5" />
       <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
     </Item>
-    <Item name="" identifier="key3" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
+    <Item name="" identifier="key3" scale="0.25" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light" nameidentifier="containerkey">
       <PreferredContainer primary="divingsuitlocker" amount="1" />
-      <Body width="33" height="81" density="15" />
-      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="382,256,64,64" />
-      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.6" sourcerect="234,10,33,32" origin="0.5,0.5" />
+      <Body width="53" height="59" density="15" />
+      
+      <Sprite texture="%ModDir%/Items/Containers/containers2.png" depth="0.5" sourcerect="61,102,47,57" origin="0.5,0.5" />
       <Throwable slots="Any,RightHand,LeftHand" throwforce="1.5" aimpos="35,-10" handle1="-2,0" handle2="5,0" canbepicked="True" />
     </Item>
     <Item name="" identifier="keymaster" scale="0.5" category="Machine" tags="smallitem,midair_collide,containerkey" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_light">

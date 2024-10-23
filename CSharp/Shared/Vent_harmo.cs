@@ -61,9 +61,7 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
         private static float updateInterval = 0.1f;
         public static bool Update(float deltaTime, Camera cam, Vent __instance)
         {
-            updateTimer += deltaTime;
-            if (updateTimer > updateInterval)
-            {
+            
             Vent _ = __instance;
 
             if (_.item.CurrentHull == null || _.item.InWater) { return false; }
@@ -76,15 +74,14 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
             _.item.CurrentHull.Oxygen += _.oxygenFlow * deltaTime;
             _.OxygenFlow -= deltaTime * 1000.0f;
 
-            HullMod.AddGas(_.item.CurrentHull, "CO2", -CO2Flow * 80f, deltaTime); //higher co to make sure the vent can clear the room
-            HullMod.AddGas(_.item.CurrentHull, "CO", -PurifyingFlow * 30f, deltaTime);
-            HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow * 10f, deltaTime); //There is no CL
+            HullMod.AddGas(_.item.CurrentHull, "CO2", -CO2Flow, deltaTime); //higher co to make sure the vent can clear the room
+            HullMod.AddGas(_.item.CurrentHull, "CO", -PurifyingFlow, deltaTime);
+            HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow, deltaTime); //There is no CL
             if (HullMod.GetGas(_.item.CurrentHull, "Temperature") < 300f)
             {
                 HullMod.AddGas(_.item.CurrentHull, "Temperature", HeatFlow  * 10f, deltaTime);
             }
-            updateTimer = 0.0f;
-            }
+            
             return false;
         }
     }

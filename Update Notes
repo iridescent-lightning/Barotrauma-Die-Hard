@@ -81,5 +81,10 @@
     7. Updating finddivingsuit method due to new patch.
     8. Adding a post fix for auto cancel zoom during undocking.
     9. Associating sonar range with hertz. need to make network.
+    10. Adding various new sprits for items.
+    11. Fixing oxygengenerator can't refill bug.
+    12. Chaning oxygentank sprite and contained sprites
+    13. Chaning oxygenshelf sprite. Lowering capacity from 3 to 2
+    14. Adjusting oxygengenerator air filting capacity. Preventing co2 from stacking.
 
     
