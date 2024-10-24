@@ -227,36 +227,18 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 // Get the items at slot 0 from the second container
             Item oxygenCandle = secondItemContainer.Inventory.GetItemAt(0) as Item;
             
-            if (!turnedOn)
-            {   
-                CurrHeatingFlow = 0.0f;
-                CurrPurifyingFlow = 0.0f;
-                CurrRecycleFlow = 0.0f;
-                CurrFlow = 0.0f;
-                
-                VentMod.CO2Flow = 0.0f;
-                VentMod.PurifyingFlow = 0.0f;
-                VentMod.HeatFlow = 0.0f;
-                return;
-            }
-            else
-            {
-                //DebugConsole.NewMessage("Oxygen Generator is turned on");
-            }
-                if (oxygenCandle != null && oxygenCandle.Condition <= 0)
+            
+                if (!turnedOn || oxygenCandle == null || (oxygenCandle != null && oxygenCandle.Condition <= 0))
                 {
                     // Water tank is empty, set CurrFlow to 0
                     CurrFlow = 0.0f;
                     VentMod.CO2Flow = 0.0f;
                     VentMod.PurifyingFlow = 0.0f;
                     VentMod.HeatFlow = 0.0f;
-                }
-                else if (oxygenCandle == null)
-                {
-                    CurrFlow = 0.0f;
-                    VentMod.CO2Flow = 0.0f;
-                    VentMod.PurifyingFlow = 0.0f;
-                    VentMod.HeatFlow = 0.0f;
+
+                    CurrHeatingFlow = 0.0f;
+                    CurrPurifyingFlow = 0.0f;
+                    CurrRecycleFlow = 0.0f;
                 }
                 else
                 {

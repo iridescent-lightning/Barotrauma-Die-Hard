@@ -86,5 +86,11 @@
     12. Chaning oxygentank sprite and contained sprites
     13. Chaning oxygenshelf sprite. Lowering capacity from 3 to 2
     14. Adjusting oxygengenerator air filting capacity. Preventing co2 from stacking.
+64. 
+    1. Refactoring reactor container finding logic. Using dictionary to improve the performance.
+    2. Refactoring oxygengenerator codes. Combining three checks into one.
+    3. Adding dictionary clear for reactor container to avoid unwanted behaviors.
+    4. Now condition management of reactor coolant and reactor is server-side if multiplayer.
+    5. adding a item harmo template.
 
     

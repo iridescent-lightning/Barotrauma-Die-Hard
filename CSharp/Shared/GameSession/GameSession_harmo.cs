@@ -57,6 +57,11 @@ namespace BarotraumaDieHard
 
             SonarMod.ResetOriginalSonarRange();
             SonarMod.ClearSonarRangeDictionary();
+
+
+            ReactorDieHard.ClearRactorySecondContainerDictionary();
+    
+
         } 
     }
 }
