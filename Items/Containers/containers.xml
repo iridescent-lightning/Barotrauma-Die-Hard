@@ -80,6 +80,9 @@
         <!--<StatusEffect type="OnBroken" target="This">
 	  <DropContainedItems aimspread="250" rotationtype="Random"/>
 	  </StatusEffect>-->
+        <StatusEffect type="OnPicked" target="This">
+          <LuaHook name="AddTagForOpen" />
+        </StatusEffect>
         <SubContainer capacity="2" maxstacksize="1">
           <SlotIcon texture="Content/UI/CommandUIAtlas.png" sourcerect="639,926,128,80" origin="0.5,0.5" />
           <Containable items="mobilecontainer" />

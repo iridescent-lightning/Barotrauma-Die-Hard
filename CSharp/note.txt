@@ -156,3 +156,28 @@ property patch
 
 
 checkout the bindinflag, patching method and original method has to be the same (instance, static etc)
+
+
+
+_.OnInteract += () => 
+                    {
+                        DebugConsole.NewMessage("sdfsdf");
+                        spriteBatch.Begin();
+                        // Create an offset for adjustment
+                        Vector2 offset = new Vector2(-73.5f, -180f); // Adjust these values as needed
+
+                        // Calculate the draw position
+                        Vector2 drawPosition = new Vector2(_.DrawPosition.X, -_.DrawPosition.Y) + offset; // Apply offset
+
+                        // Draw the sprite at the adjusted position
+                        GameSessionDieHard.customSprite.Draw(
+                            spriteBatch, 
+                            drawPosition, 
+                            color: _.GetSpriteColor(), 
+                            rotate: 0, 
+                            scale: 0.5f, 
+                            origin: GameSessionDieHard.customSprite.Origin,
+                            depth: _.GetDrawDepth() - 0.1f
+                        );
+                        spriteBatch.End();
+                    };

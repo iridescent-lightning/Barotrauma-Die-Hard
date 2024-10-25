@@ -92,5 +92,7 @@
     3. Adding dictionary clear for reactor container to avoid unwanted behaviors.
     4. Now condition management of reactor coolant and reactor is server-side if multiplayer.
     5. adding a item harmo template.
+65.
+    1. Adding a opened sprite for mediumsteelcabinet.
 
     

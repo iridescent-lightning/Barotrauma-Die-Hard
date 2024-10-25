@@ -39,12 +39,12 @@
       <Sprite texture="Content/Items/Materials/Crystal.png" depth="1.0" sourcerect="0,4,1,1" origin="0.5,0.6" />
       <Body width="1" height="1" density="50" bodytype="Static" />
       <ElectricalDischarger duration="0.2" outdoorsonly="false" powerconsumption="0" range="1500" rangemultiplierinwalls="1">
-        <StatusEffect type="OnUse">
+        <StatusEffect type="OnUse" target="This">
           <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="6000" selectionmode="random" />
           <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="6000" />
           <Explosion range="7000.0" camerashake="3" stun="0" force="0.0" flames="false" shockwave="false" sparks="false" underwaterbubble="false" />
         </StatusEffect>
-        <StatusEffect type="OnUse">
+        <StatusEffect type="OnUse" target="This">
           <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="6000" selectionmode="Random" />
           <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="6000" />
           <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="6000" />

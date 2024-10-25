@@ -147,6 +147,16 @@ Hook.Add("KeyLockDivingLocker","KeyLockDivingLocker",function(effect, deltaTime,
 	end
 end)
 
+
+
+Hook.Add("AddTagForOpen","AddTagForOpen",function(effect, deltaTime, item, targets, worldPosition)
+
+	item.AddTag("draw_container_open")
+end)
+
+
+
+
 --LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.AICharacter"], "PlayerInput")
 Hook.Add("Flamethrower","Flamethrower",function(effect, deltaTime, item, targets, worldPosition)
 local repairTool = item.GetComponentString("RepairTool") 

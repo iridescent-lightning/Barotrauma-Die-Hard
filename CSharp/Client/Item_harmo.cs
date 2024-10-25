@@ -53,54 +53,45 @@ namespace BarotraumaDieHard
 
         public static void Draw(SpriteBatch spriteBatch, bool editing, bool back, Color? overrideColor, Item __instance)
         {
-            //Sprite customSprite = LoadCustomSprite("%ModDir%/Items/InventoryIconAtlas.png"); // Adjust the path and filename
+            Item _ = __instance;
+            
+            if (GameSessionDieHard.texture != null && !GameSessionDieHard.texture.IsDisposed)
+            {
+                
+                
+                if (_.Prefab.Identifier == "mediumsteelcabinet" && _.HasTag("draw_container_open"))
+                {
+                    ItemContainer itemContainer = _.GetComponent<ItemContainer>();
 
-                // Draw the custom sprite
-                //Vector2 drawPosition = new Vector2(__instance.DrawPosition.X, -__instance.DrawPosition.Y); // Adjust position if needed
-                //customSprite.Draw(spriteBatch, drawPosition, Color.White); 
-                //DebugConsole.NewMessage(ContentXElement.ContentPath("%ModDir/Items/InventoryIconAtlas.png"));
+                    
+                      // Create an offset for adjustment
+                        Vector2 offset = new Vector2(-73.5f, -180f); // Adjust these values as needed
+
+                        // Calculate the draw position
+                        Vector2 drawPosition = new Vector2(_.DrawPosition.X, -_.DrawPosition.Y) + offset; // Apply offset
+
+                        // Draw the sprite at the adjusted position
+                        GameSessionDieHard.customSprite.Draw(
+                            spriteBatch, 
+                            drawPosition, 
+                            color: _.GetSpriteColor(), 
+                            rotate: 0, 
+                            scale: 0.5f, 
+                            origin: GameSessionDieHard.customSprite.Origin,
+                            depth: _.GetDrawDepth() - 0.1f
+                        ); 
+                    
+                }
+
+                    
+                
+                
+            }
+
+                
         }
 
-        /*private static Sprite LoadCustomSprite(string spritePath)
-        {
-            // Load your sprite using the ContentManager
-            var texture = GameMain.Instance.Content.Load<Sprite>(spritePath);
-            return new Sprite(texture);
-        }*/
-        public static Sprite? LoadCustomSprite(string spriteFileName)
-    {
-        // Assuming "MyMod" is the name of your mod
-        string modName = "Barotrauma Die Hard";
         
-        // Get the content packages
-        var packages = ContentPackageManager.AllPackages;
-
-        // Find your mod package
-        ContentPackage? myModPackage = packages.FirstOrDefault(p => p.Name.Equals(modName, StringComparison.OrdinalIgnoreCase));
-
-        if (myModPackage == null)
-        {
-            Console.WriteLine($"Could not find mod package: {modName}");
-            return null;
-        }
-
-        // Create a ContentPath for the sprite
-        ContentPath spritePath = ContentPath.FromRaw(myModPackage, $"{spriteFileName}"); // Adjust the relative path as necessary
-
-        // Use the ContentPath to load the sprite
-        if (!spritePath.IsPathNullOrEmpty())
-        {
-            string fullPath = spritePath.FullPath;
-
-            var texture = GameMain.Instance.Content.Load<Sprite>(fullPath);
-            return new Sprite(texture);
-
-        }
-
-         // Throw an exception if sprite could not be loaded
-    throw new Exception($"Sprite could not be loaded from path: {spritePath.Value}");
-        
-    }
 
     }
 }

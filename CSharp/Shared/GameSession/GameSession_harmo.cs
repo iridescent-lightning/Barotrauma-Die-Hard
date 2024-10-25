@@ -15,8 +15,10 @@ using Barotrauma.Extensions;
 using Barotrauma;
 #if CLIENT
 using Barotrauma.Lights;
+using Microsoft.Xna.Framework.Graphics;
 #endif
 using Barotrauma.Extensions;
+using System.Reflection;
 
 
 using HarmonyLib;
@@ -37,6 +39,14 @@ namespace BarotraumaDieHard
                 original: typeof(GameSession).GetMethod("EndRound"),
                 postfix: new HarmonyMethod(typeof(GameSessionDieHard).GetMethod(nameof(EndRound)))
             );
+
+
+            var originalStartRound = typeof(GameSession).GetMethod("StartRound", BindingFlags.Public | BindingFlags.Instance, null, 
+                new Type[] { typeof(LevelData), typeof(bool), typeof(SubmarineInfo), typeof(SubmarineInfo) }, null);
+
+            var postfixStartRound = new HarmonyMethod(typeof(GameSessionDieHard).GetMethod(nameof(StartRound), BindingFlags.Public | BindingFlags.Static));
+            
+            harmony.Patch(originalStartRound, null, postfixStartRound);
         }
 
         public void OnLoadCompleted() { }
@@ -46,6 +56,39 @@ namespace BarotraumaDieHard
         {
             harmony.UnpatchAll();
             harmony = null;
+        }
+
+#if CLIENT
+        public static Texture2D texture;
+
+        public static Sprite customSprite;
+#endif
+
+        public static void StartRound(LevelData levelData, bool mirrorLevel, SubmarineInfo startOutpost, SubmarineInfo endOutpost)
+        {
+
+#if CLIENT
+                string modTexturePath = "%ModDir%/Items/Containers/containers_opened.png";
+                ContentPackage modPackage = ContentPackageManager.AllPackages.FirstOrDefault(p => p.Name == "Barotrauma Die Hard");
+                ContentPath contentPath = ContentPath.FromRaw(modPackage, modTexturePath);
+
+                texture = Sprite.LoadTexture(contentPath.FullPath);
+                if (texture != null && !texture.IsDisposed)
+                {
+                    // Define the source rectangle (which part of the texture you want to use)
+                    // You can use the entire texture or a part of it
+                    Rectangle sourceRect = new Rectangle(0, 0, 149, 360);
+
+                    // Define the origin point (optional, for rotation or scaling)
+                    Vector2 origin = new Vector2(sourceRect.Width / 4, sourceRect.Height / 4); // Set origin to center
+
+                    // Create a sprite using the loaded texture
+                    customSprite = new Sprite(texture, sourceRect, origin);
+
+                    Sprite.AddToList(customSprite);
+                }
+#endif
+
         }
 
         

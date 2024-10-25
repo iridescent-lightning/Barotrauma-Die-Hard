@@ -49,7 +49,8 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 	local soundPrefab = ItemPrefab.GetItemPrefab("sfx_mediumsteelcab_close")
 	if (item.HasTag('mediumsteelcabinetsfx')) or (item.HasTag('mediumwindowedsteelcabinet')) then 
 		item.OnDeselect = function()
-		Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
+			item.RemoveTag("draw_container_open")
+			Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
 		end)
 		end
 	end
