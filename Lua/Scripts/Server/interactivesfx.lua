@@ -14,7 +14,11 @@ end)--]]
 
 
 Hook.Add("item.created", "playsound_largesteelcab", function(item)
-	
+	--universial deselect. For those who alreay have deselect action defined, individual tag remove is required.
+	item.OnDeselect = function()
+		item.RemoveTag("draw_container_open")
+	end
+
 	if not (item.HasTag('playinteractsound')) then return end
 	
 	
@@ -29,7 +33,8 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 	local soundPrefab = ItemPrefab.GetItemPrefab("sfx_largesteelcab_close")
 	if (item.HasTag('steelcabinetsfx')) then 
 		item.OnDeselect = function()
-		Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
+			item.RemoveTag("draw_container_open")
+			Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
 		end)
 		end
 	end
@@ -94,7 +99,8 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 	local soundPrefab = ItemPrefab.GetItemPrefab("sfx_sec_idcardclose")
 	if (item.HasTag('securecontainer')) then 
 		item.OnDeselect = function()
-		Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
+			item.RemoveTag("draw_container_open")
+			Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
 		end)
 		end
 	end
@@ -112,7 +118,8 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 	local soundPrefab = ItemPrefab.GetItemPrefab("sfx_medcontainer_close")
 	if (item.HasTag('medcontainer')) then 
 		item.OnDeselect = function()
-		Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
+			item.RemoveTag("draw_container_open")
+			Entity.Spawner.AddItemToSpawnQueue(soundPrefab, item.WorldPosition, nil, nil, function(item)
 		end)
 		end
 	end

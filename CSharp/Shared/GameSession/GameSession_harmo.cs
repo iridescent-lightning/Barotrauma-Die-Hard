@@ -59,34 +59,28 @@ namespace BarotraumaDieHard
         }
 
 #if CLIENT
-        public static Texture2D texture;
+        
 
-        public static Sprite customSprite;
+        public static Dictionary<string, Sprite> customSprites = new Dictionary<string, Sprite>();
+
+
+        private static ContentPackage modPackage = ContentPackageManager.AllPackages.FirstOrDefault(p => p.Name == "Barotrauma Die Hard");
 #endif
 
         public static void StartRound(LevelData levelData, bool mirrorLevel, SubmarineInfo startOutpost, SubmarineInfo endOutpost)
         {
 
 #if CLIENT
-                string modTexturePath = "%ModDir%/Items/Containers/containers_opened.png";
-                ContentPackage modPackage = ContentPackageManager.AllPackages.FirstOrDefault(p => p.Name == "Barotrauma Die Hard");
-                ContentPath contentPath = ContentPath.FromRaw(modPackage, modTexturePath);
+                
+            AddTextureToSpriteList("mediumsteelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(0, 0, 149, 360), originPercentage: new Vector2(0.5f, 0.495f));
+            AddTextureToSpriteList("mediumwindowedsteelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(154, 0, 149, 360), originPercentage: new Vector2(0.52f, 0.495f));
+            AddTextureToSpriteList("steelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(313, 0, 371, 359), originPercentage: new Vector2(0.48f, 0.485f));
+            AddTextureToSpriteList("medcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(814, 252, 210, 321), originPercentage: new Vector2(0.5f, 0.48f));
+            //AddTextureToSpriteList("seccabinet_open_0", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(905, 14, 105, 160));
+            AddTextureToSpriteList("seccabinet_open_1", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(773, 8, 105, 209), originPercentage: new Vector2(0.5f, 0.42f));
+            AddTextureToSpriteList("toxiccabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(684, 426, 111, 155), originPercentage: new Vector2(0.5f, 0.48f));
+            AddTextureToSpriteList("supplycabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(827, 621, 189, 132), originPercentage: new Vector2(0.7f, 0.498f));
 
-                texture = Sprite.LoadTexture(contentPath.FullPath);
-                if (texture != null && !texture.IsDisposed)
-                {
-                    // Define the source rectangle (which part of the texture you want to use)
-                    // You can use the entire texture or a part of it
-                    Rectangle sourceRect = new Rectangle(0, 0, 149, 360);
-
-                    // Define the origin point (optional, for rotation or scaling)
-                    Vector2 origin = new Vector2(sourceRect.Width / 4, sourceRect.Height / 4); // Set origin to center
-
-                    // Create a sprite using the loaded texture
-                    customSprite = new Sprite(texture, sourceRect, origin);
-
-                    Sprite.AddToList(customSprite);
-                }
 #endif
 
         }
@@ -106,5 +100,36 @@ namespace BarotraumaDieHard
     
 
         } 
+
+
+
+#if CLIENT
+        public static void AddTextureToSpriteList(string spriteKey, string filepath, Rectangle sourceRect, Vector2? offset = null, Vector2? originPercentage = null, float rotation = 0)
+        {
+            string modTexturePath = filepath;
+            ContentPath contentPath = ContentPath.FromRaw(modPackage, modTexturePath);
+
+            if (offset == null)
+                offset = Vector2.Zero;
+
+            Texture2D texture = Sprite.LoadTexture(contentPath.FullPath);
+            if (texture != null && !texture.IsDisposed)
+            {
+                Sprite newSprite = new Sprite(texture, sourceRect, offset, rotation, null);
+
+                // Calculate origin based on the percentage, defaulting to the center if no percentage is specified
+                Vector2 origin = originPercentage.HasValue 
+                    ? new Vector2(sourceRect.Width * originPercentage.Value.X, sourceRect.Height * originPercentage.Value.Y) 
+                    : new Vector2(sourceRect.Width / 2, sourceRect.Height / 2);
+                
+                newSprite.Origin = origin;
+
+                // Add the sprite to the dictionary with the specified key
+                customSprites[spriteKey] = newSprite;
+            }
+        }
+ 
+
+#endif
     }
 }

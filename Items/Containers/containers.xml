@@ -31,6 +31,9 @@
       <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
         <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
         <Containable items="smallitem" />
+        <StatusEffect type="OnPicked" target="This">
+          <LuaHook name="AddTagForOpen" />
+        </StatusEffect>
       </ItemContainer>
     </Item>
     <Item name="" identifier="toxcabinet" tags="container,toxcontainer,upgradablecontainer,playinteractsound" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
@@ -41,6 +44,9 @@
         <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
         <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
         <Containable items="smallitem,chem,medical,mediumitem" />
+        <StatusEffect type="OnPicked" target="This">
+          <LuaHook name="AddTagForOpen" />
+        </StatusEffect>
       </ItemContainer>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
@@ -78,11 +84,8 @@
         <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
         <Containable items="smallitem,mediumitem" />
         <!--<StatusEffect type="OnBroken" target="This">
-	  <DropContainedItems aimspread="250" rotationtype="Random"/>
-	  </StatusEffect>-->
-        <StatusEffect type="OnPicked" target="This">
-          <LuaHook name="AddTagForOpen" />
-        </StatusEffect>
+          <DropContainedItems aimspread="250" rotationtype="Random"/>
+        </StatusEffect>-->
         <SubContainer capacity="2" maxstacksize="1">
           <SlotIcon texture="Content/UI/CommandUIAtlas.png" sourcerect="639,926,128,80" origin="0.5,0.5" />
           <Containable items="mobilecontainer" />
@@ -92,6 +95,7 @@
         <!--<SlotIcon slotindex="" texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="255,255,64,64" origin="0.5,0.5" />-->
         <StatusEffect type="OnPicked" target="This">
           <LuaHook name="KeyLockMedium" />
+          <LuaHook name="AddTagForOpen" />
         </StatusEffect>
         <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.35,-0.1" />
         <Containable items="key1,keymaster" excludebroken="true" />
@@ -108,7 +112,7 @@
 		</StatusEffect>-->
       </Repairable>
     </Item>
-    <Item name="" aliases="Diving Gear Cabinet" identifier="mediumwindowedsteelcabinet" category="Diving" tags="locker,container,mediumwindowedsteelcabinet,playinteractsound, damage_by_passing_bullet" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
+    <Item name="" aliases="Diving Gear Cabinet" identifier="mediumwindowedsteelcabinet" category="Diving" tags="locker,container,mediumwindowedsteelcabinet,playinteractsound,mediumsteelcabinetsfx, damage_by_passing_bullet" linkable="true" pickdistance="150" waterproof="true" scale="0.5" damagedbyexplosions="true">
       <Sprite texture="containers.png" depth="0.84" sourcerect="178,1,168,377" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="183,11,178,371" depth="0.9" origin="0.43,0.47" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="178,1,168,377" depth="0.84" origin="0.5,0.5" maxcondition="30" />
@@ -127,6 +131,7 @@
         <!--<SlotIcon slotindex="" texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="255,255,64,64" origin="0.5,0.5" />-->
         <StatusEffect type="OnPicked" target="This">
           <LuaHook name="KeyLockMedium" />
+          <LuaHook name="AddTagForOpen" />
         </StatusEffect>
         <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.35,-0.1" />
         <Containable items="key1,keymaster" excludebroken="true" />
@@ -159,6 +164,7 @@
         <!--<SlotIcon slotindex="" texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="255,255,64,64" origin="0.5,0.5" />-->
         <StatusEffect type="OnPicked" target="This">
           <LuaHook name="KeyLockLarge" />
+          <LuaHook name="AddTagForOpen" />
         </StatusEffect>
         <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.35,-0.1" />
         <Containable items="key2,keymaster" excludebroken="true" />
@@ -178,6 +184,9 @@
       <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
         <GuiFrame relativesize="0.25,0.45" anchor="Center" slotsperrow="6" style="ItemUI" />
         <Containable items="smallitem,chem,medical,mediumitem" />
+        <StatusEffect type="OnPicked" target="This">
+          <LuaHook name="AddTagForOpen" />
+        </StatusEffect>
       </ItemContainer>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
@@ -267,6 +276,9 @@
         <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
         <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
         <Containable items="smallitem,mediumitem" />
+        <StatusEffect type="OnPicked" target="This">
+          <LuaHook name="AddTagForOpen" />
+        </StatusEffect>
       </ItemContainer>
     </Item>
     <Item name="" identifier="crateshelf" tags="container,cargocontainer" linkable="true" canflipx="false" pickdistance="150" scale="0.5">

@@ -52,46 +52,66 @@ namespace BarotraumaDieHard
 		}
 
         public static void Draw(SpriteBatch spriteBatch, bool editing, bool back, Color? overrideColor, Item __instance)
+        {           
+            // sprite name, drawed item, at which tag to daw
+            DrawCustomSprite("mediumsteelcabinet_open", "mediumsteelcabinet", "draw_container_open", __instance, spriteBatch);
+            DrawCustomSprite("mediumwindowedsteelcabinet_open", "mediumwindowedsteelcabinet", "draw_container_open", __instance, spriteBatch);        
+            DrawCustomSprite("steelcabinet_open", "steelcabinet", "draw_container_open", __instance, spriteBatch);
+               
+            DrawCustomSprite("medcabinet_open", "medcabinet", "draw_container_open", __instance, spriteBatch);
+            //DrawCustomSprite("seccabinet_open_0", "securesteelcabinet", "draw_container_open", __instance, spriteBatch);
+            DrawCustomSprite("seccabinet_open_1", "securesteelcabinet", "draw_container_open", __instance, spriteBatch);
+            DrawCustomSprite("toxiccabinet_open", "toxcabinet", "draw_container_open", __instance, spriteBatch);
+            DrawCustomSprite("supplycabinet_open", "suppliescabinet", "draw_container_open", __instance, spriteBatch);
+
+
+
+
+
+
+
+
+
+
+
+
+        }   
+
+
+        private static void DrawCustomSprite(string spriteName, string targetItemIdentifier, string targetItemTag, Item targetItem, SpriteBatch spriteBatch)
         {
-            Item _ = __instance;
-            
-            if (GameSessionDieHard.texture != null && !GameSessionDieHard.texture.IsDisposed)
+            // Try to get the sprite by its name from the dictionary
+            if (GameSessionDieHard.customSprites.TryGetValue(spriteName, out Sprite customSprite))
             {
-                
-                
-                if (_.Prefab.Identifier == "mediumsteelcabinet" && _.HasTag("draw_container_open"))
+                if (customSprite == null)
                 {
-                    ItemContainer itemContainer = _.GetComponent<ItemContainer>();
-
-                    
-                      // Create an offset for adjustment
-                        Vector2 offset = new Vector2(-73.5f, -180f); // Adjust these values as needed
-
-                        // Calculate the draw position
-                        Vector2 drawPosition = new Vector2(_.DrawPosition.X, -_.DrawPosition.Y) + offset; // Apply offset
-
-                        // Draw the sprite at the adjusted position
-                        GameSessionDieHard.customSprite.Draw(
-                            spriteBatch, 
-                            drawPosition, 
-                            color: _.GetSpriteColor(), 
-                            rotate: 0, 
-                            scale: 0.5f, 
-                            origin: GameSessionDieHard.customSprite.Origin,
-                            depth: _.GetDrawDepth() - 0.1f
-                        ); 
-                    
+                    DebugConsole.NewMessage("disposed!");
+                    return;
                 }
+                // Check if the item matches the specified identifier and tag
+                if (targetItem.Prefab.Identifier == targetItemIdentifier && targetItem.HasTag(targetItemTag))
+                {
+                    // Calculate the draw position. Need to invert Y-axis.
+                    Vector2 drawPosition = new Vector2(targetItem.DrawPosition.X, -targetItem.DrawPosition.Y);
 
-                    
-                
-                
+                    // Draw the sprite at the adjusted position
+                    customSprite.Draw(
+                        spriteBatch, 
+                        pos: drawPosition, 
+                        color: targetItem.GetSpriteColor(), 
+                        rotate: targetItem.Rotation, 
+                        scale: targetItem.Scale, 
+                        origin: customSprite.Origin,
+                        depth: targetItem.GetDrawDepth() - 0.01f
+                    );
+                }
             }
+        }
+
 
                 
         }
 
-        
 
-    }
+        
 }
