@@ -96,9 +96,15 @@
     1. Adding a opened sprite for mediumsteelcabinet.
 65.1.
     1. Adding new sprites for opened containers. Not implemented.
-66
+66.
     1. Finalizing the custom sprite feature. Now we can have as many custom sprite as we want.
-    2. Fixing flamethrower fuel tank icon mission bug.
+    2. Fixing flamethrower fuel tank icon missiong bug.
     3. Adding opening sprite effects for all major cabinets. Multiplayer test passed.
+67.
+    1. Removing rifle from game.
+    2. Refactoring logic of custome sprite drawing. Preventing texture disposed bug. Aslo improving the loading performance.
+    3. Adding empty repairable client patch.
+    4. Adding overload sprite drawing method
+    5. Adding opened sprite for junctionbox.
 
     

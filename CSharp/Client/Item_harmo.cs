@@ -53,7 +53,7 @@ namespace BarotraumaDieHard
 
         public static void Draw(SpriteBatch spriteBatch, bool editing, bool back, Color? overrideColor, Item __instance)
         {           
-            // sprite name, drawed item, at which tag to daw
+            // sprite name, drawed item identifier, at which tag to daw
             DrawCustomSprite("mediumsteelcabinet_open", "mediumsteelcabinet", "draw_container_open", __instance, spriteBatch);
             DrawCustomSprite("mediumwindowedsteelcabinet_open", "mediumwindowedsteelcabinet", "draw_container_open", __instance, spriteBatch);        
             DrawCustomSprite("steelcabinet_open", "steelcabinet", "draw_container_open", __instance, spriteBatch);
@@ -63,6 +63,7 @@ namespace BarotraumaDieHard
             DrawCustomSprite("seccabinet_open_1", "securesteelcabinet", "draw_container_open", __instance, spriteBatch);
             DrawCustomSprite("toxiccabinet_open", "toxcabinet", "draw_container_open", __instance, spriteBatch);
             DrawCustomSprite("supplycabinet_open", "suppliescabinet", "draw_container_open", __instance, spriteBatch);
+            DrawCustomSprite("junctionbox_open_nodamage",  "junctionbox", "junctionbox_openlid", __instance, spriteBatch);
 
 
 
@@ -78,16 +79,12 @@ namespace BarotraumaDieHard
         }   
 
 
-        private static void DrawCustomSprite(string spriteName, string targetItemIdentifier, string targetItemTag, Item targetItem, SpriteBatch spriteBatch)
+        public static void DrawCustomSprite(string spriteName, string targetItemIdentifier, string targetItemTag, Item targetItem, SpriteBatch spriteBatch)
         {
             // Try to get the sprite by its name from the dictionary
             if (GameSessionDieHard.customSprites.TryGetValue(spriteName, out Sprite customSprite))
             {
-                if (customSprite == null)
-                {
-                    DebugConsole.NewMessage("disposed!");
-                    return;
-                }
+                
                 // Check if the item matches the specified identifier and tag
                 if (targetItem.Prefab.Identifier == targetItemIdentifier && targetItem.HasTag(targetItemTag))
                 {
@@ -104,8 +101,36 @@ namespace BarotraumaDieHard
                         origin: customSprite.Origin,
                         depth: targetItem.GetDrawDepth() - 0.01f
                     );
+                    
+                    
                 }
             }
+        }
+
+
+        public static void DrawCustomSprite(string spriteName, Item targetItem, SpriteBatch spriteBatch)
+        {
+            
+            // Try to get the sprite by its name from the dictionary
+            if (GameSessionDieHard.customSprites.TryGetValue(spriteName, out Sprite customSprite))
+            {
+                    // Calculate the draw position. Need to invert Y-axis.
+                    Vector2 drawPosition = new Vector2(targetItem.DrawPosition.X, -targetItem.DrawPosition.Y);
+
+                    // Draw the sprite at the adjusted position
+                    customSprite.Draw(
+                        spriteBatch, 
+                        pos: drawPosition, 
+                        color: targetItem.GetSpriteColor(), 
+                        rotate: targetItem.Rotation, 
+                        scale: targetItem.Scale, 
+                        origin: customSprite.Origin,
+                        depth: targetItem.GetDrawDepth() - 0.01f
+                    );
+                    
+                
+            }
+            
         }
 
 

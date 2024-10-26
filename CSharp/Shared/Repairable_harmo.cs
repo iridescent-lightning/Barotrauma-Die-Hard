@@ -15,7 +15,7 @@ using Barotrauma;
 
 namespace BarotraumaDieHard
 {
-    class RepairableDieHard  : IAssemblyPlugin
+    partial class RepairableDieHard  : IAssemblyPlugin
     {
 
 
@@ -30,6 +30,14 @@ namespace BarotraumaDieHard
                 original: typeof(Repairable).GetMethod("CheckCharacterSuccess"),
                 prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(CheckCharacterSuccessPrefix)))
             );
+
+#if CLIENT
+            harmony.Patch
+            (
+                original: typeof(Repairable).GetMethod("DrawHUD"),
+                prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(DrawHUDPrefix)))
+            );
+#endif
             
         }
 

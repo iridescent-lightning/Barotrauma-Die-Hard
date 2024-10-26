@@ -154,6 +154,11 @@ Hook.Add("AddTagForOpen","AddTagForOpen",function(effect, deltaTime, item, targe
 	item.AddTag("draw_container_open")
 end)
 
+Hook.Add("JunctionboxOpen","JunctionboxOpen",function(effect, deltaTime, item, targets, worldPosition)
+
+	item.AddTag("junctionbox_openlid")
+end)
+
 
 
 

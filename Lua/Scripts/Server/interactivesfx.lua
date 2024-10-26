@@ -17,6 +17,7 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 	--universial deselect. For those who alreay have deselect action defined, individual tag remove is required.
 	item.OnDeselect = function()
 		item.RemoveTag("draw_container_open")
+		item.RemoveTag("junctionbox_openlid")
 	end
 
 	if not (item.HasTag('playinteractsound')) then return end

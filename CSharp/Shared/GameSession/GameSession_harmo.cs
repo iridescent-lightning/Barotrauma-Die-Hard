@@ -80,6 +80,8 @@ namespace BarotraumaDieHard
             AddTextureToSpriteList("seccabinet_open_1", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(773, 8, 105, 209), originPercentage: new Vector2(0.5f, 0.42f));
             AddTextureToSpriteList("toxiccabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(684, 426, 111, 155), originPercentage: new Vector2(0.5f, 0.48f));
             AddTextureToSpriteList("supplycabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(827, 621, 189, 132), originPercentage: new Vector2(0.7f, 0.498f));
+            AddTextureToSpriteList("junctionbox_open_nodamage", "%ModDir%/Items/Electricity/poweritemopened.png", new Rectangle(0, 0, 194, 178), originPercentage: new Vector2(0.3f, 0.498f));
+
 
 #endif
 
@@ -112,24 +114,23 @@ namespace BarotraumaDieHard
             if (offset == null)
                 offset = Vector2.Zero;
 
-            Texture2D texture = Sprite.LoadTexture(contentPath.FullPath);
-            if (texture != null && !texture.IsDisposed)
-            {
-                Sprite newSprite = new Sprite(texture, sourceRect, offset, rotation, null);
+            // Initialize the Sprite without immediately loading the texture
+            Sprite newSprite = new Sprite(contentPath.FullPath, sourceRect, offset, rotation);
 
-                // Calculate origin based on the percentage, defaulting to the center if no percentage is specified
-                Vector2 origin = originPercentage.HasValue 
-                    ? new Vector2(sourceRect.Width * originPercentage.Value.X, sourceRect.Height * originPercentage.Value.Y) 
-                    : new Vector2(sourceRect.Width / 2, sourceRect.Height / 2);
-                
-                newSprite.Origin = origin;
+            // Enable lazy loading if applicable
+            newSprite.LazyLoad = true;
 
-                // Add the sprite to the dictionary with the specified key
-                customSprites[spriteKey] = newSprite;
-            }
+            // Calculate origin based on the percentage, defaulting to the center if no percentage is specified
+            Vector2 origin = originPercentage.HasValue 
+                ? new Vector2(sourceRect.Width * originPercentage.Value.X, sourceRect.Height * originPercentage.Value.Y) 
+                : new Vector2(sourceRect.Width / 2, sourceRect.Height / 2);
+            
+            newSprite.Origin = origin;
+
+            // Add the sprite to the dictionary with the specified key
+            customSprites[spriteKey] = newSprite;
         }
- 
-
 #endif
+
     }
 }
