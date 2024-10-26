@@ -110,5 +110,10 @@
     1. Lowering fusedamage from 10~50 to 10~35.
     2. Adding junctionbox damage open sprites.
     3. Adding battery damage open sprites.
+69.
+    1. Changing Berilla oxygenerator output from 5000 to 2000.
+    2. Rescaling ui size of oxygenerator and junctionbox slot.
+    3. Overhualing oxygenerator. Adding new GUI elements. Adding switch for each slot to recharge oxygentanks
+    4. Adding new GUI element: DieHardSwitchClassic.
 
     

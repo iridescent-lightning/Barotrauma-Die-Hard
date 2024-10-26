@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Barotrauma Die Hard" modversion="4.6.317" corepackage="False" steamworkshopid="2679111898" gameversion="1.6.17.0">
+<contentpackage name="Barotrauma Die Hard" modversion="4.6.318" corepackage="False" steamworkshopid="2679111898" gameversion="1.6.17.0">
   <Item file="%ModDir%/Items/Diving/divinggear.xml" />
   <Item file="%ModDir%/Items/Weapons/weapons.xml" />
   <Item file="%ModDir%/Items/Weapons/small_arms.xml" />
@@ -153,7 +153,6 @@
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_HallwayH.sub" />
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Junction2.sub" />
   <OutpostModule file="%ModDir%/Cave_Room_1.sub" />
-  <Submarine file="%ModDir%/Berilia_DieHard.sub" />
   <Submarine file="%ModDir%/Herja_DieHard.sub" />
   <Submarine file="%ModDir%/Kastrull_DieHard.sub" />
   <Submarine file="%ModDir%/Orca_DieHard.sub" />
@@ -182,4 +181,5 @@
   <Submarine file="%ModDir%/Dugong_DieHard.sub" />
   <Submarine file="%ModDir%/Humpback_DieHard.sub" />
   <Submarine file="%ModDir%/0test.sub" />
+  <Submarine file="%ModDir%/Berilia_DieHard.sub" />
 </contentpackage>

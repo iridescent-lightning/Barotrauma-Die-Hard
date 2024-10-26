@@ -43,7 +43,7 @@
         </StatusEffect>
       </CustomJunctionBox>
       <ItemContainer capacity="1" hideitems="true" canbeselected="true" maxstacksize="1">
-        <GuiFrame relativesize="0.15,0.2" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
+        <GuiFrame relativesize="0.113,0.155" anchor="Center" canbeselected="true" minsize="110,220" relativeoffset="0.1,0.0" style="ItemUI" />
         <Containable items="junctionboxfuse" />
         <StatusEffect type="OnBroken" target="This">
           <LuaHook name="junctionboxfusedamage" />

@@ -707,6 +707,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <EnginePowerConsumption>Power Consumption</EnginePowerConsumption>
   <KW>KW</KW>
   <O2>oxygen</O2>
+  <oxygeneratornui.powerslidertext>Air  Recyle  Rate</oxygeneratornui.powerslidertext>
+  <oxygeneratornui.refill>Refill</oxygeneratornui.refill>
   <prograssbar.Lubricating>Lubercating</prograssbar.Lubricating>
   <turbineoutput>turbineoutput</turbineoutput>
   <TurbineRateSliderText>Turbine Rate</TurbineRateSliderText>

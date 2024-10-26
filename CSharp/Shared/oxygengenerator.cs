@@ -20,7 +20,12 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
     class CustomOxygenGenerator : OxygenGenerator
     {
         private ItemContainer[] itemContainers; // Change to an array
+        private ItemContainer firstItemContainer; // Add a second ItemContainer
         private ItemContainer secondItemContainer; // Add a second ItemContainer
+
+        private bool[] isChargingOxygenTank;
+
+        private Item oxygenCandle;
         
 
         private float minGeneratedAmountFactor = 0.1f;
@@ -98,8 +103,12 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 return;  // Return or handle the error appropriately
             }
 
+            firstItemContainer = itemContainers[0];
             // Access the second ItemContainer from the array
             secondItemContainer = itemContainers[1];
+
+            
+            
 #if CLIENT
             powerSlider.BarScroll = 1.0f;
     
@@ -114,28 +123,39 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
         {
             ventUpdateTimer = Rand.Range(0.0f, VentUpdateInterval);
             IsActive = true;
+
+            // Inside the constructor or initialization method:
+            isChargingOxygenTank = new bool[5]; // For 5 switches
+            
 #if CLIENT
             if (GuiFrame == null) { return; }
             if (mainFrame == null)
             {
-                mainFrame = new GUIFrame(new RectTransform(new Vector2(0.95f, 0.95f), GuiFrame.RectTransform, Anchor.Center), null);
+                mainFrame = new GUIFrame(new RectTransform(new Vector2(0.95f, 0.55f), GuiFrame.RectTransform, Anchor.TopCenter), null);
             }
 
-            var powerButtonArea = new GUIFrame(new RectTransform(new Vector2(0.25f, 0.5f), mainFrame.RectTransform, Anchor.CenterLeft)
-            {
-                RelativeOffset = new Vector2(0, 0.1f)
-            }, style: null);
 
-            var powerLightArea = new GUIFrame(new RectTransform(new Vector2(0.2f, 0.2f), powerButtonArea.RectTransform, Anchor.TopRight), style: null);
+            new GUIFrame(new RectTransform(new Vector2(1.0f, 0.01f), mainFrame.RectTransform, Anchor.BottomCenter){RelativeOffset = new Vector2(0, 0)}, style: "HorizontalLine");
+
+            var powerLightArea = new GUIFrame(new RectTransform(new Vector2(0.1f, 0.1f), mainFrame.RectTransform, Anchor.TopLeft){RelativeOffset = new Vector2(0.02f, 0.1f)}, style: null);
             powerLight = new GUITickBox(new RectTransform(Vector2.One, powerLightArea.RectTransform, Anchor.Center),
                 TextManager.Get("PowerLabel"), font: GUIStyle.SubHeadingFont, style: "IndicatorLightPower")
             {
                 CanBeFocused = false
             };
 
-            PowerButton = new GUIButton(new RectTransform(new Vector2(1f, 1f), powerButtonArea.RectTransform, Anchor.Center)
+            
+
+            var powerButtonArea = new GUIFrame(new RectTransform(new Vector2(0.175f, 0.35f), mainFrame.RectTransform, Anchor.CenterLeft)
             {
-                RelativeOffset = new Vector2(0, 0.1f)
+                RelativeOffset = new Vector2(0.02f, 0.0f)
+            }, style: "PowerButtonFrame");
+
+            
+
+            PowerButton = new GUIButton(new RectTransform(new Vector2(1.1f, 1.1f), powerButtonArea.RectTransform, Anchor.Center)
+            {
+                RelativeOffset = new Vector2(0, 0.0f)
             }, style: "PowerButton")
             {
                 //UserData = UIHighlightAction.ElementId.PowerButton,
@@ -152,6 +172,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     return true;
                 }
             };
+
             powerSlider = new GUIScrollBar(new RectTransform(new Vector2(0.5f, 0.15f), mainFrame.RectTransform, Anchor.BottomLeft)
             {
                 RelativeOffset = new Vector2(0.45f, 0.1f)
@@ -175,6 +196,8 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     return true;
                 }
             };
+            var powerSliderText = new GUITextBlock(new RectTransform(new Vector2(0.9f, 0.95f), powerSlider.RectTransform, Anchor.CenterLeft){RelativeOffset = new Vector2(-1f,0)}, 
+                TextManager.Get("oxygeneratornui.powerslidertext"), font: GUIStyle.SubHeadingFont, textAlignment: Alignment.CenterRight);
 
             var digitalBackground = new GUIFrame(new RectTransform(new Vector2(0.35f, 0.2f), mainFrame.RectTransform, Anchor.CenterRight){RelativeOffset = new Vector2(0.04f, 0.1f)}, style: "DigitalFrameDark");
 
@@ -201,11 +224,78 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 //ToolTip = TextManager.Get("SonarHertzTip"), // Update tooltip as necessary
                 TextGetter = () => o2Production.ToString("F0")// Display the current hertz value
             };
+
+
+
+            var secondMainFrame = new GUIFrame(new RectTransform(new Vector2(0.95f, 0.3f), GuiFrame.RectTransform, Anchor.TopCenter) { RelativeOffset = new Vector2(0, 0.6f) }, null);
+
+            // Create a shared parent frame to position all switches independently of each other
+            var parentFrame = new GUIFrame(new RectTransform(new Vector2(0.15f, 0.6f), secondMainFrame.RectTransform, Anchor.Center) { RelativeOffset = new Vector2(-0.4f, 0.1f) }, null);
+
+            var switchOffsets = new Vector2[] { Vector2.Zero, new Vector2(1.3f, 0), new Vector2(2.6f, 0), new Vector2(3.9f, 0), new Vector2(5.2f, 0) };
+
+            for (int i = 0; i < 5; i++)
+            {
+                int index = i;
+                // Create an indicator area above each switch
+                var indicatorArea = new GUIFrame(new RectTransform(new Vector2(1, 0.2f), parentFrame.RectTransform, Anchor.BottomCenter)
+                {
+                    RelativeOffset = switchOffsets[i] - new Vector2(0, 0.5f) // Adjust position above each button
+                }, style: null);
+
+                // Add a light indicator above the switch
+                var refillOxygenIndicator = new GUITickBox(new RectTransform(Vector2.One, indicatorArea.RectTransform, Anchor.Center),
+                    TextManager.Get("oxygeneratornui.refill"), font: GUIStyle.SubHeadingFont, style: "IndicatorLightPower")
+                {
+                    CanBeFocused = false,
+                    Selected = false // Start unlit
+                };
+
+                // Create each switch button
+                var refillOxygenSwitch = new GUIButton(
+                    new RectTransform(new Vector2(1, 1), parentFrame.RectTransform, Anchor.Center)
+                    {
+                        RelativeOffset = switchOffsets[i]
+                    },
+                    string.Empty,
+                    style: "SwitchDieHardClassic"
+                )
+                {
+                    Selected = false,
+                    Enabled = true,
+                    ClickSound = GUISoundType.UISwitch,
+                    OnClicked = (button, data) =>
+                    {
+                        button.Selected = !button.Selected;
+
+            // Toggle the indicator light based on the button's selected state
+            refillOxygenIndicator.Selected = button.Selected;
+
+            // Send a message to the server to update the charging status for this slot
+            bool startCharging = button.Selected;
+            // Update local charging state for immediate feedback
+            isChargingOxygenTank[index] = startCharging;
+            
+            if (GameMain.Client != null)
+                    {
+                        //unsentChanges = true;
+                        correctionTimer = Sonar.CorrectionDelay;
+                        SendToggleChargingOxygenTankMessage(item, index, startCharging);
+                    }
+
+                        return true;
+                    }
+                };
+            }
+
 #endif
+
 #if SERVER
             NetUtil.Register(NetEvent.CUSTOM_OXYGENGENERATOR_TOGGLE, OnReceiveToggleOxygenGeneratorMessage);
 
             NetUtil.Register(NetEvent.CUSTOM_OXYGENGENERATOR_GENERATEDAMOUNTFACTOR, OnReceiveGeneratedAmountFactorMessage);
+
+            NetUtil.Register(NetEvent.CUSTOM_OXYGENGENERATOR_REFILLTOGGLE, OnReceiveToggleChargingOxygenTankMessage);
 #endif
         }
 
@@ -224,8 +314,9 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
             {
                 return;
             }
-                // Get the items at slot 0 from the second container
-            Item oxygenCandle = secondItemContainer.Inventory.GetItemAt(0) as Item;
+                
+            // Get the items at slot 0 from the second container
+            oxygenCandle = secondItemContainer.Inventory.GetItemAt(0) as Item;
             
             
                 if (!turnedOn || oxygenCandle == null || (oxygenCandle != null && oxygenCandle.Condition <= 0))
@@ -242,34 +333,49 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 }
                 else
                 {
+                    int activeRefillSlots = 0;
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (isChargingOxygenTank[i] && oxygenCandle != null && oxygenCandle.Condition > 0)
+                        {
+                            // Get the oxygen tank in the corresponding slot (adjust slot index as needed)
+                            Item oxygenTank = firstItemContainer.Inventory.GetItemAt(i) as Item;
+                            if (oxygenTank != null && oxygenTank.Condition < oxygenTank.MaxCondition)
+                            {
+                                // Increase the condition of the oxygen tank, representing a recharge
+                                oxygenTank.Condition += 0.1f * deltaTime;  // Adjust rate as necessary
+                                oxygenCandle.Condition -= 0.05f * deltaTime; // Candle burns down gradually
+                                activeRefillSlots++;  // Count the active refill slot
+                            }
+                        }
+                    }
+
+                    // Calculate flow reduction factor: 5% reduction per active refill slot
+                    float refillPenaltyFactor = 1.0f - (activeRefillSlots * 0.1f);
+
+                    // Apply the penalty factor to each flow type
                     CurrFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * generatedAmount * 10.0f;
                     float conditionMult = item.Condition / item.MaxCondition;
-                    
-                    
-                    //100% condition = 100% oxygen
-                    //50% condition = 25% oxygen
-                    //20% condition = 4%
-                    CurrFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
-                    //DebugConsole.NewMessage(CurrFlow.ToString());
-                    
 
-                    CurrRecycleFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount ;
-                    CurrRecycleFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
+                    CurrFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
+                    
+                    CurrRecycleFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount;
+                    CurrRecycleFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
                     
                     CurrPurifyingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * purifyingAmount;
-                    CurrPurifyingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
+                    CurrPurifyingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
 
                     CurrHeatingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * heatingAmount;
-                    CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
-
+                    CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
 
                     UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow, deltaTime);
 
 
-                    if (item.InPlayerSubmarine)
-                    {
-                        oxygenCandle.Condition = oxygenCandle.Condition - 0.01f * newGeneratedAmountFactor * deltaTime;
-                    }
+                if (item.InPlayerSubmarine)
+                {
+                    oxygenCandle.Condition = oxygenCandle.Condition - 0.01f * newGeneratedAmountFactor * deltaTime;
+                }
                 }
             
             item.SendSignal(CurrFlow.ToString(), "oxygen_generated_amount_out");
@@ -308,6 +414,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
         private readonly float flickerFrequency = 1;
 
         private float isActiveLockTimer;
+        
         public override void UpdateHUDComponentSpecific(Character character, float deltaTime, Camera cam)
         {
             
@@ -353,6 +460,16 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
 
             msg.WriteUInt16(item.ID); // ID of the oxygen generator item
             msg.WriteSingle(newGeneratedAmountFactor); // New generated amount factor
+            NetUtil.SendServer(msg, DeliveryMethod.Reliable);
+        }
+
+
+        private void SendToggleChargingOxygenTankMessage(Item item, int index, bool startCharging)
+        {
+            IWriteMessage msg = NetUtil.CreateNetMsg(NetEvent.CUSTOM_OXYGENGENERATOR_REFILLTOGGLE);
+            msg.WriteUInt16(item.ID);        // ID of the oxygen generator item
+            msg.WriteInt32(index);           // Index of the oxygen tank slot
+            msg.WriteBoolean(startCharging); // Charging state to set
             NetUtil.SendServer(msg, DeliveryMethod.Reliable);
         }
 #endif
@@ -401,10 +518,32 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 if (oxygenGenerator != null)
                 {
                     oxygenGenerator.newGeneratedAmountFactor = newGeneratedAmountFactor;
-                    // Additional logic if needed
+                    
                 }
             }
 
+        }
+
+
+        private void OnReceiveToggleChargingOxygenTankMessage(object[] args)
+        {
+            IReadMessage msg = (IReadMessage)args[0];
+            ushort itemId = msg.ReadUInt16();
+            int slotIndex = msg.ReadInt32();
+            bool startCharging = msg.ReadBoolean();
+
+            Item oxygenGeneratorItem = Entity.FindEntityByID(itemId) as Item;
+            
+            if (oxygenGeneratorItem != null)
+            {
+                var oxygenGenerator = oxygenGeneratorItem.GetComponent<CustomOxygenGenerator>();
+                if (oxygenGenerator != null)
+                {
+                    // Update charging state
+                    oxygenGenerator.isChargingOxygenTank[slotIndex] = startCharging;
+                    
+                }
+            }
         }
     }
 }
