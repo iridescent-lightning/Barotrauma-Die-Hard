@@ -78,7 +78,7 @@ end)--]]
 
 
 Hook.Add("junctionboxfusedamage","junctionboxfusedamage",function(effect, deltaTime, item, targets, worldPosition)
-local randomDamage = math.random(10,50)
+local randomDamage = math.random(10,35)
 local container = item:GetComponentString("ItemContainer")
 local fuse = container.Inventory.GetItemAt(0)
 

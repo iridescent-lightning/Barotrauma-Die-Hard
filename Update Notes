@@ -106,5 +106,9 @@
     3. Adding empty repairable client patch.
     4. Adding overload sprite drawing method
     5. Adding opened sprite for junctionbox.
+68.
+    1. Lowering fusedamage from 10~50 to 10~35.
+    2. Adding junctionbox damage open sprites.
+    3. Adding battery damage open sprites.
 
     

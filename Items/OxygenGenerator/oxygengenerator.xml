@@ -56,7 +56,7 @@
         </Containable>
       </ItemContainer>
       <ItemContainer capacity="1" maxstacksize="1" itemsperrow="1" canbeselected="true" hideitems="true">
-        <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.01,0.0" uilabel="oxygencandle" />
+        <GuiFrame relativesize="0.113,0.155" anchor="Center" style="ItemUI" relativeoffset="-0.01,0.0" uilabel="oxygencandle" />
         <Containable items="oxygencandle" excludebroken="false" />
       </ItemContainer>
       <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">

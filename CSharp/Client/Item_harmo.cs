@@ -63,9 +63,18 @@ namespace BarotraumaDieHard
             DrawCustomSprite("seccabinet_open_1", "securesteelcabinet", "draw_container_open", __instance, spriteBatch);
             DrawCustomSprite("toxiccabinet_open", "toxcabinet", "draw_container_open", __instance, spriteBatch);
             DrawCustomSprite("supplycabinet_open", "suppliescabinet", "draw_container_open", __instance, spriteBatch);
-            DrawCustomSprite("junctionbox_open_nodamage",  "junctionbox", "junctionbox_openlid", __instance, spriteBatch);
 
 
+            
+            DrawCustomSprite("junctionbox_open_nodamage",  "junctionbox", "junctionbox_openlid", __instance, (60f, 100f), spriteBatch);
+            DrawCustomSprite("junctionbox_open_damage",  "junctionbox", "junctionbox_openlid", __instance, (10f, 60), spriteBatch);
+            DrawCustomSprite("junctionbox_open_broken",  "junctionbox", "junctionbox_openlid", __instance, (0f, 10f), spriteBatch);
+            DrawCustomSprite("junctionbox_open_broken",  "junctionbox", "", __instance, (0f, 0f), spriteBatch); // Ok, the item component doesn't read status effect so we have to work around. let's display the open lid by default if it's completely broken.
+
+            DrawCustomSprite("battery_open_nodamage",  "battery", "draw_container_open", __instance, (60f, 100f), spriteBatch);
+            DrawCustomSprite("battery_open_damage",  "battery", "draw_container_open", __instance, (10f, 60), spriteBatch);
+            DrawCustomSprite("battery_open_broken",  "battery", "draw_container_open", __instance, (0f, 10f), spriteBatch);
+            DrawCustomSprite("battery_open_broken",  "battery", "", __instance, (0f, 0f), spriteBatch);
 
 
 
@@ -108,30 +117,34 @@ namespace BarotraumaDieHard
         }
 
 
-        public static void DrawCustomSprite(string spriteName, Item targetItem, SpriteBatch spriteBatch)
+        public static void DrawCustomSprite(string spriteName, string targetItemIdentifier, string targetItemTag, Item targetItem, (float minCondition, float maxCondition) conditionRange, SpriteBatch spriteBatch)
+{
+    // Try to get the sprite by its name from the dictionary
+    if (GameSessionDieHard.customSprites.TryGetValue(spriteName, out Sprite customSprite))
+    {
+        // Check if the item matches the specified identifier and tag
+        if (targetItem.Prefab.Identifier == targetItemIdentifier && 
+            targetItem.HasTag(targetItemTag) && 
+            targetItem.Condition >= conditionRange.minCondition && 
+            targetItem.Condition <= conditionRange.maxCondition)
         {
-            
-            // Try to get the sprite by its name from the dictionary
-            if (GameSessionDieHard.customSprites.TryGetValue(spriteName, out Sprite customSprite))
-            {
-                    // Calculate the draw position. Need to invert Y-axis.
-                    Vector2 drawPosition = new Vector2(targetItem.DrawPosition.X, -targetItem.DrawPosition.Y);
+            // Calculate the draw position. Need to invert Y-axis.
+            Vector2 drawPosition = new Vector2(targetItem.DrawPosition.X, -targetItem.DrawPosition.Y);
 
-                    // Draw the sprite at the adjusted position
-                    customSprite.Draw(
-                        spriteBatch, 
-                        pos: drawPosition, 
-                        color: targetItem.GetSpriteColor(), 
-                        rotate: targetItem.Rotation, 
-                        scale: targetItem.Scale, 
-                        origin: customSprite.Origin,
-                        depth: targetItem.GetDrawDepth() - 0.01f
-                    );
-                    
-                
-            }
-            
+            // Draw the sprite at the adjusted position
+            customSprite.Draw(
+                spriteBatch, 
+                pos: drawPosition, 
+                color: targetItem.GetSpriteColor(), 
+                rotate: targetItem.Rotation, 
+                scale: targetItem.Scale, 
+                origin: customSprite.Origin,
+                depth: targetItem.GetDrawDepth() - 0.01f
+            );
         }
+    }
+}
+
 
 
                 

@@ -20,8 +20,9 @@ Hook.Add("item.created", "playsound_largesteelcab", function(item)
 		item.RemoveTag("junctionbox_openlid")
 	end
 
-	if not (item.HasTag('playinteractsound')) then return end
 	
+
+	if not (item.HasTag('playinteractsound')) then return end
 	
 	--[[local soundPrefab = ItemPrefab.GetItemPrefab("sfx_largesteelcab")
 	if (item.HasTag('steelcabinetsfx')) then 
