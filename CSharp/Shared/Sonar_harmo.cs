@@ -254,7 +254,7 @@ namespace BarotraumaDieHard
                     pingDirection.Y = -pingDirection.Y;
                     foreach (Character target in Character.CharacterList)
                     {
-                        if (!target.InWater || target.IsDead || target.CharacterHealth == null) { continue; }
+                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null) { continue; }
 
                         float pointDist = ((target.WorldPosition - pingSource) * 1f).LengthSquared();
                         
@@ -265,7 +265,7 @@ namespace BarotraumaDieHard
                                 float currentHertz = SonarMod.hertz; // Make sure this reflects the slider value
                                 float afflictionStrength = MathHelper.Lerp(SonarMod.minAfflictionStrength, SonarMod.maxAfflictionStrength, (currentHertz - SonarMod.minHertzValue) / (maxHertzValue - SonarMod.minHertzValue));
 
-                                if (target.IsHuman)
+                                if (target.IsHuman )
                                 {target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(afflictionStrength * 0.1f));}
                                 //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: " + $"{afflictionStrength}", Color.White);
                                 if (GameMain.Client != null)
@@ -332,7 +332,7 @@ namespace BarotraumaDieHard
 					{
 						// Reassign the original reload value to the turret
 						sonarComponent.Range = originalRange;
-						DebugConsole.NewMessage($"Reset sonar {itemID}'s range to {originalRange}", Color.Green);
+						//DebugConsole.NewMessage($"Reset sonar {itemID}'s range to {originalRange}", Color.Green);
 					}
 				}
 			}
@@ -367,7 +367,7 @@ namespace BarotraumaDieHard
             sonar.Range = newRange;
 
             // Optionally, log the new range value for debugging
-            DebugConsole.NewMessage($"Sonar range updated to: {newRange}");
+            //DebugConsole.NewMessage($"Sonar range updated to: {newRange}");
         }
     }
 }

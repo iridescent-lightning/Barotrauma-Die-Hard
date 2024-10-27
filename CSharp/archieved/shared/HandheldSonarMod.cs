@@ -12,9 +12,9 @@ using Barotrauma;
 using Microsoft.Xna.Framework.Graphics;
 #endif
 
-namespace HandheldSonarMod
+namespace BarotraumaDieHard
 {
-    class CustomSonar : Sonar
+    class HanheldSonar : Sonar
     {
         // private List<Item> linkedItems; // Change to a List
 		private const float PingFrequency = 0.5f;//how fast a ping spreads
@@ -28,7 +28,7 @@ namespace HandheldSonarMod
             // linkedItems = item.linkedTo.Cast<Item>().ToList();
         }
 
-        public CustomSonar(Item item, ContentXElement element)
+        public HanheldSonar(Item item, ContentXElement element)
             : base(item, element)
         {
         }

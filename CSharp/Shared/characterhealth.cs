@@ -29,7 +29,7 @@ namespace CharacterHealthMod
 
       harmony.Patch(
                 original: typeof(CharacterHealth).GetMethod("ApplyDamage"),
-                prefix: new HarmonyMethod(typeof(CharacterHealthMod).GetMethod("ApplyDamage"))
+                postfix: new HarmonyMethod(typeof(CharacterHealthMod).GetMethod("ApplyDamage"))
             );
 
 	harmony.Patch(
@@ -51,24 +51,13 @@ namespace CharacterHealthMod
 	
 	
 	
-    public static bool ApplyDamage(Limb hitLimb, AttackResult attackResult, bool allowStacking, CharacterHealth __instance)
+    public static void ApplyDamage(Limb hitLimb, AttackResult attackResult, bool allowStacking, CharacterHealth __instance)
     {
 
 		CharacterHealth _ = __instance;
 
 		
-		if (_.Unkillable || _.Character.GodMode) { return false; }
-		if (hitLimb.HealthIndex < 0 || hitLimb.HealthIndex >= _.limbHealths.Count)
-		{
-		DebugConsole.ThrowError("Limb health index out of bounds. Character\"" + _.Character.Name +
-			"\" only has health configured for" + _.limbHealths.Count + " limbs but the limb " + hitLimb.type + " is targeting index " + hitLimb.HealthIndex);
-		return false;
-		}
-
-		var should = GameMain.LuaCs.Hook.Call<bool?>("character.applyDamage", _ /*<- kek*/, attackResult, hitLimb, allowStacking);
-
-		if (should != null && should.Value)
-			return false;
+		
 
 
 		var leftHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand);
@@ -80,7 +69,7 @@ namespace CharacterHealthMod
 		foreach (Affliction newAffliction in attackResult.Afflictions)
 		{
 
-			if (!_.Character.IsHuman || hitLimb.type == null) {return false;}
+			if (!_.Character.IsHuman || hitLimb.type == null) {return;}
 			
 			
 			if (newAffliction.Prefab.LimbSpecific)
@@ -181,7 +170,7 @@ namespace CharacterHealthMod
 			}
 		}
 	  
-      return false;
+      
     }
 	
 	public static void ApplyFlowForces(float deltaTime, Character character, Hull hull)

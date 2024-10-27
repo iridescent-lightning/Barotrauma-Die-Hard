@@ -122,9 +122,9 @@
         </StatusEffect>
         <!--This makes bullet disappear after traveling though water outside the hull for a short time-->
         <!--This makes bullet has bubble effect in water-->
-        <StatusEffect type="OnActive" target="This">
+        <StatusEffect type="OnActive" target="This" delay="0.05">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
         </Projectile>
@@ -400,7 +400,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -649,7 +649,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -821,7 +821,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -1128,7 +1128,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -1394,7 +1394,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -1571,7 +1571,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -1781,7 +1781,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -1946,7 +1946,7 @@
         <!--This makes bullet has bubble effect in water-->
         <StatusEffect type="OnActive" target="This">
           <Conditional InWater="true" />
-          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" />
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="80" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.3" delay="0.05"/>
           <Remove />
         </StatusEffect>
       </Projectile>
@@ -2068,7 +2068,7 @@
       <PreferredContainer primary="abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
       <PreferredContainer primary="armcab" />
       <Price baseprice="400">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
         <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />

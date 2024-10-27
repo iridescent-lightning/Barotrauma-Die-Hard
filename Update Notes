@@ -115,5 +115,17 @@
     2. Rescaling ui size of oxygenerator and junctionbox slot.
     3. Overhualing oxygenerator. Adding new GUI elements. Adding switch for each slot to recharge oxygentanks
     4. Adding new GUI element: DieHardSwitchClassic.
-
+70.
+    1. Lowering high voltage damage to fuse from 0~50 to 0.1 ~5.
+    2. Lowewring vent heat generted amount by removing times 10f.
+    3. Remove // Same function as lua. Run on client if singleplayer, run on server if multiplayer.
+                if (GameMain.NetworkMember == null || GameMain.NetworkMember.IsServer)
+                
+    to fix singleplayer reactor can't find coolant bug.
+    4. Adding new handheld sonar component. Handheld sonar now is pointing directional. Received very low sonar signal if used in dry air.
+    5. Lowering coolant price, increasing stacksize
+    6. lowering mechanical part price, increasing selling number.
+    7. excluding door for repair shock
+    8. fixing bug that can't deal damage to monsters. Changing apply damage from pre to postfix
+    9. Adding back 0.05 delay for normal bullets 
     

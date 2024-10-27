@@ -127,7 +127,9 @@ namespace BarotraumaDieHard
                     return;
                 }
                 Item? invItem = inv.GetItemAt(0);
-                invItem.Condition -= 1f * Rand.Range(0.1f, 50f) * deltaTime;
+
+                // Overload voltage damage the fuse.
+                invItem.Condition -= 1f * Rand.Range(0.1f, 5f) * deltaTime;
                 
                 //damage the item if voltage is too high (except if running as a client)
                 float prevCondition = item.Condition;

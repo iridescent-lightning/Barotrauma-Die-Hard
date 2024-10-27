@@ -99,7 +99,7 @@ if CLIENT then
 	dofile(DH.Path.."/Lua/Scripts/Client/playdead.lua")--client-side
 	dofile(DH.Path.."/Lua/Scripts/Client/repairhint.lua")--client-side
 	dofile(DH.Path.."/Lua/Scripts/Client/HolsterUnholsterKeyOuter.lua")--client-side
-	dofile(DH.Path.."/Lua/Scripts/Client/guimachine.lua")--client-side
+	
 	
 	
 	--[[dofile(DH.Path.."/Lua/Scripts/Shared/wreckupdate.lua")--shared

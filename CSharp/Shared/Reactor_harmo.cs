@@ -45,9 +45,7 @@ namespace BarotraumaDieHard
         {
 
                 
-                // Same function as lua. Run on client if singleplayer, run on server if multiplayer.
-                if (GameMain.NetworkMember == null || GameMain.NetworkMember.IsServer)
-                {
+                
                 
                     if (SecondItemContainerReactors.TryGetValue(__instance.item.ID, out ItemContainer itemContainer))
                     {
@@ -67,7 +65,7 @@ namespace BarotraumaDieHard
                     }
                     else if (__instance.item.InPlayerSubmarine && __instance.Temperature > 10f)
                     {
-                        coolant.Condition -= 0.1f * deltaTime;
+                        coolant.Condition -= 0.05f * deltaTime;
                     }
 
                     // Trigger an action if the reactor's condition is critical
@@ -76,19 +74,18 @@ namespace BarotraumaDieHard
                         Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("reactorcsexplosionhelper"), __instance.Item.WorldPosition);
                     }
 
-                }
+                
             }
 
 
             public static void OnMapLoadedPostfix(Reactor __instance)
             {
-                if (GameMain.NetworkMember == null || GameMain.NetworkMember.IsServer)
-                {
+                
 
                     var ItemContainers = __instance.item.GetComponents<ItemContainer>().ToList();;
                     SecondItemContainerReactors[__instance.item.ID] = ItemContainers[1];
 
-                }
+                
             }
 
             public static void ClearRactorySecondContainerDictionary()

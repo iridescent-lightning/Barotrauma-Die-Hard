@@ -190,13 +190,13 @@
       <PreferredContainer primary="storagecab" />
       <PreferredContainer primary="storagecab" amount="4" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
-      <Price baseprice="100" canbespecial="false">
-        <Price storeidentifier="merchantoutpost" minavailable="3" />
-        <Price storeidentifier="merchantcity" minavailable="3" />
-        <Price storeidentifier="merchantresearch" minavailable="3" />
-        <Price storeidentifier="merchantmilitary" minavailable="1" />
-        <Price storeidentifier="merchantmine" minavailable="3" />
-        <Price storeidentifier="merchantengineering" multiplier="0.9" />
+      <Price baseprice="40" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" minavailable="5" />
+        <Price storeidentifier="merchantcity" minavailable="5" />
+        <Price storeidentifier="merchantresearch" minavailable="5" />
+        <Price storeidentifier="merchantmilitary" minavailable="5" />
+        <Price storeidentifier="merchantmine" minavailable="5" />
+        <Price storeidentifier="merchantengineering" minavailable="10" multiplier="0.3" />
       </Price>
       <InventoryIcon texture="%ModDir%/Items/Misc/DHMisc2.png" sourcerect="0,0,97,88" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Items/Misc/DHMisc2.png" depth="0.6" sourcerect="0,0,97,88" origin="0.5,0.5" />

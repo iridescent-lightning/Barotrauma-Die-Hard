@@ -79,7 +79,7 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
             HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow, deltaTime); //There is no CL
             if (HullMod.GetGas(_.item.CurrentHull, "Temperature") < 300f)
             {
-                HullMod.AddGas(_.item.CurrentHull, "Temperature", HeatFlow  * 10f, deltaTime);
+                HullMod.AddGas(_.item.CurrentHull, "Temperature", HeatFlow  * 1f, deltaTime);
             }
             
             return false;

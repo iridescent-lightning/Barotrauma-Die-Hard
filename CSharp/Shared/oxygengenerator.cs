@@ -344,10 +344,12 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                             if (oxygenTank != null && oxygenTank.Condition < oxygenTank.MaxCondition)
                             {
                                 // Increase the condition of the oxygen tank, representing a recharge
-                                oxygenTank.Condition += 0.1f * deltaTime;  // Adjust rate as necessary
-                                oxygenCandle.Condition -= 0.05f * deltaTime; // Candle burns down gradually
-                                activeRefillSlots++;  // Count the active refill slot
+                                oxygenTank.Condition += 0.3f * deltaTime;  // Adjust rate as necessary
+                                
+                                
                             }
+                            activeRefillSlots++;  // Count the active refill slot
+                            oxygenCandle.Condition -= 0.1f * deltaTime; // Candle burns down gradually
                         }
                     }
 
@@ -361,13 +363,13 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     CurrFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
                     
                     CurrRecycleFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount;
-                    CurrRecycleFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
+                    CurrRecycleFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
                     
                     CurrPurifyingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * purifyingAmount;
-                    CurrPurifyingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
+                    CurrPurifyingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
 
                     CurrHeatingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * heatingAmount;
-                    CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor * refillPenaltyFactor;
+                    CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
 
                     UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow, deltaTime);
 

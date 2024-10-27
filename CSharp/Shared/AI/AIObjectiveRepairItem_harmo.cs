@@ -69,7 +69,7 @@ namespace BarotraumaDieHard
                 //DebugConsole.NewMessage("Avoid repaire powered reactor");
                 
             }
-            else if ((__instance.Item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f) && (__instance.Item.Condition > 0f) && !__instance.Item.HasTag("battery")) //same as the 'fix' in repairable. this makes sure that the bot can fix the broken device to 1% of its health before abandon the task. Also exclude the batteies because they can be fixed.
+            else if ((__instance.Item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f) && (__instance.Item.Condition > 0f) && !__instance.Item.HasTag("battery") && !(__instance.Item.HasTag("door") || __instance.Item.HasTag("container"))) //same as the 'fix' in repairable. this makes sure that the bot can fix the broken device to 1% of its health before abandon the task. Also exclude the batteies because they can be fixed.
             {
                 __instance.character.Speak("A " + __instance.Item.Name + " in " + localizedRoomName + " is broken." + " But it's too dangerous to repair this while it's powered!", identifier: "bot_repair_fail", minDurationBetweenSimilar: 20.0f);
                 __instance.Abandon = true;

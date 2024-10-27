@@ -54,25 +54,27 @@ namespace BarotraumaDieHard
         public static bool CheckCharacterSuccessPrefix(Character character, Item bestRepairItem, Repairable __instance, ref bool __result)
         {
             
-            if (character == null) { return false; }
+            if (character == null) { __result = false; return false; }
 
-            if (__instance.statusEffectLists == null) { return true; }
+            if (__instance.statusEffectLists == null) { __result = true; return true; }
 
-            if (bestRepairItem != null && bestRepairItem.Prefab.CannotRepairFail) { return true; }
+            if (bestRepairItem != null && bestRepairItem.Prefab.CannotRepairFail) { __result = true; return true; }
 
             // unpowered (electrical) items can be repaired without a risk of electrical shock
             if (__instance.RequiredSkills.Any(s => s != null && s.Identifier == "electrical"))
             {
                 if (__instance.item.GetComponent<Reactor>() is Reactor reactor)
                 {
-                    if (MathUtils.NearlyEqual(reactor.CurrPowerConsumption, 0.0f, 0.1f)) { return true; }
+                    if (MathUtils.NearlyEqual(reactor.CurrPowerConsumption, 0.0f, 0.1f)) { __result = true; return true; }
                 }
                 else if (__instance.item.GetComponent<Powered>() is Powered powered && powered.Voltage < 0.1f) 
                 {
+                    __result = true;
                     return true;
                 }
                 else if (__instance.item.Condition == 0f) // have to have this. Otherwise completely brokedn device always shock players no matter powered or not.
                 {
+                    __result = true;
                     return true;
                 }
             }
@@ -81,12 +83,15 @@ namespace BarotraumaDieHard
             if (__instance.item.GetComponent<Reactor>() is Reactor reactorPowered && !MathUtils.NearlyEqual(reactorPowered.CurrPowerConsumption, 0.0f, 0.1f)) 
             {
                 __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+                __result = false;
                 return false; // Powered reactor will shock
             }
-            else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f && !__instance.item.HasTag("battery")) // Exclude the battery since completely broken device will set voltage as 1. Battery cannot be unpowered. Need this for it be able to be fixed.
+            else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f && !__instance.item.HasTag("battery") && !(__instance.item.HasTag("door") || __instance.item.HasTag("container"))) // Exclude the battery since completely broken device will set voltage as 1. Battery cannot be unpowered. Need this for it be able to be fixed.
             {
-                //DebugConsole.NewMessage(poweredDevice.Voltage.ToString());
+
+                //DebugConsole.NewMessage(poweredDevice.ToString());
                 __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+                __result = false;
                 return false; // Powered device will shock
             }
             //DebugConsole.NewMessage(__instance.item.GetComponent<Powered>().Voltage.ToString());
@@ -108,7 +113,7 @@ namespace BarotraumaDieHard
                     GameMain.NetworkMember.CreateEntityEvent(ic.Item, new Item.ApplyStatusEffectEventData(actionType, ic, character));
                 }
             }
-            return success;
+            __result = success;
 
             return false;
         }
