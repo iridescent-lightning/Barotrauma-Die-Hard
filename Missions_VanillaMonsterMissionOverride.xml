@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Missions>
-    <MonsterMission identifier="killhammerhead" tags="killmonster,killmonster_set2" type="Monster" difficulty="2" commonness="100" reward="0" maxsonarmarkerdistance="10000">
+    <!--<MonsterMission identifier="killhammerhead" tags="killmonster,killmonster_set2" type="Monster" difficulty="2" commonness="100" reward="0" maxsonarmarkerdistance="10000">
       <monster character="Hammerhead_m" min="2" max="3" />
       <Reputation identifier="location" amount="1" />
       <Icon texture="Content/UI/MissionIcons2.png" sourcerect="512,768,256,256" color="214,50,48" />
@@ -166,6 +166,6 @@
       <Reputation identifier="location" amount="2" />
       <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
       <message header="missionheader0.huntinggrounds1" text="missionmessage0.huntinggrounds1" />
-    </MonsterMission>
+    </MonsterMission>-->
   </Missions>
 </Override>

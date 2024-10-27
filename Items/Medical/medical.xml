@@ -231,6 +231,7 @@
       <Sprite texture="Medicines.png" sourcerect="112,139,37,70" depth="0.6" origin="0.5,0.5" />
       <SuitableTreatment type="poison" suitability="10" />
       <SuitableTreatment type="chlorine_poisoning" suitability="40" />
+      <SuitableTreatment type="sonardamage" suitability="40" />
       <!-- stabilozine only slows down the progress of the poison, and since deliriumine poisoning is non-lethal,
     it doesn't make much sense to waste stabilozine on "stabilizing" it -->
       <SuitableTreatment type="deliriuminepoisoning" suitability="-10" />
@@ -242,6 +243,7 @@
         <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="30">
           <ReduceAffliction type="poison" amount="1" />
           <ReduceAffliction type="chlorine_poisoning" amount="10" />
+          <ReduceAffliction type="sonardamage" amount="10" />
         </StatusEffect>
         <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="30">
           <ReduceAffliction type="poison" amount="0.5" />

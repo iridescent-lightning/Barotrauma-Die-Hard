@@ -128,4 +128,7 @@
     7. excluding door for repair shock
     8. fixing bug that can't deal damage to monsters. Changing apply damage from pre to postfix
     9. Adding back 0.05 delay for normal bullets 
+71. 
+    1. Unoverride all vanilla missions. Need more money for game.
+    2. Adding a treatment for sonar damage.
     
