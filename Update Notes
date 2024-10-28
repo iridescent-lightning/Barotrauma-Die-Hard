@@ -136,3 +136,9 @@
     2. Refactoring AI repairing also using grid load instead of voltage.
     3. Adding check for Powered during repairing update so devices can shock player when repaired from 0.
     4. Preserving voltage check for bots so bots won't get shock everytime tring to repair a 0 condition device. 
+73.
+    1. Increasing 'dangeralert' of ballast door sound volume from 500 to 1000.
+    2. Adding a research module for er research location. Fixing inapproriate outpost module generator.
+    3. Fixing abandon module generation 
+    4. Fixing dry cave can't airlock can teleport
+    5. Adding fliped dry cave entry.

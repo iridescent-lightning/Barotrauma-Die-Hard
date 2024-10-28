@@ -71,12 +71,11 @@
       <npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult"/>-->
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="researchoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="6" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="EuropanRidge_Research">
+    <OutpostConfig identifier="researchoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="5" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="EuropanRidge_Research">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
       <modulecount flag="CrewModule" count="1" />
-      <modulecount flag="MedicalModule" count="1" />
       <modulecount flag="ResearchModule" count="1" />
       <!--<modulecount flag="ClownModule" count="1" order="1" requiredfaction="clowns"/>
     <modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>-->
@@ -402,8 +401,8 @@
     <OutpostConfig identifier="drycave" totalmodulecount="17" minhallwaylength="300" spawncrewinsideoutpost="false" alwaysdestructible="false" alwaysrewireable="true" allowstealing="true" allowedlocationtypes="Cave" appendtoreachtotalmodulecount="True">
       <modulecount flag="Cave_AirLock" count="1" />
       <modulecount flag="Cave_Junction" count="13" />
-      <modulecount flag="Cave_Junction_Type2" count="1" />
-      <modulecount flag="Cave_Room" count="2" />
+      <modulecount flag="Cave_Junction_Type2" count="4" />
+      <modulecount flag="Cave_Room" count="3" />
     </OutpostConfig>
     
     <OutpostConfig
@@ -414,12 +413,12 @@
     alwaysdestructible="true"
     alwaysrewireable="true"
     allowstealing="true">
-    <modulecount flag="Airlock" count="1"/>
-    <modulecount flag="EngineeringModule" count="1"/>
-    <modulecount flag="AdminModule" count="1"/>
-    <modulecount flag="CrewModule" count="1"/>
-    <modulecount flag="ResearchModule" count="1"/>
-    <modulecount flag="SecurityModule" count="1"/>
+    <modulecount flag="AbandonedAirlock" count="1"/>
+    <modulecount flag="AbandonedEngineeringModule" count="1"/>
+    <modulecount flag="AbandonedAdminModule" count="1"/>
+    <modulecount flag="AbandonedCrewModule" count="1"/>
+    <modulecount flag="AbandonedResearchModule" count="1"/>
+    <modulecount flag="AbandonedSecurityModule" count="1"/>
   </OutpostConfig>
   </OutpostGenerationParameters>
 </Override>
