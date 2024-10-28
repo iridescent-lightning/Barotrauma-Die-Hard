@@ -31,6 +31,11 @@ namespace BarotraumaDieHard
                 prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(CheckCharacterSuccessPrefix)))
             );
 
+            harmony.Patch(
+                original: typeof(Repairable).GetMethod("Update"),
+                prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(UpdatePostfix)))
+            );
+
 #if CLIENT
             harmony.Patch
             (
@@ -56,45 +61,71 @@ namespace BarotraumaDieHard
             
             if (character == null) { __result = false; return false; }
 
-            if (__instance.statusEffectLists == null) { __result = true; return true; }
+            if (__instance.statusEffectLists == null) { __result = true; return false; }
 
-            if (bestRepairItem != null && bestRepairItem.Prefab.CannotRepairFail) { __result = true; return true; }
-
+            if (bestRepairItem != null && bestRepairItem.Prefab.CannotRepairFail) { __result = true; return false; }
+            
             // unpowered (electrical) items can be repaired without a risk of electrical shock
-            if (__instance.RequiredSkills.Any(s => s != null && s.Identifier == "electrical"))
-            {
+            // if (__instance.RequiredSkills.Any(s => s != null && s.Identifier == "electrical")). modding: inlcuding all powered items no matter requires e skill or other skills.
+            
+
+
+                if (__instance.item.GetComponent<PowerContainer>() is PowerContainer powerContainer) 
+                {
+                    if (powerContainer.powerOut.Grid == null && powerContainer.powerIn.Grid == null)
+                    {
+                        __result = true;
+                        return false;
+                    }
+                    if (powerContainer.powerOut.Grid.Load > 0 || powerContainer.powerIn.Grid.Load > 0)
+                    {
+                        __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+                        __result = false;
+                        return false;
+                    }
+
+                    __result = true;
+                    return false;
+
+                }
+                
                 if (__instance.item.GetComponent<Reactor>() is Reactor reactor)
                 {
-                    if (MathUtils.NearlyEqual(reactor.CurrPowerConsumption, 0.0f, 0.1f)) { __result = true; return true; }
+                    if (MathUtils.NearlyEqual(reactor.CurrPowerConsumption, 0.0f, 0.1f)) { __result = true; return false; }
                 }
-                else if (__instance.item.GetComponent<Powered>() is Powered powered && powered.Voltage < 0.1f) 
+                else if (__instance.item.GetComponent<Powered>() is Powered powered) 
                 {
-                    __result = true;
-                    return true;
-                }
-                else if (__instance.item.Condition == 0f) // have to have this. Otherwise completely brokedn device always shock players no matter powered or not.
-                {
-                    __result = true;
-                    return true;
-                }
-            }
+                    if (powered == null) // Check for devices that don't have powered component.
+                    {
+                        __result = true;
+                        return false;
+                    }
+                    if (powered.powerIn == null || powered.powerIn.Grid == null) // Check for broken devices. // The first null check is necessary because door like items may have inherited Powered class but doesn't have any 'powrIn'.
+                    {
+                        __result = true;
+                        return false;
+                    }
+                    else if (powered.powerIn.Grid.Load <= 0f)
+                    {
+                        __result = true;
+                        return false;
+                    }
 
-            // powered device will surely shock the repairer
+                    __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+                    __result = false;
+                    
+                    return false;
+                }
+
+            // powered reactor will surely shock the repairer
             if (__instance.item.GetComponent<Reactor>() is Reactor reactorPowered && !MathUtils.NearlyEqual(reactorPowered.CurrPowerConsumption, 0.0f, 0.1f)) 
             {
                 __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
                 __result = false;
                 return false; // Powered reactor will shock
             }
-            else if (__instance.item.GetComponent<Powered>() is Powered poweredDevice && poweredDevice.Voltage >= 0.1f && !__instance.item.HasTag("battery") && !(__instance.item.HasTag("door") || __instance.item.HasTag("container"))) // Exclude the battery since completely broken device will set voltage as 1. Battery cannot be unpowered. Need this for it be able to be fixed.
-            {
 
-                //DebugConsole.NewMessage(poweredDevice.ToString());
-                __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
-                __result = false;
-                return false; // Powered device will shock
-            }
-            //DebugConsole.NewMessage(__instance.item.GetComponent<Powered>().Voltage.ToString());
+           
             bool success = Rand.Range(0.0f, 0.5f) < __instance.RepairDegreeOfSuccess(character, __instance.RequiredSkills);
             ActionType actionType = success ? ActionType.OnSuccess : ActionType.OnFailure;
 
@@ -116,6 +147,24 @@ namespace BarotraumaDieHard
             __result = success;
 
             return false;
+        }
+
+
+        public static void UpdatePostfix(float deltaTime, Camera cam, Repairable __instance)
+        {
+            if (__instance.CurrentFixer == null) return;
+            if (__instance.item.GetComponent<Powered>() is Powered powered) 
+                {
+                    if (powered == null || powered.powerIn == null || powered.powerIn.Grid == null) // Check for devices that don't have powered component.
+                    {
+                       return;
+                    }
+                    else if (powered.powerIn.Grid.Load > 0f)
+                    {
+                        __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
+                        return;
+                    }
+                }
         }
 
 

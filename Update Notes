@@ -131,4 +131,8 @@
 71. 
     1. Unoverride all vanilla missions. Need more money for game.
     2. Adding a treatment for sonar damage.
-    
+72.
+    1. Refactoring repairing mechanism. Use grid load instead of voltage.
+    2. Refactoring AI repairing also using grid load instead of voltage.
+    3. Adding check for Powered during repairing update so devices can shock player when repaired from 0.
+    4. Preserving voltage check for bots so bots won't get shock everytime tring to repair a 0 condition device. 
