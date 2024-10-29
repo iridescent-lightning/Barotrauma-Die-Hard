@@ -14,7 +14,7 @@ namespace BarotraumaDieHard
         public Harmony harmony;
         
         
-        private static Dictionary<int, ItemContainer> SecondItemContainerReactors = new Dictionary<int, ItemContainer>();
+        public static Dictionary<int, ItemContainer> SecondItemContainerReactors = new Dictionary<int, ItemContainer>();
         
         public void Initialize()
         {
@@ -82,8 +82,7 @@ namespace BarotraumaDieHard
             {
                 
 
-                    var ItemContainers = __instance.item.GetComponents<ItemContainer>().ToList();;
-                    SecondItemContainerReactors[__instance.item.ID] = ItemContainers[1];
+                    
 
                 
             }

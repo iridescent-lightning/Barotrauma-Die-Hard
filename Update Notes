@@ -142,3 +142,7 @@
     3. Fixing abandon module generation 
     4. Fixing dry cave can't airlock can teleport
     5. Adding fliped dry cave entry.
+74. 
+    1. Changing reactoring container registration from reactor class to gamesession
+    2. Adding logic to prevent bots from trying to fix electrical devices with power.
+    3. Adding a holding gun animation for ak.

@@ -70,6 +70,16 @@ namespace BarotraumaDieHard
         public static void StartRound(LevelData levelData, bool mirrorLevel, SubmarineInfo startOutpost, SubmarineInfo endOutpost)
         {
 
+
+            foreach (Item preactor in Item.ItemList)
+            {
+                if (preactor.HasTag("reactor"))
+                {
+                    var ItemContainers = preactor.GetComponents<ItemContainer>().ToList();;
+                    ReactorDieHard.SecondItemContainerReactors[preactor.ID] = ItemContainers[1];
+                }
+            }
+
 #if CLIENT
                 
             AddTextureToSpriteList("mediumsteelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(0, 0, 149, 360), originPercentage: new Vector2(0.5f, 0.495f));

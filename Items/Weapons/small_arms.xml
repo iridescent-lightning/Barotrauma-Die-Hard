@@ -1443,7 +1443,13 @@
         <Sound file="%ModDir%/Items/Weapons/ak475.ogg" type="OnUse" range="3000" />
         <Sound file="%ModDir%/Items/Weapons/ak476.ogg" type="OnUse" range="3000" />
         <Sound file="%ModDir%/Items/Weapons/ak477.ogg" type="OnUse" range="3000" />
-        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.5" setvalue="true" >
+        
+          
+          <TriggerAnimation Type="Walk" FileName="HumanWalk_aiming" priority="1" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" FileName="HumanRunDivingSuit" priority="1" ExpectedSpecies="Human" />
+        
+        </StatusEffect>
         <StatusEffect type="OnSecondaryUse" target="Character">
           <Affliction identifier="crouch" amount="2" />
         </StatusEffect>
