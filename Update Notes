@@ -146,3 +146,8 @@
     1. Changing reactoring container registration from reactor class to gamesession
     2. Adding logic to prevent bots from trying to fix electrical devices with power.
     3. Adding a holding gun animation for ak.
+75. 
+    1. Using grid.Power instead of grid.Load to check the repair success
+    2. Lowering reload skill requirement by 50%.
+    3. E bugs are too powerful. Setting attack range to 0 to disable the attack temporailly. 
+    4. Adding a hint manager for repair. Currently has no effect.

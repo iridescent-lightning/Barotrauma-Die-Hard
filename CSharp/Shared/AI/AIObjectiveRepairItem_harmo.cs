@@ -72,7 +72,7 @@ namespace BarotraumaDieHard
             else if ((__instance.Item.GetComponent<Powered>() is Powered poweredDevice)) //same as the 'fix' in repairable. this makes sure that the bot can fix the broken device to 1% of its health before abandon the task. Also exclude the batteies because they can be fixed.
             {
                 // Still have to use old voltage check for bots not even try to repair. So they don't get hurt everytime they try. In this case we need to exclude the doors as they share the same voltage condition when broken. We need bots be able to fix them.
-                if (((poweredDevice.powerIn != null && poweredDevice.powerIn.Grid == null && poweredDevice.Item.Condition <= 0) || poweredDevice.Item.Condition <= 0 && poweredDevice.Voltage == 1f && !poweredDevice.Item.HasTag("door")) || poweredDevice.powerIn != null && poweredDevice.powerIn.Grid != null && poweredDevice.powerIn.Grid.Load > 0f)
+                if (((poweredDevice.powerIn != null && poweredDevice.powerIn.Grid == null && poweredDevice.Item.Condition <= 0) || poweredDevice.Item.Condition <= 0 && poweredDevice.Voltage == 1f && !poweredDevice.Item.HasTag("door")) || poweredDevice.powerIn != null && poweredDevice.powerIn.Grid != null && poweredDevice.powerIn.Grid.Power > 0f)
                 {
                     __instance.character.Speak("A " + __instance.Item.Name + " in " + localizedRoomName + " is broken." + " But it's too dangerous to repair this while it's powered!", identifier: "bot_repair_fail", minDurationBetweenSimilar: 20.0f);
                     __instance.Abandon = true;

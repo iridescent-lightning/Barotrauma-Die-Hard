@@ -755,4 +755,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <ordername.findandequipradiationsuit>Find and Equip Radiation Suit</ordername.findandequipradiationsuit>
   <orderdialog.findandequipradiationsuit>[name], Find and equip a radiation suit!</orderdialog.findandequipradiationsuit>
   <orderdialogself.findandequipradiationsuit>I need a radiation protective suit.</orderdialogself.findandequipradiationsuit>
+
+
+  <hint.electricalrepair>Make sure to cut off the power to ensure the safe repairing.</hint.electricalrepair>
 </infotexts>

@@ -67,8 +67,9 @@ namespace BarotraumaDieHard
             
             // unpowered (electrical) items can be repaired without a risk of electrical shock
             // if (__instance.RequiredSkills.Any(s => s != null && s.Identifier == "electrical")). modding: inlcuding all powered items no matter requires e skill or other skills.
-            
-
+#if CLIENT            
+            HintManager.DisplayHint("electricalrepair".ToIdentifier());
+#endif
 
                 if (__instance.item.GetComponent<PowerContainer>() is PowerContainer powerContainer) 
                 {
@@ -97,19 +98,23 @@ namespace BarotraumaDieHard
                 {
                     if (powered == null) // Check for devices that don't have powered component.
                     {
+                        //DebugConsole.NewMessage("no component");
                         __result = true;
                         return false;
                     }
                     if (powered.powerIn == null || powered.powerIn.Grid == null) // Check for broken devices. // The first null check is necessary because door like items may have inherited Powered class but doesn't have any 'powrIn'.
                     {
+                        //DebugConsole.NewMessage("no powerin or grid is null");
                         __result = true;
                         return false;
                     }
-                    else if (powered.powerIn.Grid.Load <= 0f)
+                    else if (powered.powerIn.Grid.Power <= 0f)
                     {
+                        //DebugConsole.NewMessage("Power < 0");
                         __result = true;
                         return false;
                     }
+                    
 
                     __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
                     __result = false;
@@ -159,7 +164,7 @@ namespace BarotraumaDieHard
                     {
                        return;
                     }
-                    else if (powered.powerIn.Grid.Load > 0f)
+                    else if (powered.powerIn.Grid.Power > 0f)
                     {
                         __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
                         return;

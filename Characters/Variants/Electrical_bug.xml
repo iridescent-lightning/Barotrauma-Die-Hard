@@ -19,5 +19,5 @@
     <targetpriority tag="dead" state="Eat" priority="100" />
   </ai>
   <ragdoll scalemultiplier="0.3" />
-  <attack damagemultiplier="0.3" rangemultiplier="0.3" impactmultiplier="0.3" severlimbsprobability="0"/>
+  <attack damagemultiplier="0.1" rangemultiplier="0" impactmultiplier="0.3" severlimbsprobability="0"/>
 </Charactervariant>
