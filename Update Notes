@@ -151,3 +151,7 @@
     2. Lowering reload skill requirement by 50%.
     3. E bugs are too powerful. Setting attack range to 0 to disable the attack temporailly. 
     4. Adding a hint manager for repair. Currently has no effect.
+76. 
+    1. Lowering prices for small arms.
+    2. Updating oxygenerators gui.
+    3. minor change in outpostnpc xml structure.

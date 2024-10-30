@@ -76,7 +76,7 @@
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.25" />
       <PreferredContainer secondary="secarmcab" />
-      <Price baseprice="30">
+      <Price baseprice="5">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="12" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="12" />
         <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="12" />
@@ -135,7 +135,7 @@
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-      <Price baseprice="300">
+      <Price baseprice="200">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -203,7 +203,7 @@
       <PreferredContainer primary="secarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
-      <Price baseprice="110">
+      <Price baseprice="25">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="0" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" />
         <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="0" />
@@ -334,7 +334,7 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="secarmcab" />
-      <Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
+      <Price baseprice="50" displaynonempty="true" minleveldifficulty="15">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -583,7 +583,7 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="secarmcab" />
-      <Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
+      <Price baseprice="100" displaynonempty="true" minleveldifficulty="15">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -755,7 +755,7 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="secarmcab" />
-      <Price baseprice="200" displaynonempty="true" minleveldifficulty="15">
+      <Price baseprice="120" displaynonempty="true" minleveldifficulty="15">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -831,7 +831,7 @@
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
       <PreferredContainer secondary="armcab,weaponholder" />
-      <Price baseprice="350">
+      <Price baseprice="300">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -923,7 +923,7 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="secarmcab" />
-      <Price baseprice="130" displaynonempty="true" minleveldifficulty="15">
+      <Price baseprice="100" displaynonempty="true" minleveldifficulty="15">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1059,7 +1059,7 @@
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer secondary="armcab,weaponholder" />
-      <Price baseprice="300">
+      <Price baseprice="250">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1138,7 +1138,7 @@
       <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
-      <Price baseprice="1000">
+      <Price baseprice="900">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1242,7 +1242,7 @@
       <PreferredContainer primary="mk17" minamount="1" notcampaign="true" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
-      <Price baseprice="200">
+      <Price baseprice="155">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1797,7 +1797,7 @@
       <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.2" />
-      <Price baseprice="500">
+      <Price baseprice="300">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1886,7 +1886,7 @@
       <PreferredContainer primary="fal" minamount="1" notcampaign="true" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
-      <Price baseprice="125">
+      <Price baseprice="55">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1962,7 +1962,7 @@
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-      <Price baseprice="300">
+      <Price baseprice="250">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -2036,7 +2036,7 @@
       <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.25" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
-      <Price baseprice="150">
+      <Price baseprice="30">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -2073,7 +2073,7 @@
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
       <PreferredContainer primary="armcab" />
-      <Price baseprice="400">
+      <Price baseprice="250">
         <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -2179,11 +2179,11 @@
       <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.25" />
       <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.25" />
       <PreferredContainer primary="abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.4" />
-      <Price baseprice="125">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+      <Price baseprice="45">
+        <Price storeidentifier="merchantoutpost"  minavailable="1" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" />
         <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.5" minavailable="2" />
         <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
         <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
       </Price>

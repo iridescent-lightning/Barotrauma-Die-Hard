@@ -44,35 +44,32 @@ namespace BarotraumaDieHard
         public static void UpdatePostfix(float deltaTime, Camera cam, Reactor __instance)
         {
 
-                
-                
-                
-                    if (SecondItemContainerReactors.TryGetValue(__instance.item.ID, out ItemContainer itemContainer))
-                    {
-                        coolant = itemContainer.Inventory.GetItemAt(0);
-                    }
+            if (SecondItemContainerReactors.TryGetValue(__instance.item.ID, out ItemContainer itemContainer))
+            {
+                coolant = itemContainer.Inventory.GetItemAt(0);
+            }
 
 
-                    // Check the condition of the coolant and the temperature of the reactor
-                    if (coolant != null && coolant.Condition <= 0 && __instance.Temperature > 10f)
-                    {
-                        __instance.Item.Condition -= 1.5f * deltaTime;
-                    }
-                    else if (coolant == null && __instance.Temperature > 10f)
-                    {
-                        //DebugConsole.NewMessage(__instance.item.Condition.ToString());
-                        __instance.Item.Condition -= 1.5f * deltaTime;
-                    }
-                    else if (__instance.item.InPlayerSubmarine && __instance.Temperature > 10f)
-                    {
-                        coolant.Condition -= 0.05f * deltaTime;
-                    }
+            // Check the condition of the coolant and the temperature of the reactor
+            if (coolant != null && coolant.Condition <= 0 && __instance.Temperature > 10f)
+            {
+                __instance.Item.Condition -= 1.5f * deltaTime;
+            }
+            else if (coolant == null && __instance.Temperature > 10f)
+            {
+                //DebugConsole.NewMessage(__instance.item.Condition.ToString());
+                __instance.Item.Condition -= 1.5f * deltaTime;
+            }
+            else if (__instance.item.InPlayerSubmarine && __instance.Temperature > 10f)
+            {
+                coolant.Condition -= 0.05f * deltaTime;
+            }
 
-                    // Trigger an action if the reactor's condition is critical
-                    if (__instance.Item.Condition < 2f && __instance.Item.Condition > 0f && __instance.Temperature > 10f)
-                    {
-                        Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("reactorcsexplosionhelper"), __instance.Item.WorldPosition);
-                    }
+            // Trigger an action if the reactor's condition is critical
+            if (__instance.Item.Condition < 2f && __instance.Item.Condition > 0f && __instance.Temperature > 10f)
+            {
+                Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("reactorcsexplosionhelper"), __instance.Item.WorldPosition);
+            }
 
                 
             }

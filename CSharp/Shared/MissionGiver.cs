@@ -34,7 +34,7 @@ namespace BarotraumaDieHard
 
             // Assuming you have an identifier for the specific mission you want to load
             
-            Identifier specificMissionId = "BeaconMissionDieHard".ToIdentifier(); 
+            Identifier specificMissionId = "escort1".ToIdentifier(); 
 
             // Find the specific mission prefab by identifier
             var missionPrefabToLoad = MissionPrefab.Prefabs[specificMissionId];
@@ -67,6 +67,7 @@ namespace BarotraumaDieHard
             Location startLocation = GameMain.GameSession.StartLocation;
             Location endLocation = GameMain.GameSession.EndLocation ?? startLocation; // Fallback to startLocation if no destination is selected
 
+            
             // Create the mission instance using the locations and the main submarine
             Mission specificMission = missionPrefabToLoad.Instantiate(new[] { startLocation, endLocation }, Submarine.MainSub);
 
@@ -98,26 +99,14 @@ namespace BarotraumaDieHard
             // Add the specific mission to the missions list so it shows in the tab screen
             GameMain.GameSession.missions.Add(specificMission);
 
-            // Add extra mission?
-            if (GameMain.GameSession?.GameMode is CampaignMode campaignMode)
+            // AddExtraMissions means the missions that auto triggered in specific locations: huntingground etc.
+            /*if (GameMain.GameSession?.GameMode is CampaignMode campaignMode)
             {
                 
                 campaignMode.AddExtraMissions(Level.Loaded.LevelData);
-            }
+            }*/
 
-            // Start the specific mission
-            int prevEntityCount = Entity.GetEntities().Count;
-            DebugConsole.NewMessage(prevEntityCount.ToString());
             
-
-            // Ensure that clients do not instantiate entities themselves
-            if (GameMain.NetworkMember != null && GameMain.NetworkMember.IsClient && Entity.GetEntities().Count != prevEntityCount)
-            {
-                DebugConsole.ThrowError(
-                    $"Entity count has changed after starting a mission ({specificMission}) as a client. " +
-                    "The clients should not instantiate entities themselves when starting the mission, " +
-                    "but instead the server should inform the client of the spawned entities using Mission.ServerWriteInitial.");
-            }
 
             // Show the start message for the specific mission on the client side
         #if CLIENT
@@ -147,11 +136,23 @@ namespace BarotraumaDieHard
                 NetUtil.SendClient(msg, client.Connection, DeliveryMethod.Reliable);
                 
             }
-            specificMission.Start(Level.Loaded);
-        #endif
-
-            // GameMain.GameSession.GameMode.Start(); // This reset the game as a zoom in effect at the begining of the round.
             
+        #endif
+            specificMission.Start(Level.Loaded);
+            // GameMain.GameSession.GameMode.Start(); // This reset the game as a zoom in effect at the begining of the round.
+            // Start the specific mission
+            int prevEntityCount = Entity.GetEntities().Count;
+            DebugConsole.NewMessage(prevEntityCount.ToString());
+            
+
+            // Ensure that clients do not instantiate entities themselves
+            if (GameMain.NetworkMember != null && GameMain.NetworkMember.IsClient && Entity.GetEntities().Count != prevEntityCount)
+            {
+                DebugConsole.ThrowError(
+                    $"Entity count has changed after starting a mission ({specificMission}) as a client. " +
+                    "The clients should not instantiate entities themselves when starting the mission, " +
+                    "but instead the server should inform the client of the spawned entities using Mission.ServerWriteInitial.");
+            }
             
             
 

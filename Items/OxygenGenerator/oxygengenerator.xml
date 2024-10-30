@@ -47,9 +47,7 @@
       <ItemContainer capacity="5" maxstacksize="1" canbeselected="true" hideitems="false" itempos="31,-250" iteminterval="44.5,0" msg="ItemMsgOxygenRefill">
         <Upgrade gameversion="0.15.22.1" itempos="31,-250" iteminterval="44.5,0" />
         <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" relativeoffset="0, 0.2"/>
-        <Containable items="oxygensource,weldingfuel" excludebroken="false" excludefullcondition="true">
-          
-        </Containable>
+        <Containable items="oxygensource,weldingfuel" excludebroken="false" excludefullcondition="true" />
       </ItemContainer>
       <ItemContainer capacity="1" maxstacksize="1" itemsperrow="1" canbeselected="true" hideitems="true">
         <GuiFrame relativesize="0.113,0.155" anchor="Center" style="ItemUI" relativeoffset="0.2,-0.1" uilabel="oxygencandle" />
@@ -100,18 +98,8 @@
       </CustomOxygenGenerator>
       <trigger />
       <ItemContainer capacity="5" maxstacksize="1" canbeselected="true" msg="ItemMsgOxygenRefill">
-        <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
-        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-        <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-        <SlotIcon slotindex="3" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-        <SlotIcon slotindex="4" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" relativeoffset="0, 0.2"/>
         <Containable items="oxygensource,weldingfuel" excludebroken="false" excludefullcondition="true">
-          <StatusEffect type="OnContaining" targettype="Contained" Condition="2.0" Comparison="And">
-            <Conditional Voltage="gt 0.1" targetcontainer="true" targetitemcomponent="CustomOxygenGenerator" />
-            <Conditional HasTag="refillableoxygensource" />
-            <Conditional targetcontainer="true" HasStatusTag="!eq onfire" />
-          </StatusEffect>
         </Containable>
       </ItemContainer>
       <ItemContainer capacity="1" maxstacksize="1" itemsperrow="1" canbeselected="true" hideitems="true">
@@ -150,7 +138,7 @@
       <BrokenSprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="243,1629,213,286" depth="0.79" origin="0.5,0.5" offset="100,0" maxcondition="10" fadein="true" />
       <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="384,960,64,64" origin="0.5,0.45" />
       <CustomOxygenGenerator powerconsumption="1000.0" minvoltage="0.5" generatedamount="5000" canbeselected="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.35" minsize="420,220" anchor="Center" relativeoffset="0, 0 " style="ItemUI" />
         <poweronsound file="Content/Items/PowerOnLight2.ogg" range="1500" loop="false" />
         <sound file="Content/Items/OxygenGenerator/OxygenGenerator.ogg" type="OnActive" range="1000.0" volumeproperty="CurrFlow" volume="0.001" loop="true" />
         <StatusEffect type="OnFire" target="This" Condition="-0.5" />
@@ -166,9 +154,10 @@
         </StatusEffect>
       </CustomOxygenGenerator>
       <trigger />
-      <ItemContainer capacity="5" maxstacksize="1" canbeselected="true" hideitems="false" itempos="163,-290" iteminterval="42,0" msg="ItemMsgOxygenRefill">
-        <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
-        <Containable items="oxygentank" />
+      <ItemContainer capacity="5" maxstacksize="1" canbeselected="true" msg="ItemMsgOxygenRefill">
+        <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" relativeoffset="0, 0.2"/>
+        <Containable items="oxygensource,weldingfuel" excludebroken="false" excludefullcondition="true">
+        </Containable>
       </ItemContainer>
       <ItemContainer capacity="1" maxstacksize="1" itemsperrow="1" canbeselected="true" hideitems="true">
         <GuiFrame relativesize="0.1,0.2" anchor="Center" style="ItemUI" relativeoffset="-0.01,0.0" uilabel="oxygencandle" />
