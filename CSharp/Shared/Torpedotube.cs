@@ -208,23 +208,23 @@ namespace TorpedoMod//todo make a structural namespace DieHard.Item.Components. 
 
         private void OnReceiveArmTorpedoMessage(object[] args)
         {
-                IReadMessage msg = (IReadMessage)args[0];
-                // Extract data from the message
-                ushort itemId = msg.ReadUInt16();
-                bool isActive = msg.ReadBoolean();
-                //DebugConsole.Log("Message received");
-                // Find the torpedo tube item and update its state
-                Item tubeItem = Entity.FindEntityByID(itemId) as Item;
-                if (tubeItem != null)
+            IReadMessage msg = (IReadMessage)args[0];
+            // Extract data from the message
+            ushort itemId = msg.ReadUInt16();
+            bool isActive = msg.ReadBoolean();
+            
+            // Find the torpedo tube item and update its state
+            Item tubeItem = Entity.FindEntityByID(itemId) as Item;
+            if (tubeItem != null)
+            {
+                var torpedoTube = tubeItem.GetComponent<TorpedoTube>();
+                if (torpedoTube != null)
                 {
-                    var torpedoTube = tubeItem.GetComponent<TorpedoTube>();
-                    if (torpedoTube != null)
-                    {
-                        torpedoTube.TorpedoMode = isActive ? Mode.Active : Mode.Passive;
-                        torpedoTube.Arm(tubeItem);
-                        // Additional logic if needed
-                    }
+                    torpedoTube.TorpedoMode = isActive ? Mode.Active : Mode.Passive;
+                    torpedoTube.Arm(tubeItem);
+                    
                 }
+            }
         }
 
 

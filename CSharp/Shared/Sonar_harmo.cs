@@ -254,7 +254,7 @@ namespace BarotraumaDieHard
                     pingDirection.Y = -pingDirection.Y;
                     foreach (Character target in Character.CharacterList)
                     {
-                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null) { continue; }
+                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null || !target.IsHuman) { continue; }
 
                         float pointDist = ((target.WorldPosition - pingSource) * 1f).LengthSquared();
                         
@@ -265,8 +265,8 @@ namespace BarotraumaDieHard
                                 float currentHertz = SonarMod.hertz; // Make sure this reflects the slider value
                                 float afflictionStrength = MathHelper.Lerp(SonarMod.minAfflictionStrength, SonarMod.maxAfflictionStrength, (currentHertz - SonarMod.minHertzValue) / (maxHertzValue - SonarMod.minHertzValue));
 
-                                if (target.IsHuman )
-                                {target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(afflictionStrength * 0.1f));}
+                                
+                                target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(afflictionStrength * 0.1f));
                                 //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: " + $"{afflictionStrength}", Color.White);
                                 if (GameMain.Client != null)
                                 {

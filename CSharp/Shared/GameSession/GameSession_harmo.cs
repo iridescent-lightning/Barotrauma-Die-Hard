@@ -81,6 +81,9 @@ namespace BarotraumaDieHard
             }
 
 #if CLIENT
+
+            // Need to init it to avoid null reference.
+            BarotraumaDieHard.CustomHintManager.Init();    
                 
             AddTextureToSpriteList("mediumsteelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(0, 0, 149, 360), originPercentage: new Vector2(0.5f, 0.495f));
             AddTextureToSpriteList("mediumwindowedsteelcabinet_open", "%ModDir%/Items/Containers/containers_opened.png", new Rectangle(154, 0, 149, 360), originPercentage: new Vector2(0.52f, 0.495f));

@@ -38,18 +38,17 @@
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="genesplicer" scale="0.4" category="Equipment" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
       <Price baseprice="200" soldeverywhere="false">
         <Price locationtype="research" multiplier="1" sold="false" />
         <Price locationtype="city" multiplier="1" sold="false" />
       </Price>
       <Deconstruct time="10">
-        <RequiredItem identifier="plastic" />
-        <RequiredItem identifier="fpgacircuit" />
-        <RequiredItem identifier="rubber" />
-        <RequiredItem identifier="silicon" />
+        <Item identifier="plastic" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="rubber" />
+        <Item identifier="silicon" />
       </Deconstruct>
       <InventoryIcon texture="Content/Items/Genetic/Genetic.png" sourcerect="244,62,76,65" origin="0.5,0.5" />
       <Sprite name="Headset" texture="Content/Items/Genetic/Genetic.png" depth="0.6" sourcerect="67,85,73,35" origin="0.5,0.5" />
@@ -61,8 +60,7 @@
         <sprite name="Gene Splicer Wearable" texture="Content/Items/Genetic/Genetic.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.5" hideotherwearables="false" sourcerect="258,131,64,54" origin="0.6,0.0" />
       </Wearable>
     </Item>
-  </Override>
-  <Override>
+
     <!--Tier 1 material, outcondition 0.1...0.2-->
     <Item name="" identifier="geneticmaterialcrawler_unresearched" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="1" tags="smallitem,unidentifiedgeneticmaterial" cargocontaineridentifier="mediccrate" description="" scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
       <Deconstruct time="5" requireddeconstructor="geneticresearchstation">
@@ -72,174 +70,151 @@
       <Body width="15" radius="15" density="20" />
       <Pickable slots="Any" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmudraptor_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmoloch_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialmoloch" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmantis_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialmantis" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialthresher_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialthresher" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerhead_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialhammerhead" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerheadmatriarch_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialhammerheadmatriarch" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialspineling_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialspineling" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhusk_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialhusk" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmollusc_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialmollusc" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialskitter_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialskitter" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhunter_unresearched" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <Deconstruct>
         <Item identifier="geneticmaterialhunter" />
       </Deconstruct>
     </Item>
     <!--Tier 2 material, outcondition 0.2...0.4-->
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialcrawler_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" minamount="0" maxamount="1" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmudraptor_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmoloch_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmoloch" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmantis_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmantis" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialthresher_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialthresher" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerhead_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhammerhead" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerheadmatriarch_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhammerheadmatriarch" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialspineling_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialspineling" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhusk_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhusk" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmollusc_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmollusc" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialskitter_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialskitter" outconditionmin="0.2" outconditionmax="0.4" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhunter_unresearched2" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
@@ -247,104 +222,91 @@
       </Deconstruct>
     </Item>
     <!--Tier 3 material, outcondition 0.3...0.6-->
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialcrawler_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmudraptor_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmoloch_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmoloch" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmantis_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmantis" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialthresher_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialthresher" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerhead_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhammerhead" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerheadmatriarch_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhammerheadmatriarch" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialspineling_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialspineling" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhusk_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhusk" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmollusc_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialmollusc" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialskitter_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialskitter" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhunter_unresearched3" nameidentifier="unidentifiedgeneticmaterial" variantof="geneticmaterialcrawler_unresearched">
       <PreferredContainer secondary="geneticstorage" minamount="0" maxamount="1" spawnprobability="0" />
       <Deconstruct>
         <Item identifier="geneticmaterialhunter" outconditionmin="0.3" outconditionmax="0.6" />
       </Deconstruct>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialcrawler" nameidentifier="geneticmaterial" category="Material" maxstacksize="1" tags="smallitem,geneticmaterial" cargocontaineridentifier="mediccrate" description="" scale="0.5" impactsoundtag="impact_metal_light" hideconditionbar="true" hideconditionintooltip="false">
       <Deconstruct time="5" requireddeconstructor="geneticresearchstation">
         <Item identifier="geneticmaterialcrawler" requiredotheritem="geneticmaterial" activatebuttontext="researchstation.combine" infotext="researchstation.combine.infotext" infotextonotheritemmissing="researchstation.refine.missingitem" />
@@ -378,8 +340,7 @@
         <Containable items="geneticmaterial" />
       </ItemContainer>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmudraptor" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialmudraptor" />
@@ -388,8 +349,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="10,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.mudraptor" effect="naturalmeleeweapon" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmoloch" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialmoloch" />
@@ -398,8 +358,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="9,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.moloch" effect="damageresistance" tooltipvaluemin="10" tooltipvaluemax="25" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialthresher" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialthresher" />
@@ -408,8 +367,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="8,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.tigerthresher" effect="decreasedoxygenconsumption" tooltipvaluemin="20" tooltipvaluemax="100" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmantis" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialmantis" />
@@ -418,8 +376,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="7,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.mantis" effect="increasedwalkingspeed" tooltipvaluemin="10" tooltipvaluemax="25" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerhead" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialhammerhead" />
@@ -428,8 +385,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="5,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.hammerhead" effect="increasedmeleedamage" tooltipvaluemin="20" tooltipvaluemax="100" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhammerheadmatriarch" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialhammerheadmatriarch" />
@@ -438,8 +394,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="1,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.hammerheadmatriarch" effect="healdamage" tooltipvaluemin="6" tooltipvaluemax="45" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialspineling" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialspineling" />
@@ -448,8 +403,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="6,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.spineling" effect="naturalrangedweapon" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhusk" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialhusk" />
@@ -458,8 +412,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="0,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.husk" effect="husktransformimmunity" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialmollusc" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialmollusc" />
@@ -468,8 +421,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="4,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.mollusc" effect="vigorondamage" tooltipvaluemin="2" tooltipvaluemax="10" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialskitter" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialskitter" />
@@ -478,8 +430,7 @@
       <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="3,0" sheetelementsize="32,32" depth="0.6" origin="0.5,0.5" />
       <GeneticMaterial nameidentifier="character.skitter" effect="hyperactivityondamage" tooltipvaluemin="2" tooltipvaluemax="10" />
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="geneticmaterialhunter" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
       <Deconstruct>
         <Item identifier="geneticmaterialhunter" />

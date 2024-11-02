@@ -684,7 +684,7 @@ namespace BarotraumaDieHard
 
                         SendChangeRangeMessage(_.item);
                     }
-                    DebugConsole.NewMessage(_.Range.ToString());
+                    //DebugConsole.NewMessage(_.Range.ToString());
                     
 
 

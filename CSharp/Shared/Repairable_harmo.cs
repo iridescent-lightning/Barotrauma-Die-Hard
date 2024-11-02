@@ -67,9 +67,7 @@ namespace BarotraumaDieHard
             
             // unpowered (electrical) items can be repaired without a risk of electrical shock
             // if (__instance.RequiredSkills.Any(s => s != null && s.Identifier == "electrical")). modding: inlcuding all powered items no matter requires e skill or other skills.
-#if CLIENT            
-            HintManager.DisplayHint("electricalrepair".ToIdentifier());
-#endif
+
 
                 if (__instance.item.GetComponent<PowerContainer>() is PowerContainer powerContainer) 
                 {
@@ -117,6 +115,10 @@ namespace BarotraumaDieHard
                     
 
                     __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+#if CLIENT   
+                 
+            BarotraumaDieHard.CustomHintManager.DisplayHint("electricalrepair".ToIdentifier());
+#endif
                     __result = false;
                     
                     return false;

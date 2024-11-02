@@ -155,3 +155,9 @@
     1. Lowering prices for small arms.
     2. Updating oxygenerators gui.
     3. minor change in outpostnpc xml structure.
+77. 
+    1. Fixing sonar causes damage on monster in multiplayer.
+    2. Lowering junctionbox deterioation speed from 0.1 to 0.05
+    3. Fixing obsolete alien items' preferred containers.
+    4. Fixing oxygeniteshard has missing soundfiles.
+    5. Adding a custom hintmanager for repairing.

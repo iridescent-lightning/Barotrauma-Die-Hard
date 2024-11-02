@@ -72,7 +72,7 @@ namespace BarotraumaDieHard
             }
 
                 
-            }
+        }
 
 
             public static void OnMapLoadedPostfix(Reactor __instance)
