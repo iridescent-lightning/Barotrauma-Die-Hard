@@ -161,3 +161,6 @@
     3. Fixing obsolete alien items' preferred containers.
     4. Fixing oxygeniteshard has missing soundfiles.
     5. Adding a custom hintmanager for repairing.
+78.
+    1. Fixing sonar slider cause the sonar to zoom very close.
+    2. Adding alt + Q for quick swap to avoid kekborad conflict. 

@@ -57,11 +57,6 @@ namespace BarotraumaDieHard
                         
                         GetHintsRecursive(element, element.NameAsIdentifier());
                     }
-
-                    foreach (var identifier in HintIdentifiers)
-                {
-                    DebugConsole.NewMessage(identifier.ToString());
-                }
                 }
                 else
                 {

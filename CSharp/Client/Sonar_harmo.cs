@@ -657,21 +657,16 @@ namespace BarotraumaDieHard
                 OnMoved = (scrollbar, scroll) =>
                 {
                     Steering steering = _.item.GetComponent<Steering>();
-                    float defaultRange = 1000f; // Define your default range
-
+                    
+                    float minRange = 5000f; // In case we can't find a range in dictionary.
                     // Set the initial range based on the item's ID or fallback to default
-                    if (SonarMod.SonarRange.TryGetValue(_.item.ID, out float itemRange))
+                    if (SonarMod.SonarRange.ContainsKey(_.item.ID))
                     {
-                        _.Range = itemRange;
-                    }
-                    else
-                    {
-                        DebugConsole.NewMessage("Range cannot be found.");
-                        _.Range = defaultRange; // Fallback to default range if not found
+                        minRange = SonarMod.SonarRange[_.item.ID]; // Get the corresponding itemRange
                     }
 
                     // Calculate the maximum range (three times the item range or default range)
-                    float maxRange = _.Range * 3f;
+                    float maxRange = minRange * 3f;
 
                     // Ensure the slider's value is clamped between 0 and 1
                     scroll = MathHelper.Clamp(scroll, 0f, 1f);
@@ -680,15 +675,11 @@ namespace BarotraumaDieHard
                     if (steering != null && !steering.DockingModeEnabled && _.CurrentMode == Sonar.Mode.Active)
                     {
                         // Interpolate between the default range and max range based on the slider value
-                        _.Range = MathHelper.Lerp(defaultRange, maxRange, scroll);
+                        _.Range = MathHelper.Lerp(minRange, maxRange, scroll);
 
                         SendChangeRangeMessage(_.item);
                     }
                     //DebugConsole.NewMessage(_.Range.ToString());
-                    
-
-
-
 
                     SonarMod.NewSectorAngle = MathHelper.Lerp(120f, 15f, scroll);
                     SonarMod.hertz = MathHelper.Lerp(SonarMod.minHertzValue, SonarMod.maxHertzValue, _.zoomSlider.BarScroll);
