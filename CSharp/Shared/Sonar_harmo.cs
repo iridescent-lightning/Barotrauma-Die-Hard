@@ -254,28 +254,39 @@ namespace BarotraumaDieHard
                     pingDirection.Y = -pingDirection.Y;
                     foreach (Character target in Character.CharacterList)
                     {
-                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null || !target.IsHuman) { continue; }
+                        float distance = Vector2.Distance(target.WorldPosition, pingSource);
+
+                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null ||  distance > _.Range) { continue; }
 
                         float pointDist = ((target.WorldPosition - pingSource) * 1f).LengthSquared();
                         
-                            Vector2 dirToTarget = Vector2.Normalize(target.WorldPosition - pingSource);
-                            // Check if the target is within the directional ping sector
-                            if (Vector2.Dot(dirToTarget, pingDirection) >= newDotProduct)
-                            {
-                                float currentHertz = SonarMod.hertz; // Make sure this reflects the slider value
-                                float afflictionStrength = MathHelper.Lerp(SonarMod.minAfflictionStrength, SonarMod.maxAfflictionStrength, (currentHertz - SonarMod.minHertzValue) / (maxHertzValue - SonarMod.minHertzValue));
+                        // DebugConsole.NewMessage((distance /100f).ToString());
 
-                                
-                                target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(afflictionStrength * 0.1f));
-                                //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: " + $"{afflictionStrength}", Color.White);
-                                if (GameMain.Client != null)
-                                {
-                                    _.unsentChanges = true;
-                                    _.correctionTimer = Sonar.CorrectionDelay;
-                                    SendApplyDamageMessage(target.ID, "sonardamage", afflictionStrength * 0.1f);
-                                }
-                                
+                        Vector2 dirToTarget = Vector2.Normalize(target.WorldPosition - pingSource);
+                        // Check if the target is within the directional ping sector
+                        if (Vector2.Dot(dirToTarget, pingDirection) >= newDotProduct)
+                        {
+                            // Calculate the normalized distance (0 at the source, 1 at max range)
+                            float distanceFactor = MathHelper.Clamp(1.0f - (distance / _.Range), 0.0f, 1.0f);
+
+                            float currentHertz = SonarMod.hertz; // Make sure this reflects the slider value
+                            float afflictionStrength = MathHelper.Lerp(SonarMod.minAfflictionStrength, SonarMod.maxAfflictionStrength, (currentHertz - SonarMod.minHertzValue) / (maxHertzValue - SonarMod.minHertzValue));
+
+                            // Apply the range-based penalty to affliction strength
+                            float adjustedAfflictionStrength = afflictionStrength * distanceFactor;
+                            
+                            target.CharacterHealth.ApplyAffliction(target.AnimController.MainLimb, AfflictionPrefab.Prefabs["sonardamage"].Instantiate(adjustedAfflictionStrength * 0.1f));
+                            //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: " + $"{afflictionStrength}", Color.White);
+                            if (GameMain.Client != null)
+                            {
+                                _.unsentChanges = true;
+                                _.correctionTimer = Sonar.CorrectionDelay;
+                                SendApplyDamageMessage(target.ID, "sonardamage", afflictionStrength * 0.1f);
                             }
+                            // Debug log to show calculated affliction strength
+                            //DebugConsole.NewMessage($"SonarMod: {target.Name} DamageReceived: {adjustedAfflictionStrength}", Color.White);
+                            
+                        }
                         
                     }
                 }

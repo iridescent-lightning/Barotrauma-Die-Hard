@@ -179,3 +179,6 @@
     7. Adding electrical parts for the repairing.
     8. Making vertical engine cannot deteroie.
     9. Adding digital display for vertical engines.
+80.
+    1. Adding range check for sonar damage.
+    2. Removing sonar damage character type limit. Now sonar can cause damage to monster
