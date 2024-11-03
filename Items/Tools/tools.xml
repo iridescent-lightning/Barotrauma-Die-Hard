@@ -1502,7 +1502,7 @@
       <PreferredContainer secondary="wreckweaponholder" spawnprobability="0.05" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
       <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-      <Price baseprice="250" minavailable="1">
+      <Price baseprice="150" minavailable="1">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
         <Price storeidentifier="merchantresearch" multiplier="1.25" />

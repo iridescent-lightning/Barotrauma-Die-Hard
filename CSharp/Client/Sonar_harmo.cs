@@ -697,8 +697,8 @@ namespace BarotraumaDieHard
                 "", font: GUIStyle.DigitalFont, textColor: GUIStyle.TextColorDark)
             {
                 TextAlignment = Alignment.CenterRight,
-                //ToolTip = TextManager.Get("SonarHertzTip"), // Update tooltip as necessary
-                TextGetter = () => (SonarMod.hertz / 1000f).ToString("F0")// Display the current hertz value
+                ToolTip = TextManager.Get("SonarHertzTip"), // Update tooltip as necessary
+                TextGetter = () => (SonarMod.hertz / 1000f).ToString("F0")
             };
 
 

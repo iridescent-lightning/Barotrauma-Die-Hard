@@ -27,6 +27,8 @@ namespace SteeringMod//todo make a structural namespace DieHard.Item.Components.
         private static GUITickBox engineStatusLight;
         private static GUITextBlock powerConText;
 
+        private static GUITextBlock verticalEnginePowerText;
+
         private static GUIComponent verticalSpeedContainer;
         private static GUIScrollBar powerSlider;
         
@@ -68,16 +70,29 @@ namespace SteeringMod//todo make a structural namespace DieHard.Item.Components.
             {
                 RelativeOffset =  new Vector2(-0.22f, 0.07f)
             }, "ItemUI");
+
             var paddedverticalSpeedContainer = new GUIFrame(new RectTransform(verticalSpeedContainer.Rect.Size - GUIStyle.ItemFrameMargin, verticalSpeedContainer.RectTransform, Anchor.Center, isFixedSize: false)
             {
                 AbsoluteOffset = GUIStyle.ItemFrameOffset
             }, style: null);
+
             var forceText = new GUITextBlock(new RectTransform(new Vector2(0.25f, 0.1f), paddedverticalSpeedContainer.RectTransform)
             {RelativeOffset = new Vector2(0.3f, 0f) },
             "Vertical Engine Output", null, // null to use default color
             font: GUIStyle.SubHeadingFont,
             textAlignment: Alignment.Center
             );
+
+            var digitalBackgroundVerticalEngine = new GUIFrame(new RectTransform(new Vector2(0.65f, 0.3f), paddedverticalSpeedContainer.RectTransform, Anchor.TopCenter){RelativeOffset = new Vector2(0.0f, 0.3f)}, style: "DigitalFrameDark");
+
+            verticalEnginePowerText = new GUITextBlock(new RectTransform(new Vector2(0.9f, 0.95f), digitalBackgroundVerticalEngine.RectTransform, Anchor.Center), 
+                "", font: GUIStyle.DigitalFont, textColor: GUIStyle.TextColorDark)
+            {
+                TextAlignment = Alignment.CenterRight,
+                ToolTip = TextManager.Get("VerticalEngineDisplayTip"), 
+                TextGetter = () => lerpedVerticalEnginePower.ToString("F1")// Display the current hertz value
+            };
+
             powerSlider = new GUIScrollBar(new RectTransform(new Vector2(0.5f, 0.25f), paddedverticalSpeedContainer.RectTransform, Anchor.BottomLeft)
             {
                 RelativeOffset = new Vector2(0.3f, 0.1f)
@@ -103,6 +118,7 @@ namespace SteeringMod//todo make a structural namespace DieHard.Item.Components.
         private static float flickerTimer;
         private static readonly float flickerFrequency = 0.5f;
         private static float powerConsumptionEngine = 0f;
+        
         public static void UpdateHUDComponentSpecificPostfix(Steering __instance, float deltaTime, Camera cam)
         {
             

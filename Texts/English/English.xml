@@ -591,7 +591,9 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entityname.bodyarmorIII>Bodyarmor-III</entityname.bodyarmorIII>
   <entitydescription.bodyarmorIII>[Pentration Rate Multiplier:10%]</entitydescription.bodyarmorIII>
   <entityname.mechanicalparts>Mechanical Parts</entityname.mechanicalparts>
-  <entitydescription.mechanicalparts>Parts to be used in various mechanical repair.</entitydescription.mechanicalparts>
+  <entitydescription.mechanicalparts>Parts to be used in various mechanical repairs.</entitydescription.mechanicalparts>
+  <entityname.ElectricalParts>Electrical Parts</entityname.ElectricalParts>
+  <entitydescription.ElectricalParts>Parts to be use in various electrical repairs.</entitydescription.ElectricalParts>
   <entityname.divingwatch>Diver Watch</entityname.divingwatch>
   <entitydescription.divingwatch>Used by diviers to count time.</entitydescription.divingwatch>
   <entityname.hypothalamusstimulator>Hypothalamus Stimulator Pill</entityname.hypothalamusstimulator>
@@ -749,7 +751,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
   <!--item message-->
   <itemmsg.repair.screwdriver_mechanicalparts>[[use]] Repair (Screwdriver + Mechanical parts)</itemmsg.repair.screwdriver_mechanicalparts>
-
+  <itemmsg.repair.screwdriver_electricalparts>[[use]] Repair (Screwdriver + Electrical parts)</itemmsg.repair.screwdriver_electricalparts>
 
 
   <ordername.findandequipradiationsuit>Find and Equip Radiation Suit</ordername.findandequipradiationsuit>
@@ -758,4 +760,7 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
 
   <hint.electricalrepair>Make sure to cut off the power to ensure the safe repairing.</hint.electricalrepair>
+
+  <VerticalEngineDisplayTip>How much thrusting rate is the vertical thruster.</VerticalEngineDisplayTip>
+  <SonarHertzTip>The hertz of the sonar. Higher hertz will grants a longer range but a smaller detection radius. Higer energy sonar is also more dangerous to humans.</SonarHertzTip>
 </infotexts>

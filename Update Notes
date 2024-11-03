@@ -164,3 +164,18 @@
 78.
     1. Fixing sonar slider cause the sonar to zoom very close.
     2. Adding alt + Q for quick swap to avoid kekborad conflict. 
+    3. Lowering grapple gun price from 250 to 150
+    4. Lowering engine deteriorationspeed from 0.125 to 0.055
+    5. Increasing junction maxdeteriorationdelay from 750 to 1750.
+    6. lowering character coldwater affliction from 0.65 to 0.15
+    7. Lowering character coldwater affliction when room temperater is low from 0.9 to 0.15. 
+79.
+    1. Readjusting vanilla outpost events. Using "SelectAlways" instead of overriding vanilla event set. Now the events are made sure to happen. Other locations still use the full set.
+    2. Fixing dhpowerissue not having a correct target.
+    3. Fixing lots of dh script events not picked by game.
+    4. Fixing fireextinguisherbracket cannot display contained item.
+    5. Making fireextinguisherbracket can be removed by wrench.
+    6. Removing changedirection button from purchaseable.
+    7. Adding electrical parts for the repairing.
+    8. Making vertical engine cannot deteroie.
+    9. Adding digital display for vertical engines.

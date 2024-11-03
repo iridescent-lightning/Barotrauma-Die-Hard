@@ -106,14 +106,14 @@ namespace BarotraumaDieHard
                         __result = true;
                         return false;
                     }
-                    else if (powered.powerIn.Grid.Power <= 0f)
+                    else if (powered.powerIn.Grid.Power <= 1f)
                     {
                         //DebugConsole.NewMessage("Power < 0");
                         __result = true;
                         return false;
                     }
                     
-
+                    //DebugConsole.NewMessage(powered.powerIn.Grid.Power.ToString());
                     __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
 #if CLIENT   
                  
@@ -166,8 +166,9 @@ namespace BarotraumaDieHard
                     {
                        return;
                     }
-                    else if (powered.powerIn.Grid.Power > 0f)
+                    else if (powered.powerIn.Grid.Power > 1f)
                     {
+                        
                         __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
                         return;
                     }

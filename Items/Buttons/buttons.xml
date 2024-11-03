@@ -118,24 +118,11 @@
     </Item>
     <Item name="" identifier="buttonchangedirection" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="1">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
-      <Price baseprice="125" minavailable="4">
-        <Price storeidentifier="merchantoutpost" />
-        <Price storeidentifier="merchantcity" sold="false" />
-        <Price storeidentifier="merchantresearch" />
-        <Price storeidentifier="merchantmilitary" />
-        <Price storeidentifier="merchantmine" />
-        <Price storeidentifier="merchantengineering" multiplier="0.9" />
-      </Price>
       <Sprite texture="button2.png" sourcerect="28,70,34,51" depth="0.8" origin="0.5,0.5" />
       <Deconstruct time="10">
         <Item identifier="plastic" amount="2" />
         <Item identifier="copper" />
       </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="10">
-        <RequiredSkill identifier="electrical" level="25" />
-        <RequiredItem identifier="fpgacircuit" />
-        <RequiredItem identifier="plastic" />
-      </Fabricate>
       <Body width="36" height="40" density="20" />
       <Controller direction="None" canbepicked="true" msg="cursorhover.changedirection">
         <RequiredItem identifier="id_captain" type="Picked" msg="ItemMsgUnauthorizedAccess" />
