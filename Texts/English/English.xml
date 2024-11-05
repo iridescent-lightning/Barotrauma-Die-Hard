@@ -763,4 +763,5 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
   <VerticalEngineDisplayTip>How much thrusting rate is the vertical thruster.</VerticalEngineDisplayTip>
   <SonarHertzTip>The hertz of the sonar. Higher hertz will grants a longer range but a smaller detection radius. Higer energy sonar is also more dangerous to humans.</SonarHertzTip>
+  
 </infotexts>

@@ -182,3 +182,8 @@
 80.
     1. Adding range check for sonar damage.
     2. Removing sonar damage character type limit. Now sonar can cause damage to monster
+81.
+    1. Adding check to disable the requireditem(s) to be override by save xml file for repairable. Other elements aren't affected. This allow us to customize the consumeables for the repairables. 
+    2. Changing repairing parts from 20 to 30 stacksize.
+    3. All turrets should now be able to update the reqired item to repair as 'heavywrench'.
+    4. Increase maxstacksize for 'heavywrench' from 1 to 6.

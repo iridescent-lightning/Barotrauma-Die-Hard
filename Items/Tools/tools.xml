@@ -92,7 +92,7 @@
       <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="" identifier="heavywrench" variantof="wrench" addedrepairspeedmultiplier="0.4" nameidenfitfier="dhheavywrench" impactsoundtag="impact_wrench_large">
+    <Item name="" identifier="heavywrench" variantof="wrench" addedrepairspeedmultiplier="0.4" nameidenfitfier="dhheavywrench" impactsoundtag="impact_wrench_large" maxstacksize="6">
       <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
       <PreferredContainer primary="engcab" amount="1" />
       <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" />
