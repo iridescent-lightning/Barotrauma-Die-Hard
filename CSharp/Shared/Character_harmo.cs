@@ -84,7 +84,7 @@ namespace CharacterModNamespace
 
 			if (HullMod.GetGas(__instance.CurrentHull, "Temperature") < 278.15f)
 			{
-				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(0.15f * deltaTime));
+				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(0.3f * deltaTime));
 			}
 			else if (HullMod.GetGas(__instance.CurrentHull, "Temperature") > 323.15f)
 			{

@@ -197,7 +197,7 @@ namespace CharacterHealthMod
 			// Defualt Character Status Effect Attributes
 			if (_.Character.IsHuman && _.Character.InWater)
 			{
-				_.ApplyAffliction(_.Character.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(0.15f * deltaTime));
+				_.ApplyAffliction(_.Character.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(0.3f * deltaTime));
 			}
 			else if (_.Character.IsHuman && _.Character.AnimController.IsMovingFast)//IsMovingFast doesn't detect water
 			{

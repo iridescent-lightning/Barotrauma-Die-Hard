@@ -50,7 +50,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -103,7 +106,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -155,7 +161,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -207,7 +216,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -259,7 +271,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -311,7 +326,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -363,7 +381,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -414,7 +435,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -465,7 +489,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -516,7 +543,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -567,7 +597,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -618,7 +651,10 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-1" interval="0.1" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>

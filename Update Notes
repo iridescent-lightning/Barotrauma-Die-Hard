@@ -187,3 +187,10 @@
     2. Changing repairing parts from 20 to 30 stacksize.
     3. All turrets should now be able to update the reqired item to repair as 'heavywrench'.
     4. Increase maxstacksize for 'heavywrench' from 1 to 6.
+    5. Adjusting coldwater affliction.
+    6. Adding a repairable for shuttle batteries.
+    7. All electrical devices excludes pumps, reactors, and fabricator and deconstructor, will take random damage when submerged in water. Every 60s item will take damage ranged from 0~100.
+82.
+    1. Heavywrench price changed from 150 to 60.
+    2. || powerContainer.powerIn.Grid.Load > 0 this has to be removed to avoid supercapacitor crash the game. Now only the load is checked.
+    3. Lowering the fuelrod price from 1000 to 700. 2000 to 1400.

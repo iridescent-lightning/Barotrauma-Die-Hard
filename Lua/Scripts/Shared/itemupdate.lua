@@ -71,7 +71,12 @@ print(item.Prefab.ContainedSprites)
 item.Prefab.ContainedSprites = "Content/Items/JobGear/TalentGear.png: (X:233 Y:22 Width:123 Height:234)"
 end)--]]
 
-
+Hook.Add("randomwaterdamage","WaterDamage",function(effect, deltaTime, item, targets, worldPosition)
+	local randomDamage = math.random(0,100)
+	item.Condition = item.Condition - randomDamage
+	print("taking damage")
+	
+end)
 
 
 

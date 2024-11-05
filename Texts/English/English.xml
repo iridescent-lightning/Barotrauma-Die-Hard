@@ -140,8 +140,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <EventText.stafffuelrod.c>"You need to show your submarine document in order to purchase a fuel rod."</EventText.stafffuelrod.c>
   <EventText.stafffuelrod.c.o1>Show your documentation</EventText.stafffuelrod.c.o1>
   <EventText.stafffuelrod.c.o1.c1>"Ok good."</EventText.stafffuelrod.c.o1.c1>
-  <EventText.stafffuelrod.c.o1.c1.o1>One Ordinary fuel rod -- 1000 Marks</EventText.stafffuelrod.c.o1.c1.o1>
-  <EventText.stafffuelrod.c.o1.c1.o2>One Thorium fuel rod -- 2000 Marks</EventText.stafffuelrod.c.o1.c1.o2>
+  <EventText.stafffuelrod.c.o1.c1.o1>One Ordinary fuel rod -- 700 Marks</EventText.stafffuelrod.c.o1.c1.o1>
+  <EventText.stafffuelrod.c.o1.c1.o2>One Thorium fuel rod -- 1400 Marks</EventText.stafffuelrod.c.o1.c1.o2>
   <EventText.stafffuelrod.c.o1.c2>"You don't have a valid documentation for the purchase."</EventText.stafffuelrod.c.o1.c2>
   <EventText.stafffuelrod.c.o2>Leave</EventText.stafffuelrod.c.o2>
   <EventText.stafffuelrod.c.o3>Show him the clown-made document</EventText.stafffuelrod.c.o3>

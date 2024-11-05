@@ -1099,9 +1099,9 @@
             <Success>
               <ConversationAction text="EventText.stafffuelrod.c.o1.c1" targettag="buyer" evensprite="captain">
                 <Option text="EventText.stafffuelrod.c.o1.c1.o1" endconversation="true">
-                  <CheckMoneyAction Amount="1000">
+                  <CheckMoneyAction Amount="700">
                     <Success>
-                      <MoneyAction amount="-1000" />
+                      <MoneyAction amount="-700" />
                       <SpawnAction itemidentifier="fuelrod" targetinventory="buyer" />
                     </Success>
                     <Failure>
@@ -1111,9 +1111,9 @@
                   </CheckMoneyAction>
                 </Option>
                 <Option text="EventText.stafffuelrod.c.o1.c1.o2" endconversation="true">
-                  <CheckMoneyAction Amount="2000">
+                  <CheckMoneyAction Amount="1400">
                     <Success>
-                      <MoneyAction amount="-2000" />
+                      <MoneyAction amount="-1400" />
                       <SpawnAction itemidentifier="thoriumfuelrod" targetinventory="buyer" />
                     </Success>
                     <Failure>
@@ -1122,7 +1122,9 @@
                     </Failure>
                   </CheckMoneyAction>
                 </Option>
-                <Option text="EventText.stafffuelrod.c.o2" endconversation="true" />
+                <Option text="EventText.stafffuelrod.c.o2" endconversation="true" >
+                  <GoTo name="tosell" />
+                </Option>
               </ConversationAction>
             </Success>
             <Failure>

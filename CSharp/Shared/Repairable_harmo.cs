@@ -37,11 +37,15 @@ namespace BarotraumaDieHard
             );
 
 #if CLIENT
+            /*var originalCreateGUI = typeof(Repairable).GetMethod("CreateGUI", BindingFlags.NonPublic | BindingFlags.Instance);
+            var postfixCreateGUI = typeof(RepairableDieHard).GetMethod("CreateGUI", BindingFlags.Public | BindingFlags.Static);
+            harmony.Patch(originalCreateGUI, new HarmonyMethod(postfixCreateGUI), null);
+
             harmony.Patch
             (
                 original: typeof(Repairable).GetMethod("DrawHUD"),
                 prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(DrawHUDPrefix)))
-            );
+            );*/
 #endif
             
         }
@@ -76,9 +80,14 @@ namespace BarotraumaDieHard
                         __result = true;
                         return false;
                     }
-                    if (powerContainer.powerOut.Grid.Load > 0 || powerContainer.powerIn.Grid.Load > 0)
+                    //  || powerContainer.powerIn.Grid.Load > 0 this has to be removed to avoid supercapacitor crash the game. Now only the load is checked.
+                    if (powerContainer.powerOut.Grid.Load > 0)
                     {
                         __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, character);
+#if CLIENT   
+                 
+                        BarotraumaDieHard.CustomHintManager.DisplayHint("electricalrepair".ToIdentifier());
+#endif
                         __result = false;
                         return false;
                     }

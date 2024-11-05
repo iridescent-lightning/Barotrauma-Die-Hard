@@ -38,8 +38,9 @@
       <CustomJunctionBox canbeselected="true" msg="ItemMsgInteractSelect">
         <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
         <!--minsize="350,160" maxsize="420,190"-->
-        <StatusEffect type="InWater" target="This" condition="-0.25">
+        <StatusEffect type="InWater" target="This" interval="60">
           <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
         </StatusEffect>
       </CustomJunctionBox>
       <ItemContainer capacity="1" hideitems="true" canbeselected="true" maxstacksize="1">
@@ -151,7 +152,9 @@
       <Containable items="loadable" />
     </ItemContainer>
     <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="itemmsg.repair.screwdriver_electricalparts" hudpriority="10">
-      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="InWater" target="This" interval="60">
+        <LuaHook name="randomwaterdamage" />
+      </StatusEffect>
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
       <RequiredSkill identifier="electrical" level="55" />
       <RequiredItem items="screwdriver" type="Equipped" />
@@ -186,24 +189,6 @@
         </StatusEffect>
       </PowerContainer>
       <BrokenBattery/>
-      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" condition="-0.1" />
-        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="electrical" level="55" />
-        <RequiredItem items="screwdriver" type="Equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-          <Affliction identifier="stun" strength="4" />
-          <Affliction identifier="burn" strength="5" />
-        </StatusEffect>
-        <StatusEffect type="OnPicked" target="This">
-          <LuaHook name="AddTagForOpen" />
-        </StatusEffect>
-      </Repairable>
     </Item>
     <Item name="Battery-4000" identifier="battery4000" tags="battery,batterycellrecharger,playinteractsound" category="Electrical,Machine" Scale="0.5" description="[Cpacity:4000] [Output:1000] [Recharge Speed:1000]" damagedbyexplosions="true" explosiondamagemultiplier="0.2" variantof="battery">
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
@@ -220,24 +205,7 @@
         </StatusEffect>
       </PowerContainer>
       <BrokenBattery/>
-      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" condition="-0.1" />
-        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="electrical" level="55" />
-        <RequiredItem items="screwdriver" type="Equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-          <Affliction identifier="stun" strength="4" />
-          <Affliction identifier="burn" strength="5" />
-        </StatusEffect>
-        <StatusEffect type="OnPicked" target="This">
-          <LuaHook name="AddTagForOpen" />
-        </StatusEffect>
-      </Repairable>
+      
     </Item>
     <Item name="Capacitor Slot" description="" identifier="capacitorslot" Tags="supercapacitor" showinstatusmonitor="false" category="Machine" interactthroughwalls="true" Scale="0.35" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
       <Sprite texture="%ModDir%/Items/Electricity/signalcomp_broken.png" sourcerect="618,724,70,81" depth="0.8" />
@@ -306,7 +274,9 @@
         </StatusEffect>
       </LightComponent>
       <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" condition="-0.5" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
         <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
@@ -361,21 +331,6 @@
           <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" angle="270" distance="30" />
         </StatusEffect>
       </LightComponent>
-      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" condition="-0.5" />
-        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <RequiredSkill identifier="electrical" level="55" />
-        <RequiredItem items="screwdriver" type="Equipped" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-          <Affliction identifier="stun" strength="4" />
-          <Affliction identifier="burn" strength="5" />
-        </StatusEffect>
-      </Repairable>
     </Item>
     <Item name="X-III" identifier="supercapacitorIII" tags="supercapacitor" category="Electrical,Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="[Cpacity:40] [Output:20000000] [Recharge Speed:0~1600]">
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="102,997,22,27" origin="0.5,0.45" />
@@ -417,21 +372,6 @@
           <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" angle="270" distance="30" />
         </StatusEffect>
       </LightComponent>
-      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" condition="-0.5" />
-        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
-        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <RequiredSkill identifier="electrical" level="55" />
-        <RequiredItem items="screwdriver" type="Equipped" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-          <Affliction identifier="stun" strength="4" />
-          <Affliction identifier="burn" strength="5" />
-        </StatusEffect>
-      </Repairable>
     </Item>
     <Item name="" identifier="shuttlebattery" tags="battery,batterycellrecharger" category="Electrical,Machine" Scale="0.5" description="" damagedbyexplosions="false">
       <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
@@ -472,6 +412,24 @@
         <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
         <Containable items="loadable" />
       </ItemContainer>
+      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="itemmsg.repair.screwdriver_electricalparts" hudpriority="10">
+      <StatusEffect type="InWater" target="This" interval="60">
+        <LuaHook name="randomwaterdamage" />
+      </StatusEffect>
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleamount="5" emitinterval="2" particlespersecond="5" anglemax="360" distancemax="30" velocitymin="100" velocitymax="500" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
     </Item>
     <Item name="" identifier="handdynamo" tags="battery,mediumitem" category="Electrical,Machine" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.7" isshootable="true" maxstacksize="2">
       <PreferredContainer secondary="storagecab" />

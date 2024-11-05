@@ -81,11 +81,11 @@ maxstrength="100">
     <Affliction name="afflictionname.coldwater" identifier="coldwater" description="coldwater1" type="debuff" causeofdeathdescription="Died of freezing ocean." selfcauseofdeathdescription="You have died of freezing ocean." limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="101" treatmentthreshold="101" maxstrength="100" affectmachines="false" iconcolors="153,255,255;0,255,255;0,153,153;0,0,153">
       <Description textidentifier="coldwater" minstrength="0" maxstrength="100" />
       <!-- no effects at this point -->
-      <Effect minstrength="0" maxstrength="60" strengthchange="-0.5" />
+      <Effect minstrength="0" maxstrength="60" strengthchange="-0.2" />
       <!-- Slow down the character and slightly decrease vitality -->
       <Effect minstrength="70" maxstrength="90" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-0.5" dialogflag="" minfacetint="0,51,102,0" maxfacetint="0,51,102,50" minspeedmultiplier="0.9" maxspeedmultiplier="0.8"></Effect>
       <!-- Withdrawal symptoms start to get lethal at this level -->
-      <Effect minstrength="90" maxstrength="100" strengthchange="-0.5" dialogflag="" minfacetint="0,51,102,100" maxfacetint="0,51,102,150" minspeedmultiplier="0.8" maxspeedmultiplier="0.7">
+      <Effect minstrength="90" maxstrength="100" strengthchange="-0.25" dialogflag="" minfacetint="0,51,102,100" maxfacetint="0,51,102,150" minspeedmultiplier="0.8" maxspeedmultiplier="0.7">
         <StatusEffect target="Character" disabledeltatime="true">
           <Affliction identifier="dh_hypothermia" strength="0.11" />
         </StatusEffect>

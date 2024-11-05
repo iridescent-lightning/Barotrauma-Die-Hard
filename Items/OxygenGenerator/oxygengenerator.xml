@@ -61,7 +61,7 @@
         <output name="oxygen_generated_amount_out" displayname="connection.oxygen_generated_amount_out" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
         <RequiredItem items="wrench" type="equipped" />
@@ -72,6 +72,10 @@
           <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
           <Affliction identifier="lacerations" strength="15" />
           <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
         </StatusEffect>
       </Repairable>
     </Item>
@@ -119,7 +123,7 @@
         <input name="power_in" displayname="connection.powerin" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
         <RequiredItem items="wrench" type="equipped" />
@@ -129,6 +133,10 @@
           <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
           <Affliction identifier="lacerations" strength="5" />
           <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="This" interval="60">
+          <Conditional voltage="gt 0.1" />
+          <LuaHook name="randomwaterdamage" />
         </StatusEffect>
       </Repairable>
     </Item>
@@ -169,7 +177,7 @@
         <input name="power_in" displayname="connection.powerin" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" AIRepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.02" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" AIRepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
         <RequiredItem items="wrench" type="equipped" />
@@ -207,7 +215,9 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-0.5" disabledeltatime="false" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
       </Repairable>
     </Item>
@@ -238,7 +248,9 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" condition="-0.5" disabledeltatime="false" />
+        <StatusEffect type="InWater" target="This" interval="60">
+          <LuaHook name="randomwaterdamage" />
+        </StatusEffect>
       </Repairable>
     </Item>
     <Item name="compressor" identifier="compressor" tags="ventilation" category="Machine" linkable="true" allowedlinks="ventilation_vent" damagedbyexplosions="true" explosiondamagemultiplier="0.2" scale="0.8">
