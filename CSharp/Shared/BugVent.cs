@@ -54,8 +54,9 @@ namespace ButVentMod//todo make a structural namespace DieHard.Item.Components. 
 		
         public override void Update(float deltaTime, Camera cam)
         {
+            
             if (!item.InPlayerSubmarine && onlyPlayerSub) {return;}
-
+            
             // Increment the elapsed time
             elapsedTime += deltaTime;
 
@@ -64,10 +65,14 @@ namespace ButVentMod//todo make a structural namespace DieHard.Item.Components. 
             {
                 // Reset the elapsed time
                 elapsedTime = 0.0f;
+                
 
                 // Perform the action with a chance
                 if (Rand.Range(0.0f, 1.0f) < bugAppearChance)
                 {
+#if CLIENT
+                    BarotraumaDieHard.CustomHintManager.DisplayHint("bugvent".ToIdentifier());
+#endif
                     
 					Entity.Spawner.AddCharacterToSpawnQueue("Electrical_bug",item.WorldPosition);
                 }

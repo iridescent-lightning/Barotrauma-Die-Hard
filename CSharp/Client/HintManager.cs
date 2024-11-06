@@ -47,7 +47,7 @@ namespace BarotraumaDieHard
                 var doc = XMLExtensions.TryLoadXml(HintManagerFile);
                 if (doc == null)
                 {
-                    DebugConsole.NewMessage("sdfdsf");
+                    
                 }
                 if (doc?.Root != null)
                 {
