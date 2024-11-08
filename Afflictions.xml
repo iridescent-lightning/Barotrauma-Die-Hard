@@ -7,6 +7,7 @@
       <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true" minvitalitydecrease="0" maxvitalitydecrease="2" dialogflag="GunshotWound"></Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,768,128,128" color="195,60,60,255" origin="0,0" />
     </InternalDamage>
+    <!--obsolete. now use dodamagetolimb to directly check if armor on limb is hit. no longer needs this fake affliction-->
     <Affliction name="Armormarker" identifier="Armormarker" type="marker" description="marker" limbspecific="true" indicatorlimb="Torso" activationthreshold="0" maxstrength="10" targets="human">
       <Effect minstrength="0" maxstrength="10" strengthchange="-10" />
     </Affliction>

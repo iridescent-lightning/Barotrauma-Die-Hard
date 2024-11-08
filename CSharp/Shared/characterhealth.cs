@@ -56,15 +56,8 @@ namespace CharacterHealthMod
 
 		CharacterHealth _ = __instance;
 
-		
-		
-
-
 		var leftHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand);
 		var RightHand = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.RightHand);
-		var armor = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes);
-		var innerCloth = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes);
-		var headWear = _.Character.Inventory.GetItemInLimbSlot(InvSlotType.Head);
 
 		foreach (Affliction newAffliction in attackResult.Afflictions)
 		{
@@ -90,56 +83,6 @@ namespace CharacterHealthMod
 						RightHand.Drop(_.Character);
 					}
 				}
-				
-				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && armor != null)
-				{
-					if (armor.Prefab.Identifier == "bodyarmorI")
-					{
-						armor.Condition = armor.Condition - 10f;
-						if (armor.Condition == 0f)
-						{
-							Entity.Spawner.AddEntityToRemoveQueue(armor);
-						}
-					}
-					else if (armor.Prefab.Identifier == "bodyarmorII")
-					{
-						armor.Condition = armor.Condition - 15f;
-						if (armor.Condition == 0f)
-						{
-							Entity.Spawner.AddEntityToRemoveQueue(armor);
-						}
-					}
-					else if (armor.Prefab.Identifier == "bodyarmorIII")
-					{
-						armor.Condition = armor.Condition - 20f;
-						if (armor.Condition == 0f)
-						{
-							Entity.Spawner.AddEntityToRemoveQueue(armor);
-						}
-					}
-				}
-				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Torso && innerCloth != null &&
-				armor == null && innerCloth.HasTag("clothing"))
-				{
-					innerCloth.Condition = innerCloth.Condition - 10f;
-					if (innerCloth.Condition == 0f)
-					{
-						Entity.Spawner.AddEntityToRemoveQueue(innerCloth);
-					}
-				}
-				else if (newAffliction.Identifier == "Armormarker" && hitLimb.type == LimbType.Head && headWear != null)
-				{
-					headWear.Condition = headWear.Condition - 40f;
-					if (headWear.Condition == 0f)
-					{
-						Entity.Spawner.AddEntityToRemoveQueue(headWear);
-					}
-				}
-			}
-			
-			else
-			{
-			_.AddAffliction(newAffliction, allowStacking);
 			}
 		
       }

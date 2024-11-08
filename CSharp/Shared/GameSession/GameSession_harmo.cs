@@ -118,7 +118,7 @@ namespace BarotraumaDieHard
 
             ReactorDieHard.ClearRactorySecondContainerDictionary();
 
-           ConvertLocationToAbandoned();
+           ConvertLocationToDestroyed();
             
         }
     
@@ -156,7 +156,7 @@ namespace BarotraumaDieHard
 
 
 
-        public static void ConvertLocationToAbandoned()
+        public static void ConvertLocationToDestroyed()
         {
             if (GameMain.GameSession?.Campaign == null) return;
 
@@ -171,8 +171,9 @@ namespace BarotraumaDieHard
                 {
                     if (it.HasTag("reactor") && !it.InPlayerSubmarine && it.Condition <= 0)
                     {
+#if DEBUG
                         DebugConsole.NewMessage("previous outpost's reactor is dead. Converting outpost to Abandoned.");
-
+#endif
                         var allLocationTypes = LocationType.Prefabs; // This might be a collection containing all location types
 
                         // Find a specific type by its identifier

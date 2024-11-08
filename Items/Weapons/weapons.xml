@@ -664,7 +664,6 @@
           <Affliction identifier="gunshotwound" strength="4" />
           <Affliction identifier="bleeding" strength="6" />
           <Affliction identifier="stun" strength="0.3" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -757,7 +756,6 @@
         <StatusEffect type="OnSuccess" target="UseTarget">
           <Affliction identifier="burn" amount="15" />
           <Affliction identifier="naplm" amount="30" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="UseTarget" interval="1">
           <Conditional ishuman="true" />
@@ -945,7 +943,6 @@
           <Affliction identifier="gunshotwound" strength="55" />
           <Affliction identifier="bleeding" strength="33" />
           <Affliction identifier="stun" strength="0.1" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />

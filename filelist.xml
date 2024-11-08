@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Barotrauma Die Hard" modversion="4.6.342" corepackage="False" steamworkshopid="2679111898" gameversion="1.6.19.1">
+<contentpackage name="Barotrauma Die Hard" modversion="4.6.344" corepackage="False" steamworkshopid="2679111898" gameversion="1.6.19.1">
   <Item file="%ModDir%/Items/Diving/divinggear.xml" />
   <Item file="%ModDir%/Items/Weapons/weapons.xml" />
   <Item file="%ModDir%/Items/Weapons/small_arms.xml" />
@@ -162,14 +162,11 @@
   <Submarine file="%ModDir%/Winterhalter_DieHard.sub" />
   <OutpostModule file="%ModDir%/AdminModule_04DH.sub" />
   <OutpostModule file="%ModDir%/AdminModule_05DH.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_01DH.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_02DH.sub" />
   <OutpostModule file="%ModDir%/DH_Outpost_Camp.sub" />
   <OutpostModule file="%ModDir%/EngineeringModule_01DH.sub" />
   <OutpostModule file="%ModDir%/EngineeringModule_02DH.sub" />
   <OutpostModule file="%ModDir%/MedicalModule_01DH.sub" />
   <EnemySubmarine file="%ModDir%/Colony.sub" />
-  <OutpostModule file="%ModDir%/CrewModule_03DH.sub" />
   <OutpostModule file="%ModDir%/AdminModule_02LDH.sub" />
   <OutpostModule file="%ModDir%/AdminModule_01L_Airlock_ER.sub" />
   <Submarine file="%ModDir%/Barsuk_DieHard.sub" />
@@ -184,4 +181,7 @@
   <OutpostModule file="%ModDir%/Maps/DryCaves/Cave_Dock.sub" />
   <OutpostModule file="%ModDir%/Cave_Dock_01.sub" />
   <Submarine file="%ModDir%/0test.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_03DH.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_02DH.sub" />
+  <OutpostModule file="%ModDir%/CrewModule_01DH.sub" />
 </contentpackage>

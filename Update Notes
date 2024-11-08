@@ -206,3 +206,15 @@
     7. Appending alwaysdestructible to every outpost to allow player to destroy outpost in multiplayer.
     8. Adding logic to endround. If outpost reactor is destroyed, convert the outpost to type Destroyed.
     9. Adding a destroyed location template. Now every outpost got destroyed will be convereted into this location. 
+84. 
+    1. <ScriptedEvent identifier="Story.chapter1.cargoateng"> has issue. ConversationAction now shouldn't be a child element. Nothing changed.  To be fixed. 
+    2. Adding override to all other vanilla outposts. 
+    3. Making crewmoduel in coldcave boime cap number 2. 
+    4. Updating outpost generationparameter. minhullway from 400 to 0.
+    5. Removing 'armormarker' affliction from all weapons.
+    6. Patching Attack class to be able to damage the cloth wear without relaying on afflictions. 
+    7. Removing a logic in character that seems to amplify the damage received. 
+    8. Bots now wearing armor hit by bullet won't receive any helper affliction. 
+    9. Armor received damages are now random. 
+    10. Completely disabled Deterioration of engines, junctionboxes, and command devices. We alreay have a complex repairing system. It's time to discard the vanilla repair game.
+    11. Fixing fuelrod conditions were too low. Seems that reactors fuel rod consumptions are store in save. We need to imrpove the fuelrod's condition for this matter. normal fuelrod condition goes from 300 to 1200. High-grade fuel rod goes from 150 to 2800.

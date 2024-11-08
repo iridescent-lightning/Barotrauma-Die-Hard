@@ -1179,7 +1179,7 @@
       <QualityStat stattype="Condition" value="0.1"/>
     </Quality>
   </Item>-->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" health="300" impactsoundtag="impact_porcelain_statue_small" >
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" health="1200" impactsoundtag="impact_porcelain_statue_small" >
       <PreferredContainer primary="fuelrodcase" secondary="reactorcab" />
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" minamount="1" maxamount="1" spawnprobability="0.01" />
@@ -1212,7 +1212,7 @@
       </ItemContainer>
       <RadioactiveFuelRod/>
     </Item>
-    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" health="150" scale="0.5" impactsoundtag="impact_porcelain_statue_small">
+    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="smallitem,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" health="2800" scale="0.5" impactsoundtag="impact_porcelain_statue_small">
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" />
       <PreferredContainer secondary="beaconengcab" />
@@ -1411,9 +1411,12 @@
         </StatusEffect>
         <!--<StatusEffect type="OnUse">
           <LuaHook name="convert" />
-        </StatusEffect>-->
+        </StatusEffect>
         <StatusEffect type="OnUse" target="This">
           <LuaHook name="floodhull" />
+        </StatusEffect>-->
+        <StatusEffect type="OnUse" target="This">
+          <LuaHook name="killallnpc" />
         </StatusEffect>
       </RangedWeapon>
       <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">

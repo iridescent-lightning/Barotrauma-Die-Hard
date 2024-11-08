@@ -107,7 +107,6 @@
         <Attack structuredamage="10" targetforce="10" itemdamage="20" severlimbsprobability="0.2" penetration="0.6" stun="0.1">
           <Affliction identifier="gunshotwound" strength="28" />
           <Affliction identifier="bleeding" strength="3" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -382,7 +381,6 @@
         <Attack structuredamage="0.5" itemdamage="25" targetforce="6" penetration="0.3" severlimbsprobability="0.2" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="12" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
@@ -632,7 +630,6 @@
         <Attack structuredamage="0.5" itemdamage="25" targetforce="6" penetration="0.4" severlimbsprobability="0.35" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="37" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
@@ -805,7 +802,6 @@
         <Attack structuredamage="0.9" itemdamage="30" targetforce="6" penetration="0.6" severlimbsprobability="0.2" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="35" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1114,7 +1110,6 @@
         <Attack structuredamage="0.9" itemdamage="18" targetforce="6" penetration="0.3" severlimbsprobability="0.2" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="20" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1381,7 +1376,6 @@
         <Attack structuredamage="0.9" itemdamage="40" targetforce="6" penetration="0.7" severlimbsprobability="0.2" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="45" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1558,7 +1552,6 @@
           <Sound file="%ModDir%/Items/Weapons/bullethit4.ogg" type="OnImpact" volumenum="2" Range="1000" />
         </StatusEffect>
         <Attack structuredamage="0.9" itemdamage="40" targetforce="6" penetration="0.5" severlimbsprobability="0.2" stun="0.1">
-          <Affliction identifier="armormarker" strength="0.3" />
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="35" />
         </Attack>
@@ -1771,7 +1764,6 @@
         <Attack structuredamage="0.9" itemdamage="40" targetforce="6" penetration="0.95" severlimbsprobability="0.2" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="55" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1937,7 +1929,6 @@
         <Attack structuredamage="0.9" itemdamage="40" targetforce="6" penetration="0.9" severlimbsprobability="0.6" stun="0.1">
           <Affliction identifier="bleeding" strength="3" />
           <Affliction identifier="gunshotwound" strength="45" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -2233,7 +2224,6 @@
         <Attack structuredamage="2" itemdamage="12" targetforce="10" severlimbsprobability="0.1" penetration="0.4" stun="0.1">
           <Affliction identifier="bleeding" strength="5" />
           <Affliction identifier="gunshotwound" strength="20" />
-          <Affliction identifier="armormarker" strength="0.3" />
         </Attack>
         <StatusEffect type="OnImpact" target="UseTarget">
           <Conditional entitytype="eq Structure" />

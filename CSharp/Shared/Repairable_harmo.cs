@@ -36,6 +36,10 @@ namespace BarotraumaDieHard
                 prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(UpdatePostfix)))
             );
 
+            var originalUpdateDeterioration = typeof(Repairable).GetMethod("UpdateDeterioration", BindingFlags.NonPublic | BindingFlags.Instance);
+            var prefixUpdateDeterioration = new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(UpdateDeteriorationPrefix), BindingFlags.Public | BindingFlags.Static));
+            harmony.Patch(originalUpdateDeterioration, prefixUpdateDeterioration, null);
+
 #if CLIENT
             /*var originalCreateGUI = typeof(Repairable).GetMethod("CreateGUI", BindingFlags.NonPublic | BindingFlags.Instance);
             var postfixCreateGUI = typeof(RepairableDieHard).GetMethod("CreateGUI", BindingFlags.Public | BindingFlags.Static);
@@ -181,6 +185,18 @@ namespace BarotraumaDieHard
                         return;
                     }
                 }
+        }
+
+
+
+        public static bool UpdateDeteriorationPrefix(float deltaTime, Repairable __instance)
+        {
+            Repairable _ = __instance;
+            if (_.item.HasTag("junctionbox") || _.item.HasTag("engine") || _.item.HasTag("command")) return false;
+            
+
+
+            return true;            
         }
 
 

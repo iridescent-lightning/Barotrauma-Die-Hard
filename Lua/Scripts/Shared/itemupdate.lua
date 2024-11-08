@@ -921,6 +921,13 @@ Hook.Add("floodhull","floodhull",function(effect, deltaTime, item, targets, worl
 	--effect.user.BreakJoints();
 	--RespawnCharacter(effect.user)
 end)
+Hook.Add("killallnpc","rands",function(effect, deltaTime, item, targets, worldPosition)
+		for _,v in pairs(Character.CharacterList) do
+			if not v.IsOnPlayerTeam then
+				v.Kill(CauseOfDeathType.Unknown)
+			end
+		end	
+	end)
 
 Hook.Add("ChangeDirection", "ChangeDirection", function(effect, deltaTime, item, targets, worldPosition)
 	if CLIENT and not Game.IsMultiplayer then
