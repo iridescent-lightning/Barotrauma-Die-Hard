@@ -105,7 +105,6 @@ namespace BarotraumaDieHard
                 {
                     if (powered == null) // Check for devices that don't have powered component.
                     {
-                        //DebugConsole.NewMessage("no component");
                         __result = true;
                         return false;
                     }

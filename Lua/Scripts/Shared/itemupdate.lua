@@ -74,7 +74,7 @@ end)--]]
 Hook.Add("randomwaterdamage","WaterDamage",function(effect, deltaTime, item, targets, worldPosition)
 	local randomDamage = math.random(0,100)
 	item.Condition = item.Condition - randomDamage
-	print("taking damage")
+	--print("taking damage")
 	
 end)
 

@@ -198,4 +198,11 @@
     1. Adding a hint for electric bug event.
 83. 
     1. Now all locations outpost will spawn players in sub. So we can manage the submarine without having to go back to sub first. 
-    2. Killed npc in outpost will be removed. 
+    2. Killed npc in outpost will no longer be respawned in outpost.
+    3. Fixing AI repairable. Fixing bots refuse to preform repair even though the power of reactor has been cut off.
+    4. Lowering MPX reload skill require from 45 to 25.
+    5. Removing grenade grenade_midaircollide. This crashes the game. To be fixed in the future. 
+    6. Fixing a bug that gunner has a null cloth set and causes the game to crash in multiplayer lobby if that set is hovered on.
+    7. Appending alwaysdestructible to every outpost to allow player to destroy outpost in multiplayer.
+    8. Adding logic to endround. If outpost reactor is destroyed, convert the outpost to type Destroyed.
+    9. Adding a destroyed location template. Now every outpost got destroyed will be convereted into this location. 

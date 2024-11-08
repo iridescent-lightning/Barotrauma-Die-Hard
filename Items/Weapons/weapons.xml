@@ -273,7 +273,7 @@
       </Rope>
     </Item>
     
-    <Item name="" identifier="stungrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Item name="" identifier="stungrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="3" spawnprobability="0.5" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
@@ -322,7 +322,7 @@
         <QualityStat stattype="ExplosionRadius" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="empgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Item name="" identifier="empgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="armcab" />
@@ -373,7 +373,7 @@
         <QualityStat stattype="ExplosionDamage" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="fraggrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" scale="0.255" impactsoundtag="impact_metal_heavy" isshootable="true">
+    <Item name="" identifier="fraggrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" scale="0.255" impactsoundtag="impact_metal_heavy" isshootable="true">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
       <PreferredContainer secondary="armcab" />
@@ -423,7 +423,7 @@
         <QualityStat stattype="ExplosionDamage" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="incendiumgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_heavy" isshootable="true">
+    <Item name="" identifier="incendiumgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_heavy" isshootable="true">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
       <PreferredContainer primary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
       <PreferredContainer secondary="armcab" />
@@ -470,7 +470,7 @@
         <QualityStat stattype="ExplosionDamage" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="gasgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,grenade_midaircollide" Scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="" identifier="gasgrenade" category="Weapon" maxstacksize="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" notcampaign="true" />
       <PreferredContainer primary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
       <PreferredContainer secondary="armcab" />

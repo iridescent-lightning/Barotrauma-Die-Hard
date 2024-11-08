@@ -562,5 +562,20 @@
         <Requirement requiredlocations="Outpost,City,Military,Research,Mine" requiredproximity="1" />
       </ChangeTo>-->
     </Cave>
+
+    <Destroyed identifier="Destroyed" 
+      namefile="Content/Map/locationNames.txt,Content/Map/alienNames.txt" 
+      commonnessperzone="1: 0, 2: 0, 3: 0.3, 4: 0.5, 5: 0.25, 6: 0" 
+      missiontags="" 
+      hideentitysubcategories="" 
+      outpostteam="None"
+      AllowAsBiomeGate="false">
+
+      <Symbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105" />
+      <Portrait texture="%ModDir%/Maps/LocationPortraits/reactorbay.png" premultiplyalpha="false" />
+      <Portrait texture="%ModDir%/Maps/LocationPortraits/divingsuit.png" premultiplyalpha="false" />
+      <Portrait texture="%ModDir%/Maps/LocationPortraits/coldcavebio.png" premultiplyalpha="false" />
+
+    </Destroyed>
   </locationtypes>
 </Override>

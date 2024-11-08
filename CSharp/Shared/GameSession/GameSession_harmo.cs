@@ -69,7 +69,7 @@ namespace BarotraumaDieHard
 
         public static void StartRound(LevelData levelData, bool mirrorLevel, SubmarineInfo startOutpost, SubmarineInfo endOutpost)
         {
-
+                //DebugConsole.NewMessage(Level.Loaded.StartLocation?.Type.ToString());
 
             foreach (Item preactor in Item.ItemList)
             {
@@ -117,9 +117,13 @@ namespace BarotraumaDieHard
 
 
             ReactorDieHard.ClearRactorySecondContainerDictionary();
+
+           ConvertLocationToAbandoned();
+            
+        }
     
 
-        } 
+        
 
 
 
@@ -150,5 +154,44 @@ namespace BarotraumaDieHard
         }
 #endif
 
+
+
+        public static void ConvertLocationToAbandoned()
+        {
+            if (GameMain.GameSession?.Campaign == null) return;
+
+            
+            // Get the current location (this may vary based on your context)
+            Location currentLocation = Level.Loaded.StartLocation;
+
+            if (currentLocation != null)
+            {
+
+                foreach (Item it in Item.ItemList)
+                {
+                    if (it.HasTag("reactor") && !it.InPlayerSubmarine && it.Condition <= 0)
+                    {
+                        DebugConsole.NewMessage("previous outpost's reactor is dead. Converting outpost to Abandoned.");
+
+                        var allLocationTypes = LocationType.Prefabs; // This might be a collection containing all location types
+
+                        // Find a specific type by its identifier
+                        Identifier newTypeIdentifier = new Identifier("Destroyed");
+                        LocationType newType = allLocationTypes.FirstOrDefault(lt => lt.Identifier == newTypeIdentifier);
+
+                        if (newType == null)
+                        {
+                            DebugConsole.ThrowError("Failed to find the location type.");
+                        }
+                        else
+                        {
+                            // Use the location type, e.g., assign it to the current location
+                            currentLocation.Type = newType;
+                        }
+                    }
+                }
+                
+            }
+        }
     }
 }

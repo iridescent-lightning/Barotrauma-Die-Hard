@@ -129,6 +129,8 @@ namespace BarotraumaDieHard
                 // Skip this character if they were killed at this location
                 if (location != null && location.KilledCharacterIdentifiers.Contains(characterInfo.GetIdentifier()))
                 {
+                    // DebugConsole.NewMessage("npc was killed");
+                    
                     continue; // Exclude killed characters
                 }
                 

@@ -259,7 +259,7 @@
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
         <sprite name="MPX Worn" texture="%ModDir%/Items/Weapons/weapons.png" sourcerect="0,0,205,88" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
       </Wearable>
-      <RangedWeapon barrelpos="100,5" spread="10" unskilledspread="60" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="45">
+      <RangedWeapon barrelpos="100,5" spread="10" unskilledspread="60" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="25">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
         <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
