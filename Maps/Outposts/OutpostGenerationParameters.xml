@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <OutpostGenerationParameters>
-    <OutpostConfig identifier="outpost" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="Outpost">
+    <OutpostConfig identifier="outpost" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="Outpost" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -71,7 +71,7 @@
       <npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult"/>-->
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="researchoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="5" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="EuropanRidge_Research">
+    <OutpostConfig identifier="researchoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="5" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="EuropanRidge_Research" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -108,7 +108,7 @@
       <npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult"/>-->
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="miningoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="5" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="EuropanRidge_Mine">
+    <OutpostConfig identifier="miningoutpost_er" replaceinradiation="abandonedoutpost" totalmodulecount="5" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="EuropanRidge_Mine" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -142,7 +142,7 @@
       <modulecount flag="CrewModule" count="1" />
       <modulecount flag="MedicalModule" count="1" />
       <!--<modulecount flag="ResearchModule" count="1"/>
-    <modulecount flag="SecurityModule" count="1"/>-->
+      <modulecount flag="SecurityModule" count="1"/>-->
       <npcs>
         <npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="coalition" />
         <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="coalition" />
@@ -163,7 +163,7 @@
         <npc from="outpostnpcs1" identifier="commoner" />
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="greatsea_outpost" totalmodulecount="7" minhallwaylength="0" allowedlocationtypes="Greatsea_Outpost" spawncrewinsideoutpost="true" alwaysdestructible="false" alwaysrewireable="false" allowstealing="false">
+    <OutpostConfig identifier="greatsea_outpost" totalmodulecount="7" minhallwaylength="0" allowedlocationtypes="Greatsea_Outpost"  alwaysdestructible="false" alwaysrewireable="false" allowstealing="false" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -204,10 +204,10 @@
       <modulecount flag="CrewModule" count="1" />
       <modulecount flag="SecurityModule" count="1" />
       <!--<modulecount flag="ClownModule" count="1" order="1" requiredfaction="clowns"/>
-    <modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>
-	<modulecount flag="MedicalModule" count="1"/>
-    <modulecount flag="ResearchModule" count="1"/>
-    -->
+      <modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>
+      <modulecount flag="MedicalModule" count="1"/>
+      <modulecount flag="ResearchModule" count="1"/>
+      -->
       <npcs>
         <npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="coalition" />
         <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="coalition" />
@@ -225,7 +225,7 @@
         <npc from="outpostnpcs1" identifier="outpostdoctor" />
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="greatsea_reaserch" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="Greatsea_Research">
+    <OutpostConfig identifier="greatsea_reaserch" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="Greatsea_Research" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -262,7 +262,7 @@
         <npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult" />
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="AphoticPlateau_outpost" totalmodulecount="7" minhallwaylength="0" allowedlocationtypes="AphoticPlateau_Outpost" spawncrewinsideoutpost="true" alwaysdestructible="false" alwaysrewireable="false" allowstealing="false">
+    <OutpostConfig identifier="AphoticPlateau_outpost" totalmodulecount="7" minhallwaylength="0" allowedlocationtypes="AphoticPlateau_Outpost" spawncrewinsideoutpost="false" alwaysdestructible="false" alwaysrewireable="false" allowstealing="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -303,10 +303,10 @@
       <modulecount flag="CrewModule" count="1" />
       <modulecount flag="SecurityModule" count="1" />
       <!--<modulecount flag="ClownModule" count="1" order="1" requiredfaction="clowns"/>
-    <modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>
-	<modulecount flag="MedicalModule" count="1"/>
-    <modulecount flag="ResearchModule" count="1"/>
-    -->
+      <modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>
+      <modulecount flag="MedicalModule" count="1"/>
+      <modulecount flag="ResearchModule" count="1"/>
+      -->
       <npcs>
         <npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="coalition" />
         <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="coalition" />
@@ -324,7 +324,7 @@
         <npc from="outpostnpcs1" identifier="outpostdoctor" />
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="AphoticPlateau_reaserch" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="AphoticPlateau_Research">
+    <OutpostConfig identifier="AphoticPlateau_reaserch" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="0" allowedlocationtypes="AphoticPlateau_Research" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
@@ -361,7 +361,7 @@
         <npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult" />
       </npcs>
     </OutpostConfig>
-    <OutpostConfig identifier="AphoticPlateau_mine" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="AphoticPlateau_Mine">
+    <OutpostConfig identifier="AphoticPlateau_mine" replaceinradiation="abandonedoutpost" totalmodulecount="7" appendtoreachtotalmodulecount="false" minhallwaylength="400" allowedlocationtypes="AphoticPlateau_Mine" spawncrewinsideoutpost="false">
       <modulecount flag="Airlock" count="1" />
       <modulecount flag="EngineeringModule" count="1" />
       <modulecount flag="AdminModule" count="1" />
