@@ -73,7 +73,7 @@
           <Affliction identifier="lacerations" strength="15" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -134,7 +134,7 @@
           <Affliction identifier="lacerations" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -215,7 +215,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
         <StatusEffect type="OnFire" target="This" Condition="-10" />
@@ -248,7 +248,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
       </Repairable>
@@ -299,7 +299,7 @@
     <Oxygencandle name="" identifier="oxygencandle" category="Equipment" tags="allowcleanup,playinteractsound" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metalcrate_light" waterproof="true" health="100">
       <Preferredcontainer primary="oxygengenerator" amount="1" spawnprobability="1" />
       <Preferredcontainer secondary="storagecab" amount="4" notcampaign="true" />
-      <Price baseprice="220" minavailable="2">
+      <Price baseprice="180" minavailable="2">
         <Price storeidentifier="merchantoutpost" minavailable="2" />
         <Price storeidentifier="merchantcity" minavailable="5" />
         <Price storeidentifier="merchantresearch" multiplier="1.25" />

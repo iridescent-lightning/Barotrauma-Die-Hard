@@ -22,7 +22,7 @@ namespace BarotraumaDieHard
 
         
 
-        private const float DirectionalPingSector = 30.0f;
+        private const float DirectionalPingSector = 90.0f;
         private static readonly float DirectionalPingDotProduct;
 
         static HandHeldSonar()

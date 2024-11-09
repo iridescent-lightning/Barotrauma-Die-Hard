@@ -256,7 +256,7 @@ namespace BarotraumaDieHard
                     {
                         float distance = Vector2.Distance(target.WorldPosition, pingSource);
 
-                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null ||  distance > _.Range) { continue; }
+                        if (!target.InWater || target.IsDead || target.CharacterHealth == null || target.CurrentHull != null ||  distance > _.Range * 0.5f) { continue; }
 
                         float pointDist = ((target.WorldPosition - pingSource) * 1f).LengthSquared();
                         

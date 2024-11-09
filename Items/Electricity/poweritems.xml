@@ -38,7 +38,7 @@
       <CustomJunctionBox canbeselected="true" msg="ItemMsgInteractSelect">
         <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
         <!--minsize="350,160" maxsize="420,190"-->
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -152,7 +152,7 @@
       <Containable items="loadable" />
     </ItemContainer>
     <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="itemmsg.repair.screwdriver_electricalparts" hudpriority="10">
-      <StatusEffect type="InWater" target="This" interval="60">
+      <StatusEffect type="InWater" target="This" interval="180">
         <LuaHook name="randomwaterdamage" />
       </StatusEffect>
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
@@ -274,7 +274,7 @@
         </StatusEffect>
       </LightComponent>
       <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
         <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
@@ -413,7 +413,7 @@
         <Containable items="loadable" />
       </ItemContainer>
       <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="itemmsg.repair.screwdriver_electricalparts" hudpriority="10">
-      <StatusEffect type="InWater" target="This" interval="60">
+      <StatusEffect type="InWater" target="This" interval="180">
         <LuaHook name="randomwaterdamage" />
       </StatusEffect>
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />

@@ -116,20 +116,10 @@ namespace CharacterHealthMod
       
     }
 	
-	public static void ApplyFlowForces(float deltaTime, Character character, Hull hull)
-        {
-            
-            foreach (var gap in hull.ConnectedGaps.Where(gap => gap.Open > 0 && !gap.IsRoomToRoom))
-            {
-                var distance = MathHelper.Max(Vector2.DistanceSquared(character.Position, gap.Position) / 1000, 1f);
-                Vector2 force = (gap.LerpedFlowForce / (distance / 15)) * deltaTime;
-                if (force.LengthSquared() > 0.01f)
-                {
-                    character.AnimController.Collider.FarseerBody.ApplyLinearImpulse(force * 100);
-                }
-            }
-            
-        }
+	
+
+
+
 	
 	public static void Update(CharacterHealth __instance, float deltaTime)
         {
@@ -153,10 +143,8 @@ namespace CharacterHealthMod
 				
 			}
 
-			/*if (_.Character.CurrentHull !=null && _.Character.InWater)
-			{
-				ApplyFlowForces(deltaTime, _.Character, _.Character.CurrentHull);
-			}*/
+			
+			
 		
 		}
 

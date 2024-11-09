@@ -50,7 +50,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -106,7 +106,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -161,7 +161,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -216,7 +216,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -271,7 +271,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -326,7 +326,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -381,7 +381,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -435,7 +435,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -489,7 +489,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -543,7 +543,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -597,7 +597,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -651,7 +651,7 @@
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="4" />
         </StatusEffect>
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>

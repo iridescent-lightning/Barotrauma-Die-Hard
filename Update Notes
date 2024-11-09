@@ -218,3 +218,10 @@
     9. Armor received damages are now random. 
     10. Completely disabled Deterioration of engines, junctionboxes, and command devices. We alreay have a complex repairing system. It's time to discard the vanilla repair game.
     11. Fixing fuelrod conditions were too low. Seems that reactors fuel rod consumptions are store in save. We need to imrpove the fuelrod's condition for this matter. normal fuelrod condition goes from 300 to 1200. High-grade fuel rod goes from 150 to 2800.
+85. 
+    1. Halving the sonar damage range. The damage only takes place when organic targets are half range of the sonar range. Preventing sonar from killing small monster too far. 
+    2. Changing handheld sonar DirectionalPingSector from 30 to 90.
+    3. Reducing Oxygen Candle price from 220 to 180.
+    4. Adding two shipissueworker commands. Curently has no function.
+    5. Increasing waterdamage check from 60 second per time to 180 second per time.
+    6. Adding water flowforce (pressure inbalance simulation) to game. 

@@ -21,11 +21,12 @@ using Barotrauma.Lights;
 using Barotrauma;
 using HarmonyLib;
 using System.Globalization;
+using System.Reflection;
 
 
-namespace StructureMod
+namespace BarotraumaDieHard
 {
-  class StructureMod : IAssemblyPlugin
+  class StructureDieHard : IAssemblyPlugin
   {
     public Harmony harmony;
 	private static float LeakThreshold = 0.6f;
@@ -34,17 +35,12 @@ namespace StructureMod
 	
     public void Initialize()
     {
-      harmony = new Harmony("StructureMod");
+        harmony = new Harmony("StructureDieHard");
 		
 		
-      harmony.Patch(
-        original: typeof(Structure).GetMethod("SetDamage"),
-        prefix: new HarmonyMethod(typeof(StructureMod).GetMethod("SetDamage"))//transpiler
-      );
-	  harmony.Patch(
-    original: typeof(Structure).GetMethod("SectionIsLeaking", new Type[] { typeof(int) }),
-    prefix: new HarmonyMethod(typeof(StructureMod).GetMethod("SectionIsLeakingPatch"))
-    );
+        var originalCreateSections = typeof(Structure).GetMethod("CreateSections", BindingFlags.NonPublic | BindingFlags.Instance);
+        var prefixCreateSections = new HarmonyMethod(typeof(StructureDieHard).GetMethod(nameof(CreateSectionsPrefix), BindingFlags.Public | BindingFlags.Static));
+        harmony.Patch(originalCreateSections, prefixCreateSections, null);
 
 	  
     }
@@ -57,190 +53,115 @@ namespace StructureMod
       harmony = null;
     }
 	
-	
-	//wtf, i added a static then the program works|||||change void to bool then change all return to return false to use prefix to prevent original codes from running.
-    public static bool SetDamage(int sectionIndex, float damage, Character attacker, bool createNetworkEvent, bool isNetworkEvent, bool createExplosionEffect, Structure __instance)
-        {
-            Structure _ = __instance;
-            //float LeakThreshold = 0.6f;
-            if (_.Submarine != null && _.Submarine.GodMode || (_.Indestructible && !isNetworkEvent)) { return false; }
-            if (!_.Prefab.Body) { return false; }
-            if (!MathUtils.IsValid(damage)) { return false; }
+	public static bool CreateSectionsPrefix(Structure __instance)
+    {
+        Structure _ = __instance;
+        int xsections = 1, ysections = 1;
+            int width = _.rect.Width, height = _.rect.Height;
 
-            damage = MathHelper.Clamp(damage, 0.0f, _.MaxHealth - _.Prefab.MinHealth);
-
-#if SERVER
-            if (GameMain.Server != null && createNetworkEvent && damage != _.Sections[sectionIndex].damage)
+            WallSection[] prevSections = null;
+            if (_.Sections != null)
             {
-                GameMain.Server.CreateEntityEvent(_);
+                prevSections = _.Sections.ToArray();
             }
-            bool noGaps = true;
-            for (int i = 0; i < _.Sections.Length; i++)
+            if (!_.HasBody)
             {
-                if (i != sectionIndex && _.SectionIsLeaking(i))
+                if (_.FlippedX && _.IsHorizontal)
                 {
-                    noGaps = false;
-                    break;
+                    xsections = (int)Math.Ceiling((float)_.rect.Width / _.Prefab.Sprite.SourceRect.Width);
+                    width = _.Prefab.Sprite.SourceRect.Width;
                 }
-            }
-#endif
-
-            if (damage < _.MaxHealth * LeakThreshold)
-            {
-                if (_.Sections[sectionIndex].gap != null)
+                else if (_.FlippedY && !_.IsHorizontal)
                 {
-#if SERVER
-                    //the structure doesn't have any other gap, log the structure being fixed
-                    if (noGaps && attacker != null)
-                    {
-                        GameServer.Log((_.Sections[sectionIndex].gap.IsRoomToRoom ? "Inner" : "Outer") + " wall repaired by " + GameServer.CharacterLogName(attacker), ServerLog.MessageType.ItemInteraction);
-                    }
-#endif
-                    DebugConsole.Log("Removing gap (ID " + _.Sections[sectionIndex].gap.ID + ", section: " + sectionIndex + ") from wall " + _.ID);
-
-                    //remove existing gap if damage is below leak threshold
-                    _.Sections[sectionIndex].gap.Open = 0.0f;
-                    _.Sections[sectionIndex].gap.Remove();
-                    _.Sections[sectionIndex].gap = null;
+                    ysections = (int)Math.Ceiling((float)_.rect.Height / _.Prefab.Sprite.SourceRect.Height);
+                    width = _.Prefab.Sprite.SourceRect.Height;
                 }
+                else
+                {
+                    xsections = 1;
+                    ysections = 1;
+                }
+                _.Sections = new WallSection[xsections];
             }
             else
             {
-                float prevGapOpenState = _.Sections[sectionIndex].gap?.Open ?? 0.0f;
-                if (_.Sections[sectionIndex].gap == null)
+                if (_.IsHorizontal)
                 {
-                    Rectangle gapRect = _.Sections[sectionIndex].rect;
-                    float diffFromCenter;
-                    if (_.IsHorizontal)
+                    //equivalent to (int)Math.Ceiling((double)rect.Width / WallSectionSize) without the potential for floating point indeterminism
+                    xsections = (_.rect.Width + Structure.WallSectionSize - 1) / Structure.WallSectionSize;
+                    _.Sections = new WallSection[xsections];
+                    width = Structure.WallSectionSize;
+                    DebugConsole.NewMessage("WallSectionSize: " + Structure.WallSectionSize.ToString());
+                    DebugConsole.NewMessage("Witdth: " + _.rect.Width.ToString());
+                    DebugConsole.NewMessage("xsections: " + xsections.ToString());
+                }
+                else
+                {
+                    ysections = (_.rect.Height + Structure.WallSectionSize - 1) / Structure.WallSectionSize;
+                    _.Sections = new WallSection[ysections];
+                    height = Structure.WallSectionSize;
+                }
+            }
+
+            for (int x = 0; x < xsections; x++)
+            {
+                for (int y = 0; y < ysections; y++)
+                {
+                    if (_.FlippedX || _.FlippedY)
                     {
-                        diffFromCenter = (gapRect.Center.X - _.rect.Center.X) / (float)_.rect.Width * _.BodyWidth;
-                        if (_.BodyWidth > 0.0f) { gapRect.Width = (int)(_.BodyWidth * (gapRect.Width / (float)_.rect.Width)); }
-                        if (_.BodyHeight > 0.0f)
+                        Rectangle sectionRect = new Rectangle(
+                            _.FlippedX ? _.rect.Right - (x + 1) * width : _.rect.X + x * width,
+                            _.FlippedY ? _.rect.Y - _.rect.Height + (y + 1) * height : _.rect.Y - y * height,
+                            width, height);
+
+                        if (_.FlippedX)
                         {
-                            gapRect.Y = (gapRect.Y - gapRect.Height / 2) + (int)(_.BodyHeight / 2 + _.BodyOffset.Y * _.scale);
-                            gapRect.Height = (int)_.BodyHeight;
+                            int over = Math.Max(_.rect.X - sectionRect.X, 0);
+                            sectionRect.X += over;
+                            sectionRect.Width -= over;
                         }
-                        if (_.FlippedX) { diffFromCenter = -diffFromCenter; }
+                        else
+                        {
+                            sectionRect.Width -= (int)Math.Max(sectionRect.Right - _.rect.Right, 0.0f);
+                        }
+                        if (_.FlippedY)
+                        {
+                            int over = Math.Max(sectionRect.Y - _.rect.Y, 0);
+                            sectionRect.Y -= over;
+                            sectionRect.Height -= over;
+                        }
+                        else
+                        {
+                            sectionRect.Height -= (int)Math.Max((_.rect.Y - _.rect.Height) - (sectionRect.Y - sectionRect.Height), 0.0f);
+                        }
+
+                        //sectionRect.Height -= (int)Math.Max((rect.Y - rect.Height) - (sectionRect.Y - sectionRect.Height), 0.0f);
+                        int xIndex = _.FlippedX && _.IsHorizontal ? (xsections - 1 - x) : x;
+                        int yIndex = _.FlippedY && !_.IsHorizontal ? (ysections - 1 - y) : y;
+                        _.Sections[xIndex + yIndex] = new WallSection(sectionRect, _);
                     }
                     else
                     {
-                        diffFromCenter = ((gapRect.Y - gapRect.Height / 2) - (_.rect.Y - _.rect.Height / 2)) / (float)_.rect.Height * _.BodyHeight;
-                        if (_.BodyWidth > 0.0f)
-                        {
-                            gapRect.X = gapRect.Center.X + (int)(-_.BodyWidth / 2 + _.BodyOffset.X * _.scale);
-                            gapRect.Width = (int)_.BodyWidth;
-                        }
-                        if (_.BodyHeight > 0.0f) { gapRect.Height = (int)(_.BodyHeight * (gapRect.Height / (float)_.rect.Height)); }
-                        if (_.FlippedY) { diffFromCenter = -diffFromCenter; }
+                        Rectangle sectionRect = new Rectangle(_.rect.X + x * width, _.rect.Y - y * height, width, height);
+                        sectionRect.Width -= (int)Math.Max(sectionRect.Right - _.rect.Right, 0.0f);
+                        sectionRect.Height -= (int)Math.Max((_.rect.Y - _.rect.Height) - (sectionRect.Y - sectionRect.Height), 0.0f);
+
+                        _.Sections[x + y] = new WallSection(sectionRect, _);
                     }
-
-                    if (Math.Abs(_.BodyRotation) > 0.01f)
-                    {
-                        Vector2 structureCenter = _.Position;
-                        Vector2 gapPos = structureCenter + new Vector2(
-                            (float)Math.Cos(_.IsHorizontal ? -_.BodyRotation : MathHelper.PiOver2 - _.BodyRotation),
-                            (float)Math.Sin(_.IsHorizontal ? -_.BodyRotation : MathHelper.PiOver2 - _.BodyRotation)) * diffFromCenter + _.BodyOffset * _.scale;
-                        gapRect = new Rectangle((int)(gapPos.X - gapRect.Width / 2), (int)(gapPos.Y + gapRect.Height / 2), gapRect.Width, gapRect.Height);
-                    }
-
-                    gapRect.X -= 10;
-                    gapRect.Y += 10;
-                    gapRect.Width += 20;
-                    gapRect.Height += 20;
-
-                    bool rotatedEnoughToChangeOrientation = (MathUtils.WrapAngleTwoPi(_.rotationRad - MathHelper.PiOver4) % MathHelper.Pi < MathHelper.PiOver2);
-                    if (rotatedEnoughToChangeOrientation)
-                    {
-                        var center = gapRect.Location + gapRect.Size.FlipY() / new Point(2);
-                        var topLeft = gapRect.Location;
-                        var diff = topLeft - center;
-                        diff = diff.FlipY().YX().FlipY();
-                        var newTopLeft = diff + center;
-                        gapRect = new Rectangle(newTopLeft, gapRect.Size.YX());
-                    }
-                    bool horizontalGap = rotatedEnoughToChangeOrientation
-                        ? _.IsHorizontal
-                        : !_.IsHorizontal;
-                    bool diagonalGap = false;
-                    if (!MathUtils.NearlyEqual(_.BodyRotation, 0f))
-                    {
-                        //rotation within a 90 deg sector (e.g. 100 -> 10, 190 -> 10, -10 -> 80)
-                        float sectorizedRotation = MathUtils.WrapAngleTwoPi(_.BodyRotation) % MathHelper.PiOver2;
-                        //diagonal if 30 < angle < 60
-                        diagonalGap = sectorizedRotation is > MathHelper.Pi / 6 and < MathHelper.Pi / 3;
-                        //gaps on the lower half of a diagonal wall are horizontal, ones on the upper half are vertical
-                        if (diagonalGap)
-                        {
-                            horizontalGap = gapRect.Y - gapRect.Height / 2 < _.Position.Y;
-                            if (_.FlippedY) { horizontalGap = !horizontalGap; }
-                        }
-                    }
-
-                    _.Sections[sectionIndex].gap = new Gap(gapRect, horizontalGap, _.Submarine, isDiagonal: diagonalGap);
-
-                    //free the ID, because if we give gaps IDs we have to make sure they always match between the clients and the server and
-                    //that clients create them in the correct order along with every other entity created/removed during the round
-                    //which COULD be done via entityspawner, but it's unnecessary because we never access these gaps by ID
-                    _.Sections[sectionIndex].gap.FreeID();
-                    _.Sections[sectionIndex].gap.ShouldBeSaved = false;
-                    _.Sections[sectionIndex].gap.ConnectedWall = _;
-                    DebugConsole.Log("Created gap (ID " + _.Sections[sectionIndex].gap.ID + ", section: " + sectionIndex + ") on wall " + _.ID);
-                    //AdjustKarma(attacker, 300);
-
-#if SERVER
-                    //the structure didn't have any other gaps yet, log the breach
-                    if (noGaps && attacker != null)
-                    {
-                        GameServer.Log((_.Sections[sectionIndex].gap.IsRoomToRoom ? "Inner" : "Outer") + " wall breached by " + GameServer.CharacterLogName(attacker), ServerLog.MessageType.ItemInteraction);
-                    }
-#endif
-                }
-
-                var gap = _.Sections[sectionIndex].gap;
-                float gapOpen = _.MaxHealth <= 0.0f ? 0.0f : (damage / _.MaxHealth - LeakThreshold) * (1.0f / (1.0f - LeakThreshold));
-                gap.Open = gapOpen;
-
-                //gap appeared or became much larger -> explosion effect
-                if (gapOpen - prevGapOpenState > 0.25f && createExplosionEffect && !gap.IsRoomToRoom)
-                {
-                    Structure.CreateWallDamageExplosion(gap, attacker);
                 }
             }
 
-            float damageDiff = damage - _.Sections[sectionIndex].damage;
-            bool hadHole = _.SectionBodyDisabled(sectionIndex);
-            _.Sections[sectionIndex].damage = MathHelper.Clamp(damage, 0.0f, _.MaxHealth);
-            _.HasDamage = _.Sections.Any(s => s.damage > 0.0f);
-
-            if (attacker != null && damageDiff != 0.0f)
+            if (prevSections != null && _.Sections.Length == prevSections.Length)
             {
-                HumanAIController.StructureDamaged(_, damageDiff, attacker);
-                //Structure.OnHealthChangedProjSpecific(attacker, damageDiff);
-                if (GameMain.NetworkMember == null || !GameMain.NetworkMember.IsClient)
+                for (int i = 0; i < _.Sections.Length; i++)
                 {
-                    if (damageDiff < 0.0f)
-                    {
-                        attacker.Info?.ApplySkillGain(Barotrauma.Tags.MechanicalSkill,
-                            -damageDiff * SkillSettings.Current.SkillIncreasePerRepairedStructureDamage);
-                    }
+                    _.Sections[i].damage = prevSections[i].damage;
                 }
             }
+        return false;
 
-            bool hasHole = _.SectionBodyDisabled(sectionIndex);
-
-            if (hadHole == hasHole) { return false; }
-
-            _.UpdateSections();
-            return false;
-        }
-
-
-
-        public static bool SectionIsLeakingPatch(Structure __instance, int sectionIndex, ref bool __result)
-        {
-            if (sectionIndex < 0 || sectionIndex >= __instance.Sections.Length) { return false; }
-            return __instance.Sections[sectionIndex].damage >= __instance.MaxHealth * LeakThreshold;
-            return false;
-        }
+    }
+	
   } 
-}*/
+}
+*/

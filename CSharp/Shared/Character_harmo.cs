@@ -41,6 +41,11 @@ namespace CharacterModNamespace
             var originalUpdateOxygen = typeof(Character).GetMethod("UpdateOxygen", BindingFlags.NonPublic | BindingFlags.Instance);
             var postfixUpdateOxygen = new HarmonyMethod(typeof(CharacterMod).GetMethod(nameof(UpdateOxygenPostfix), BindingFlags.Public | BindingFlags.Static));
             harmony.Patch(originalUpdateOxygen, postfixUpdateOxygen, null);
+
+			var originalUpdate = typeof(Character).GetMethod("Update", BindingFlags.Public | BindingFlags.Instance);
+            var postfixUpdate = new HarmonyMethod(typeof(CharacterMod).GetMethod(nameof(UpdatePostfix), BindingFlags.Public | BindingFlags.Static));
+            harmony.Patch(originalUpdate, postfixUpdate, null);
+			
         }
 
 		public void OnLoadCompleted() { }
@@ -96,6 +101,60 @@ namespace CharacterModNamespace
 			}
 			escapedTime = 0;
 			
+		}
+
+
+
+		public static void UpdatePostfix(float deltaTime, Character __instance)
+		{
+			Character _ = __instance;
+			if (_.InWater)
+			{
+				ApplyFlowForces(deltaTime, _);
+			
+			}
+		}
+
+
+
+		public static void ApplyFlowForces(float deltaTime, Character character)
+		{
+			var allGaps = Gap.GapList; // Assume Gap.GapList holds all gaps in the game world.
+			
+			foreach (var gap in allGaps.Where(gap => gap.Open > 0 && !gap.IsRoomToRoom))
+			{
+				// Get the hull linked to the gap (assuming `gap.LinkedHull` exists).
+				Hull linkedHull = gap.flowTargetHull;
+
+				// Check if the linked hull exists and if it's close to full water.
+				if (linkedHull != null && linkedHull.WaterPercentage >= 95f) // Assuming 95% is "close to full".
+				{
+					DebugConsole.NewMessage($"Skipping force application due to high water level in hull: {linkedHull.WaterPercentage}");
+					continue; // Skip applying force if water level is too high.
+				}
+
+				// Calculate the distance between the character and the gap.
+				var distance = MathHelper.Max(Vector2.DistanceSquared(character.WorldPosition, gap.WorldPosition) / 1000, 1f);
+
+				// Check if the gap is "nearby" within a certain range (e.g., 1000 units).
+				if (distance < 2000f) // You can adjust the threshold as needed.
+				{
+					// Get the direction vector of the flow from the gap.
+					Vector2 flowDirection = Vector2.Normalize(gap.LerpedFlowForce);
+					if (flowDirection == Vector2.Zero) continue; // Skip if the flow direction is invalid.
+
+					// Calculate the force applied based on the flow direction and distance.
+					Vector2 force = (flowDirection * gap.LerpedFlowForce.Length() / (distance / 15)) * gap.Open * deltaTime;
+
+					// Apply force to the character.
+					if (force.LengthSquared() > 0.01f)
+					{
+						character.AnimController.Collider.FarseerBody.ApplyForce(force * 10); // Adjust this factor as needed.
+					}
+
+					// DebugConsole.NewMessage($"Character Distance: {distance} Force Applied: {force}");
+				}
+			}
 		}
 
 

@@ -1,4 +1,4 @@
-﻿﻿using Barotrauma.Networking;
+﻿﻿/*using Barotrauma.Networking;
 using Barotrauma.Extensions;
 using FarseerPhysics;
 using FarseerPhysics.Dynamics;
@@ -41,7 +41,11 @@ namespace StructureMod
         original: typeof(Structure).GetMethod("SetDamage"),
         prefix: new HarmonyMethod(typeof(StructureMod).GetMethod("SetDamage"))//transpiler
       );
-	  
+	  harmony.Patch(
+    original: typeof(Structure).GetMethod("SectionIsLeaking", new Type[] { typeof(int) }),
+    prefix: new HarmonyMethod(typeof(StructureMod).GetMethod("SectionIsLeakingPatch"))
+    );
+
 	  
     }
     public void OnLoadCompleted() { }
@@ -55,10 +59,11 @@ namespace StructureMod
 	
 	
 	//wtf, i added a static then the program works|||||change void to bool then change all return to return false to use prefix to prevent original codes from running.
-    public static  bool SetDamage(int sectionIndex, float damage, Character attacker, bool createNetworkEvent, bool isNetworkEvent, bool createExplosionEffect, Structure __instance)
-   {
-	   Structure _ = __instance;
-	if (_.Submarine != null && _.Submarine.GodMode || (_.Indestructible && !isNetworkEvent)) { return false; }
+    public static bool SetDamage(int sectionIndex, float damage, Character attacker, bool createNetworkEvent, bool isNetworkEvent, bool createExplosionEffect, Structure __instance)
+        {
+            Structure _ = __instance;
+            //float LeakThreshold = 0.6f;
+            if (_.Submarine != null && _.Submarine.GodMode || (_.Indestructible && !isNetworkEvent)) { return false; }
             if (!_.Prefab.Body) { return false; }
             if (!MathUtils.IsValid(damage)) { return false; }
 
@@ -115,6 +120,7 @@ namespace StructureMod
                             gapRect.Y = (gapRect.Y - gapRect.Height / 2) + (int)(_.BodyHeight / 2 + _.BodyOffset.Y * _.scale);
                             gapRect.Height = (int)_.BodyHeight;
                         }
+                        if (_.FlippedX) { diffFromCenter = -diffFromCenter; }
                     }
                     else
                     {
@@ -125,8 +131,8 @@ namespace StructureMod
                             gapRect.Width = (int)_.BodyWidth;
                         }
                         if (_.BodyHeight > 0.0f) { gapRect.Height = (int)(_.BodyHeight * (gapRect.Height / (float)_.rect.Height)); }
+                        if (_.FlippedY) { diffFromCenter = -diffFromCenter; }
                     }
-                    if (_.FlippedX) { diffFromCenter = -diffFromCenter; }
 
                     if (Math.Abs(_.BodyRotation) > 0.01f)
                     {
@@ -142,14 +148,26 @@ namespace StructureMod
                     gapRect.Width += 20;
                     gapRect.Height += 20;
 
-                    bool horizontalGap = !_.IsHorizontal;
+                    bool rotatedEnoughToChangeOrientation = (MathUtils.WrapAngleTwoPi(_.rotationRad - MathHelper.PiOver4) % MathHelper.Pi < MathHelper.PiOver2);
+                    if (rotatedEnoughToChangeOrientation)
+                    {
+                        var center = gapRect.Location + gapRect.Size.FlipY() / new Point(2);
+                        var topLeft = gapRect.Location;
+                        var diff = topLeft - center;
+                        diff = diff.FlipY().YX().FlipY();
+                        var newTopLeft = diff + center;
+                        gapRect = new Rectangle(newTopLeft, gapRect.Size.YX());
+                    }
+                    bool horizontalGap = rotatedEnoughToChangeOrientation
+                        ? _.IsHorizontal
+                        : !_.IsHorizontal;
                     bool diagonalGap = false;
-                    if (_.Prefab.BodyRotation != 0.0f)
+                    if (!MathUtils.NearlyEqual(_.BodyRotation, 0f))
                     {
                         //rotation within a 90 deg sector (e.g. 100 -> 10, 190 -> 10, -10 -> 80)
                         float sectorizedRotation = MathUtils.WrapAngleTwoPi(_.BodyRotation) % MathHelper.PiOver2;
                         //diagonal if 30 < angle < 60
-                        diagonalGap = sectorizedRotation > MathHelper.Pi / 6 && sectorizedRotation < MathHelper.Pi / 3;
+                        diagonalGap = sectorizedRotation is > MathHelper.Pi / 6 and < MathHelper.Pi / 3;
                         //gaps on the lower half of a diagonal wall are horizontal, ones on the upper half are vertical
                         if (diagonalGap)
                         {
@@ -182,11 +200,10 @@ namespace StructureMod
                 float gapOpen = _.MaxHealth <= 0.0f ? 0.0f : (damage / _.MaxHealth - LeakThreshold) * (1.0f / (1.0f - LeakThreshold));
                 gap.Open = gapOpen;
 
-				//float minExplosionDamage = 0.7f;// Adjust this value as needed
                 //gap appeared or became much larger -> explosion effect
                 if (gapOpen - prevGapOpenState > 0.25f && createExplosionEffect && !gap.IsRoomToRoom)
                 {
-                    Structure.CreateWallDamageExplosion(gap, attacker);//!important. This is how you call method of the same class!!!!!
+                    Structure.CreateWallDamageExplosion(gap, attacker);
                 }
             }
 
@@ -198,13 +215,13 @@ namespace StructureMod
             if (attacker != null && damageDiff != 0.0f)
             {
                 HumanAIController.StructureDamaged(_, damageDiff, attacker);
-                //OnHealthChangedProjSpecific(attacker, damageDiff);
+                //Structure.OnHealthChangedProjSpecific(attacker, damageDiff);
                 if (GameMain.NetworkMember == null || !GameMain.NetworkMember.IsClient)
                 {
                     if (damageDiff < 0.0f)
                     {
-                        attacker.Info?.IncreaseSkillLevel("mechanical".ToIdentifier(),
-                            -damageDiff * SkillSettings.Current.SkillIncreasePerRepairedStructureDamage / Math.Max(attacker.GetSkillLevel("mechanical"), 1.0f));
+                        attacker.Info?.ApplySkillGain(Barotrauma.Tags.MechanicalSkill,
+                            -damageDiff * SkillSettings.Current.SkillIncreasePerRepairedStructureDamage);
                     }
                 }
             }
@@ -214,8 +231,16 @@ namespace StructureMod
             if (hadHole == hasHole) { return false; }
 
             _.UpdateSections();
-			return false;
-	}
-	
-  }
-}
+            return false;
+        }
+
+
+
+        public static bool SectionIsLeakingPatch(Structure __instance, int sectionIndex, ref bool __result)
+        {
+            if (sectionIndex < 0 || sectionIndex >= __instance.Sections.Length) { return false; }
+            return __instance.Sections[sectionIndex].damage >= __instance.MaxHealth * LeakThreshold;
+            return false;
+        }
+  } 
+}*/

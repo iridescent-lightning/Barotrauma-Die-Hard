@@ -43,7 +43,7 @@
       <Steering minvoltage="0.5" canbeselected="true" powerconsumption="10" linkuitocomponent="Sonar" msg="ItemMsgInteractSelect" allowuioverlap="true" hudlayer="-1">
         <!--<sound file="%ModDir%/Items/Commands/Entities_Station#655_pathOS_error_01.ogg" type="OnPicked" range="500.0" />-->
         <GuiFrame relativesize="0.55,0.59" anchor="Center" style="OuterGlow" color="0,0,0,0.8" relativeoffset="0.1,-0.05" draggable="false" />
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -370,7 +370,7 @@
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
         <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
         <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -391,7 +391,7 @@
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
         <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
         <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
@@ -411,7 +411,7 @@
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
         <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
         <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-        <StatusEffect type="InWater" target="This" interval="60">
+        <StatusEffect type="InWater" target="This" interval="180">
           <Conditional voltage="gt 0.1" />
           <LuaHook name="randomwaterdamage" />
         </StatusEffect>
