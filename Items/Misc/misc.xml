@@ -186,7 +186,7 @@
 	</StatusEffect>-->
       </Holdable>
     </Item>
-    <Item name="" identifier="mechanicalparts" scale="0.5" category="Electricity" tags="smallitem, mechanicalparts" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="32">
+    <Item name="" identifier="mechanicalparts" scale="0.5" category="Electricity" tags="smallitem, mechanicalparts,repairconsumable" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="32">
       <PreferredContainer primary="engcab,reactorcab"/>
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />
@@ -216,7 +216,7 @@
       </Deconstruct>
       <Pickable slots="Any" canBeCombined="true" />
     </Item>
-    <ElectricalParts name="" identifier="ElectricalParts" scale="0.25" category="Electricity" tags="smallitem, electricalparts" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="32">
+    <ElectricalParts name="" identifier="ElectricalParts" scale="0.25" category="Electricity" tags="smallitem, electricalparts,repairconsumable" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="32">
       <PreferredContainer primary="engcab,reactorcab"/>
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />

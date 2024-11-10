@@ -774,4 +774,6 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <lowoxygencandlewarning>There are fewer than two full-condition oxygen candles on the submarine. Further proceed without engough candles may result in non-working oxygen generator.</lowoxygencandlewarning>
   <lowreactorcoolantheader>Low on Reactor Coolant</lowreactorcoolantheader>
   <lowreactorcoolantwarning>There are fewer than two full-condition coolant for submarine reactor. Insufficient coolant may result in reactor meltdown.</lowreactorcoolantwarning>
+  <lowrepairconsumableheader>Low on repairable parts</lowrepairconsumableheader>
+  <lowrepairconsumablewarning>You have less than 15 units of reairable consumables in total (Mechanical Parts and Electrical Parts). Without adequate spare parts submarine equipments cannot be fixed.</lowrepairconsumablewarning>
 </infotexts>

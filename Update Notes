@@ -244,3 +244,6 @@
     2. Adding a check for mouse on gui. If true, don't zoom. This to prevent container triggers zoom effect when cancelled by right-click.
     3. Adding a distance check between mouse position and character position. Only when distance greater than 400 will the camera zoom out happen.
     4. Fixing dh waterpump and its nozzle missing bug. 
+89. 
+    1. Adding requireditem for engines.
+    2. Adding an additional repairable consumables check on round-end. It checks two repairables together.

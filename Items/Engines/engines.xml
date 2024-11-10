@@ -111,6 +111,7 @@
         <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
         <RequiredItem items="wrench" type="equipped" />
+        <RequiredItem items="mechanicalparts" type="Picked" msg="itemmsg.repair.wrench_mechanicalparts"/><!--Can't use wire because bots will just rip any wire that is near them-->
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
@@ -122,7 +123,7 @@
         <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
       </Repairable>
     </Item>
-    <Item name="Blue Star" identifier="enginebluestar" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Blue Star [Max Force:400] [Power Consumption:2400] [Noise Range: 6000] [Min Voltage:0.5]">
+    <Item name="Blue Star" identifier="enginebluestar" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Blue Star [Max Force:400] [Power Consumption:2400] [Noise Range: 6000] [Min Voltage:0.5]" variantof="engine">
       <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
       <Sprite texture="Engines.png" depth="0.8" sourcerect="0,0,659,317" canflipx="true" origin="0.5,0.5" />
       <!-- vibrating decorative sprite that activates when the engine is broken -->
@@ -164,22 +165,8 @@
         <input name="set_force" displayname="connection.setforce" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-          <Affliction identifier="lacerations" strength="5" />
-          <Affliction identifier="stun" strength="4" />
-        </StatusEffect>
-        <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
-      </Repairable>
     </Item>
-    <Item name="Quick Boy" identifier="engineqb" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Quick Boy [Max Force:500] [Power Consumption:3000] [Noise Range:6000] [Min Voltage:0.5]">
+    <Item name="Quick Boy" identifier="engineqb" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Quick Boy [Max Force:500] [Power Consumption:3000] [Noise Range:6000] [Min Voltage:0.5]" variantof="engine">
       <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
       <Sprite texture="Engines.png" depth="0.8" sourcerect="0,0,659,317" canflipx="true" origin="0.5,0.5" />
       <!-- vibrating decorative sprite that activates when the engine is broken -->
@@ -221,20 +208,6 @@
         <input name="set_force" displayname="connection.setforce" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-          <Affliction identifier="lacerations" strength="5" />
-          <Affliction identifier="stun" strength="4" />
-        </StatusEffect>
-        <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
-      </Repairable>
     </Item>
     <Item name="Large Engine Slot" description="" identifier="largeengineslot" Tags="engine" showinstatusmonitor="false" category="Machine,Weapon" interactthroughwalls="true" Scale="0.65" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
       <Sprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="337,652,146,149" depth="0.86" />
@@ -306,6 +279,7 @@
         <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
         <RequiredItem items="wrench" type="equipped" />
+        <RequiredItem items="mechanicalparts" type="Picked" msg="itemmsg.repair.wrench_mechanicalparts"/>
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
@@ -317,7 +291,7 @@
         <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
       </Repairable>
     </Item>
-    <Item name="A Jet-07" identifier="largeengineajet07" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="A Jet-07 [Max Force:600] [Power Consumption:5000] [Noise Range:7000] [Min Voltage:0.5]">
+    <Item name="A Jet-07" identifier="largeengineajet07" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="A Jet-07 [Max Force:600] [Power Consumption:5000] [Noise Range:7000] [Min Voltage:0.5]" variantof="largeengine">
       <UpgradePreviewSprite scale="5.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
       <Upgrade gameversion="0.10.0.0" scale="*0.625" />
       <Sprite texture="Engines.png" depth="0.8" sourcerect="0,317,1613,592" canflipx="true" origin="0.5,0.5" />
@@ -364,22 +338,8 @@
         <input name="set_force" displayname="connection.setforce" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-          <Affliction identifier="lacerations" strength="5" />
-          <Affliction identifier="stun" strength="4" />
-        </StatusEffect>
-        <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
-      </Repairable>
     </Item>
-    <Item name="M496" identifier="largeenginem496" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="M496 [Max Force:700] [Power Consumption:6200] [Noise Range:7000] [Min Voltage:0.5]">
+    <Item name="M496" identifier="largeenginem496" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="M496 [Max Force:700] [Power Consumption:6200] [Noise Range:7000] [Min Voltage:0.5]" variantof="largeengine">
       <UpgradePreviewSprite scale="5.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
       <Upgrade gameversion="0.10.0.0" scale="*0.625" />
       <Sprite texture="Engines.png" depth="0.8" sourcerect="0,317,1613,592" canflipx="true" origin="0.5,0.5" />
@@ -426,22 +386,8 @@
         <input name="set_force" displayname="connection.setforce" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-          <Affliction identifier="lacerations" strength="5" />
-          <Affliction identifier="stun" strength="4" />
-        </StatusEffect>
-        <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
-      </Repairable>
     </Item>
-    <Item name="Jumbo" identifier="largeenginejumbo" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Jumbo [Max Force:800] [Power Consumption:7200] [Noise Range:8000] [Min Voltage:0.5]">
+    <Item name="Jumbo" identifier="largeenginejumbo" tags="engine" category="Machine" Scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Jumbo [Max Force:800] [Power Consumption:7200] [Noise Range:8000] [Min Voltage:0.5]" variantof="largeengine">
       <UpgradePreviewSprite scale="5.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
       <Upgrade gameversion="0.10.0.0" scale="*0.625" />
       <Sprite texture="Engines.png" depth="0.8" sourcerect="0,317,1613,592" canflipx="true" origin="0.5,0.5" />
@@ -488,20 +434,6 @@
         <input name="set_force" displayname="connection.setforce" />
         <output name="condition_out" displayname="connection.conditionout" />
       </ConnectionPanel>
-      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-        <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
-        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
-        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-          <Affliction identifier="lacerations" strength="5" />
-          <Affliction identifier="stun" strength="4" />
-        </StatusEffect>
-        <Upgrade gameversion="0.20.7.0" RepairThreshold="80" />
-      </Repairable>
     </Item>
     <Item name="Thruster Hard Point" description="" identifier="thrusterslot" Tags="thruster" showinstatusmonitor="false" category="Machine" interactthroughwalls="true" Scale="0.5" interactdistance="50" spritecolor="1.0,1.0,1.0,1.0">
       <Sprite texture="%ModDir%/Items/Engines/verticalbooster.png" sourcerect="609,563,293,111" depth="0.8" />
@@ -559,7 +491,7 @@
       <Repairable selectkey="Action" header="mechanicalrepairsheader" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
         <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
         <RequiredSkill identifier="mechanical" level="55" />
-        <RequiredItem items="wrench" type="equipped" />
+        <RequiredItem items="heavywrench" type="equipped" />
         <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="0.0" maxcondition="80.0" />
         <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />

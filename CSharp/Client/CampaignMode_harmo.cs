@@ -45,6 +45,8 @@ namespace BarotraumaDieHard
 
         private static bool lowCoolant;
 
+        private static bool lowRepairConsumable;
+
         public static bool TryEndRoundWithFuelCheckPrefix(Action onConfirm, Action onReturnToMapScreen, CampaignMode __instance)
         {
             
@@ -53,6 +55,7 @@ namespace BarotraumaDieHard
             Submarine.MainSub.CheckFuel();
             CheckOxygenCandle();
             CheckCoolant();
+            CheckRepairConsumables();
             bool lowFuel = Submarine.MainSub.Info.LowFuel;
             if (__instance.PendingSubmarineSwitch != null)
             {
@@ -88,7 +91,20 @@ namespace BarotraumaDieHard
                 lowCoolantBox.Buttons[1].OnClicked = lowCoolantBox.Close;
 
             }
+            else if (Level.IsLoadedFriendlyOutpost && lowRepairConsumable && (__instance.CargoManager.PurchasedItems.None(i => i.Value.Any(pi => pi.ItemPrefab.Tags.Contains(TagsDieHard.RepairConsumable)))))
+            {
+                
+                var lowRepairConsumableBox = new GUIMessageBox(
+                    TextManager.Get("lowrepairconsumableheader"), 
+                    TextManager.Get("lowrepairconsumablewarning"), 
+                    new LocalizedString[2] { TextManager.Get("ok"), TextManager.Get("cancel") }
+                );
 
+                lowRepairConsumableBox.Buttons[0].OnClicked = (b, o) => { Confirm(); return true; };
+                lowRepairConsumableBox.Buttons[0].OnClicked += lowRepairConsumableBox.Close;
+                lowRepairConsumableBox.Buttons[1].OnClicked = lowRepairConsumableBox.Close;
+
+            }
             else if (Level.IsLoadedFriendlyOutpost && lowFuel && (__instance.CargoManager.PurchasedItems.None(i => i.Value.Any(pi => pi.ItemPrefab.Tags.Contains(Tags.ReactorFuel)))))
             {
                 var extraConfirmationBox =
@@ -140,6 +156,12 @@ namespace BarotraumaDieHard
             float coolant = Submarine.MainSub.GetItems(true).Where(i => i.HasTag("reactorcoolant")).Sum(i => i.Condition);
             lowCoolant = coolant < 200;
             return !lowCoolant;
+        }
+        public static bool CheckRepairConsumables()
+        {
+            float repairConsumable = Submarine.MainSub.GetItems(true).Where(i => i.HasTag("repairconsumable")).Sum(i => i.Condition);
+            lowRepairConsumable = repairConsumable < 1500;
+            return !lowRepairConsumable;
         }
     }
 }
