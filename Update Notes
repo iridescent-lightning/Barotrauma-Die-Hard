@@ -223,5 +223,13 @@
     2. Changing handheld sonar DirectionalPingSector from 30 to 90.
     3. Reducing Oxygen Candle price from 220 to 180.
     4. Adding two shipissueworker commands. Curently has no function.
-    5. Increasing waterdamage check from 60 second per time to 180 second per time.
+    5. Increasing waterdamage check from 60 second per time to 180 second per time. When submerged, we need a longer period to perform fixes. Otherwise if we are very back luck, we will have too many things broken.
     6. Adding water flowforce (pressure inbalance simulation) to game. 
+86. 
+    1. Updating collision category for grende from platform to repairablewall. This allow grendes to be thrown through the door.
+    2. Re-adding grenades' collision tags for mid-air collisions.
+    3. Removing deterioration for batteries and supercapacitors. Same reasons as previous. As a more complex system is adopted, vanilla deteriorations are now way too punishing. 
+    4. Removing repairable consumeables from auto spawn. We got too many.
+    5. Now engines, oxygenerators and pumps will require mechanical parts to be repaired. 
+    6. Repairable qte game is now impactful. Since we consume parts everytime we click. Each successful qte will increase the item condition by 20% of its maxcondition.
+    7. Adding a hint for qte skill check failure. Currently all hints only show in singleplayer.

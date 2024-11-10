@@ -1416,7 +1416,7 @@
           <LuaHook name="floodhull" />
         </StatusEffect>-->
         <StatusEffect type="OnUse" target="This">
-          <LuaHook name="killallnpc" />
+          <LuaHook name="killallnpc1" />
         </StatusEffect>
       </RangedWeapon>
       <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">

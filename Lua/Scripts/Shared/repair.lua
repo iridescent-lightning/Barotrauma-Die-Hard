@@ -26,7 +26,14 @@ Hook.Patch("Barotrauma.Items.Components.Repairable", "StartRepairing", function 
 			fixer.Inventory.FindItemByIdentifier("mechanicalparts").Condition = fixer.Inventory.FindItemByIdentifier("mechanicalparts").Condition - randomDamageForConsumables
 			--Entity.Spawner.AddEntityToRemoveQueue(fixer.Inventory.FindItemByIdentifier("mechanicalparts")) use xml to remove itself
 		end
-	elseif selectedItem and selectedItem.HasTag("RequireWireToFix") then --for now use mechanical parts to fix everything
+	elseif selectedItem and (selectedItem.HasTag("command") or selectedItem.HasTag("battery") or selectedItem.HasTag("junctionbox") or selectedItem.HasTag("command") or selectedItem.HasTag("supercapacitor") or selectedItem.HasTag("lamp")) then --for now use mechanical parts to fix everything
+		if not fixer.Inventory.FindItemByTag("electricalparts") then
+			fixer.SetStun(0.1)
+		elseif fixer.Inventory.FindItemByTag("electricalparts") then
+			fixer.Inventory.FindItemByTag("electricalparts").Condition = fixer.Inventory.FindItemByTag("electricalparts").Condition - randomDamageForConsumables
+			
+		end
+	elseif selectedItem and (selectedItem.HasTag("oxygengenerator") or selectedItem.HasTag("engine") or selectedItem.HasTag("pump")) then --for now use mechanical parts to fix everything
 		if not fixer.Inventory.FindItemByTag("mechanicalparts") then
 			fixer.SetStun(0.1)
 		elseif fixer.Inventory.FindItemByTag("mechanicalparts") then
@@ -34,6 +41,7 @@ Hook.Patch("Barotrauma.Items.Components.Repairable", "StartRepairing", function 
 			
 		end
 	end
+
 	
 end, Hook.HookMethodType.After)
 

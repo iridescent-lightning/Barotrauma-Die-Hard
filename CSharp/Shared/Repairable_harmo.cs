@@ -36,9 +36,18 @@ namespace BarotraumaDieHard
                 prefix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(UpdatePostfix)))
             );
 
+
+            harmony.Patch(
+                original: typeof(Repairable).GetMethod("RepairBoost"),
+                postfix: new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(RepairBoostPostfix)))
+            );
+
             var originalUpdateDeterioration = typeof(Repairable).GetMethod("UpdateDeterioration", BindingFlags.NonPublic | BindingFlags.Instance);
             var prefixUpdateDeterioration = new HarmonyMethod(typeof(RepairableDieHard).GetMethod(nameof(UpdateDeteriorationPrefix), BindingFlags.Public | BindingFlags.Static));
             harmony.Patch(originalUpdateDeterioration, prefixUpdateDeterioration, null);
+
+
+
 
 #if CLIENT
             /*var originalCreateGUI = typeof(Repairable).GetMethod("CreateGUI", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -173,26 +182,51 @@ namespace BarotraumaDieHard
         {
             if (__instance.CurrentFixer == null) return;
             if (__instance.item.GetComponent<Powered>() is Powered powered) 
+            {
+                if (powered == null || powered.powerIn == null || powered.powerIn.Grid == null) // Check for devices that don't have powered component.
                 {
-                    if (powered == null || powered.powerIn == null || powered.powerIn.Grid == null) // Check for devices that don't have powered component.
-                    {
-                       return;
-                    }
-                    else if (powered.powerIn.Grid.Power > 1f)
-                    {
-                        
-                        __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
-                        return;
-                    }
+                    return;
                 }
+                else if (powered.powerIn.Grid.Power > 1f)
+                {
+                    
+                    __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
+                    return;
+                }
+            }
         }
 
+        public static void RepairBoostPostfix(bool qteSuccess, Repairable __instance)
+        {
+            if (qteSuccess)
+            {
+                var requiredSkills = __instance.RequiredSkills;
+                foreach (var skill in requiredSkills)
+                {
+                    float skillLevel = __instance.CurrentFixer.GetSkillLevel(skill.Identifier); // Get skill level using skill's identifier
 
+                    // Only include skills that match required skills
+                    if (skillLevel > skill.Level) // Check if the user has any level in the required skill
+                    {
+                        __instance.item.Condition += __instance.item.MaxCondition * 0.2f;
+                        //DebugConsole.NewMessage($"Required skill: {skill.Identifier}, User skill level: {skillLevel}", Color.Yellow);
+                    }
+                    else
+                    {
+#if CLIENT   
+                        BarotraumaDieHard.CustomHintManager.DisplayHint("qteinsufficientskilllevel".ToIdentifier());
+#endif                        
+                        __instance.ApplyStatusEffects(ActionType.OnFailure, 1.0f, __instance.CurrentFixer);
+                    }
+                }
+                
+            }
+        }
 
         public static bool UpdateDeteriorationPrefix(float deltaTime, Repairable __instance)
         {
             Repairable _ = __instance;
-            if (_.item.HasTag("junctionbox") || _.item.HasTag("engine") || _.item.HasTag("command")) return false;
+            if (_.item.HasTag("junctionbox") || _.item.HasTag("engine") || _.item.HasTag("command") || _.item.HasTag("battery") || _.item.HasTag("supercapacitor")) return false;
             
 
 

@@ -929,6 +929,48 @@ Hook.Add("killallnpc","rands",function(effect, deltaTime, item, targets, worldPo
 		end	
 	end)
 
+
+	Hook.Add("killallnpc1", "rands", function(effect, deltaTime, item, targets, worldPosition)
+		-- Iterate over each character in the game
+		for _, v in pairs(Character.CharacterList) do
+			if not v.IsOnPlayerTeam then
+				-- Kill the existing NPC
+				v.Kill(CauseOfDeathType.Unknown)
+				
+				-- Spawn a corpse at the given world position
+				local characterInfo = CharacterInfo(CharacterPrefab.HumanSpeciesName)
+				local corpse = Character.Create(CharacterPrefab.HumanSpeciesName, worldPosition, ToolBox.RandomSeed(8), characterInfo)
+				
+				-- Set the corpse's properties
+				corpse.AnimController.FindHull(worldPosition, true)
+				corpse.TeamID = CharacterTeamType.None
+				corpse.EnableDespawn = false
+				
+				-- Simulate initial damage and afflictions to make it appear like a corpse
+				corpse.Kill(CauseOfDeathType.Unknown, nil, false)
+				corpse.CharacterHealth.ApplyAffliction(corpse.AnimController.MainLimb, AfflictionPrefab.OxygenLow.Instantiate(AfflictionPrefab.OxygenLow.MaxStrength))
+				
+				-- Optional: Apply other effects such as damage or burns
+				local applyBurns = Rand.Value() < 0.1
+				local applyDamage = Rand.Value() < 0.3
+				for _, limb in pairs(corpse.AnimController.Limbs) do
+					if applyDamage and (limb.type == LimbType.Head or Rand.Value() < 0.5) then
+						local biteWounds = AfflictionPrefab.BiteWounds
+						local maxStrength = biteWounds.MaxStrength / biteWounds.DamageOverlayAlpha
+						corpse.CharacterHealth.ApplyAffliction(limb, biteWounds.Instantiate(Rand.Range(0, maxStrength)))
+					end
+					if applyBurns then
+						local burns = AfflictionPrefab.Burn
+						local maxStrength = burns.MaxStrength / burns.BurnOverlayAlpha
+						corpse.CharacterHealth.ApplyAffliction(limb, burns.Instantiate(Rand.Range(0, maxStrength)))
+					end
+				end
+				corpse.CharacterHealth.ForceUpdateVisuals()
+			end
+		end
+	end)
+	
+
 Hook.Add("ChangeDirection", "ChangeDirection", function(effect, deltaTime, item, targets, worldPosition)
 	if CLIENT and not Game.IsMultiplayer then
 	Submarine.MainSub.FlipX()
