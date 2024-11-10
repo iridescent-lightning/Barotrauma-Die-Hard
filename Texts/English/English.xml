@@ -766,4 +766,9 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <VerticalEngineDisplayTip>How much thrusting rate is the vertical thruster.</VerticalEngineDisplayTip>
   <SonarHertzTip>The hertz of the sonar. Higher hertz will grants a longer range but a smaller detection radius. Higer energy sonar is also more dangerous to humans.</SonarHertzTip>
   
+
+  <lowoxygencandleheader>Low on Oxygen Candle</lowoxygencandleheader>
+  <lowoxygencandlewarning>There are fewer than two full-condition oxygen candles on the submarine. Further proceed without engough candles may result in non-working oxygen generator.</lowoxygencandlewarning>
+  <lowreactorcoolantheader>Low on Reactor Coolant</lowreactorcoolantheader>
+  <lowreactorcoolantwarning>There are fewer than two full-condition coolant for submarine reactor. Insufficient coolant may result in reactor meltdown.</lowreactorcoolantwarning>
 </infotexts>

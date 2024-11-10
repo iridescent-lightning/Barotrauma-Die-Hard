@@ -34,7 +34,7 @@
 
 	  </ItemComponent>
   </Item>-->
-    <Item name="" description="" identifier="reactorcooline" Tags="reactorpart,mediumitem" category="Machine" Scale="0.8" hideinmanue="true" maxstacksize="4">
+    <Item name="" description="" identifier="reactorcooline" Tags="reactorpart,mediumitem,reactorcoolant" category="Machine" Scale="0.8" hideinmanue="true" maxstacksize="4">
       <InventoryIcon texture="%ModDir%/Items/Reactor/reactor_parts.png" sourcerect="1,0,53,77" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Items/Reactor/reactor_parts.png" sourcerect="1,0,53,77" depth="0.5" />
       <Body height="53" width="77" density="100" />
@@ -50,6 +50,7 @@
         <Price storeidentifier="merchantresearch" minavailable="3" />
         <Price storeidentifier="merchantmilitary" minavailable="3" />
         <Price storeidentifier="merchantmine" multiplier="0.75" minavailable="5" />
+        <Price storeidentifier="merchantengineering" minavailable="1" multiplier="0.9" />
       </Price>
       <Deconstruct time="30">
         <Item identifier="titaniumaluminiumalloy" />

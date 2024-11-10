@@ -40,7 +40,7 @@ namespace BarotraumaDieHard
                 postfix: new HarmonyMethod(typeof(GameSessionDieHard).GetMethod(nameof(EndRound)))
             );
 
-
+            // ambigous solution
             var originalStartRound = typeof(GameSession).GetMethod("StartRound", BindingFlags.Public | BindingFlags.Instance, null, 
                 new Type[] { typeof(LevelData), typeof(bool), typeof(SubmarineInfo), typeof(SubmarineInfo) }, null);
 

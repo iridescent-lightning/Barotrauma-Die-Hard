@@ -233,3 +233,9 @@
     5. Now engines, oxygenerators and pumps will require mechanical parts to be repaired. 
     6. Repairable qte game is now impactful. Since we consume parts everytime we click. Each successful qte will increase the item condition by 20% of its maxcondition.
     7. Adding a hint for qte skill check failure. Currently all hints only show in singleplayer.
+87. 
+    1. Adding an end-round check for oxygen candles so we don't forget to purchase enough candles for oxygen generator. Minimum requirement is 2.
+    2. Adding tags in xml and TagsDieHard for oxygencandles.
+    3. Remove 'interactivesound' on oxygencandle. This probably was a mistake when the candle was made out of a container.
+    4. Adding an end-round check for reactor coolant so we don't forget to purchase enough coolant for reactor. Minimum requirement is 2.
+    5. Adding reactor coolant to merchantengineer.
