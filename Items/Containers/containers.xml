@@ -29,7 +29,7 @@
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="549,431,175,134" depth="0.9" origin="0.55,0.5" />
       <SwappableItem price="100" origin="60,66" swapidentifier="smallcontainers" replacementonuninstall="smallcontainerslot"></SwappableItem>
       <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <Containable items="smallitem" />
         <StatusEffect type="OnPicked" target="This">
           <LuaHook name="AddTagForOpen" />
@@ -41,7 +41,7 @@
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="497,607,122,152" depth="0.9" origin="0.45,0.5" />
       <SwappableItem price="100" origin="57.5,74" swapidentifier="smallcontainers" replacementonuninstall="smallcontainerslot"></SwappableItem>
       <ItemContainer capacity="20" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
         <Containable items="smallitem,chem,medical,mediumitem" />
         <StatusEffect type="OnPicked" target="This">
@@ -86,7 +86,7 @@
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="12,11,171,372" depth="0.9" origin="0.43,0.47" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="1,1,175,374" depth="0.84" origin="0.5,0.5" maxcondition="30" />
       <ItemContainer capacity="15" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <Containable items="smallitem,mediumitem" />
         <!--<StatusEffect type="OnBroken" target="This">
           <DropContainedItems aimspread="250" rotationtype="Random"/>
@@ -121,8 +121,8 @@
       <Sprite texture="containers.png" depth="0.84" sourcerect="178,1,168,377" origin="0.5,0.5" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="183,11,178,371" depth="0.9" origin="0.43,0.47" />
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="178,1,168,377" depth="0.84" origin="0.5,0.5" maxcondition="30" />
-      <ItemContainer capacity="15" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
+      <ItemContainer capacity="15" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect" >
+        <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <Containable items="smallitem,mediumitem" />
         <!--<StatusEffect type="OnBroken" target="This">
 	  <DropContainedItems aimspread="250" rotationtype="Random"/>
@@ -155,7 +155,7 @@
       <BrokenSprite texture="%ModDir%/Items/Containers/Dh_containers.png" sourcerect="348,2,364,373" depth="0.84" origin="0.5,0.5" maxcondition="30" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="350,11,386,365" depth="0.9" origin="0.41,0.47" />
       <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <Containable items="smallitem,mediumitem" />
         <!--<StatusEffect type="OnBroken" target="This">
 	  <DropContainedItems aimspread="250" rotationtype="Random"/>
@@ -187,7 +187,7 @@
       <Sprite texture="containers.png" depth="0.84" sourcerect="815,1,208,346" />
       <DecorativeSprite texture="%ModDir%/Items/Containers/containers_shadows.png" sourcerect="752,662,228,333" depth="0.9" origin="0.43,0.47" />
       <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.45" anchor="Center" slotsperrow="6" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" slotsperrow="6" style="ItemUI" relativeoffset="0.25,0.25" />
         <Containable items="smallitem,chem,medical,mediumitem" />
         <StatusEffect type="OnPicked" target="This">
           <LuaHook name="AddTagForOpen" />
@@ -281,7 +281,7 @@
     <Item name="" identifier="securesteelcabinet" tags="locker,container,securecontainer,playinteractsound" linkable="true" spritecolor="255,255,255,255" pickdistance="150" waterproof="true" scale="0.5">
       <Sprite texture="containers.png" depth="0.84" sourcerect="1,380,105,160" origin="0.5,0.5" />
       <ItemContainer capacity="20" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" relativeoffset="0.25,0.25" />
         <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
         <Containable items="smallitem,mediumitem" />
         <StatusEffect type="OnPicked" target="This">

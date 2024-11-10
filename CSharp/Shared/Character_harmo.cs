@@ -129,7 +129,7 @@ namespace CharacterModNamespace
 				// Check if the linked hull exists and if it's close to full water.
 				if (linkedHull != null && linkedHull.WaterPercentage >= 95f) // Assuming 95% is "close to full".
 				{
-					DebugConsole.NewMessage($"Skipping force application due to high water level in hull: {linkedHull.WaterPercentage}");
+					// DebugConsole.NewMessage($"Skipping force application due to high water level in hull: {linkedHull.WaterPercentage}");
 					continue; // Skip applying force if water level is too high.
 				}
 

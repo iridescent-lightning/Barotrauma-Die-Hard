@@ -95,7 +95,7 @@ namespace ItemContainerMod
 				}
 				else if (_.item.HasTag("mediumsteelcabinetsfx"))
 				{
-					DebugConsole.NewMessage("mediumsteelcabinetsfx");
+					//DebugConsole.NewMessage("mediumsteelcabinetsfx");
 					#if CLIENT
 						SoundPlayer.PlaySound("interactive_medium_container", _.item.WorldPosition, hullGuess: _.item.CurrentHull);
 					#endif

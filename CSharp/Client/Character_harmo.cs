@@ -67,10 +67,19 @@ namespace CharacterMod
 
 				if (PlayerInput.SecondaryMouseButtonHeld())
 				{
+
+					var cursorWorldPosition = cam.ScreenToWorld(PlayerInput.MousePosition);
+					var characterPosition = __instance.WorldPosition;
+					float distance = Vector2.Distance(cursorWorldPosition, characterPosition);
+					//DebugConsole.NewMessage(distance.ToString());
+
+					if (!Character.IsMouseOnUI && distance > 400f)
+					{
 					float currentOffset = cam.OffsetAmount;
 					float targetOffset = 1000.0f;
 					float lerpFactor = 0.5f;
 					cam.OffsetAmount = MathHelper.Lerp(currentOffset, targetOffset, lerpFactor);
+					}
 				}
 
 				/*if (PlayerInput.SecondaryMouseButtonHeld())

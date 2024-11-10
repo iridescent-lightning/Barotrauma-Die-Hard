@@ -453,7 +453,10 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <missionmessage0.story_nocargo_beacon>The communication between [location1] and Coalition Engineering Company is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to meet your contact.</missionmessage0.story_nocargo_beacon>
 
 
-
+  <entityname.dhwaterpump>Water Pump</entityname.dhwaterpump>
+  <entitydescription.dhwaterpump>Attach the water pump to a nozzle through a wire to pump water out through the nozzle.</entitydescription.dhwaterpump>
+  <entityname.attachablepumpnozzle>Water Pump Nozzle</entityname.attachablepumpnozzle>
+  <entitydescription.attachablepumpnozzle>Connected nozzle will allow the water to flow out.</entitydescription.attachablepumpnozzle>
   <entityname.radiationsuit>Radiation Suit</entityname.radiationsuit>
   <entitydescription.radiationsuit>Lead Suit can resist radiation or other hazards.</entitydescription.radiationsuit>
   <entityname.fuelrodholder>Fuelrod Holder</entityname.fuelrodholder>

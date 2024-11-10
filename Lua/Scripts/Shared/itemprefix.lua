@@ -246,7 +246,7 @@ if Level.Loaded == nil then return end
 
 --end)--]]
 
-Hook.Add("signalReceived.attachablepumpnozzal", "attachablepumpnozzal", function(signal, connection)
+Hook.Add("signalReceived.attachablepumpnozzle", "attachablepumpnozzle", function(signal, connection)
 --print(connection.Item)--itself
 	
     if signal.source == nil then return end
@@ -256,7 +256,7 @@ Hook.Add("signalReceived.attachablepumpnozzal", "attachablepumpnozzal", function
         local voltage = signal.source.GetComponentString('LightComponent').Voltage
 		local minvoltage = signal.source.GetComponentString('LightComponent').MinVoltage
 		local value = signal.value
-		if  voltage > minvoltage and connection.item.InWater and value == "1" then--freaking God the signal is a string!
+		if  voltage > minvoltage and connection.item.InWater and value == "1" then
 		 
 			signal.source.FindHull().WaterVolume = signal.source.FindHull().WaterVolume + 350
 			connection.item.FindHull().WaterVolume = connection.item.FindHull().WaterVolume - 350

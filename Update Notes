@@ -239,3 +239,8 @@
     3. Remove 'interactivesound' on oxygencandle. This probably was a mistake when the candle was made out of a container.
     4. Adding an end-round check for reactor coolant so we don't forget to purchase enough coolant for reactor. Minimum requirement is 2.
     5. Adding reactor coolant to merchantengineer.
+88. 
+    1. Moving ItemContainer UI to the bottom-right corner. We can then have a vivid visual effect on containers opens.
+    2. Adding a check for mouse on gui. If true, don't zoom. This to prevent container triggers zoom effect when cancelled by right-click.
+    3. Adding a distance check between mouse position and character position. Only when distance greater than 400 will the camera zoom out happen.
+    4. Fixing dh waterpump and its nozzle missing bug. 

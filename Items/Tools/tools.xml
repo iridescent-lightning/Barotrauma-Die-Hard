@@ -1710,9 +1710,10 @@
         <output name="signal_out" displayname="connection.Vent" />
       </ConnectionPanel>
     </Item>
-    <Item name="attachablepumpnozzal" identifier="attachablepumpnozzal" tags="smallitem,donttakeitems,attachablepumpb" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowasextracargo="true" impactsoundtag="impact_metal_heavy" isshootable="true">
+    <Item name="" identifier="attachablepumpnozzle" tags="smallitem,donttakeitems,attachablepumpb" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" allowasextracargo="true" impactsoundtag="impact_metal_heavy" isshootable="true" maxstacksize="4">
       <PreferredContainer primary="engcab" />
-      <Price baseprice="520" sold="false">
+      <PreferredContainer secondary="storagecab" amount="2" notcampaign="true"/>
+      <Price baseprice="50" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.2" />
         <Price storeidentifier="merchantcity" multiplier="1.2" />
         <Price storeidentifier="merchantresearch" />
@@ -1742,7 +1743,7 @@
         <RequiredItem items="Screwdriver" type="Equipped" />
         <output name="signal_in" displayname="Vent" />
       </ConnectionPanel>
-      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="20.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true" limitedattachable="true">
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="20.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
         <requireditem items="wrench" type="Equipped" />
       </Holdable>
     </Item>
