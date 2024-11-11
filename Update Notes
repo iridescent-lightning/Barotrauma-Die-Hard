@@ -247,3 +247,7 @@
 89. 
     1. Adding requireditem for engines.
     2. Adding an additional repairable consumables check on round-end. It checks two repairables together.
+90. 
+    1. Havling the price of repairbale consumables.
+    2. Doubling the selling stock for repairable consumables.
+    3. Updating container capacities with the lastest offical patch.

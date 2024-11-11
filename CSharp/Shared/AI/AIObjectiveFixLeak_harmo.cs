@@ -50,13 +50,37 @@ namespace BarotraumaDieHard
         {
             AIObjectiveFixLeak _ = __instance;
 
-            var BagSlotIndex = _.character.Inventory.FindLimbSlot(InvSlotType.Bag);
-            var HandSlotIndex = _.character.Inventory.FindLimbSlot(InvSlotType.RightHand);
-            Item itemInBag = _.character.Inventory.GetItemAt(BagSlotIndex);
+            var BagSlot = _.character.Inventory.FindLimbSlot(InvSlotType.Bag);
+            var rightHandSlot = _.character.Inventory.FindLimbSlot(InvSlotType.RightHand);
+            var leftHandSlot = _.character.Inventory.FindLimbSlot(InvSlotType.LeftHand);
+            Item itemInBag = _.character.Inventory.GetItemAt(BagSlot);
+            Item itemInRightHand = _.character.Inventory.GetItemAt(rightHandSlot);
+            Item itemInLeftHand = _.character.Inventory.GetItemAt(leftHandSlot);
 
             if (itemInBag != null && itemInBag.HasTag("weldingequipment"))
             {
-                _.character.Inventory.TryPutItem(itemInBag, HandSlotIndex, true, false, Character.Controlled, true, true);
+                
+                // Check if character is holding something else
+                if ((itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment")))
+                {
+                    _.character.Unequip(itemInRightHand);
+                    _.character.Inventory.TryPutItem(itemInBag, rightHandSlot, true, false, Character.Controlled, true, true);
+                }
+                else if ((itemInLeftHand != null && !itemInLeftHand.HasTag("weldingequipment")))
+                {
+                    _.character.Unequip(itemInLeftHand);
+                    _.character.Inventory.TryPutItem(itemInBag, leftHandSlot, true, false, Character.Controlled, true, true);
+                }
+                else if ((itemInLeftHand != null && !itemInLeftHand.HasTag("weldingequipment") || (itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment"))))
+                {
+                    _.character.Unequip(itemInRightHand);
+                    _.character.Unequip(itemInLeftHand);
+                    _.character.Inventory.TryPutItem(itemInBag, leftHandSlot, true, false, Character.Controlled, true, true);
+                }
+                else if (itemInRightHand == null && itemInLeftHand == null)
+                {
+                    _.character.Inventory.TryPutItem(itemInBag, rightHandSlot, true, false, Character.Controlled, true, true);
+                }
             }
         }
     }

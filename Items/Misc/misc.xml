@@ -191,13 +191,13 @@
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.75" />
-      <Price baseprice="40" canbespecial="false">
+      <Price baseprice="20" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="5" />
         <Price storeidentifier="merchantcity" minavailable="5" />
         <Price storeidentifier="merchantresearch" minavailable="5" />
         <Price storeidentifier="merchantmilitary" minavailable="5" />
         <Price storeidentifier="merchantmine" minavailable="5" />
-        <Price storeidentifier="merchantengineering" minavailable="10" multiplier="0.3" />
+        <Price storeidentifier="merchantengineering" minavailable="20" multiplier="0.3" />
       </Price>
       <InventoryIcon texture="%ModDir%/Items/Misc/DHMisc2.png" sourcerect="0,0,97,88" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Items/Misc/DHMisc2.png" depth="0.6" sourcerect="0,0,97,88" origin="0.5,0.5" />
@@ -221,13 +221,13 @@
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />
       <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.75" />
-      <Price baseprice="40" canbespecial="false">
+      <Price baseprice="20" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="5" />
         <Price storeidentifier="merchantcity" minavailable="5" />
         <Price storeidentifier="merchantresearch" minavailable="5" />
         <Price storeidentifier="merchantmilitary" minavailable="5" />
         <Price storeidentifier="merchantmine" minavailable="5" />
-        <Price storeidentifier="merchantengineering" minavailable="10" multiplier="0.3" />
+        <Price storeidentifier="merchantengineering" minavailable="20" multiplier="0.3" />
       </Price>
       
       <Sprite texture="%ModDir%/Items/Misc/DHMisc2.png" depth="0.6" sourcerect="163,12,165,79" origin="0.5,0.5" />

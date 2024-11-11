@@ -1645,7 +1645,7 @@
         <StatusEffect type="OnContained" target="Character" SpeedMultiplier="0.4" setvalue="true" />
       </Holdable>
       <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-        <sprite name="PKM Worn" texture="%ModDir%/Items/Weapons/weapons2.png" sourcerect="6,750,586,216" canbehiddenbyotherwearables="false" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.35" origin="0.5,-0.2" />
+        <sprite name="PKM Worn" texture="%ModDir%/Items/Weapons/weapons2.png" sourcerect="6,750,586,216" canbehiddenbyotherwearables="false" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.255" origin="0.5,-0.1" />
       </Wearable>
       <RangedWeapon barrelpos="250,50" spread="12" unskilledspread="50" reload="0.07" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2" reloadskillrequirement="50">
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
