@@ -59,21 +59,22 @@ namespace BarotraumaDieHard
 
             if (itemInBag != null && itemInBag.HasTag("weldingequipment"))
             {
-                
-                // Check if character is holding something else
-                if ((itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment")))
+                if ((itemInLeftHand != null && !itemInLeftHand.HasTag("weldingequipment") && (itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment"))))
+                {
+                    // putting item in the left hand won't work. Bots will fail at unequip item holding at one hand. Making bots put item into the right hand will work.
+                    _.character.Unequip(itemInRightHand);
+                    _.character.Unequip(itemInLeftHand);
+                    //_.character.Inventory.TryPutItem(itemInBag, leftHandSlot, true, false, Character.Controlled, true, true);
+                    _.character.Inventory.TryPutItem(itemInBag, rightHandSlot, true, false, Character.Controlled, true, true);
+                }
+                else if ((itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment")))
                 {
                     _.character.Unequip(itemInRightHand);
                     _.character.Inventory.TryPutItem(itemInBag, rightHandSlot, true, false, Character.Controlled, true, true);
                 }
+                // However, putting item into the left hand here seems to work well.
                 else if ((itemInLeftHand != null && !itemInLeftHand.HasTag("weldingequipment")))
                 {
-                    _.character.Unequip(itemInLeftHand);
-                    _.character.Inventory.TryPutItem(itemInBag, leftHandSlot, true, false, Character.Controlled, true, true);
-                }
-                else if ((itemInLeftHand != null && !itemInLeftHand.HasTag("weldingequipment") || (itemInRightHand != null && !itemInRightHand.HasTag("weldingequipment"))))
-                {
-                    _.character.Unequip(itemInRightHand);
                     _.character.Unequip(itemInLeftHand);
                     _.character.Inventory.TryPutItem(itemInBag, leftHandSlot, true, false, Character.Controlled, true, true);
                 }

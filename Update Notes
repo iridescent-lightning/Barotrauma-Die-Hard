@@ -251,3 +251,4 @@
     1. Havling the price of repairbale consumables.
     2. Doubling the selling stock for repairable consumables.
     3. Updating container capacities with the lastest offical patch.
+    4. Fixing bots fail at putting welding tool at hand if there is already item or items in hand. In real-campaign repair scenario this commonly result in bots can't perform welding activities then report missing welding tool. 
