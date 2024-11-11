@@ -8,9 +8,8 @@ using Barotrauma.Networking;
 using Barotrauma.Extensions;
 using Barotrauma;
 
-using HullModNamespace;
 
-namespace BrokenBatteryMod//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
+namespace BarotraumaDieHard
 {
     class BrokenBattery : ItemComponent
     {

@@ -118,7 +118,9 @@ namespace BarotraumaDieHard
 
             ReactorDieHard.ClearRactorySecondContainerDictionary();
 
-           ConvertLocationToDestroyed();
+            CharacterMod.ClearPressureTimerDictionary();
+
+            ConvertLocationToDestroyed();
             
         }
     

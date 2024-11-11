@@ -226,7 +226,7 @@ namespace BarotraumaDieHard
         public static bool UpdateDeteriorationPrefix(float deltaTime, Repairable __instance)
         {
             Repairable _ = __instance;
-            if (_.item.HasTag("junctionbox") || _.item.HasTag("engine") || _.item.HasTag("command") || _.item.HasTag("battery") || _.item.HasTag("supercapacitor")) return false;
+            if (_.item.HasTag("junctionbox") || _.item.HasTag("engine") || _.item.HasTag("command") || _.item.HasTag("battery") || _.item.HasTag("supercapacitor") || _.item.HasTag("oxygengenerator")) return false;
             
 
 

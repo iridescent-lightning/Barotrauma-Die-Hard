@@ -21,10 +21,9 @@ using Barotrauma;
 using HarmonyLib;
 using System.Globalization;
 using System.Reflection;
-using HullModNamespace;
 
 
-namespace CharacterModNamespace
+namespace BarotraumaDieHard
 {
     class CharacterMod : IAssemblyPlugin
     {
@@ -45,6 +44,16 @@ namespace CharacterModNamespace
 			var originalUpdate = typeof(Character).GetMethod("Update", BindingFlags.Public | BindingFlags.Instance);
             var postfixUpdate = new HarmonyMethod(typeof(CharacterMod).GetMethod(nameof(UpdatePostfix), BindingFlags.Public | BindingFlags.Static));
             harmony.Patch(originalUpdate, postfixUpdate, null);
+
+
+			var originalConstructor = typeof(Character).GetConstructor(
+			BindingFlags.Instance | BindingFlags.NonPublic, 
+			null, 
+			new[] { typeof(CharacterPrefab), typeof(Vector2), typeof(string), typeof(CharacterInfo), typeof(ushort), typeof(bool), typeof(RagdollParams), typeof(bool) }, 
+			null);
+
+            var postfix = new HarmonyMethod(typeof(CharacterMod).GetMethod(nameof(CharacteConstructorPostfix)));
+            harmony.Patch(originalConstructor, null, postfix);
 			
         }
 
@@ -59,11 +68,27 @@ namespace CharacterModNamespace
 		
 		private static float escapedTime;
         private static float updateTimer = 1.0f;
+
+
+
+		// Declare the dictionary at the class level
+		private static Dictionary<Character, float> customPressureTimers = new Dictionary<Character, float>();
+
+
+		public static void CharacteConstructorPostfix(CharacterPrefab prefab, Vector2 position, string seed, CharacterInfo characterInfo, ushort id, bool isRemotePlayer, RagdollParams ragdollParams, bool spawnInitialItems, Character __instance)
+		{
+			
+			// Ensure the dictionary has an entry for the character
+			if (!customPressureTimers.ContainsKey(__instance))
+			{
+				customPressureTimers[__instance] = 0.0f;
+			}
+		}
 		
 		public static void UpdateOxygenPostfix(Character __instance, float deltaTime)
 		{
 			
-				
+			Character _ = __instance;
 			if (__instance == null) { return; }
 
 			if (__instance.CurrentHull == null) { return; }
@@ -99,7 +124,46 @@ namespace CharacterModNamespace
 			{
 				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(-0.5f * deltaTime));
 			}
-			escapedTime = 0;
+			
+			float normalAirPressure = Math.Max(0, __instance.Submarine.RealWorldDepth);
+
+			if (HullMod.GetGas(__instance.CurrentHull, "PressurizedAir") > normalAirPressure * 2f)
+			{
+				
+				// Increment the customPressureTimer for this character
+				customPressureTimers[__instance] += 1 * deltaTime;
+
+				if (customPressureTimers[__instance] > _.CharacterHealth.PressureKillDelay * 0.1f)
+				{
+					// Apply increasing amounts of organ damage
+					_.CharacterHealth.ApplyAffliction(
+						targetLimb: _.AnimController.MainLimb, 
+						new Affliction(AfflictionPrefab.OrganDamage, HullMod.GetGas(__instance.CurrentHull, "PressurizedAir") / normalAirPressure * deltaTime));
+				}
+
+				if (customPressureTimers[__instance] >= 15.0f)
+				{
+					// Trigger implosion if needed
+					if (GameMain.NetworkMember == null || !GameMain.NetworkMember.IsClient)
+					{
+						_.Implode();
+						if (_.IsDead) { return; }
+					}
+				}
+					DebugConsole.NewMessage($"pressure timer: {customPressureTimers[__instance]}");
+					DebugConsole.NewMessage($"air pressure - depth equalized: {HullMod.GetGas(__instance.CurrentHull, "PressurizedAir")}");
+					DebugConsole.NewMessage($"normalAirPressure - depth equalized: {normalAirPressure}");
+					
+			}
+			else
+			{
+				// Reset the customPressureTimer for this character
+				if (customPressureTimers.ContainsKey(__instance))
+				{
+					customPressureTimers[__instance] = 0.0f;
+				}
+			}
+			
 			
 		}
 
@@ -111,7 +175,6 @@ namespace CharacterModNamespace
 			if (_.InWater)
 			{
 				ApplyFlowForces(deltaTime, _);
-			
 			}
 		}
 
@@ -158,10 +221,11 @@ namespace CharacterModNamespace
 		}
 
 
-		
-        
+		public static void ClearPressureTimerDictionary()
+		    {
+			    customPressureTimers.Clear();
+		    }
 
-		
         
 	}
     

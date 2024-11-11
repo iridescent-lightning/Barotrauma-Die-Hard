@@ -5,10 +5,8 @@ using Barotrauma.Items.Components;
 using Barotrauma.Extensions;
 using Barotrauma;
 using HarmonyLib;
-using HullModNamespace;
-using OxygenGeneratorMod;
 
-namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
+namespace BarotraumaDieHard
 {
     class VentMod : IAssemblyPlugin
     {
@@ -57,6 +55,14 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
             get { return heatFlow; }
             set { heatFlow = Math.Max(value, 0.0f); }
         }
+
+        public static float deltaAirPressure;
+        public static float DeltaAirPressure
+        {
+            get { return deltaAirPressure; }
+            set { deltaAirPressure = Math.Max(value, 0.0f); }
+        }
+
         private static float updateTimer = 0.0f;
         private static float updateInterval = 0.1f;
         public static bool Update(float deltaTime, Camera cam, Vent __instance)
@@ -76,7 +82,9 @@ namespace VentModNameSpace//todo make a structural namespace DieHard.Item.Compon
 
             HullMod.AddGas(_.item.CurrentHull, "CO2", -CO2Flow, deltaTime); //higher co to make sure the vent can clear the room
             HullMod.AddGas(_.item.CurrentHull, "CO", -PurifyingFlow, deltaTime);
-            HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow, deltaTime); //There is no CL
+            HullMod.AddGas(_.item.CurrentHull, "Chlorine", -PurifyingFlow, deltaTime); 
+            HullMod.AddGas(_.item.CurrentHull, "PressurizedAir", -deltaAirPressure, deltaTime); 
+
             if (HullMod.GetGas(_.item.CurrentHull, "Temperature") < 300f)
             {
                 HullMod.AddGas(_.item.CurrentHull, "Temperature", HeatFlow  * 1f, deltaTime);

@@ -15,12 +15,8 @@ using HarmonyLib;
 using Barotrauma;
 
 
-namespace HullModNamespace
+namespace BarotraumaDieHard
 {
-
-    
-
-
     class HullMod : IAssemblyPlugin
     {
         private Harmony harmony;
@@ -101,7 +97,8 @@ namespace HullModNamespace
                 CO = 0f,
                 Nitrogen = Rand.Range(0f, 100.0f),
                 NobleGas = Rand.Range(0f, 100.0f),
-                Chlorine = 0f
+                Chlorine = 0f,
+                PressurizedAir = 0f
             };
             gasMap[__instance] = gasInfo;
         //__instance.ToxicGasPercentage = volume <= 0.0f ? 100.0f : __instance.toxicGas / volume * 100.0f;
@@ -188,6 +185,7 @@ namespace HullModNamespace
             public float Nitrogen;
             public float Chlorine;
             public float NobleGas;
+            public float PressurizedAir;
 
             public float GetGasAmount(string gasType)
             {
@@ -205,6 +203,8 @@ namespace HullModNamespace
                         return Chlorine;
                     case "NobleGas":
                         return NobleGas;
+                    case "PressurizedAir":
+                        return PressurizedAir;
                     default:
                         return 0.0f;
                 }
@@ -232,6 +232,9 @@ namespace HullModNamespace
                     case "NobleGas":
                         NobleGas = value;
                         break;
+                    case "PressurizedAir":
+                        PressurizedAir = value;
+                        break;
                 }
             }
 
@@ -256,6 +259,9 @@ namespace HullModNamespace
                         break;
                     case "NobleGas":
                         NobleGas += amount;
+                        break;
+                    case "PressurizedAir":
+                        PressurizedAir += amount;
                         break;
                 }
             }

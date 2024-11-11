@@ -11,9 +11,8 @@ using HarmonyLib;
 
 using System.Globalization;
 using System.Reflection;// for bindingflags
-//using HullModNamespace;
 
-namespace GapMod
+namespace BarotraumaDieHard
 {
 
     partial class GapMod : IAssemblyPlugin

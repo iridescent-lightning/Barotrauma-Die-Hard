@@ -190,7 +190,7 @@
       <PreferredContainer primary="engcab,reactorcab"/>
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />
-      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.75" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" minamount="2" maxamount="25" spawnprobability="0.75" />
       <Price baseprice="20" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="5" />
         <Price storeidentifier="merchantcity" minavailable="5" />
@@ -220,7 +220,7 @@
       <PreferredContainer primary="engcab,reactorcab"/>
       <PreferredContainer secondary="storagecab" />
       <PreferredContainer primary="engcab,reactorcab" amount="32" notcampaign="true" />
-      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.75" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" minamount="2" maxamount="25" spawnprobability="0.75" />
       <Price baseprice="20" canbespecial="false">
         <Price storeidentifier="merchantoutpost" minavailable="5" />
         <Price storeidentifier="merchantcity" minavailable="5" />
@@ -817,5 +817,24 @@
       </ItemComponent>
       <ForceMission/>
     </Item>
+    <pressurizedgastank name="" identifier="pressurizedgastank" category="Fuel" description="" maxstacksize="4" Tags="smallitem" impactsoundtag="impact_extinguisher" scale="0.3">
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="450,192,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Misc/DHMisc2.png" sourcerect="0,298,87,231" depth="0.6" origin="0.5,0.5" />
+      <body width="87" height="231" density="20" /> 
+      <PreferredContainer primary="storeagecab" amount="8" notcampaign="true" />
+      <PreferredContainer secondary="engcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" minamount="1" maxamount="6" spawnprobability="0.2" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantoutpost" minavailable="4" multiplier="1.25"/>
+        <Price storeidentifier="merchantcity" minavailable="6" multiplier="2"/>
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="0.6" minavailable="8" />
+        <Price storeidentifier="merchantengineering" minavailable="4" multiplier="0.9"/>
+      </Price>
+      <Holdable slots="RightHand+LeftHand" holdpos="20,-20" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="true" canbepicked="true" pickkey="Action">
+        <StatusEffect type="OnPicked" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+    </pressurizedgastank>
   </Items>
 </Override>

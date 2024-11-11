@@ -503,7 +503,7 @@
     <Item name="" identifier="junctionboxfuse" scale="0.5" category="Electricity" tags="smallitem" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" maxstacksize="20">
       <PreferredContainer primary="junctionbox" amount="1" />
       <PreferredContainer primary="storagecab" secondary="storagecab" amount="10" notcampaign="true" />
-      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.05" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" minamount="2" maxamount="9" spawnprobability="0.5" />
       <Price baseprice="85" canbespecial="true">
         <Price storeidentifier="merchantoutpost" minavailable="3" />
         <Price storeidentifier="merchantcity" minavailable="3" />
@@ -521,7 +521,7 @@
       <Deconstruct time="10">
         <Item identifier="copper" />
       </Deconstruct>
-      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="384,126,64,64" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="446,128,64,63" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Items/Electricity/dhelectricities.png" depth="0.6" sourcerect="249,6,15,42" origin="0.5,0.5" />
       <Body width="15" height="42" density="15" />
       <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" />

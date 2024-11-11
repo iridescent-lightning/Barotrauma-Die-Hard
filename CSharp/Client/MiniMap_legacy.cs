@@ -3,7 +3,6 @@ using Barotrauma;
 using Barotrauma.Items.Components;
 using Barotrauma.Networking;
 using Networking;
-using HullModNamespace;
 
 using FarseerPhysics;
 using Microsoft.Xna.Framework;

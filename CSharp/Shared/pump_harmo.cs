@@ -11,7 +11,7 @@ using Barotrauma;
 using HarmonyLib;
 
 
-namespace pumpMod//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
+namespace BarotraumaDieHard
 {
     class CustomPump : IAssemblyPlugin
     {
@@ -42,14 +42,12 @@ namespace pumpMod//todo make a structural namespace DieHard.Item.Components. nam
         public static bool Update(float deltaTime, Camera cam, Pump __instance)
 		{
 			Pump _ = __instance;
+            // add this tag so no other pump without container won't crash the game.
             if (_.item.HasTag("cspump"))
             {
 			    motor = _.item.GetComponent<ItemContainer>().Inventory.GetItemAt(0) as Item;
             }
-			//just directly use it if only one is certain. cast it. only when update it can get.GetItemsAt will give you a list
-			//if (motor == null){return false;}this makes the checking broken
 
-			
 
             _.pumpSpeedLockTimer -= deltaTime;
             _.isActiveLockTimer -= deltaTime;
@@ -68,6 +66,22 @@ namespace pumpMod//todo make a structural namespace DieHard.Item.Components. nam
 				
 				return false;
 			}
+            
+            // Pressurized Air feature.
+            if (_.item.CurrentHull != null && _.item.CurrentHull.IsWetRoom)
+            {
+                float subamrineDepth = _.item.Submarine.RealWorldDepth;
+                float requiredAirPressure = _.item.Submarine.RealWorldDepth * 4f;
+
+                float currentPressurizedAir = HullMod.GetGas(_.item.CurrentHull, "PressurizedAir");
+
+                if (currentPressurizedAir < requiredAirPressure)
+                {
+                    HullMod.AddGas(_.item.CurrentHull, "PressurizedAir", 300f, deltaTime);
+                }
+            }
+            
+            
 
             _.currFlow = 0.0f;
 

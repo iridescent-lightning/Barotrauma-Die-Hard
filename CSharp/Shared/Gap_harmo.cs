@@ -13,9 +13,8 @@ using HarmonyLib;
 
 using System.Globalization;
 using System.Reflection;// for bindingflags
-using HullModNamespace;
 
-namespace GapMod
+namespace BarotraumaDieHard
 {
 
     partial class GapMod : IAssemblyPlugin
@@ -56,6 +55,8 @@ namespace GapMod
         private static float TemperatureDistributionSpeed = 1f;
         private static float GasDistributionspeed = 50f;
 
+        private static float PressureDistributionspeed = 1000f;
+
         public static bool UpdateOxygenPrefix(Gap __instance, Hull hull1, Hull hull2, float deltaTime)
         {
             
@@ -92,15 +93,10 @@ namespace GapMod
                 HullMod.AddGas(hull1, "Temperature", deltaTempreture, 1f); // Old AddGas use the last parameter to time delta time. But since I did delta time here, just put 1f to keep the value.
                 HullMod.AddGas(hull2, "Temperature", -deltaTempreture, 1f);
 
-
-                
-                
-
-
                 ExchangeGas(hull1, hull2, "CO2", deltaTime);
                 ExchangeGas(hull1, hull2, "CO", deltaTime);
                 ExchangeGas(hull1, hull2, "Chlorine", deltaTime);
-                
+                ExchangeAirPressure(hull1, hull2, "PressurizedAir", deltaTime);
             
             //ExchangeGas(hull1, hull2, "NobleGas", deltaTime);
 
@@ -123,6 +119,24 @@ namespace GapMod
 
             float deltaGas = (totalGas * hull1.Volume / totalVolume) - gasInHull1;
             deltaGas = MathHelper.Clamp(deltaGas, -GapMod.GasDistributionspeed * deltaTime, GapMod.GasDistributionspeed * deltaTime);
+
+            HullMod.AddGas(hull1, gasType, deltaGas, 1f);
+            HullMod.AddGas(hull2, gasType, -deltaGas, 1f);
+        }
+
+        public static void ExchangeAirPressure(Hull hull1, Hull hull2, string gasType, float deltaTime)
+        {
+            
+            float gasInHull1 = HullMod.GetGas(hull1, gasType);
+            float gasInHull2 = HullMod.GetGas(hull2, gasType);
+
+            
+
+            float totalVolume = hull1.Volume + hull2.Volume;
+            float totalGas = gasInHull1 + gasInHull2;
+
+            float deltaGas = (totalGas * hull1.Volume / totalVolume) - gasInHull1;
+            deltaGas = MathHelper.Clamp(deltaGas, -GapMod.PressureDistributionspeed * deltaTime, GapMod.PressureDistributionspeed * deltaTime);
 
             HullMod.AddGas(hull1, gasType, deltaGas, 1f);
             HullMod.AddGas(hull2, gasType, -deltaGas, 1f);

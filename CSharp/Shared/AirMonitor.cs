@@ -7,13 +7,12 @@ using Barotrauma.Items.Components;
 using Barotrauma.Networking;
 using Barotrauma.Extensions;
 using Barotrauma;
-using HullModNamespace;
 
 #if CLIENT
 using Microsoft.Xna.Framework.Graphics;
 #endif
 
-namespace AirMonitor//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
+namespace BarotraumaDieHard//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
 {
     class AirMonitor : ItemComponent
     {

@@ -9,13 +9,12 @@ using Barotrauma.Extensions;
 using Barotrauma;
 
 using Networking;
-using VentModNameSpace;
 
 #if CLIENT
 using Microsoft.Xna.Framework.Graphics;
 #endif
 
-namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Components. namespace can't be used in elsewhere
+namespace BarotraumaDieHard
 {
     class CustomOxygenGenerator : OxygenGenerator
     {
@@ -76,6 +75,13 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
             get;
             private set;
         }
+        public float CurrAirPressureRegulatingFlow
+        {
+            get;
+            private set;
+        }
+
+
 
         public bool HasPower => IsActive && Voltage >= MinVoltage;
 #if CLIENT
@@ -307,6 +313,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
             CurrFlow = 0.0f;
             CurrPurifyingFlow = 0.0f;
             CurrHeatingFlow = 0.0f;
+            CurrAirPressureRegulatingFlow = 0.0f;
 
             if (item.CurrentHull == null) { return; }
             
@@ -330,6 +337,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     CurrHeatingFlow = 0.0f;
                     CurrPurifyingFlow = 0.0f;
                     CurrRecycleFlow = 0.0f;
+                    CurrAirPressureRegulatingFlow = 0.0f;
                 }
                 else
                 {
@@ -371,7 +379,10 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                     CurrHeatingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * heatingAmount;
                     CurrHeatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
 
-                    UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow, deltaTime);
+                    CurrAirPressureRegulatingFlow = Math.Min(PowerConsumption > 0 ? Voltage : 1.0f, MaxOverVoltageFactor) * recycledAmount;
+                    CurrAirPressureRegulatingFlow *= conditionMult * conditionMult * newGeneratedAmountFactor;
+
+                    UpdateVents(CurrFlow, CurrRecycleFlow, CurrPurifyingFlow, CurrHeatingFlow, CurrAirPressureRegulatingFlow, deltaTime);
 
 
                 if (item.InPlayerSubmarine)
@@ -387,7 +398,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
 
         }
 
-        private void UpdateVents(float deltaOxygen, float deltaCO2, float deltaPurify, float deltaHeat, float deltaTime)
+        private void UpdateVents(float deltaOxygen, float deltaCO2, float deltaPurify, float deltaHeat, float deltaAirPressure, float deltaTime)
         {
             if (ventList == null || ventUpdateTimer < 0.0f)
             {
@@ -406,6 +417,7 @@ namespace OxygenGeneratorMod//todo make a structural namespace DieHard.Item.Comp
                 VentMod.co2Flow = deltaCO2 * (hullVolume / totalHullVolume);
                 VentMod.purifyingFlow = deltaPurify * (hullVolume / totalHullVolume);
                 VentMod.heatFlow = deltaHeat * (hullVolume / totalHullVolume);
+                VentMod.deltaAirPressure = deltaHeat * (hullVolume / totalHullVolume);
                 vent.IsActive = true;
             }
         }

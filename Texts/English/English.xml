@@ -634,6 +634,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
   <entityname.lubricationoil>Lubrication Oil</entityname.lubricationoil>
   <entitydescription.lubricationoil>Used to lubricate the engine. Right click to use directly on the engine.</entitydescription.lubricationoil>
   <entityname.jbslot>JunctionBox Slot</entityname.jbslot>
+  <entityname.pressurizedgastank>Pressurized Gas Tank</entityname.pressurizedgastank>
+  <entitydescription.pressurizedgastank>Stores high pressure gas for ballast room pumps.</entitydescription.pressurizedgastank>
 
 
 
@@ -748,6 +750,8 @@ The man pulled out a syringe and injected something into your arm. You felt some
 
   <dialog.bots.findradiationsuit>I need find a radiadition suit!</dialog.bots.findradiationsuit>
   <dialog.bots.findradiationsuit.failure>I can't find radiation suit.</dialog.bots.findradiationsuit.failure>
+
+  <dialog.bots.cannotaccesswetroomdoor>I can't open ballast tank hatch because the room is pressurized!</dialog.bots.cannotaccesswetroomdoor>
 
   <!--Skills-->
   <skillname.ondeckweapon>On Deck Weapon</skillname.ondeckweapon>
