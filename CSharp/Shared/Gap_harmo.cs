@@ -139,6 +139,7 @@ namespace BarotraumaDieHard
             float deltaGas = (totalGas * hull1.Volume / totalVolume) - gasInHull1;
             deltaGas = MathHelper.Clamp(deltaGas, -GapMod.PressureDistributionspeed * deltaTime, GapMod.PressureDistributionspeed * deltaTime);
 
+            // Let us lose more concentrated air if two hulls are connected so we don't instantly pressurize all hulls.
             HullMod.AddGas(hull1, gasType, deltaGas / 10f, 1f);
             HullMod.AddGas(hull2, gasType, -deltaGas * 10f, 1f);
         }

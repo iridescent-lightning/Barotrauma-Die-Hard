@@ -131,7 +131,7 @@ namespace BarotraumaDieHard
 			float airPressure = HullMod.GetGas(__instance.CurrentHull, "PressurizedAir");
 			float hullPressureRatio = airPressure / normalHullPressure;
 
-			DebugConsole.NewMessage($"pressure timer: {customPressureTimers[__instance]}");
+			//DebugConsole.NewMessage($"pressure timer: {customPressureTimers[__instance]}");
 			DebugConsole.NewMessage($"normalHullPressure: {normalHullPressure}");
 			DebugConsole.NewMessage($"hullPressureRatio: {hullPressureRatio}");
 			DebugConsole.NewMessage($"airPressure: {airPressure}");
@@ -144,10 +144,10 @@ namespace BarotraumaDieHard
 
 				if (customPressureTimers[__instance] > _.CharacterHealth.PressureKillDelay * 0.1f)
 				{
-					// Apply increasing amounts of organ damage
+					// Apply increasing amounts of organ damage. Use '-5' to make it start from 0. use 10 to make it slower
 					_.CharacterHealth.ApplyAffliction(
 						targetLimb: _.AnimController.MainLimb, 
-						new Affliction(AfflictionPrefab.OrganDamage, hullPressureRatio * deltaTime));
+						new Affliction(AfflictionPrefab.OrganDamage, ((hullPressureRatio - 5f) / 10f) * deltaTime));
 				}
 
 				if (customPressureTimers[__instance] >= 15.0f)
