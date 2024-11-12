@@ -124,6 +124,7 @@ namespace BarotraumaDieHard
             HullMod.AddGas(hull2, gasType, -deltaGas, 1f);
         }
 
+        // Treat air pressure as normal gas. We will check air pressure ratio in character.
         public static void ExchangeAirPressure(Hull hull1, Hull hull2, string gasType, float deltaTime)
         {
             
@@ -138,8 +139,8 @@ namespace BarotraumaDieHard
             float deltaGas = (totalGas * hull1.Volume / totalVolume) - gasInHull1;
             deltaGas = MathHelper.Clamp(deltaGas, -GapMod.PressureDistributionspeed * deltaTime, GapMod.PressureDistributionspeed * deltaTime);
 
-            HullMod.AddGas(hull1, gasType, deltaGas, 1f);
-            HullMod.AddGas(hull2, gasType, -deltaGas, 1f);
+            HullMod.AddGas(hull1, gasType, deltaGas / 10f, 1f);
+            HullMod.AddGas(hull2, gasType, -deltaGas * 10f, 1f);
         }
 
     }

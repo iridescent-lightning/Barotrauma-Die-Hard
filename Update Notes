@@ -262,3 +262,5 @@
     7. Patching constructor of Character class. Adding dictionary for customPressureTimer. Also adding dictionary clearing function running at endround.
     8. Adding new item: Pressurized Gas Tank.
     9. Removing chaotic namespaces.
+91.1.
+    1. air pressure wip.

@@ -39,6 +39,8 @@ namespace BarotraumaDieHard
             harmony = null;
         }
 
+        
+
         public static bool Update(float deltaTime, Camera cam, Pump __instance)
 		{
 			Pump _ = __instance;
@@ -70,14 +72,17 @@ namespace BarotraumaDieHard
             // Pressurized Air feature.
             if (_.item.CurrentHull != null && _.item.CurrentHull.IsWetRoom)
             {
-                float subamrineDepth = _.item.Submarine.RealWorldDepth;
-                float requiredAirPressure = _.item.Submarine.RealWorldDepth * 4f;
+                float normalAirPressureFactor = Math.Max(0, _.item.Submarine.RealWorldDepth) / 100f;
+                float normalHullVolume = _.item.CurrentHull.Volume / 10000f;
+			    float normalHullPressure = normalHullVolume * normalAirPressureFactor;
 
+                float requiredAirPressure = Math.Max(0, normalHullPressure * 20f);
+                DebugConsole.NewMessage($"requiredAirPressure: {requiredAirPressure}");
                 float currentPressurizedAir = HullMod.GetGas(_.item.CurrentHull, "PressurizedAir");
 
                 if (currentPressurizedAir < requiredAirPressure)
                 {
-                    HullMod.AddGas(_.item.CurrentHull, "PressurizedAir", 300f, deltaTime);
+                    HullMod.AddGas(_.item.CurrentHull, "PressurizedAir", 20f, deltaTime);
                 }
             }
             

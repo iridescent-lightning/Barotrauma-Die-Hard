@@ -91,7 +91,7 @@ namespace BarotraumaDieHard
 			Character _ = __instance;
 			if (__instance == null) { return; }
 
-			if (__instance.CurrentHull == null) { return; }
+			if (__instance.CurrentHull == null || __instance.Submarine == null) { return; }
 			
 			if (!__instance.IsDead && __instance.UseHullOxygen)
 			{
@@ -125,9 +125,18 @@ namespace BarotraumaDieHard
 				__instance.CharacterHealth.ApplyAffliction(__instance.AnimController.MainLimb, AfflictionPrefab.Prefabs["coldwater"].Instantiate(-0.5f * deltaTime));
 			}
 			
-			float normalAirPressure = Math.Max(0, __instance.Submarine.RealWorldDepth);
+			float normalAirPressureFactor = Math.Max(0, __instance.Submarine.RealWorldDepth) / 100f;
+			float normalHullVolume = __instance.CurrentHull.Volume / 10000f;
+			float normalHullPressure = normalHullVolume * normalAirPressureFactor;
+			float airPressure = HullMod.GetGas(__instance.CurrentHull, "PressurizedAir");
+			float hullPressureRatio = airPressure / normalHullPressure;
 
-			if (HullMod.GetGas(__instance.CurrentHull, "PressurizedAir") > normalAirPressure * 2f)
+			DebugConsole.NewMessage($"pressure timer: {customPressureTimers[__instance]}");
+			DebugConsole.NewMessage($"normalHullPressure: {normalHullPressure}");
+			DebugConsole.NewMessage($"hullPressureRatio: {hullPressureRatio}");
+			DebugConsole.NewMessage($"airPressure: {airPressure}");
+
+			if ( hullPressureRatio > 5f) 
 			{
 				
 				// Increment the customPressureTimer for this character
@@ -138,7 +147,7 @@ namespace BarotraumaDieHard
 					// Apply increasing amounts of organ damage
 					_.CharacterHealth.ApplyAffliction(
 						targetLimb: _.AnimController.MainLimb, 
-						new Affliction(AfflictionPrefab.OrganDamage, HullMod.GetGas(__instance.CurrentHull, "PressurizedAir") / normalAirPressure * deltaTime));
+						new Affliction(AfflictionPrefab.OrganDamage, hullPressureRatio * deltaTime));
 				}
 
 				if (customPressureTimers[__instance] >= 15.0f)
@@ -150,9 +159,7 @@ namespace BarotraumaDieHard
 						if (_.IsDead) { return; }
 					}
 				}
-					DebugConsole.NewMessage($"pressure timer: {customPressureTimers[__instance]}");
-					DebugConsole.NewMessage($"air pressure - depth equalized: {HullMod.GetGas(__instance.CurrentHull, "PressurizedAir")}");
-					DebugConsole.NewMessage($"normalAirPressure - depth equalized: {normalAirPressure}");
+					
 					
 			}
 			else
